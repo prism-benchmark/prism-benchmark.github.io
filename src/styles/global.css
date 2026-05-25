@@ -18,38 +18,349 @@
   width: 100%;
 }
 
-html {
-  /* Enables container query units (e.g., 100cqw) for layout calculations in main. */
-  container-type: inline-size;
+:root {
+  --actual-inline-margin: 5vw;
+  --actual-text-width: 90vw;
 }
 
-:root {
-  --maximum-text-width: 50rem;
-  --minimum-inline-margin: 1.5rem;
-  --actual-inline-margin: max(
-    var(--minimum-inline-margin),
-    (100cqw - var(--maximum-text-width)) / 2
-  );
-  --actual-text-width: calc(100cqw - 2 * var(--actual-inline-margin));
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
 }
 
 main {
-  margin-inline: var(--actual-inline-margin);
+  width: var(--actual-text-width);
+  max-width: 90%;
+  margin-inline: auto;
+  overflow-x: clip;
 }
 
-.full-bleed,
-main .katex-display {
-  margin-inline: calc(var(--actual-inline-margin) * -1);
+body > header,
+body > footer {
+  width: var(--actual-text-width);
+  max-width: 90%;
 }
 
-.katex-display {
-  overflow: auto hidden;
+main > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tables - compact and centered */
+table {
+  display: table;
+  width: auto;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.85rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.35rem 0.75rem;
+  white-space: normal;
+  border: 1px solid var(--color-zinc-200);
+}
+
+table th {
+  background-color: var(--color-zinc-100);
+  font-weight: 600;
+}
+
+/* Responsive table wrapper */
+.prose table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tabs component */
+[data-tabs-list] {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Figures */
+figure {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure all content fits */
+main * {
+  max-width: 100%;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Center all figures */
+figure {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+figure img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid var(--color-zinc-300);
+  padding-left: 1rem;
+  margin-left: 0;
+  font-style: italic;
+  color: var(--color-zinc-600);
+}
+
+/* Images in figures */
+figure img,
+figure picture img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.paired-figures figure > div:first-child,
+.novelty-linked-panel {
+  display: flex;
+  height: min(36vw, 24rem);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.paired-figures figure > div:first-child picture,
+.paired-figures figure > div:first-child img,
+.novelty-linked-panel picture,
+.novelty-linked-panel img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .paired-figures figure > div:first-child,
+  .novelty-linked-panel {
+    height: auto;
+  }
+
+  .paired-figures figure > div:first-child picture,
+  .paired-figures figure > div:first-child img,
+  .novelty-linked-panel picture,
+  .novelty-linked-panel img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Code blocks */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Wide images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prose content constraints */
+.prose {
+  overflow-x: clip;
+  max-width: 100%;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 0.75rem;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+/* Abstract section */
+.full-bleed {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  overflow-x: auto;
+}
+
+.full-bleed .prose {
+  font-size: 0.9rem;
+}
+
+.full-bleed .prose p {
+  margin-bottom: 0.5rem;
+}
+
+/* Tabs */
+[data-tabs-trigger] {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+[data-tabs-content] {
+  font-size: 0.9rem;
 }
 
 .katex-display > .katex > .katex-html {
   padding-inline: 1.5rem;
   width: max-content;
   margin-inline: auto;
+}
+
+.katex-display {
+  max-width: 100%;
+  overflow: auto hidden;
+}
+
+/* Paper authors */
+.paper-authors {
+  width: 100%;
+  color: var(--color-zinc-700);
+  text-align: center;
+}
+
+.paper-authors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.9rem;
+  width: 100%;
+  font-size: clamp(1.05rem, 1.55vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.paper-author {
+  white-space: nowrap;
+}
+
+.paper-author-name {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.1rem;
+}
+
+.paper-author-name a {
+  color: var(--color-sky-500);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.paper-author-name a:hover {
+  color: var(--color-sky-700);
+  text-decoration: underline;
+}
+
+.paper-author-name sup {
+  top: auto;
+  color: var(--color-zinc-700);
+  font-size: 0.58em;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.paper-institutions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.15rem 0.35rem;
+  margin-top: 0.65rem;
+  text-align: center;
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  line-height: 1.35;
+}
+
+.paper-institution {
+  display: inline;
+}
+
+.paper-institution sup {
+  font-size: 0.85em;
+  margin-right: 0.25rem;
+}
+
+.paper-institution-separator {
+  margin-left: 0.15rem;
+}
+
+.paper-conference {
+  margin-top: 0.75rem;
+  color: var(--color-rose-400);
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.paper-notes {
+  margin-top: 0.4rem;
+  color: var(--color-zinc-700);
+  font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.paper-note {
+  margin-bottom: 0.15rem;
+}
+
+.paper-note sup {
+  font-size: 0.85em;
+  margin-right: 0.25rem;
+}
+
+@media (max-width: 47.999rem) {
+  .paper-authors-list {
+    gap: 0.25rem 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .paper-institutions,
+  .paper-conference,
+  .paper-notes {
+    font-size: 0.875rem;
+  }
 }
 
 /* Bibliography */

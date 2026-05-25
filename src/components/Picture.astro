@@ -7,9 +7,10 @@ interface Props {
   alt: string;
   priority?: boolean;
   invertInDarkMode?: boolean;
+  maxHeight?: string;
 }
 
-const { src, alt, priority = false, invertInDarkMode = false } = Astro.props;
+const { src, alt, priority = false, invertInDarkMode = false, maxHeight } = Astro.props;
 
 let image: ImageMetadata;
 
@@ -21,7 +22,7 @@ if (typeof src === "string") {
 ---
 
 <AstroPicture
-  class={`rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto ${invertInDarkMode ? "dark:invert" : ""}`}
+  class={`rounded-lg ${maxHeight || 'max-h-[calc(100svh-3rem)]'} max-w-full w-min mx-auto ${invertInDarkMode ? "dark:invert" : ""}`}
   src={image}
   alt={alt}
   layout="constrained"
