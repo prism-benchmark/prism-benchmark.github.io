@@ -1,24 +1,57 @@
 ---
-title: Academic Project Page Template
+title: "PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers"
 authors:
-  - name: Roman Hauksson
-    url: https://roman.technology
-    institution: University of Texas at Dallas
-    notes: ["*", †]
-  - name: Author Two
-    institution: Institution Two
-    notes: ["*", †]
-  - name: Author Three
-    institution: Institution Three
+  - name: Ngoc Phan Phuoc Loc 
+    url: "https://vinuni.edu.vn"
+    institutionIndices: [1]
     notes: ["*"]
-  - name: Author Four
-    institution: Institution Four
-conference: Conference Name
+  - name: Toan La Huynh Viet 
+    url: "https://vinuni.edu.vn"
+    institutionIndices: [1]
+    notes: ["*"]
+  - name: Tran Khanh Thanh
+    url: "https://vinuni.edu.vn"
+    institutionIndices: [1]
+    notes: ["*"]
+  - name: Duy A Nguyen
+    url: "https://siebel.illinois.edu"
+    institutionIndices: [2, 3]
+  - name: Tuan Anh Nguyen Pham 
+    url: "https://vinuni.edu.vn"
+    institutionIndices: [1]
+  - name: Thanh Nguyen 
+    url: "https://vinuni.edu.vn"
+    institutionIndices: [1]
+  - name: Nitesh V. Chawla
+    url: "https://www.cse.nd.edu/people/faculty/nitesh-v-chawla/"
+    institutionIndices: [4]
+  - name: Wray Buntine
+    url: "https://research.monash.edu/en/persons/wray-buntine"
+    institutionIndices: [1, 5]
+  - name: Kok-Seng Wong
+    url: "https://vinuni.edu.vn"
+    institutionIndices: [1]
+  - name: Khoa D. Doan
+    url: "https://vinuni.edu.vn"
+    institutionIndices: [1]
+  - name: Binh T. Nguyen 
+    url: "https://vinuni.edu.vn"
+    institutionIndices: [1]
+institutions:
+  - index: 1
+    name: "CECS, VinUniversity, Gia Lam, Hanoi, Vietnam"
+  - index: 2
+    name: "VinUni-UIUC Smart Health Center, VinUniversity, Vietnam"
+  - index: 3
+    name: "Siebel School of Computing and Data Science, University of Illinois Urbana-Champaign (UIUC), USA"
+  - index: 4
+    name: "CS&E, University of Notre Dame, USA"
+  - index: 5
+    name: "Faculty of IT, Monash University, Australia"
+conference: Submitted to NeurIPS 2026
 notes:
   - symbol: "*"
-    text: author note one
-  - symbol: †
-    text: author note two
+    text: Equal contribution
 links:
   - name: Paper
     url: https://github.com/RomanHauksson/academic-project-astro-template
@@ -34,7 +67,7 @@ links:
     icon: ri:slideshow-2-line
 
 # The color theme of the page. Defaults to "device" (the preference set in the user's brower or operating system). Setting this to "light" or "dark" will override the user's preference. This is useful if your figures only look good in one theme.
-theme: device
+theme: light
 
 # This is the icon that appears in the user's browser tab. To customize, change the favicon.svg file in /public/, or add your own file to /public/ and change the filename here.
 favicon: favicon.svg
@@ -69,7 +102,9 @@ import dogsMsillm from "@/assets/dogs-msillm.jpg"
 
 ## Abstract
 
-This is a template you can use to create a professional project page for your research paper. [See the code for the template and instructions on how to use it yourself on GitHub](https://github.com/RomanHauksson/academic-project-astro-template). It's made with the [Astro web framework](https://astro.build/) and styled with [Tailwind](https://tailwindcss.com/). You write the content in [MDX](https://mdxjs.com/), which enables markdown formatting like **bold**, _italics_, and ~strikethrough~, as well as custom components like <SmallCaps>small caps.</SmallCaps>
+The rapid growth in submissions to machine learning venues has strained the scientific peer-review system and intensified interest in LLM-based automated peer reviewers. However, how good these systems are actually, especially compared to human reviewers at catching scientific gaps, remains poorly understood. In this work, we introduce **PRISM** (**P**eer **R**eview **I**ntelligence via **S**tructured **M**ulti-dimensional assessment), a benchmarking framework that evaluates review quality across four dimensions: **Depth of Analysis**, **Novelty Assessment**, **Flaw Identification & Major Issues Prioritization**, and **Multi-dimensional Constructiveness**. Unlike most existing evaluations based on surface-level metrics like ROUGE and BLEU, or unconstrained LLM-as-a-judge prompting that conflates fluency with rigor, PRISM grounds each dimension in argument mining, retrieval-augmented verification, and consensus-based scoring.
+
+We apply PRISM to benchmark five leading automated reviewer systems and human reviewers on a stratified corpus of reviews from ICLR, ICML, and NeurIPS. The results reveal that LLMs can match or beat human reviewers on individual dimensions: comparable depth of analysis, stronger novelty verification, and highly accurate critique prioritization. However, no single system consistently matches the balanced performance of the human baseline across all dimensions at once. Each exhibits a distinct specialization profile with characteristic blind spots—failure modes that aggregate metrics miss entirely. The implication is that _LLM reviewers are best understood as targeted supplements to human review, effective within specific dimensions, but unreliable as standalone replacements._
 
 </HighlightedSection>
 
