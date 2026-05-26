@@ -23,6 +23,13 @@
   --actual-text-width: 90vw;
 }
 
+@media (max-width: 47.999rem) {
+  :root {
+    --actual-inline-margin: 1rem;
+    --actual-text-width: calc(100vw - 2rem);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -51,6 +58,33 @@ body > footer {
   max-width: 90%;
 }
 
+@media (max-width: 47.999rem) {
+  body.prose {
+    padding-top: 2rem;
+  }
+
+  main,
+  body > header[class],
+  body > footer[class] {
+    width: var(--actual-text-width);
+    max-width: none;
+  }
+
+  body > header[class] {
+    margin-bottom: 1.75rem;
+    padding-inline: 0;
+  }
+
+  body > header h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+    line-height: 1.08;
+  }
+
+  body > footer[class] {
+    padding-inline: 0;
+  }
+}
+
 main > * {
   margin-left: auto;
   margin-right: auto;
@@ -74,6 +108,17 @@ table td {
   padding: 0.35rem 0.75rem;
   white-space: normal;
   border: 1px solid var(--color-zinc-200);
+}
+
+@media (max-width: 47.999rem) {
+  table {
+    font-size: 0.78rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.3rem 0.45rem;
+  }
 }
 
 table th {
@@ -216,6 +261,27 @@ img {
   padding-left: 1.5rem;
 }
 
+@media (max-width: 47.999rem) {
+  .prose {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .prose h2 {
+    font-size: 1.35rem;
+    margin-top: 1.75rem;
+  }
+
+  .prose h3 {
+    font-size: 1.12rem;
+  }
+
+  .prose ul,
+  .prose ol {
+    padding-left: 1.15rem;
+  }
+}
+
 /* Abstract section */
 .full-bleed {
   width: 100%;
@@ -232,6 +298,22 @@ img {
   margin-bottom: 0.5rem;
 }
 
+@media (max-width: 47.999rem) {
+  .full-bleed {
+    width: 100vw;
+    margin-inline: calc((100vw - var(--actual-text-width)) / -2);
+  }
+
+  .full-bleed > div {
+    max-width: var(--actual-text-width);
+    padding-inline: 0;
+  }
+
+  .full-bleed.overflow-auto {
+    padding-inline: var(--actual-inline-margin);
+  }
+}
+
 /* Tabs */
 [data-tabs-trigger] {
   font-size: 0.85rem;
@@ -240,6 +322,17 @@ img {
 
 [data-tabs-content] {
   font-size: 0.9rem;
+}
+
+@media (max-width: 47.999rem) {
+  [data-tabs-trigger] {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  [data-tabs-content] {
+    font-size: 0.85rem;
+  }
 }
 
 .katex-display > .katex > .katex-html {
@@ -273,6 +366,12 @@ img {
 
 .paper-author {
   white-space: nowrap;
+}
+
+@media (max-width: 31.25rem) {
+  .paper-author {
+    white-space: normal;
+  }
 }
 
 .paper-author-name {
