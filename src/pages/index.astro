@@ -79,6 +79,60 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
         {links && <Links links={links} />}
       </div>
     </header>
+    <button
+      id="toc-toggle"
+      aria-label="Toggle outline"
+      aria-controls="toc-sidebar"
+      aria-expanded="true"
+      class="fixed top-4 left-4 z-50 flex h-10 w-10 items-center justify-center rounded-md border border-zinc-200 bg-white/90 text-zinc-700 shadow-sm backdrop-blur transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900/90 dark:text-zinc-200 dark:hover:bg-zinc-800"
+    >
+      <svg
+        id="toc-toggle-icon-open"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg
+        id="toc-toggle-icon-close"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="hidden"
+        aria-hidden="true"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <aside
+      id="toc-sidebar"
+      aria-label="Table of contents"
+      class="fixed top-16 left-4 z-40 max-h-[calc(100vh-5rem)] w-64 overflow-y-auto rounded-lg border border-zinc-200 bg-white/90 p-4 text-sm shadow-sm backdrop-blur transition-all duration-200 dark:border-zinc-700 dark:bg-zinc-900/90"
+    >
+      <p class="mb-2 text-xs font-semibold tracking-wider text-zinc-500 uppercase dark:text-zinc-400">
+        On this page
+      </p>
+      <nav id="toc-nav" class="flex flex-col gap-1"></nav>
+    </aside>
+
     <main>
       <Content components={{ table: Table }} />
     </main>
@@ -90,5 +144,172 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
         >
       </p>
     </footer>
+
+    <button
+      id="back-to-top"
+      aria-label="Back to top"
+      class="fixed right-6 bottom-6 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-zinc-800 text-white shadow-lg transition-opacity duration-300 hover:bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-900 dark:hover:bg-zinc-300"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    <script>
+      // Sidebar open/close toggle (with persisted state)
+      const sidebar = document.getElementById("toc-sidebar");
+      const toggleBtn = document.getElementById("toc-toggle");
+      const iconOpen = document.getElementById("toc-toggle-icon-open");
+      const iconClose = document.getElementById("toc-toggle-icon-close");
+      if (sidebar && toggleBtn && iconOpen && iconClose) {
+        const setOpen = (open: boolean) => {
+          if (open) {
+            sidebar.classList.remove(
+              "pointer-events-none",
+              "opacity-0",
+              "-translate-x-4",
+            );
+            iconOpen.classList.add("hidden");
+            iconClose.classList.remove("hidden");
+            toggleBtn.setAttribute("aria-expanded", "true");
+          } else {
+            sidebar.classList.add(
+              "pointer-events-none",
+              "opacity-0",
+              "-translate-x-4",
+            );
+            iconOpen.classList.remove("hidden");
+            iconClose.classList.add("hidden");
+            toggleBtn.setAttribute("aria-expanded", "false");
+          }
+          try {
+            localStorage.setItem("toc-open", open ? "1" : "0");
+          } catch {}
+        };
+
+        // Initial state: open on >= xl screens, closed otherwise; respect saved pref
+        let initialOpen = window.matchMedia("(min-width: 1280px)").matches;
+        try {
+          const saved = localStorage.getItem("toc-open");
+          if (saved === "1") initialOpen = true;
+          if (saved === "0") initialOpen = false;
+        } catch {}
+        setOpen(initialOpen);
+
+        toggleBtn.addEventListener("click", () => {
+          const isOpen = toggleBtn.getAttribute("aria-expanded") === "true";
+          setOpen(!isOpen);
+        });
+      }
+
+      // Build TOC from main headings
+      const nav = document.getElementById("toc-nav");
+      const main = document.querySelector("main");
+      if (nav && main) {
+        const headings = Array.from(
+          main.querySelectorAll("h2, h3"),
+        ) as HTMLElement[];
+        const links: HTMLAnchorElement[] = [];
+        headings.forEach((h) => {
+          if (!h.id) {
+            h.id = (h.textContent || "")
+              .toLowerCase()
+              .trim()
+              .replace(/[^\w\s-]/g, "")
+              .replace(/\s+/g, "-");
+          }
+          const a = document.createElement("a");
+          a.href = `#${h.id}`;
+          a.textContent = h.textContent || "";
+          a.dataset.targetId = h.id;
+          a.className =
+            (h.tagName === "H3" ? "pl-4 " : "") +
+            "block truncate rounded px-2 py-1 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100";
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.getElementById(h.id);
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+              history.replaceState(null, "", `#${h.id}`);
+            }
+          });
+          nav.appendChild(a);
+          links.push(a);
+        });
+
+        const setActive = (id: string) => {
+          links.forEach((l) => {
+            if (l.dataset.targetId === id) {
+              l.classList.add(
+                "bg-zinc-100",
+                "font-medium",
+                "text-zinc-900",
+                "dark:bg-zinc-800",
+                "dark:text-zinc-100",
+              );
+            } else {
+              l.classList.remove(
+                "bg-zinc-100",
+                "font-medium",
+                "text-zinc-900",
+                "dark:bg-zinc-800",
+                "dark:text-zinc-100",
+              );
+            }
+          });
+        };
+
+        const visible = new Map<string, number>();
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const id = (entry.target as HTMLElement).id;
+              if (entry.isIntersecting) {
+                visible.set(id, entry.intersectionRatio);
+              } else {
+                visible.delete(id);
+              }
+            });
+            if (visible.size > 0) {
+              const orderedIds = headings.map((h) => h.id);
+              const topId = orderedIds.find((id) => visible.has(id));
+              if (topId) setActive(topId);
+            }
+          },
+          { rootMargin: "-80px 0px -70% 0px", threshold: [0, 1] },
+        );
+        headings.forEach((h) => observer.observe(h));
+      }
+
+      const btn = document.getElementById("back-to-top");
+      if (btn) {
+        const toggle = () => {
+          if (window.scrollY > 300) {
+            btn.classList.remove("hidden");
+            btn.classList.add("flex");
+          } else {
+            btn.classList.add("hidden");
+            btn.classList.remove("flex");
+          }
+        };
+        window.addEventListener("scroll", toggle, { passive: true });
+        toggle();
+        btn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    </script>
   </body>
 </html>
