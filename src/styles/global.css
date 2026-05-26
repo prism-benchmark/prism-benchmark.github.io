@@ -20,7 +20,7 @@
 
 :root {
   --actual-inline-margin: 5vw;
-  --actual-text-width: 90vw;
+  --actual-text-width: 65vw;
 }
 
 @media (max-width: 47.999rem) {

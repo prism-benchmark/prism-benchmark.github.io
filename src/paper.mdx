@@ -62,6 +62,9 @@ links:
   - name: arXiv
     url: "#"
     icon: academicons:arxiv
+  - name: Demo
+    url: "#demo"
+    icon: ri:play-circle-line
 theme: light
 favicon: favicon.svg
 description: PRISM - A multi-dimensional benchmark for evaluating LLM peer reviewers across depth, novelty, flaw detection, and constructiveness.
@@ -69,50 +72,38 @@ thumbnail: screenshot-light.png
 ---
 
 import HighlightedSection from "./components/HighlightedSection.astro";
+import Carousel from "./components/Carousel.astro";
+import CarouselSlide from "./components/CarouselSlide.astro";
 import Figure from "./components/Figure.astro";
 import Picture from "./components/Picture.astro";
 import TwoColumns from "./components/TwoColumns.astro";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/starwind/tabs";
 
-{/* Images */}
-import doaPipeline from "./assets/doa_pipeline.png";
-import noveltyPipeline from "./assets/novelty_pipeline.png";
-import noveltyEvidence from "./assets/novelty_evidence_support_rate.png";
-import flawPipeline from "./assets/Flaw.png";
 
 <HighlightedSection>
 
 ## Abstract
 
-The rapid growth in submissions to machine learning venues has strained the scientific peer-review system and intensified interest in LLM-based automated peer reviewers. However, how good these systems are actually, especially compared to human reviewers at catching scientific gaps, remains poorly understood. In this work, we introduce **PRISM** (**P**eer **R**eview **I**ntelligence via **S**tructured **M**ulti-dimensional assessment), a benchmarking framework that evaluates review quality across four dimensions: **Depth of Analysis**, **Novelty Assessment**, **Flaw Identification & Major Issues Prioritization**, and **Multi-dimensional Constructiveness**. Unlike most existing evaluations based on surface-level metrics like ROUGE and BLEU, or unconstrained LLM-as-a-judge prompting that conflates fluency with rigor, PRISM grounds each dimension in argument mining, retrieval-augmented verification, and consensus-based scoring.
+Scientific peer review is under mounting strain as major machine learning venues face rapidly growing submission volumes, heavier reviewer workloads, and increasingly difficult paper-to-reviewer matching. At the same time, Large Language Models (LLMs) have moved from proofreading aids to automated reviewer agents capable of drafting full scientific critiques. This raises a central question: are LLMs sufficient reviewers for evaluating scientific work, especially when human reviewers themselves operate under severe time pressure?
 
-We apply PRISM to benchmark five leading automated reviewer systems and human reviewers on a stratified corpus of 1,000 reviews from ICLR, ICML, and NeurIPS. The results reveal that LLMs can match or beat human reviewers on individual dimensions: comparable depth of analysis, stronger novelty verification, and highly accurate critique prioritization. However, no single system consistently matches the balanced performance of the human baseline across all dimensions at once. Each exhibits a distinct specialization profile with characteristic blind spots—failure modes that aggregate metrics miss entirely. The implication is that _LLM reviewers are best understood as targeted supplements to human review, effective within specific dimensions, but unreliable as standalone replacements._
+We introduce **PRISM** (**P**eer **R**eview **I**ntelligence via **S**tructured **M**ulti-dimensional assessment), a benchmark for evaluating both LLM-generated and human reviews across four core duties: depth of analysis, novelty assessment, flaw identification and prioritization, and multi-dimensional constructiveness. Each duty is measured through a dedicated pipeline grounded in argument mining, retrieval-augmented verification, and consensus-based scoring. Across 1,000 papers from ICLR, ICML, and NeurIPS, PRISM shows that LLM reviewers can be strong task-matched specialists, but no single system matches the balanced performance of human reviewers. LLM reviewers are therefore best used as deliberate, human-assisted supplements rather than general-purpose replacements.
 
 </HighlightedSection>
 
-## Page Overview
 
-This project page is organized around the three questions a reader usually has after seeing the title:
+## 1. Introducing PRISM
 
-| Section | What to Look For | Why It Matters |
-|---------|------------------|----------------|
-| **Method** | The main PRISM diagram and four evaluator pipelines | Shows how PRISM avoids one-shot, opaque LLM judging |
-| **Qualitative Assessment** | Human-review examples and judge breakdowns | Makes the metrics inspectable at the level of individual comments |
-| **Main Experiments** | Macro results, per-dimension findings, and deployment guidance | Explains where each LLM reviewer helps, and where humans still matter |
+Major ML venues now receive tens of thousands of submissions, which makes reviewer assignment, workload, and review quality increasingly difficult to manage. LLM reviewers offer scale, but common evaluation methods often rely on surface similarity metrics or broad LLM-as-a-judge scores. These approaches can blur together fluency, factuality, and scientific rigor.
 
-The layout follows the style of recent evaluator and peer-review demos: [OpenEval](https://www.openevalproject.com/) emphasizes claim-level peer-review comparisons, [AI Reviewer](https://agencyenterprise.github.io/ai-reviewer/) presents concrete input/output examples, [AgentReview](https://agentreview.github.io/) leads with a framework diagram before findings, [EvalLM](https://evallm.kixlab.org/) shows judge explanations beside evaluated outputs, and [CoBBLEr](https://minnesotanlp.github.io/cobbler-project-page/) uses compact main findings backed by concrete evaluator failure cases.
+PRISM asks a stricter question:
 
-## Method: PRISM as a Structured Review Judge
+> Does a review provide grounded analysis, calibrated novelty judgment, valid flaw detection, and actionable feedback?
 
-Scientific peer review is under mounting strain. Submission volumes at major ML venues have grown exponentially—NeurIPS received 21,575 submissions in 2025, while ICML saw a 44.9% year-on-year jump. This growth severely strains the reviewer pool, prompting venues to introduce new policies and raising an important question: **Are LLMs sufficient reviewers to evaluate scientific work?**
+To answer it, PRISM evaluates each manuscript-review pair through **four independent and interpretable pipelines**. Each pipeline extracts small review units, verifies them against the manuscript or prior literature, and computes metrics from those structured decisions instead of relying on a single opaque judge rating.
 
-PRISM addresses this by evaluating reviews across four independent pipelines, each targeting a different responsibility of scientific peer review. Rather than asking an LLM judge for one holistic score—which risks conflating fluency with rigor—PRISM decomposes the review into evidence units, novelty claims, flaw arguments, and atomic comments. The LLM performs constrained extraction and verification; the final scores are computed analytically.
-
-
-  <Figure>
-    <Picture slot="figure" src="../../images/PRISM_overview.pdf" alt="PRISM evaluation pipeline overview showing the four dimensional assessment framework" />
-    <Fragment slot="caption"><strong>Main method diagram.</strong> PRISM processes each manuscript-review pair through four modular pipelines: Depth of Analysis, Novelty Assessment, Flaw Identification & Prioritization, and Multi-dimensional Constructiveness. Each module produces an interpretable metric instead of a single opaque judge score.</Fragment>
-  </Figure>
+<Figure>
+  <Picture slot="figure" src="../../images/PRISM_overview.pdf" alt="PRISM evaluation pipeline overview showing the four dimensional assessment framework" />
+  <Fragment slot="caption"><strong>PRISM overview.</strong> Each review is decomposed into evidence units, novelty claims, flaw arguments, and atomic comments, then scored by modular evaluator pipelines.</Fragment>
+</Figure>
 
 <HighlightedSection>
 
@@ -127,395 +118,160 @@ PRISM addresses this by evaluating reviews across four independent pipelines, ea
 
 </HighlightedSection>
 
+PRISM uses constrained LLM judging for extraction and labeling. The final scores, however, are computed analytically from labels, retrieval evidence, consensus verification, and the structure of review comments.
 
-### Dimension 1: Depth of Analysis (DoA)
+## 2. Methods
 
-A high-quality review must substantiate its judgments with objective, well-grounded premises—not rely on generic assertions.
+<Carousel autoplay intervalMs={4500}>
+<CarouselSlide>
+<div className="rounded-3xl border border-sky-200 bg-sky-50 p-6 shadow-sm dark:border-sky-900 dark:bg-sky-950/40">
 
-**How it works:** We extract core review sections (Summary, Strengths, Weaknesses) and break them into **Argumentative Discourse Units (ADUs)**. Each ADU is classified by:
-- **Argumentative role:** *Claim* (conclusion) or *Premise* (supporting evidence)
-- **Aspect topic:** Novelty, Methodology, Experiments, or Clarity
+### Method 1: Depth of Analysis (DoA)
 
-Premises are assessed for **grounding level** $g(p) \in \{0,1,2\}$:
-- **Level 0:** Vague/Generic (e.g., "the method seems limited")
-- **Level 1:** Internal (references the manuscript directly)  
-- **Level 2:** External (references broader scientific literature)
+A strong review does more than state opinions. It supports its judgments with evidence that can be traced to the manuscript or to the surrounding literature. PRISM splits each review into **Argumentative Discourse Units (ADUs)**, labels each unit as a claim or premise, and checks whether the premises are properly grounded.
 
-The DoA score combines **Premise Ratio** (evidence coverage) and **Average Grounding Score** (evidence quality) via harmonic mean—penalizing imbalance between quantity and rigor.
+The pipeline focuses on core review sections such as Summary, Strengths, and Weaknesses. Each ADU receives an argumentative role, an aspect label such as novelty, methodology, experiments, or clarity, and a grounding level:
 
-<TwoColumns>
-  <div slot="left">
-    <Figure>
-      <Picture slot="figure" src={doaPipeline} alt="Depth of Analysis pipeline diagram" />
-      <Fragment slot="caption">The DoA pipeline decomposes reviews into ADUs and assesses grounding levels.</Fragment>
-    </Figure>
-  </div>
-  <div slot="right">
-    <Figure>
-      <Picture slot="figure" src="../../images/grounding_dist_bar.pdf" alt="Distribution of grounding levels across reviewer systems" />
-      <Fragment slot="caption">Grounding level distributions show human reviewers achieve higher internal grounding (Level 1) while LLMs vary significantly.</Fragment>
-    </Figure>
-  </div>
-</TwoColumns>
+| Grounding Level | Meaning |
+|-----------------|---------|
+| **0: Vague or generic** | The premise is not tied to specific evidence. |
+| **1: Manuscript-grounded** | The premise refers to concrete paper content. |
+| **2: Literature-grounded** | The premise uses external scientific context. |
 
-### Dimension 2: Novelty Assessment
+**Main score:** DoA combines evidence coverage (**Premise Ratio**) and evidence quality (**Grounding Score**) with a harmonic mean. A review must therefore be both detailed and well supported.
 
-Genuine novelty judgment requires situating a paper's contributions within prior literature. Our pipeline verifies whether a reviewer's novelty claims are supported or refuted by retrievable prior work.
+</div>
+</CarouselSlide>
 
-**Three-stage pipeline:**
+<CarouselSlide>
+<div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm dark:border-emerald-900 dark:bg-emerald-950/40">
 
-1. **Extraction:** A constrained LLM extracts the paper's core task, contribution anchors, and verbatim novelty claims $\mathcal{C} = \{c_1,\ldots,c_n\}$
-2. **Retrieval:** Deterministic Semantic Scholar queries retrieve prior publications, filtered and diversified via Maximal Marginal Relevance to form candidate pool $\mathcal{B}$
-3. **Verification:** For each claim-candidate pair $(c_i, b_j)$, an LLM judge returns a discrete evidence-support score $s(c_i, b_j) \in \{-2,-1,0,+1,+2\}$
+### Method 2: Novelty Assessment
 
-<Figure>
-  <Picture slot="figure" src={noveltyPipeline} alt="Novelty Assessment pipeline showing extraction, retrieval, and verification stages" />
-  <Fragment slot="caption">The Novelty Assessment pipeline extracts claims, retrieves prior work via Semantic Scholar, and verifies evidence support through LLM judging.</Fragment>
-</Figure>
+Novelty judgments are most useful when they are anchored in prior work rather than broad impressions. PRISM extracts verbatim novelty claims from the review, retrieves related papers from Semantic Scholar, and verifies whether the retrieved literature supports or contradicts each claim.
 
-### Dimension 3: Flaw Identification & Prioritization
+The pipeline has three stages: extract the paper's core task, contribution anchors, and novelty claims; retrieve and diversify relevant prior work; then verify each claim-evidence pair as supporting, contradicting, or insufficiently evidenced.
 
-Effective peer review requires both accurate diagnosis of errors and clear structural organization. Since the absolute number of flaws in any manuscript is unobservable, we establish a relative "ground truth" using a **consensus mechanism** that merges findings from both human and LLM reviewers.
+**Main score:** the pipeline reports a normalized novelty-support score together with support rates. These measures indicate whether the reviewer's novelty statements are grounded in retrievable evidence. A high score means the claim is evidence grounded; it does not necessarily mean the reviewer reached the same judgment as a human expert.
 
-**Pipeline stages:**
-1. **Extraction:** Isolate critical sections (Summary, Weaknesses, Questions) from human and LLM reviews; parse concurrently to extract distinct flaw arguments
-2. **Consensus Verification:** An LLM judge evaluates all extracted flaws against paper context, discarding invalid or hallucinated critiques; verified findings are merged into consensus ground truth
-3. **Classification:** Flaws are classified as *Critical* (methodological errors, flawed proofs) or *Minor* (typos, formatting)
-4. **Positional Recovery:** Valid flaws are mapped back to their sequential position in the review text
+</div>
+</CarouselSlide>
 
-**Scoring metrics:**
-- **Diagnostic Coverage:** Severity-stratified recall (Critical/Minor Recall)
-- **Structural Ranking:** Normalized Critique Prioritization Score ($nCPS$), inspired by NDCG, measuring whether critical flaws appear before minor ones
+<CarouselSlide>
+<div className="rounded-3xl border border-rose-200 bg-rose-50 p-6 shadow-sm dark:border-rose-900 dark:bg-rose-950/40">
 
-<Figure>
-  <Picture slot="figure" src={flawPipeline} alt="Flaw Identification pipeline showing extraction and consensus verification" />
-  <Fragment slot="caption">The Flaw Identification pipeline extracts flaw arguments from reviews, verifies them against paper context, and constructs consensus ground truth through merging human and LLM findings.</Fragment>
-</Figure>
+### Method 3: Flaw Identification & Major-Issue Prioritization
 
-### Dimension 4: Multi-dimensional Constructiveness
+Good reviewers need to identify real scientific flaws and give appropriate priority to the most serious ones. PRISM extracts flaw arguments from human and LLM reviews, verifies them against the paper, merges valid flaws into a consensus reference set, and labels them as **Critical** or **Minor**.
 
-A review's real value lies in its ability to help authors improve. We decompose constructiveness into five dimensions, each rated 0-2 per Atomic Review Comment (ARC):
+Because the true complete set of flaws in a manuscript is unobservable, PRISM builds a relative consensus ground truth from all human and LLM critiques. Candidate flaws are extracted, invalid or hallucinated critiques are removed, semantically equivalent flaws are merged, and valid issues are mapped back to their positions in the review.
 
-| Dimension | What It Measures | Example |
-|-----------|-----------------|---------|
-| **Actionability** ($D_1$) | Clear, implementable guidance vs. vague opinions | "Add ablation study on component X" vs. "Needs more experiments" |
-| **Specificity** ($D_2$) | Pinpoints concrete elements (sections, equations) | "Equation 3 assumes independence" vs. "The math is wrong" |
-| **Justification** ($D_3$) | Assertions backed by reasoning or evidence | "Batch size affects convergence because..." vs. "This won't work" |
-| **Solution** ($D_4$) | Proposes improvement path vs. just highlighting problems | "Consider using method Y from [ref]" vs. "Novelty is limited" |
-| **Tone** ($D_5$) | Professional and encouraging language | Neutral vs. hostile/dismissive |
+**Main score:** severity-stratified recall measures how many flaws a reviewer finds. The **normalized Critique Prioritization Score (nCPS)** measures whether critical flaws appear before minor issues.
 
-The **Mean Constructiveness Score (MCS)** averages across all ARCs: $MCS(R) = \frac{1}{n}\sum_{j=1}^{n} CLC(c_j)$
+</div>
+</CarouselSlide>
 
-## Qualitative Assessment
+<CarouselSlide>
+<div className="rounded-3xl border border-violet-200 bg-violet-50 p-6 shadow-sm dark:border-violet-900 dark:bg-violet-950/40">
 
-PRISM is designed to make judge behavior inspectable. Instead of only reporting a final scalar, each pipeline exposes the intermediate units that led to the score: which text span became a claim, which span became evidence, which flaw entered the consensus set, and which comment was considered actionable.
+### Method 4: Multi-dimensional Constructiveness
 
-### Human Review Examples with Judge Breakdowns
+A useful review should help authors improve the paper. PRISM breaks the review into **Atomic Review Comments (ARCs)** and scores each comment on five dimensions: actionability, specificity, justification, solution, and tone.
 
-The examples below show the kind of human-review comments PRISM can decompose. They are written in the style of real peer-review feedback, with paper-specific identifiers anonymized for display.
+Each ARC is rated on a 0-2 scale for these five properties. The scoring is deliberately performed at the comment level. A review can be technically perceptive while still being unhelpful if it identifies a problem without explaining what the authors can do next.
 
-<Tabs defaultValue="doa">
-  <TabsList>
-    <TabsTrigger value="doa">Depth</TabsTrigger>
-    <TabsTrigger value="novelty">Novelty</TabsTrigger>
-    <TabsTrigger value="flaw">Flaws</TabsTrigger>
-    <TabsTrigger value="construct">Constructiveness</TabsTrigger>
-  </TabsList>
-  
-  <TabsContent value="doa">
-    #### Human Review Excerpt: Shallow vs. Grounded Critique
+**Main score:** the **Mean Constructiveness Score (MCS)** averages these comment-level scores to quantify whether feedback is specific, justified, actionable, solution-oriented, and professional.
 
-    **Low-depth comment:**
-    > "The proposed method lacks novelty. The experiments are insufficient. The paper needs better writing."
+| Constructiveness Dimension | What It Checks |
+|----------------------------|----------------|
+| **Actionability** | Does the comment give implementable guidance? |
+| **Specificity** | Does it point to concrete sections, equations, datasets, or claims? |
+| **Justification** | Is the critique supported by reasoning or evidence? |
+| **Solution** | Does it suggest a path to improve the paper? |
+| **Tone** | Is the language professional and constructive? |
 
-    **Judge breakdown:**
-    - **ADU 1:** "The proposed method lacks novelty" → *Claim*, Topic: Novelty
-    - **ADU 2:** "The experiments are insufficient" → *Claim*, Topic: Experiments  
-    - **ADU 3:** "The paper needs better writing" → *Claim*, Topic: Clarity
-    
-    **Score interpretation:** all statements are claims with **no supporting premises**. Premise Ratio = 0, so DoA = 0. This review sounds decisive but gives authors no evidence trail.
+</div>
+</CarouselSlide>
+</Carousel>
 
-    ---
+## 3. Results and Analysis
 
-    **High-depth comment:**
-    > "Theorem 1 assumes Lipschitz continuity (line 142), but Lemma 2 in Appendix B shows the gradient norm can be unbounded for the proposed activation function. This invalidates the convergence guarantee. The authors could address this by adding gradient clipping as in [Smith et al., 2024]."
-
-    **Judge breakdown:**
-    - **ADU 1:** "Theorem 1 assumes Lipschitz continuity" → *Premise*, Topic: Methodology, **Level 1** (internal reference)
-    - **ADU 2:** "Lemma 2 shows gradient norm unbounded" → *Premise*, Topic: Methodology, **Level 1**
-    - **ADU 3:** "This invalidates convergence guarantee" → *Claim*, Topic: Methodology
-    - **ADU 4:** "Could add gradient clipping as in [Smith et al.]" → *Premise*, Topic: Methodology, **Level 2** (external reference)
-    
-    **Score interpretation:** high premise ratio (3/4) with internal and external grounding. This is the kind of substantive critique PRISM rewards.
-  </TabsContent>
-  
-  <TabsContent value="novelty">
-    #### Human Review Excerpt: Literature-Grounded Novelty
-
-    **Novelty claim from review:**
-    > "The proposed attention mechanism is similar to the multi-scale approach in [Wang et al., 2023]."
-
-    **Judge breakdown:**
-    1. **Extract:** Claim identified as novelty challenge with anchor "multi-scale attention"
-    2. **Retrieve:** Semantic Scholar returns 5 candidate papers matching "multi-scale attention mechanism"
-    3. **Verify:** Judge compares claim against paper context + candidate abstracts
-
-    **Verification output:**
-    - Candidate 1 [Wang et al., 2023]: Score = +2 (Fully Supported) — Paper indeed proposes similar multi-scale attention
-    - Candidate 2 [Li et al., 2024]: Score = +1 (Partially Supported) — Related but different mechanism
-    - Candidate 3 [Chen et al., 2023]: Score = 0 (Neutral) — Different domain, no direct comparison
-    
-    **Score interpretation:** the relevance-weighted top-3 score is high, so this novelty criticism is treated as literature-grounded. PRISM does **not** decide whether the paper is objectively novel; it evaluates whether the reviewer's novelty statement is supported by retrievable prior work.
-  </TabsContent>
-  
-  <TabsContent value="flaw">
-    #### Human + LLM Review Excerpts: Consensus Flaw Verification
-
-    **Human Review Extracts:**
-    1. "Theorem 2 proof has a gap in Equation 7"
-    2. "Baseline comparison unfair—different hyperparameter tuning"
-    3. "Figure 3 is hard to read"
-
-    **LLM Review Extracts:**
-    1. "Missing statistical significance tests"
-    2. "Theorem 2 proof incomplete" (same as human #1)
-    3. "Baseline comparison lacks fairness"
-
-    **Consensus Process:**
-    - Flaw #1 (Theorem 2): Verified in both → **Critical** flaw, added to consensus
-    - Flaw #2 (Baseline fairness): Verified in both → **Critical** flaw, added to consensus  
-    - Flaw #3 (Missing stats): LLM-only, verified → **Critical** flaw, added to consensus
-    - Flaw #4 (Figure readability): Human-only, verified → **Minor** flaw
-
-    **Score interpretation:** consensus ground truth = **3 Critical + 1 Minor**. A reviewer who found 2 Critical and 1 Minor has Critical Recall = 0.67 and Minor Recall = 1.0. If the critical issues appear before the figure-readability issue, nCPS remains high.
-  </TabsContent>
-  
-  <TabsContent value="construct">
-    #### Human Review Excerpt: Constructiveness at Comment Level
-
-    **Atomic Review Comment:**
-    > "The experimental section only evaluates on CIFAR-10 and CIFAR-100. The authors should add ImageNet results and compare with recent vision transformers like DeiT-III to demonstrate scalability."
-
-    **Judge breakdown:**
-    - **Actionability** ($D_1$): 2/2 — Specifies exact datasets and methods to add
-    - **Specificity** ($D_2$): 2/2 — Names CIFAR-10/100, ImageNet, DeiT-III
-    - **Justification** ($D_3$): 1/2 — Implies scalability concern but doesn't explain why it matters
-    - **Solution** ($D_4$): 2/2 — Provides concrete path forward
-    - **Tone** ($D_5$): 2/2 — Professional and constructive
-
-    **CLC Score:** $(2+2+1+2+2)/10 = 0.9$ — Highly constructive feedback
-
-    ---
-
-    **Less constructive human comment:**
-    > "The experiments are not comprehensive enough."
-
-    **Judge breakdown:**
-    - **Actionability** ($D_1$): 0/2 — No specific guidance
-    - **Specificity** ($D_2$): 0/2 — Vague, no concrete elements
-    - **Justification** ($D_3$): 0/2 — No reasoning provided
-    - **Solution** ($D_4$): 0/2 — No improvement path
-    - **Tone** ($D_5$): 1/2 — Neutral but unhelpful
-
-    **CLC Score:** $(0+0+0+0+1)/10 = 0.1$ — Low constructiveness
-  </TabsContent>
-</Tabs>
-
-### Detailed Judge Result Breakdowns
-
-The qualitative examples above connect directly to the diagnostic plots below. They show how PRISM moves from local judge decisions to dataset-level behavior: whether reviewers spend effort on methodology or clarity, whether flaws are valid or hallucinated, and whether feedback contains actionable solutions.
-
-
-  <Figure>
-    <Picture slot="figure" src="../../images/doa_heatmap_all.pdf" alt="Depth of Analysis aspect heatmap across reviewer systems" />
-    <Fragment slot="caption"><strong>Depth-of-analysis aspect heatmap from the main paper.</strong> Advanced LLM pipelines mirror the human focus on Methodology and Experimental Design, while TreeReview over-allocates attention to Clarity concerns.</Fragment>
-  </Figure>
-
-<TwoColumns>
-  <div slot="left">
-    <Figure>
-      <Picture slot="figure" src="../../images/flaw_diverging.pdf" alt="Diverging flaw comparison across reviewer systems" />
-      <Fragment slot="caption"><strong>Flaw breakdown from the main paper.</strong> Reviewer2 identifies the largest volume of valid flaws with a low hallucination rate, while CycleReviewer shows a clearer precision deficit.</Fragment>
-    </Figure>
-  </div>
-  <div slot="right">
-    <Figure>
-      <Picture slot="figure" src="../../images/constructiveness_parallel.pdf" alt="Parallel coordinates constructiveness breakdown across reviewer systems" />
-      <Fragment slot="caption"><strong>Constructiveness breakdown from the main paper.</strong> DeepReview leads on actionability and solution provision, while human reviewers remain highly specific but less solution-oriented.</Fragment>
-    </Figure>
-  </div>
-</TwoColumns>
-
-
-## Main Experiment & Analysis
-
-### Overall Performance
-
-We evaluate five leading automated reviewer systems—**TreeReview**, **Reviewer2**, **SEA-E**, **DeepReview**, and **CycleReviewer**—against human reviewers on 1,000 papers across ICLR 2024–2026, ICML 2025, and NeurIPS 2025.
-
-<Figure>
-  <Picture slot="figure" src="../../images/keyword_cloud.pdf" alt="Keyword cloud summarizing the topical coverage of the PRISM benchmark dataset" />
-  <Fragment slot="caption"><strong>Dataset topical coverage from the main paper.</strong> The benchmark is stratified across venue-years, decisions, and paper topics so the evaluation covers a broad slice of contemporary ML research.</Fragment>
-</Figure>
-
-
-  <Figure>
-    <Picture slot="figure" src="../../images/macro_metrics_spider_all.pdf" alt="Spider chart showing macro-averaged PRISM scores across all dimensions" />
-    <Fragment slot="caption"><strong>Macro-averaged PRISM scores across all four dimensions.</strong> No single system dominates all dimensions. Human reviewers (dashed line) show the most balanced profile, while each LLM system exhibits distinct specialization and blind spots.</Fragment>
-  </Figure>
+PRISM shows that LLM reviewers tend to specialize in different review responsibilities. No single system dominates all four dimensions.
 
 <HighlightedSection>
 
-### Key Findings at a Glance
+### Key Findings
 
 | Finding | Evidence | Practical Reading |
 |---------|----------|-------------------|
-| **Humans remain the most balanced baseline** | Human DoA = 0.494 with strong methodology focus | Humans are still needed for calibrated final judgment |
+| **Humans remain the most balanced baseline** | Human DoA = 0.494 | Humans are still needed for calibrated final judgment |
 | **DeepReview and CycleReviewer nearly match human depth** | DoA = 0.483 and 0.484 | Structured reasoning helps LLMs produce substantiated critiques |
 | **SEA has the strongest novelty grounding** | Novelty score = 0.833 vs. human = 0.787 | Retrieval-oriented pipelines help verify literature claims |
-| **Reviewer2 is the best flaw scanner** | Critical Recall = 0.591 vs. human = 0.343 | LLMs can surface missed issues for human reviewers to inspect |
+| **Reviewer2 is the best flaw scanner** | Critical Recall = 0.591 vs. human = 0.343 | LLMs can surface missed issues for human reviewers |
 | **DeepReview gives the most constructive feedback** | MCS = 0.634 vs. human = 0.566 | System design matters for solution-oriented critique |
 
 </HighlightedSection>
 
+### Headline Results
 
-### Finding 1: Depth of Analysis — Humans Lead, But LLMs Are Closing the Gap
+| Evaluation Dimension | Best Automated System | Human Baseline |
+|----------------------|:----------------------|:--------------:|
+| **Depth of Analysis** | CycleReviewer: **0.484**; DeepReview: **0.483** | **0.494** |
+| **Novelty Assessment** | SEA: **0.833** | **0.787** |
+| **Critical Flaw Recall** | Reviewer2: **0.591** | **0.343** |
+| **Minor Flaw Recall** | Reviewer2: **0.459** | **0.281** |
+| **Prioritization** | SEA: **0.977** | **0.973** |
+| **Constructiveness** | DeepReview: **0.634** | **0.566** |
 
-| System | DoA Score | Premise Ratio | Grounding Score |
-|--------|:---------:|:-------------:|:---------------:|
-| **Human** | **0.494** | 0.567 | 0.475 |
-| CycleReviewer | 0.484 | 0.614 | 0.431 |
-| DeepReview | 0.483 | 0.596 | 0.441 |
-| Reviewer2 | 0.468 | 0.558 | 0.436 |
-| SEA | 0.459 | 0.549 | 0.435 |
-| TreeReview | 0.409 | 0.520 | 0.394 |
+### Key Takeaways by Dimension
 
-**Key Insight:** Human reviewers achieve high DoA through both strong premise ratio AND cognitive alignment that prioritizes methodology. The best LLMs (DeepReview, CycleReviewer) close the gap by generating highly robust premises, using structural completeness to compensate for slight gaps in empirical grounding.
+**Depth of Analysis:** Humans lead (DoA = 0.494) through premise density and methodology focus. DeepReview and CycleReviewer nearly match by generating many grounded premises, while TreeReview falls into surface-level reviewing patterns.
 
-<TwoColumns>
-  <div slot="left">
-    <Figure>
-      <Picture slot="figure" src="../../images/doa_heatmap_all.pdf" alt="DoA heatmap showing aspect-level reviewer behavior" />
-      <Fragment slot="caption">The main-paper DoA heatmap shows that the strongest LLM pipelines focus on substantive methodology and experiment critiques.</Fragment>
-    </Figure>
-  </div>
-  <div slot="right">
-    <Figure>
-      <Picture slot="figure" src="../../images/grounding_dist_bar.pdf" alt="Grounding level distributions across reviewer systems" />
-      <Fragment slot="caption">Grounding distributions explain whether evidence is vague, internally grounded in the manuscript, or externally grounded in prior literature.</Fragment>
-    </Figure>
-  </div>
-</TwoColumns>
+**Novelty Assessment:** All systems operate within 0.750–0.830 for evidence-grounding. SEA achieves the highest score (0.833), showing that retrieval-oriented pipelines help verify literature claims.
 
-### Finding 2: Novelty Assessment — LLMs Can Outperform Humans
+**Flaw Detection:** Reviewer2 is an exhaustive flaw scanner with Critical Recall of 0.591 (vs. human 0.343). LLMs can surface more candidate issues, but human oversight is needed to manage precision.
 
-All automated systems operate within the 0.750–0.830 range for evidence-grounding scores. Notably, **SEA achieves the highest score (0.833)**, slightly above the human baseline (0.787).
+**Constructiveness:** DeepReview significantly outperforms others (MCS = 0.634 vs. human 0.566). Human reviewers are specific but often stop at diagnosis; DeepReview closes the loop from "this is a problem" to "here is how to fix it."
 
-<TwoColumns>
-  <div slot="left">
-    <Figure>
-      <div slot="figure" class="novelty-linked-panel">
-        <Picture src="../../images/novelty_detailed_analysis_a.pdf" alt="Novelty stance distribution across reviewer systems" />
-      </div>
-      <Fragment slot="caption"><strong>Novelty stance distribution from the main paper.</strong> SEA endorses novelty far more often than humans, while DeepReview adopts the most skeptical stance.</Fragment>
-    </Figure>
-  </div>
-  <div slot="right">
-    <Figure>
-      <div slot="figure" class="novelty-linked-panel">
-        <Picture src="../../images/novelty_detailed_analysis_b.pdf" alt="Evidence support by novelty stance" />
-      </div>
-      <Fragment slot="caption"><strong>Evidence support by novelty label from the main paper.</strong> Negative novelty judgments are backed by stronger retrieved evidence than positive novelty endorsements.</Fragment>
-    </Figure>
-  </div>
-</TwoColumns>
+### Core Insight
 
-**Key Insight:** While automated reviewers back their novelty claims with solid evidence, this reflects a tendency to select easily verifiable claims rather than true human-level judgment. Additionally, both models and humans follow a natural reviewing pattern: **negative novelty judgments are backed by much stronger evidence than positive ones**—challenging novelty requires citations, while agreeing with authors does not.
+Human and LLM reviewers are complementary. Humans excel at balanced judgment and calibration, while LLMs excel at exhaustive scanning and systematic verification. Their union covers more diagnostic ground than either group alone.
 
-<Figure>
-  <Picture slot="figure" src={noveltyEvidence} alt="Evidence support rates by novelty label" />
-  <Fragment slot="caption"><strong>Supporting novelty metric.</strong> Evidence-support rates make the same pattern explicit: claims labeled "Not Novel" or "Somewhat Novel" attract stronger literature grounding than "Novel" claims.</Fragment>
-</Figure>
-
-### Finding 3: Flaw Detection — LLMs as High-Sensitivity Scanners
-
-**Reviewer2** stands out as an exhaustive flaw scanner, achieving the highest recall for both Critical (**0.591**) and Minor (**0.459**) issues—substantially exceeding the human baseline (0.343 and 0.281).
-
-
-  <Figure>
-    <Picture slot="figure" src="../../images/flaw_diverging.pdf" alt="Flaw detection comparison showing valid vs hallucinated flaws across systems" maxHeight="max-h-[50vh]" />
-    <Fragment slot="caption"><strong>Flaw detection analysis.</strong> Reviewer2 recovers exceptionally high volume of valid flaws at low hallucination rate (~3.3%). CycleReviewer's high hallucination rate (~18.5%) signals a precision deficit. Critically, hallucinations are strictly confined to minor issues—no system fabricates fatal methodological breakdowns.</Fragment>
-  </Figure>
-
-
-| System | Critical Recall | Minor Recall | nCPS |
-|--------|:---------------:|:------------:|:----:|
-| **Reviewer2** | **0.591** | **0.459** | 0.97 |
-| Human | 0.343 | 0.281 | 0.97 |
-| DeepReview | 0.398 | 0.312 | 0.97 |
-| CycleReviewer | 0.412 | 0.338 | 0.97 |
-| SEA | 0.387 | 0.301 | 0.97 |
-| TreeReview | 0.356 | 0.289 | 0.97 |
-
-**Key Insight:** LLMs act as high-sensitivity scanners, catching more critical flaws than time-constrained human reviewers. However, structuring reviews by severity (critical issues first) is universal—all systems and humans achieve ~0.97 nCPS.
-
-### Finding 4: Constructiveness — DeepReview Leads, But Humans Struggle with Solutions
-
-**DeepReview** significantly outperforms both human reviewers and other LLMs, achieving the highest constructiveness score of **0.634** vs. human baseline of 0.566.
-
-
-  <Figure>
-    <Picture slot="figure" src="../../images/constructiveness_parallel.pdf" alt="Constructiveness dimension breakdown across systems" maxHeight="max-h-[50vh]" />
-    <Fragment slot="caption"><strong>Constructiveness dimension breakdown.</strong> DeepReview leads on Actionability (D1) and Solution provision (D4). Human reviewers show a surprising shortfall in Solution (D4 = 0.470)—they identify problems but rarely propose fixes.</Fragment>
-  </Figure>
-
-
-| System | MCS | Actionability | Specificity | Justification | Solution | Tone |
-|--------|:---:|:-------------:|:-----------:|:-------------:|:--------:|:----:|
-| **DeepReview** | **0.634** | 1.414 | 1.698 | 0.864 | **0.784** | **1.726** |
-| Human | 0.566 | 1.128 | **1.725** | 0.792 | 0.470 | 1.648 |
-| CycleReviewer | 0.553 | 1.156 | 1.897 | 0.721 | 0.439 | 1.587 |
-| Reviewer2 | 0.521 | 1.098 | 1.542 | **0.939** | 0.266 | 1.592 |
-| SEA | 0.508 | 1.034 | 1.612 | 0.756 | 0.398 | 1.602 |
-| TreeReview | 0.489 | 0.987 | 1.534 | 0.712 | 0.378 | 1.567 |
-
-**Key Insight:** Helpful feedback requires specific system design. DeepReview goes beyond flagging errors to offer actionable, professional solutions—a level of constructive feedback that standard models and even human reviewers rarely provide.
-
-## Key Takeaways
+## 4. Conclusion
 
 <HighlightedSection>
 
 ### No Single System Wins
 
-Each LLM reviewer excels in a distinct niche but exhibits characteristic blind spots:
-
 | System | Strength | Weakness |
 |--------|----------|----------|
-| **Reviewer2** | Exhaustive flaw scanning (highest recall) | Low solution provision |
+| **Reviewer2** | Exhaustive flaw scanning (highest recall) | Limited solution provision |
 | **DeepReview** | Constructive feedback (actionable, professional) | Slightly lower flaw recall |
 | **SEA** | Novelty verification (highest literature support) | Lower constructiveness |
 | **CycleReviewer** | Strong analytical depth | High hallucination rate |
-| **TreeReview** | — | Surface-level trap (24% effort on formatting) |
+| **TreeReview** | Limited comparative advantage | Surface-level trap (24% effort on formatting) |
 
 </HighlightedSection>
 
-### Deployment Recommendations
+Since no single system dominates all four dimensions, the evidence points toward **targeted ensemble deployment**:
 
-Since no single system dominates all four dimensions, we recommend **targeted ensemble deployment**:
+- **Use Reviewer2** for exhaustive flaw scanning, as it catches critical issues that human reviewers may miss.
+- **Use DeepReview** for constructive feedback drafting, as it provides actionable and solution-oriented suggestions.
+- **Use SEA** for novelty-grounding checks, as it verifies claims against prior literature effectively.
+- **Use human reviewers** for final judgment, as they provide the most balanced and cognitively aligned assessment.
 
-- **Use Reviewer2** for exhaustive flaw scanning — it catches critical issues human reviewers miss
-- **Use DeepReview** for constructive feedback drafting — it provides actionable, solution-oriented suggestions
-- **Use SEA** for novelty-grounding checks — it verifies claims against prior literature effectively
-- **Use human reviewers** for final judgment — they provide the most balanced, cognitively aligned assessment
+These systems are most effective as **specialist assistants within a human-led pipeline** rather than autonomous reviewers.
 
-These systems are most effective as **specialist co-pilots within a human-assisted pipeline** rather than autonomous reviewers.
+## Related Systems
+
+PRISM belongs to public benchmarks and reviewer-assistance projects that emphasize inspectable evaluation. Related systems include [Reviewer2](https://arxiv.org/abs/2402.10886), [SEA](https://aclanthology.org/2024.findings-emnlp.595/), [DeepReview](https://arxiv.org/abs/2503.08569), [TreeReview](https://aclanthology.org/2025.emnlp-main.790/), and [CycleReviewer](https://arxiv.org/abs/2411.00816).
 
 ## BibTeX
 
 ```bibtex
 @article{prism2026,
   title={PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers},
-  author={Loc, Ngoc Phan Phuoc and Toan La Huynh Viet and Tran Khanh Thanh and Nguyen, Duy A and Pham, Tuan Anh Nguyen and Nguyen, Thanh and Chawla, Nitesh V. and Buntine, Wray and Wong, Kok-Seng and Doan, Khoa D. and Nguyen, Binh T.},
+  author={Ngoc Phan, Toan Huynh, Tran Khanh Thanh, Duy A. Nguyen, Nguyen Pham Tuan Anh, Thanh Nguyen, Nitesh V. Chawla, Wray Buntine, Kok-Seng Wong, Khoa D Doan, Binh Nguyen},
   journal={arXiv preprint},
   year={2026}
 }
