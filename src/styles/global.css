@@ -300,11 +300,12 @@ img {
 
 @media (max-width: 47.999rem) {
   .full-bleed {
-    width: 100vw;
-    margin-inline: calc((100vw - var(--actual-text-width)) / -2);
+    width: 100%;
+    margin-inline: auto;
   }
 
   .full-bleed > div {
+    width: 100%;
     max-width: var(--actual-text-width);
     padding-inline: 0;
   }
@@ -332,6 +333,30 @@ img {
 
   [data-tabs-content] {
     font-size: 0.85rem;
+  }
+}
+
+/* Mobile cards */
+@media (max-width: 47.999rem) {
+  .carousel-wrapper,
+  .carousel-viewport,
+  .slide-viewport,
+  .slide {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .slide > div[class*="rounded-3xl"][class*="border"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow-x: auto;
+  }
+
+  .slide > div[class*="rounded-3xl"][class*="border"] h3 {
+    font-size: 1rem;
+    line-height: 1.35;
   }
 }
 
