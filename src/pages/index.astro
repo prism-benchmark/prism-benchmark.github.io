@@ -6,6 +6,7 @@ import Authors from "../components/Authors.astro";
 import type { Author, Institution, Note, Link } from "../types/types";
 
 import Table from "../components/Table.astro";
+import prismLogo from "../assets/prism-logo.png";
 
 import "../styles/global.css";
 import "katex/dist/katex-swap.css";
@@ -40,6 +41,8 @@ const {
 
 const baseUrl = import.meta.env.BASE_URL;
 const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+const [heroBrand, ...heroTitleParts] = title.split(":");
+const heroTitle = heroTitleParts.join(":").trim();
 ---
 
 <!doctype html>
@@ -221,18 +224,28 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
     </style>
   </head>
   <body
-    class="prose prose-zinc dark:prose-invert prose-a:text-blue-500 prose-a:dark:text-blue-300 prose-a:no-underline prose-a:hover:underline prose-a:font-normal prose-code:bg-zinc-200 prose-code:dark:bg-zinc-800 prose-code:text-zinc-800 prose-code:dark:text-zinc-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:before:content-none prose-code:after:content-none max-w-none pt-12 pb-4 font-(family-name:--font-noto-sans)"
+    class="prose prose-zinc dark:prose-invert prose-a:text-blue-500 prose-a:dark:text-blue-300 prose-a:no-underline prose-a:hover:underline prose-a:font-normal prose-code:bg-zinc-200 prose-code:dark:bg-zinc-800 prose-code:text-zinc-800 prose-code:dark:text-zinc-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:before:content-none prose-code:after:content-none max-w-none pt-6 pb-4 font-(family-name:--font-noto-sans)"
   >
-    <header class="mx-auto mb-8 w-[75%] max-w-none px-6 text-center">
-      <h1 class="text-5xl font-medium">{title}</h1>
-      <div class="flex flex-col items-center gap-6">
-        <Authors
-          authors={authors}
-          institutions={institutions}
-          conference={conference}
-          notes={notes}
-        />
-        {links && <Links links={links} />}
+    <header
+      class="prism-hero mx-auto mb-8 w-[75%] max-w-none px-6 text-center"
+    >
+      <div class="prism-hero-shell">
+        <div class="prism-hero-lockup" aria-label="PRISM">
+          <img class="prism-hero-logo" src={prismLogo.src} alt="PRISM logo" />
+          <span class="prism-hero-brand">{heroBrand}</span>
+        </div>
+
+        {heroTitle && <h1 class="prism-hero-title">{heroTitle}</h1>}
+
+        <div class="flex flex-col items-center gap-6">
+          <Authors
+            authors={authors}
+            institutions={institutions}
+            conference={conference}
+            notes={notes}
+          />
+          {links && <Links links={links} />}
+        </div>
       </div>
     </header>
 

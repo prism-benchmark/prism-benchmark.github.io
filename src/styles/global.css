@@ -45,6 +45,112 @@ body {
   margin: 0;
 }
 
+/* ---- PRISM hero ---- */
+.prism-hero {
+  --prism-accent: #2563eb;
+  --prism-accent-dark: #1d4ed8;
+  --prism-ink: #111827;
+  --prism-muted: #4b5563;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  padding-top: 0;
+}
+
+.prism-hero-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 78rem;
+  margin-inline: auto;
+}
+
+.prism-hero-lockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  margin-bottom: 0.45rem;
+}
+
+.prism-hero-logo {
+  display: block;
+  width: auto;
+  height: clamp(3.2rem, 12vw, 6.4rem);
+}
+
+.prism-hero-brand {
+  color: var(--prism-accent);
+  font-size: clamp(2.7rem, 10vw, 5.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.prism-hero-title {
+  max-width: 70rem;
+  margin: 0 auto 1.25rem;
+  color: var(--prism-ink);
+  font-size: clamp(1.85rem, 6.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 1.15;
+}
+
+.prism-hero .paper-authors {
+  margin-top: 0;
+}
+
+.prism-hero .paper-author-name a {
+  color: var(--prism-accent);
+}
+
+.prism-hero .paper-author-name a:hover {
+  color: var(--prism-accent-dark);
+}
+
+.prism-hero .not-prose a {
+  background: #363636;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.prism-hero .not-prose a:hover {
+  background: #111;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 47.999rem) {
+  .prism-hero {
+    width: var(--actual-text-width) !important;
+    padding-inline: 0 !important;
+  }
+
+  .prism-hero-lockup {
+    gap: 0.55rem;
+  }
+
+  .prism-hero-title {
+    letter-spacing: -0.025em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="device"] .prism-hero {
+    --prism-accent: #60a5fa;
+    --prism-accent-dark: #93c5fd;
+    --prism-ink: #f8fafc;
+    --prism-muted: #cbd5e1;
+  }
+}
+
+html[data-theme="dark"] .prism-hero {
+  --prism-accent: #60a5fa;
+  --prism-accent-dark: #93c5fd;
+  --prism-ink: #f8fafc;
+  --prism-muted: #cbd5e1;
+}
+
 main {
   width: var(--actual-text-width);
   max-width: 90%;
@@ -626,5 +732,48 @@ img {
   }
   button {
     @apply cursor-pointer;
+  }
+}
+
+/* Simple method slide: soft color only, no heavy card treatment. */
+.method-slide {
+  --method-bg: var(--color-zinc-50);
+  --method-border: var(--color-zinc-200);
+  padding: 1.25rem;
+  border: 1px solid var(--method-border);
+  border-radius: 0.75rem;
+  background: var(--method-bg);
+}
+
+.method-slide-depth {
+  --method-bg: #eff6ff;
+  --method-border: #bfdbfe;
+}
+
+.method-slide-novelty {
+  --method-bg: #ecfdf5;
+  --method-border: #bbf7d0;
+}
+
+.method-slide-flaws {
+  --method-bg: #fff1f2;
+  --method-border: #fecdd3;
+}
+
+.method-slide-constructiveness {
+  --method-bg: #f5f3ff;
+  --method-border: #ddd6fe;
+}
+
+html[data-theme="dark"] .method-slide,
+html.dark .method-slide {
+  background: color-mix(in srgb, var(--method-bg) 18%, var(--color-zinc-950));
+  border-color: color-mix(in srgb, var(--method-border) 35%, var(--color-zinc-800));
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="device"] .method-slide {
+    background: color-mix(in srgb, var(--method-bg) 18%, var(--color-zinc-950));
+    border-color: color-mix(in srgb, var(--method-border) 35%, var(--color-zinc-800));
   }
 }
