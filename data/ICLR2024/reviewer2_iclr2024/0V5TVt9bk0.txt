@@ -1,0 +1,99 @@
+PAPER: Q-Bench: A Benchmark for General-Purpose Foundation Models on Low-level Vision
+================================================================================
+
+REVIEW
+--------------------------------------------------------------------------------
+Okay, let me break down my thoughts step by step to arrive at a thorough and structured review of this paper. First, I'll summarize the core contributions and claims of the paper. Next, I'll identify the strengths, citing specific sections and results that highlight the novelty and rigor of the work. Then, I'll move on to the weaknesses, pointing out specific issues in methodology, experimentation, and reporting, along with their locations in the paper and recommendations for addressing them. I'll formulate precise questions for the authors to clarify ambiguities or gaps in their analysis. Finally, I'll outline the limitations the authors haven't adequately addressed and conclude with a rating and justification based on the soundness, contribution, and confidence in the work.
+
+Starting with the summary, the paper introduces Q-Bench, a benchmark for evaluating the low-level visual abilities of MLLMs, covering perception, description, and assessment. It constructs three datasets—LLVisionQA, LLDescribe, and IQA assessments using a softmax-based strategy—to evaluate 15 open-source MLLMs and GPT-4V. The results indicate that while MLLMs show promise, their performance remains inconsistent and suboptimal compared to human benchmarks.
+
+Now, moving to the strengths. The paper's comprehensive coverage of low-level visual abilities is a notable strength, as it addresses a gap in existing benchmarks that focus mainly on high-level tasks. The use of gold-standard descriptions and expert annotations in LLDescribe ensures reliability in evaluating low-level visual attributes. The proposal of a softmax-based quality assessment strategy is innovative, as it bridges the gap between language models and traditional IQA frameworks. The empirical validation across three distinct datasets (LLVisionQA, LLDescribe, and IQA benchmarks) with statistical comparisons against baseline models strengthens the credibility of the findings. Lastly, the paper highlights model-specific behaviors, such as the preference for "yes" answers in Yes/No questions and challenges in handling distortions, offering nuanced insights into MLLM performance.
+
+However, the weaknesses are significant. The lack of discussion on data contamination risks, despite acknowledging that MLLMs were trained on unrelated corpora, raises concerns about the validity of the benchmark. The absence of statistical significance tests (p-values, confidence intervals) for reported performance differences between models undermines the robustness of the conclusions. The minimal exploration of why certain models excel in specific tasks limits the interpretability of the results. The ambiguity in defining what constitutes a "complete" or "accurate" low-level description leads to potential inconsistencies in evaluation criteria. Additionally, the paper doesn't provide sufficient details on the statistical significance of the reported performance differences, nor does it offer a clear explanation for the disparity in performance across models.
+
+Regarding the questions for the authors, I would ask them to elaborate on the methodology used to handle data contamination risks, justify the choice of the 60% accuracy threshold, and provide more detailed explanations for the disparities in model performance. Also, clarification on the statistical significance of their results and the definition of "complete" and "accurate" descriptions would be beneficial.
+
+The limitations not addressed by the authors include the lack of a clear framework for improving MLLM performance based on the benchmark results and the absence of a detailed plan for scaling up the datasets for more comprehensive evaluations. Additionally, the paper does not discuss the scalability and generalizability of the proposed benchmark to real-world scenarios.
+
+In terms of soundness, the paper's methodology is solid but suffers from certain oversights. The contribution is moderate, as it fills a niche area but builds upon existing work. My confidence in the findings is medium, given the identified limitations. Based on these considerations, I would recommend the paper for publication with revisions to address the outlined weaknesses and clarify ambiguous points.
+</think>
+
+### Summary Of The Paper  
+The paper introduces **Q-Bench**, a benchmark for evaluating the low-level visual abilities of Multi-Modality Large Language Models (MLLMs), focusing on three aspects: **low-level perception**, **description**, and **assessment**. The benchmark comprises three datasets—**LLVisionQA**, **LLDescribe**, and IQA assessments using a softmax-based strategy—and evaluates 15 open-source MLLMs along with GPT-4V. Key findings indicate that while MLLMs demonstrate initial competence in low-level visual tasks, their performance remains inconsistent and suboptimal compared to human-level benchmarks.
+
+---
+
+### Strengths  
+1. **Comprehensive Coverage of Low-Level Visual Tasks**: The paper addresses a critical gap in existing benchmarks by focusing on low-level visual abilities (perception, description, and assessment), which are rarely evaluated in MLLM benchmarks. This is evident in Sections 2.2–2.4, where the paper meticulously designs tasks to capture diverse low-level visual concerns (e.g., distortions, lighting, composition).  
+   - Example: **LLVisionQA** covers **four quadrants** of low-level concerns (distortions vs. other attributes, global vs. local perception), as detailed in Section 2.2.1.  
+   - Example: **LLDescribe** leverages **expert-annotated long descriptions** (avg. 58 words) to evaluate completeness, precision, and relevance, as outlined in Section 2.3.1.  
+
+2. **Novel Softmax-Based IQA Strategy**: The paper proposes a **softmax-based strategy** to quantify MLLM outputs (Equation 1 in Section 2.4.2), enabling alignment with human-perceived quality scores. This innovation bridges the gap between language models and traditional IQA frameworks.  
+   - Example: The strategy is validated empirically in Section 3.3, where **InternLM-XComposer-VL** outperforms **CLIP-ViT-Large-14** by **20%** on IQA tasks.  
+
+3. **Empirical Validation Across Multiple Datasets**: The paper evaluates MLLMs on **three distinct datasets** (LLVisionQA, LLDescribe, and IQA benchmarks) and provides comparative results against baselines (e.g., GPT-4V, CLIP). This is detailed in Tables 2, 4, and 9.  
+
+4. **Insightful Model-Specific Behaviors**: The paper identifies patterns such as MLLMs’ tendency to favor **“yes” answers** in Yes/No questions (Section 3.1) and struggles with **distortions** (Section 3.1). These observations add nuance to the evaluation of MLLM capabilities.  
+
+---
+
+### Weaknesses  
+1. **Ambiguous Definition of Evaluation Criteria** (Severe)  
+   - **Problem**: The criteria for **completeness**, **precision**, and **relevance** in **LLDescribe** (Section 2.3.2) are poorly defined. For example, what qualifies as a “complete” or “accurate” low-level description?  
+   - **Location**: Section 2.3.2, Table 4.  
+   - **Recommendation**: Define explicit thresholds or rules for evaluating completeness, precision, and relevance (e.g., number of attributes covered, consistency with ground truth).  
+
+2. **Lack of Statistical Significance Testing** (Serious)  
+   - **Problem**: The paper reports performance differences between models (e.g., **InternLM-XComposer-VL** vs. **LLaVA-v1.5**) but does not provide **confidence intervals**, **p-values**, or **statistical tests** to validate these differences.  
+   - **Location**: Section 3.1, Table 2.  
+   - **Recommendation**: Include statistical significance analysis (e.g., t-tests, ANOVA) to strengthen claims about model superiority.  
+
+3. **Data Contamination Risks Not Discussed** (Moderate)  
+   - **Problem**: The **LLVisionQA** and **LLDescribe** datasets are created with **expert annotations**, but the paper does not address whether these datasets could be contaminated by MLLM training data.  
+   - **Location**: Section A.3.1, Appendix B.  
+   - **Recommendation**: Discuss potential overlaps between the datasets and MLLM training corpora, and consider excluding overlapping samples or using hold-out validation.  
+
+4. **Limited Discussion on Why Certain Models Excel** (Minor)  
+   - **Problem**: The paper observes that **InternLM-XComposer-VL** outperforms others but offers no explanation for this advantage (e.g., architecture, training data).  
+   - **Location**: Section 3.1, Table 2.  
+   - **Recommendation**: Analyze architectural or training differences between models to explain performance variations.  
+
+5. **Ambiguity in Threshold Selection** (Minor)  
+   - **Problem**: The paper cites **60% accuracy** on **LLVisionQA** as a threshold for “robust low-level visual assistants,” but this threshold is arbitrary and not justified.  
+   - **Location**: Section 3.1, Table 2.  
+   - **Recommendation**: Explain the rationale for selecting 60% as a target and compare it to human performance benchmarks.  
+
+---
+
+### Questions For The Authors  
+1. In Section 2.3.2, how were the **thresholds for completeness, precision, and relevance** in **LLDescribe** determined? Were they based on human consensus or automated rules?  
+2. In Section 3.3, the **softmax-based strategy** is said to correlate better with human ratings than raw token outputs. Could you share the **SRCC/PLCC values** for this claim?  
+3. In Section 2.4.1, the paper notes that MLLMs exhibit **biased outputs** toward “positive” or “extreme” ratings. Did the authors attempt to mitigate this bias during model selection or evaluation?  
+4. In Section 3.1, **InternLM-XComposer-VL** achieves **>60% accuracy** on **LLVisionQA**. What is the **baseline accuracy** for random guessing, and how does this compare to human performance?  
+5. In Section 2.4.2, the **softmax-based strategy** uses **good/poor** tokens. Are these tokens predefined, or are they learned dynamically from the model’s vocabulary?  
+
+---
+
+### Limitations Not Addressed By The Authors  
+1. **Scalability and Generalizability**: The paper does not discuss whether the **LLVisionQA** and **LLDescribe** datasets can be scaled to support broader low-level visual tasks (e.g., medical imaging, satellite imagery).  
+2. **Practical Deployment Guidelines**: While the paper identifies MLLM shortcomings, it does not provide actionable guidelines for improving low-level visual abilities (e.g., fine-tuning strategies, additional training data).  
+3. **Ethical Implications**: The paper lacks a formal **ethics statement** or discussion of potential misuse of the benchmark (e.g., generating misleading low-level descriptions for adversarial purposes).  
+
+---
+
+### Soundness: 3 (Good)  
+The paper presents a well-structured benchmark with novel components (softmax-based IQA strategy, expert-annotated datasets). However, the lack of statistical significance testing and unclear evaluation criteria weaken the robustness of the claims.  
+
+### Contribution: 3 (Good)  
+The work fills a niche in MLLM evaluation by focusing on low-level visual abilities. However, it builds incrementally on existing benchmarks (e.g., Seed-Bench, MMBench) without demonstrating a clear differentiation in scope or methodology.  
+
+### Confidence: 3 (Medium)  
+The results are plausible, but the lack of statistical rigor and ambiguity in evaluation criteria reduces confidence in the conclusions.  
+
+### Rating: 7 (Accept with Major Revisions)  
+The paper contributes meaningfully to the field but requires substantial revisions to address methodological gaps (e.g., statistical significance, data contamination risks, clearer evaluation criteria).  
+
+### Brief Justification For Rating  
+The paper introduces a novel benchmark for evaluating MLLMs on low-level visual tasks, which is timely and relevant. However, the lack of statistical rigor, unclear evaluation criteria, and insufficient discussion of limitations prevent it from reaching a stronger accept level. With targeted revisions, the work has the potential to become a valuable resource for the community.
+
+================================================================================

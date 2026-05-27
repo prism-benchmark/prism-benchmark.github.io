@@ -1,0 +1,39 @@
+**Summary:**
+The paper "Is Motion properly used in video referring segmentation techniques?" critically evaluates the use of motion in video referring segmentation, a task that involves identifying specific objects or actions in videos through textual prompts. The authors highlight the shortcomings of current evaluation benchmarks and methods, particularly focusing on multi-modal large language models (MLLMs), in capturing spatiotemporal dynamics, especially motion. They introduce a motion-centric probing technique to assess these models' ability to utilize motion information effectively and propose a new evaluation benchmark for this purpose.
+
+**Strengths:**
+- The paper identifies and discusses a significant gap in current evaluation benchmarks and methods for video referring segmentation, specifically regarding motion understanding.
+- It introduces a novel motion-centric probing technique to study the capabilities of video MLLMs in utilizing motion information within language-guided video segmentation tasks.
+- The authors propose a quantitative evaluation method to analyze referring expressions that can drive better understanding of MLLMs' performance in dense spatiotemporal tasks.
+
+**Weaknesses:**
+- The paper relies heavily on self-contained experiments and does not compare its methods against a wider range of state-of-the-art techniques, limiting its impact on the broader field.
+- The motivation for the proposed method is somewhat indirect, focusing on a specific aspect of motion in video referring segmentation, which might not be as compelling or universally applicable to all researchers and practitioners in the field.
+
+**Questions:**
+- Could the proposed motion-centric probing technique be applied to other tasks beyond video referring segmentation to evaluate the use of motion in MLLMs?
+- What are the limitations of the motion-centric evaluation in terms of its applicability across different types of motion and video content?
+
+**Soundness:**
+Soundness result: 3 good
+
+The paper presents a well-defined research question and methodology, although the experimental design could benefit from a more extensive comparison with existing state-of-the-art techniques. The analysis and conclusions are logically presented and supported by the data.
+
+**Presentation:**
+Presentation result: 3 good
+
+The paper is structured logically, with clear sections for motivation, methodology, results, and conclusions. However, the paper could be enhanced with more detailed explanations and justifications for the experimental setup, results, and implications.
+
+**Contribution:**
+Contribution result: 3 good
+
+The paper makes a valuable contribution to the field by highlighting the need for better evaluation benchmarks and probing techniques for understanding motion in video referring segmentation tasks. It introduces a novel motion-centric probing method and demonstrates the limitations of current approaches.
+
+**Rating:**
+Rating result: 5 marginally below the acceptance threshold
+
+The paper is well-researched and contributes to the understanding of motion in video referring segmentation. However, it could benefit from a broader comparison with existing techniques and further discussion of its limitations and potential applications. The paper's score is slightly below the acceptance threshold due to the lack of a more extensive comparative analysis.
+
+**Paper Decision:**
+- Decision: Accept
+- Reasons: The paper presents a valuable contribution to the field of video referring segmentation by critically evaluating the use of motion and proposing a novel motion-centric probing technique. It could be further enhanced with a broader comparison and more detailed discussion of its implications and applications.

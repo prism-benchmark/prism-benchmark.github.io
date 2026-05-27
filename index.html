@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HumanEgo: Zero-Shot Robot Learning from Minutes of Human Egocentric Videos</title>
+  <meta name="description" content="HumanEgo learns deployable robot manipulation policies from only minutes of human egocentric videos, without any robot data or internet-scale pretraining.">
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="HumanEgo: Zero-Shot Robot Learning from Minutes of Human Egocentric Videos">
+  <meta property="og:description" content="Zero-shot human-to-robot transfer from minutes of Aria egocentric demonstrations.">
+  <meta property="og:image" content="static/images/teaser.png">
+  <meta property="og:url" content="https://humanego-ai.github.io">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="static/images/favicon.png" type="image/png">
+
+  <!-- Bulma CSS + FontAwesome + Academicons (arxiv icon) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+
+  <style>
+    body, .title, .subtitle, .hero-body, button, input, select, textarea {
+      font-family: 'Inter', sans-serif;
+    }
+    html, body, .hero, .hero-body, .section, .footer {
+      background-color: #ffffff !important;
+    }
+    /* All bold text (<strong>, <b>) rendered in dark brand orange to match
+       the page's accent palette. Section titles and other headings keep
+       their own colors via their own !important rules. */
+    strong, b { color: #C45A0E; }
+    /* Inline ✦ star prefix used in section headings + TOC entries
+       (e.g. "✦ Insights"). Slightly smaller than text and given a hair of
+       space on the right so it reads as an emblem, not a bullet. */
+    .title-star {
+      display: inline-block;
+      color: #C45A0E;
+      font-size: 0.78em;
+      margin-right: 0.4em;
+      transform: translateY(-0.08em);
+    }
+    .toc-star {
+      display: inline-block;
+      color: #C45A0E;
+      font-size: 0.9em;
+      margin-right: 0.35em;
+    }
+
+    /* ---- Insights (project thesis: 3 manifesto-level takeaways) ---- */
+    .insights-list {
+      list-style: none !important;
+      counter-reset: insight;
+      margin: 1.8em 0 0 !important;
+      padding: 0 !important;
+    }
+    .insights-list > li {
+      counter-increment: insight;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(1rem, 2.5vw, 2rem);
+      padding: 1.5em 0;
+      border-top: 1px solid #F0DCC4;
+      margin-left: 0 !important;
+    }
+    .insights-list > li:last-child { border-bottom: 1px solid #F0DCC4; }
+    .insights-list > li::marker { content: ""; }
+    .insights-list > li::before {
+      content: counter(insight);
+      flex-shrink: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 800;
+      color: #C45A0E;
+      line-height: 0.95;
+      width: 1.4em;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+    .insight-text {
+      font-size: clamp(1.1rem, 3.5vw, 1.45em);
+      line-height: 1.6;
+      color: #1a1a1a;
+      margin: 0.15em 0 0 0 !important;
+      flex: 1;
+    }
+    @media (max-width: 600px) {
+      .insights-list > li { gap: 0.7rem; padding: 1.2em 0; }
+      .insights-list > li::before { width: 1.2em; }
+    }
+
+    /* "Findings" bullet list — appears under a Results caption to highlight
+       the 3 key takeaways. Each item is a custom-bulleted line with a bold
+       black heading + supporting prose. */
+    .findings-list {
+      list-style: none !important;     /* override Bulma .content ul disc */
+      margin: 1.6em 0 0 !important;
+      padding: 0 !important;
+    }
+    .findings-list > li { margin-left: 0 !important; }
+    .findings-list > li::marker { content: ""; }   /* nuke any disc marker */
+    .findings-list > li {
+      position: relative;
+      padding: 0.55em 0 0.55em 2.2em;
+      line-height: 1.65;
+      font-size: clamp(1.05rem, 3.4vw, 1.4em);
+      color: #444;
+    }
+    .findings-list > li + li { padding-top: 0.85em; }
+    .findings-list > li::before {
+      content: "\2726";   /* ✦ four-pointed black star */
+      position: absolute;
+      left: 0.2em;
+      top: 0.75em;
+      color: #C45A0E;
+      font-size: 1.25em;
+      line-height: 1;
+    }
+    .findings-list .find-head {
+      font-weight: 800;
+      color: #C45A0E;
+      margin-right: 0.35em;
+    }
+
+    /* Caption-prefix label (e.g. "System overview.", "Data Collection.") —
+       deep near-black so the structural label stands out from the inline
+       orange emphasis used in the same caption. */
+    strong.cap-label, b.cap-label { color: #1a1a1a; }
+    .publication-title { font-weight: 700; }
+    .hero { position: relative; overflow: hidden; }
+    /* The global "all white" rule above forces .hero-body to white, which
+       hid the ::before pseudo-element behind it. Override to transparent so
+       the dual-arms background can show through. */
+    .hero-body {
+      padding: 3rem 1.5rem 1.5rem 1.5rem;
+      position: relative;
+      z-index: 1;
+      background-color: transparent !important;
+    }
+    /* Subtle wire-frame hands behind the title / authors / buttons */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("static/images/dual_arms.png") no-repeat center center;
+      background-size: min(80%, 1024px) auto;
+      opacity: 0.48;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @media (max-width: 768px) {
+      .hero::before { background-size: 112% auto; opacity: 0.34; }
+    }
+    .content { max-width: 900px; margin: 0 auto; }
+    .content.wide { max-width: 1200px; }
+    /* Body paragraph (Abstract, FAQ answer, Acknowledge, etc.):
+       1.1rem on narrow phones → 1.55em on desktop. */
+    .content p { font-size: clamp(1.1rem, 3.8vw, 1.55em); line-height: 1.7; }
+    .link-buttons { margin-top: 1.8em; }
+    .link-buttons a {
+      display: inline-block;
+      padding: clamp(0.55em, 1.8vw, 0.75em) clamp(1.05em, 3.3vw, 1.5em);
+      margin: 0.28em;
+      background: #363636;
+      color: white !important;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: clamp(1.0rem, 2.9vw, 1.25em);
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .link-buttons a:hover { background: #111; }
+    .link-buttons a.disabled { background: #b5b5b5; cursor: not-allowed; }
+    pre.bibtex {
+      background: #f5f5f5;
+      padding: 1em 1.3em;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.88em;
+      line-height: 1.45;
+    }
+    .teaser-figure { max-width: 100%; height: auto; border-radius: 28px; }
+    .section { padding: 2.5rem 1.5rem; }
+    .section h2.title.is-3 { margin-bottom: 1rem; }
+
+    /* ---- Section titles ---- */
+    /* Top-level section title: left-aligned, dark orange, with a thin underline accent.
+       Font-size scales: 1.5rem on narrow phone → 2rem on desktop (matches Bulma .is-3). */
+    .section-title {
+      text-align: left !important;
+      color: #C45A0E !important;
+      font-size: clamp(2.0rem, 7vw, 2.8rem) !important;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.4rem !important;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid #F4D3BB;
+      position: relative;
+      line-height: 1.2;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 56px; height: 2px;
+      background: #C45A0E;
+    }
+    /* Results sub-section: "Results — Title" with orange prefix + black sub */
+    .results-title {
+      text-align: left !important;
+      font-size: clamp(2.0rem, 7vw, 2.8rem) !important;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.3rem !important;
+      line-height: 1.2;
+    }
+    .results-title .res-prefix { color: #C45A0E; }
+    .results-title .res-sep    { color: #C45A0E; margin: 0 0.35em; }
+    .results-title .res-sub    { color: #1a1a1a; font-weight: 700; }
+
+    /* ---- Floating left-side Table of Contents ---- */
+    .toc {
+      position: fixed;
+      top: 50%;
+      left: 1.25rem;
+      transform: translateY(-50%);
+      z-index: 50;
+      font-family: 'Inter', sans-serif;
+      max-height: 84vh;
+      overflow-y: auto;
+      padding: 0.3rem 0;
+      scrollbar-width: thin;
+    }
+    /* Brand header sitting above the TOC list — small "HumanEgo" wordmark
+       with the glasses logo, "Ego" tinted brand orange to mirror the hero. */
+    .toc-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.35em;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+      color: #1a1a1a;
+      text-decoration: none;
+      padding: 0 0 0.85rem 0.45rem;
+      margin-bottom: 0.65rem;
+      border-bottom: 1px solid #ececec;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+    .toc-brand:hover { opacity: 0.78; transform: translateX(2px); }
+    .toc-brand-logo {
+      height: 1.3em;
+      width: auto;
+      flex-shrink: 0;
+    }
+    .toc::-webkit-scrollbar { width: 2px; }
+    .toc::-webkit-scrollbar-thumb { background: #ddd; border-radius: 1px; }
+    .toc-list {
+      list-style: none;
+      padding: 0 0 0 1.0rem;
+      margin: 0;
+      border-left: 1.5px solid #e8e8e8;
+      position: relative;
+    }
+    .toc-item { position: relative; }
+    .toc-link {
+      display: block;
+      padding: 0.42em 0.2em 0.42em 0.4em;
+      color: #888;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: color 0.18s ease, padding-left 0.18s ease;
+      line-height: 1.3;
+      white-space: nowrap;
+      position: relative;
+    }
+    .toc-link:hover { color: #C45A0E; }
+    /* Active marker — a small dot that "snaps" to the active item */
+    .toc-link::before {
+      content: '';
+      position: absolute;
+      left: -1.05rem;    /* sits on the vertical line */
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: #C45A0E;
+      transform: translate(-50%, -50%);
+      transition: width 0.18s ease, height 0.18s ease, box-shadow 0.18s ease;
+    }
+    .toc-item.active > .toc-link {
+      color: #C45A0E;
+      font-weight: 700;
+      padding-left: 0.8em;
+    }
+    .toc-item.active > .toc-link::before {
+      width: 9px; height: 9px;
+      box-shadow: 0 0 0 3px rgba(196, 90, 14, 0.15);
+    }
+    /* Sub-items (Results children) */
+    .toc-sub {
+      list-style: none;
+      padding: 0 0 0 0.9em;
+      margin: 0;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.28s ease, opacity 0.2s ease;
+    }
+    .toc-item.has-sub.active > .toc-sub,
+    .toc-item.has-sub.expanded > .toc-sub {
+      max-height: 420px;
+      opacity: 1;
+    }
+    .toc-sub .toc-link { font-size: 0.88em; padding: 0.32em 0.2em 0.32em 0.4em; }
+    .toc-sub .toc-item.active > .toc-link { color: #C45A0E; font-weight: 700; }
+    .toc-sub .toc-item.active > .toc-link::before { width: 7px; height: 7px; }
+
+    /* Hide TOC on narrow viewports — keep page usable on phones/tablets. */
+    @media (max-width: 1180px) {
+      .toc { display: none; }
+    }
+    /* On mid-width laptops the floating TOC (≈220px wide) would overlap
+       the centered content. Reserve a 240px left gutter so content gets
+       pushed right to clear it. Wider monitors (≥1701px) have enough
+       natural margin to fit both, so no offset there. */
+    @media (min-width: 1181px) and (max-width: 1700px) {
+      body { padding-left: 240px; }
+    }
+
+    /* Smooth scroll on anchor clicks */
+    html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+
+    /* ---- Pull-quote above Overview ---- */
+    .hero-quote-section {
+      padding: 3rem 1.5rem 0.5rem 1.5rem;
+    }
+    .hero-quote {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 3rem 4.2rem 2.4rem 4.2rem;
+      text-align: center;
+    }
+    .hero-quote::before,
+    .hero-quote::after {
+      position: absolute;
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: 13rem;
+      line-height: 1;
+      color: #C45A0E;
+      opacity: 0.38;
+      font-weight: 700;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-quote::before {
+      content: "\201C";
+      left: -2.6rem;
+      top: -1.0rem;
+    }
+    .hero-quote::after {
+      content: "\201D";
+      right: -2.6rem;
+      bottom: -3.9rem;
+    }
+    .hero-quote-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.3rem, 4vw, 1.75em);
+      line-height: 1.55;
+      font-style: italic;
+      font-weight: 400;
+      color: #2a2a2a;
+      margin: 0;
+    }
+    .hero-quote-cite {
+      display: block;
+      margin-top: 1.4em;
+      font-size: 1.18em;
+      font-style: normal;
+      font-weight: 600;
+      color: #C45A0E;
+      letter-spacing: 0.01em;
+    }
+    .hero-quote-cite a {
+      color: #C45A0E;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .hero-quote-cite a:hover {
+      color: #9C3F00;
+      border-bottom-color: #9C3F00;
+    }
+    @media (max-width: 768px) {
+      .hero-quote { padding: 2.5rem 2.5rem 2.2rem 2.5rem; }
+      .hero-quote::before, .hero-quote::after { font-size: 8rem; }
+      .hero-quote::before { left: -1.4rem; top: -0.6rem; }
+      .hero-quote::after  { right: -1.4rem; bottom: -2.6rem; }
+      .hero-quote-cite { font-size: 0.92em; }
+    }
+
+    /* Acknowledgement links — orange to match author + team styling */
+    .ack-link {
+      color: #C45A0E;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+      font-weight: 600;
+    }
+    .ack-link:hover {
+      color: #9C3F00;
+      border-bottom-color: #9C3F00;
+    }
+
+    /* Per-task small title inside Real-World Video Clips (e.g. "Serve Bread").
+       Smaller and lighter than the section title — centered above each clip. */
+    .task-clip-title {
+      font-size: clamp(1.3rem, 3.5vw, 1.7rem) !important;
+      font-weight: 700 !important;
+      color: #C45A0E !important;
+      text-align: center !important;
+      letter-spacing: -0.005em;
+      margin: 0 0 0.7rem 0 !important;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Title above each clip in Real-World Video Clips — same dark-orange,
+       left-aligned look + same size as the top-level section titles
+       (Bulma .title.is-3 = 2rem). !important is needed because Bulma's
+       `.content h3` rule has higher specificity than `.clip-title`. */
+    .clip-title {
+      font-size: clamp(2.0rem, 7vw, 2.8rem) !important;
+      font-weight: 800 !important;
+      color: #C45A0E !important;
+      text-align: left !important;
+      letter-spacing: -0.01em;
+      margin: 1.4em 0 1.0em 0 !important;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid #F4D3BB;
+      position: relative;
+      line-height: 1.2;
+    }
+    .clip-title::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 56px; height: 2px;
+      background: #C45A0E;
+    }
+    /* Offset for anchor-jump so the clip title isn't hidden behind nothing
+       (and matches the spy threshold). */
+    .clip-title { scroll-margin-top: 1rem; }
+
+    /* Empty-section placeholder */
+    .section-placeholder {
+      color: #aaa;
+      font-style: italic;
+      padding: 1.2em 0;
+      text-align: center;
+      border: 1px dashed #e0e0e0;
+      border-radius: 8px;
+      background: #fafafa;
+      font-size: 1.0em;
+    }
+    .caption {
+      font-size: clamp(1.1rem, 3.8vw, 1.55em);
+      color: #555;
+      text-align: left;
+      margin-top: 1.0em;
+      line-height: 1.65;
+      padding-left: 1.2em;
+      border-left: 9px solid #C45A0E;
+    }
+    /* On tiny screens trim the orange bar + padding so caption text isn't crowded */
+    @media (max-width: 480px) {
+      .caption { padding-left: 0.8em; border-left-width: 6px; }
+    }
+    /* Side-by-side pair rows */
+    .pair-cols { align-items: stretch; }
+    .pair-cols .column { display: flex; flex-direction: column; }
+    .pair-cols .column h2.title { margin-bottom: 0.8rem; }
+    .pair-cols .column video,
+    .pair-cols .column img { width: 100%; border-radius: 28px; display: block; }
+    /* caption no longer flex-grows — it sits naturally below the video,
+       keeping the videos' tops aligned across columns. */
+    .pair-cols .column .pair-media-wrap {
+      display: flex; align-items: flex-start; justify-content: center;
+      /* No flex-grow: when captions differ in height, we still want both
+         videos pinned to the SAME top edge instead of vertically centering
+         in unequal column heights. */
+    }
+    /* 2/3 video + 1/3 image rows: shrink the portrait image so its rendered
+       height matches the height of the 16:9 video on the left. Inner widths
+       of the two columns sit in roughly a 2:1 ratio (modulo a fixed column
+       gap), so video_height ≈ image_col_width × 9/8. We approximate that as
+       aspect-ratio 5/6 on the image wrap — within a few pixels of the video
+       across the realistic container-width range (~900–1200 px). */
+    .pair-cols .column.is-one-third .pair-media-wrap {
+      aspect-ratio: 5 / 6;
+      align-items: center;
+      overflow: hidden;
+    }
+    .pair-cols .column.is-one-third .pair-media-wrap img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    /* On mobile Bulma stacks the columns; let the image return to its
+       natural size so it isn't squashed inside a small aspect box. */
+    @media (max-width: 768px) {
+      .pair-cols .column.is-one-third .pair-media-wrap { aspect-ratio: auto; }
+      .pair-cols .column.is-one-third .pair-media-wrap img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+      }
+    }
+    video.teaser-video { width: 100%; max-width: 900px; border-radius: 28px; }
+    .embed-video {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      margin: 0;
+      background: #000;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+    .embed-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .brand-ego { color: #D46714; }
+    .publication-title { line-height: 1.15; margin-bottom: 0.6em; }
+    /* Title line 1 (logo + "HumanEgo") scales with viewport so the word
+       never wraps onto multiple lines on narrow screens. clamp() floors at
+       ~2.4rem on phones and caps at the original 5rem (= 2em of .title.is-2)
+       on desktop, so the desktop look is unchanged. */
+    .title-line-1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 0.3em;
+      font-size: clamp(2.7rem, 10vw, 5.6rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2em;
+      white-space: nowrap;
+    }
+    .title-line-1 > span {
+      /* Bulma's .title sets word-break: break-word, which lets the browser
+         split "HumanEgo" mid-word on narrow widths. Force it to stay whole. */
+      white-space: nowrap;
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+    .title-logo {
+      height: 0.95em;
+      width: auto;
+      flex-shrink: 0;
+    }
+    .title-line-2,
+    .title-line-3 {
+      display: block;
+      font-weight: 700;
+      letter-spacing: -0.005em;
+      font-size: clamp(1.85rem, 6.5vw, 3.4rem);
+      /* Override Bulma's word-break: break-word so the subtitle wraps at
+         spaces, not at character level. */
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+    @media (max-width: 480px) {
+      /* Tighter hero padding so the title has more usable width */
+      .hero-body { padding: 2.2rem 0.75rem 1.2rem 0.75rem; }
+      /* Title subtitles: shrink so each fits on one line.
+         "Zero-Shot Robot Learning" + "from Minutes of Human Egocentric Videos"
+         become 2 lines total instead of 3. */
+      .title-line-2, .title-line-3 { font-size: 1.02rem; }
+      /* Author row on mobile: first author (lead) gets his own line,
+         followed by 3 + 3 below. Layout becomes 1 / 3 / 3. */
+      .author-list { font-size: 0.88rem; line-height: 1.7; }
+      .author-block { margin: 0.1em 0.25em; }
+      .author-block a { white-space: nowrap; }
+      .author-list .author-block:first-child {
+        display: block;
+        margin-bottom: 0.4em;
+      }
+      .umd-logo { height: 64px; }
+      /* Reduce horizontal padding on every section so charts/videos
+         can use more screen width on phones. */
+      .section { padding: 1.6rem 0.9rem; }
+      /* Slightly smaller team headshots */
+      .team-row { gap: 1.1rem 0.9rem; }
+      .team-member { width: 130px; }
+      .team-photo { width: 100px; height: 100px; }
+      .team-name { font-size: 0.85em; }
+    }
+    .author-list {
+      font-size: clamp(1.05rem, 3.5vw, 1.48rem);
+      font-weight: 500;
+      color: #333;
+      margin-top: 0.5em;
+      line-height: 1.7;
+    }
+    /* Four-feature highlight row directly under the publication title. */
+    .hero-features {
+      display: flex;
+      flex-wrap: nowrap;            /* force a single row */
+      justify-content: center;
+      align-items: center;
+      gap: 0.5em 1.6em;
+      margin: 1.5em auto 0.8em;
+      max-width: 1200px;
+      /* Font scales with viewport so all 4 fit on one line down to ~480px */
+      font-size: clamp(0.78rem, 2.05vw, 1.5em);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: #1a1a1a;
+      padding: 0 0.5rem;
+      white-space: nowrap;
+    }
+    .hero-feature {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45em;
+      white-space: nowrap;
+    }
+    .hero-feature::before {
+      content: "\2726"; /* ✦ four-pointed black star */
+      color: #C45A0E;
+      font-size: 1.1em;
+      line-height: 1;
+      transform: translateY(-0.02em);
+    }
+    /* Below ~480px the single-line font would be unreadably small, so
+       allow wrap to a 2x2 grid only on truly narrow phones. */
+    @media (max-width: 480px) {
+      .hero-features {
+        flex-wrap: wrap;
+        gap: 0.4em 1.0em;
+        font-size: 0.98rem;
+      }
+    }
+    @media (max-width: 380px) {
+      .hero-features { gap: 0.3em 0.7em; font-size: 0.92rem; }
+    }
+
+    .author-block { margin: 0 0.55em; display: inline-block; }
+    .author-block a {
+      color: #C45A0E;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .author-block a:hover { color: #9C3F00; border-bottom-color: #9C3F00; }
+    .affiliation { margin-top: 1.4em; }
+    .umd-logo { height: 88px; width: auto; }
+
+    /* ---- Team section ---- */
+    .team-row {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1.6rem 1.4rem; margin-top: 1.8rem;
+    }
+    .team-member {
+      display: flex; flex-direction: column; align-items: center;
+      text-decoration: none; width: 170px;
+    }
+    .team-member .team-name { white-space: nowrap; }
+    .team-photo {
+      width: 130px; height: 130px; border-radius: 50%;
+      object-fit: cover; background: #f5f5f5;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .team-member:hover .team-photo {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+    }
+    .team-name {
+      margin-top: 0.75em; font-size: 1.2em; font-weight: 600;
+      color: #C45A0E; text-align: center; line-height: 1.25;
+    }
+    .team-member:hover .team-name { color: #9C3F00; }
+    .team-aff {
+      margin-top: 0.4em; font-size: 0.78em; color: #888;
+      text-align: center; letter-spacing: 0.02em;
+    }
+
+    /* Egocentric data pyramid list inside a FAQ answer */
+    .faq-pyramid {
+      list-style: none !important;
+      margin: 0.6em 0 0.9em 0 !important;
+      padding: 0 !important;
+    }
+    .faq-pyramid > li {
+      position: relative;
+      margin: 0 0 0.7em 0 !important;
+      padding: 0.6em 0.9em 0.6em 1.1em;
+      font-size: 1.05em;
+      line-height: 1.55;
+      color: #444;
+      border-left: 4px solid #F4D3BB;
+      background: #FFFAF5;
+      border-radius: 0 8px 8px 0;
+    }
+    .faq-pyramid > li:nth-child(1) { border-left-color: #F4D3BB; }
+    .faq-pyramid > li:nth-child(2) { border-left-color: #E89A5D; }
+    .faq-pyramid > li:nth-child(3) { border-left-color: #C45A0E; }
+    .faq-pyramid > li::marker { content: ""; }
+    .faq-pyramid .pyr-tier {
+      display: inline-block;
+      font-weight: 800;
+      color: #1a1a1a;
+      letter-spacing: 0.005em;
+    }
+
+    /* ---- FAQ section ---- */
+    .faq-list { margin-top: 1.2rem; }
+    .faq-item {
+      border-top: 1px solid #ececec;
+      padding: 1.1em 0.2em;
+    }
+    .faq-item:last-of-type { border-bottom: 1px solid #ececec; }
+    .faq-item > summary {
+      cursor: pointer; list-style: none;
+      font-size: 1.22em; font-weight: 600; color: #333;
+      outline: none;
+      position: relative;
+      padding-right: 2em;          /* room for the +/- marker on the right */
+      line-height: 1.4;
+    }
+    .faq-item > summary::-webkit-details-marker { display: none; }
+    .faq-item > summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.3em; font-weight: 400;
+      color: #999; transition: color 0.18s ease;
+      line-height: 1;
+    }
+    .faq-item[open] > summary::after {
+      content: "−"; color: #D46714;
+    }
+    .faq-item > summary:hover { color: #D46714; }
+    .faq-answer {
+      margin: 0.8em 0 0; font-size: 1.18em; line-height: 1.65;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= FLOATING TOC ================= -->
+<nav class="toc" aria-label="Page sections">
+  <a class="toc-brand" href="#overview" aria-label="HumanEgo home">
+    <img class="toc-brand-logo" src="static/images/humanego_logo_trim.png" alt="">
+    <span>Human<span class="brand-ego">Ego</span></span>
+  </a>
+  <ul class="toc-list">
+    <li class="toc-item has-sub" data-target="real-world-clips" data-group="real-world-clips">
+      <a class="toc-link" href="#real-world-clips">Real-World Video Clips</a>
+      <ul class="toc-sub">
+        <li class="toc-item" data-target="clip-water-flowers"><a class="toc-link" href="#clip-water-flowers">Water Flowers</a></li>
+        <li class="toc-item" data-target="clip-downstack-cups"><a class="toc-link" href="#clip-downstack-cups">Downstack Cups</a></li>
+        <li class="toc-item" data-target="clip-adjust-table"><a class="toc-link" href="#clip-adjust-table">Adjust Table</a></li>
+        <li class="toc-item" data-target="clip-serve-bread"><a class="toc-link" href="#clip-serve-bread">Serve Bread</a></li>
+        <li class="toc-item" data-target="clip-charge-devices"><a class="toc-link" href="#clip-charge-devices">Charge Devices</a></li>
+        <li class="toc-item" data-target="clip-unscrew-cap"><a class="toc-link" href="#clip-unscrew-cap">Unscrew Cap</a></li>
+        <li class="toc-item" data-target="clip-open-door"><a class="toc-link" href="#clip-open-door">Open Door</a></li>
+        <li class="toc-item" data-target="clip-open-cabinet"><a class="toc-link" href="#clip-open-cabinet">Open Cabinet</a></li>
+        <li class="toc-item" data-target="clip-grab-tissue"><a class="toc-link" href="#clip-grab-tissue">Grab Tissue</a></li>
+        <li class="toc-item" data-target="clip-cross-embodiment"><a class="toc-link" href="#clip-cross-embodiment">Cross-Embodiment</a></li>
+        <li class="toc-item" data-target="clip-cross-environment"><a class="toc-link" href="#clip-cross-environment">Generalization Test</a></li>
+        <li class="toc-item" data-target="clip-cross-setup"><a class="toc-link" href="#clip-cross-setup">Generalization Test</a></li>
+      </ul>
+    </li>
+    <li class="toc-item" data-target="clip-full-video"><a class="toc-link" href="#clip-full-video">HumanEgo &mdash; Full Video</a></li>
+    <li class="toc-item" data-target="insights"><a class="toc-link" href="#insights"><span class="toc-star">&#x2726;</span>Insights</a></li>
+    <li class="toc-item" data-target="overview"><a class="toc-link" href="#overview">Overview</a></li>
+    <li class="toc-item" data-target="abstract"><a class="toc-link" href="#abstract">Abstract</a></li>
+    <li class="toc-item" data-target="architecture"><a class="toc-link" href="#architecture">Architecture</a></li>
+    <li class="toc-item" data-target="data-collection"><a class="toc-link toc-link-2line" href="#data-collection">Data Collection<br>&amp; Preprocessing</a></li>
+    <li class="toc-item has-sub" data-target="results" data-group="results">
+      <a class="toc-link" href="#results-bridge">Results</a>
+      <ul class="toc-sub">
+        <li class="toc-item" data-target="results-bridge"><a class="toc-link" href="#results-bridge">Bridge the Embodiment Gap</a></li>
+        <li class="toc-item" data-target="results-efficiency"><a class="toc-link" href="#results-efficiency">Efficiency of Human Demos</a></li>
+        <li class="toc-item" data-target="results-conditions"><a class="toc-link" href="#results-conditions">One Policy, Many Conditions</a></li>
+        <li class="toc-item" data-target="results-drivers"><a class="toc-link" href="#results-drivers">What Drives Performance</a></li>
+      </ul>
+    </li>
+            <li class="toc-item" data-target="faq"><a class="toc-link" href="#faq">FAQ</a></li>
+    <li class="toc-item" data-target="team"><a class="toc-link" href="#team">Our Team</a></li>
+    <li class="toc-item" data-target="acknowledge"><a class="toc-link" href="#acknowledge">Acknowledge</a></li>
+    <li class="toc-item" data-target="bibtex"><a class="toc-link" href="#bibtex">BibTeX</a></li>
+  </ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <h1 class="title is-2 publication-title">
+        <span class="title-line-1">
+          <img src="static/images/humanego_logo_trim.png" class="title-logo" alt="HumanEgo logo">
+          <span>Human<span class="brand-ego">Ego</span></span>
+        </span>
+        <span class="title-line-2">Zero-Shot Robot Learning</span>
+        <span class="title-line-3">from Minutes of Human Egocentric Videos</span>
+      </h1>
+
+      <!-- Four-feature manifesto: shown right under the title, before authors. -->
+      <div class="hero-features">
+        <span class="hero-feature">Robot-Data-Free</span>
+        <span class="hero-feature">Hardware-Agnostic</span>
+        <span class="hero-feature">Data-Efficient</span>
+        <span class="hero-feature">Zero-Shot Transferable</span>
+      </div>
+
+      <!-- Author homepages: replace href="#" with each author's site as it becomes available. -->
+      <div class="author-list">
+        <span class="author-block"><a href="https://tx-leo.github.io" target="_blank" rel="noopener">Zhi (Leo) Wang</a></span>
+        <span class="author-block"><a href="https://bottle101.github.io/" target="_blank" rel="noopener">Botao He</a></span>
+        <span class="author-block"><a href="https://colinyu1.github.io/" target="_blank" rel="noopener">Kelin Yu</a></span>
+        <span class="author-block"><a href="https://sjlee.cc/" target="_blank" rel="noopener">Seungjae Lee</a></span><br>
+        <span class="author-block"><a href="https://ruohangao.github.io/" target="_blank" rel="noopener">Ruohan Gao</a></span>
+        <span class="author-block"><a href="https://furong-huang.com/" target="_blank" rel="noopener">Furong Huang</a></span>
+        <span class="author-block"><a href="https://robotics.umd.edu/clark/faculty/350/Yiannis-Aloimonos" target="_blank" rel="noopener">Yiannis Aloimonos</a></span>
+      </div>
+
+      <div class="affiliation">
+        <img src="static/images/UMD-logo.png" alt="University of Maryland" class="umd-logo">
+      </div>
+
+      <div class="link-buttons">
+        <a href="https://arxiv.org/pdf/2605.24934" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>&nbsp;Paper</a>
+        <a href="https://arxiv.org/abs/2605.24934" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i>&nbsp;arXiv</a>
+        <a href="https://github.com/TX-Leo/HumanEgo" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp;Code</a>
+        <a href="https://youtu.be/pdL46diijuY" target="_blank" rel="noopener"><i class="fab fa-youtube"></i>&nbsp;Video</a>
+        <a href="https://x.com/TX_Leo_Wang/status/2059320921228546220" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="0.85em" height="0.85em" fill="currentColor" style="vertical-align:-0.05em;" aria-hidden="true"><path d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>&nbsp;X</a>
+        <a href="#bibtex"><i class="fas fa-quote-right"></i>&nbsp;BibTeX</a>
+      </div>
+
+      <div class="view-counter" id="view-counter" aria-hidden="true"
+           style="margin-top: 1.4em; font-size: 0.78em; color: #b5b5b5; letter-spacing: 0.01em; visibility: hidden;">
+        <i class="far fa-eye" style="opacity: 0.7;"></i>
+        <span id="view-count">—</span> views
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PULL-QUOTE ================= -->
+<section class="section hero-quote-section">
+  <div class="container">
+    <blockquote class="hero-quote">
+      <p class="hero-quote-text">
+        The world is its own best model&hellip; It is better to use the world
+        as its own simulator and let the body directly interact with the physical physics.
+      </p>
+      <cite class="hero-quote-cite">&mdash; <a href="https://people.csail.mit.edu/brooks/" target="_blank" rel="noopener">Rodney Brooks</a></cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ================= REAL-WORLD VIDEO CLIPS ================= -->
+<section class="section" id="real-world-clips" data-toc="real-world-clips">
+  <div class="container content wide">
+    <h2 class="title is-3 section-title">Real-World Video Clips</h2>
+
+    <!-- Row 1 -->
+    <div class="columns pair-cols is-variable is-5">
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-water-flowers" data-toc="clip-water-flowers" data-toc-parent="real-world-clips">Water Flowers</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/water_flowers.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-downstack-cups" data-toc="clip-downstack-cups" data-toc-parent="real-world-clips">Downstack Cups</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/downstack_cups.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="columns pair-cols is-variable is-5" style="margin-top: 1.5rem;">
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-adjust-table" data-toc="clip-adjust-table" data-toc-parent="real-world-clips">Adjust Table</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/adjust_table.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-serve-bread" data-toc="clip-serve-bread" data-toc-parent="real-world-clips">Serve Bread</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/serve_bread.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="columns pair-cols is-variable is-5" style="margin-top: 1.5rem;">
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-charge-devices" data-toc="clip-charge-devices" data-toc-parent="real-world-clips">Charge Devices</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/charge_devices.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-unscrew-cap" data-toc="clip-unscrew-cap" data-toc-parent="real-world-clips">Unscrew Cap</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/unscrew_cap.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="columns pair-cols is-variable is-5" style="margin-top: 1.5rem;">
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-open-door" data-toc="clip-open-door" data-toc-parent="real-world-clips">Open Door</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/open_door.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-open-cabinet" data-toc="clip-open-cabinet" data-toc-parent="real-world-clips">Open Cabinet</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/open_cabinet.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="columns pair-cols is-variable is-5" style="margin-top: 1.5rem;">
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-grab-tissue" data-toc="clip-grab-tissue" data-toc-parent="real-world-clips">Grab Tissue</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/grab_tissue.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-cross-embodiment" data-toc="clip-cross-embodiment" data-toc-parent="real-world-clips">Downstack Cups: Cross-Embodiment Test</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/cross_condition_1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 6 -->
+    <div class="columns pair-cols is-variable is-5" style="margin-top: 1.5rem;">
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-cross-environment" data-toc="clip-cross-environment" data-toc-parent="real-world-clips">Water Flowers: Generalization Test</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/cross_condition_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <h3 class="task-clip-title" id="clip-cross-setup" data-toc="clip-cross-setup" data-toc-parent="real-world-clips">Serve Bread: Generalization Test</h3>
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/cross_condition_3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HUMANEGO FULL VIDEO ================= -->
+<section class="section" id="clip-full-video" data-toc="clip-full-video">
+  <div class="container content wide">
+    <h2 class="title is-3 section-title">HumanEgo &mdash; Full Video</h2>
+    <div class="embed-video" style="margin-top: 0.4em;">
+      <iframe src="https://www.youtube-nocookie.com/embed/pdL46diijuY?rel=0&modestbranding=1"
+              title="HumanEgo — Full Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSIGHTS ================= -->
+<section class="section" id="insights" data-toc="insights">
+  <div class="container content">
+    <h2 class="title is-3 section-title"><span class="title-star">&#x2726;</span>Insights</h2>
+    <ol class="insights-list">
+      <li>
+        <p class="insight-text">
+          Human video is not merely a cheap substitute but a
+          <strong>superior</strong> and <strong>more efficient</strong> data
+          source for policy learning.
+        </p>
+      </li>
+      <li>
+        <p class="insight-text">
+          Explicit <strong>spatial representation</strong>, not visual fidelity,
+          is the key to bridging the embodiment gap. Neither hand nor object
+          alone defines a skill&mdash;what matters is their <strong>interaction</strong>.
+        </p>
+      </li>
+      <li>
+        <p class="insight-text">
+          Beyond action labels, human videos contain way more information.
+          <strong>Richer supervision signal</strong> provides complementary gains.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="section" id="overview" data-toc="overview" style="padding-top: 1.5rem;">
+  <div class="container content">
+    <h2 class="title is-3 section-title">Overview</h2>
+    <video
+      class="scroll-play teaser-figure"
+      muted
+      playsinline
+      preload="auto"
+      disablepictureinpicture
+      style="display: block; margin: 0 auto;">
+      <source src="static/images/teaser.mp4" type="video/mp4">
+    </video>
+    <p class="caption">
+      We introduce <strong>HumanEgo</strong>, a <strong>robot-data-free</strong>,
+      <strong>hardware-agnostic</strong>, and <strong>data-efficient</strong> pipeline
+      that learns robot manipulation policies from <strong>minutes of</strong> raw
+      human egocentric videos&mdash;powered by a flow matching policy with dense
+      auxiliary objectives.
+    </p>
+  </div>
+</section>
+
+<!-- ================= ABSTRACT ================= -->
+<section class="section" id="abstract" data-toc="abstract">
+  <div class="container content">
+    <h2 class="title is-3 section-title">Abstract</h2>
+    <p>
+      Human egocentric video captures rich manipulation demonstrations without any
+      robot hardware, yet transferring these skills to robots remains challenging
+      due to the embodiment gap between human and robot in both visual appearance
+      and kinematics. We present <strong>HumanEgo</strong>, a framework that bridges
+      the embodiment gap by lifting each human demonstration to an entity-level
+      representation of <strong>hand&ndash;object interaction</strong>, and training a
+      <strong>flow matching</strong> policy with <strong>dense auxiliary objectives</strong>
+      that amplify supervision from every trajectory. HumanEgo is robot-data-free,
+      hardware-agnostic, data-efficient, and zero-shot human-to-robot transferable.
+      With only <strong>30 minutes</strong> of human videos per task, HumanEgo achieves
+      <strong>92.5%</strong> average success across four real-world tasks
+      (<strong>75%</strong> with just 15 minutes), outperforms matched-time robot
+      teleoperation by <strong>41%</strong>, and robustly transfers zero-shot
+      across <strong>novel robots, cameras, and environments</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE ================= -->
+<section class="section" id="architecture" data-toc="architecture">
+  <div class="container content">
+    <h2 class="title is-3 section-title">Architecture</h2>
+    <video
+      class="scroll-play"
+      muted
+      playsinline
+      preload="auto"
+      disablepictureinpicture
+      style="width: 100%; border-radius: 28px; display: block;">
+      <source src="static/images/architecture.mp4" type="video/mp4">
+    </video>
+    <p class="caption">
+      <strong class="cap-label">System overview.</strong> Arm inpainting and visual keypoints bridge the
+      visual gap; <strong>Interaction-Centric Tokens (ICT)</strong> encode spatial
+      relationships among all entities; a <strong>flow matching policy with dense
+      auxiliary objectives</strong> learns bimanual robot actions from
+      <strong>minutes-scale</strong> human data.
+    </p>
+  </div>
+</section>
+
+<!-- ================= DATA COLLECTION ================= -->
+<section class="section" id="data-collection" data-toc="data-collection">
+  <div class="container content wide">
+    <h2 class="title is-3 section-title">Data Collection and Data Preprocessing</h2>
+
+    <!-- Row 1: data collection video (3) + setup image (2) -->
+    <div class="columns pair-cols is-variable is-5">
+      <div class="column is-two-thirds">
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/data_collection_1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Data Collection.</strong> Data collection by
+          <strong>anyone, anytime, anywhere</strong>; policies deployed to
+          <strong>any lab, any camera, any robot</strong> &mdash; all from only
+          <strong>30 minutes</strong> of data. A human demonstrator wears
+          <strong>Aria glasses</strong> and performs each task in any convenient
+          environment &mdash; regardless of table height, lighting, or background,
+          and without specialized workspace or calibration.
+        </p>
+      </div>
+      <div class="column is-one-third">
+        <div class="pair-media-wrap">
+          <img src="static/images/data_collection.png" alt="Data collection setup">
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Data collection setup.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- Row 2: data preprocessing video (3) + hand-to-gripper image (2) -->
+    <div class="columns pair-cols is-variable is-5" style="margin-top: 1.5rem;">
+      <div class="column is-two-thirds">
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture loop>
+            <source src="static/videos/data_collection_2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Data Preprocessing.</strong> Each demonstration takes only
+          <strong>seconds</strong>. <strong>Aria glasses</strong> are particularly
+          well suited for learning from human video: their <strong>Machine
+          Perception Services (MPS)</strong> provide high-quality 6-DoF SLAM
+          tracking, calibrated 3D hand pose estimation, and synchronized egocentric
+          RGB streams&mdash;all from a single lightweight wearable device.
+        </p>
+      </div>
+      <div class="column is-one-third">
+        <div class="pair-media-wrap">
+          <img src="static/images/hand2gripper.png" alt="Hand-to-gripper mapping">
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Hand-to-gripper mapping.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESULTS — BRIDGE THE EMBODIMENT GAP ================= -->
+<section class="section" id="results-bridge" data-toc="results-bridge" data-toc-parent="results">
+  <div class="container content">
+    <h2 class="title is-3 results-title">
+      <span class="res-prefix">Results</span><span class="res-sep">&mdash;</span><span class="res-sub">HumanEgo Bridges the Embodiment Gap Efficiently</span>
+    </h2>
+    <video
+      class="scroll-play"
+      src="static/images/baselines.mp4"
+      muted
+      playsinline
+      preload="auto"
+      disablepictureinpicture
+      style="width: 100%; border-radius: 28px; display: block;">
+    </video>
+    <p class="caption">
+      <strong class="cap-label">Overall Real-World Evaluation.</strong>
+      Real-world success rate (%) for each method across all four tasks.
+      HumanEgo with 30 min of data achieves the highest success rate on every
+      task, demonstrating consistent improvements over both human-video baselines
+      and robot teleoperation methods.
+    </p>
+
+    <ul class="findings-list">
+      <li><span class="find-head">HumanEgo achieves the highest success rate on every single task.</span></li>
+      <li><span class="find-head">Even with half the data, HumanEgo outperforms robot teleoperation.</span></li>
+      <li><span class="find-head">HumanEgo excels on tasks that demand precise coordination and spatial reasoning.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= RESULTS — EFFICIENCY ================= -->
+<section class="section" id="results-efficiency" data-toc="results-efficiency" data-toc-parent="results">
+  <div class="container content wide">
+    <h2 class="title is-3 results-title">
+      <span class="res-prefix">Results</span><span class="res-sep">&mdash;</span><span class="res-sub">The Efficiency of Human Demonstrations</span>
+    </h2>
+    <div class="columns pair-cols is-variable is-5">
+      <div class="column">
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture>
+            <source src="static/images/data_comparison.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Human vs. robot data.</strong>
+          Human egocentric data exhibits higher SNR, smoother motion, less idle
+          time (top), and greater spatial and trajectory diversity (bottom).
+        </p>
+      </div>
+      <div class="column">
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture>
+            <source src="static/images/data_efficiency.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Data efficiency.</strong>
+          Success rate (%) vs. data collection time. HumanEgo trained on 8 min of
+          human data surpasses ACT's 30-min robot data.
+        </p>
+      </div>
+    </div>
+
+    <ul class="findings-list">
+      <li><span class="find-head">HumanEgo learns effectively from minimal human data.</span></li>
+      <li><span class="find-head">Auxiliary objectives amplify learning when demonstrations are scarce.</span></li>
+      <li><span class="find-head">Human video is a more efficient data source than robot teleoperation.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= RESULTS — ONE POLICY, MANY CONDITIONS ================= -->
+<section class="section" id="results-conditions" data-toc="results-conditions" data-toc-parent="results">
+  <div class="container content wide">
+    <h2 class="title is-3 results-title">
+      <span class="res-prefix">Results</span><span class="res-sep">&mdash;</span><span class="res-sub">One Policy, Many Conditions</span>
+    </h2>
+    <div class="columns pair-cols is-variable is-5">
+      <div class="column">
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture>
+            <source src="static/images/cross_condition.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Cross-condition real-world evaluation:</strong>
+          cross-embodiment / environment / setup.
+        </p>
+      </div>
+      <div class="column">
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture>
+            <source src="static/images/generalization.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Zero-Shot Cross-Condition Generalization.</strong>
+          HumanEgo maintains robust success across different conditions without
+          retraining.
+        </p>
+      </div>
+    </div>
+
+    <ul class="findings-list">
+      <li><span class="find-head">HumanEgo is robust to arbitrary visual conditions.</span></li>
+      <li><span class="find-head">HumanEgo is robust to arbitrary object placements.</span></li>
+      <li><span class="find-head">HumanEgo is hardware-agnostic.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= RESULTS — WHAT DRIVES PERFORMANCE ================= -->
+<section class="section" id="results-drivers" data-toc="results-drivers" data-toc-parent="results">
+  <div class="container content wide">
+    <h2 class="title is-3 results-title">
+      <span class="res-prefix">Results</span><span class="res-sep">&mdash;</span><span class="res-sub">What Drives Performance of HumanEgo?</span>
+    </h2>
+    <div class="columns pair-cols is-variable is-5">
+      <div class="column">
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture>
+            <source src="static/images/representation.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Representation study.</strong>
+          Success rate (%) for five input configurations. Visual-only methods
+          plateau at 32.5% with any strategy; adding spatial tokens yields
+          <strong>+52.5 pp</strong>.
+        </p>
+      </div>
+      <div class="column">
+        <div class="pair-media-wrap">
+          <video class="scroll-play" muted playsinline preload="auto" disablepictureinpicture>
+            <source src="static/images/aux_training.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">
+          <strong class="cap-label">Auxiliary training study.</strong>
+          Success rate (%) at 15 min of data for each auxiliary objective
+          individually. Object motion contributes the most
+          (<strong>+17.5 pp</strong>); all three combine for <strong>+25 pp</strong>.
+        </p>
+      </div>
+    </div>
+
+    <ul class="findings-list">
+      <li><span class="find-head">Explicit spatial representation, not visual fidelity, is the key to bridging the embodiment gap.</span></li>
+      <li><span class="find-head">Auxiliary objectives provide complementary gains.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq" data-toc="faq">
+  <div class="container content">
+    <h2 class="title is-3 section-title">FAQ</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why use human data?</summary>
+        <p class="faq-answer">
+          Human egocentric video captures rich manipulation demonstrations
+          <strong>without any robot hardware</strong> &mdash; anyone can collect
+          it, anywhere, anytime, no specialized workspace, no teleoperation rig,
+          no calibration.
+        </p>
+        <p class="faq-answer">
+          More fundamentally, we see the corpus of human&ndash;world interaction
+          as one of the <strong>richest yet most under-explored data sources in
+          existence</strong>. If the long-term goal is robots that operate
+          effectively in the <em>human world</em> &mdash; helping people in
+          homes, kitchens, labs, and workshops &mdash; then the most direct and
+          natural source of supervision is <strong>people themselves
+          interacting with that exact world</strong>. Every minute of
+          egocentric video encodes how a body, a brain, and the physical
+          environment jointly solve a manipulation task. From this lens, human
+          video isn't merely a cheap substitute for robot data; it is a
+          <strong>superior</strong> and <strong>more efficient</strong> data
+          source for policy learning.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why <em>efficient</em> robot learning from human egocentric videos?</summary>
+        <p class="faq-answer">
+          The internet hosts an enormous amount of human video, and people often
+          assume "just train on YouTube" is a viable shortcut. But if you
+          actually look at what's inside these datasets, you find all kinds of
+          issues &mdash; most clips have <strong>no accurate action labels</strong>,
+          many suffer from <strong>uncompensated head motion</strong> (so the
+          camera shakes everywhere), and most are <strong>random everyday
+          activities</strong> with no specific task in mind.
+          <strong>Human data is super rich in quantity, but actually very poor
+          in quality.</strong>
+        </p>
+        <p class="faq-answer">
+          We find it useful to think about an <strong>egocentric data pyramid</strong>,
+          analogous to the well-known robotics data pyramid:
+        </p>
+        <ul class="faq-pyramid">
+          <li>
+            <span class="pyr-tier">Bottom (largest, lowest quality)</span> &mdash;
+            passive videos like YouTube. Pixels-only, unlabeled, noisy. The
+            human in frame isn't collecting data for us. The biggest layer, but
+            also the hardest to use directly.
+          </li>
+          <li>
+            <span class="pyr-tier">Middle</span> &mdash; egocentric
+            demonstrations. Someone deliberately wears a camera and performs a
+            task, with hand poses tracked. Cleaner, has action labels, the
+            human is actively demonstrating. But still not good enough for
+            training a deployable policy.
+          </li>
+          <li>
+            <span class="pyr-tier">Top (smallest, highest quality)</span> &mdash;
+            teleop-grade human data: fully structured, interactive, with
+            accurate action labels, where the human interacts with the scene in
+            a way a robot could reproduce. This is what we want &mdash; but it
+            is very rare.
+          </li>
+        </ul>
+        <p class="faq-answer">
+          So the central question becomes: <strong>how do we squeeze every bit
+          of learning signal out of the small amount of teleop-grade human data
+          we can actually collect?</strong> That is exactly what HumanEgo is
+          built for &mdash; making the most of <em>minutes</em>, not hours or
+          days, of high-quality human egocentric data.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why use Aria glasses?</summary>
+        <p class="faq-answer">
+          <strong>Aria glasses are, today, the most mature and capable platform
+          for egocentric data collection.</strong> Two things set them apart
+          from anything else in the category: genuinely
+          <strong>lightweight, production-grade hardware</strong> that a
+          demonstrator can wear naturally for extended sessions in any
+          environment; and Meta's <strong>MPS pipeline</strong>, which delivers
+          calibrated SLAM, hand-pose estimation, and synchronized multi-stream
+          egocentric RGB out of the box &mdash; turnkey, no per-session
+          calibration.
+        </p>
+        <p class="faq-answer">
+          The <em>precision</em> of these signals is what really matters: our
+          experiments show that <strong>the accuracy of the upstream SLAM and
+          hand-tracking signal directly bounds downstream policy performance</strong>.
+          Noisy poses propagate into the action loss and the learned
+          representation; the clean, drift-free trajectories from Aria are
+          exactly what enable HumanEgo to converge on minutes of data. No other
+          consumer egocentric device today delivers this level of out-of-the-box
+          accuracy.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why are Interaction-Centric Tokens (ICTs) so powerful &mdash; and why doesn't visual fidelity matter as much?</summary>
+        <p class="faq-answer">
+          <strong>ICTs encode each entity (hand and object) by its 6-DoF pose
+          relative to other task entities</strong>, not relative to the camera
+          or a fixed world frame. This makes the representation invariant to
+          embodiment, viewpoint, and environment &mdash; the same ICT tokens
+          describe the same skill whether the demonstrator is a human or a
+          robot, whether the camera is a RealSense or a ZED, whether the table
+          is tall or short. The policy learns once and transfers everywhere.
+        </p>
+        <p class="faq-answer">
+          As for why visual fidelity matters less than people expect: vision is
+          obviously central to how humans <em>experience</em> the world &mdash;
+          but for most manipulation tasks, it isn't strictly required. Imagine
+          glancing at a table, closing your eyes, and then putting a flower
+          into a vase. You can still do it. Once a brief look gives you a
+          coarse spatial map, the rest of the task runs on
+          <strong>spatial memory, proprioception, touch, and the geometric
+          interaction between hand and object</strong> &mdash; not on continued
+          visual confirmation. Manipulation is fundamentally a
+          spatial-and-interaction problem; vision is just one of several inputs
+          that surfaces that structure.
+        </p>
+        <p class="faq-answer">
+          Inspired by this, we designed ICT to make spatial observation and
+          hand&ndash;object interaction the <em>first-class citizens</em> of
+          the policy. The result is an elegantly compact representation that is
+          <strong>unified</strong> (every entity, hand or object, lives in the
+          same token format), <strong>easy to implement</strong> (off-the-shelf
+          pose estimators are enough), <strong>variable-length</strong> (works
+          whether the scene has one object or many), and
+          <strong>embodiment-invariant</strong> (the same token whether the
+          body is a human or a robot).
+        </p>
+        <p class="faq-answer">
+          That mix of simple-but-right choices is precisely why HumanEgo
+          generalizes so widely. Empirically, adding ICTs to raw human RGB
+          jumps Water Flowers success from 7.5% to 85% &mdash; a
+          <strong>+77.5 pp gap</strong> that no amount of visual preprocessing
+          can close. We believe ICT is a <strong>simple yet critical</strong>
+          representation that should reach well beyond this paper &mdash; a
+          general-purpose spatial encoding for any embodied agent that needs to
+          reason about object interactions.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why do dense auxiliary objectives work?</summary>
+        <p class="faq-answer">
+          Think about what supervision the policy actually receives from a
+          single demonstration: at each timestep, the model sees one image and
+          one set of ICTs, and is asked to regress one action chunk. That's a
+          single, narrow learning signal &mdash; <em>action in, action out</em>.
+          With only minutes of data, that's just <strong>not a lot of bits
+          flowing through the gradient</strong>.
+        </p>
+        <p class="faq-answer">
+          But each demonstration secretly carries <strong>far more information
+          than the action label alone</strong>. Where does the object end up?
+          Where do the hand and object project on the image over time? How does
+          the scene's internal state evolve? All of that signal is sitting
+          <em>for free</em> inside every trajectory &mdash; we just aren't
+          asking the model to predict it.
+        </p>
+        <p class="faq-answer">
+          So we add three auxiliary objectives, all sharing the same encoder as
+          the flow-matching head: <strong>Object Motion</strong> (forecast each
+          manipulated object's future 6-DoF trajectory),
+          <strong>2D Trace</strong> (forecast the image-plane projection of
+          hand and object &mdash; the path your eyes would follow watching the
+          video), and <strong>Latent Consistency</strong> (forecast the
+          encoder's own internal representation K steps ahead).
+        </p>
+        <p class="faq-answer">
+          Zoom out, and all three are asking the model to do the
+          <em>same thing</em>: <strong>forecast how the scene evolves over the
+          next few steps</strong>, in three complementary spaces &mdash; 3D
+          physical, 2D visual, and the encoder's own latent state. Together,
+          this turns the encoder into a <strong>lightweight world model of
+          hand&ndash;object interaction</strong>, sitting right inside the
+          policy for free.
+        </p>
+        <p class="faq-answer">
+          Because all three losses share the same encoder, the encoder is
+          forced to learn the <strong>causal structure of manipulation</strong>
+          &mdash; not just <em>what</em> action comes next, but <em>why</em>:
+          how the scene will respond. And critically, none of these targets
+          cost us anything to obtain &mdash; they are computed automatically
+          from the same perception pipeline that gave us the ICTs.
+          <strong>No extra annotation, no extra data &mdash; just more
+          questions asked of the same demonstration.</strong>
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why is human data better and more efficient than robot data?</summary>
+        <p class="faq-answer">
+          First, an important caveat: when we say <em>human data</em>, we mean
+          <strong>carefully designed human-egocentric data</strong> &mdash;
+          captured with intent, the manipulation task clearly in mind, the
+          camera stable on the head, the hand pose tracked. Comparing random
+          YouTube footage against carefully designed teleop data is
+          apples-to-oranges. What we are comparing here is <em>carefully
+          designed</em> human data against <em>carefully designed</em> teleop
+          data.
+        </p>
+        <p class="faq-answer">
+          <strong>Higher-quality data is intrinsically easier for humans to
+          produce.</strong> A demonstrator naturally generates motion that is
+          <strong>smooth, dexterous, fast, and physically plausible</strong>:
+          they cover a much larger workspace than any single robot, switch
+          grip strategies on the fly, and adapt in milliseconds &mdash; without
+          any active control loop or training. Teleoperation, by contrast, is
+          fundamentally a <strong>lossy remote-control problem</strong>:
+          smoothness, speed, and dexterity all bottleneck on the operator's
+          skill at piloting the robot. Top-tier teleop exists, but it is
+          <strong>rare and expensive</strong>; everyday teleop produces choppy,
+          slow, or unrepresentative trajectories that the policy then has to
+          learn from.
+        </p>
+        <p class="faq-answer">
+          <strong>Human data generalizes more naturally across embodiments
+          and environments.</strong> Given the right processing pipeline
+          (ours uses an entity-relative ICT representation), human data is
+          <strong>inherently more transferable</strong> &mdash; it isn't
+          bound to any particular robot's kinematic configuration, gripper,
+          base height, or camera mount, so the same dataset can serve many
+          target embodiments. Teleop data is the opposite: it is born inside
+          one specific robot's body, so a new arm, a new gripper, or even a
+          new camera mount typically means <strong>re-collecting the entire
+          dataset</strong>.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="section" id="team" data-toc="team">
+  <div class="container content">
+    <h2 class="title is-3 section-title">Our Team</h2>
+    <div class="team-row">
+      <a class="team-member" href="https://tx-leo.github.io" target="_blank" rel="noopener">
+        <img class="team-photo" src="static/images/team/leo.jpg" alt="Zhi (Leo) Wang">
+        <div class="team-name">Zhi (Leo) Wang</div>
+      </a>
+      <a class="team-member" href="https://bottle101.github.io/" target="_blank" rel="noopener">
+        <img class="team-photo" src="static/images/team/botao.jpg" alt="Botao He">
+        <div class="team-name">Botao He</div>
+      </a>
+      <a class="team-member" href="https://colinyu1.github.io/" target="_blank" rel="noopener">
+        <img class="team-photo" src="static/images/team/kelin.png" alt="Kelin Yu">
+        <div class="team-name">Kelin Yu</div>
+      </a>
+      <a class="team-member" href="https://sjlee.cc/" target="_blank" rel="noopener">
+        <img class="team-photo" src="static/images/team/seungjae.png" alt="Seungjae Lee">
+        <div class="team-name">Seungjae Lee</div>
+      </a>
+      <a class="team-member" href="https://ruohangao.github.io/" target="_blank" rel="noopener">
+        <img class="team-photo" src="static/images/team/ruohan.jpg" alt="Ruohan Gao">
+        <div class="team-name">Ruohan Gao</div>
+      </a>
+      <a class="team-member" href="https://furong-huang.com/" target="_blank" rel="noopener">
+        <img class="team-photo" src="static/images/team/furong.jpg" alt="Furong Huang">
+        <div class="team-name">Furong Huang</div>
+      </a>
+      <a class="team-member" href="https://robotics.umd.edu/clark/faculty/350/Yiannis-Aloimonos" target="_blank" rel="noopener">
+        <img class="team-photo" src="static/images/team/yiannis.jpg" alt="Yiannis Aloimonos">
+        <div class="team-name">Yiannis Aloimonos</div>
+      </a>
+    </div>
+    <p class="team-aff" style="margin-top: 1.6em;">University of Maryland</p>
+  </div>
+</section>
+
+<!-- ================= ACKNOWLEDGE ================= -->
+<section class="section" id="acknowledge" data-toc="acknowledge">
+  <div class="container content">
+    <h2 class="title is-3 section-title">Acknowledge</h2>
+    <p>
+      We thank
+      <a href="https://www.cs.umd.edu/~edessale/" target="_blank" rel="noopener" class="ack-link">Eadom Dessalene</a>,
+      <a href="https://yoonkyojung.com/" target="_blank" rel="noopener" class="ack-link">Yoonkyo Jung</a>,
+      <a href="https://zikuicai.github.io/" target="_blank" rel="noopener" class="ack-link">Zikui Cai</a>,
+      and other members of the
+      <a href="https://prg.cs.umd.edu/" target="_blank" rel="noopener" class="ack-link">PRG Lab</a>
+      and
+      <a href="https://furong-huang.com/students-colleagues/" target="_blank" rel="noopener" class="ack-link">Furong's Lab</a>
+      for their helpful feedback and support throughout this project.
+    </p>
+  </div>
+</section>
+
+<!-- ================= BIBTEX ================= -->
+<section class="section" id="bibtex" data-toc="bibtex">
+  <div class="container content">
+    <h2 class="title is-3 section-title">BibTeX</h2>
+    <pre class="bibtex">@misc{humanego2026,
+  title         = {HumanEgo: Zero-Shot Robot Learning from Minutes of Human Egocentric Videos},
+  author        = {Wang, Zhi and He, Botao and Yu, Kelin and Lee, Seungjae and Gao, Ruohan and Huang, Furong and Aloimonos, Yiannis},
+  year          = {2026},
+  eprint        = {2605.24934},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO}
+}</pre>
+  </div>
+</section>
+
+<!-- redeploy nudge: 2026-05-23 -->
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer" style="padding: 2rem 1.5rem;">
+  <div class="container has-text-centered">
+    <p class="is-size-7" style="color:#888;">
+      Project page adapted from the
+      <a href="https://nerfies.github.io/">Nerfies</a> template and the
+      <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>.
+      Source:
+      <a href="https://github.com/humanego-ai/humanego-ai.github.io">humanego-ai.github.io</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // ------- floating TOC scroll-spy -------
+  // Highlights the TOC entry whose section is currently in the upper portion
+  // of the viewport. Sub-items belonging to "Results" also light up their
+  // parent group when active.
+  (function () {
+    const toc = document.querySelector('.toc');
+    if (!toc) return;
+    // Observe any element with [data-toc], not just <section>s, so the
+    // clip <h3 data-toc="clip-full-video"> inside Real-World Video Clips
+    // also drives scroll-spy activation.
+    const sections = Array.from(document.querySelectorAll('[data-toc]'));
+    if (!sections.length) return;
+
+    const itemForId = new Map();
+    toc.querySelectorAll('.toc-item[data-target]').forEach(li => {
+      itemForId.set(li.dataset.target, li);
+    });
+
+    function clearActive() {
+      toc.querySelectorAll('.toc-item.active').forEach(li => li.classList.remove('active'));
+    }
+
+    function setActive(id) {
+      const li = itemForId.get(id);
+      if (!li) return;
+      clearActive();
+      li.classList.add('active');
+      // If this is a sub-item under the Results group, also light up the group.
+      const sec = document.getElementById(id);
+      const parentGroup = sec && sec.dataset.tocParent;
+      if (parentGroup) {
+        const groupLi = toc.querySelector(`.toc-item[data-group="${parentGroup}"]`);
+        if (groupLi) groupLi.classList.add('active');
+      }
+    }
+
+    // Pick the section whose top is closest above the viewport's 30% line.
+    function update() {
+      const probeY = window.innerHeight * 0.30;
+      let best = null;
+      let bestDist = -Infinity;
+      for (const sec of sections) {
+        const top = sec.getBoundingClientRect().top;
+        if (top <= probeY && top > bestDist) {
+          best = sec;
+          bestDist = top;
+        }
+      }
+      if (best) setActive(best.dataset.toc);
+    }
+
+    let raf = 0;
+    function onScroll() {
+      if (raf) return;
+      raf = requestAnimationFrame(() => { raf = 0; update(); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  })();
+
+  // ------- subtle page-view counter -------
+  // Uses counterapi.dev (no signup). Element stays hidden on failure so a
+  // dead service can't leave dashes on the page.
+  (function () {
+    const wrap = document.getElementById('view-counter');
+    const out  = document.getElementById('view-count');
+    if (!wrap || !out) return;
+
+    const endpoints = [
+      'https://api.counterapi.dev/v1/humanego/site/up',
+      'https://api.counterapi.dev/v2/humanego/site/up'
+    ];
+
+    function tryNext(i) {
+      if (i >= endpoints.length) return; // give up silently
+      fetch(endpoints[i], { method: 'GET', cache: 'no-store' })
+        .then(r => r.ok ? r.json() : Promise.reject())
+        .then(d => {
+          const n = (d && (d.count ?? d.value));
+          if (typeof n !== 'number') throw new Error('bad payload');
+          out.textContent = n.toLocaleString();
+          wrap.style.visibility = 'visible';
+        })
+        .catch(() => tryNext(i + 1));
+    }
+
+    tryNext(0);
+  })();
+
+  // Play .scroll-play videos like GIFs: start (or restart) every time they
+  // enter the viewport. Leaving the viewport pauses them; coming back rewinds
+  // and replays from frame 0. Never shows controls.
+  (function () {
+    const videos = document.querySelectorAll('video.scroll-play');
+    if (!videos.length) return;
+
+    videos.forEach(v => {
+      v.controls = false;
+      v.setAttribute('aria-hidden', 'false');
+      try { v.pause(); v.currentTime = 0; } catch (_) {}
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      videos.forEach(v => v.play().catch(() => {}));
+      return;
+    }
+
+    // Trigger only when the video has scrolled past the bottom 1/3 of the
+    // viewport (i.e. its top edge is inside the top 2/3 of the screen, roughly
+    // around the center). Achieved by shrinking the IntersectionObserver root
+    // 33% from the bottom, so an element peeking from the bottom is NOT
+    // counted as "intersecting" until it crosses that line.
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const v = entry.target;
+        if (entry.isIntersecting) {
+          try { v.currentTime = 0; } catch (_) {}
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { rootMargin: "0px 0px -33% 0px", threshold: 0 });
+
+    videos.forEach(v => io.observe(v));
+  })();
+</script>
+
+</body>
+</html>

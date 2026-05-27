@@ -1,0 +1,38 @@
+**Summary:**
+The paper introduces the Pose Prior Learner (PPL), a method for unsupervised learning of categorical priors in pose estimation. The PPL utilizes a hierarchical memory to store a set of learnable prototypical poses, which are distilled into a general pose prior for any object category. This prior guides the pose estimation process and improves accuracy, especially in occluded scenes. The paper demonstrates the effectiveness of PPL through quantitative and qualitative evaluations on various datasets and showcases the iterative inference strategy that enhances pose estimation in occluded scenes.
+
+**Strengths:**
+- **Novelty:** The proposed method introduces a new approach to unsupervised learning of pose priors, utilizing a hierarchical memory structure.
+- **Performance:** PPL outperforms existing unsupervised pose estimation methods across multiple benchmarks, particularly in occluded scenes.
+- **Explainability:** The paper provides visualizations of learned pose priors, offering insights into what the model has learned.
+- **Iterative Inference:** The iterative inference strategy is a unique contribution, enhancing the model's ability to estimate poses in occluded scenes.
+
+**Weaknesses:**
+- **Lack of Comparison:** The paper lacks a comprehensive comparison with other unsupervised learning methods for pose estimation.
+- **Limited Evaluation:** The evaluation focuses mainly on quantitative metrics and qualitative visualizations, with limited discussion on the method's limitations or potential generalization issues.
+- **Implementation Details:** Certain implementation details, such as the choice of hyperparameters and optimization techniques, are not extensively discussed, which may affect the reproducibility and generalizability of the method.
+
+**Questions:**
+- How does PPL perform compared to supervised and semi-supervised learning methods for pose estimation?
+- What are the limitations of using 2D priors for capturing real-world 3D postures?
+- How does the hierarchical memory structure affect the efficiency and effectiveness of learning pose priors?
+
+**Soundness:**
+Soundness result: **4**
+The paper presents a novel method with clear methodology, strong performance on benchmarks, and insightful visualizations. However, it could benefit from a more comprehensive evaluation and a broader comparison with existing methods.
+
+**Presentation:**
+Presentation result: **4**
+The paper is well-organized and clearly presents the proposed method, results, and contributions. However, it could benefit from more detailed explanations of the experimental setup and a clearer discussion of related works.
+
+**Contribution:**
+Contribution result: **4**
+The contribution is substantial with the introduction of a new method for unsupervised pose prior learning. The paper makes a significant impact by improving pose estimation accuracy and offering an iterative inference strategy.
+
+**Rating:**
+Rating result: **7**
+The paper presents a strong contribution with a well-designed method and promising results. However, the lack of a thorough comparison and some missing implementation details suggest room for improvement.
+
+**Paper Decision:**
+- Decision: **Accept**
+- Reasons: The paper introduces a novel method with significant improvements in unsupervised pose estimation, particularly in occluded scenes. The method's effectiveness, along with its explainable visualizations, make it a valuable addition to the field. While some areas could benefit from further exploration, the paper's overall contribution and methodology justify an acceptance with minor improvements suggested.

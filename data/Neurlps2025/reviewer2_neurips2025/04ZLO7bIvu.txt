@@ -1,0 +1,56 @@
+PAPER: "Except for the two bears in front, all other bears in the distance walking" "White car move and turn left" "The plane going left" and referring DAVIS'17 Pont-Tuset et al. (2017). It is the counterpart task of referring segmentation in images Kazemzadeh et al. (2014); Yu et al. (2016) extended to videos with the added challenges in ensuring the temporal consistency of the segmentation across the video and identifying motion referring expressions Ding et al. (2023). Initial methods relied on the advancements in transformerbased architectures and masked modelling Wu et al. (2022), followed by multi-modal large language models with autoregressive modelling Yan et al. (2024); Munasinghe et al. (2024). Concurrent to the aforementioned developments, the benchmarks designed to evaluate these methods were improved to push the boundaries on the task towards better reasoning Yan et al. (2024) and an understanding of motion Ding et al. (2023).In this work, we ask the major question: "Is Motion properly used in video referring segmentation techniques?", revisiting the temporal understanding in these models beyond what was provided in earlier works. While previous interpretability works in video segmentation showed consistent failures in utilizing dynamic information Kowal et al. (2022Kowal et al. ( , 2024), yet they were not language guided and were constrained to precursor methods to MLLMs. Other works in interpretability and benchmarking have studied a similar question in video language modelling but they were not designed for dense spatiotemporal grounding and were rather confined to coarse video question answering tasks Buch et al. (2022). The dense spatiotemporal segmentation task within videos makes it more interesting to study the ability of video MLLMs in capturing temporal information. Since models can be deceived to use spatial information only, leaving out the temporal information, or they can easily rely on coarse temporal information without a proper understanding of the full spatiotemporal dynamics within the video. As such, we provide a study of the ability of video MLLMs in utilizing motion information within language-guided video segmentation. Towards the latter, we create a motion-centric probing and evaluation technique that questions previous efforts on motion referring expressions segmentation and can be used to drive better understanding of video MLLMs performance. 2024). One of the major drivers behind these developments is the evaluation benchmarks that push the limit on these models and ensure improved performance, in addition to studies that interpret their behaviour.There is an abundance of standard benchmarks used to evaluate MLLMs (e.g., MMU evaluations, where we show that state-of-the-art methods and our proposed baselines that surpass them, all fail in our motion-centric evaluation. Since our probing can deceive models into believing there is a depiction of the motion expression when it is only a single static frame. While recent interpretability studies looked at video segmentation models and their ability to capture dynamic information, they have mainly focused on methods that are not language guided, unlike ours Kowal et al. (2022Kowal et al. ( , 2024)); Karim et al. (2023).
+================================================================================
+
+REVIEW
+--------------------------------------------------------------------------------
+**Summary Of The Paper**
+
+The paper investigates whether video multi-modal large language models (video MLLMs) effectively utilize motion information in language-guided video segmentation tasks. To expose limitations in motion understanding, the authors introduce a *motion-centric benchmark*, which involves generating a static keyframe (via MLLM-based temporal grounding) and pairing it with a dynamic video clip to mislead models into falsely detecting motion. Through comprehensive experiments, they demonstrate that even state-of-the-art models fail to distinguish between genuine motion and static cues, suggesting a systemic failure in leveraging spatiotemporal dynamics. The contributions include a new benchmark, strong baselines using MLLMs and SAM 2.0, and an analysis of how referring expressions depend on static features.
+
+**Strengths**
+
+- **Clear Problem Formulation:** The paper addresses a meaningful gap in the field—whether video MLLMs truly utilize motion in language-guided segmentation—and formulates the problem rigorously.
+- **Novel Benchmark Design:** The introduction of a motion-centric benchmark is innovative, offering a systematic way to probe models' ability to discern motion versus static cues.
+- **Empirical Evidence:** The experimental results (especially those in Table 2) provide compelling evidence that even advanced models perform poorly on the motion-centric setup, underscoring the importance of spatiotemporal understanding in this domain.
+- **Comprehensive Analysis:** The paper conducts a fine-grained analysis of referring expressions (in Section 4.3), distinguishing between dynamic and static groups using GPT-4o, adding depth to the interpretation of model behavior.
+
+**Weaknesses**
+
+- **Insufficient Validation of Keyframe Selection Methodology (Severe):** The process of selecting keyframes based solely on MLLM outputs is not adequately validated. Without independent verification, there is a risk that the chosen keyframes do not accurately reflect the motion expressions, thereby undermining the reliability of the benchmark.
+- **Overreliance on Single Model (Major):** The entire benchmark construction and baseline evaluation heavily depend on Qwen2.5-VL. This raises concerns about the robustness and generalizability of findings, especially given that the paper claims to evaluate broad classes of video MLLMs.
+- **Ambiguous Definitions of "Dynamic" and "Static" Groups (Moderate):** The distinction between dynamic and static referring expressions (as defined in Table 3) is unclear and seems to conflate linguistic structure with perceptual motion. This ambiguity affects the validity of the subsequent analysis.
+- **Lack of Statistical Rigor (Moderate):** The dramatic performance drops observed in Table 2 (e.g., ~50% reduction) are presented without statistical significance tests (e.g., p-values or confidence intervals), making it difficult to assess the strength of the conclusions drawn.
+- **Limited Dataset Diversity in Evaluation (Minor):** The motion-centric benchmark is derived entirely from MeVIS, limiting the scope of generalization. No mention is made of how this benchmark performs on other datasets like RefDAVIS17, reducing the breadth of the contribution.
+
+**Questions For The Authors**
+
+1. How is the alignment between the selected keyframe and the motion expression verified independently of the MLLM's output? Is there a manual check or external validation?
+2. Why is the evaluation limited to a single MLLM (Qwen2.5-VL) for keyframe selection and segmentation? Would results change significantly if other MLLMs were used?
+3. Can you clarify the definition of "dynamic" and "static" referring expressions in Table 3? How were these distinctions determined, and are they grounded in perceptual or linguistic criteria?
+4. What statistical measures were used to validate the performance differences seen in Table 2? Are the reductions in performance statistically significant?
+5. Why were newer models like InternVL3 (Zhu et al., 2025) not included in the comparative analysis? Does this omission affect the novelty or relevance of the proposed baselines?
+
+**Limitations Not Addressed By The Authors**
+
+- **Reproducibility Concerns:** The paper lacks a reproducibility section, omitting details such as hyperparameters, data preprocessing steps, and implementation specifics needed to reproduce the results.
+- **Ethics Consideration Missing:** An ethics section is absent, despite the paper discussing implications related to model bias and fairness in motion understanding.
+- **No Discussion on Generalization:** The motion-centric benchmark is derived exclusively from MeVIS. The paper does not discuss how the findings would extend to other datasets or domains, nor does it examine cross-dataset performance.
+- **No Exploration of Alternative Temporal Modeling Approaches:** The ablation studies are limited to variants of the same MLLM. There is no exploration of alternative temporal modeling strategies (e.g., incorporating optical flow or motion estimation networks).
+
+**Soundness**
+3 (Good)
+
+**Contribution**
+3 (Good)
+
+**Confidence**
+4 (High)
+
+**Rating**
+7 (Accept)
+
+**Brief Justification For Rating**
+
+The paper makes a valuable contribution by exposing a critical limitation in video MLLMs regarding their ability to process motion in language-guided segmentation. The motion-centric benchmark is a notable innovation that adds a fresh perspective to the literature. However, several methodological and technical shortcomings—such as the overreliance on a single MLLM, lack of statistical rigor, and absence of reproducibility details—undermine the robustness of the findings. Despite these issues, the core idea is sound and the empirical results are compelling enough to warrant acceptance with the expectation that the authors will address these concerns in revisions.
+
+================================================================================

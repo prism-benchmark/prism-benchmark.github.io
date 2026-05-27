@@ -1,0 +1,27 @@
+**Summary:**
+This paper introduces Adaptive Robust Clipping (ARC), a pre-aggregation clipping scheme designed to enhance robust distributed learning, particularly in the presence of Byzantine attacks. ARC dynamically adjusts the clipping threshold based on the gradients sent by the workers and the fraction of adversarial workers, thereby improving empirical performance without compromising worst-case convergence guarantees. The paper demonstrates the effectiveness of ARC through comprehensive experiments on standard image classification tasks and theoretical analysis that elucidates its improved robustness and convergence properties.
+
+**Strengths:**
+- **Novelty**: ARC offers a practical solution for gradient clipping in distributed learning, enhancing robustness without sacrificing theoretical guarantees.
+- **Theoretical grounding**: The paper provides a clear theoretical framework and proofs to support the effectiveness and robustness properties of ARC.
+- **Empirical validation**: Extensive experimental results showcase ARC's superior performance in various settings, including high data heterogeneity and a large fraction of adversarial workers.
+
+**Weaknesses:**
+- **Limited comparison**: The paper could benefit from more comparisons with alternative methods, especially recent advancements in robust distributed learning.
+- **Complexity of ARC**: The adaptive nature of ARC might introduce additional complexity compared to static clipping, which could be a concern for distributed systems with limited resources.
+
+**Questions:**
+- How does the adaptive clipping threshold of ARC compare to static thresholds in terms of performance across different data distributions and attack scenarios?
+- What are the specific computational overheads introduced by ARC in terms of time and resources, especially in comparison to static clipping schemes?
+
+**Soundness/Contribution/Presentation:**
+- **Soundness**: The paper's claims are well-supported by both theoretical proofs and empirical evidence, demonstrating the soundness of ARC's design and its contributions to robust distributed learning.
+- **Contribution**: ARC represents a significant advancement in robust distributed learning by providing a practical clipping scheme that improves both empirical robustness and theoretical guarantees.
+- **Presentation**: The paper is well-structured, with clear explanations of concepts, methods, and results. Theoretical and empirical sections are logically separated and presented in a coherent manner.
+
+**Rating:**
+Based on the paper's contributions, soundness, and clarity, I would rate it as **7 - Accept, but needs minor improvements**. While the paper makes a significant contribution to the field of robust distributed learning, there is room for further comparison with existing methods and clarification on the computational aspects of ARC.
+
+**Paper Decision:**
+- **Decision**: Accept
+- **Reasons**: The paper presents a novel and practical approach to enhancing robust distributed learning, supported by robust theoretical foundations and empirical evidence. It addresses a critical challenge in the field and would be valuable for inclusion in the conference proceedings, with the recommendation for minor revisions to address the weaknesses identified.

@@ -1,0 +1,82 @@
+PAPER: IntroductionPriors represent beliefs or assumptions about a system or the characteristics of a concept. They are widely used in statistical inference (Lindley, 1961), cognitive science (Schad et al., 2021), and machine learning (Diligenti et al., 2017;Gülc ¸ehre & Bengio, 2016). This pre-existing knowledge is essential for guiding the inference process, enabling AI models to make robust predictions in uncertain or ambiguous situations (Thiruvenkadam et al., 2008;Sung et al., 2015;Liang et al., 2024). The objective of our work is to enhance our understanding of priors in AI models and offer preliminary answers to the three key intelligence questions: (1) How do we acquire priors in the first place?(2) Can we learn them from input data in a self-supervised manner? (3) Can we enhance the quality of the priors? To tackle these questions, we first introduce the challenge of unsupervised categorical prior learning in the context of pose estimation from images. See Figure 1 for the schematic illustration of the challenge. Categorical pose estimation is a classical computer vision task that identifies the structure of objects belonging to the same category by detecting their keypoints. A pose prior summarizes the common characteristics shared by a variety of poses. It encapsulates the expectation of the keypoint configurations and the connectivity between keypoints.In parallel to our challenge of unsupervised categorical prior learning from images for pose estimation, unsupervised pose estimation leverages the abundant, unannotated visual information available in large image datasets to extract pose information (Hu & Ahuja, 2021;Sommer et al., 2024;Chen et al., 2019;He et al., 2022a;Schmidtke et al., 2021). The use of pose priors can provide valuable guidance in this process. We categorize the existing works in unsupervised pose estimation into two groups: those that incorporate hand-made priors and those that operate without any priors.Recent approaches (He et al., 2022a;Sun et al., 2022;2023) attempt to predict keypoints from images, construct object structure representations using these keypoints, and learn effective structural information through image reconstruction. However, without pose priors, these methods can be disrupted by background information or may predict infeasible topological configurations of an object during occlusion. The risk of generating inaccurate keypoints stems from the absence of supplementary information that could help refine both keypoint localization and the connections between them.The other group of methods (Schmidtke et al., 2021;Yoo & Russakovsky, 2023) a category's general pose to guide the pose estimation of individuals within that category. Conceptually, each category is expected to exhibit a generalized and distinctive pose prior that reflects characteristics such as shape, size, and structure. Individual poses should be seen as geometric transformations of this category-specific pose prior. As a result, employing a category-specific pose prior aids in guiding and regularizing the learning of poses. However, obtaining comprehensive general pose priors is highly challenging, as it requires extensive human annotations, particularly for novel categories. Moreover, human annotations may introduce implicit biases, hindering models from learning more meaningful priors.Loosely inspired by how humans develop a general prior representation of an object category by observing individual object instances in images and subsequently using them to infer upcoming individual poses, we propose a new method called the Pose Prior Learner (PPL). PPL is designed to effectively learn a meaningful pose prior for a certain object category. It utilizes a hierarchical memory to store a finite set of prototypical poses and extract a general pose prior from them. Initially, both the hierarchical memory and the prior are randomly initialized but learnable parameters. During training, effective pose learning is supervised through image reconstruction. As training progresses, the hierarchical memory retains and aggregates multiple accurate prototypical poses, thereby contributing to a more precise pose prior and enhancing the model's ability to estimate poses.Upon completing the training, we obtain a model that enables accurate pose estimation, a categorical pose prior that encapsulates the general features of a category, and a hierarchical memory that stores diverse prototypical poses for that category. We evaluate the effectiveness of our PPL across several human and animal pose estimation benchmarks. We visualize their pose priors to further interpret what our approach has learned. Additionally, we introduce an iterative inference strategy to estimate the poses of objects in occluded scenes using the trained hierarchical memory and the pose prior. Our contributions are highlighted below:1. We introduce the challenge of unsupervised categorical prior learning in the context of pose estimation.
+================================================================================
+
+REVIEW
+--------------------------------------------------------------------------------
+**Summary Of The Paper**
+
+The paper presents **Pose Prior Learner (PPL)**, a novel method for unsupervised categorical pose estimation that aims to learn a generalizable pose prior from unlabeled images without reliance on human annotations. The core idea involves using a hierarchical memory to store and aggregate prototypical poses, which are then distilled into a general pose prior composed of keypoint and connectivity components. The method is evaluated on multiple datasets—Human3.6m, Taichi, and CUB-200-2011—and demonstrates strong performance relative to existing unsupervised and human-prior-based methods. An iterative inference strategy is introduced to improve pose estimation in occluded scenes by leveraging the learned prior and hierarchical memory. The paper emphasizes the importance of self-supervised prior learning in AI systems and highlights the benefits of avoiding human biases in defining priors.
+
+---
+
+**Strengths**
+
+1. **Novel Methodology**: The introduction of a hierarchical memory structure to store and aggregate prototypical poses is a compelling innovation. This design allows the model to build a rich, generalizable pose prior without human intervention, addressing a long-standing challenge in unsupervised pose estimation.
+
+2. **Comprehensive Evaluation**: The paper evaluates PPL on multiple benchmark datasets (Human3.6m, Taichi, CUB-200-2011) and reports detailed quantitative results (mean L2 error) across varying resolutions. The results suggest that PPL outperforms existing methods, including those that leverage human-defined priors, which is a notable achievement.
+
+3. **Iterative Inference Strategy**: The proposal of an iterative inference framework to refine pose estimates in occluded scenes is a practical addition. Visualizations and ablation studies support the claim that this strategy leads to improved performance, especially for heavily occluded images.
+
+4. **Ablation Studies**: The paper conducts thorough ablation studies on prior initialization strategies, memory bank sizes, and keypoint count. These analyses contribute to a deeper understanding of the factors influencing performance and validate the effectiveness of the hierarchical memory design.
+
+5. **Visual Interpretability**: The paper provides visualizations of the learned pose priors, offering insight into what the model captures and reinforcing the claim that the learned prior is semantically meaningful.
+
+---
+
+**Weaknesses**
+
+1. **Insufficient Analysis of Failure Cases (High Severity)**: While the paper demonstrates strong performance on standard datasets, it lacks a systematic investigation into failure modes, such as extreme occlusions, rare object categories, or ambiguous configurations. Without such analysis, it is unclear how robust the method is under challenging conditions.
+
+2. **Ambiguous Comparison with Recent Methods (Medium Severity)**: The paper excludes some recent and potentially relevant methods (e.g., BKind) from comparison, and it does not provide statistical significance tests for reported improvements over human-prior-based methods like STT. This limits the confidence in the novelty and effectiveness of PPL.
+
+3. **Vague Explanation of Hierarchical Memory Differences (Medium Severity)**: Although the hierarchical memory is claimed to differ from previous compositional memory designs (such as PCT), the explanation is insufficient. There is no formal argument distinguishing PPL’s memory structure from related work, nor is there evidence that it avoids issues like semantic token mixing identified in earlier methods.
+
+4. **Limited Discussion of Generalization to New Categories (Low Severity)**: The paper evaluates PPL on human, dog, and flower categories but does not investigate how it performs on newly encountered or rare categories. This raises questions about the scalability and adaptability of the method to broader applications.
+
+---
+
+**Questions For The Authors**
+
+1. **Failure Mode Analysis**: Please describe the behavior of PPL on severely occluded or rare categories. Are there specific failure modes (e.g., misalignment, incorrect part assignment) that occur frequently?
+
+2. **Statistical Significance**: Could the authors clarify whether the reported improvements over STT and other baselines are statistically significant (e.g., p-values)?
+
+3. **Hierarchical Memory Distinction**: How does the hierarchical memory design in PPL fundamentally differ from the compositional memory in PCT? Is there any formal proof or empirical evidence showing that PPL’s memory structure avoids issues like semantic token mixing?
+
+4. **Reference Image Impact**: What is the influence of the choice of $ I_{\text{ref}} $ (masked vs. video frame) on the learning dynamics and final performance? Have alternative choices been explored?
+
+5. **Computational Trade-offs**: What is the computational overhead associated with increasing the number of memory vectors or keypoint count? Has the model been profiled for efficiency?
+
+---
+
+**Limitations Not Addressed By The Authors**
+
+- The paper does not discuss how the method handles multi-object scenes or crowded environments, which are common challenges in real-world applications.
+- The impact of the method on downstream tasks (e.g., action recognition, motion prediction) is not analyzed.
+- The ethical implications of deploying this method on personal or sensitive imagery are not discussed, despite being a concern in human-centric pose estimation.
+
+---
+
+**Soundness:** 3 (Good)
+
+While the methodology is largely sound and supported by experiments, the lack of failure-case analysis and comparative rigor reduces the confidence in the method’s robustness and novelty.
+
+**Contribution:** 3 (Good)
+
+The paper contributes a novel hierarchical memory design for unsupervised pose estimation and demonstrates promising performance. However, the novelty is somewhat diluted by the omission of relevant comparisons and lack of deep theoretical grounding.
+
+**Confidence:** 4 (High)
+
+The experiments are well-conducted and the method is clearly described. However, the absence of statistical validation and failure-case analysis leaves room for uncertainty regarding the full scope of the method’s capabilities.
+
+**Rating:** 7 (Accept)
+
+The paper presents a valid and interesting contribution to unsupervised pose estimation. While it has important gaps in depth and breadth, the method is sufficiently well-motivated and evaluated to warrant acceptance, pending clarification of the aforementioned issues.
+
+---
+
+**Brief Justification For Rating**
+
+The paper introduces a novel method for unsupervised pose estimation with a compelling hierarchical memory design and demonstrates strong performance on standard benchmarks. However, the lack of statistical validation, failure-case analysis, and clarity on differentiation from prior work limits the confidence in the full impact and novelty of the contribution. Despite these shortcomings, the method is well-executed and merits publication with revisions.
+
+================================================================================

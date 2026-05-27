@@ -1,0 +1,69 @@
+{
+  "paper_id": "0OdIwdiFb7",
+  "Decision": "Reject",
+  "Meta review": {
+    "Metareview": "TBD",
+    "Justification For Why Not Higher Score": "TBD",
+    "Justification For Why Not Lower Score": "TBD"
+  },
+  "reviews": [
+    {
+      "Review ID": "bAu9C5ugC8",
+      "Overall Recommendation": "4",
+      "Summary": "This paper primarily addresses the issue of existing pose estimation methods' over-reliance on manually designed prior knowledge and their sensitivity to occlusions, particularly in complex poses. Compared to the approach by He et al., the authors propose a hierarchical part-based memory module, with the following specific ideas:\n1. Decompose the human or animal pose into local parts (such as arms, legs), with each part corresponding to an independent memory bank to store typical pose prototypes.\n2. By using Keypoint Prior, aggregate the prototypes from the memory banks to dynamically generate data-driven pose priors, avoiding manual settings, and employ image reconstruction for supervised learning.\n3. Introduce multi-round optimization during inference, progressively repairing occluded parts through iterative retrieval and reconstruction.\n\n## In terms of experiments:\nThe method outperforms mainstream methods like PCT on both human (Human3.6M, MPII) and animal (AnimalPose) datasets, with an improvement of approximately 8% in keypoint localization accuracy under occlusion scenarios and a reduction of 12-15% in overall error.\nThe ablation experiments are very clear in Table 4, where the authors validate the improvements brought by the hierarchical memory design, dynamic prior generation, and iterative optimization mechanism on the Human3.6M dataset.\n\n## Justification.\nI appreciate this paper, with its clear presentation allowing me to understand the PPL approach quite clearly from Figure 2. Moreover, Figure 4 very clearly demonstrates the robustness of iterative optimization to occlusions. Table 4 clearly showcases the impact of each key component.",
+      "Claims And Evidence": "I do not find problematic claims.",
+      "Methods And Evaluation Criteria": "The method outperforms mainstream methods like PCT on both human (Human3.6M, MPII) and animal (AnimalPose) datasets, with an improvement of approximately 8% in keypoint localization accuracy under occlusion scenarios and a reduction of 12-15% in overall error.\nThe ablation experiments are very clear in Table 4, where the authors validate the improvements brought by the hierarchical memory design, dynamic prior generation, and iterative optimization mechanism on the Human3.6M dataset.",
+      "Theoretical Claims": "It does no have any theoretical issues.",
+      "Experimental Designs Or Analyses": "The experimental designs and analyses are fine to me.",
+      "Supplementary Material": "I check the supplementary material mentioned in the ablation section.",
+      "Relation To Broader Scientific Literature": "It achieves learning category-level pose priors from unlabeled images.",
+      "Essential References Not Discussed": "None.",
+      "Other Strengths And Weaknesses": "See my summary.",
+      "Other Comments Or Suggestions": "See my summary.",
+      "Questions For Authors": "I do not have any questions for authors.",
+      "Code Of Conduct": "Affirmed."
+    },
+    {
+      "Review ID": "mnJLsoDFgs",
+      "Overall Recommendation": "3",
+      "Summary": "This paper focuses on unsupervised pose estimation and introduces Pose Prior Learner (PPL), which learns a general categorical pose prior in a self-supervised manner to enhance pose estimation performance. The pose prior is designed as a combination of a keypoint prior, distilled from a learnable memory, and a learnable connectivity prior. Additionally, an iterative inference strategy is proposed to refine poses in occluded scenes. Experiments on multiple datasets, covering both human and animal pose estimation, validate the effectiveness of PPL.",
+      "Claims And Evidence": "Yes, categorical pose priors are crucial for pose estimation, particularly in unsupervised settings, as supported by prior work cited in Section 2.",
+      "Methods And Evaluation Criteria": "Yes, as evidenced by previous work cited in Section 2, pose priors play a crucial role in unsupervised pose estimation. Given the difficulty of annotating priors, using learnable pose priors to enhance performance is a reasonable approach. Additionally, the benchmark datasets used are widely recognized in this field.",
+      "Theoretical Claims": "No theoretical claims in this paper.",
+      "Experimental Designs Or Analyses": "I have reviewed the experiments and identified the following concerns:\n1. A recent state-of-the-art method [1] for unsupervised pose estimation, published in CVPR 2024, is neither cited nor discussed in the paper. Additionally, it achieves more impressive results than PPL.\n2. AutoLink was evaluated on more diverse scenarios, including faces, fashion, birds, flowers, hands, horses, and zebras. However, PPL does not consider these scenarios, raising concerns about its generalization ability.\n3. The paper lacks visualization comparisons with existing methods, particularly AutoLink, making it difficult to determine the specific factors contributing to PPL’s performance improvements.\n4. While the paper includes ablation studies on prior variants, it does not evaluate a crucial baseline, i.e., PPL without pose priors, which is necessary to first validate the importance of pose priors.\n5. In Table 2, the results of BKind'22 are not listed. \n6. In Fig. A1, it would be beneficial to include the results of the Memory Bank (1 vector) for comparison with PCT'23.\n\n\n[1] Unsupervised Keypoints from Pretrained Diffusion Models. CVPR2024.",
+      "Supplementary Material": "I have thoroughly reviewed the entire supplementary material.",
+      "Relation To Broader Scientific Literature": "PPL builds on the importance of pose priors in unsupervised pose estimation ([Shape Template Transforming'21]) and introduces learnable pose priors, distilled from a compositional memory architecture similar to [PCT'23], which are then transformed into keypoints using predicted transformation parameters. Additionally, PPL leverages learnable connectivity priors for image reconstruction, enabling self-supervised learning akin to [AutoLink'22].",
+      "Essential References Not Discussed": "- Unsupervised Keypoints from Pretrained Diffusion Models. CVPR2024.",
+      "Other Strengths And Weaknesses": "None",
+      "Other Comments Or Suggestions": "- It's suggested to adjust the position of Table 3 in the paper.\n- It's suggested to place Fig. 3 before Table 1-3.",
+      "Questions For Authors": "My main concerns are related to the experiments, as outlined in the previous section:\n1. Lack of comparisons with the recent state-of-the-art method [1].\n2. Fewer evaluated datasets compared to AutoLink.\n3. Lack of visualization comparisons with existing methods.\n4. Missing baseline results without pose priors.\n5. Absence of BKind'22 results in Table 2.\n6. No results for the Memory Bank (1 vector) comparison with PCT'23 in Fig.A1.\n\nConsidering these factors, especially the less satisfactory performance of PPL compared to [1], I would currently give a positive rating for the paper.\n\n\n[1] Unsupervised Keypoints from Pretrained Diffusion Models. CVPR2024.",
+      "Code Of Conduct": "Affirmed."
+    },
+    {
+      "Review ID": "n1csvP2P89",
+      "Overall Recommendation": "3",
+      "Summary": "The authors presents Pose Prior Learner (PPL) that learns category-level pose priors from image reconstruction, without human annotations. The motivation is that given two frames of an object instance, an ideal pose prior should be able to reconstruct the image based on the estimated poses and transformations. The authors further presented an iterative strategy that improves performance under occlusion.\n\n## update after rebuttal\n\nThank the authors for the rebuttal. I don't have further questions. Regarding the missing references, I can see the difference from previous works and the novelty of this paper. However I believe the idea of this work is still built on the foundation from these previous works. I recommend discussing the four references for a comprehensive discussion, which help positioning this work in the literature.",
+      "Claims And Evidence": "Claims are mostly supported with clear and convincing evidence.",
+      "Methods And Evaluation Criteria": "The authors aimed to learn pose priors in an unsupervised manner, without human-defined priors. The proposed method address this problem by learning from image reconstruction supervision. The motivation of the method is clear.\n\nHowever, the motivation of the iterative inference strategy is not very clear. It would be good if the authors can present some qualitative examples showing why models with iterative inference strategy would fail and how this strategy fixes the wrong pose. A concern is if the wrong predictions from the previous iterations would aggregate, leading to degraded performance in following steps.",
+      "Theoretical Claims": "This work did not present major theoretical claims or proofs.",
+      "Experimental Designs Or Analyses": "Experimental designs are clear and solid. One concern is that there are not sufficient results on pose estimation under (synthetic) occlusion. There are some results in Appendix A4 showing that with more steps of the iterative strategy the performance improve. There lacks direct comparisons with other baseline methods under occlusion cases.",
+      "Supplementary Material": "Yes I reviewed all the supplementary materials attached after the main text.",
+      "Relation To Broader Scientific Literature": "This work also broadly relates to the study of unsupervised learning of pose estimation models. See discussion in \"Essential References Not Discussed\".",
+      "Essential References Not Discussed": "Essential references not discussed are the some recent animal pose estimation methods learning from image-level and feature level reconstruction, such as MagicPony and 3D Fauna. It would be good to discuss how the proposed method distinguish from these works and what new findings and results can benefit the research community beyond these prior works.\n\n* MagicPony: Learning Articulated 3D Animals in the Wild. CVPR 2023.\n* Learning the 3D Fauna of the Web. CVPR 2024.\n\nAnother line of works study compositional models for rigid object pose estimation, which estimates poses using a feature memory bank for estimating part correspondence. The second paper also studies unsupervised learning of pose models from object-centric videos.\n\n* Robust Category-Level 6D Pose Estimation with Coarse-to-Fine Rendering of Neural Features. ECCV 2022.\n* Unsupervised Learning of Category-Level 3D Pose from Object-Centric Videos. CVPR 2024.",
+      "Other Strengths And Weaknesses": "I acknowledge the importance of the problem and the contribution of the proposed method. However, I think the authors should also discuss the missing related works above, which would help to position this work in the literature, distinguish it from prior works, and highlight the novelty of this paper.",
+      "Other Comments Or Suggestions": "Following the discussion in \"Experimental Designs Or Analyses\", I recommend the authors to add more motivation and qualitative results of the iterative inference strategy, why models without this strategy would fail and how this strategy fixes the failure cases. Based on these results, the author can explain in more detail the motivate of this iterative strategy and intuitively why this strategy would help.",
+      "Questions For Authors": "None.",
+      "Code Of Conduct": "Affirmed."
+    }
+  ],
+  "keywords": "['Prior', 'pose estimation', 'unsupervised learning']",
+  "primary_area": "applications->computer_vision",
+  "subject_areas": "",
+  "title": "Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation",
+  "abstract": "A prior represents a set of beliefs or assumptions about a system, aiding inference and decision-making. In this paper, we introduce the challenge of unsupervised categorical prior learning in pose estimation, where AI models learn a general pose prior for an object category from images in a self-supervised manner.\nAlthough priors are effective in estimating pose, acquiring them can be difficult. We propose a novel method, named Pose Prior Learner (PPL), to learn a general pose prior for any object category. PPL uses a hierarchical memory to store compositional parts of prototypical poses, from which we distill a general pose prior. This prior improves pose estimation accuracy through template transformation and image reconstruction. PPL learns meaningful pose priors without any additional human annotations or interventions, outperforming competitive baselines on both human and animal pose estimation datasets. Notably, our experimental results reveal the effectiveness of PPL using learned prototypical poses for pose estimation on occluded images. Through iterative inference, PPL leverages the pose prior to refine estimated poses, regressing them to any prototypical poses stored in memory. Our code, model, and data will be publicly available.",
+  "statistics": {
+    "num_reviews": 3,
+    "has_meta_review": false,
+    "has_decision": true
+  }
+}
