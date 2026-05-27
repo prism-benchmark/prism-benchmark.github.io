@@ -67,8 +67,8 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
     <style is:global>
       /* ---- Floating left-side Table of Contents (ported from index.html) ---- */
       :root {
-        --toc-accent: #c45a0e;
-        --toc-accent-soft: rgba(196, 90, 14, 0.15);
+        --toc-accent: #2563eb;
+        --toc-accent-soft: rgba(37, 99, 235, 0.15);
         --toc-muted: #888;
         --toc-line: #e8e8e8;
         --toc-divider: #ececec;
@@ -76,8 +76,8 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
       }
       html[data-theme="dark"],
       html.dark {
-        --toc-accent: #f59e0b;
-        --toc-accent-soft: rgba(245, 158, 11, 0.18);
+        --toc-accent: #60a5fa;
+        --toc-accent-soft: rgba(96, 165, 250, 0.18);
         --toc-muted: #a1a1aa;
         --toc-line: #3f3f46;
         --toc-divider: #3f3f46;
@@ -85,8 +85,8 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
       }
       @media (prefers-color-scheme: dark) {
         html[data-theme="device"] {
-          --toc-accent: #f59e0b;
-          --toc-accent-soft: rgba(245, 158, 11, 0.18);
+          --toc-accent: #60a5fa;
+          --toc-accent-soft: rgba(96, 165, 250, 0.18);
           --toc-muted: #a1a1aa;
           --toc-line: #3f3f46;
           --toc-divider: #3f3f46;
@@ -97,35 +97,27 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
       .toc {
         position: fixed;
         top: 50%;
-        left: 1.25rem;
+        left: 0.9rem;
         transform: translateY(-50%);
         z-index: 50;
         max-height: 84vh;
         overflow-y: auto;
-        padding: 0.3rem 0;
+        padding: 0.2rem 0;
         scrollbar-width: thin;
-        transition:
-          opacity 0.2s ease,
-          transform 0.2s ease;
-      }
-      .toc.is-closed {
-        opacity: 0;
-        pointer-events: none;
-        transform: translate(-1rem, -50%);
       }
       .toc-brand {
         display: flex;
         align-items: center;
-        gap: 0.35em;
-        font-size: 1.05rem;
+        gap: 0.3em;
+        font-size: 0.9rem;
         font-weight: 700;
         letter-spacing: 0.04em;
         line-height: 1.15;
         color: var(--toc-muted);
         text-transform: uppercase;
         text-decoration: none;
-        padding: 0 0 0.7rem 0.45rem;
-        margin-bottom: 0.55rem;
+        padding: 0 0 0.55rem 0.35rem;
+        margin-bottom: 0.4rem;
         border-bottom: 1px solid var(--toc-divider);
       }
       .toc::-webkit-scrollbar {
@@ -137,7 +129,7 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
       }
       .toc-list {
         list-style: none;
-        padding: 0 0 0 1rem;
+        padding: 0 0 0 0.8rem;
         margin: 0;
         border-left: 1.5px solid var(--toc-line);
         position: relative;
@@ -147,10 +139,10 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
       }
       .toc-link {
         display: block;
-        padding: 0.42em 0.2em 0.42em 0.4em;
+        padding: 0.34em 0.15em 0.34em 0.3em;
         color: var(--toc-muted);
         text-decoration: none;
-        font-size: 0.95em;
+        font-size: 0.86em;
         font-weight: 500;
         letter-spacing: 0.01em;
         transition:
@@ -158,7 +150,7 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
           padding-left 0.18s ease;
         line-height: 1.3;
         white-space: nowrap;
-        max-width: 14rem;
+        max-width: 11.5rem;
         overflow: hidden;
         text-overflow: ellipsis;
         position: relative;
@@ -169,7 +161,7 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
       .toc-link::before {
         content: "";
         position: absolute;
-        left: -1.05rem;
+        left: -0.85rem;
         top: 50%;
         width: 0;
         height: 0;
@@ -184,69 +176,26 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
       .toc-item.active > .toc-link {
         color: var(--toc-accent);
         font-weight: 700;
-        padding-left: 0.8em;
+        padding-left: 0.55em;
       }
       .toc-item.active > .toc-link::before {
-        width: 9px;
-        height: 9px;
-        box-shadow: 0 0 0 3px var(--toc-accent-soft);
-      }
-      /* Sub-items (h3) — collapsed by default; auto-expand when parent active */
-      .toc-sub {
-        list-style: none;
-        padding: 0 0 0 0.9em;
-        margin: 0;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition:
-          max-height 0.28s ease,
-          opacity 0.2s ease;
-      }
-      .toc-item.has-sub.active > .toc-sub,
-      .toc-item.has-sub.expanded > .toc-sub {
-        max-height: 600px;
-        opacity: 1;
-      }
-      .toc-sub .toc-link {
-        font-size: 0.88em;
-        padding: 0.32em 0.2em 0.32em 0.4em;
-      }
-      .toc-sub .toc-item.active > .toc-link::before {
         width: 7px;
         height: 7px;
+        box-shadow: 0 0 0 2px var(--toc-accent-soft);
       }
-
-      /* Toggle button: floats next to TOC, restyled minimal */
-      #toc-toggle {
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        z-index: 60;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.25rem;
-        width: 2.25rem;
-        border-radius: 0.5rem;
-        background: rgba(255, 255, 255, 0.9);
-        color: #52525b;
-        border: 1px solid #e4e4e7;
-        backdrop-filter: blur(8px);
-        transition: background 0.15s ease;
+      /* Sub-items (h3) — always visible */
+      .toc-sub {
+        list-style: none;
+        padding: 0 0 0 0.7em;
+        margin: 0;
       }
-      #toc-toggle:hover {
-        background: #f4f4f5;
+      .toc-sub .toc-link {
+        font-size: 0.8em;
+        padding: 0.26em 0.15em 0.26em 0.3em;
       }
-      html.dark #toc-toggle,
-      html[data-theme="dark"] #toc-toggle {
-        background: rgba(24, 24, 27, 0.9);
-        color: #e4e4e7;
-        border-color: #3f3f46;
-      }
-      html.dark #toc-toggle:hover,
-      html[data-theme="dark"] #toc-toggle:hover {
-        background: #27272a;
+      .toc-sub .toc-item.active > .toc-link::before {
+        width: 6px;
+        height: 6px;
       }
 
       /* Hide TOC on narrow viewports */
@@ -254,14 +203,11 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
         .toc {
           display: none;
         }
-        #toc-toggle {
-          display: none;
-        }
       }
       /* Reserve gutter on mid-width laptops so floating TOC doesn't overlap content */
       @media (min-width: 1181px) and (max-width: 1700px) {
         body {
-          padding-left: 240px;
+          padding-left: 205px;
         }
       }
     </style>
@@ -281,48 +227,6 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
         {links && <Links links={links} />}
       </div>
     </header>
-
-    <button
-      id="toc-toggle"
-      aria-label="Toggle outline"
-      aria-controls="toc-sidebar"
-      aria-expanded="true"
-    >
-      <svg
-        id="toc-toggle-icon-open"
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-      <svg
-        id="toc-toggle-icon-close"
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="hidden"
-        aria-hidden="true"
-      >
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
 
     <nav id="toc-sidebar" class="toc" aria-label="Page sections">
       <span class="toc-brand">On this page</span>
@@ -365,7 +269,6 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
 
     <script>
       // ------- Build TOC from <main> headings (h2 + h3) -------
-      const sidebar = document.getElementById("toc-sidebar");
       const list = document.getElementById("toc-list");
       const main = document.querySelector("main");
 
@@ -563,42 +466,6 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
           mo.observe(b, { attributes: true, attributeFilter: ["class"] }),
         );
       });
-
-      // ------- Toggle open/close (persisted) -------
-      const toggleBtn = document.getElementById("toc-toggle");
-      const iconOpen = document.getElementById("toc-toggle-icon-open");
-      const iconClose = document.getElementById("toc-toggle-icon-close");
-      if (sidebar && toggleBtn && iconOpen && iconClose) {
-        const setOpen = (open: boolean) => {
-          if (open) {
-            sidebar.classList.remove("is-closed");
-            iconOpen.classList.add("hidden");
-            iconClose.classList.remove("hidden");
-            toggleBtn.setAttribute("aria-expanded", "true");
-          } else {
-            sidebar.classList.add("is-closed");
-            iconOpen.classList.remove("hidden");
-            iconClose.classList.add("hidden");
-            toggleBtn.setAttribute("aria-expanded", "false");
-          }
-          try {
-            localStorage.setItem("toc-open", open ? "1" : "0");
-          } catch {}
-        };
-
-        let initialOpen = true;
-        try {
-          const saved = localStorage.getItem("toc-open");
-          if (saved === "1") initialOpen = true;
-          if (saved === "0") initialOpen = false;
-        } catch {}
-        setOpen(initialOpen);
-
-        toggleBtn.addEventListener("click", () => {
-          const isOpen = toggleBtn.getAttribute("aria-expanded") === "true";
-          setOpen(!isOpen);
-        });
-      }
 
       // ------- Back to top -------
       const btn = document.getElementById("back-to-top");

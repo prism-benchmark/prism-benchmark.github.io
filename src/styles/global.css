@@ -20,7 +20,7 @@
 
 :root {
   --actual-inline-margin: 5vw;
-  --actual-text-width: 65vw;
+  --actual-text-width: 70vw;
 }
 
 @media (max-width: 47.999rem) {
@@ -256,7 +256,8 @@ img {
   margin-bottom: 0.75rem;
 }
 
-.prose ul, .prose ol {
+.prose ul,
+.prose ol {
   margin-bottom: 0.75rem;
   padding-left: 1.5rem;
 }
@@ -448,6 +449,22 @@ img {
   margin-left: 0.15rem;
 }
 
+.paper-institution-logos {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+}
+
+.paper-institution-logo {
+  width: auto;
+  max-width: min(12rem, 40vw);
+  height: clamp(2.25rem, 5vw, 3.75rem);
+  object-fit: contain;
+}
+
 .paper-conference {
   margin-top: 0.75rem;
   color: var(--color-rose-400);
@@ -484,6 +501,16 @@ img {
   .paper-conference,
   .paper-notes {
     font-size: 0.875rem;
+  }
+
+  .paper-institution-logos {
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .paper-institution-logo {
+    max-width: min(8.5rem, 42vw);
+    height: 1.75rem;
   }
 }
 

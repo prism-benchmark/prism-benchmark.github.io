@@ -9,6 +9,7 @@ export type Author = {
 export type Institution = {
   index: number;
   name: string;
+  logo?: string;
 };
 
 export type Link = {

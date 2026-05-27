@@ -9,6 +9,8 @@ interface Props {
 }
 
 const { authors, institutions, conference, notes } = Astro.props;
+const institutionLogos =
+  institutions?.filter((institution) => institution.logo) ?? [];
 ---
 
 <div class="paper-authors">
@@ -26,8 +28,7 @@ const { authors, institutions, conference, notes } = Astro.props;
             {author.notes && (
               <sup class="paper-author-notes">
                 {author.notes.map(
-                  (note, i, array) =>
-                    note + (i < array.length - 1 ? "," : ""),
+                  (note, i, array) => note + (i < array.length - 1 ? "," : ""),
                 )}
               </sup>
             )}
@@ -37,30 +38,50 @@ const { authors, institutions, conference, notes } = Astro.props;
     }
   </div>
 
-  {institutions && institutions.length > 0 && (
-    <div class="paper-institutions">
-      {institutions.map((inst, index) => (
-        <span class="paper-institution">
-          <sup>{inst.index}</sup>
-          <span>{inst.name}</span>
-          {index < institutions.length - 1 && (
-            <span class="paper-institution-separator">;</span>
-          )}
-        </span>
-      ))}
-    </div>
-  )}
+  {
+    institutions && institutions.length > 0 && (
+      <div class="paper-institutions">
+        {institutions.map((inst, index) => (
+          <span class="paper-institution">
+            <sup>{inst.index}</sup>
+            <span>{inst.name}</span>
+            {index < institutions.length - 1 && (
+              <span class="paper-institution-separator">;</span>
+            )}
+          </span>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    institutionLogos.length > 0 && (
+      <div class="paper-institution-logos" aria-label="Institution logos">
+        {institutionLogos.map((institution) => (
+          <img
+            class="paper-institution-logo"
+            src={institution.logo}
+            alt={`${institution.name} logo`}
+            loading="eager"
+            decoding="async"
+          />
+        ))}
+      </div>
+    )
+  }
 
   {conference && <div class="paper-conference">{conference}</div>}
 
-  {notes && notes.length > 0 && (
-    <div class="paper-notes">
-      {notes.map((note) => (
-        <div class="paper-note">
-          <sup>{note.symbol}</sup>
-          <span>{note.text}</span>
-        </div>
-      ))}
-    </div>
-  )}
+  {
+    notes && notes.length > 0 && (
+      <div class="paper-notes">
+        {notes.map((note) => (
+          <div class="paper-note">
+            <sup>{note.symbol}</sup>
+            <span>{note.text}</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
 </div>
