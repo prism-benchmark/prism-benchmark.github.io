@@ -10,6 +10,8 @@ export type Institution = {
   index: number;
   name: string;
   logo?: string;
+  logoWidth?: number;
+  logoHeight?: number;
 };
 
 export type Link = {

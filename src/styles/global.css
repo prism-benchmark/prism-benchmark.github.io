@@ -347,15 +347,48 @@ img {
 }
 
 .prose h2 {
+  color: var(--color-blue-700);
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .prose h3 {
+  color: var(--color-blue-600);
   font-size: 1.25rem;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
+}
+
+.prose strong,
+.prose b {
+  color: var(--color-blue-700);
+}
+
+html[data-theme="dark"] .prose h2,
+html.dark .prose h2 {
+  color: var(--color-blue-300);
+}
+
+html[data-theme="dark"] .prose h3,
+html.dark .prose h3 {
+  color: var(--color-blue-300);
+}
+
+html[data-theme="dark"] .prose strong,
+html[data-theme="dark"] .prose b,
+html.dark .prose strong,
+html.dark .prose b {
+  color: var(--color-blue-300);
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="device"] .prose h2,
+  html[data-theme="device"] .prose h3,
+  html[data-theme="device"] .prose strong,
+  html[data-theme="device"] .prose b {
+    color: var(--color-blue-300);
+  }
 }
 
 .prose p {
