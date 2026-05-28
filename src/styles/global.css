@@ -519,9 +519,6 @@ html[data-theme="dark"] .demo-stance[data-stance="not_novel"] {
 .demo-chip[data-role="backing"] {
   color: #047857;
 }
-.demo-chip[data-role="rebuttal"] {
-  color: #b91c1c;
-}
 
 /* Argument aspects (depth panel) — color the group heading */
 .demo-group[data-aspect="novelty"] h3 {
@@ -611,7 +608,6 @@ html[data-theme="dark"] .demo-chip[data-section="strengths"],
 html[data-theme="dark"] .demo-chip[data-comment-type="strength"] {
   color: #34d399;
 }
-html[data-theme="dark"] .demo-chip[data-role="rebuttal"],
 html[data-theme="dark"] .demo-chip[data-section="weaknesses"],
 html[data-theme="dark"] .demo-chip[data-comment-type="weakness"] {
   color: #f87171;

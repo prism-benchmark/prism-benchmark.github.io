@@ -69,14 +69,20 @@ function normalizeDepth(root: string, conference: string, source: DemoSource, pa
   const reviewGroups = raw?.reviews_analysis ?? {};
   const argumentsList = Object.entries(reviewGroups).flatMap(([reviewer, args]) =>
     Array.isArray(args)
-      ? args.map((arg: JsonValue) => ({
-          reviewer,
-          id: String(arg.arg_id ?? ""),
-          text: trimText(arg.argument, 520),
-          role: String(arg.role ?? "Unknown"),
-          aspect: String(arg.aspect ?? "Other"),
-          grounding: round(arg.grounding_score, 0),
-        }))
+      ? args.flatMap((arg: JsonValue) => {
+          const role = String(arg.role ?? "Unknown");
+          if (role.toLowerCase() === "rebuttal") return [];
+          return [
+            {
+              reviewer,
+              id: String(arg.arg_id ?? ""),
+              text: trimText(arg.argument, 520),
+              role,
+              aspect: String(arg.aspect ?? "Other"),
+              grounding: round(arg.grounding_score, 0),
+            },
+          ];
+        })
       : [],
   );
 
