@@ -1,0 +1,70 @@
+{
+  "paper_id": "03OkC0LKDD",
+  "source": "cyclereview_iclr2025",
+  "source_format": "cyclereview_json",
+  "reviews_analysis": {
+    "CYCLEREVIEW_ICLR2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper studies the problem of Byzantine robust distributed learning and proposes an adaptive clipping scheme for the gradients before applying robust aggregation methods.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The paper theoretically shows that the proposed method preserves the robustness of the original aggregation method and empirically shows that it can improve the robustness of the learning.",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The paper is well written and easy to follow.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The proposed method is simple and intuitive and the theoretical analysis is sound.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The experiments are well conducted and the results are promising.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The main weakness of the paper is that the theoretical analysis is not very strong.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The paper shows that the proposed method preserves the robustness of the original aggregation method, but it does not provide any new robustness guarantees.",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The empirical results are promising, but it is not clear whether the proposed method is the best approach for Byzantine robust distributed learning.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 1132,
+    "completion_tokens": 1132,
+    "total_tokens": 2264
+  }
+}

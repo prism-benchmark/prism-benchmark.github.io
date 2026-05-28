@@ -1,0 +1,189 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "unsupervised categorical pose estimation images unsupervised learning categorical pose priors",
+      "status": "ok",
+      "count": 10
+    },
+    {
+      "id": "C2",
+      "query": "unsupervised categorical pose estimation images iterative inference strategy occluded pose estimation",
+      "status": "ok",
+      "count": 10
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "d3db8240c68693688a29e7ffb732e25505368e4f",
+      "title": "Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation",
+      "year": 2024,
+      "venue": "",
+      "abstract": "A prior represents a set of beliefs or assumptions about a system, aiding inference and decision-making. In this paper, we introduce the challenge of unsupervised categorical prior learning in pose estimation, where AI models learn a general pose prior for an object category from images in a self-supervised manner. Although priors are effective in estimating pose, acquiring them can be difficult. We propose a novel method, named Pose Prior Learner (PPL), to learn a general pose prior for any object category. PPL uses a hierarchical memory to store compositional parts of prototypical poses, from which we distill a general pose prior. This prior improves pose estimation accuracy through template transformation and image reconstruction. PPL learns meaningful pose priors without any additional human annotations or interventions, outperforming competitive baselines on both human and animal pose estimation datasets. Notably, our experimental results reveal the effectiveness of PPL using learned prototypical poses for pose estimation on occluded images. Through iterative inference, PPL leverages the pose prior to refine estimated poses, regressing them to any prototypical poses stored in memory. Our code, model, and data are publicly available at: https://github.com/ZhangLab-DeepNeuroCogLab/Pose-Prior-Learner.",
+      "url": "https://www.semanticscholar.org/paper/d3db8240c68693688a29e7ffb732e25505368e4f",
+      "embedding": null
+    },
+    {
+      "cand_id": "82e3541f7cecd7e7dce92deea31bfc48b66e1845",
+      "title": "Unsupervised Domain Adaptation for Occlusion Resilient Human Pose Estimation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Occlusions are a significant challenge to human pose estimation algorithms, often resulting in inaccurate and anatomically implausible poses. Although current occlusion-robust human pose estimation algorithms exhibit impressive performance on existing datasets, their success is largely attributed to supervised training and the availability of additional information, such as multiple views or temporal continuity. Furthermore, these algorithms typically suffer from performance degradation under distribution shifts. While existing domain adaptive human pose estimation algorithms address this bottleneck, they tend to perform suboptimally when the target domain images are occluded, a common occurrence in real-life scenarios. To address these challenges, we propose OR-POSE: Unsupervised Domain Adaptation for Occlusion Resilient Human POSE Estimation. OR-POSE is an innovative unsupervised domain adaptation algorithm which effectively mitigates domain shifts and overcomes occlusion challenges by employing the mean teacher framework for iterative pseudo-label refinement. Additionally, OR-POSE reinforces realistic pose prediction by leveraging a learned human pose prior which incorporates the anatomical constraints of humans in the adaptation process. Lastly, OR-POSE avoids overfitting to inaccurate pseudo labels generated from heavily occluded images by employing a novel visibility-based curriculum learning approach. This enables the model to gradually transition from training samples with relatively less occlusion to more challenging, heavily occluded samples. Extensive experiments show that OR-POSE outperforms existing analogous state-of-the-art algorithms by $\\sim$ 7% on challenging occluded human pose estimation datasets.",
+      "url": "https://www.semanticscholar.org/paper/82e3541f7cecd7e7dce92deea31bfc48b66e1845",
+      "embedding": null
+    },
+    {
+      "cand_id": "ec1d4206d09ec233dd6e8f179a68812b0525cd0f",
+      "title": "X as Supervision: Contending with Depth Ambiguity in Unsupervised Monocular 3D Pose Estimation",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "abstract": "Recent unsupervised methods for monocular 3D pose estimation have endeavored to reduce dependence on limited annotated 3D data, but most are solely formulated in 2D space, overlooking the inherent depth ambiguity issue. Due to the information loss in 3D-to-2D projection, multiple potential depths may exist, yet only some of them are plausible in human structure. To tackle depth ambiguity, we propose a novel unsupervised framework featuring a multi-hypothesis detector and multiple tailored pretext tasks. The detector extracts multiple hypotheses from a heatmap within a local window, effectively managing the multi-solution problem. Furthermore, the pretext tasks harness 3D human priors from the SMPL model to regularize the solution space of pose estimation, aligning it with the empirical distribution of 3D human structures. This regularization is partially achieved through a GCN-based discriminator within the discriminative learning, and is further complemented with synthetic images through rendering, ensuring plausible estimations. Consequently, our approach demonstrates state-of-the-art unsupervised 3D pose estimation performance on various human datasets. Further evaluations on data scale-up and one animal dataset highlight its generalization capabilities. Code will be available at https://github.com/Charrrrrlie/X-as-Supervision.",
+      "url": "https://www.semanticscholar.org/paper/ec1d4206d09ec233dd6e8f179a68812b0525cd0f",
+      "embedding": null
+    },
+    {
+      "cand_id": "89992f63014867aafde5924af9c95dfb20964ccd",
+      "title": "RotationNet for Joint Object Categorization and Unsupervised Pose Estimation from Multi-View Images",
+      "year": 2021,
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "abstract": "We propose a Convolutional Neural Network (CNN)-based model “RotationNet,” which takes multi-view images of an object as input and jointly estimates its pose and object category. Unlike previous approaches that use known viewpoint labels for training, our method treats the viewpoint labels as latent variables, which are learned in an unsupervised manner during the training using an unaligned object dataset. RotationNet uses only a partial set of multi-view images for inference, and this property makes it useful in practical scenarios where only partial views are available. Moreover, our pose alignment strategy enables one to obtain view-specific feature representations shared across classes, which is important to maintain high accuracy in both object categorization and pose estimation. Effectiveness of RotationNet is demonstrated by its superior performance to the state-of-the-art methods of 3D object classification on 10- and 40-class ModelNet datasets. We also show that RotationNet, even trained without known poses, achieves comparable performance to the state-of-the-art methods on an object pose estimation dataset. Furthermore, our object ranking method based on classification by RotationNet achieved the first prize in two tracks of the 3D Shape Retrieval Contest (SHREC) 2017. Finally, we demonstrate the performance of real-world applications of RotationNet trained with our newly created multi-view image dataset using a moving USB camera.",
+      "url": "https://www.semanticscholar.org/paper/89992f63014867aafde5924af9c95dfb20964ccd",
+      "embedding": null
+    },
+    {
+      "cand_id": "ce5101d6437d29124b7b8fdf99ece36123450236",
+      "title": "UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Low-visibility scenarios, such as low-light conditions, pose significant challenges to human pose estimation due to the scarcity of annotated low-light datasets and the loss of visual information under poor illumination. Recent domain adaptation techniques attempt to utilize well-lit labels by augmenting well-lit images to mimic low-light conditions. But handcrafted augmentations oversimplify noise patterns, while learning-based methods often fail to preserve high-frequency low-light characteristics, producing unrealistic images that lead pose models to generalize poorly to real low-light scenes. Moreover, recent pose estimators rely on image cues through image-to-keypoint cross-attention, but these cues become unreliable under low-light conditions. To address these issues, we propose Unsupervised Domain Adaptation for Pose Estimation (UDAPose), a novel framework that synthesizes low-light images and dynamically fuses visual cues with pose priors for improved pose estimation. Specifically, our synthesis method incorporates a Direct-Current-based High-Pass Filter (DHF) and a Low-light Characteristics Injection Module (LCIM) to inject high-frequency details from input low-light images, overcoming rigidity or the detail loss in existing approaches. Furthermore, we introduce a Dynamic Control of Attention (DCA) module that adaptively balances image cues with learned pose priors in the Transformer architecture. Experiments show that UDAPose outperforms state-of-the-art methods, with notable AP gains of 10.1 (56.4%) on the ExLPose-test hard set (LL-H) and 7.4 (31.4%) in cross-dataset validation on EHPT-XC. Code: https://github.com/Vision-and-Multimodal-Intelligence-Lab/UDAPose",
+      "url": "https://www.semanticscholar.org/paper/ce5101d6437d29124b7b8fdf99ece36123450236",
+      "embedding": null
+    },
+    {
+      "cand_id": "d47c2d1f7bd3f37109b7818672f5c991ba445e92",
+      "title": "Enhancing Spacecraft Pose Estimation With Unsupervised Multiview Stereo Schemes and Bayesian Networks",
+      "year": 2026,
+      "venue": "IEEE Transactions on Aerospace and Electronic Systems",
+      "abstract": "In the field of spacecraft pose estimation, complex illumination variations and limited computational resources pose critical challenges. Supervised learning methods achieve higher accuracy but require massive labeled data for training, which is extremely costly to acquire for space scenarios. Meanwhile, traditional nonlearning methods, though label-free, suffer from significant performance degradation under complex illumination variations. This article proposes an end-to-end unsupervised framework for bidirectional optimization of pose estimation and 3D reconstruction. First, an unsupervised multiview stereo network is designed using a two-stage comparative learning strategy, which is capable of accurately reconstructing the target object from multiview images to obtain depth information. Then, a feature fusion method based on the attention mechanism is proposed to fuse the depth information into the pose estimation network so as to enhance the robustness of pose estimation. In addition, spacecraft pose constraints are obtained from the pose estimation, which in turn constrain the 3D reconstruction. Finally, the probabilistic inference capability of the Bayesian network is utilized to adapt to different lighting environments. The proposed method eliminates the need for large labeled datasets, suits resource-limited spacecraft, and enables efficient pose estimation using lightweight monocular cameras. Experiments on Spacecraft Pose Estimation Dataset, Unreal Rendering Spacecraft in Orbit, and a semiphysical platform show state-of-the-art (SOTA) accuracy (42.4% lower median rotation error than SOTA) and real-time capability (19 ms/frame).",
+      "url": "https://www.semanticscholar.org/paper/d47c2d1f7bd3f37109b7818672f5c991ba445e92",
+      "embedding": null
+    },
+    {
+      "cand_id": "63765013cb5d97251a68b2c51f55e9e83a3b55d1",
+      "title": "ElePose: Unsupervised 3D Human Pose Estimation by Predicting Camera Elevation and Learning Normalizing Flows on 2D Poses",
+      "year": 2021,
+      "venue": "Computer Vision and Pattern Recognition",
+      "abstract": "Human pose estimation from single images is a challenging problem that is typically solved by supervised learning. Unfortunately, labeled training data does not yet exist for many human activities since 3D annotation requires dedicated motion capture systems. Therefore, we propose an unsupervised approach that learns to predict a 3D human pose from a single image while only being trained with 2D pose data, which can be crowd-sourced and is already widely available. To this end, we estimate the 3D pose that is most likely over random projections, with the likelihood estimated using normalizing flows on 2D poses. While previous work requires strong priors on camera rotations in the training data set, we learn the distribution of camera angles which significantly improves the performance. Another part of our contribution is to stabilize training with normalizing flows on high-dimensional 3D pose data by first projecting the 2D poses to a linear subspace. We outperform the state-of-the-art unsupervised human pose estimation methods on the benchmark datasets Human3.6M and MPI-INF-3DHP in many metrics.",
+      "url": "https://www.semanticscholar.org/paper/63765013cb5d97251a68b2c51f55e9e83a3b55d1",
+      "embedding": null
+    },
+    {
+      "cand_id": "ef804d3906634da99da823dcdf972b6b7d14c4b4",
+      "title": "A Unified End-to-End Network for Category-Level and Instance-Level Object Pose Estimation from RGB Images",
+      "year": 2025,
+      "venue": "IEEE International Conference on Robotics and Automation",
+      "abstract": "Accurately estimating the 6-DoF pose of objects is a fundamental challenge in computer vision and robotics. While category-level pose estimation based on RGBD data has achieved good performance in recent years, estimating poses solely from RGB images remains a significant challenge. Existing RGB-based category-level methods primarily focus on recovering object point clouds from RGB images, and pose prediction is not performed end-to-end by a network. This paper presents a Category-level and Instance-level Pose Estimation Network (CIPE), which models pose estimation as a set prediction problem and enables direct pose regression from RGB images. To further enhance the network's ability to learn object poses, first, a novel learnable rotation representation that redefines rotation learning within Euclidean space is introduced to facilitate rotation regression. Additionally, we propose a prior-query fusion strategy that utilizes a pre-trained point cloud feature extraction network to integrate categorical object features with bounding boxes, thereby improving the incorporation of category information. Experimental results demonstrate that CIPE significantly outperforms existing RGB-based methods on both category-level and instance-level datasets. The code is available at https://github.com/jialeren/CIPE.",
+      "url": "https://www.semanticscholar.org/paper/ef804d3906634da99da823dcdf972b6b7d14c4b4",
+      "embedding": null
+    },
+    {
+      "cand_id": "9c7391580a35f3fb44ff708a498908a80d154c43",
+      "title": "Marrying NeRF with Feature Matching for One-step Pose Estimation",
+      "year": 2024,
+      "venue": "IEEE International Conference on Robotics and Automation",
+      "abstract": "Given the image collection of an object, we aim at building a real-time image-based pose estimation method, which requires neither its CAD model nor hours of object-specific training. Recent NeRF-based methods provide a promising solution by directly optimizing the pose from pixel loss between rendered and target images. However, during inference, they require long converging time, and suffer from local minima, making them impractical for real-time robot applications. We aim at solving this problem by marrying image matching with NeRF. With 2D matches and depth rendered by NeRF, we directly solve the pose in one step by building 2D-3D correspondences between target and initial view, thus allowing for real-time prediction. Moreover, to improve the accuracy of 2D-3D correspondences, we propose a 3D consistent point mining strategy, which effectively discards unfaithful points reconstruted by NeRF. Moreover, current NeRF-based methods naively optimizing pixel loss fail at occluded images. Thus, we further propose a 2D matches based sampling strategy to preclude the occluded area. Experimental results on representative datasets prove that our method outperforms state-of-the-art methods, and improves inference efficiency by 90×, achieving real-time prediction at 6 FPS.",
+      "url": "https://www.semanticscholar.org/paper/9c7391580a35f3fb44ff708a498908a80d154c43",
+      "embedding": null
+    },
+    {
+      "cand_id": "45c0b953fbf1da5c6d87aa8ad14a209deecd4a72",
+      "title": "Efficient 3D Bird Pose Estimation via Gated Large-Kernel Attention and Unsupervised Geometric Constraints",
+      "year": 2026,
+      "venue": "Electronics",
+      "abstract": "3D bird pose estimation plays a pivotal role in ecological conservation research. However, it remains a formidable challenge due to extensive joint deformation, severe self-occlusion, and the scarcity of 3D ground truth data. Therefore, practical solutions typically rely on accurate 2D keypoint detection from monocular images and subsequent 3D lifting. Although the High-Resolution Network (HRNet) has established a benchmark in 2D pose estimation by preserving high-resolution feature representations, its architecture, which relies on small convolution kernels, faces difficulties in capturing the global long-range dependencies necessary to resolve severe occlusions. To address these deficiencies, the core contributions of this work are summarized as follows: (1) We design a Gated LS-Block with a partial channel gating strategy to decouple channel mixing from spatial mixing, and extract global long-range dependencies via the proposed Large–Small Convolution (LSConv) to minimize feature redundancy. (2) We embed this block into Stage 2 of HRNet, enhancing multi-scale feature learning while slightly reducing model parameters and computational overhead; (3) To alleviate the ill-posed nature of monocular 3D lifting without paired supervision, we develop an unsupervised 3D reconstruction algorithm. Experimental results on the Animal Kingdom dataset demonstrate that our method achieves a 0.9% improvement in PCK@0.05 while reducing GFLOPs by 3.3%. These results verify that the proposed architecture enhances the model’s representation capability for bird poses while ensuring efficient inference. Meanwhile, we validate the applicability of the proposed 3D reconstruction algorithm via qualitative experiments, and further demonstrate that our unsupervised 3D lifting algorithm successfully preserves low symmetry error and robust bone length consistency with proxy metrics.",
+      "url": "https://www.semanticscholar.org/paper/45c0b953fbf1da5c6d87aa8ad14a209deecd4a72",
+      "embedding": null
+    },
+    {
+      "cand_id": "72f6d35d4906a3085da51a04a8c097e82ff4ce23",
+      "title": "6D-ViT: Category-Level 6D Object Pose Estimation via Transformer-Based Instance Representation Learning",
+      "year": 2021,
+      "venue": "IEEE Transactions on Image Processing",
+      "abstract": "This paper presents 6D vision transformer (6D-ViT), a transformer-based instance representation learning network suitable for highly accurate category-level object pose estimation based on RGB-D images. Specifically, a novel two-stream encoder-decoder framework is dedicated to exploring complex and powerful instance representations from RGB images, point clouds, and categorical shape priors. The whole framework consists of two main branches, named Pixelformer and Pointformer. Pixelformer contains a pyramid transformer encoder with an all-multilayer perceptron (MLP) decoder to extract pixelwise appearance representations from RGB images, while Pointformer relies on a cascaded transformer encoder and an all-MLP decoder to acquire the pointwise geometric characteristics from point clouds. Then, dense instance representations (i.e., correspondence matrix and deformation field) for NOCS model reconstruction are obtained from a multisource aggregation (MSA) network with shape prior, appearance and geometric information as inputs. Finally, the instance 6D pose is computed by solving the similarity transformation between the observed point clouds and the reconstructed NOCS representations. Extensive experiments with synthetic and real-world datasets demonstrate that the proposed framework achieves state-of-the-art performance for both datasets. Code is available at https://github.com/luzzou/6D-ViT.",
+      "url": "https://www.semanticscholar.org/paper/72f6d35d4906a3085da51a04a8c097e82ff4ce23",
+      "embedding": null
+    },
+    {
+      "cand_id": "0b36311db8a92c9da57f7b4e6b003b66f9cb9557",
+      "title": "Unsupervised universal hierarchical multi-person 3D pose estimation for natural scenes",
+      "year": 2022,
+      "venue": "Multimedia tools and applications",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/0b36311db8a92c9da57f7b4e6b003b66f9cb9557",
+      "embedding": null
+    },
+    {
+      "cand_id": "e4ea737765f25d763b24a75bf8b4e1a723cab278",
+      "title": "A Horse with no Labels: Self-Supervised Horse Pose Estimation from Unlabelled Images and Synthetic Prior",
+      "year": 2023,
+      "venue": "2023 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
+      "abstract": "Obtaining labelled data to train deep learning methods for estimating animal pose is challenging. Recently, synthetic data has been widely used for pose estimation tasks, but most methods still rely on supervised learning paradigms utilising synthetic images and labels. Can training be fully unsupervised? Is a tiny synthetic dataset sufficient? What are the minimum assumptions that we could make for estimating animal pose? Our proposal addresses these questions through a simple yet effective self-supervised method that only assumes the availability of unlabelled images and a small set of synthetic 2D poses. We completely remove the need for any 3D or 2D pose annotations (or complex 3D animal models), and surprisingly our approach can still learn accurate 3D and 2D poses simultaneously. We train our method with unlabelled images of horses mainly collected for YouTube videos and a prior consisting of 2D synthetic poses. The latter is three times smaller than the number of images needed for training. We test our method on a challenging set of horse images and evaluate the predicted 3D and 2D poses. We demonstrate that it is possible to learn accurate animal poses even with as few assumptions as unlabelled images and a small set of 2D poses generated from synthetic data. Given the minimum requirements and the abundance of unlabelled data, our method could be easily deployed to different animals.",
+      "url": "https://www.semanticscholar.org/paper/e4ea737765f25d763b24a75bf8b4e1a723cab278",
+      "embedding": null
+    },
+    {
+      "cand_id": "cb4afbdc366df57d548e59053d6f66a9578ba785",
+      "title": "CVAM-Pose: Conditional Variational Autoencoder for Multi-Object Monocular Pose Estimation",
+      "year": 2024,
+      "venue": "British Machine Vision Conference",
+      "abstract": "Estimating rigid objects' poses is one of the fundamental problems in computer vision, with a range of applications across automation and augmented reality. Most existing approaches adopt one network per object class strategy, depend heavily on objects' 3D models, depth data, and employ a time-consuming iterative refinement, which could be impractical for some applications. This paper presents a novel approach, CVAM-Pose, for multi-object monocular pose estimation that addresses these limitations. The CVAM-Pose method employs a label-embedded conditional variational autoencoder network, to implicitly abstract regularised representations of multiple objects in a single low-dimensional latent space. This autoencoding process uses only images captured by a projective camera and is robust to objects' occlusion and scene clutter. The classes of objects are one-hot encoded and embedded throughout the network. The proposed label-embedded pose regression strategy interprets the learnt latent space representations utilising continuous pose representations. Ablation tests and systematic evaluations demonstrate the scalability and efficiency of the CVAM-Pose method for multi-object scenarios. The proposed CVAM-Pose outperforms competing latent space approaches. For example, it is respectively 25% and 20% better than AAE and Multi-Path methods, when evaluated using the $\\mathrm{AR_{VSD}}$ metric on the Linemod-Occluded dataset. It also achieves results somewhat comparable to methods reliant on 3D models reported in BOP challenges. Code available: https://github.com/JZhao12/CVAM-Pose",
+      "url": "https://www.semanticscholar.org/paper/cb4afbdc366df57d548e59053d6f66a9578ba785",
+      "embedding": null
+    },
+    {
+      "cand_id": "4bf7d7d24bf090c557c0af344ad6b9d218ceef18",
+      "title": "Motion-DVAE: Unsupervised learning for fast human motion denoising",
+      "year": 2023,
+      "venue": "Motion in Games",
+      "abstract": "Pose and motion priors are crucial for recovering realistic and accurate human motion from noisy observations. Substantial progress has been made on pose and shape estimation from images, and recent works showed impressive results using priors to refine frame-wise predictions. However, a lot of motion priors only model transitions between consecutive poses and are used in time-consuming optimization procedures, which is problematic for many applications requiring real-time motion capture. We introduce Motion-DVAE, a motion prior to capture the short-term dependencies of human motion. As part of the dynamical variational autoencoder (DVAE) models family, Motion-DVAE combines the generative capability of VAE models and the temporal modeling of recurrent architectures. Together with Motion-DVAE, we introduce an unsupervised learned denoising method unifying regression- and optimization-based approaches in a single framework for real-time 3D human pose estimation. Experiments show that the proposed approach reaches competitive performance with state-of-the-art methods while being much faster.",
+      "url": "https://www.semanticscholar.org/paper/4bf7d7d24bf090c557c0af344ad6b9d218ceef18",
+      "embedding": null
+    },
+    {
+      "cand_id": "2cb5584c15474921f0d9d7a4a744e65e6cd4f8c3",
+      "title": "Category-Level 6D Object Pose and Size Estimation using Self-Supervised Deep Prior Deformation Networks",
+      "year": 2022,
+      "venue": "European Conference on Computer Vision",
+      "abstract": "It is difficult to precisely annotate object instances and their semantics in 3D space, and as such, synthetic data are extensively used for these tasks, e.g., category-level 6D object pose and size estimation. However, the easy annotations in synthetic domains bring the downside effect of synthetic-to-real (Sim2Real) domain gap. In this work, we aim to address this issue in the task setting of Sim2Real, unsupervised domain adaptation for category-level 6D object pose and size estimation. We propose a method that is built upon a novel Deep Prior Deformation Network, shortened as DPDN. DPDN learns to deform features of categorical shape priors to match those of object observations, and is thus able to establish deep correspondence in the feature space for direct regression of object poses and sizes. To reduce the Sim2Real domain gap, we formulate a novel self-supervised objective upon DPDN via consistency learning; more specifically, we apply two rigid transformations to each object observation in parallel, and feed them into DPDN respectively to yield dual sets of predictions; on top of the parallel learning, an inter-consistency term is employed to keep cross consistency between dual predictions for improving the sensitivity of DPDN to pose changes, while individual intra-consistency ones are used to enforce self-adaptation within each learning itself. We train DPDN on both training sets of the synthetic CAMERA25 and real-world REAL275 datasets; our results outperform the existing methods on REAL275 test set under both the unsupervised and supervised settings. Ablation studies also verify the efficacy of our designs. Our code is released publicly at https://github.com/JiehongLin/Self-DPDN.",
+      "url": "https://www.semanticscholar.org/paper/2cb5584c15474921f0d9d7a4a744e65e6cd4f8c3",
+      "embedding": null
+    },
+    {
+      "cand_id": "f1715dcc84d64dda2c0044ccf1020f0dbe99d4d5",
+      "title": "Deep Fusion Transformer Network with Weighted Vector-Wise Keypoints Voting for Robust 6D Object Pose Estimation",
+      "year": 2023,
+      "venue": "IEEE International Conference on Computer Vision",
+      "abstract": "One critical challenge in 6D object pose estimation from a single RGBD image is efficient integration of two different modalities, i.e., color and depth. In this work, we tackle this problem by a novel Deep Fusion Transformer (DFTr) block that can aggregate cross-modality features for improving pose estimation. Unlike existing fusion methods, the proposed DFTr can better model cross-modality semantic correlation by leveraging their semantic similarity, such that globally enhanced features from different modalities can be better integrated for improved information extraction. Moreover, to further improve robustness and efficiency, we introduce a novel weighted vector-wise voting algorithm that employs a non-iterative global optimization strategy for precise 3D keypoint localization while achieving near real-time inference. Extensive experiments show the effectiveness and strong generalization capability of our proposed 3D keypoint voting algorithm. Results on four widely used benchmarks also demonstrate that our method outperforms the state-of-the-art methods by large margins. Code is available at https://github.com/junzastar/DFTr_Voting.",
+      "url": "https://www.semanticscholar.org/paper/f1715dcc84d64dda2c0044ccf1020f0dbe99d4d5",
+      "embedding": null
+    },
+    {
+      "cand_id": "5e63a43ea77351f63a77cab684bd9ed7f810a9bf",
+      "title": "RotationNet: Joint Object Categorization and Pose Estimation Using Multiviews from Unsupervised Viewpoints",
+      "year": 2016,
+      "venue": "2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "abstract": "We propose a Convolutional Neural Network (CNN)-based model \"RotationNet,\" which takes multi-view images of an object as input and jointly estimates its pose and object category. Unlike previous approaches that use known viewpoint labels for training, our method treats the viewpoint labels as latent variables, which are learned in an unsupervised manner during the training using an unaligned object dataset. RotationNet is designed to use only a partial set of multi-view images for inference, and this property makes it useful in practical scenarios where only partial views are available. Moreover, our pose alignment strategy enables one to obtain view-specific feature representations shared across classes, which is important to maintain high accuracy in both object categorization and pose estimation. Effectiveness of RotationNet is demonstrated by its superior performance to the state-of-the-art methods of 3D object classification on 10- and 40-class ModelNet datasets. We also show that RotationNet, even trained without known poses, achieves the state-of-the-art performance on an object pose estimation dataset.",
+      "url": "https://www.semanticscholar.org/paper/5e63a43ea77351f63a77cab684bd9ed7f810a9bf",
+      "embedding": null
+    }
+  ],
+  "stats": {
+    "total_candidates": 20,
+    "after_dedup": 18,
+    "after_nontechnical_filter": 18,
+    "after_year_filter": 18,
+    "final": 18
+  }
+}

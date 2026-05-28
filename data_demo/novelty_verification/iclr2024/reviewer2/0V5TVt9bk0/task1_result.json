@@ -1,0 +1,66 @@
+{
+  "paper": {
+    "core_task": "Benchmarking multimodal large language models on low-level visual perception, description, and assessment.",
+    "contributions": [
+      {
+        "name": "A comprehensive benchmark for low-level visual abilities of MLLMs",
+        "author_claim_text": "We construct Q-Bench, a benchmark to examine the progresses of MLLMs on low-level visual abilities.",
+        "description": "A benchmark called Q-Bench that systematically evaluates MLLMs on three low-level visual abilities: perception, description, and assessment.",
+        "source_hint": "Conclusion"
+      },
+      {
+        "name": "A softmax-based quantitative IQA strategy for MLLMs",
+        "author_claim_text": "We propose a unified softmax-based quantitative IQA strategy on MLLMs.",
+        "description": "A strategy that extracts logit probabilities of 'good' and 'poor' tokens from MLLMs and uses softmax pooling to produce quantifiable quality scores that correlate with human opinions.",
+        "source_hint": "Conclusion"
+      },
+      {
+        "name": "Novel benchmark datasets for low-level vision evaluation",
+        "author_claim_text": "We collect two multi-modality benchmark datasets for low-level vision.",
+        "description": "The LLVisionQA dataset for perception with 2,990 image-question-answer tuples and the LLDescribe dataset for description with 499 images and expert-written golden descriptions.",
+        "source_hint": "Conclusion"
+      }
+    ],
+    "key_terms": [
+      "multimodal large language models",
+      "low-level vision",
+      "benchmark",
+      "image quality assessment",
+      "softmax pooling",
+      "LLVisionQA",
+      "LLDescribe",
+      "perception",
+      "description",
+      "assessment",
+      "distortions",
+      "aesthetics"
+    ],
+    "must_have_entities": [
+      "Q-Bench",
+      "LLVisionQA",
+      "LLDescribe",
+      "InternLM-XComposer-VL",
+      "LLaVA",
+      "CLIP-ViT-Large-14"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The proposal of a softmax-based quality assessment strategy is innovative, as it bridges the gap between language models and traditional IQA frameworks.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "LLVisionQA",
+      "LLDescribe",
+      "Seed-Bench",
+      "MMBench"
+    ]
+  }
+}

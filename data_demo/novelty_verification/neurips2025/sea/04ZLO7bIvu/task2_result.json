@@ -1,0 +1,69 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Evaluating motion utilization language-guided video segmentation motion-centric probing motion-centric probing evaluation technique video MLLMs",
+      "status": "ok",
+      "count": 3
+    },
+    {
+      "id": "C2",
+      "query": "Evaluating motion utilization language-guided video segmentation motion-centric probing new motion-centric benchmark video referring segmentation",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C3",
+      "query": "Evaluating motion utilization language-guided video segmentation motion-centric probing Strong static-biased baselines referring video segmentation",
+      "status": "ok",
+      "count": 0
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+      "title": "Where It Moves, It Matters: Referring Surgical Instrument Segmentation via Motion",
+      "year": 2026,
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "abstract": "Enabling intuitive, language-driven interaction with surgical scenes is a critical step toward intelligent operating rooms and autonomous surgical robotic assistance. However, the task of referring segmentation, localizing surgical instruments based on natural language descriptions, remains underexplored in surgical videos, with existing approaches struggling to generalize due to reliance on static visual cues and predefined instrument names. In this work, we introduce SurgRef, a novel motion-guided framework that grounds free-form language expressions in instrument motion, capturing how tools move and interact across time, rather than what they look like. This allows models to understand and segment instruments even under occlusion, ambiguity, or unfamiliar terminology. To train and evaluate SurgRef, we present Ref-IMotion, a diverse, multi-institutional video dataset with dense spatiotemporal masks and rich motion-centric expressions. SurgRef achieves state-of-the-art accuracy and generalization across surgical procedures, setting a new benchmark for robust, language-driven surgical video segmentation.",
+      "url": "https://www.semanticscholar.org/paper/dfd85d4751bbb961cf9083fcd24d669f18203acb",
+      "embedding": null
+    },
+    {
+      "cand_id": "b3c73f41bdd35002ef08923a501e7de1da50403f",
+      "title": "PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Multi-modal large language models (MLLMs) have shown impressive generalization across tasks using images and text modalities. While their extension to video has enabled tasks such as video question answering and video captioning, their pixel-level visual grounding abilities are less studied. In this work, we raise the pertinent question of whether motion is used in pixel-level visual grounding and whether video MLLMs can segment objects based on natural language expressions describing their motion patterns. We identify the shortcomings in the current benchmarks, where we show that a single frame can often suffice for capturing the motion referring expression without any temporal reasoning. To address this, we introduce four motion-centric probing techniques, particularly designed for the visual grounding task, to study video MLLMs'ability to identify true motion from a fake one and their ability to grasp the motion order. Consequently, we provide a motion-centric benchmark, MoCentric-Bench. It ensures that video MLLMs are evaluated towards leveraging the interaction between motion and language rather than being dominated by static appearance cues emphasized in existing visual grounding datasets. We further establish strong single-image baselines that are on par with or outperform prior methods. Finally, we explore simple motion-centric adaptation techniques that provide state-of-the-art performance on our MoCentric-Bench. Our motion-centric benchmark, evaluation and findings challenge future models to improve dense spatiotemporal grounding and pixel-level understanding within videos. Code and datasets will be made publicly available at https://github.com/MSiam/PixFoundation-2.0.git.",
+      "url": "https://www.semanticscholar.org/paper/b3c73f41bdd35002ef08923a501e7de1da50403f",
+      "embedding": null
+    },
+    {
+      "cand_id": "574ff035441d51e59d2e4f9aafba8b79bc9896ae",
+      "title": "Sound Sparks Motion: Audio and Text Tuning for Video Editing",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Motion-centric video editing remains difficult for large generative video models, which often respond well to appearance changes but struggle to produce specific, localized actions or state transitions in an existing clip. We introduce Sound Sparks Motion, a training-free framework that enables motion editing in an audio-visual video generation model by tuning its internal multimodal conditioning signals at test time. Rather than modifying model weights, our method tunes only two lightweight variables: an audio latent derived from the source video and a residual perturbation in the text-conditioning. We find that this combination can encourage motion edits that the underlying model often struggles to realize under prompt-only control. Since there is no direct way to evaluate temporal alignment between text and motion, we guide the tuning process using a vision-language model that provides feedback indicating whether the intended motion appears in the generated video. This simple supervision yields an effective semantic objective for motion editing, while regularization and perceptual-temporal constraints help preserve content and visual quality. Beyond per-video tuning, we show that the learned latent controls are transferable across videos, suggesting that they capture reusable motion-edit directions rather than overfitting to a single example. Our results highlight multimodal conditioning tuning, particularly through the audio pathway, as a promising direction for motion-aware video editing, and suggest that test-time tuning can serve as a lightweight probing mechanism that helps reveal latent motion controls embedded in the model's multimodal conditioning. Code and data are available via our project page: https://amirhossein-razlighi.github.io/Sound_Sparks_Motion/",
+      "url": "https://www.semanticscholar.org/paper/574ff035441d51e59d2e4f9aafba8b79bc9896ae",
+      "embedding": null
+    },
+    {
+      "cand_id": "8143bc350edd71594b3c3aa62ba499f2821531e7",
+      "title": "Robot-Assisted Deep Venous Thrombosis Ultrasound Examination Using Virtual Fixture",
+      "year": 2024,
+      "venue": "IEEE Transactions on Automation Science and Engineering",
+      "abstract": "Deep Venous Thrombosis (DVT) is a common vascular disease with blood clots inside deep veins, which may block blood flow or even cause a life-threatening pulmonary embolism. A typical exam for DVT using ultrasound (US) imaging is by pressing the target vein until its lumen is fully compressed. However, the compression exam is highly operator-dependent. To alleviate intra- and inter-variations, we present a robotic US system with a novel hybrid force motion control scheme ensuring position and force tracking accuracy, and soft landing of the probe onto the target surface. In addition, a path-based virtual fixture is proposed to realize easy human-robot interaction for repeat compression operation at the lesion location. To ensure the biometric measurements obtained in different examinations are comparable, the 6D scanning path is determined in a coarse-to-fine manner using both an external RGBD camera and US images. The RGBD camera is first used to extract a rough scanning path on the object. Then, the segmented vascular lumen from US images are used to optimize the scanning path to ensure the visibility of the target object. To generate a continuous scan path for developing virtual fixtures, an arc-length based path fitting model considering both position and orientation is proposed. Finally, the whole system is evaluated on a human-like arm phantom with an uneven surface. The code (https://github.com/dianyeHuang/RobDVTUS) and intuitive demonstration video (https://www.youtube.com/watch?v=3xFyqU1rV8c) can be publicly accessed. Note to Practitioners—Robotic ultrasound (US) systems have attracted attention for various applications in the past decades. However, the existing studies are not mature and intelligent enough for some challenging applications, such as DVT exam, which requires rich contact interaction between patients and clinicians. To tackle with this challenge, this study presents a novel human-centric robotic DVT exam program using the technique of virtual fixture. The coarse-to-fine path planning module ensures the repeatability of US acquisitions carried out at different times. During DVT exam, the proposed continuous 6D path virtual fixture can guide clinicians to freely move the probe along the scan path while limiting the probe motion in other directions. In order to perform the compress-release exam, a decoupled position/force controller is developed to precisely generate the contact force conveyed by clinicians and to restrict the probe motion along the probe centerline. We believe such a robot-assisted system is a promising solution to take both advantages of robots about the accuracy and repeatability and human operators about the advanced physiological knowledge.",
+      "url": "https://www.semanticscholar.org/paper/8143bc350edd71594b3c3aa62ba499f2821531e7",
+      "embedding": null
+    }
+  ],
+  "stats": {
+    "total_candidates": 4,
+    "after_dedup": 4,
+    "after_nontechnical_filter": 4,
+    "after_year_filter": 4,
+    "final": 4
+  }
+}

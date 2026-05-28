@@ -1,0 +1,348 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The chunk-wise internal memory addresses the inherent limitations of SSMs in retaining information over long sequences, improving in-sequence recall."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "PUM-Net's approach to integrating external knowledge into the model's learning process is novel and could have significant implications for long-context modeling tasks."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "c5ec0516f04cb180f950da506c725c1fae7bae93",
+      "text": "Title: Memory-Aware Attentive Control for Community Question Answering With Knowledge-Based Dual Refinement\n\nAbstract: The question answering system in open domain enables a machine to automatically select and generate the answer for questions posed by humans in a natural language form on the website. Previous approaches seek effective ways of extracting the semantic features between question and answer, but the contextual information effects in semantic matching are still limited by short-term memory. As an alternative, we propose an internal knowledge-based end-to-end model, enhanced by an attentive memory network for both answer selection and answer generation tasks by considering the full advantages of the semantics and multifacts (i.e., timescales, topics, and context). In detail, we design a long-term memory to learn the top- $k$ fine-grained similarity representations, where two memory-aware mechanisms aggregate the series of semantic word-level and sentence-level similarities to support the coarse contextual information. Furthermore, we propose a novel memory refinement mechanism with the two-dimensional of writing heads that offer an efficient approach to multiview selection of the salient word pairs. In the training stage, we adopt the transformer-based transfer learning skill to effectively pretrain the model. Experimentally, we compare the state-of-the-art approaches on four public datasets, the experimental results show that the proposed model achieves competitive performance.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+      "text": "Title: Measure to Measure: Additional Lengths Using Educative Music Therapy to Increase the Math Aptitude and Social Competency of the Forgotten Middle",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "text": "Title: Computer and information sciences : ISCIS 2004, 19th international symposium, Kemer-Antalya, Turkey, October 27-29, 2004 : proceedings",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "a106a70721dd202963715ab6e3e787ac97665409",
+      "text": "Title: A Music-generating System Inspired by the Honing Theory of Creativity",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+      "text": "Title: Techno / natural interfacing: walking and mapping in the age of climate change.",
+      "relevance_score": null
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c5ec0516f04cb180f950da506c725c1fae7bae93",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's chunk-wise internal memory addressing SSM limitations, but the related work evidence (about memory-aware attentive control for community QA) does not directly discuss SSMs, chunk-wise memory, or the specific limitations mentioned. The evidence is unrelated to the claim's subject matter, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contribution (chunk-wise internal memory improving recall in SSMs), but the provided related work is entirely about music therapy for math aptitude and social competency, with no relevance to SSMs, memory mechanisms, or long-sequence modeling. There is no evidence in the related work to support, contradict, or evaluate the claim, making the alignment and calibration assessment impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's chunk-wise internal memory addressing SSM limitations and improving recall. However, the related work provided is a proceedings volume from ISCIS 2004, which contains no information about SSMs, Mamba, or the memory mechanisms discussed. The evidence is missing and unrelated, making the claim unverifiable from this source.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a106a70721dd202963715ab6e3e787ac97665409",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's chunk-wise internal memory addressing SSM limitations and improving recall. The related work provided is about a music-generating system and contains no evidence about SSMs, memory mechanisms, or long-sequence recall, making it impossible to verify the claim or assess alignment.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's chunk-wise internal memory addressing SSM limitations, but the provided related work is about a completely different topic (techno/natural interfacing, walking, mapping, climate change) with no connection to SSMs, memory mechanisms, or long-sequence modeling. There is no evidence to evaluate the claim's alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c5ec0516f04cb180f950da506c725c1fae7bae93",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about PUM-Net's novelty and implications for long-context modeling, but the related work does not discuss PUM-Net or its approach. The related work is about a memory-aware model for community question answering, which is unrelated to PUM-Net's architecture or claims. There is no evidence in the provided text to support or contradict the reviewer's claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novelty and implications, but the provided related work (about music therapy and math) is completely unrelated to the paper's domain (LLMs, SSMs, knowledge integration). There is no evidence in the related work to support, contradict, or relate to the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's sentence is a claim about PUM-Net's novelty and implications. The provided related work is an unrelated proceedings volume (ISCIS 2004), offering no evidence about PUM-Net's approach or its novelty in long-context modeling.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a106a70721dd202963715ab6e3e787ac97665409",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work (a music-generating system) is entirely unrelated to the paper being reviewed (PUM-Net for long-context modeling). The review sentence makes a specific claim about the paper's novelty and implications, but the provided related work evidence does not contain any information about PUM-Net or its approach, so it cannot be used to support, align with, or contradict the claim. The evidence is missing for verification.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims PUM-Net's approach to integrating external knowledge is novel and has implications for long-context modeling. The related work is on 'walking and mapping in the age of climate change,' which is entirely unrelated to the paper's technical domain. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The chunk-wise internal memory addresses the inherent limitations of SSMs in retaining information over long sequences, improving in-sequence recall.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "c5ec0516f04cb180f950da506c725c1fae7bae93",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's chunk-wise internal memory addressing SSM limitations, but the related work evidence (about memory-aware attentive control for community QA) does not directly discuss SSMs, chunk-wise memory, or the specific limitations mentioned. The evidence is unrelated to the claim's subject matter, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contribution (chunk-wise internal memory improving recall in SSMs), but the provided related work is entirely about music therapy for math aptitude and social competency, with no relevance to SSMs, memory mechanisms, or long-sequence modeling. There is no evidence in the related work to support, contradict, or evaluate the claim, making the alignment and calibration assessment impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's chunk-wise internal memory addressing SSM limitations and improving recall. However, the related work provided is a proceedings volume from ISCIS 2004, which contains no information about SSMs, Mamba, or the memory mechanisms discussed. The evidence is missing and unrelated, making the claim unverifiable from this source.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "a106a70721dd202963715ab6e3e787ac97665409",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's chunk-wise internal memory addressing SSM limitations and improving recall. The related work provided is about a music-generating system and contains no evidence about SSMs, memory mechanisms, or long-sequence recall, making it impossible to verify the claim or assess alignment.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's chunk-wise internal memory addressing SSM limitations, but the provided related work is about a completely different topic (techno/natural interfacing, walking, mapping, climate change) with no connection to SSMs, memory mechanisms, or long-sequence modeling. There is no evidence to evaluate the claim's alignment or calibration.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "c5ec0516f04cb180f950da506c725c1fae7bae93",
+        "7dc6af4070c55a223ffd54bc474ae9016a482699",
+        "1a24daae81da97d6b5d0751407fef8b0528d2ef2"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "c5ec0516f04cb180f950da506c725c1fae7bae93",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "PUM-Net's approach to integrating external knowledge into the model's learning process is novel and could have significant implications for long-context modeling tasks.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "c5ec0516f04cb180f950da506c725c1fae7bae93",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about PUM-Net's novelty and implications for long-context modeling, but the related work does not discuss PUM-Net or its approach. The related work is about a memory-aware model for community question answering, which is unrelated to PUM-Net's architecture or claims. There is no evidence in the provided text to support or contradict the reviewer's claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novelty and implications, but the provided related work (about music therapy and math) is completely unrelated to the paper's domain (LLMs, SSMs, knowledge integration). There is no evidence in the related work to support, contradict, or relate to the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's sentence is a claim about PUM-Net's novelty and implications. The provided related work is an unrelated proceedings volume (ISCIS 2004), offering no evidence about PUM-Net's approach or its novelty in long-context modeling.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "a106a70721dd202963715ab6e3e787ac97665409",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work (a music-generating system) is entirely unrelated to the paper being reviewed (PUM-Net for long-context modeling). The review sentence makes a specific claim about the paper's novelty and implications, but the provided related work evidence does not contain any information about PUM-Net or its approach, so it cannot be used to support, align with, or contradict the claim. The evidence is missing for verification.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims PUM-Net's approach to integrating external knowledge is novel and has implications for long-context modeling. The related work is on 'walking and mapping in the age of climate change,' which is entirely unrelated to the paper's technical domain. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "c5ec0516f04cb180f950da506c725c1fae7bae93",
+        "7dc6af4070c55a223ffd54bc474ae9016a482699",
+        "1a24daae81da97d6b5d0751407fef8b0528d2ef2"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "c5ec0516f04cb180f950da506c725c1fae7bae93",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 5,
+    "pairs_attempted": 10,
+    "pairs_completed": 10,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 5.0
+    }
+  },
+  "errors": []
+}

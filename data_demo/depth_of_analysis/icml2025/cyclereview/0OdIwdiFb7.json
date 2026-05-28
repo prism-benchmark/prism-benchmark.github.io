@@ -1,0 +1,161 @@
+{
+  "paper_id": "0OdIwdiFb7",
+  "source": "cyclereview_icml2025",
+  "source_format": "cyclereview_json",
+  "reviews_analysis": {
+    "CYCLEREVIEW_ICML2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper introduces a method for learning pose priors for unsupervised pose estimation.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The paper proposes a method to learn pose priors in a self-supervised manner.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The method is evaluated on several datasets and compared to several baselines.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The paper is well-written and easy to follow.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The proposed method is novel and interesting.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The method is evaluated on several datasets and compared to several baselines.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The paper lacks a clear motivation for the proposed method.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The paper claims that the method can learn pose priors in a self-supervised manner, but it is not clear why this is a good thing.",
+        "role": "Backing",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper also claims that the method can learn pose priors without any human annotations, but it is not clear why this is a good thing.",
+        "role": "Backing",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper should provide a clear motivation for the proposed method and explain why it is useful.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The paper does not provide a clear explanation of the proposed method.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The paper describes the method in detail, but it does not provide a clear explanation of how it works or why it is effective.",
+        "role": "Backing",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The paper should provide a clear explanation of the proposed method and explain why it is effective.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The paper does not provide a clear evaluation of the proposed method.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The paper evaluates the method on several datasets, but it does not provide a clear evaluation of its performance.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "The paper should provide a clear evaluation of the proposed method and explain why it is effective.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "The paper does not provide a clear comparison to other methods.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The paper compares the proposed method to several baselines, but it does not provide a clear comparison to other methods.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "The paper should provide a clear comparison to other methods and explain why the proposed method is better.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "The paper does not provide a clear discussion of the limitations of the proposed method.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "The paper should provide a clear discussion of the limitations of the proposed method and explain why they are limitations.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 2387,
+    "completion_tokens": 2387,
+    "total_tokens": 4774
+  }
+}

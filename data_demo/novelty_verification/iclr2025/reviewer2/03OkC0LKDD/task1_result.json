@@ -1,0 +1,84 @@
+{
+  "paper": {
+    "core_task": "Robust distributed learning with Byzantine workers under data heterogeneity",
+    "contributions": [
+      {
+        "name": "Adaptive robust clipping for robust aggregation methods",
+        "author_claim_text": "We propose ARC, wherein prior to aggregating the gradients, the server clips the largest k := ⌊2(f /n)(n -f )⌋ gradients using a clipping parameter given by the (Euclidean) norm of the (k + 1)-th largest gradient.",
+        "description": "A pre-aggregation gradient clipping scheme that dynamically adjusts the clipping threshold based on gradient norms and the number of adversarial workers, preserving the robustness guarantee of the original aggregation method.",
+        "source_hint": "Introduction §1, Main results & contributions"
+      },
+      {
+        "name": "Provable robustness preservation and improvement",
+        "author_claim_text": "We prove that ARC preserves the robustness guarantee of the original robust aggregation method.",
+        "description": "Theoretical proof that composing ARC with an (f, κ)-robust aggregation yields a method that remains (f, κ')-robust, and that ARC can circumvent the existing lower bound on convergence error under good model initialization.",
+        "source_hint": "Introduction §1, Theorem 3.2"
+      },
+      {
+        "name": "Empirical validation on standard datasets",
+        "author_claim_text": "Our results demonstrate that ARC significantly enhances the performance of state-of-the-art Robust-DGD methods, particularly in scenarios with high data heterogeneity and a large number of adversarial workers.",
+        "description": "Extensive experiments on MNIST, Fashion-MNIST, and CIFAR-10 showing ARC consistently outperforms static clipping and no-clipping baselines across various heterogeneity and adversarial regimes.",
+        "source_hint": "Introduction §1, Main results & contributions"
+      }
+    ],
+    "key_terms": [
+      "adaptive robust clipping",
+      "Byzantine workers",
+      "robust distributed gradient descent",
+      "gradient clipping",
+      "data heterogeneity",
+      "breakdown point",
+      "robust aggregation",
+      "nearest-neighbor mixing",
+      "trimmed mean",
+      "geometric median",
+      "Multi-Krum",
+      "(f,κ)-robustness"
+    ],
+    "must_have_entities": [
+      "Fashion-MNIST",
+      "CWMed",
+      "Robust-DGD",
+      "Robust-DSGD"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The paper identifies a critical flaw in the use of static clipping in robust distributed learning—its inability to handle certain adversarial attacks—and proposes a principled adaptive clipping strategy, ARC, which is motivated by theoretical considerations.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "Kairouz et al., 2021",
+      "McMahan et al., 2017",
+      "Blanchard et al., 2017",
+      "Guerraoui et al., 2023",
+      "Lamport et al., 1982",
+      "Nguyen et al., 2022",
+      "Long et al., 2020",
+      "Yin et al., 2018",
+      "Farhadkhani et al., 2022",
+      "Karimireddy et al., 2022",
+      "Gorbunov et al., 2023",
+      "Allouah et al., 2023a",
+      "Farhadkhani et al., 2023",
+      "El-Mhamdi et al., 2023",
+      "Chen et al., 2017",
+      "Mhamdi et al., 2021",
+      "Karimireddy et al., 2020",
+      "Allouah et al., 2023b",
+      "Diakonikolas et al., 2020",
+      "Abdalla & Zhivotovskiy, 2024",
+      "Deng, 2012",
+      "Xiao et al., 2017",
+      "Krizhevsky et al., 2014",
+      "Glorot & Bengio, 2010"
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Unsupervised categorical pose estimation images hierarchical memory module learning pose priors",
+      "status": "ok",
+      "count": 10
+    },
+    {
+      "id": "C2",
+      "query": "Unsupervised categorical pose estimation images iterative inference strategy occluded scenes",
+      "status": "ok",
+      "count": 6
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "d3db8240c68693688a29e7ffb732e25505368e4f",
+      "title": "Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation",
+      "year": 2024,
+      "venue": "",
+      "abstract": "A prior represents a set of beliefs or assumptions about a system, aiding inference and decision-making. In this paper, we introduce the challenge of unsupervised categorical prior learning in pose estimation, where AI models learn a general pose prior for an object category from images in a self-supervised manner. Although priors are effective in estimating pose, acquiring them can be difficult. We propose a novel method, named Pose Prior Learner (PPL), to learn a general pose prior for any object category. PPL uses a hierarchical memory to store compositional parts of prototypical poses, from which we distill a general pose prior. This prior improves pose estimation accuracy through template transformation and image reconstruction. PPL learns meaningful pose priors without any additional human annotations or interventions, outperforming competitive baselines on both human and animal pose estimation datasets. Notably, our experimental results reveal the effectiveness of PPL using learned prototypical poses for pose estimation on occluded images. Through iterative inference, PPL leverages the pose prior to refine estimated poses, regressing them to any prototypical poses stored in memory. Our code, model, and data are publicly available at: https://github.com/ZhangLab-DeepNeuroCogLab/Pose-Prior-Learner.",
+      "url": "https://www.semanticscholar.org/paper/d3db8240c68693688a29e7ffb732e25505368e4f",
+      "embedding": null
+    },
+    {
+      "cand_id": "ce5101d6437d29124b7b8fdf99ece36123450236",
+      "title": "UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Low-visibility scenarios, such as low-light conditions, pose significant challenges to human pose estimation due to the scarcity of annotated low-light datasets and the loss of visual information under poor illumination. Recent domain adaptation techniques attempt to utilize well-lit labels by augmenting well-lit images to mimic low-light conditions. But handcrafted augmentations oversimplify noise patterns, while learning-based methods often fail to preserve high-frequency low-light characteristics, producing unrealistic images that lead pose models to generalize poorly to real low-light scenes. Moreover, recent pose estimators rely on image cues through image-to-keypoint cross-attention, but these cues become unreliable under low-light conditions. To address these issues, we propose Unsupervised Domain Adaptation for Pose Estimation (UDAPose), a novel framework that synthesizes low-light images and dynamically fuses visual cues with pose priors for improved pose estimation. Specifically, our synthesis method incorporates a Direct-Current-based High-Pass Filter (DHF) and a Low-light Characteristics Injection Module (LCIM) to inject high-frequency details from input low-light images, overcoming rigidity or the detail loss in existing approaches. Furthermore, we introduce a Dynamic Control of Attention (DCA) module that adaptively balances image cues with learned pose priors in the Transformer architecture. Experiments show that UDAPose outperforms state-of-the-art methods, with notable AP gains of 10.1 (56.4%) on the ExLPose-test hard set (LL-H) and 7.4 (31.4%) in cross-dataset validation on EHPT-XC. Code: https://github.com/Vision-and-Multimodal-Intelligence-Lab/UDAPose",
+      "url": "https://www.semanticscholar.org/paper/ce5101d6437d29124b7b8fdf99ece36123450236",
+      "embedding": null
+    },
+    {
+      "cand_id": "d157ae51546595336e51f18546ce262752b03f47",
+      "title": "Structural, Syntactic and Statistical Pattern Recognition: Joint IAPR International Workshops, SSPR 2006 and SPR 2006, Hong Kong, China, August 17-19, 2006: proceedings",
+      "year": 2006,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/d157ae51546595336e51f18546ce262752b03f47",
+      "embedding": null
+    },
+    {
+      "cand_id": "5e58bf187597e7cbcc54f0190bd6b891793d3cae",
+      "title": "Infinite-World: Scaling Interactive World Models to 1000-Frame Horizons via Pose-Free Hierarchical Memory",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "We propose Infinite-World, a robust interactive world model capable of maintaining coherent visual memory over 1000+ frames in complex real-world environments. While existing world models can be efficiently optimized on synthetic data with perfect ground-truth, they lack an effective training paradigm for real-world videos due to noisy pose estimations and the scarcity of viewpoint revisits. To bridge this gap, we first introduce a Hierarchical Pose-free Memory Compressor (HPMC) that recursively distills historical latents into a fixed-budget representation. By jointly optimizing the compressor with the generative backbone, HPMC enables the model to autonomously anchor generations in the distant past with bounded computational cost, eliminating the need for explicit geometric priors. Second, we propose an Uncertainty-aware Action Labeling module that discretizes continuous motion into a tri-state logic. This strategy maximizes the utilization of raw video data while shielding the deterministic action space from being corrupted by noisy trajectories, ensuring robust action-response learning. Furthermore, guided by insights from a pilot toy study, we employ a Revisit-Dense Finetuning Strategy using a compact, 30-minute dataset to efficiently activate the model's long-range loop-closure capabilities. Extensive experiments, including objective metrics and user studies, demonstrate that Infinite-World achieves superior performance in visual quality, action controllability, and spatial consistency.",
+      "url": "https://www.semanticscholar.org/paper/5e58bf187597e7cbcc54f0190bd6b891793d3cae",
+      "embedding": null
+    },
+    {
+      "cand_id": "56c4096c5c397c2b11c6c6866c4cc4684b3dcb05",
+      "title": "ImPosIng: Implicit Pose Encoding for Efficient Camera Pose Estimation",
+      "year": 2022,
+      "venue": "arXiv.org",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/56c4096c5c397c2b11c6c6866c4cc4684b3dcb05",
+      "embedding": null
+    },
+    {
+      "cand_id": "1e1b46281d0c2e200aa46e23cffccaaed1065a60",
+      "title": "Biologically Motivated Computer Vision",
+      "year": 2000,
+      "venue": "Lecture Notes in Computer Science",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/1e1b46281d0c2e200aa46e23cffccaaed1065a60",
+      "embedding": null
+    },
+    {
+      "cand_id": "26ee6baf4c06cf5259eb80dfcb87c1b2a4597977",
+      "title": "Unsupervised learning of depth and ego-motion with absolutely global scale recovery from visual and inertial data sequences",
+      "year": 2020,
+      "venue": "Cyber-Physical Systems",
+      "abstract": "ABSTRACT In this paper, we propose an unsupervised learning method for jointly estimating monocular depth and ego-motion, which is capable to recover the absolute scale of global camera trajectory. In order to solve the general problems of scale drift and scale ambiguity of monocular camera, we fuse geometric movement data from inertial measurement unit (IMU), and use Bi-directional Long Short-Term Memory (BiLSTM) to extract temporal features. Besides, we add a lightweight and efficient attention mechanism, Convolutional Block Attention Module (CBAM), to Convolutional Neural Networks (CNNs) to complete the extraction of image features. Considering the scenes with severe illumination changes, ambiguous structures, moving objects and occlusions, especially scenes with progressively-variant textures, the geometric features can provide adaptive estimation results in the case of the degeneration of visual features. Experiments on the KITTI driving dataset reveal that our scheme achieves promising results in the estimation of camera pose and depth. Moreover, the absolute scale recovery for the global camera trajectory is effective.",
+      "url": "https://www.semanticscholar.org/paper/26ee6baf4c06cf5259eb80dfcb87c1b2a4597977",
+      "embedding": null
+    },
+    {
+      "cand_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "title": "See, Act, Adapt: Active Perception for Unsupervised Cross-Domain Visual Adaptation via Personalized VLM-Guided Agent",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Pre-trained perception models excel in generic image domains but degrade significantly in novel environments like indoor scenes. The conventional remedy is fine-tuning on downstream data which incurs catastrophic forgetting of prior knowledge and demands costly, scene-specific annotations. We propose a paradigm shift through Sea$^2$ (See, Act, Adapt): rather than adapting the perception modules themselves, we adapt how they are deployed through an intelligent pose-control agent. Sea$^2$ keeps all perception modules frozen, requiring no downstream labels during training, and uses only scalar perceptual feedback to navigate the agent toward informative viewpoints. Specially, we transform a vision-language model (VLM) into a low-level pose controller through a two-stage training pipeline: first fine-tuning it on rule-based exploration trajectories that systematically probe indoor scenes, and then refining the policy via unsupervised reinforcement learning that constructs rewards from the perception module's outputs and confidence. Unlike prior active perception methods that couple exploration with specific models or collect data for retraining them, Sea$^2$ directly leverages off-the-shelf perception models for various tasks without the need for retraining. We conducted experiments on three visual perception tasks, including visual grounding, segmentation and 3D box estimation, with performance improvements of 13.54%, 15.92% and 27.68% respectively on dataset ReplicaCAD.",
+      "url": "https://www.semanticscholar.org/paper/284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "embedding": null
+    },
+    {
+      "cand_id": "4dbba6979fe46553b10a8517b32a4f4b97c94f77",
+      "title": "Gait Recognition and Understanding Based on Hierarchical Temporal Memory Using 3D Gait Semantic Folding",
+      "year": 2020,
+      "venue": "Italian National Conference on Sensors",
+      "abstract": "Gait recognition and understanding systems have shown a wide-ranging application prospect. However, their use of unstructured data from image and video has affected their performance, e.g., they are easily influenced by multi-views, occlusion, clothes, and object carrying conditions. This paper addresses these problems using a realistic 3-dimensional (3D) human structural data and sequential pattern learning framework with top-down attention modulating mechanism based on Hierarchical Temporal Memory (HTM). First, an accurate 2-dimensional (2D) to 3D human body pose and shape semantic parameters estimation method is proposed, which exploits the advantages of an instance-level body parsing model and a virtual dressing method. Second, by using gait semantic folding, the estimated body parameters are encoded using a sparse 2D matrix to construct the structural gait semantic image. In order to achieve time-based gait recognition, an HTM Network is constructed to obtain the sequence-level gait sparse distribution representations (SL-GSDRs). A top-down attention mechanism is introduced to deal with various conditions including multi-views by refining the SL-GSDRs, according to prior knowledge. The proposed gait learning model not only aids gait recognition tasks to overcome the difficulties in real application scenarios but also provides the structured gait semantic images for visual cognition. Experimental analyses on CMU MoBo, CASIA B, TUM-IITKGP, and KY4D datasets show a significant performance gain in terms of accuracy and robustness.",
+      "url": "https://www.semanticscholar.org/paper/4dbba6979fe46553b10a8517b32a4f4b97c94f77",
+      "embedding": null
+    },
+    {
+      "cand_id": "f185d2d149876c8c681d71b38961c4bbb821721f",
+      "title": "Progress in Pattern Recognition, Image Analysis, Computer Vision, and Applications, 14th Iberoamerican Conference on Pattern Recognition, CIARP 2009, Guadalajara, Jalisco, Mexico, November 15-18, 2009. Proceedings",
+      "year": 2009,
+      "venue": "Iberoamerican Congress on Pattern Recognition",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/f185d2d149876c8c681d71b38961c4bbb821721f",
+      "embedding": null
+    },
+    {
+      "cand_id": "fcb63581dcb6936b024e14b82fb8cb3c41004b8f",
+      "title": "Unsupervised Progressive Learning and the STAM Architecture",
+      "year": 2019,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/fcb63581dcb6936b024e14b82fb8cb3c41004b8f",
+      "embedding": null
+    },
+    {
+      "cand_id": "e918ced46328cdbdf484a3b8ecb875a078155ac4",
+      "title": "LMVR: Lightweight multitask visual recognition with Cross Residual Log-likelihood Estimation",
+      "year": 2025,
+      "venue": "Signal, Image and Video Processing",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/e918ced46328cdbdf484a3b8ecb875a078155ac4",
+      "embedding": null
+    },
+    {
+      "cand_id": "844edf75b9ecc2a3398e9d1c2d03687f565dfcfe",
+      "title": "Biologically motivated computer vision : first IEEE International Workshop, BMCV 2000, Seoul, Korea, May 15-17, 2000 : proceedings",
+      "year": 2000,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/844edf75b9ecc2a3398e9d1c2d03687f565dfcfe",
+      "embedding": null
+    },
+    {
+      "cand_id": "28178b45f815aa21f18a7693710ab07daf435faf",
+      "title": "EffLoc: Lightweight Vision Transformer for Efficient 6-DOF Camera Relocalization",
+      "year": 2024,
+      "venue": "IEEE International Conference on Robotics and Automation",
+      "abstract": "Camera relocalization is pivotal in computer vision, with applications in AR, drones, robotics, and autonomous driving. It estimates 3D camera position and orientation (6-DoF) from images. Unlike traditional methods like SLAM, recent strides use deep learning for direct end-to-end pose estimation. We propose EffLoc, a novel efficient Vision Transformer for single-image camera relocalization. EffLoc’s hierarchical layout, memory-bound self-attention, and feed-forward layers boost memory efficiency and inter-channel communication. Our introduced sequential group attention (SGA) module enhances computational efficiency by diversifying input features, reducing redundancy, and expanding model capacity. EffLoc excels in efficiency and accuracy, outperforming prior methods, such as AtLoc and MapNet. It thrives on large-scale outdoor car-driving scenario, ensuring simplicity, end-to-end trainability, and eliminating handcrafted loss functions.",
+      "url": "https://www.semanticscholar.org/paper/28178b45f815aa21f18a7693710ab07daf435faf",
+      "embedding": null
+    }
+  ],
+  "stats": {
+    "total_candidates": 16,
+    "after_dedup": 14,
+    "after_nontechnical_filter": 14,
+    "after_year_filter": 14,
+    "final": 14
+  }
+}

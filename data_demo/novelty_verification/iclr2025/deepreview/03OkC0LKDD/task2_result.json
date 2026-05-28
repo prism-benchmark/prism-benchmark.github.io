@@ -1,0 +1,141 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Robust distributed gradient descent against adversarial workers adaptive pre-aggregation gradient clipping scheme robust aggregation",
+      "status": "ok",
+      "count": 4
+    },
+    {
+      "id": "C2",
+      "query": "Robust distributed gradient descent against adversarial workers preserved robustness guarantee composed aggregation",
+      "status": "ok",
+      "count": 10
+    },
+    {
+      "id": "C3",
+      "query": "Robust distributed gradient descent against adversarial workers improved learning guarantee under bounded initial gradients",
+      "status": "ok",
+      "count": 4
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+      "title": "Adaptive Gradient Clipping for Robust Federated Learning",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "Robust federated learning aims to maintain reliable performance despite the presence of adversarial or misbehaving workers. While state-of-the-art (SOTA) robust distributed gradient descent (Robust-DGD) methods were proven theoretically optimal, their empirical success has often relied on pre-aggregation gradient clipping. However, existing static clipping strategies yield inconsistent results: enhancing robustness against some attacks while being ineffective or even detrimental against others. To address this limitation, we propose a principled adaptive clipping strategy, Adaptive Robust Clipping (ARC), which dynamically adjusts clipping thresholds based on the input gradients. We prove that ARC not only preserves the theoretical robustness guarantees of SOTA Robust-DGD methods but also provably improves asymptotic convergence when the model is well-initialized. Extensive experiments on benchmark image classification tasks confirm these theoretical insights, demonstrating that ARC significantly enhances robustness, particularly in highly heterogeneous and adversarial settings.",
+      "url": "https://www.semanticscholar.org/paper/0c77fce199a96f15e4aacedd197a1a2efe79843b",
+      "embedding": null
+    },
+    {
+      "cand_id": "bd158fd293aa8e94583dddbdb7a85bb8929990d7",
+      "title": "arya-STARK: Aggregation-Robust Yet Authentic Training via STARK Proofs",
+      "year": 2025,
+      "venue": "IACR Cryptology ePrint Archive",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/bd158fd293aa8e94583dddbdb7a85bb8929990d7",
+      "embedding": null
+    },
+    {
+      "cand_id": "20310fb046406d3648b6c554166d0c0bbd4201b3",
+      "title": "Byzantine-Robust Optimization under $(L_0, L_1)$-Smoothness",
+      "year": 2026,
+      "venue": "",
+      "abstract": "We consider distributed optimization under Byzantine attacks in the presence of $(L_0,L_1)$-smoothness, a generalization of standard $L$-smoothness that captures functions with state-dependent gradient Lipschitz constants. We propose Byz-NSGDM, a normalized stochastic gradient descent method with momentum that achieves robustness against Byzantine workers while maintaining convergence guarantees. Our algorithm combines momentum normalization with Byzantine-robust aggregation enhanced by Nearest Neighbor Mixing (NNM) to handle both the challenges posed by $(L_0,L_1)$-smoothness and Byzantine adversaries. We prove that Byz-NSGDM achieves a convergence rate of $O(K^{-1/4})$ up to a Byzantine bias floor proportional to the robustness coefficient and gradient heterogeneity. Experimental validation on heterogeneous MNIST classification, synthetic $(L_0,L_1)$-smooth optimization, and character-level language modeling with a small GPT model demonstrates the effectiveness of our approach against various Byzantine attack strategies. An ablation study further shows that Byz-NSGDM is robust across a wide range of momentum and learning rate choices.",
+      "url": "https://www.semanticscholar.org/paper/20310fb046406d3648b6c554166d0c0bbd4201b3",
+      "embedding": null
+    },
+    {
+      "cand_id": "4c4e1bcc94d983a35702e90c4104f480528e076a",
+      "title": "Adversarial Robustness of Proxy-Based Metric Learning Models",
+      "year": 2026,
+      "venue": "Proceedings of the 21st International Conference on Computer Vision Theory and Applications",
+      "abstract": ": This paper presents a systematic evaluation of the adversarial robustness of modern Deep Metric Learning (DML) objectives under multiple threat models. We focus on proxy-based and hierarchical loss functions, including Proxy Anchor, SoftTriple, and Hierarchical loss, and compare them against standard pair-based and classification-based baselines trained with Contrastive and Cross-Entropy losses across three retrieval bench-marks—Stanford Online Products (SOP), CARS-196, and CUB-200-2011—covering both large-scale and fine-grained recognition scenarios. Across all datasets, proxy-based and hierarchical objectives consistently achieve superior clean retrieval performance in terms of Recall@1 and Recall@2, confirming their ability to induce compact and discriminative embedding spaces. Robustness is evaluated under three white-box adversarial attacks: FGSM, Projected Gradient Descent (PGD) with ℓ ∞ constraints, and the optimisation-based Carlini & Wagner (C&W) ℓ 2 attack. Under ℓ ∞ -bounded attacks, proxy-based and hierarchical models exhibit modest but consistent robustness advantages over contrastive and cross-entropy baselines, degrading more gracefully under iterative PGD. However, this robustness is strictly attack-dependent: across all datasets and loss functions, the C&W attack proves near-universally effective, collapsing retrieval performance to negligible levels. These findings reveal a clear gap between clean retrieval performance and adversarial resilience in current DML frameworks, demonstrating that improved embedding geometry alone is insufficient to guarantee robustness against strong optimisation-based adversaries.",
+      "url": "https://www.semanticscholar.org/paper/4c4e1bcc94d983a35702e90c4104f480528e076a",
+      "embedding": null
+    },
+    {
+      "cand_id": "81af3058f2df78be332f50ea3813be5aa1f02f58",
+      "title": "The Hidden Vulnerability of Distributed Learning in Byzantium",
+      "year": 2018,
+      "venue": "International Conference on Machine Learning",
+      "abstract": "While machine learning is going through an era of celebrated success, concerns have been raised about the vulnerability of its backbone: stochastic gradient descent (SGD). Recent approaches have been proposed to ensure the robustness of distributed SGD against adversarial (Byzantine) workers sending poisoned gradients during the training phase. Some of these approaches have been proven Byzantine-resilient: they ensure the convergence of SGD despite the presence of a minority of adversarial workers. \nWe show in this paper that convergence is not enough. In high dimension $d \\gg 1$, an adver\\-sary can build on the loss function's non-convexity to make SGD converge to ineffective models. More precisely, we bring to light that existing Byzantine-resilient schemes leave a margin of poisoning of $\\Omega\\left(f(d)\\right)$, where $f(d)$ increases at least like $\\sqrt{d~}$. Based on this leeway, we build a simple attack, and experimentally show its strong to utmost effectivity on CIFAR-10 and MNIST. \nWe introduce Bulyan, and prove it significantly reduces the attackers leeway to a narrow $O( \\frac{1}{\\sqrt{d~}})$ bound. We empirically show that Bulyan does not suffer the fragility of existing aggregation rules and, at a reasonable cost in terms of required batch size, achieves convergence as if only non-Byzantine gradients had been used to update the model.",
+      "url": "https://www.semanticscholar.org/paper/81af3058f2df78be332f50ea3813be5aa1f02f58",
+      "embedding": null
+    },
+    {
+      "cand_id": "e949f0208668c53398827f1b6c26df5fbf459970",
+      "title": "Dynamic Regret for Byzantine-Robust Online Federated Learning",
+      "year": 2026,
+      "venue": "IEEE Transactions on Signal Processing",
+      "abstract": "Federated learning enables decentralized model training across multiple clients without exchanging raw data, making it a crucial paradigm for privacy-preserving machine learning. However, its deployment in adversarial and dynamic environments remains fundamentally challenging, particularly under Byzantine attacks. Existing online Byzantine-robust methods face two critical limitations: (i) a strong reliance on the Independent and Identically Distributed (IID) assumption to achieve sublinear regret, and (ii) an inability to adapt to non-stationary environments due to their reliance on static regret metrics. These challenges substantially limit their applicability in practical federated learning scenarios characterized by heterogeneity and non-stationarity. To address these issues, this paper proposes a Byzantine-robust online algorithm, BR-OMGD, which performs multiple local gradient descent updates and incorporates a robust aggregation mechanism to mitigate adversarial effects under the weak growth condition. The algorithm achieves a near-optimal dynamic regret bound of $\\mathcal{O}(S^{\\ast}_{T})$ without requiring IID assumptions, where $S^{\\ast}_{T}$ denotes the squared path-length. When the online problem reduces to the offline case, BR-OMGD further guarantees exact linear convergence under strong convexity, smoothness, and the weak growth condition, even in the presence of data heterogeneity and Byzantine adversaries. To the best of our knowledge, this is the first result establishing such convergence guarantees under these conditions. Extensive experiments on benchmark datasets (MNIST, CIFAR-100) demonstrate the proposed algorithm’s practical effectiveness, showing improved robustness and lower dynamic regret under Byzantine attacks.",
+      "url": "https://www.semanticscholar.org/paper/e949f0208668c53398827f1b6c26df5fbf459970",
+      "embedding": null
+    },
+    {
+      "cand_id": "3a0beae4b990c15390477afb284c32f7eb67d7f1",
+      "title": "Adversarial Vulnerabilities in Federated Time Series Forecasting: A Comprehensive Analysis",
+      "year": 2025,
+      "venue": "PROCEEDINGS OF THE 18th NATIONAL CONFERENCE ON FUNDAMENTAL AND APPLIED INFORMATION TECHNOLOGY RESEARCH",
+      "abstract": "—Federated Learning (FL) has emerged as a promising approach for time series forecasting (TSF) by enabling collaborative model training while preserving data privacy. However, the distributed nature of FL introduces signiﬁcant security vulnerabilities, particularly to adversarial attacks that can severely compromise forecasting accuracy. This paper presents the ﬁrst comprehensive study of adversarial attacks against FL-based time series forecasting systems. We systematically adapt three prominent attack methods—Fast Gradient Sign Method (FGSM), Projected Gradient Descent (PGD), and Carlini & Wagner (C&W)—to exploit the temporal characteristics of time series data in federated environments. Our experimental evaluation on real-world Google cluster trace datasets demonstrates that these attacks can increase prediction error by up to 500% compared to benign scenarios. We evaluate attack effectiveness across four FL aggregation algorithms (FedAvg, FedProx, FedOpt, FedYogi) and analyze the impact of various attack parameters, including perturbation magnitude and injection timing. Results reveal that PGD consistently achieves the highest attack success rate, while C&W demonstrates superior stealth-iness. Our ﬁndings highlight critical security vulnerabilities in FL-TSF systems and provide insights for developing robust defense mechanisms. The proposed evaluation framework offers a foundation for future research in adversarial robustness for federated time series forecasting.",
+      "url": "https://www.semanticscholar.org/paper/3a0beae4b990c15390477afb284c32f7eb67d7f1",
+      "embedding": null
+    },
+    {
+      "cand_id": "e8a89fae0fa234acd8036d3c39370c244a8094bd",
+      "title": "InstaHide: Instance-hiding Schemes for Private Distributed Learning",
+      "year": 2020,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/e8a89fae0fa234acd8036d3c39370c244a8094bd",
+      "embedding": null
+    },
+    {
+      "cand_id": "5d44a9e04eab403bea5ad62101e8ad034adeef4e",
+      "title": "SecureDyn-FL: A Robust Privacy-Preserving Federated Learning Framework for Intrusion Detection in IoT Networks",
+      "year": 2026,
+      "venue": "IEEE Transactions on Network and Service Management",
+      "abstract": "The rapid proliferation of Internet of Things (IoT) devices across domains such as smart homes, industrial control systems, and healthcare networks has significantly expanded the attack surface for cyber threats, including botnet-driven distributed denial-of-service (DDoS), malware injection, and data exfiltration. Conventional intrusion detection systems (IDS) face critical challenges like privacy, scalability, and robustness when applied in such heterogeneous IoT environments. To address these issues, we propose SecureDyn-FL, a comprehensive and robust privacy-preserving federated learning (FL) framework tailored for intrusion detection in IoT networks. SecureDyn-FL is designed to simultaneously address multiple security dimensions in FL-based IDS: (1) poisoning detection through dynamic temporal gradient auditing, (2) privacy protection against inference and eavesdropping attacks through secure aggregation, and (3) adaptation to heterogeneous non-independent-and-identically-distributed (non-IID) data via personalized learning. The framework introduces three core contributions: (i) a dynamic temporal gradient auditing mechanism that leverages Gaussian mixture models (GMMs) and Mahalanobis distance (MD) to detect stealthy and adaptive poisoning attacks, (ii) an optimized privacy-preserving aggregation scheme based on transformed additive ElGamal encryption with adaptive pruning and quantization for secure and efficient communication, and (iii) a dual-objective personalized learning strategy that improves model adaptation under non-IID data using logit-adjusted loss. Extensive experiments on the N-BaIoT dataset under both IID and non-IID settings, including scenarios with up to 50% adversarial clients, demonstrate that SecureDyn-FL consistently outperforms state-of-the-art FL-based IDS defenses. It achieves up to 99.01% detection accuracy, a 98.9% F1-score, and significantly reduced attack success rates across diverse poisoning attacks, while maintaining strong privacy guarantees and computational efficiency for resource-constrained IoT devices.",
+      "url": "https://www.semanticscholar.org/paper/5d44a9e04eab403bea5ad62101e8ad034adeef4e",
+      "embedding": null
+    },
+    {
+      "cand_id": "24e809d1d57696f626495e10f287ede66b00dc11",
+      "title": "B YZANTINE -R ESILIENT D ISTRIBUTED L EARNING",
+      "year": null,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/24e809d1d57696f626495e10f287ede66b00dc11",
+      "embedding": null
+    },
+    {
+      "cand_id": "6524d341a57a11c0cd212f8670be22e267c8ce67",
+      "title": "Distributed Training under Packet Loss",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "State-of-the-art language and vision models are routinely trained across thousands of GPUs, often spanning multiple data-centers, yet today's distributed frameworks still assume reliable connections (e.g., InfiniBand or RoCE). The resulting acknowledgment traffic and retransmissions inflate tail latencies and limit scalability. Leveraging unreliable connections will reduce latency but may sacrifice model accuracy and convergence once packets are dropped. A principled, end-to-end solution that preserves accuracy and convergence guarantees under genuine packet loss has previously been missing. We address this critical gap by introducing a novel distributed training framework capable of operating over unreliable connections, offering unbiased gradient aggregation and bounded parameter drift without modifying model code or optimizers. The key insight is a two-stage defense against missing messages: (i) Unbiased gradient aggregation: each worker reconstructs a consistent gradient estimate from whatever packets arrive, guaranteeing expectation-level correctness; and (ii) Bounded-drift parameter broadcasts: we prove the inter-worker model discrepancy remains O(1) even after arbitrarily many iterations, preventing the unbounded divergence typical of asynchronous setups. Analytical bounds are matched by experiments on the LLAMA2 7B model with 64 GPUs: tolerating 10% random packet loss yields at most 0.8% perplexity change. This work bridges the gap between communication-efficient datacenter protocols and the accuracy and generalization guarantees demanded by modern large-model training, enabling robust, high-throughput learning on commodity or wide-area networks.",
+      "url": "https://www.semanticscholar.org/paper/6524d341a57a11c0cd212f8670be22e267c8ce67",
+      "embedding": null
+    },
+    {
+      "cand_id": "6347e9fbe591356f2a4658d269db6b1c2a64a206",
+      "title": "Communication-Efficient Robust Federated Learning Over Heterogeneous Datasets",
+      "year": 2020,
+      "venue": "arXiv.org",
+      "abstract": "This work investigates fault-resilient federated learning when the data samples are non-uniformly distributed across workers, and the number of faulty workers is unknown to the central server. In the presence of adversarially faulty workers who may strategically corrupt datasets, the local messages exchanged (e.g., local gradients and/or local model parameters) can be unreliable, and thus the vanilla stochastic gradient descent (SGD) algorithm is not guaranteed to converge. Recently developed algorithms improve upon vanilla SGD by providing robustness to faulty workers at the price of slowing down convergence. To remedy this limitation, the present work introduces a fault-resilient proximal gradient (FRPG) algorithm that relies on Nesterov's acceleration technique. To reduce the communication overhead of FRPG, a local (L) FRPG algorithm is also developed to allow for intermittent server-workers parameter exchanges. For strongly convex loss functions, FRPG and LFRPG have provably faster convergence rates than a benchmark robust stochastic aggregation algorithm. Moreover, LFRPG converges faster than FRPG while using the same communication rounds. Numerical tests performed on various real datasets confirm the accelerated convergence of FRPG and LFRPG over the robust stochastic aggregation benchmark and competing alternatives.",
+      "url": "https://www.semanticscholar.org/paper/6347e9fbe591356f2a4658d269db6b1c2a64a206",
+      "embedding": null
+    }
+  ],
+  "stats": {
+    "total_candidates": 18,
+    "after_dedup": 12,
+    "after_nontechnical_filter": 12,
+    "after_year_filter": 12,
+    "final": 12
+  }
+}

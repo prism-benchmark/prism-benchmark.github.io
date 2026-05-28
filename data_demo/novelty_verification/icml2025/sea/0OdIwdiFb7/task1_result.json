@@ -1,0 +1,60 @@
+{
+  "paper": {
+    "core_task": "unsupervised categorical pose estimation from images",
+    "contributions": [
+      {
+        "name": "A method for unsupervised learning of categorical pose priors",
+        "author_claim_text": "We propose a new method called the Pose Prior Learner (PPL). PPL is designed to effectively learn a meaningful pose prior for a certain object category.",
+        "description": "Introduces PPL, a method that learns a general pose prior for an object category without human annotations. It uses a hierarchical memory to store prototypical poses and distills them into keypoint and connectivity priors.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "An iterative inference strategy for occluded pose estimation",
+        "author_claim_text": "During inference, we utilize an iterative strategy in which PPL progressively leverages priors to refine estimated poses by regressing them to the nearest prototypical poses stored in memory.",
+        "description": "Proposes an iterative refinement procedure during inference that uses the learned prior and hierarchical memory to reconstruct occluded image parts and predict complete poses.",
+        "source_hint": "Introduction §1"
+      }
+    ],
+    "key_terms": [
+      "pose estimation",
+      "unsupervised learning",
+      "pose prior",
+      "hierarchical memory",
+      "prototypical poses",
+      "keypoint prior",
+      "connectivity prior",
+      "iterative inference",
+      "occluded scenes",
+      "image reconstruction",
+      "categorical prior"
+    ],
+    "must_have_entities": [
+      "Human3.6m",
+      "Taichi",
+      "AutoLink"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The proposed method introduces a new approach to unsupervised learning of pose priors, utilizing a hierarchical memory structure.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The iterative inference strategy is a unique contribution, enhancing the model's ability to estimate poses in occluded scenes.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "paper": {
+    "core_task": "Robust distributed learning with Byzantine workers under data heterogeneity",
+    "contributions": [
+      {
+        "name": "An adaptive robust clipping scheme for gradient aggregation",
+        "author_claim_text": "We propose ARC, wherein prior to aggregating the gradients, the server clips the largest k := ⌊2(f /n)(n -f )⌋ gradients using a clipping parameter given by the (Euclidean) norm of the (k + 1)-th largest gradient.",
+        "description": "A pre-aggregation gradient clipping method that dynamically sets the clipping threshold based on the sorted norms of worker gradients and the adversarial fraction, requiring no additional prior information.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "An improved robustness guarantee under bounded initialization",
+        "author_claim_text": "We demonstrate that ARC constrains the norm of an adversarial gradient by that of an honest (non-adversarial) gradient. Leveraging this property, we show that ARC circumvents the lower bound established under data heterogeneity in Allouah et al. (2023b), provided the",
+        "description": "A theoretical analysis showing ARC improves convergence guarantees over standard robust aggregation methods when model initialization is good, breaking a known lower bound.",
+        "source_hint": "Introduction §1"
+      }
+    ],
+    "key_terms": [
+      "Adaptive Robust Clipping (ARC)",
+      "Byzantine learning",
+      "robust distributed gradient descent",
+      "gradient clipping",
+      "data heterogeneity",
+      "(f, κ)-robustness",
+      "coordinatewise trimmed mean",
+      "geometric median",
+      "Multi-Krum",
+      "nearest neighbor mixing",
+      "breakdown point"
+    ],
+    "must_have_entities": [
+      "Fashion-MNIST",
+      "CWMed"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "ARC offers a practical solution for gradient clipping in distributed learning, enhancing robustness without sacrificing theoretical guarantees.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

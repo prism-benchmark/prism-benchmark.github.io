@@ -1,0 +1,177 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Unsupervised categorical pose estimation images learned priors hierarchical memory unsupervised pose prior learning",
+      "status": "ok",
+      "count": 10
+    },
+    {
+      "id": "C2",
+      "query": "Unsupervised categorical pose estimation images learned priors iterative inference strategy occluded pose estimation",
+      "status": "ok",
+      "count": 9
+    },
+    {
+      "id": "C3",
+      "query": "Unsupervised categorical pose estimation images learned priors unsupervised categorical prior learning challenge formulation",
+      "status": "ok",
+      "count": 6
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "d3db8240c68693688a29e7ffb732e25505368e4f",
+      "title": "Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation",
+      "year": 2024,
+      "venue": "",
+      "abstract": "A prior represents a set of beliefs or assumptions about a system, aiding inference and decision-making. In this paper, we introduce the challenge of unsupervised categorical prior learning in pose estimation, where AI models learn a general pose prior for an object category from images in a self-supervised manner. Although priors are effective in estimating pose, acquiring them can be difficult. We propose a novel method, named Pose Prior Learner (PPL), to learn a general pose prior for any object category. PPL uses a hierarchical memory to store compositional parts of prototypical poses, from which we distill a general pose prior. This prior improves pose estimation accuracy through template transformation and image reconstruction. PPL learns meaningful pose priors without any additional human annotations or interventions, outperforming competitive baselines on both human and animal pose estimation datasets. Notably, our experimental results reveal the effectiveness of PPL using learned prototypical poses for pose estimation on occluded images. Through iterative inference, PPL leverages the pose prior to refine estimated poses, regressing them to any prototypical poses stored in memory. Our code, model, and data are publicly available at: https://github.com/ZhangLab-DeepNeuroCogLab/Pose-Prior-Learner.",
+      "url": "https://www.semanticscholar.org/paper/d3db8240c68693688a29e7ffb732e25505368e4f",
+      "embedding": null
+    },
+    {
+      "cand_id": "82e3541f7cecd7e7dce92deea31bfc48b66e1845",
+      "title": "Unsupervised Domain Adaptation for Occlusion Resilient Human Pose Estimation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Occlusions are a significant challenge to human pose estimation algorithms, often resulting in inaccurate and anatomically implausible poses. Although current occlusion-robust human pose estimation algorithms exhibit impressive performance on existing datasets, their success is largely attributed to supervised training and the availability of additional information, such as multiple views or temporal continuity. Furthermore, these algorithms typically suffer from performance degradation under distribution shifts. While existing domain adaptive human pose estimation algorithms address this bottleneck, they tend to perform suboptimally when the target domain images are occluded, a common occurrence in real-life scenarios. To address these challenges, we propose OR-POSE: Unsupervised Domain Adaptation for Occlusion Resilient Human POSE Estimation. OR-POSE is an innovative unsupervised domain adaptation algorithm which effectively mitigates domain shifts and overcomes occlusion challenges by employing the mean teacher framework for iterative pseudo-label refinement. Additionally, OR-POSE reinforces realistic pose prediction by leveraging a learned human pose prior which incorporates the anatomical constraints of humans in the adaptation process. Lastly, OR-POSE avoids overfitting to inaccurate pseudo labels generated from heavily occluded images by employing a novel visibility-based curriculum learning approach. This enables the model to gradually transition from training samples with relatively less occlusion to more challenging, heavily occluded samples. Extensive experiments show that OR-POSE outperforms existing analogous state-of-the-art algorithms by $\\sim$ 7% on challenging occluded human pose estimation datasets.",
+      "url": "https://www.semanticscholar.org/paper/82e3541f7cecd7e7dce92deea31bfc48b66e1845",
+      "embedding": null
+    },
+    {
+      "cand_id": "1e1b46281d0c2e200aa46e23cffccaaed1065a60",
+      "title": "Biologically Motivated Computer Vision",
+      "year": 2000,
+      "venue": "Lecture Notes in Computer Science",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/1e1b46281d0c2e200aa46e23cffccaaed1065a60",
+      "embedding": null
+    },
+    {
+      "cand_id": "ce5101d6437d29124b7b8fdf99ece36123450236",
+      "title": "UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Low-visibility scenarios, such as low-light conditions, pose significant challenges to human pose estimation due to the scarcity of annotated low-light datasets and the loss of visual information under poor illumination. Recent domain adaptation techniques attempt to utilize well-lit labels by augmenting well-lit images to mimic low-light conditions. But handcrafted augmentations oversimplify noise patterns, while learning-based methods often fail to preserve high-frequency low-light characteristics, producing unrealistic images that lead pose models to generalize poorly to real low-light scenes. Moreover, recent pose estimators rely on image cues through image-to-keypoint cross-attention, but these cues become unreliable under low-light conditions. To address these issues, we propose Unsupervised Domain Adaptation for Pose Estimation (UDAPose), a novel framework that synthesizes low-light images and dynamically fuses visual cues with pose priors for improved pose estimation. Specifically, our synthesis method incorporates a Direct-Current-based High-Pass Filter (DHF) and a Low-light Characteristics Injection Module (LCIM) to inject high-frequency details from input low-light images, overcoming rigidity or the detail loss in existing approaches. Furthermore, we introduce a Dynamic Control of Attention (DCA) module that adaptively balances image cues with learned pose priors in the Transformer architecture. Experiments show that UDAPose outperforms state-of-the-art methods, with notable AP gains of 10.1 (56.4%) on the ExLPose-test hard set (LL-H) and 7.4 (31.4%) in cross-dataset validation on EHPT-XC. Code: https://github.com/Vision-and-Multimodal-Intelligence-Lab/UDAPose",
+      "url": "https://www.semanticscholar.org/paper/ce5101d6437d29124b7b8fdf99ece36123450236",
+      "embedding": null
+    },
+    {
+      "cand_id": "74c937dfb5806cc5b83cf9d4fb71c6dd30a1a55d",
+      "title": "Machine learning for human performance capture from multi-viewpoint video.",
+      "year": 2019,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/74c937dfb5806cc5b83cf9d4fb71c6dd30a1a55d",
+      "embedding": null
+    },
+    {
+      "cand_id": "4bf7d7d24bf090c557c0af344ad6b9d218ceef18",
+      "title": "Motion-DVAE: Unsupervised learning for fast human motion denoising",
+      "year": 2023,
+      "venue": "Motion in Games",
+      "abstract": "Pose and motion priors are crucial for recovering realistic and accurate human motion from noisy observations. Substantial progress has been made on pose and shape estimation from images, and recent works showed impressive results using priors to refine frame-wise predictions. However, a lot of motion priors only model transitions between consecutive poses and are used in time-consuming optimization procedures, which is problematic for many applications requiring real-time motion capture. We introduce Motion-DVAE, a motion prior to capture the short-term dependencies of human motion. As part of the dynamical variational autoencoder (DVAE) models family, Motion-DVAE combines the generative capability of VAE models and the temporal modeling of recurrent architectures. Together with Motion-DVAE, we introduce an unsupervised learned denoising method unifying regression- and optimization-based approaches in a single framework for real-time 3D human pose estimation. Experiments show that the proposed approach reaches competitive performance with state-of-the-art methods while being much faster.",
+      "url": "https://www.semanticscholar.org/paper/4bf7d7d24bf090c557c0af344ad6b9d218ceef18",
+      "embedding": null
+    },
+    {
+      "cand_id": "d157ae51546595336e51f18546ce262752b03f47",
+      "title": "Structural, Syntactic and Statistical Pattern Recognition: Joint IAPR International Workshops, SSPR 2006 and SPR 2006, Hong Kong, China, August 17-19, 2006: proceedings",
+      "year": 2006,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/d157ae51546595336e51f18546ce262752b03f47",
+      "embedding": null
+    },
+    {
+      "cand_id": "58640dfcd2c57fa3fdf155c4336ee30cc91a0dde",
+      "title": "Unsupervised 3D Pose Estimation With Geometric Self-Supervision",
+      "year": 2019,
+      "venue": "Computer Vision and Pattern Recognition",
+      "abstract": "We present an unsupervised learning approach to re- cover 3D human pose from 2D skeletal joints extracted from a single image. Our method does not require any multi- view image data, 3D skeletons, correspondences between 2D-3D points, or use previously learned 3D priors during training. A lifting network accepts 2D landmarks as inputs and generates a corresponding 3D skeleton estimate. Dur- ing training, the recovered 3D skeleton is reprojected on random camera viewpoints to generate new ‘synthetic’ 2D poses. By lifting the synthetic 2D poses back to 3D and re-projecting them in the original camera view, we can de- fine self-consistency loss both in 3D and in 2D. The training can thus be self supervised by exploiting the geometric self- consistency of the lift-reproject-lift process. We show that self-consistency alone is not sufficient to generate realistic skeletons, however adding a 2D pose discriminator enables the lifter to output valid 3D poses. Additionally, to learn from 2D poses ‘in the wild’, we train an unsupervised 2D domain adapter network to allow for an expansion of 2D data. This improves results and demonstrates the useful- ness of 2D pose data for unsupervised 3D lifting. Results on Human3.6M dataset for 3D human pose estimation demon- strate that our approach improves upon the previous un- supervised methods by 30% and outperforms many weakly supervised approaches that explicitly use 3D data.",
+      "url": "https://www.semanticscholar.org/paper/58640dfcd2c57fa3fdf155c4336ee30cc91a0dde",
+      "embedding": null
+    },
+    {
+      "cand_id": "2eca5e8a7684b7ceef9f9d453cbe91e5d3c57aac",
+      "title": "Unsupervised Training of Convex Regularizers using Maximum Likelihood Estimation",
+      "year": 2024,
+      "venue": "Trans. Mach. Learn. Res.",
+      "abstract": "Imaging is a standard example of an inverse problem, where the task of reconstructing a ground truth from a noisy measurement is ill-posed. Recent state-of-the-art approaches for imaging use deep learning, spearheaded by unrolled and end-to-end models and trained on various image datasets. However, many such methods require the availability of ground truth data, which may be unavailable or expensive, leading to a fundamental barrier that can not be bypassed by choice of architecture. Unsupervised learning presents an alternative paradigm that bypasses this requirement, as they can be learned directly on noisy data and do not require any ground truths. A principled Bayesian approach to unsupervised learning is to maximize the marginal likelihood with respect to the given noisy measurements, which is intrinsically linked to classical variational regularization. We propose an unsupervised approach using maximum marginal likelihood estimation to train a convex neural network-based image regularization term directly on noisy measurements, improving upon previous work in both model expressiveness and dataset size. Experiments demonstrate that the proposed method produces priors that are near competitive when compared to the analogous supervised training method for various image corruption operators, maintaining significantly better generalization properties when compared to end-to-end methods. Moreover, we provide a detailed theoretical analysis of the convergence properties of our proposed algorithm.",
+      "url": "https://www.semanticscholar.org/paper/2eca5e8a7684b7ceef9f9d453cbe91e5d3c57aac",
+      "embedding": null
+    },
+    {
+      "cand_id": "56c4096c5c397c2b11c6c6866c4cc4684b3dcb05",
+      "title": "ImPosIng: Implicit Pose Encoding for Efficient Camera Pose Estimation",
+      "year": 2022,
+      "venue": "arXiv.org",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/56c4096c5c397c2b11c6c6866c4cc4684b3dcb05",
+      "embedding": null
+    },
+    {
+      "cand_id": "32bec8e88e100fab2350bbced02c8f1cee9c67fc",
+      "title": "Pose-Invariant 3D Proximal Femur Estimation through Bi-planar Image Segmentation with Hierarchical Higher-Order Graph-Based Priors",
+      "year": 2011,
+      "venue": "International Conference on Medical Image Computing and Computer-Assisted Intervention",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/32bec8e88e100fab2350bbced02c8f1cee9c67fc",
+      "embedding": null
+    },
+    {
+      "cand_id": "844edf75b9ecc2a3398e9d1c2d03687f565dfcfe",
+      "title": "Biologically motivated computer vision : first IEEE International Workshop, BMCV 2000, Seoul, Korea, May 15-17, 2000 : proceedings",
+      "year": 2000,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/844edf75b9ecc2a3398e9d1c2d03687f565dfcfe",
+      "embedding": null
+    },
+    {
+      "cand_id": "ad7c28cf9fd1ff784add8712f8c5ab226a2815e4",
+      "title": "Computer Vision - ACCV 2007, 8th Asian Conference on Computer Vision, Tokyo, Japan, November 18-22, 2007, Proceedings, Part I",
+      "year": 2007,
+      "venue": "Asian Conference on Computer Vision",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/ad7c28cf9fd1ff784add8712f8c5ab226a2815e4",
+      "embedding": null
+    },
+    {
+      "cand_id": "09018b7a902696c4390585cef36198abd1ef0095",
+      "title": "Grounding Language in Descriptions of Scenes - eScholarship",
+      "year": 2006,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/09018b7a902696c4390585cef36198abd1ef0095",
+      "embedding": null
+    },
+    {
+      "cand_id": "222516f4029498d3f73ebf7313020eead5ae372f",
+      "title": "Unsupervised Learning of Depth and Deep Representation for Visual Odometry from Monocular Videos in a Metric Space",
+      "year": 2019,
+      "venue": "arXiv.org",
+      "abstract": "For ego-motion estimation, the feature representation of the scenes is crucial. Previous methods indicate that both the low-level and semantic feature-based methods can achieve promising results. Therefore, the incorporation of hierarchical feature representation may benefit from both methods. From this perspective, we propose a novel direct feature odometry framework, named DFO, for depth estimation and hierarchical feature representation learning from monocular videos. By exploiting the metric distance, our framework is able to learn the hierarchical feature representation without supervision. The pose is obtained with a coarse-to-fine approach from high-level to low-level features in enlarged feature maps. The pixel-level attention mask can be self-learned to provide the prior information. In contrast to the previous methods, our proposed method calculates the camera motion with a direct method rather than regressing the ego-motion from the pose network. With this approach, the consistency of the scale factor of translation can be constrained. Additionally, the proposed method is thus compatible with the traditional SLAM pipeline. Experiments on the KITTI dataset demonstrate the effectiveness of our method.",
+      "url": "https://www.semanticscholar.org/paper/222516f4029498d3f73ebf7313020eead5ae372f",
+      "embedding": null
+    },
+    {
+      "cand_id": "db0750837ca4e905ffb419f98f893e8ddfaa2da2",
+      "title": "Latent Regression Forest: Structured Estimation of 3D Articulated Hand Posture",
+      "year": 2014,
+      "venue": "2014 IEEE Conference on Computer Vision and Pattern Recognition",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/db0750837ca4e905ffb419f98f893e8ddfaa2da2",
+      "embedding": null
+    }
+  ],
+  "stats": {
+    "total_candidates": 25,
+    "after_dedup": 16,
+    "after_nontechnical_filter": 16,
+    "after_year_filter": 16,
+    "final": 16
+  }
+}

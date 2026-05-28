@@ -1,0 +1,249 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Long-context language modeling reasoning state space chunk-wise long-term memory mechanism SSMs",
+      "status": "ok",
+      "count": 10
+    },
+    {
+      "id": "C2",
+      "query": "Long-context language modeling reasoning state space pre-training methodology integrating external knowledge SSMs",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "C3",
+      "query": "Long-context language modeling reasoning state space unified dual-memory architecture long-context",
+      "status": "ok",
+      "count": 10
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "title": "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "Efficiently modeling sequences with infinite context length has long been a challenging problem. Previous approaches have either suffered from quadratic computational complexity or limited extrapolation ability in length generalization. In this work, we present Samba, a simple hybrid architecture that layer-wise combines Mamba, a selective State Space Model (SSM), with Sliding Window Attention (SWA). Samba selectively compresses a given sequence into recurrent hidden states while still maintaining the ability to precisely recall recent memories with the attention mechanism. We scale Samba up to 3.8B parameters with 3.2T training tokens and demonstrate that it significantly outperforms state-of-the-art models across a variety of benchmarks. Pretrained on sequences of 4K length, Samba shows improved perplexity in context lengths of up to 1M in zero-shot. When finetuned on 4K-length sequences, Samba efficiently extrapolates to a 256K context length with perfect memory recall on the Passkey Retrieval task, and exhibits superior retrieval extrapolation on the challenging Phonebook task compared to full-attention models. As a linear-time sequence model, Samba achieves a 3.73x higher throughput compared to Transformers with grouped-query attention for user prompts of 128K length, and a 3.64x speedup when generating 64K tokens with unlimited streaming. Our code for training on open source data is publicly available at https://github.com/microsoft/Samba.",
+      "url": "https://www.semanticscholar.org/paper/28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "embedding": null
+    },
+    {
+      "cand_id": "5ceb202621cbb7fd75f276b4cd6f87eb75d25663",
+      "title": "Retrieval Meets Reasoning: Dynamic In-Context Editing for Long-Text Understanding",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "abstract": "Current Large Language Models (LLMs) face inherent limitations due to their pre-defined context lengths, which impede their capacity for multi-hop reasoning within extensive textual contexts. While existing techniques like Retrieval-Augmented Generation (RAG) have attempted to bridge this gap by sourcing external information, they fall short when direct answers are not readily available. We introduce a novel approach that re-imagines information retrieval through dynamic in-context editing, inspired by recent breakthroughs in knowledge editing. By treating lengthy contexts as malleable external knowledge, our method interactively gathers and integrates relevant information, thereby enabling LLMs to perform sophisticated reasoning steps. Experimental results demonstrate that our method effectively empowers context-limited LLMs, such as Llama2, to engage in multi-hop reasoning with improved performance, which outperforms state-of-the-art context window extrapolation methods and even compares favorably to more advanced commercial long-context models. Our interactive method not only enhances reasoning capabilities but also mitigates the associated training and computational costs, making it a pragmatic solution for enhancing LLMs' reasoning within expansive contexts.",
+      "url": "https://www.semanticscholar.org/paper/5ceb202621cbb7fd75f276b4cd6f87eb75d25663",
+      "embedding": null
+    },
+    {
+      "cand_id": "51393dfbfd50a47030023c1ea1ef9f8e4a18941d",
+      "title": "Long-Context State-Space Video World Models",
+      "year": 2025,
+      "venue": "IEEE International Conference on Computer Vision",
+      "abstract": "Video diffusion models have recently shown promise for world modeling through autoregressive frame prediction conditioned on actions. However, they struggle to maintain long-term memory due to the high computational cost associated with processing extended sequences in attention layers. To overcome this limitation, we propose a novel architecture leveraging state-space models (SSMs) to extend temporal memory without compromising computational efficiency. Unlike previous approaches that retrofit SSMs for non-causal vision tasks, our method fully exploits the inherent advantages of SSMs in causal sequence modeling. Central to our design is a block-wise SSM scanning scheme, which strategically trades off spatial consistency for extended temporal memory, combined with dense local attention to ensure coherence between consecutive frames. We evaluate the long-term memory capabilities of our model through spatial retrieval and reasoning tasks over extended horizons. Experiments on Memory Maze and Minecraft datasets demonstrate that our approach surpasses baselines in preserving long-range memory, while maintaining practical inference speeds suitable for interactive applications.",
+      "url": "https://www.semanticscholar.org/paper/51393dfbfd50a47030023c1ea1ef9f8e4a18941d",
+      "embedding": null
+    },
+    {
+      "cand_id": "ccd9eca10294fe822a25e1133d59deacab005860",
+      "title": "Reasoning Beyond Limits: Advances and Open Problems for LLMs",
+      "year": 2025,
+      "venue": "ICT express",
+      "abstract": "Recent breakthroughs in generative reasoning have fundamentally reshaped how large language models (LLMs) address complex tasks, enabling them to dynamically retrieve, refine, and organize information into coherent multi-step reasoning chains. Techniques such as inference-time scaling, reinforcement learning, supervised fine-tuning, and distillation have been effectively applied to state-of-the-art models, including DeepSeek-R1, OpenAI o1 and o3, GPT-4o, Qwen-32B, and various Llama variants, significantly enhancing their reasoning capabilities. In this paper, we present a comprehensive review of the top 27 LLMs released between 2023 and 2025, such as Mistral AI Small 3 24B, DeepSeek-R1, Search-o1, QwQ-32B, and Phi-4, and analyze their core innovations and performance improvements. We also provide a detailed overview of recent advancements in multilingual large language models (MLLMs), emphasizing methods that improve cross-lingual reasoning and address the limitations of English-centric training. In parallel, we present a comprehensive review of progress in state space model (SSM)-based architectures, including models such as Mamba, which demonstrate improved efficiency for long-context processing compared to transformer-based approaches. Our analysis covers training strategies including general optimization techniques, mixture-of-experts (MoE) configurations, retrieval-augmented generation (RAG), chain-of-thought prompting, self-improvement methods, and test-time compute scaling and distillation frameworks. Finally, we identify key challenges for future research, including enabling multi-step reasoning without human supervision, improving robustness in chained task execution, balancing structured prompting with generative flexibility, and enhancing the integration of long-context retrieval and external tools.",
+      "url": "https://www.semanticscholar.org/paper/ccd9eca10294fe822a25e1133d59deacab005860",
+      "embedding": null
+    },
+    {
+      "cand_id": "21d22d71f759102094e58c0258afc147071f453f",
+      "title": "Hydra: A Modular Architecture for Efficient Long-Context Reasoning",
+      "year": 2025,
+      "venue": "",
+      "abstract": "The quadratic complexity of transformers fundamentally limits reasoning system deployment in resource-constrained and long-context settings. We introduce Hydra, a modular architecture based upon a state-space backbone which adaptively routes between complementary efficiency mechanisms: sparse global attention, mixture-of-experts, and dual memories comprising a reasoning workspace and product key memory. We evaluate a 29M parameter model measuring logical chaining accuracy and throughput on synthetic sequences, plus throughput on WikiText. Ablation studies use component-specific synthetic datasets to isolate individual mechanisms. Hydra achieves $3.01\\times$ and $3.0\\times$ throughput gains at 8K tokens for synthetic and WikiText datasets, respectively, and $10\\times$ accuracy improvements on multi-step logical composition compared to equal-sized transformers. Ablations confirm each component's contribution: sparse attention captures long-range dependencies, experts specialize to input domains, and product key memory enables selective retrieval.",
+      "url": "https://www.semanticscholar.org/paper/21d22d71f759102094e58c0258afc147071f453f",
+      "embedding": null
+    },
+    {
+      "cand_id": "eabf80d01093d30ca2ca94b70f2f561e9f7c7350",
+      "title": "Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Recent advances in language modeling have demonstrated the effectiveness of State Space Models (SSMs) for efficient sequence modeling. While hybrid architectures such as Samba and the decoder-decoder architecture, YOCO, have shown promising performance gains over Transformers, prior works have not investigated the efficiency potential of representation sharing between SSM layers. In this paper, we introduce the Gated Memory Unit (GMU), a simple yet effective mechanism for efficient memory sharing across layers. We apply it to create SambaY, a decoder-hybrid-decoder architecture that incorporates GMUs in the cross-decoder to share memory readout states from a Samba-based self-decoder. SambaY significantly enhances decoding efficiency, preserves linear pre-filling time complexity, and boosts long-context performance, all while eliminating the need for explicit positional encoding. Through extensive scaling experiments, we demonstrate that our model exhibits a significantly lower irreducible loss compared to a strong YOCO baseline, indicating superior performance scalability under large-scale compute regimes. Our largest model enhanced with Differential Attention, Phi4-mini-Flash-Reasoning, achieves significantly better performance than Phi4-mini-Reasoning on reasoning tasks such as Math500, AIME24/25, and GPQA Diamond without any reinforcement learning, while delivering up to 10x higher decoding throughput on 2K-length prompts with 32K generation length under the vLLM inference framework. We release our training codebase on open-source data at https://github.com/microsoft/ArchScale.",
+      "url": "https://www.semanticscholar.org/paper/eabf80d01093d30ca2ca94b70f2f561e9f7c7350",
+      "embedding": null
+    },
+    {
+      "cand_id": "368fb35a07076eba01c2e4700499323cd4524513",
+      "title": "RA-DIT: Retrieval-Augmented Dual Instruction Tuning",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "Retrieval-augmented language models (RALMs) improve performance by accessing long-tail and up-to-date knowledge from external data stores, but are challenging to build. Existing approaches require either expensive retrieval-specific modifications to LM pre-training or use post-hoc integration of the data store that leads to suboptimal performance. We introduce Retrieval-Augmented Dual Instruction Tuning (RA-DIT), a lightweight fine-tuning methodology that provides a third option by retrofitting any LLM with retrieval capabilities. Our approach operates in two distinct fine-tuning steps: (1) one updates a pre-trained LM to better use retrieved information, while (2) the other updates the retriever to return more relevant results, as preferred by the LM. By fine-tuning over tasks that require both knowledge utilization and contextual awareness, we demonstrate that each stage yields significant performance improvements, and using both leads to additional gains. Our best model, RA-DIT 65B, achieves state-of-the-art performance across a range of knowledge-intensive zero- and few-shot learning benchmarks, significantly outperforming existing in-context RALM approaches by up to +8.9% in 0-shot setting and +1.4% in 5-shot setting on average.",
+      "url": "https://www.semanticscholar.org/paper/368fb35a07076eba01c2e4700499323cd4524513",
+      "embedding": null
+    },
+    {
+      "cand_id": "e4f739cb3041380ea8019ea0ff82ad957a687e72",
+      "title": "CAWN: Continuous Acoustic Wave Networks for Autoregressive Language Modeling",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Modern Large Language Models (LLMs) rely on Transformer self-attention, which scales quadratically with sequence length. Recent linear-time alternatives, like State Space Models (SSMs), often suffer from signal degradation over extended contexts. We introduce the Continuous Acoustic Wave Network (CAWN), a fully continuous sequence-mixing architecture. Instead of discrete matrix-based attention, CAWN projects hidden states into multi-headed complex-domain phasors, achieving sequence mixing through a causal, $O(L)$ Phase Accumulation mechanism. To prevent signal degradation over ultra-long contexts, we introduce a dual-gated Selective Phase Resonance mechanism incorporating Frequency-Dependent Retention, Hard-Threshold Gating via Straight-Through Estimation, and a Temporal Syntax Cache to capture short-term local dependencies. We also replace standard dense linear projections with Depth-wise Harmonic Convolutions for optimal spatial frequency mixing, augmented by Block Attention Residuals for depth-wise state routing. Scaled to a 150M-parameter model, CAWN utilizes custom Triton kernels for hardware-efficient, true-complex phase accumulation in float32. Trained via a continuous streaming loop on a 100-Billion-token corpus, the prototype is evaluated at a 5-Billion-token milestone. Empirical evaluations via a Targeted Semantic Retrieval protocol demonstrate robust vocabulary acquisition and extended explicitly learned contextual denoising. By leveraging $O(1)$ state-passing via chunked prefill, the model retrieves targeted information across 2,000,000 tokens while strictly plateauing at 8.72 GB of Peak VRAM, empirically overcoming the $O(L^2)$ context memory wall.",
+      "url": "https://www.semanticscholar.org/paper/e4f739cb3041380ea8019ea0ff82ad957a687e72",
+      "embedding": null
+    },
+    {
+      "cand_id": "e84fb028bcea9b4e0e293187e6c7f432e4b44741",
+      "title": "Characterizing State Space Model and Hybrid Language Model Performance with Long Context",
+      "year": 2025,
+      "venue": "",
+      "abstract": "Emerging applications such as AR are driving demands for machine intelligence capable of processing continuous and/or long-context inputs on local devices. However, currently dominant models based on Transformer architecture suffers from the quadratic computational and memory overhead, which hinders applications required to process long contexts. This has spurred a paradigm shift towards new architectures like State Space Models (SSMs) and SSM-Transformer hybrid models, which provide near-linear scaling. The near-linear scaling enabled efficient handling of millions of tokens while delivering high performance in recent studies. Although such works present promising results, their workload characteristics in terms of computational performance and hardware resource requirements are not yet thoroughly explored, which limits our understanding of their implications to the system level optimizations. To address this gap, we present a comprehensive, compara-ive benchmarking of carefully selected Transformers, SSMs, and hybrid models specifically for long-context inference on consumer and embedded GPUs. Our analysis shows that SSMs are well-suited for on-device AI on consumer and embedded GPUs for long context inferences. While Transformers are up to 1.9x faster at short sequences (<8K tokens), SSMs demonstrate a dramatic performance inversion, becoming up to 4x faster at very long contexts (~57K tokens), thanks to their linear computational complexity and ~64% reduced memory footrprint. Our operator-level analysis reveals that custom SSM kernels like selective scan despite being hardware-aware to minimize memory IO, dominate the inference runtime on edge platforms, accounting for over 55% of latency due to their sequential, element-wise nature. SSM-Scope is open-sourced at https://github.com/sapmitra/ssm-scope",
+      "url": "https://www.semanticscholar.org/paper/e84fb028bcea9b4e0e293187e6c7f432e4b44741",
+      "embedding": null
+    },
+    {
+      "cand_id": "d874548e5ac4058bd8424894955ef27a5b39caa2",
+      "title": "Bayesian Information Extraction Network Content Areas : information extraction , probabilistic reasoning , information retrieval",
+      "year": 2003,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/d874548e5ac4058bd8424894955ef27a5b39caa2",
+      "embedding": null
+    },
+    {
+      "cand_id": "0602b015c64394c0802f53dc15b678a64bc9a46e",
+      "title": "EnerVerse: Envisioning Embodied Future Space for Robotics Manipulation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "We introduce EnerVerse, a generative robotics foundation model that constructs and interprets embodied spaces. EnerVerse employs a chunk-wise autoregressive video diffusion framework to predict future embodied spaces from instructions, enhanced by a sparse context memory for long-term reasoning. To model the 3D robotics world, we adopt a multi-view video representation, providing rich perspectives to address challenges like motion ambiguity and 3D grounding. Additionally, EnerVerse-D, a data engine pipeline combining generative modeling with 4D Gaussian Splatting, forms a self-reinforcing data loop to reduce the sim-to-real gap. Leveraging these innovations, EnerVerse translates 4D world representations into physical actions via a policy head (EnerVerse-A), achieving state-of-the-art performance in both simulation and real-world tasks. For efficiency, EnerVerse-A reuses features from the first denoising step and predicts action chunks, achieving about 280 ms per 8-step action chunk on a single RTX 4090. Further video demos, dataset samples could be found in our project page.",
+      "url": "https://www.semanticscholar.org/paper/0602b015c64394c0802f53dc15b678a64bc9a46e",
+      "embedding": null
+    },
+    {
+      "cand_id": "8630e880829c82269861d396f61f23a8ada3db1f",
+      "title": "Decoupled Reasoning with Implicit Fact Tokens (DRIFT): A Dual-Model Framework for Efficient Long-Context Inference",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "The integration of extensive, dynamic knowledge into Large Language Models (LLMs) remains a significant challenge due to the inherent entanglement of factual data and reasoning patterns. Existing solutions, ranging from non-parametric Retrieval-Augmented Generation (RAG) to parametric knowledge editing, are often constrained in practice by finite context windows, retriever noise, or the risk of catastrophic forgetting. In this paper, we propose DRIFT, a novel dual-model architecture designed to explicitly decouple knowledge extraction from the reasoning process. Unlike static prompt compression, DRIFT employs a lightweight knowledge model to dynamically compress document chunks into implicit fact tokens conditioned on the query. These dense representations are projected into the reasoning model's embedding space, replacing raw, redundant text while maintaining inference accuracy. Extensive experiments show that DRIFT significantly improves performance on long-context tasks, outperforming strong baselines among comparably sized models. Our approach provides a scalable and efficient paradigm for extending the effective context window and reasoning capabilities of LLMs. Our code is available at https://github.com/Lancelot-Xie/DRIFT.",
+      "url": "https://www.semanticscholar.org/paper/8630e880829c82269861d396f61f23a8ada3db1f",
+      "embedding": null
+    },
+    {
+      "cand_id": "050a8b1e19cdec2b389e2a295388f7269d39ff22",
+      "title": "Evaluation and Mentoring of Online Faculty",
+      "year": 2011,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/050a8b1e19cdec2b389e2a295388f7269d39ff22",
+      "embedding": null
+    },
+    {
+      "cand_id": "da649d7ca5cb629243328400f8845e4186537f92",
+      "title": "Apriel-H1: Towards Efficient Enterprise Reasoning Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Large Language Models (LLMs) achieve remarkable reasoning capabilities through transformer architectures with attention mechanisms. However, transformers suffer from quadratic time and memory complexity in the attention module (MHA) and require caching key-value states during inference, which severely limits throughput and scalability. High inference throughput is critical for agentic tasks, long-context reasoning, efficient deployment under high request loads, and more efficient test-time compute scaling. State Space Models (SSMs) such as Mamba offer a promising alternative with linear inference complexity and a constant memory footprint via recurrent computation with fixed-size hidden states. In this technical report we introduce the Apriel-H1 family of hybrid LLMs that combine transformer attention and SSM sequence mixers for efficient reasoning at 15B model size. These models are obtained through incremental distillation from a pretrained reasoning transformer, Apriel-Nemotron-15B-Thinker, progressively replacing less critical attention layers with linear Mamba blocks. We release multiple post-distillation variants of Apriel-H1-15B-Thinker with different SSM-to-MHA ratios and analyse how reasoning performance degrades as more Mamba layers replace MHA. Additionally, we release a 30/50 hybrid variant of Apriel-H1, further fine-tuned on a supervised dataset of reasoning traces, achieving over 2x higher inference throughput when deployed in the production-ready vLLM environment, with minimal degradation in reasoning performance. This shows that distilled hybrid SSM-Transformer architectures can deliver substantial efficiency gains over the pretrained transformer equivalent without substantially compromising the reasoning quality.",
+      "url": "https://www.semanticscholar.org/paper/da649d7ca5cb629243328400f8845e4186537f92",
+      "embedding": null
+    },
+    {
+      "cand_id": "d5b686df9dad0fe5e77ccbacbf203beac5782e8c",
+      "title": "Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "As embodied agents operate in increasingly complex environments, the ability to perceive, track, and reason about individual object instances over time becomes essential, especially in tasks requiring sequenced interactions with visually similar objects. In these non-Markovian settings, key decision cues are often hidden in object-specific histories rather than the current scene. Without persistent memory of prior interactions (what has been interacted with, where it has been, or how it has changed) visuomotor policies may fail, repeat past actions, or overlook completed ones. To surface this challenge, we introduce LIBERO-Mem, a non-Markovian task suite for stress-testing robotic manipulation under object-level partial observability. It combines short- and long-horizon object tracking with temporally sequenced subgoals, requiring reasoning beyond the current frame. However, vision-language-action (VLA) models often struggle in such settings, with token scaling quickly becoming intractable even for tasks spanning just a few hundred frames. We propose Embodied-SlotSSM, a slot-centric VLA framework built for temporal scalability. It maintains spatio-temporally consistent slot identities and leverages them through two mechanisms: (1) slot-state-space modeling for reconstructing short-term history, and (2) a relational encoder to align the input tokens with action decoding. Together, these components enable temporally grounded, context-aware action prediction. Experiments show Embodied-SlotSSM's baseline performance on LIBERO-Mem and general tasks, offering a scalable solution for non-Markovian reasoning in object-centric robotic policies.",
+      "url": "https://www.semanticscholar.org/paper/d5b686df9dad0fe5e77ccbacbf203beac5782e8c",
+      "embedding": null
+    },
+    {
+      "cand_id": "65b2c9808da0549290f0cad02648a68c0e6621de",
+      "title": "UniCAIM: A Unified CAM/CIM Architecture with Static-Dynamic KV Cache Pruning for Efficient Long-Context LLM Inference",
+      "year": 2025,
+      "venue": "Design Automation Conference",
+      "abstract": "Transformer-based large language models (LLMs) have achieved impressive performance in various natural language processing (NLP) applications. However, the high memory and computation cost induced by the KV cache limits the inference efficiency, especially for long input sequences. Compute-in-memory (CIM)-based accelerators have been proposed for LLM acceleration with KV cache pruning. However, as existing accelerators only support static pruning with a fixed pattern or dynamic pruning with primitive implementations, they suffer from either high accuracy degradation or low efficiency. In this paper, we propose a ferroelectric FET (FeFET)-based unified content addressable memory (CAM) and CIM architecture, dubbed as UniCAIM. UniCAIM features simultaneous support for static and dynamic pruning with 3 computation modes: 1) in the CAM mode, UniCAIM enables approximate similarity measurement in $\\mathcal{O}(1)$ time for dynamic KV cache pruning with high energy efficiency; 2) in the charge-domain CIM mode, static pruning can be supported based on accumulative similarity score, which is much more flexible compared to fixed patterns; 3) in the current-domain mode, exact attention computation can be conducted with a subset of selected KV cache. We further propose a novel CAM/CIM cell design that leverages the multi-level characteristics of FeFETs for signed multibit storage of the KV cache and in-place attention computation. With extensive experimental results, we demonstrate UniCAIM can reduce the area-energy-delay product (AEDP) by $8.2 \\sim 831 \\times$ over the state-of-the-art CIM-based LLM accelerators at the circuit level, along with high accuracy comparable with dense attention at the application level, showing its great potential for efficient long-context LLM inference.",
+      "url": "https://www.semanticscholar.org/paper/65b2c9808da0549290f0cad02648a68c0e6621de",
+      "embedding": null
+    },
+    {
+      "cand_id": "fbbee999e9aca892f7606fb146075d7c39837312",
+      "title": "04|3D MODELLING AND VISUALISATION",
+      "year": 2008,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/fbbee999e9aca892f7606fb146075d7c39837312",
+      "embedding": null
+    },
+    {
+      "cand_id": "e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+      "title": "Achieving Constant Memory Complexity in Long Context Transformers Through Linear Attention",
+      "year": 2026,
+      "venue": "Academic Journal of Applied Sciences",
+      "abstract": "The transformer architecture has emerged as the dominant paradigm for sequence modeling, yet its standard self-attention mechanism imposes quadratic time and memory cost with respect to sequence length, presenting a fundamental scalability barrier for long-context applications. This paper investigates linear attention as a principled mechanism for achieving constant memory complexity (KM) during autoregressive inference in transformer models. By replacing the softmax normalization in scaled dot-product attention with a kernel decomposition, the computation is restructured so that keys and values are combined before interacting with queries, yielding an equivalent recurrent form that maintains a fixed-size hidden state regardless of sequence length. We present a unified theoretical derivation of this parallel-to-recurrent equivalence, introduce a learnable positive feature map paired with data-dependent gating and structured state normalization, and evaluate the resulting architecture on long-context language modeling and downstream comprehension benchmarks. Empirical results confirm that peak GPU memory consumption remains constant at 2.1 gigabytes across context lengths from 1,024 to 131,072 tokens, achieving a 13.6× throughput advantage over standard softmax attention at length 65,536, with only a 4.8% relative perplexity increase on the Pile dataset. These findings establish constant-complexity linear attention as a viable deployment mechanism for memory-constrained long-context transformer inference.",
+      "url": "https://www.semanticscholar.org/paper/e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+      "embedding": null
+    },
+    {
+      "cand_id": "7ea5ec106915850de9607156893da27adbb412f2",
+      "title": "Education Matters: Innovative Social Science Research",
+      "year": 2007,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/7ea5ec106915850de9607156893da27adbb412f2",
+      "embedding": null
+    },
+    {
+      "cand_id": "214ba3038e6aa37d1f17b4049bac54b161e6c0f7",
+      "title": "Taipan: Efficient and Expressive State Space Language Models with Selective Attention",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "abstract": "Efficient long-context language modeling remains a significant challenge in Natural Language Processing (NLP). While Transformers dominate language tasks, they struggle with long sequences due to quadratic computational complexity in training and linearly scaling memory costs during inference. Recent State Space Models (SSMs) such as Mamba offer alternatives with constant memory usage, but they underperform in tasks requiring extensive in-context retrieval. We introduce Taipan, a novel hybrid architecture that combines Mamba-2 with Selective Attention Layers (SALs). These SALs identify tokens requiring long-range interactions, remove less important features, and then augment their representations using the attention module. This approach balances Mamba's efficiency with Transformer-like performance in memory-intensive tasks. By constraining the attention budget, Taipan extends accurate predictions to context lengths of up to 1 million tokens while preserving computational efficiency. Our experiments demonstrate Taipan's superior performance across various scales and tasks, offering a promising solution for efficient long-context language modeling.",
+      "url": "https://www.semanticscholar.org/paper/214ba3038e6aa37d1f17b4049bac54b161e6c0f7",
+      "embedding": null
+    },
+    {
+      "cand_id": "301bf75c331a9c933822d914b6a87a050187a96f",
+      "title": "MDLA: Multi-Head Latent Linear Attention for Low-Complexity and Memory-Efficient KV Cache",
+      "year": 2026,
+      "venue": "International Conference on Electronics, Information and Communications",
+      "abstract": "Large language models (LLMs) have achieved remarkable progress with Transformer-based architectures. However, the quadratic complexity of the multi-head attention (MHA) mechanism imposes significant computational and memory bottlenecks, limiting scalability for long-context reasoning. To address these challenges, we propose Multi-Head Latent Linear Attention (MDLA), a unified attention architecture that integrates low-rank joint compression, linear attention, and a state space model (SSM)-based reconstruction mechanism. MDLA inherits the memory-efficient design of multi-head latent attention (MLA) while introducing a linearized attention formulation to achieve computational scalability and an SSMbased reconstruction module to restore sequential dependencies lost during compression. This hybrid design effectively balances efficiency and expressiveness, reducing both FLOPs and memory usage without compromising representational quality. Experimental results demonstrate that MDLA achieves up to 63.6% reduction in total computation compared with MLA at a 16 K -token sequence length, while maintaining competitive performance across language understanding benchmarks such as MMLU, HellaSwag, ARC, and TruthfulQA. These results confirm that MDLA provides an efficient and scalable foundation for next-generation large language models requiring long-context processing.",
+      "url": "https://www.semanticscholar.org/paper/301bf75c331a9c933822d914b6a87a050187a96f",
+      "embedding": null
+    },
+    {
+      "cand_id": "08bad2daddbfe6b61d422c779535276771fd5a58",
+      "title": "Representing and Reasoning over Time in a Unified Cognitive Architecture - eScholarship",
+      "year": 2009,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/08bad2daddbfe6b61d422c779535276771fd5a58",
+      "embedding": null
+    },
+    {
+      "cand_id": "d2caa91a9c0b373694de027c78cfcd9390f4c503",
+      "title": "GLUS: Global-Local Reasoning Unified into A Single Large Language Model for Video Segmentation",
+      "year": 2025,
+      "venue": "Computer Vision and Pattern Recognition",
+      "abstract": "This paper proposes a novel framework utilizing multimodal large language models (MLLMs) for referring video object segmentation (RefVOS). Previous MLLMbased methods commonly struggle with the dilemma between \"Ref\" and \"VOS\": they either specialize in understanding a few key frames (global reasoning) or tracking objects on continuous frames (local reasoning), and rely on external VOS or frame selectors to mitigate the other end of the challenge. However, our framework GLUS shows that Global and Local consistency can be Unified into a single video Segmentation MLLM: a set of sparse \"context frames\" provides global information, while a stream of continuous \"query frames\" conducts local object tracking. This is further supported by jointly training the MLLM with a pre-trained VOS memory bank to simultaneously digest short-range and long-range temporal information. To improve the information efficiency within the limited context window of MLLMs, we introduce object contrastive learning to distinguish hard false-positive objects and a self-refined framework to identify crucial frames and perform propagation. By collectively integrating these insights, our GLUS delivers a simple yet effective baseline, achieving new state-of-the-art for MLLMs on the MeViS and Ref-Youtube-VOS benchmark. Our project page is at https://glus-video.github.io/.",
+      "url": "https://www.semanticscholar.org/paper/d2caa91a9c0b373694de027c78cfcd9390f4c503",
+      "embedding": null
+    },
+    {
+      "cand_id": "3198b0215598537b9a3fa43ac14664157ba51471",
+      "title": "Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective",
+      "year": 2026,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "abstract": "As embodied agents operate in increasingly complex environments, the ability to perceive, track, and reason about individual object instances over time becomes essential, especially in tasks requiring sequenced interactions with visually similar objects. In non-Markovian settings, critical decision cues lie in object histories rather than the current scene. Without persistent memory of prior interactions (what was used, where it was placed, or how it changed), visuomotor policies may fail, repeat past actions, or overlook completed ones. To surface this challenge, we introduce LIBERO-Mem, a non-Markovian task suite for stress-testing robotic manipulation under object-level partial observability. It combines short- and long-horizon object tracking with temporally sequenced subgoals, requiring reasoning beyond the current frame. However, vision-language-action (VLA) models often struggle in such settings, with token scaling quickly becoming intractable even for tasks spanning just a few hundred frames. We propose Embodied-SlotSSM, a slot-centric VLA framework built for temporal scalability. It maintains spatio-temporally consistent slot identities and leverages them through two mechanisms: (1) slot-state-space modeling for reconstructing short-term history, and (2) a relational encoder to align the input tokens with action decoding. Together, these components enable temporally grounded, context-aware action prediction. Experiments show Embodied-SlotSSM's baseline performance on LIBERO-Mem and general tasks, offering a scalable solution for non-Markovian reasoning in object-centric policies.",
+      "url": "https://www.semanticscholar.org/paper/3198b0215598537b9a3fa43ac14664157ba51471",
+      "embedding": null
+    }
+  ],
+  "stats": {
+    "total_candidates": 27,
+    "after_dedup": 24,
+    "after_nontechnical_filter": 24,
+    "after_year_filter": 24,
+    "final": 24
+  }
+}

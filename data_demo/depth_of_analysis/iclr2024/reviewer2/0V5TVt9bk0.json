@@ -1,0 +1,231 @@
+{
+  "paper_id": "0V5TVt9bk0",
+  "source": "reviewer2_iclr2024",
+  "source_format": "reviewer2_txt",
+  "reviews_analysis": {
+    "REVIEWER2_ICLR2024": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper introduces **Q-Bench**, a benchmark for evaluating the low-level visual abilities of Multi-Modality Large Language Models (MLLMs), focusing on three aspects: **low-level perception**, **description**, and **assessment**.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The benchmark comprises three datasets—**LLVisionQA**, **LLDescribe**, and IQA assessments using a softmax-based strategy—and evaluates 15 open-source MLLMs along with GPT-4V.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Key findings indicate that while MLLMs demonstrate initial competence in low-level visual tasks, their performance remains inconsistent and suboptimal compared to human-level benchmarks.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "**Comprehensive Coverage of Low-Level Visual Tasks**: The paper addresses a critical gap in existing benchmarks by focusing on low-level visual abilities (perception, description, and assessment), which are rarely evaluated in MLLM benchmarks.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "Example: **LLVisionQA** covers **four quadrants** of low-level concerns (distortions vs. other attributes, global vs. local perception), as detailed in Section 2.2.1.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Example: **LLDescribe** leverages **expert-annotated long descriptions** (avg. 58 words) to evaluate completeness, precision, and relevance, as outlined in Section 2.3.1.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "**Novel Softmax-Based IQA Strategy**: The paper proposes a **softmax-based strategy** to quantify MLLM outputs (Equation 1 in Section 2.4.2), enabling alignment with human-perceived quality scores. This innovation bridges the gap between language models and traditional IQA frameworks.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "Example: The strategy is validated empirically in Section 3.3, where **InternLM-XComposer-VL** outperforms **CLIP-ViT-Large-14** by **20%** on IQA tasks.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "**Empirical Validation Across Multiple Datasets**: The paper evaluates MLLMs on **three distinct datasets** (LLVisionQA, LLDescribe, and IQA benchmarks) and provides comparative results against baselines (e.g., GPT-4V, CLIP). This is detailed in Tables 2, 4, and 9.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "**Insightful Model-Specific Behaviors**: The paper identifies patterns such as MLLMs’ tendency to favor **“yes” answers** in Yes/No questions (Section 3.1) and struggles with **distortions** (Section 3.1). These observations add nuance to the evaluation of MLLM capabilities.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "**Ambiguous Definition of Evaluation Criteria** (Severe)",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "**Problem**: The criteria for **completeness**, **precision**, and **relevance** in **LLDescribe** (Section 2.3.2) are poorly defined. For example, what qualifies as a “complete” or “accurate” low-level description?",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "**Recommendation**: Define explicit thresholds or rules for evaluating completeness, precision, and relevance (e.g., number of attributes covered, consistency with ground truth).",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "**Lack of Statistical Significance Testing** (Serious)",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "**Problem**: The paper reports performance differences between models (e.g., **InternLM-XComposer-VL** vs. **LLaVA-v1.5**) but does not provide **confidence intervals**, **p-values**, or **statistical tests** to validate these differences.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "**Recommendation**: Include statistical significance analysis (e.g., t-tests, ANOVA) to strengthen claims about model superiority.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "**Data Contamination Risks Not Discussed** (Moderate)",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "**Problem**: The **LLVisionQA** and **LLDescribe** datasets are created with **expert annotations**, but the paper does not address whether these datasets could be contaminated by MLLM training data.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "**Recommendation**: Discuss potential overlaps between the datasets and MLLM training corpora, and consider excluding overlapping samples or using hold-out validation.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "**Limited Discussion on Why Certain Models Excel** (Minor)",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "**Problem**: The paper observes that **InternLM-XComposer-VL** outperforms others but offers no explanation for this advantage (e.g., architecture, training data).",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "**Recommendation**: Analyze architectural or training differences between models to explain performance variations.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "**Ambiguity in Threshold Selection** (Minor)",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "**Problem**: The paper cites **60% accuracy** on **LLVisionQA** as a threshold for “robust low-level visual assistants,” but this threshold is arbitrary and not justified.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_25",
+        "argument": "**Recommendation**: Explain the rationale for selecting 60% as a target and compare it to human performance benchmarks.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_26",
+        "argument": "**Scalability and Generalizability**: The paper does not discuss whether the **LLVisionQA** and **LLDescribe** datasets can be scaled to support broader low-level visual tasks (e.g., medical imaging, satellite imagery).",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_27",
+        "argument": "**Practical Deployment Guidelines**: While the paper identifies MLLM shortcomings, it does not provide actionable guidelines for improving low-level visual abilities (e.g., fine-tuning strategies, additional training data).",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_28",
+        "argument": "**Ethical Implications**: The paper lacks a formal **ethics statement** or discussion of potential misuse of the benchmark (e.g., generating misleading low-level descriptions for adversarial purposes).",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_29",
+        "argument": "The paper introduces a novel benchmark for evaluating MLLMs on low-level visual tasks, which is timely and relevant.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_30",
+        "argument": "However, the lack of statistical rigor, unclear evaluation criteria, and insufficient discussion of limitations prevent it from reaching a stronger accept level.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_31",
+        "argument": "With targeted revisions, the work has the potential to become a valuable resource for the community.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 5171,
+    "completion_tokens": 5171,
+    "total_tokens": 10342
+  }
+}

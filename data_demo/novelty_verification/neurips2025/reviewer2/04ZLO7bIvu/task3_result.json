@@ -1,0 +1,395 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "- **Novel Benchmark Design:** The introduction of a motion-centric benchmark is innovative, offering a systematic way to probe models' ability to discern motion versus static cues."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "Does this omission affect the novelty or relevance of the proposed baselines?"
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "b3c73f41bdd35002ef08923a501e7de1da50403f",
+      "text": "Title: PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?\n\nAbstract: Multi-modal large language models (MLLMs) have shown impressive generalization across tasks using images and text modalities. While their extension to video has enabled tasks such as video question answering and video captioning, their pixel-level visual grounding abilities are less studied. In this work, we raise the pertinent question of whether motion is used in pixel-level visual grounding and whether video MLLMs can segment objects based on natural language expressions describing their motion patterns. We identify the shortcomings in the current benchmarks, where we show that a single frame can often suffice for capturing the motion referring expression without any temporal reasoning. To address this, we introduce four motion-centric probing techniques, particularly designed for the visual grounding task, to study video MLLMs'ability to identify true motion from a fake one and their ability to grasp the motion order. Consequently, we provide a motion-centric benchmark, MoCentric-Bench. It ensures that video MLLMs are evaluated towards leveraging the interaction between motion and language rather than being dominated by static appearance cues emphasized in existing visual grounding datasets. We further establish strong single-image baselines that are on par with or outperform prior methods. Finally, we explore simple motion-centric adaptation techniques that provide state-of-the-art performance on our MoCentric-Bench. Our motion-centric benchmark, evaluation and findings challenge future models to improve dense spatiotemporal grounding and pixel-level understanding within videos. Code and datasets will be made publicly available at https://github.com/MSiam/PixFoundation-2.0.git.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+      "text": "Title: Where It Moves, It Matters: Referring Surgical Instrument Segmentation via Motion\n\nAbstract: Enabling intuitive, language-driven interaction with surgical scenes is a critical step toward intelligent operating rooms and autonomous surgical robotic assistance. However, the task of referring segmentation, localizing surgical instruments based on natural language descriptions, remains underexplored in surgical videos, with existing approaches struggling to generalize due to reliance on static visual cues and predefined instrument names. In this work, we introduce SurgRef, a novel motion-guided framework that grounds free-form language expressions in instrument motion, capturing how tools move and interact across time, rather than what they look like. This allows models to understand and segment instruments even under occlusion, ambiguity, or unfamiliar terminology. To train and evaluate SurgRef, we present Ref-IMotion, a diverse, multi-institutional video dataset with dense spatiotemporal masks and rich motion-centric expressions. SurgRef achieves state-of-the-art accuracy and generalization across surgical procedures, setting a new benchmark for robust, language-driven surgical video segmentation.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "a053a62a5daec6998956898d4f8b37ef0465e5eb",
+      "text": "Title: Llama Learns to Direct: DirectorLLM for Human-Centric Video Generation\n\nAbstract: In this paper, we introduce DirectorLLM, a novel video generation model that employs a large language model (LLM) to orchestrate human poses within videos. As foundational text-to-video models rapidly evolve, the demand for high-quality human motion and interaction grows. To address this need and enhance the authenticity of human motions, we extend the LLM from a text generator to a video director and human motion simulator. Utilizing open-source resources from Llama 3, we train the DirectorLLM to generate detailed instructional signals, such as human poses, to guide video generation. This approach offloads the simulation of human motion from the video generator to the LLM, effectively creating informative outlines for human-centric scenes. These signals are used as conditions by the video renderer, facilitating more realistic and prompt-following video generation. As an independent LLM module, it can be applied to different video renderers, including UNet and DiT, with minimal effort. Experiments on automatic evaluation benchmarks and human evaluations show that our model outperforms existing ones in generating videos with higher human motion fidelity, improved prompt faithfulness, and enhanced rendered subject naturalness.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "ad8b036934f7fe532f28cdbe785ebffa8ba31f87",
+      "text": "Title: H2R: A Human-to-Robot Data Augmentation for Robot Pre-training from Videos\n\nAbstract: Large-scale pre-training using egocentric human videos has proven effective for robot learning. However, the models pre-trained on such data can be suboptimal for robot learning due to the significant visual gap between human hands and those of different robots. To remedy this, we propose H2R, a human-to-robot data augmentation pipeline that converts egocentric human videos into robot-centric visual data. H2R estimates human hand pose from videos, retargets the motion to simulated robotic arms, removes human limbs via segmentation and inpainting, and composites rendered robot embodiments into the original frames with camera-aligned geometry. This process explicitly bridges the visual gap between human and robot embodiments during pre-training. We apply H2R to augment large-scale egocentric human video datasets such as Ego4D and SSv2. To verify the effectiveness of the augmentation pipeline, we introduce a CLIP-based image-text similarity metric that quantitatively evaluates the semantic fidelity of robot-rendered frames to the original human actions. We evaluate H2R through comprehensive experiments in both simulation and real-world settings. In simulation, H2R consistently improves downstream success rates across four benchmark suites-Robomimic, RLBench, PushT, and CortexBench-yielding gains of 1.3%-10.2% across different visual encoders and policy learning methods. In real-world experiments, H2R improves performance on UR5 and dual-arm Franka/UR5 manipulation platforms, achieving 3.3%-23.3% success rate gains across gripper-based, dexterous, and bimanual tasks. We further demonstrate the potential of H2R in cross-embodiment generalization and its compatibility with vision-language-action models. These results indicate that H2R improves the generalization ability of robotic policies by mitigating the visual discrepancies between human and robot domains.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "ef41bccb3c42a59cf2f3fe82417b7a8402f42fe2",
+      "text": "Title: Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos\n\nAbstract: Ego-centric driving videos available online provide an abundant source of visual data for autonomous driving, yet their lack of annotations makes it difficult to learn representations that capture both semantic structure and 3D geometry. Recent advances in large feedforward spatial models demonstrate that point maps and ego-motion can be inferred in a single forward pass, suggesting a promising direction for scalable driving perception. We therefore propose a label-free, teacher-guided framework for learning autonomous driving representations directly from unposed videos. Unlike prior self-supervised approaches that focus primarily on frame-to-frame consistency, we posit that safe and reactive driving depends critically on temporal context. To this end, we leverage a feedforward architecture equipped with a lightweight autoregressive module, trained using multi-modal supervisory signals that guide the model to jointly predict current and future point maps, camera poses, semantic segmentation, and motion masks. Multi-modal teachers provide sequence-level pseudo-supervision, enabling LFG to learn a unified pseudo-4D representation from raw YouTube videos without poses, labels, or LiDAR. The resulting encoder not only transfers effectively to downstream autonomous driving planning on the NAVSIM benchmark, surpassing multi-camera and LiDAR baselines with only a single monocular camera, but also yields strong performance when evaluated on a range of semantic, geometric, and qualitative motion prediction tasks. These geometry and motion-aware features position LFG as a compelling video-centric foundation model for autonomous driving.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "b65394969660d3e2a3c29e16e3c9e2a212869fc5",
+      "text": "Title: Multi‐scale feature learning and temporal probing strategy for one‐stage temporal action localization\n\nAbstract: The aim of temporal action localization (TAL) is to determine the start and end frames of an action in a video. In recent years, TAL has attracted considerable attention because of its increasing applications in video understanding and retrieval. However, precisely estimating the duration of an action in the temporal dimension is still a challenging problem. In this paper, we propose an effective one‐stage TAL method based on a self‐defined motion data structure, called a dense joint motion matrix (DJMM), and a novel temporal detection strategy. Our method provides three main contributions. First, compared with mainstream motion images, DJMMs can preserve more pre‐processed motion features and provides more precise detail representations. Furthermore, DJMMs perfectly solve the temporal information loss problem caused by motion trajectory overlaps within a certain time period. Second, a spatial pyramid pooling (SPP) layer, which is widely used in the object detection and tracking fields, is innovatively incorporated into the proposed method for multi‐scale feature learning. Moreover, the SPP layer enables the backbone convolutional neural network (CNN) to receive DJMMs of any size in the temporal dimension. Third, a large‐scale‐first temporal detection strategy inspired by a well‐developed Chinese text segmentation algorithm is proposed to address long‐duration videos. Our method is evaluated on two benchmark data sets and one self‐collected data set: Florence‐3D, UTKinect‐Action3D and HanYue‐3D. The experimental results show that our method achieves competitive action recognition accuracy and high TAL precision, and its time efficiency and few‐shot learning capabilities enable it to be utilized for real‐time surveillance.",
+      "relevance_score": null
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b3c73f41bdd35002ef08923a501e7de1da50403f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty in the paper's motion-centric benchmark, but the related work (SurgRef) is about a different domain (surgical instruments) and does not provide evidence about the benchmark design in the reviewed paper. The evidence is unrelated to the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a053a62a5daec6998956898d4f8b37ef0465e5eb",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work is about DirectorLLM for video generation, which does not mention a motion-centric benchmark for video referring segmentation. The review sentence's claim about the paper's benchmark design cannot be verified against the provided related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ad8b036934f7fe532f28cdbe785ebffa8ba31f87",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (H2R paper) is entirely about human-to-robot data augmentation and does not contain any information about motion-centric benchmarks or video referring segmentation. Therefore, there is no relevant evidence to evaluate the claim's alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ef41bccb3c42a59cf2f3fe82417b7a8402f42fe2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the introduction of a motion-centric benchmark is innovative. The related work describes a different paper on autonomous driving pretraining from unposed videos, which does not discuss motion-centric benchmarks for video referring segmentation. No evidence is provided to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b65394969660d3e2a3c29e16e3c9e2a212869fc5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed (its novel benchmark design), but the provided related work evidence is about a completely different topic (temporal action localization) and does not mention motion-centric benchmarks or video referring segmentation. There is no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b3c73f41bdd35002ef08923a501e7de1da50403f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer asks if omission of baselines affects novelty/relevance, which is a claim about the paper's contribution. The related work abstract states the paper introduces motion-centric probing, a benchmark, and strong single-image baselines that outperform prior methods. This directly supports the reviewer's implicit concern about the necessity and relevance of baselines in the context of evaluating motion usage.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence asks about the novelty or relevance of proposed baselines, but the related work evidence describes a different surgical segmentation framework (SurgRef) and dataset (Ref-IMotion), which does not provide evidence about the baselines' novelty or relevance in the paper being reviewed. There is no direct connection or comparison made in the related work text to the baselines in question.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a053a62a5daec6998956898d4f8b37ef0465e5eb",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (DirectorLLM) is not relevant to the claim about baselines' novelty or relevance; no supporting or contradictory evidence is found.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ad8b036934f7fe532f28cdbe785ebffa8ba31f87",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence asks about the omission affecting novelty/relevance of baselines, but the related work (H2R) is about robot data augmentation, not video segmentation. No evidence in the provided texts addresses this question.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ef41bccb3c42a59cf2f3fe82417b7a8402f42fe2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence asks about omission affecting novelty or relevance of proposed baselines, but the related work evidence is about autonomous driving pretraining, not about baselines in video referring segmentation or novelty/relevance comparisons. There is no direct connection or evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b65394969660d3e2a3c29e16e3c9e2a212869fc5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence asks about the novelty or relevance of proposed baselines in the paper. The related work is about temporal action localization (TAL) using motion features, not about video referring segmentation or baselines. No evidence from the related work directly addresses the claim about baselines' novelty or relevance.",
+      "relevance_score": null
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "- **Novel Benchmark Design:** The introduction of a motion-centric benchmark is innovative, offering a systematic way to probe models' ability to discern motion versus static cues.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "b3c73f41bdd35002ef08923a501e7de1da50403f",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty in the paper's motion-centric benchmark, but the related work (SurgRef) is about a different domain (surgical instruments) and does not provide evidence about the benchmark design in the reviewed paper. The evidence is unrelated to the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "a053a62a5daec6998956898d4f8b37ef0465e5eb",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work is about DirectorLLM for video generation, which does not mention a motion-centric benchmark for video referring segmentation. The review sentence's claim about the paper's benchmark design cannot be verified against the provided related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ad8b036934f7fe532f28cdbe785ebffa8ba31f87",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (H2R paper) is entirely about human-to-robot data augmentation and does not contain any information about motion-centric benchmarks or video referring segmentation. Therefore, there is no relevant evidence to evaluate the claim's alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ef41bccb3c42a59cf2f3fe82417b7a8402f42fe2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the introduction of a motion-centric benchmark is innovative. The related work describes a different paper on autonomous driving pretraining from unposed videos, which does not discuss motion-centric benchmarks for video referring segmentation. No evidence is provided to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b65394969660d3e2a3c29e16e3c9e2a212869fc5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed (its novel benchmark design), but the provided related work evidence is about a completely different topic (temporal action localization) and does not mention motion-centric benchmarks or video referring segmentation. There is no evidence to support or contradict the claim.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.6666666666666666,
+      "best_evidence": [
+        "b3c73f41bdd35002ef08923a501e7de1da50403f",
+        "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+        "a053a62a5daec6998956898d4f8b37ef0465e5eb"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "b3c73f41bdd35002ef08923a501e7de1da50403f",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "a053a62a5daec6998956898d4f8b37ef0465e5eb",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "Does this omission affect the novelty or relevance of the proposed baselines?",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "b3c73f41bdd35002ef08923a501e7de1da50403f",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer asks if omission of baselines affects novelty/relevance, which is a claim about the paper's contribution. The related work abstract states the paper introduces motion-centric probing, a benchmark, and strong single-image baselines that outperform prior methods. This directly supports the reviewer's implicit concern about the necessity and relevance of baselines in the context of evaluating motion usage.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence asks about the novelty or relevance of proposed baselines, but the related work evidence describes a different surgical segmentation framework (SurgRef) and dataset (Ref-IMotion), which does not provide evidence about the baselines' novelty or relevance in the paper being reviewed. There is no direct connection or comparison made in the related work text to the baselines in question.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "a053a62a5daec6998956898d4f8b37ef0465e5eb",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (DirectorLLM) is not relevant to the claim about baselines' novelty or relevance; no supporting or contradictory evidence is found.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ad8b036934f7fe532f28cdbe785ebffa8ba31f87",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence asks about the omission affecting novelty/relevance of baselines, but the related work (H2R) is about robot data augmentation, not video segmentation. No evidence in the provided texts addresses this question.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ef41bccb3c42a59cf2f3fe82417b7a8402f42fe2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence asks about omission affecting novelty or relevance of proposed baselines, but the related work evidence is about autonomous driving pretraining, not about baselines in video referring segmentation or novelty/relevance comparisons. There is no direct connection or evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b65394969660d3e2a3c29e16e3c9e2a212869fc5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence asks about the novelty or relevance of proposed baselines in the paper. The related work is about temporal action localization (TAL) using motion features, not about video referring segmentation or baselines. No evidence from the related work directly addresses the claim about baselines' novelty or relevance.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.6666666666666666,
+      "best_evidence": [
+        "b3c73f41bdd35002ef08923a501e7de1da50403f",
+        "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+        "a053a62a5daec6998956898d4f8b37ef0465e5eb"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "b3c73f41bdd35002ef08923a501e7de1da50403f",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "dfd85d4751bbb961cf9083fcd24d669f18203acb",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "a053a62a5daec6998956898d4f8b37ef0465e5eb",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 6,
+    "pairs_attempted": 12,
+    "pairs_completed": 12,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 6.0
+    }
+  },
+  "errors": []
+}

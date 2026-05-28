@@ -1,0 +1,74 @@
+{
+  "paper": {
+    "core_task": "Robust distributed learning with Byzantine workers",
+    "contributions": [
+      {
+        "name": "Adaptive robust clipping scheme for distributed learning",
+        "author_claim_text": "We propose ARC, wherein prior to aggregating the gradients, the server clips the largest k := ⌊2(f /n)(n -f )⌋ gradients using a clipping parameter given by the (Euclidean) norm of the (k + 1)-th largest gradient.",
+        "description": "A pre-aggregation gradient clipping method that adaptively sets the clipping threshold based on the number of adversarial workers and the norms of the workers' gradients. It preserves the robustness guarantees of the underlying aggregation method.",
+        "source_hint": "Introduction §1, Contribution (1)"
+      },
+      {
+        "name": "Improved robustness and convergence guarantees with ARC",
+        "author_claim_text": "We demonstrate that ARC possesses an additional property that is not satisfied by classical robust aggregation methods. Specifically, ARC constrains the norm of an adversarial gradient by that of an honest (non-adversarial) gradient.",
+        "description": "ARC yields improved empirical robustness and, under good model initialization, provably improves the convergence guarantee of robust distributed gradient descent by circumventing a lower bound on error from data heterogeneity.",
+        "source_hint": "Introduction §1, Contribution (2) and (3)"
+      }
+    ],
+    "key_terms": [
+      "Byzantine-resilient distributed learning",
+      "Adaptive Robust Clipping (ARC)",
+      "Robust-DGD",
+      "gradient clipping",
+      "data heterogeneity",
+      "(f, κ)-robust aggregation",
+      "coordinate-wise trimmed mean",
+      "geometric median",
+      "Multi-Krum",
+      "nearest-neighbor mixing",
+      "model initialization",
+      "breakdown point"
+    ],
+    "must_have_entities": [
+      "Fashion-MNIST",
+      "CWMed",
+      "Robust-DGD",
+      "Robust-DSGD"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The paper introduces an adaptive gradient clipping method applied to worker outputs before passing them through a robust aggregator in heterogeneous synchronous Byzantine settings.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The authors propose Adaptive Robust Clipping (ARC), a new mechanism to enhance robustness in adversarial settings.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C3",
+        "text": "The paper introduces dynamic gradient clipping as an improvement to its static counterpart. More importantly it proves that the static approach is not robust, in accordance with the definition of robustness given in the paper.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "[\\xi\\cdot 640(1+\\frac{1}{B^2})^2(1+\\frac{B^2\\rho^2}{G^2})]",
+      "[\\frac{1}{4}\\cdot\\frac{G^2(f/n)}{1-(2+B^2)(f/n)}]"
+    ]
+  }
+}

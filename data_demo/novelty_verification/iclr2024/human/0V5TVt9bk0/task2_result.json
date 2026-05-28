@@ -1,0 +1,222 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Benchmarking multimodal large language low-level visual perception understanding benchmark low-level perception ability MLLMs",
+      "status": "ok",
+      "count": 10
+    },
+    {
+      "id": "C2",
+      "query": "Benchmarking multimodal large language low-level visual perception understanding benchmark process low-level description ability MLLMs",
+      "status": "ok",
+      "count": 10
+    },
+    {
+      "id": "C3",
+      "query": "Benchmarking multimodal large language low-level visual perception understanding softmax-based quality prediction strategy MLLMs",
+      "status": "ok",
+      "count": 5
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "8261281f64a981d28e4b3382133d734ad353d954",
+      "title": "SportR: A Benchmark for Multimodal Large Language Model Reasoning in Sports",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Deeply understanding sports requires an intricate blend of fine-grained visual perception and rule-based reasoning - a challenge that pushes the limits of current multimodal models. To succeed, models must master three critical capabilities: perceiving nuanced visual details, applying abstract sport rule knowledge, and grounding that knowledge in specific visual evidence. Current sports benchmarks either cover single sports or lack the detailed reasoning chains and precise visual grounding needed to robustly evaluate these core capabilities in a multi-sport context. To address this gap, we introduce SportR, the first multi-sports large-scale benchmark designed to train and evaluate MLLMs on the fundamental reasoning required for sports intelligence. Our benchmark provides a dataset of 4,789 images and 2,052 videos. To enable granular evaluation, we structure our benchmark around a progressive hierarchy of question-answer pairs designed to probe reasoning at increasing depths - from simple infraction identification to complex penalty prediction. For the most advanced tasks requiring multi-step reasoning, such as determining penalties or explaining tactics, we provide 6,841 high-quality, human-authored Chain of Thought annotations. In addition, our benchmark incorporates both image and video modalities and provides manual bounding box annotations to test visual grounding in the image part directly. Extensive experiments demonstrate the profound difficulty of our benchmark. State-of-the-art baseline models perform poorly on our most challenging tasks. While training on our data via Supervised Fine-Tuning and Reinforcement Learning improves these scores, they remain relatively low, highlighting a significant gap in current model capabilities. SportR presents a new challenge for the community, providing a critical resource to drive future research in multimodal sports reasoning.",
+      "url": "https://www.semanticscholar.org/paper/8261281f64a981d28e4b3382133d734ad353d954",
+      "embedding": null
+    },
+    {
+      "cand_id": "c60305f2a719c0ab5427a1f55304293ce18cd2e1",
+      "title": "EgoPlan-Bench: Benchmarking Multimodal Large Language Models for Human-Level Planning",
+      "year": 2023,
+      "venue": "International Journal of Computer Vision",
+      "abstract": "The pursuit of artificial general intelligence (AGI) has been accelerated by Multimodal Large Language Models (MLLMs), which exhibit superior reasoning, generalization capabilities, and proficiency in processing multimodal inputs. A crucial milestone in the evolution of AGI is the attainment of human-level planning, a fundamental ability for making informed decisions in complex environments, and solving a wide range of real-world problems. Despite the impressive advancements in MLLMs, a question remains: How far are current MLLMs from achieving human-level planning? To shed light on this question, we introduce EgoPlan-Bench, a comprehensive benchmark to evaluate the planning abilities of MLLMs in real-world scenarios from an egocentric perspective, mirroring human perception. EgoPlan-Bench emphasizes the evaluation of planning capabilities of MLLMs, featuring realistic tasks, diverse action plans, and intricate visual observations. Our rigorous evaluation of a wide range of MLLMs reveals that EgoPlan-Bench poses significant challenges, highlighting a substantial scope for improvement in MLLMs to achieve human-level task planning. To facilitate this advancement, we further present EgoPlan-IT, a specialized instruction-tuning dataset that effectively enhances model performance on EgoPlan-Bench. We have made all the codes, data, and a maintained benchmark leaderboard available at https://chenyi99.github.io/ego_plan/ to advance future research.",
+      "url": "https://www.semanticscholar.org/paper/c60305f2a719c0ab5427a1f55304293ce18cd2e1",
+      "embedding": null
+    },
+    {
+      "cand_id": "21b21b2cb719f3e3e53b59ec6001ff65bf96b305",
+      "title": "Beyond the Visible: Benchmarking Occlusion Perception in Multimodal Large Language Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Occlusion perception, a critical foundation for human-level spatial understanding, embodies the challenge of integrating visual recognition and reasoning. Though multimodal large language models (MLLMs) have demonstrated remarkable capabilities, their performance on occlusion perception remains under-explored. To address this gap, we introduce O-Bench, the first visual question answering (VQA) benchmark specifically designed for occlusion perception. Based on SA-1B, we construct 1,365 images featuring semantically coherent occlusion scenarios through a novel layered synthesis approach. Upon this foundation, we annotate 4,588 question-answer pairs in total across five tailored tasks, employing a reliable, semi-automatic workflow. Our extensive evaluation of 22 representative MLLMs against the human baseline reveals a significant performance gap between current MLLMs and humans, which, we find, cannot be sufficiently bridged by model scaling or thinking process. We further identify three typical failure patterns, including an overly conservative bias, a fragile gestalt prediction, and a struggle with quantitative tasks. We believe O-Bench can not only provide a vital evaluation tool for occlusion perception, but also inspire the development of MLLMs for better visual intelligence. Our benchmark will be made publicly available upon paper publication.",
+      "url": "https://www.semanticscholar.org/paper/21b21b2cb719f3e3e53b59ec6001ff65bf96b305",
+      "embedding": null
+    },
+    {
+      "cand_id": "330617e160aa11def481275bd5d6eb1fb9517e59",
+      "title": "Benchmarking Multimodal Large Language Models Against Image Corruptions",
+      "year": 2025,
+      "venue": "IEEE International Conference on Computer Vision",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/330617e160aa11def481275bd5d6eb1fb9517e59",
+      "embedding": null
+    },
+    {
+      "cand_id": "c7afdf5023e382529be880a464e8bffcbf12f5bc",
+      "title": "Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Humans inhabit a physical 4D world where geometric structure and semantic content evolve over time, constituting a dynamic 4D reality (spatial with temporal dimension). While current Multimodal Large Language Models (MLLMs) excel in static visual understanding, can they also be adept at\"thinking in dynamics\", i.e., perceive, track and reason about spatio-temporal dynamics in evolving scenes? To systematically assess their spatio-temporal reasoning and localized dynamics perception capabilities, we introduce Dyn-Bench, a large-scale benchmark built from diverse real-world and synthetic video datasets, enabling robust and scalable evaluation of spatio-temporal understanding. Through multi-stage filtering from massive 2D and 4D data sources, Dyn-Bench provides a high-quality collection of dynamic scenes, comprising 1k videos, 7k visual question answering (VQA) pairs, and 3k dynamic object grounding pairs. We probe general, spatial and region-level MLLMs to express how they think in dynamics both linguistically and visually, and find that existing models cannot simultaneously maintain strong performance in both spatio-temporal reasoning and dynamic object grounding, often producing inconsistent interpretations of motion and interaction. Notably, conventional prompting strategies (e.g., chain-of-thought or caption-based hints) provide limited improvement, whereas structured integration approaches, including Mask-Guided Fusion and Spatio-Temporal Textual Cognitive Map (ST-TCM), significantly enhance MLLMs'dynamics perception and spatio-temporal reasoning in the physical 4D world. Code and benchmark are available at https://dyn-bench.github.io/.",
+      "url": "https://www.semanticscholar.org/paper/c7afdf5023e382529be880a464e8bffcbf12f5bc",
+      "embedding": null
+    },
+    {
+      "cand_id": "a5453bbaa75c7602f55bd30ffc2eff1fe37d2c52",
+      "title": "UAVBench and UAVIT-1M: Benchmarking and Enhancing MLLMs for Low-Altitude UAV Vision-Language Understanding",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Multimodal Large Language Models (MLLMs) have made significant strides in natural images and satellite remote sensing images. However, understanding low-altitude drone scenarios remains a challenge. Existing datasets primarily focus on a few specific low-altitude visual tasks, which cannot fully assess the ability of MLLMs in real-world low-altitude UAV applications. Therefore, we introduce UAVBench, a comprehensive benchmark, and UAVIT-1M, a large-scale instruction tuning dataset, designed to evaluate and improve MLLMs'abilities in low-altitude vision-language tasks. UAVBench comprises 43 test units and 966k high-quality data samples across 10 tasks at the image-level and region-level. UAVIT-1M consists of approximately 1.24 million diverse instructions, covering 789k multi-scene images and about 2,000 types of spatial resolutions with 11 distinct tasks. UAVBench and UAVIT-1M feature pure real-world visual images and rich weather conditions, and involve manual verification to ensure high quality. Our in-depth analysis of 11 state-of-the-art MLLMs using UAVBench reveals that open-source MLLMs cannot generate accurate conversations about low-altitude visual content, lagging behind closed-source MLLMs. Extensive experiments demonstrate that fine-tuning open-source MLLMs on UAVIT-1M significantly addresses this gap. Our contributions pave the way for bridging the gap between current MLLMs and low-altitude UAV real-world application demands. (Project page: https://UAVBench.github.io/)",
+      "url": "https://www.semanticscholar.org/paper/a5453bbaa75c7602f55bd30ffc2eff1fe37d2c52",
+      "embedding": null
+    },
+    {
+      "cand_id": "1c55220f7c94f02974b68a7eb67b08d1eaedd403",
+      "title": "ROD-MLLM: Towards More Reliable Object Detection in Multimodal Large Language Models",
+      "year": 2025,
+      "venue": "Computer Vision and Pattern Recognition",
+      "abstract": "Multimodal large language models (MLLMs) have demonstrated strong language understanding and generation capabilities, excelling in visual tasks like referring and grounding. However, due to task type limitations and dataset scarcity, existing MLLMs only ground objects present in images and cannot reject non-existent objects effectively, resulting in unreliable predictions. In this paper, we introduce ROD-MLLM, a novel MLLM for Reliable Object Detection using free-form language. We propose a query-based localization mechanism to extract low-level object features. By aligning global and object-level visual information with text space, we leverage the large language model (LLM) for high-level comprehension and final localization decisions, overcoming the language understanding limitations of normal detectors. To enhance language-based object detection, we design an automated data annotation pipeline and construct the dataset ROD. This pipeline uses the referring capabilities of existing MLLMs and chain-of-thought techniques to generate diverse expressions corresponding to zero or multiple objects, addressing the shortage of training data. Experiments across various tasks, including referring, grounding, and language-based object detection, show that ROD-MLLM achieves state-of-the-art performance among MLLMs. Notably, in language-based object detection, our model achieves +13.7 AP improvement on D3 benchmark over existing MLLMs and surpasses most specialized detection models, especially in scenarios requiring complex language understanding.",
+      "url": "https://www.semanticscholar.org/paper/1c55220f7c94f02974b68a7eb67b08d1eaedd403",
+      "embedding": null
+    },
+    {
+      "cand_id": "84c811897700d265dba9c3b79f5a583eb69fc3c4",
+      "title": "Q-Bench-Portrait: Benchmarking Multimodal Large Language Models on Portrait Image Quality Perception",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Recent advances in multimodal large language models (MLLMs) have demonstrated impressive performance on existing low-level vision benchmarks, which primarily focus on generic images. However, their capabilities to perceive and assess portrait images, a domain characterized by distinct structural and perceptual properties, remain largely underexplored. To this end, we introduce Q-Bench-Portrait, the first holistic benchmark specifically designed for portrait image quality perception, comprising 2,765 image-question-answer triplets and featuring (1) diverse portrait image sources, including natural, synthetic distortion, AI-generated, artistic, and computer graphics images; (2) comprehensive quality dimensions, covering technical distortions, AIGC-specific distortions, and aesthetics; and (3) a range of question formats, including single-choice, multiple-choice, true/false, and open-ended questions, at both global and local levels. Based on Q-Bench-Portrait, we evaluate 20 open-source and 5 closed-source MLLMs, revealing that although current models demonstrate some competence in portrait image perception, their performance remains limited and imprecise, with a clear gap relative to human judgments. We hope that the proposed benchmark will foster further research into enhancing the portrait image perception capabilities of both general-purpose and domain-specific MLLMs.",
+      "url": "https://www.semanticscholar.org/paper/84c811897700d265dba9c3b79f5a583eb69fc3c4",
+      "embedding": null
+    },
+    {
+      "cand_id": "593b42c628b49937bcd7f7c4a7d54d5f97e6b414",
+      "title": "Q-Bench: A Benchmark for General-Purpose Foundation Models on Low-level Vision",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "The rapid evolution of Multi-modality Large Language Models (MLLMs) has catalyzed a shift in computer vision from specialized models to general-purpose foundation models. Nevertheless, there is still an inadequacy in assessing the abilities of MLLMs on low-level visual perception and understanding. To address this gap, we present Q-Bench, a holistic benchmark crafted to systematically evaluate potential abilities of MLLMs on three realms: low-level visual perception, low-level visual description, and overall visual quality assessment. a) To evaluate the low-level perception ability, we construct the LLVisionQA dataset, consisting of 2,990 diverse-sourced images, each equipped with a human-asked question focusing on its low-level attributes. We then measure the correctness of MLLMs on answering these questions. b) To examine the description ability of MLLMs on low-level information, we propose the LLDescribe dataset consisting of long expert-labelled golden low-level text descriptions on 499 images, and a GPT-involved comparison pipeline between outputs of MLLMs and the golden descriptions. c) Besides these two tasks, we further measure their visual quality assessment ability to align with human opinion scores. Specifically, we design a softmax-based strategy that enables MLLMs to predict quantifiable quality scores, and evaluate them on various existing image quality assessment (IQA) datasets. Our evaluation across the three abilities confirms that MLLMs possess preliminary low-level visual skills. However, these skills are still unstable and relatively imprecise, indicating the need for specific enhancements on MLLMs towards these abilities. We hope that our benchmark can encourage the research community to delve deeper to discover and enhance these untapped potentials of MLLMs. Project Page: https://q-future.github.io/Q-Bench.",
+      "url": "https://www.semanticscholar.org/paper/593b42c628b49937bcd7f7c4a7d54d5f97e6b414",
+      "embedding": null
+    },
+    {
+      "cand_id": "dfe7d7dd953db62e51117763e7fd09f0a19b2d04",
+      "title": "Sparse Shortcuts: Facilitating Efficient Fusion in Multimodal Large Language Models",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "With the remarkable success of large language models (LLMs) in natural language understanding and generation, multimodal large language models (MLLMs) have rapidly advanced in their ability to process data across multiple modalities. While most existing efforts focus on scaling up language models or constructing higher-quality training data, limited attention has been paid to effectively integrating cross-modal knowledge into the language space. In vision-language models, for instance, aligning modalities using only high-level visual features often discards the rich semantic information present in mid- and low-level features, limiting the model's ability of cross-modality understanding. To address this issue, we propose SparseCut, a general cross-modal fusion architecture for MLLMs, introducing sparse shortcut connections between the cross-modal encoder and the LLM. These shortcut connections enable the efficient and hierarchical integration of visual features at multiple levels, facilitating richer semantic fusion without increasing computational overhead. We further introduce an efficient multi-grained feature fusion module, which performs the fusion of visual features before routing them through the shortcuts. This preserves the original language context and does not increase the overall input length, thereby avoiding an increase in computational complexity for the LLM. Experiments demonstrate that SparseCut significantly enhances the performance of MLLMs across various multimodal benchmarks with generality and scalability for different base LLMs.",
+      "url": "https://www.semanticscholar.org/paper/dfe7d7dd953db62e51117763e7fd09f0a19b2d04",
+      "embedding": null
+    },
+    {
+      "cand_id": "064dfc54498e60266132c0ccf5ab22ae849f99a0",
+      "title": "II-Bench: An Image Implication Understanding Benchmark for Multimodal Large Language Models",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "The rapid advancements in the development of multimodal large language models (MLLMs) have consistently led to new breakthroughs on various benchmarks. In response, numerous challenging and comprehensive benchmarks have been proposed to more accurately assess the capabilities of MLLMs. However, there is a dearth of exploration of the higher-order perceptual capabilities of MLLMs. To fill this gap, we propose the Image Implication understanding Benchmark, II-Bench, which aims to evaluate the model's higher-order perception of images. Through extensive experiments on II-Bench across multiple MLLMs, we have made significant findings. Initially, a substantial gap is observed between the performance of MLLMs and humans on II-Bench. The pinnacle accuracy of MLLMs attains 74.8%, whereas human accuracy averages 90%, peaking at an impressive 98%. Subsequently, MLLMs perform worse on abstract and complex images, suggesting limitations in their ability to understand high-level semantics and capture image details. Finally, it is observed that most models exhibit enhanced accuracy when image sentiment polarity hints are incorporated into the prompts. This observation underscores a notable deficiency in their inherent understanding of image sentiment. We believe that II-Bench will inspire the community to develop the next generation of MLLMs, advancing the journey towards expert artificial general intelligence (AGI). II-Bench is publicly available at https://huggingface.co/datasets/m-a-p/II-Bench.",
+      "url": "https://www.semanticscholar.org/paper/064dfc54498e60266132c0ccf5ab22ae849f99a0",
+      "embedding": null
+    },
+    {
+      "cand_id": "ae2c705b97e32eedf2b305f64d3b345d693b0336",
+      "title": "LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Multimodal Large Language Models (MLLMs) have achieved significant advances in integrating visual and linguistic information, yet their ability to reason about complex and real-world scenarios remains limited. The existing benchmarks are usually constructed in the task-oriented manner without guarantee that different task samples come from the same data distribution, thus they often fall short in evaluating the synergistic effects of lower-level perceptual capabilities on higher-order reasoning. To lift this limitation, we contribute Lens, a multi-level benchmark with 3.4K contemporary images and 60K+ human-authored questions covering eight tasks and 12 daily scenarios, forming three progressive task tiers, i.e., perception, understanding, and reasoning. One feature is that each image is equipped with rich annotations for all tasks. Thus, this dataset intrinsically supports to evaluate MLLMs to handle image-invariable prompts, from basic perception to compositional reasoning. In addition, our images are manully collected from the social media, in which 53% were published later than Jan. 2025. We evaluate 15+ frontier MLLMs such as Qwen2.5-VL-72B, InternVL3-78B, GPT-4o and two reasoning models QVQ-72B-preview and Kimi-VL. These models are released later than Dec. 2024, and none of them achieve an accuracy greater than 60% in the reasoning tasks. Project page: https://github.com/Lens4MLLMs/lens. ICCV 2025 workshop page: https://lens4mllms.github.io/mars2-workshop-iccv2025/",
+      "url": "https://www.semanticscholar.org/paper/ae2c705b97e32eedf2b305f64d3b345d693b0336",
+      "embedding": null
+    },
+    {
+      "cand_id": "c970f116735f32465b83d883efde38e29a4d28ca",
+      "title": "MVP-Bench: Can Large Vision-Language Models Conduct Multi-level Visual Perception Like Humans?",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "abstract": "Humans perform visual perception at multiple levels, including low-level object recognition and high-level semantic interpretation such as behavior understanding. Subtle differences in low-level details can lead to substantial changes in high-level perception. For example, substituting the shopping bag held by a person with a gun suggests violent behavior, implying criminal or violent activity. Despite significant advancements in various multimodal tasks, Large Visual-Language Models (LVLMs) remain unexplored in their capabilities to conduct such multi-level visual perceptions. To investigate the perception gap between LVLMs and humans, we introduce MVP-Bench, the first visual-language benchmark systematically evaluating both low- and high-level visual perception of LVLMs. We construct MVP-Bench across natural and synthetic images to investigate how manipulated content influences model perception. Using MVP-Bench, we diagnose the visual perception of 10 open-source and 2 closed-source LVLMs, showing that high-level perception tasks significantly challenge existing LVLMs. The state-of-the-art GPT-4o only achieves an accuracy of $56\\%$ on Yes/No questions, compared with $74\\%$ in low-level scenarios. Furthermore, the performance gap between natural and manipulated images indicates that current LVLMs do not generalize in understanding the visual semantics of synthetic images as humans do. Our data and code are publicly available at https://github.com/GuanzhenLi/MVP-Bench.",
+      "url": "https://www.semanticscholar.org/paper/c970f116735f32465b83d883efde38e29a4d28ca",
+      "embedding": null
+    },
+    {
+      "cand_id": "f0301bcbdc87883911ffef88a0a970bcc601895c",
+      "title": "From Perception to Cognition: A Survey of Vision-Language Interactive Reasoning in Multimodal Large Language Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Multimodal Large Language Models (MLLMs) strive to achieve a profound, human-like understanding of and interaction with the physical world, but often exhibit a shallow and incoherent integration when acquiring information (Perception) and conducting reasoning (Cognition). This disconnect leads to a spectrum of reasoning failures, with hallucination being the most prominent. Collectively, these issues expose a fundamental challenge: the ability to process pixels does not yet confer the ability to construct a coherent, credible internal world model. To systematically dissect and address this challenge, this survey introduces a novel and unified analytical framework: ``From Perception to Cognition.\"We deconstruct the complex process of vision-language interactive understanding into two interdependent layers: Perception, the foundational ability to accurately extract visual information and achieve fine-grained alignment with textual instructions; and Cognition, the higher-order capability for proactive, multi-step, goal-oriented reasoning built upon this perceptual foundation, the core of which is the formation of a dynamic observe-think-verify reasoning loop. Guided by this framework, this paper systematically analyzes the key bottlenecks of current MLLMs at both layers. It surveys the landscape of cutting-edge methods designed to address these challenges, spanning from techniques that enhance low-level visual representations to those that improve high-level reasoning paradigms. Furthermore, we review critical benchmarks and delineate future research directions. This survey aims to provide the research community with a clear, structured perspective for understanding the intrinsic limitations of current MLLMs and to illuminate the path toward building next-generation models capable of deep reasoning and a genuine understanding of the world.",
+      "url": "https://www.semanticscholar.org/paper/f0301bcbdc87883911ffef88a0a970bcc601895c",
+      "embedding": null
+    },
+    {
+      "cand_id": "6fbb3ed823526ac050b610d353ea91a8515f7e69",
+      "title": "EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents",
+      "year": 2025,
+      "venue": "International Conference on Machine Learning",
+      "abstract": "Leveraging Multi-modal Large Language Models (MLLMs) to create embodied agents offers a promising avenue for tackling real-world tasks. While language-centric embodied agents have garnered substantial attention, MLLM-based embodied agents remain underexplored due to the lack of comprehensive evaluation frameworks. To bridge this gap, we introduce EmbodiedBench, an extensive benchmark designed to evaluate vision-driven embodied agents. EmbodiedBench features: (1) a diverse set of 1,128 testing tasks across four environments, ranging from high-level semantic tasks (e.g., household) to low-level tasks involving atomic actions (e.g., navigation and manipulation); and (2) six meticulously curated subsets evaluating essential agent capabilities like commonsense reasoning, complex instruction understanding, spatial awareness, visual perception, and long-term planning. Through extensive experiments, we evaluated 24 leading proprietary and open-source MLLMs within EmbodiedBench. Our findings reveal that: MLLMs excel at high-level tasks but struggle with low-level manipulation, with the best model, GPT-4o, scoring only 28.9\\% on average. EmbodiedBench provides a multifaceted standardized evaluation platform that not only highlights existing challenges but also offers valuable insights to advance MLLM-based embodied agents. Our code and dataset are available at https://embodiedbench.github.io.",
+      "url": "https://www.semanticscholar.org/paper/6fbb3ed823526ac050b610d353ea91a8515f7e69",
+      "embedding": null
+    },
+    {
+      "cand_id": "3e75ac0db303e9acdf3ba4b524a1f69c22824ac8",
+      "title": "Q-Bench<inline-formula><tex-math notation=\"LaTeX\">$^+$</tex-math><alternatives><mml:math><mml:msup><mml:mrow/><mml:mo>+</mml:mo></mml:msup></mml:math><inline-graphic xlink:href=\"zhang-ieq1-3445770.gif\"/></alternatives></inline-formula>: A Benchmark for Multi-Modal Foundation Models on Low-Level Visi",
+      "year": 2024,
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "abstract": "The rapid development of Multi-modality Large Language Models (MLLMs) has navigated a paradigm shift in computer vision, moving towards versatile foundational models. However, evaluating MLLMs in <italic>low-level visual perception and understanding</italic> remains a yet-to-explore domain. To this end, we design benchmark settings to <italic>emulate human language responses</italic> related to low-level vision: the low-level visual <italic>perception</italic> (<underline>A1</underline>) <italic>via</italic> visual question answering related to low-level attributes (<italic>e.g. clarity, lighting</italic>); and the low-level visual <italic>description</italic> (<underline>A2</underline>), on evaluating MLLMs for low-level text descriptions. Furthermore, given that pairwise comparison can better avoid ambiguity of responses and has been adopted by many human experiments, we further extend the low-level perception-related question-answering and description evaluations of MLLMs from single images to <italic>image pairs</italic>. Specifically, for <italic>perception</italic> (A1), we carry out the LLVisionQA<inline-formula><tex-math notation=\"LaTeX\">$^{+}$</tex-math><alternatives><mml:math><mml:msup><mml:mrow/><mml:mo>+</mml:mo></mml:msup></mml:math><inline-graphic xlink:href=\"zhang-ieq3-3445770.gif\"/></alternatives></inline-formula> dataset, comprising 2,990 single images and 1,999 image pairs each accompanied by an open-ended question about its low-level features; for <bold/><italic>description</italic><bold/> (A2), we propose the LLDescribe<inline-formula><tex-math notation=\"LaTeX\">$^{+}$</tex-math><alternatives><mml:math><mml:msup><mml:mrow/><mml:mo>+</mml:mo></mml:msup></mml:math><inline-graphic xlink:href=\"zhang-ieq4-3445770.gif\"/></alternatives></inline-formula> dataset, evaluating MLLMs for low-level descriptions on 499 single images and 450 pairs. Additionally, we evaluate MLLMs on <bold/><italic>assessment</italic><bold/> (A3) ability, <italic>i.e.</italic> predicting score, by employing a softmax-based approach to enable all MLLMs to generate <italic>quantifiable</italic> quality ratings, tested against human opinions in 7 image quality assessment (IQA) datasets. With 24 MLLMs under evaluation, we demonstrate that several MLLMs have decent low-level visual competencies on single images, but only GPT-4V exhibits higher accuracy on pairwise comparisons than single image evaluations (<italic>like humans</italic>). We hope that our benchmark will motivate further research into uncovering and enhancing these nascent capabilities of MLLMs.",
+      "url": "https://www.semanticscholar.org/paper/3e75ac0db303e9acdf3ba4b524a1f69c22824ac8",
+      "embedding": null
+    },
+    {
+      "cand_id": "c13586314b6d1a98caa73266dd216e527c3c7dbe",
+      "title": "Contrast Sensitivity in Multimodal Large Language Models: A Psychophysics-Inspired Evaluation",
+      "year": 2025,
+      "venue": "Neural Networks",
+      "abstract": "Understanding how Multimodal Large Language Models (MLLMs) process low-level visual features is critical for evaluating their perceptual abilities and has not been systematically characterized. Inspired by human psychophysics, we introduce a behavioural method for estimating the Contrast Sensitivity Function (CSF) in MLLMs by treating them as end-to-end observers. Models are queried with structured prompts while viewing noise-based stimuli filtered at specific spatial frequencies. Psychometric functions are derived from the binary verbal responses, and contrast thresholds (and CSFs) are obtained without relying on internal activations or classifier-based proxies. Our results reveal that some models resemble human CSFs in shape or scale, but none capture both. We also find that CSF estimates are highly sensitive to prompt phrasing, indicating limited linguistic robustness. Finally, we show that CSFs predict model performance under frequency-filtered and adversarial conditions. These findings highlight systematic differences in frequency tuning across MLLMs and establish CSF estimation as a scalable diagnostic tool for multimodal perception.",
+      "url": "https://www.semanticscholar.org/paper/c13586314b6d1a98caa73266dd216e527c3c7dbe",
+      "embedding": null
+    },
+    {
+      "cand_id": "24405ce64845e8484d0cd5fe696f491561960787",
+      "title": "HeStIa: Asynchronous Embodied Dynamic Locomotion Learning for Walking Robots through Multimodal Large Language Models",
+      "year": 2025,
+      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+      "abstract": "The control of locomotion in walking robots with various architectural designs presents significant challenges. While existing approaches primarily rely on low-level state information and isolated visual features, lacking the high-level semantic understanding that humans use to reason about movement and posture, we propose HeStIa, a novel framework that bridges visual perception, natural language understanding, and robotic control through multimodal learning. Our framework leverages multimodal large language models (MLLMs) to establish a semantic bridge between visual observations and motion control, enabling robots to understand and adjust their locomotion through both visual and linguistic modalities. By leveraging multimodal large language models (MLLMs), HeStIa establishes a semantic connection between visual observations and motion control, enabling robots to comprehend and adapt their locomotion through both visual and linguistic modalities. Our approach extracts spatiotemporal visual features from robot movements and transforms them into a cross-modal embedding space shared with textual descriptions. HeStIa incorporates an innovative vision-language-motion fusion mechanism to provide informed, context-aware feedback during the dynamic learning process. Through an asynchronous design, HeStIa effectively mitigates the inference delays typically associated with MLLMs while maintaining real-time performance in dynamic scenarios. The cross-modal representations learned by HeStIa facilitate more intuitive and efficient locomotion learning by grounding visual observations in natural language descriptions. Our comprehensive evaluation shows substantial improvements in motion naturalness, stability, and adaptability across diverse environmental conditions.",
+      "url": "https://www.semanticscholar.org/paper/24405ce64845e8484d0cd5fe696f491561960787",
+      "embedding": null
+    },
+    {
+      "cand_id": "509fa734b70c8fbc063b0484ad85604608ed48b5",
+      "title": "X2SAM: Any Segmentation in Images and Videos",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Multimodal Large Language Models (MLLMs) have demonstrated strong image-level visual understanding and reasoning, yet their pixel-level perception across both images and videos remains limited. Foundation segmentation models such as the SAM series produce high-quality masks, but they rely on low-level visual prompts and cannot natively interpret complex conversational instructions. Existing segmentation MLLMs narrow this gap, but are usually specialized for either images or videos and rarely support both textual and visual prompts in one interface. We introduce X2SAM, a unified segmentation MLLM that extends any-segmentation capabilities from images to videos. Given conversational instructions and visual prompts, X2SAM couples an LLM with a Mask Memory module that stores guided vision features for temporally consistent video mask generation. The same formulation supports generic, open-vocabulary, referring, reasoning, grounded conversation generation, interactive, and visual grounded segmentation across image and video inputs. We further introduce the Video Visual Grounded (V-VGD) segmentation benchmark, which evaluates whether a model can segment object tracks in videos from interactive visual prompts. With a unified joint training strategy over heterogeneous image and video datasets, X2SAM delivers strong video segmentation performance, remains competitive on image segmentation benchmarks, and preserves general image and video chat ability.",
+      "url": "https://www.semanticscholar.org/paper/509fa734b70c8fbc063b0484ad85604608ed48b5",
+      "embedding": null
+    },
+    {
+      "cand_id": "087c45b39d27f494f1aaf097b4329219cc120620",
+      "title": "Cognitive Mismatch in Multimodal Large Language Models for Discrete Symbol Understanding",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Multimodal large language models (MLLMs) perform strongly on natural images, yet their ability to understand discrete visual symbols remains unclear. We present a multi-domain benchmark spanning language, culture, mathematics, physics and chemistry, organized into three cognitive levels: perception and recognition, combination and reasoning, and association and critical thinking. Across leading MLLMs, we observe a consistent cognitive mismatch. Models frequently underperform on elementary symbol recognition while appearing relatively competent on more complex reasoning tasks. This recognition-reasoning inversion indicates that current systems often compensate with linguistic priors, template retrieval or procedural reasoning instead of robust visual grounding. The pattern is especially clear for sparse, low-redundancy symbols such as handwritten characters, formula graphs, circuit diagrams and chemical structures. These results show that symbolic understanding remains a major bottleneck for multimodal intelligence and motivate training and evaluation schemes that prioritize grounded perception in discrete semantic spaces.",
+      "url": "https://www.semanticscholar.org/paper/087c45b39d27f494f1aaf097b4329219cc120620",
+      "embedding": null
+    },
+    {
+      "cand_id": "1da20dc68a4c8d51be9df5ec5b72c6a817e99e72",
+      "title": "Towards Robust Autonomous Driving: Conditional Multimodal Large Language Models for Fine-Grained Perception",
+      "year": 2025,
+      "venue": "IEEE International Conference on Robotics and Automation",
+      "abstract": "Multimodal large language models (MLLMs) have shown remarkable performance across various visual understanding tasks. However, most existing MLLMs still lack image detail perception, limiting their effectiveness in tasks that require detailed visual information. In this paper, we introduce Percept-DriveLM, a novel MLLM designed to tackle the fine-grained perception challenges in autonomous driving tasks. At the core of our model is the Visual Fusion Module, which integrates several innovative components: a dynamic resolution mechanism that combines both high and low resolution features, and an RoI conditional mechanism to incorporate object/region-level features identified by offline detectors, further refining the model's fine-grained perception abilities. Trained in a two-stage process, our model demonstrates exceptional performance, outperforming existing MLLMs with comparable parameter sizes and excelling in both autonomous driving perception and general vision-language tasks. The effectiveness of our approach is validated through extensive empirical studies. Code will be available at https://github.com/DebuggerSunfz/PerceptDriveLM.",
+      "url": "https://www.semanticscholar.org/paper/1da20dc68a4c8d51be9df5ec5b72c6a817e99e72",
+      "embedding": null
+    }
+  ],
+  "stats": {
+    "total_candidates": 25,
+    "after_dedup": 21,
+    "after_nontechnical_filter": 21,
+    "after_year_filter": 21,
+    "final": 21
+  }
+}

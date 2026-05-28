@@ -1,0 +1,147 @@
+{
+  "paper_id": "04ZLO7bIvu",
+  "source": "deepreview_neurips2025",
+  "source_format": "deepreview_json",
+  "reviews_analysis": {
+    "DEEPREVIEW_NEURIPS2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper addresses the task of referring video segmentation, where the goal is to segment objects in a video based on a natural language description.",
+        "role": "Premise",
+        "aspect": "Other",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The authors claim that current benchmarks for this task are biased because many referring expressions can be answered using a single static image rather than requiring true video-level understanding.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "To address this, they introduce a \"motion-centric\" evaluation by adding a static keyframe to the input video, which confuses models that don’t rely on temporal information.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "They show that state-of-the-art models perform poorly under this new evaluation, suggesting they aren't fully utilizing temporal dynamics.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper identifies a potential bias in existing referring video segmentation benchmarks, highlighting that many expressions can be resolved using a single frame.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The motion-centric evaluation is a simple yet effective way to test whether models truly use temporal information.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The authors demonstrate that current state-of-the-art methods struggle with the motion-centric evaluation, suggesting these models may not be as video-aware as expected.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The motion-centric evaluation introduces an unnatural setup by adding a static keyframe to the video input, which may not accurately reflect real-world scenarios.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "While this approach effectively tests temporal awareness, it could be argued that it introduces a different type of bias.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The added keyframe, especially when prompted to be on either the left or right side, creates an artificial scenario that models might not generalize well to.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "This method penalizes models for leveraging spatial cues that would be valid in a standard video, thus not necessarily proving a lack of temporal understanding but rather a sensitivity to an artificial input manipulation.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The analysis relies heavily on qualitative results, with limited quantitative exploration of the static and dynamic properties of expressions.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The categorization of expressions into static and dynamic groups based on a threshold of false positives in the static frame is not rigorously justified.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The absence of a more systematic quantitative analysis, such as a statistical significance test or a more fine-grained categorization of motion types, weakens the claims about the characteristics of each group.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The reliance on GPT-4o for categorization, while convenient, lacks transparency and verifiability.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "The study uses only one generalist VLM, Qwen2.5-VL, for keyframe selection, which may not be optimal.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "The keyframe selection process is crucial to the proposed method, and relying on a single VLM introduces a potential bias.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The paper lacks a comparative analysis of different VLMs for keyframe selection, which could lead to different results and conclusions.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "The absence of a sensitivity analysis on how different keyframes impact the final results further weakens the robustness of the method.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 2858,
+    "completion_tokens": 2858,
+    "total_tokens": 5716
+  }
+}

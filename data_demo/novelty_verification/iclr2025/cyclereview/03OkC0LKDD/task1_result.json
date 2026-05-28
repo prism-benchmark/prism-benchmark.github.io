@@ -1,0 +1,64 @@
+{
+  "paper": {
+    "core_task": "Robust distributed learning with Byzantine workers using adaptive gradient clipping",
+    "contributions": [
+      {
+        "name": "Adaptive robust clipping scheme for distributed learning",
+        "author_claim_text": "We propose ARC, wherein prior to aggregating the gradients, the server clips the largest k := ⌊2(f /n)(n -f )⌋ gradients using a clipping parameter given by the (Euclidean) norm of the (k + 1)-th largest gradient.",
+        "description": "Introduces an adaptive pre-aggregation clipping method that dynamically sets the clipping threshold based on the norm of a ranked gradient and the fraction of adversarial workers.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Robustness preservation guarantee for adaptive clipping",
+        "author_claim_text": "We prove that ARC preserves the robustness guarantee of the original robust aggregation method.",
+        "description": "Demonstrates that composing an existing robust aggregation method with ARC maintains its (f, κ)-robustness property, with a bounded increase in the robustness coefficient.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Improved convergence guarantee under good initialization",
+        "author_claim_text": "When the model initialization is good, ARC provably improves the robustness of Robust-DGD.",
+        "description": "Shows that ARC can achieve a lower stationarity error than the known lower bound when honest worker gradients are small at initialization, effectively increasing the system's breakdown point.",
+        "source_hint": "Introduction"
+      }
+    ],
+    "key_terms": [
+      "Byzantine robust distributed learning",
+      "gradient clipping",
+      "adaptive clipping",
+      "robust aggregation",
+      "coordinate-wise trimmed mean",
+      "nearest-neighbor mixing",
+      "data heterogeneity",
+      "gradient dissimilarity",
+      "breakdown point",
+      "stationarity error",
+      "model initialization",
+      "Robust-DGD"
+    ],
+    "must_have_entities": [
+      "Fashion-MNIST",
+      "CWMed",
+      "Robust-DGD",
+      "Robust-DSGD",
+      "ResNet-18"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The proposed adaptive clipping scheme is similar to the one proposed in Diakonikolas et al. (2020).",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": true,
+        "prior_work_strings": [
+          "Diakonikolas et al. (2020)"
+        ],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "Diakonikolas et al. (2020)"
+    ]
+  }
+}

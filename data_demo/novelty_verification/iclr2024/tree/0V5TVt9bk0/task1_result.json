@@ -1,0 +1,65 @@
+{
+  "paper": {
+    "core_task": "Benchmarking low-level visual perception and understanding abilities of multimodal large language models",
+    "contributions": [
+      {
+        "name": "A benchmark for low-level perception ability of multimodal language models",
+        "author_claim_text": "We build a benchmark for MLLMs on low-level perception ability. To achieve this, we construct a first-of-its-kind balanced and comprehensive LLVisionQA dataset with 2,990 images with one low-level-related question-answer pair for each image.",
+        "description": "Creation of a visual question answering dataset (LLVisionQA) with 2,990 images covering three question types and four quadrants of low-level visual concerns for evaluating MLLM perception.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "A benchmark process for evaluating low-level description ability of multimodal",
+        "author_claim_text": "We define a benchmark process to evaluate the low-level description ability of MLLMs, including an LLDescription dataset of 499 images with expert-labelled long golden quality descriptions, and a GPT-assisted evaluation to rate MLLM-descriptions in terms of completeness, preciseness, and relevance",
+        "description": "Definition of a benchmarking process using a dataset of 499 images with expert-written low-level descriptions and a GPT-assisted multi-dimensional evaluation scheme for MLLM output descriptions.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "A softmax-based quality prediction strategy for multimodal language models",
+        "author_claim_text": "To evaluate precise quality assessment ability, we propose a unified softmax-based quality prediction strategy for all MLLMs based on their probability outputs. With its effectiveness validated in our experiments, the proposed strategy sets up a bridge between general-purpose MLLMs and",
+        "description": "Proposal of a method that extracts logit probabilities for specific tokens (e.g., 'good' and 'poor') and applies softmax pooling to derive a quantifiable quality score from MLLMs for image quality assessment.",
+        "source_hint": "Introduction §1"
+      }
+    ],
+    "key_terms": [
+      "multimodal large language models",
+      "low-level visual perception",
+      "image quality assessment",
+      "visual question answering",
+      "low-level attributes",
+      "distortions",
+      "aesthetic attributes",
+      "softmax pooling",
+      "GPT-assisted evaluation",
+      "LLVisionQA",
+      "LLDescribe",
+      "Q-Bench"
+    ],
+    "must_have_entities": [
+      "LLVisionQA",
+      "LLDescribe",
+      "Q-Bench",
+      "InternLM-XComposer-VL",
+      "LLaVA",
+      "MiniGPT-4",
+      "InstructBLIP",
+      "Shikra",
+      "Kosmos-2",
+      "CLIP-ViT-Large-14"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "While the paper introduces a novel benchmark for evaluating MLLMs on low-level visual tasks, the lack of detailed methodology, insufficient statistical analysis, and limited validation of the proposed evaluation strategies prevent it from meeting the full acceptance criteria.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

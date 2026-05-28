@@ -1,0 +1,491 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The proposed adaptive clipping scheme is similar to the one proposed in Diakonikolas et al. (2020)."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+      "text": "Title: Order-Optimal Byzantine-Robust Learning Under Heterogeneity via Fair Gradient Clipping\n\nAbstract: Byzantine-robust distributed or federated learning (FL) refers to providing reliable performance under Byzantine attacks, which violate the prescribed protocols and transmit arbitrary information to the server to hamper the convergence of machine learning (ML) algorithms, via designing resilient aggregation rules to combat attacks. Although numerous robust rules have been suggested, their performance degrades for heterogeneous data. A few techniques have been exploited to handle this problem, but they either require preaggregation operations, hence increasing the computational load, or lack breakdown point analysis of their rules. This article proposes a new aggregation rule, which clips the gradients received from all workers according to the distance between the gradient and the aggregation center. That is, when the distance is larger than the radius $\\gamma $ , the gradient will be clipped, and the longer the distance, the closer the clipped gradient is to the center. We theoretically analyze that the breakdown point of the developed rule is 0.5, the maximum value for robust aggregators. Moreover, our rule achieves order-optimal Byzantine-robust training error under data heterogeneity, while the median-based schemes, such as coordinate-wise median (CM) and geometric median (GM), are suboptimal. Experimental results demonstrate that the devised aggregation mechanism can handle different attacks well and outperforms the existing rules.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+      "text": "Title: Adaptive Gradient Clipping for Robust Federated Learning\n\nAbstract: Robust federated learning aims to maintain reliable performance despite the presence of adversarial or misbehaving workers. While state-of-the-art (SOTA) robust distributed gradient descent (Robust-DGD) methods were proven theoretically optimal, their empirical success has often relied on pre-aggregation gradient clipping. However, existing static clipping strategies yield inconsistent results: enhancing robustness against some attacks while being ineffective or even detrimental against others. To address this limitation, we propose a principled adaptive clipping strategy, Adaptive Robust Clipping (ARC), which dynamically adjusts clipping thresholds based on the input gradients. We prove that ARC not only preserves the theoretical robustness guarantees of SOTA Robust-DGD methods but also provably improves asymptotic convergence when the model is well-initialized. Extensive experiments on benchmark image classification tasks confirm these theoretical insights, demonstrating that ARC significantly enhances robustness, particularly in highly heterogeneous and adversarial settings.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "58d8a2009398de5fdaac44e3d6ea3f4b77097129",
+      "text": "Title: FedCCW: a privacy-preserving Byzantine-robust federated learning with local differential privacy for healthcare",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+      "text": "Title: Improving Communication-Efficient and Byzantine-Robust Distributed Learning with Local Adaptive Momentum\n\nAbstract: Due to increasing interest in collaborative and distributed learning, there has been a significant focus on Byzantine robustness. In Byzantine robust distributed learning, a central server aims to train a machine learning model using data that are distributed among multiple workers. However, a small percentage of these workers may deviate from the prescribed algorithm and send malicious messages. To address this type of attacks, resilient training algorithms combine stochastic gradient descent (SGD) with various robust aggregation rules. Previous work has emphasized the importance of reducing gradient noise in SGD to differentiate malicious updates from normal ones, by applying variance reduction techniques to tackle this issue. This paper aims to advance this frontier by using local adaptive momentum as a means to improve the robustness of SGD against Byzantine attacks. In line with this objective, our study introduces Byz-AdaVR-EF21, a method designed to withstand Byzantine behavior that applies adaptive stochastic gradient variance reduction with communication compression. Each worker calculates the local adaptive momentum to simultaneously achieve variance reduction and fast convergence. These features are crucial for more effective countering of Byzantine workers. Additionally, the use of communication compression provides the added benefit of enabling more efficient communication. Extensive experiments have been conducted to showcase the effectiveness of the proposed algorithm.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "2028f23f986d18e842b7fe63c456b0083442e9ce",
+      "text": "Title: Adaptive Differential Privacy Mechanism for Federated Document Classification: A Gradient-Clipping Optimization Approach\n\nAbstract: We propose an adaptive differential privacy mechanism for federated document classification that dynamically adjusts clipping bounds and per-round privacy budgets throughout training. In early iterations, gradients exhibit high variance, while later stages involve fine-grained refinements; conventional static mechanisms fail to capture this distinction, either overwhelming early exploration with noise or exposing converged patterns to reconstruction attacks. Our framework adapts to the evolving optimization process by tightening and loosening privacy constraints as gradients stabilize. Experiments on Reuters-21578, AG News, and three additional corpora demonstrate notable gains: at ε=0.5, accuracy improves by 15.4 percentage points compared with static clipping, achieving 91.8% versus 84.3% under comparable privacy guarantees. The method attains an F1-score of 0.896 and maintains robustness under 5% Byzantine clients (83.4% accuracy compared with 61.2% for conventional approaches), underscoring its effectiveness in reconciling privacy, utility, and robustness in federated learning.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+      "text": "Title: Dynamic Byzantine-Robust Learning: Adapting to Switching Byzantine Workers\n\nAbstract: Byzantine-robust learning has emerged as a prominent fault-tolerant distributed machine learning framework. However, most techniques focus on the static setting, wherein the identity of Byzantine workers remains unchanged throughout the learning process. This assumption fails to capture real-world dynamic Byzantine behaviors, which may include intermittent malfunctions or targeted, time-limited attacks. Addressing this limitation, we propose DynaBRO -- a new method capable of withstanding any sub-linear number of identity changes across rounds. Specifically, when the number of such changes is $\\mathcal{O}(\\sqrt{T})$ (where $T$ is the total number of training rounds), DynaBRO nearly matches the state-of-the-art asymptotic convergence rate of the static setting. Our method utilizes a multi-level Monte Carlo (MLMC) gradient estimation technique applied at the server to robustly aggregated worker updates. By additionally leveraging an adaptive learning rate, we circumvent the need for prior knowledge of the fraction of Byzantine workers.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "3e38372d3be38a71b51f561128fb8bab3c9489e4",
+      "text": "Title: Communication-Efficient Federated Optimization with Gradient Clipping and Attention Aggregation for Data Analytics and Prediction\n\nAbstract: To address the challenge of collaborative strategy optimization caused by non-independent and identically distributed data in cross-institutional scenarios, a federated quantitative learning framework integrating Path Attention Aggregation Module (PAAM), Gradient Clipping and Compression (GCC), and a Heterogeneity-Aware Adaptive Optimizer (HAAO) is proposed to achieve efficient return optimization and robust risk control. The framework is validated across multi-market and multi-institutional environments, with experiments covering three key dimensions: return performance, risk management, and communication efficiency. The results demonstrate that the proposed model achieves an annualized return (AR) of 16.57%, representing an approximate 19.7% improvement over the traditional FedAvg model; the Sharpe ratio (SR) increases to 1.25, while the maximum drawdown (MDD) decreases to 15.92% and volatility remains controlled at 8.83%, indicating superior balance between return and risk. In the communication efficiency evaluation, when the number of communication rounds is reduced to 50 and 25, the model maintains accuracy at 94.2% and 92.8%, recall at 93.5% and 91.7%, and precision at 94.8% and 92.3%, respectively. Overall, the proposed framework achieves a dynamic balance between global convergence and risk constraints through path weighting, gradient sparsification, and frequency-domain learning rate adjustment. This research provides a novel and scalable paradigm for distributed financial prediction that ensures both privacy preservation and communication efficiency, demonstrating substantial engineering feasibility and practical applicability in intelligent financial modeling.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+      "text": "Title: DP2Guard: A Lightweight and Byzantine-Robust Privacy-Preserving Federated Learning Scheme for Industrial IoT\n\nAbstract: Privacy-Preserving Federated Learning (PPFL) has emerged as a secure distributed Machine Learning (ML) paradigm that aggregates locally trained gradients without exposing raw data. To defend against model poisoning threats, several robustness-enhanced PPFL schemes have been proposed by integrating anomaly detection. Nevertheless, they still face two major challenges: (1) the reliance on heavyweight encryption techniques results in substantial communication and computation overhead; and (2) single-strategy defense mechanisms often fail to provide sufficient robustness against adaptive adversaries. To overcome these challenges, we propose DP2Guard, a lightweight PPFL framework that enhances both privacy and robustness. DP2Guard leverages a lightweight gradient masking mechanism to replace costly cryptographic operations while ensuring the privacy of local gradients. A hybrid defense strategy is proposed, which extracts gradient features using singular value decomposition and cosine similarity, and applies a clustering algorithm to effectively identify malicious gradients. Additionally, DP2Guard adopts a trust score-based adaptive aggregation scheme that adjusts client weights according to historical behavior, while blockchain records aggregated results and trust scores to ensure tamper-proof and auditable training. Extensive experiments conducted on two public datasets demonstrate that DP2Guard effectively defends against four advanced poisoning attacks while ensuring privacy with reduced communication and computation costs.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "24e809d1d57696f626495e10f287ede66b00dc11",
+      "text": "Title: B YZANTINE -R ESILIENT D ISTRIBUTED L EARNING",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+      "text": "Title: LDP-Rep: Lightweight Byzantine-Robust Aggregation for Non-IID Federated Learning\n\nAbstract: This article present LDP-Rep, a lightweight Byzantine-robust federated aggregation scheme powered by Local Differential Privacy (LDP) for non-IID data. The method keeps the \"reference-gradient + reputation\" framework but protects only the one-dimensional reputation update of each client with Laplace noise, achieving ε-LDP while eliminating high-dimensional ciphertext operations. We derive closed-form relations among ε, noise variance, convergence rounds, and final accuracy, and propose three practical trade-off strategies: adaptive privacy-budget scheduling, reputation smoothing, and gradient clipping. Evaluated on 10–100 clients with 20%–35% Byzantine attackers, LDP-Rep matches the accuracy of homomorphic-encryption baselines under strong attacks and outperforms them by 2–3% under weak attacks, reducing server aggregation time by two orders of magnitude and adding only one floating-point message. Results confirm the practicality of LDP-Rep on resource-constrained devices.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "c0987bf889793f603abbf6b88439994e5e43516d",
+      "text": "Title: A Federated Learning Framework with Attention Mechanism and Gradient Compression for Time-Series Strategy Modeling\n\nAbstract: With the increasing demand for privacy preservation and strategy sharing in global financial markets, traditional centralized modeling approaches have become inadequate for multi-institutional collaborative tasks, particularly under the realistic challenges of multi-source heterogeneity and non-independent and identically distributed (non-IID) data. To address these limitations, a heterogeneity-aware Federated Quantitative Learning framework, Federated Quantitative Learning, is proposed to enable efficient cross-market financial strategy modeling while preserving data privacy. This framework integrates a Path Quality-Aware Aggregation Mechanism, a Gradient Clipping and Compression Module, and a Heterogeneity-Adaptive Optimizer, collectively enhancing model robustness and generalization. Empirical studies conducted on multiple real-world financial datasets, including those from the United States, European Union, and Asia-Pacific markets, demonstrate that Federated Quantitative Learning outperforms existing mainstream methods in key performance indicators such as annualized return, Sharpe ratio, maximum drawdown, and volatility. Under the full model configuration, Federated Quantitative Learning achieves an annualized return of 12.72%, a Sharpe ratio of 1.12, a maximum drawdown limited to 10.3%, and a reduced volatility of 9.7%, showing significant improvements over methods such as Federated Averaging, Federated Proximal Optimization, and Model-Contrastive Federated Learning. Moreover, module ablation studies and attention mechanism comparisons further validate the effectiveness of each core component in enhancing model performance. This study introduces a novel paradigm for secure strategy sharing and high-quality modeling in multi-institutional quantitative systems, offering practical feasibility and broad applicability.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "706103f755e512c95007666bde8ca90e8dd5dc69",
+      "text": "Title: Differentially Private Federated Learning: A Provably Secure Framework for Multi-Tenant Cloud AI Training\n\nAbstract: This paper presents Differential Privacy-Federated Learning Cloud (DP-FedCloud), an advanced framework for differentially private federated learning in multi-tenant cloud environments, addressing critical challenges such as privacy preservation, data heterogeneity, and resource competition. The framework incorporates adaptive gradient clipping to dynamically regulate noise levels while preserving model accuracy, tenant-aware privacy budget allocation to ensure fair and efficient resource distribution, and an encrypted aggregation pipeline using Paillier homomorphic encryption to safeguard gradient updates. Theoretical analysis establishes strong privacy guarantees with formal bounds on privacy loss and convergence efficiency, demonstrating scalability in dynamic cloud systems. Experimental validation on the COVID-CT dataset, deployed across 50 tenants and 100 nodes in an Azure Cloud environment, shows a 38.6% improvement in the privacy-utility tradeoff at ϵ=2.0\\epsilon = 2.0ϵ=2.0, a 99.2% defense rate against gradient leakage attacks, and a convergence error below 1.7% within a 95% confidence interval. These results confirm the effectiveness of DP-FedCloud in achieving robust privacy preservation and high utility, offering a scalable and secure solution for federated learning in distributed cloud systems.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "c83aa98cf28bedea5d5eb6f4ded5c90c3a2b25e2",
+      "text": "Title: Multibranch Dendritic Computing for Federated Graph Neural Networks: Maintaining Interpretability Under Privacy Constraints\n\nAbstract: Graph neural networks (GNNs) have demonstrated remarkable performance in modeling complex relational data. However, their deployment in privacy–sensitive domains remains challenging due to the inherent tension between privacy protection and model interpretability. This article introduces a novel multibranch dendritic computing framework for federated GNNs (MBD-FGNNs) that addresses this fundamental challenge. Our approach integrates biologically inspired dendritic computing with federated learning paradigms, enabling distributed training across decentralized graph data while preserving both privacy and interpretability. The multibranch architecture mimics dendritic computation in biological neurons, where each branch processes patterns at different receptive field scales (one-hop, two-hop, and four-hop neighborhoods), providing natural model explanations through branch contribution analysis. To ensure rigorous privacy protection, we develop a branch-adaptive differential privacy (DP) mechanism with gradient clipping and calibrated Gaussian noise injection, satisfying $(\\epsilon, \\delta)$ -DP. We theoretically analyze the framework’s ability to maintain interpretation stability under DP constraints and derive formal guarantees on the privacy–interpretability trade-off. Extensive experiments on benchmark graph datasets demonstrate that MBD-FGNN outperforms state-of-the-art federated GNN approaches in terms of accuracy, privacy preservation, and explanation quality. Notably, our method achieves robust explanation stability even under privacy constraints, maintaining higher explanation consistency compared to conventional approaches, where explanations significantly degrade as privacy protection increases. The proposed framework opens new avenues for deploying interpretable graph learning systems in privacy–critical applications, such as healthcare networks, financial transaction graphs, and social network analysis. The code and dataset are publicly available at https://github.c-om/ZhaoGuan-nuist/MBD-FGNN",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "95deb72a377ca0c99113dbea48c71c17c043bcb5",
+      "text": "Title: Dual-Factor Adaptive Robust Aggregation for Secure Federated Learning in IoT Networks\n\nAbstract: Federated Learning (FL) has been widely adopted in privacy-sensitive and distributed environments. However, training stability becomes significantly challenged when differential privacy (DP) noise and Byzantine client behaviors coexist, as these heterogeneous perturbations jointly introduce time-varying distortions to model updates. Existing approaches typically address privacy and robustness in isolation. Under DP constraints, noise injection increases gradient variance and obscures the distinction between benign and adversarial updates, causing many robust aggregation methods to misclassify normal clients or fail to detect malicious ones. As a result, their effectiveness degrades substantially in practical IoT environments where noise and attacks interact. In this work, we propose a dual-factor adaptive and robust aggregation framework (DARA) to improve the stability of FL under such combined disturbances. DARA adjusts the differential privacy noise scale by jointly considering local update magnitudes and training-round dynamics, aiming to mitigate noise-induced bias under a fixed privacy budget. Meanwhile, a direction-aware weighted aggregation scheme assigns continuous trust weights based on cosine similarity between updates, thereby suppressing the influence of potentially anomalous or adversarial clients. We conduct extensive experiments on multiple benchmark datasets to evaluate DARA under differential privacy constraints and Byzantine attack scenarios. The results indicate that DARA achieves favorable robustness and convergence behavior compared with representative aggregation baselines, while maintaining competitive model accuracy.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "e0ee38204f6be3543f3fe33ce28b25c4e2596294",
+      "text": "Title: PrivAgriVolt: Privacy-Preserving Shadow-Aware Vision for Crop Stress Diagnosis in Agrivoltaic Photovoltaic Systems\n\nAbstract: Agrivoltaic systems co-locate photovoltaic (PV) arrays and crops, offering land-use efficiency and potential microclimate benefits, yet they introduce new challenges for computer-vision-based crop monitoring. PV structures produce strong, spatially varying shadows, specular reflections, and periodic occlusions that confound visual cues for diagnosing crop diseases and abiotic stresses. Meanwhile, agrivoltaic deployments are often distributed across farms and operators, making centralized data collection impractical due to privacy, ownership, and regulatory concerns. This paper proposes PrivAgriVolt, a novel privacy-preserving learning framework for agrivoltaic crop issue recognition that explicitly models PV-induced illumination and enables collaborative training without sharing raw images. The core algorithm integrates (i) a PV-geometry-conditioned shadow normalization module that fuses estimated array layout and sun-angle priors into a shadow-aware appearance canonization network, reducing illumination-induced domain shift across times and sites; (ii) a federated contrastive stress learner that aligns stress semantics across farms via prototype-based contrastive objectives while remaining robust to heterogeneous sensors and crop stages; and (iii) an adaptive privacy layer that combines secure aggregation with budget-aware gradient perturbation and client-level clipping to provide formal privacy guarantees while preserving fine-grained diagnostic performance. Extensive experiments on real agricultural vision benchmarks and agrivoltaic shadow variants demonstrate that PrivAgriVolt improves stress recognition and segmentation under PV shading while maintaining strong privacy–utility trade-offs.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "2aeb9bda0327ec5d5408d0f187b938bec3c4ff74",
+      "text": "Title: Adaptive Gradient Methods for Differentially Private TinyML in 6G\n\nAbstract: The sixth-generation (6G) of wireless systems is poised to enable a hyper-connected world of intelligent devices, where tiny machine learning (TinyML) will drive pervasive, real-time applications. However, this paradigm, built on distributed data from billions of endpoints, introduces an unprecedented privacy attack surface. A fundamental challenge for deploying AI in 6G is ensuring robust data privacy on resource-constrained devices without sacrificing model utility. Differentially Private Stochastic Gradient Descent (DP-SGD), a cornerstone of private machine learning, critically depends on managing gradient sensitivity, a task traditionally hampered by the manual tuning of a static clipping threshold. This paper presents a comprehensive analysis of gradient control mechanisms for DP-SGD, evaluated from a 6G deployment perspective. We trace the evolution from static clipping to fully adaptive scaling methods that obviate the need for a fixed threshold. To unify these approaches, we propose a conceptual framework, culminating in a case study of the Differentially Private Per-sample Adaptive Scaling Clipping (DP-PSASC) algorithm. We argue that such adaptive methods are not merely algorithmic improvements but are essential, “6G-adaptive” solutions that can be integrated into next-generation network architectures, such as the Open RAN (O-RAN) framework, to deliver efficient, scalable, and trustworthy AI.",
+      "relevance_score": null
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims similarity between the proposed adaptive clipping scheme and the one in Diakonikolas et al. (2020). The related work abstract discusses a new aggregation rule that clips gradients based on distance from the aggregation center, which aligns with the concept of adaptive clipping. The sentence is a factual claim about similarity, and the evidence supports this by showing a related adaptive clipping approach in the related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The sentence claims the proposed adaptive clipping scheme is similar to the one in Diakonikolas et al. (2020). The related work abstract states ARC does not require additional a priori information on honest workers' gradients, distinguishing it from existing adaptive clipping schemes (Diakonikolas et al., 2020). This supports the claim of similarity while noting a difference.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "58d8a2009398de5fdaac44e3d6ea3f4b77097129",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The sentence claims similarity between the proposed adaptive clipping scheme and the one in Diakonikolas et al. (2020). The related work paper (FedCCW) does not mention Diakonikolas et al. (2020) or discuss adaptive clipping schemes, so there is no evidence to evaluate the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims similarity between ARC and a scheme in Diakonikolas et al. (2020). The related work abstract does not mention Diakonikolas et al. (2020) or provide details about any specific clipping scheme; it focuses on a different method (Byz-AdaVR-EF21). Thus, there is insufficient evidence to verify the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2028f23f986d18e842b7fe63c456b0083442e9ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that the proposed adaptive clipping scheme is similar to the one in Diakonikolas et al. (2020). However, the paper explicitly states that ARC does not require additional a priori information on honest workers' gradients, in contrast to existing adaptive clipping schemes like Diakonikolas et al. (2020). The related work provided does not discuss Diakonikolas et al. (2020) or any similarity to ARC, so there is no supporting evidence; instead, the paper's own text contradicts the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim is about similarity to Diakonikolas et al. (2020), but the related work provided (DynaBRO) does not mention Diakonikolas et al. (2020) or any adaptive clipping scheme, making it impossible to verify the claim or assess calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3e38372d3be38a71b51f561128fb8bab3c9489e4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's adaptive clipping scheme is similar to one proposed in Diakonikolas et al. (2020). However, the provided related work text (ID=3e38372d3be38a71b51f561128fb8bab3c9489e4) does not mention Diakonikolas et al. (2020) or any specific clipping scheme from that work. The related work discusses a different federated learning framework with gradient clipping and attention aggregation, but there is no evidence to verify similarity to Diakonikolas et al. (2020). Thus, the claim cannot be evaluated.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims similarity between the proposed adaptive clipping scheme and one from Diakonikolas et al. (2020). The related work evidence (DP2Guard paper) does not discuss Diakonikolas et al. (2020) or any adaptive clipping scheme from that reference, making it impossible to verify the claim's alignment or calibration based on the provided evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "24e809d1d57696f626495e10f287ede66b00dc11",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the proposed adaptive clipping scheme is similar to the one in Diakonikolas et al. (2020). The paper's abstract explicitly states that ARC is an adaptive clipping scheme and mentions Diakonikolas et al. (2020) in the context of existing adaptive clipping schemes, indicating a direct relationship. The evidence aligns with the claim, and the language is appropriately calibrated.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the proposed adaptive clipping scheme is similar to one in Diakonikolas et al. (2020). The related work (LDP-Rep) does not mention Diakonikolas et al. (2020) or any similar adaptive clipping scheme; it focuses on a different method (LDP-Rep) with reputation-based aggregation and differential privacy. Therefore, evidence is missing to verify or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c0987bf889793f603abbf6b88439994e5e43516d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the adaptive clipping scheme is similar to one in Diakonikolas et al. (2020). The provided related work does not mention Diakonikolas et al. (2020) or any adaptive clipping scheme, so there is no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "706103f755e512c95007666bde8ca90e8dd5dc69",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that the proposed adaptive clipping scheme is similar to the one in Diakonikolas et al. (2020). The related work paper (DP-FedCloud) discusses adaptive gradient clipping but does not reference Diakonikolas et al. (2020) or directly compare to it. The claim is about the paper being reviewed, not directly supported by the related work evidence. However, the sentence is a factual statement about a citation in the paper being reviewed, so it is aligned with the paper's content. Since the related work does not contradict the claim (it does not claim to be different from Diakonikolas et al. (2020)), but also does not provide evidence, the alignment is 'aligned' by default as there is no contradiction, and calibration is 'accurate' as the claim is a simple statement of similarity. The evidence is insufficient to fully verify the claim from the related work alone, but the claim itself is not contradicted.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c83aa98cf28bedea5d5eb6f4ded5c90c3a2b25e2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims similarity between the proposed adaptive clipping scheme and one in Diakonikolas et al. (2020). The provided related work is about MBD-FGNNs (multibranch dendritic computing for federated GNNs) and does not mention Diakonikolas et al. (2020) or any adaptive clipping scheme. Therefore, the evidence is missing and the claim cannot be verified.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "95deb72a377ca0c99113dbea48c71c17c043bcb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim references Diakonikolas et al. (2020) as an existing adaptive clipping scheme, but the provided related work (DARA) does not mention Diakonikolas et al. (2020) or provide evidence about that specific scheme. The related work discusses a dual-factor adaptive framework (DARA) for federated learning, but it does not address the claim's comparison to Diakonikolas et al. (2020).",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e0ee38204f6be3543f3fe33ce28b25c4e2596294",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the proposed adaptive clipping scheme is similar to one in Diakonikolas et al. (2020). However, the related work evidence is about a completely different topic (privacy-preserving learning for agrivoltaic crop monitoring) and does not mention Diakonikolas et al. (2020) or any adaptive clipping scheme. Thus, there is no evidence to verify or relate to the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2aeb9bda0327ec5d5408d0f187b938bec3c4ff74",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims similarity between the paper's adaptive clipping scheme and one proposed in Diakonikolas et al. (2020). However, the related work evidence does not mention Diakonikolas et al. (2020) or any specific adaptive clipping scheme. The evidence discusses gradient control in DP-SGD and mentions DP-PSASC, but no connection to Diakonikolas et al. (2020) is provided, making the claim unverifiable.",
+      "relevance_score": null
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The proposed adaptive clipping scheme is similar to the one proposed in Diakonikolas et al. (2020).",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims similarity between the proposed adaptive clipping scheme and the one in Diakonikolas et al. (2020). The related work abstract discusses a new aggregation rule that clips gradients based on distance from the aggregation center, which aligns with the concept of adaptive clipping. The sentence is a factual claim about similarity, and the evidence supports this by showing a related adaptive clipping approach in the related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The sentence claims the proposed adaptive clipping scheme is similar to the one in Diakonikolas et al. (2020). The related work abstract states ARC does not require additional a priori information on honest workers' gradients, distinguishing it from existing adaptive clipping schemes (Diakonikolas et al., 2020). This supports the claim of similarity while noting a difference.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "58d8a2009398de5fdaac44e3d6ea3f4b77097129",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The sentence claims similarity between the proposed adaptive clipping scheme and the one in Diakonikolas et al. (2020). The related work paper (FedCCW) does not mention Diakonikolas et al. (2020) or discuss adaptive clipping schemes, so there is no evidence to evaluate the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims similarity between ARC and a scheme in Diakonikolas et al. (2020). The related work abstract does not mention Diakonikolas et al. (2020) or provide details about any specific clipping scheme; it focuses on a different method (Byz-AdaVR-EF21). Thus, there is insufficient evidence to verify the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2028f23f986d18e842b7fe63c456b0083442e9ce",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that the proposed adaptive clipping scheme is similar to the one in Diakonikolas et al. (2020). However, the paper explicitly states that ARC does not require additional a priori information on honest workers' gradients, in contrast to existing adaptive clipping schemes like Diakonikolas et al. (2020). The related work provided does not discuss Diakonikolas et al. (2020) or any similarity to ARC, so there is no supporting evidence; instead, the paper's own text contradicts the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim is about similarity to Diakonikolas et al. (2020), but the related work provided (DynaBRO) does not mention Diakonikolas et al. (2020) or any adaptive clipping scheme, making it impossible to verify the claim or assess calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3e38372d3be38a71b51f561128fb8bab3c9489e4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's adaptive clipping scheme is similar to one proposed in Diakonikolas et al. (2020). However, the provided related work text (ID=3e38372d3be38a71b51f561128fb8bab3c9489e4) does not mention Diakonikolas et al. (2020) or any specific clipping scheme from that work. The related work discusses a different federated learning framework with gradient clipping and attention aggregation, but there is no evidence to verify similarity to Diakonikolas et al. (2020). Thus, the claim cannot be evaluated.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims similarity between the proposed adaptive clipping scheme and one from Diakonikolas et al. (2020). The related work evidence (DP2Guard paper) does not discuss Diakonikolas et al. (2020) or any adaptive clipping scheme from that reference, making it impossible to verify the claim's alignment or calibration based on the provided evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "24e809d1d57696f626495e10f287ede66b00dc11",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the proposed adaptive clipping scheme is similar to the one in Diakonikolas et al. (2020). The paper's abstract explicitly states that ARC is an adaptive clipping scheme and mentions Diakonikolas et al. (2020) in the context of existing adaptive clipping schemes, indicating a direct relationship. The evidence aligns with the claim, and the language is appropriately calibrated.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the proposed adaptive clipping scheme is similar to one in Diakonikolas et al. (2020). The related work (LDP-Rep) does not mention Diakonikolas et al. (2020) or any similar adaptive clipping scheme; it focuses on a different method (LDP-Rep) with reputation-based aggregation and differential privacy. Therefore, evidence is missing to verify or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c0987bf889793f603abbf6b88439994e5e43516d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the adaptive clipping scheme is similar to one in Diakonikolas et al. (2020). The provided related work does not mention Diakonikolas et al. (2020) or any adaptive clipping scheme, so there is no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "706103f755e512c95007666bde8ca90e8dd5dc69",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that the proposed adaptive clipping scheme is similar to the one in Diakonikolas et al. (2020). The related work paper (DP-FedCloud) discusses adaptive gradient clipping but does not reference Diakonikolas et al. (2020) or directly compare to it. The claim is about the paper being reviewed, not directly supported by the related work evidence. However, the sentence is a factual statement about a citation in the paper being reviewed, so it is aligned with the paper's content. Since the related work does not contradict the claim (it does not claim to be different from Diakonikolas et al. (2020)), but also does not provide evidence, the alignment is 'aligned' by default as there is no contradiction, and calibration is 'accurate' as the claim is a simple statement of similarity. The evidence is insufficient to fully verify the claim from the related work alone, but the claim itself is not contradicted.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c83aa98cf28bedea5d5eb6f4ded5c90c3a2b25e2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims similarity between the proposed adaptive clipping scheme and one in Diakonikolas et al. (2020). The provided related work is about MBD-FGNNs (multibranch dendritic computing for federated GNNs) and does not mention Diakonikolas et al. (2020) or any adaptive clipping scheme. Therefore, the evidence is missing and the claim cannot be verified.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "95deb72a377ca0c99113dbea48c71c17c043bcb5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim references Diakonikolas et al. (2020) as an existing adaptive clipping scheme, but the provided related work (DARA) does not mention Diakonikolas et al. (2020) or provide evidence about that specific scheme. The related work discusses a dual-factor adaptive framework (DARA) for federated learning, but it does not address the claim's comparison to Diakonikolas et al. (2020).",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e0ee38204f6be3543f3fe33ce28b25c4e2596294",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the proposed adaptive clipping scheme is similar to one in Diakonikolas et al. (2020). However, the related work evidence is about a completely different topic (privacy-preserving learning for agrivoltaic crop monitoring) and does not mention Diakonikolas et al. (2020) or any adaptive clipping scheme. Thus, there is no evidence to verify or relate to the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2aeb9bda0327ec5d5408d0f187b938bec3c4ff74",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims similarity between the paper's adaptive clipping scheme and one proposed in Diakonikolas et al. (2020). However, the related work evidence does not mention Diakonikolas et al. (2020) or any specific adaptive clipping scheme. The evidence discusses gradient control in DP-SGD and mentions DP-PSASC, but no connection to Diakonikolas et al. (2020) is provided, making the claim unverifiable.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 2.0,
+      "best_evidence": [
+        "9dcda661a050040c9681a34c24c773b3ef8a429b",
+        "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+        "2028f23f986d18e842b7fe63c456b0083442e9ce"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "2028f23f986d18e842b7fe63c456b0083442e9ce",
+          "score": 2.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 16,
+    "pairs_attempted": 16,
+    "pairs_completed": 16,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 1,
+      "claims_with_supporting_evidence": 1,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 1.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 16.0
+    }
+  },
+  "errors": []
+}

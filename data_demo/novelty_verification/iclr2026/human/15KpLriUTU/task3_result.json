@@ -1,0 +1,2058 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "Since PUM-Net contains both attention and Mamba layers, it can be viewed as a kind of Transformer-Mamba hybrid architecture. Thus, I think it would be fair to include hybrid architectures as baselines as well."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The method for integrating session-specific and external knowledge is novel, and some of the empirical results show that it gives considerable performance gains over the vanilla Mamba model."
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "The architecture cleanly factors long-range retention (internal chunk memory) from world-knowledge access (external memory) and fuses them with a lightweight gated mechanism, avoiding quadratic attention."
+    },
+    {
+      "review_sentence_id": "C4",
+      "text": "On a high level, the proposed method effectively provides a new way to combine Mamba and softmax attention (especially given Bi-Directional Cross-Memory Interaction) to attend additionally materialized external and internal states."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "text": "Title: Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling\n\nAbstract: Efficiently modeling sequences with infinite context length has long been a challenging problem. Previous approaches have either suffered from quadratic computational complexity or limited extrapolation ability in length generalization. In this work, we present Samba, a simple hybrid architecture that layer-wise combines Mamba, a selective State Space Model (SSM), with Sliding Window Attention (SWA). Samba selectively compresses a given sequence into recurrent hidden states while still maintaining the ability to precisely recall recent memories with the attention mechanism. We scale Samba up to 3.8B parameters with 3.2T training tokens and demonstrate that it significantly outperforms state-of-the-art models across a variety of benchmarks. Pretrained on sequences of 4K length, Samba shows improved perplexity in context lengths of up to 1M in zero-shot. When finetuned on 4K-length sequences, Samba efficiently extrapolates to a 256K context length with perfect memory recall on the Passkey Retrieval task, and exhibits superior retrieval extrapolation on the challenging Phonebook task compared to full-attention models. As a linear-time sequence model, Samba achieves a 3.73x higher throughput compared to Transformers with grouped-query attention for user prompts of 128K length, and a 3.64x speedup when generating 64K tokens with unlimited streaming. Our code for training on open source data is publicly available at https://github.com/microsoft/Samba.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+      "text": "Title: Cognitive linguistic analysis of spatial verbs in “Zuo Zhuan” and exploration of the spatiotemporal relationship bioinformatically\n\nAbstract: In recent years, the digitalization of ancient books has revitalized traditional works and highlighted the “humanistic” dimension of digitalization. This article employs the SikuBERT pre-training model, which is tailored for natural language processing in classical Chinese texts, and forges an innovative connection with the realm of biomechanics, to conduct a comprehensive analysis of spatial verbs in the pre-Qin dynasty text Zuo Zhuan. The analysis encompasses detailed annotation, quantitative analysis, automatic recognition, and evaluation of spatial verbs, culminating in the creation of a digital knowledge base for spatial verbs in Zuo Zhuan. The study identifies four main types of high-frequency spatial verbs in Zuo Zhuan: Motion, state, existence, and direction. To enhance theoretical depth, this classification is grounded in cognitive linguistic theory, which explains the semantic connotations and cognitive basis of each verb type. Motion verbs, are closely linked to the representation of dynamic spatiotemporal contexts, particularly in describing human movement patterns and behaviors, invoking principles from biomechanics such as kinematics and dynamics. These verbs can be integrated with biomechanical concepts like trajectory analysis and mechanical models to understand how ancient humans engaged in dynamic activities within specific spaces. State and existence verbs emphasize static relationships, while directional verbs highlight the guiding nature of movement trajectories, which can be further explored through concepts of displacement and velocity in biomechanics. These verb types interact to construct the spatiotemporal framework of the text, demonstrating how language encodes complex spatial and temporal relationships. Moreover, the study investigates the interactive mechanisms of the four verb types in language use, analyzing how they collectively construct the spatiotemporal context of ancient texts, thereby enhancing our understanding of narrative techniques in pre-Qin literature. For instance, motion verbs often act as the primary drivers of narrative progression, while state verbs provide contextual stability, existence verbs denote presence, and directional verbs guide interpretative focus. Quantitatively, the study examines the characteristics of these verbs from three dimensions: temporal-quantitative relations, behavioral-quantitative relations, and scene-component relations. The findings reveal distinct quantitative features among the four types, with motion verbs exhibiting the highest diversity and quantity. This nuanced exploration not only contributes to the re-interpretation of pre-Qin dynasty texts but also strengthens the ability to deconstruct and analyze digitalized texts from this period, thereby advancing the field of classical Chinese digital humanities. By integrating a biomechanical perspective, this study further explores the application of spatial verbs in describing human movement behaviors, utilizing biomechanical models to analyze the efficiency and postural changes of ancient humans in specific environments, revealing the deep connections between language expression and human activity. This interdisciplinary perspective enriches our understanding of ancient culture and provides a new methodological framework for research in modern humanities.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+      "text": "Title: HiMamba2: Hierarchical State Space Modeling With Linear Complexity for Hyperspectral Image Classification\n\nAbstract: Hyperspectral image classification faces persistent challenges arising from high spectral dimensionality, complex spatial-spectral dependencies, and limited labeled samples. Although Transformer-based methods demonstrate strong long-range modeling capability, their quadratic computational complexity O(L2·d) imposes substantial bottlenecks for high-dimensional data. State space model (SSM) approaches achieve linear complexity O(L·d) but predominantly employ single-scale feature extraction and lack effective regularization mechanisms. This article proposes HiMamba2, a hierarchical SSM architecture incorporating three principal contributions: parallel multiscale convolutional embedding that captures complementary spectral-spatial representations across multiple receptive field scales; asymmetric weighted residual connections combined with adaptive DropPath regularization and serial convolutional block attention module dual-attention to enhance training stability and feature discriminability under limited labeled data conditions; an asymmetric dual-stage design with cross-layer fusion that integrates shallow fine-grained features with deep semantic representations while preserving linear complexity O(L·d). Experiments on Houston2013, WHU-Hi-HanChuan, and Pavia University datasets demonstrate overall accuracies of 93.40%, 93.02%, and 97.52%, respectively, outperforming 13 representative methods spanning CNN, attention, Transformer, and Mamba-based architectures. Training requires 262.84 s for 116-epoch convergence with 182.95 MB peak GPU memory consumption and 0.665 ms per-sample inference, validating the practical efficiency of the proposed approach. The complete PyTorch implementation of HiMamba2 will be made publicly available at https://github.com/Jason20155/ upon acceptance of this manuscript.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+      "text": "Title: State Space Models for Long-Term Temporal Context in 3D Single Object Tracking\n\nAbstract: 3D single object tracking (3D SOT) remains a challenging task due to the sparsity of point clouds, appearance variations caused by occlusions, and the difficulty of modeling long-term temporal context. Although recent Transformer-based approaches leverage memory mechanisms to propagate temporal information, their quadratic complexity and reliance on discrete historical snapshots limit both efficiency and temporal coherence. To address these limitations, we propose SSMTrack, a novel 3D SOT framework built upon state space models (SSMs), which efficiently models long-term temporal dependencies through a continuously evolving hidden state with linear complexity. Specifically, we introduce a serialization and bidirectional scanning (SBS) strategy to enhance intra-frame feature interactions and design a Target-Aware Encoder (TAE) to extract target cues while maintaining stable temporal representations. Furthermore, we propose a Temporal Causal Shape Learning (TCSL) mechanism that preserves critical historical information while adaptively integrating current inputs, progressively enriching target feature representations over time. Extensive experiments on three benchmark datasets demonstrate that SSMTrack achieves state-of-the-art performance with strong temporal coherence and high efficiency. The code will be released upon publication.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+      "text": "Title: HLX: A Unified Pipelined Architecture for Optimized Performance of Hybrid Transformer-Mamba Language Models\n\nAbstract: The rapid increase in demand for long-context language models has revealed fundamental performance limitations in conventional Transformer architectures, particularly their quadratic computational complexity. Hybrid Transformer-Mamba models, which interleave attention layers with efficient state-space model layers such as Mamba-2, have emerged as promising solutions combining the strengths of both Transformer and Mamba. However, maintaining a high compute utilization and performance across workloads (e.g., varying sequence length and batch size) in the Hybrid models is challenging due to their heterogeneous compute patterns and shifting performance bottlenecks between the two key computational kernels: FlashAttention-2 (FA-2) and State-Space Duality (SSD). In this paper, we introduce HLX, a unified pipelined architecture designed to ensure optimized performance across workloads for Hybrid models. Through detailed kernel-level analysis, we identify two key blockers that limit compute utilization: inter-operation dependencies in FA-2 and excessive memory traffic in SSD. To overcome these hurdles, we propose two novel fine-grained pipelined dataflows named PipeFlash and PipeSSD. PipeFlash effectively hides operational dependencies in attention computations, while PipeSSD firstly introduces the fused pipelined execution for SSD computations, substantially enhancing data reuse and reducing memory traffic. In addition, we propose a unified hardware architecture that can process both PipeFlash and PipeSSD in an efficient pipelining scheme to maximize the compute utilization. Finally, across sequence lengths from 1K to 128K, the proposed HLX architecture achieves up to 97.5% and 78.4% compute utilization for FA-2 and SSD, respectively, resulting in an average speedup of 1.75 × and 2.91 × over A100, and an average 2.78 × (FA-2), 1.84 × (FA-3), and 4.95 × speedups over H100. For end-to-end latency and batching, HLX achieves a 1.56 × and 1.38 × speedup over A100 and a 2.08 × and 1.76 × (1.84 × and 1.72 ×) speedup when running FA-2 (FA-3) on H100. It also significantly reduces area and power consumption by up to 89.8% and 63.8% compared to GPU baselines.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "text": "Title: Computer and information sciences : ISCIS 2004, 19th international symposium, Kemer-Antalya, Turkey, October 27-29, 2004 : proceedings",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+      "text": "Title: LongMamba: Enhancing Mamba's Long-Context Capabilities via Training-Free Receptive Field Enlargement\n\nAbstract: State space models (SSMs) have emerged as an efficient alternative to Transformer models for language modeling, offering linear computational complexity and constant memory usage as context length increases. However, despite their efficiency in handling long contexts, recent studies have shown that SSMs, such as Mamba models, generally underperform compared to Transformers in long-context understanding tasks. To address this significant shortfall and achieve both efficient and accurate long-context understanding, we propose LongMamba, a training-free technique that significantly enhances the long-context capabilities of Mamba models. LongMamba builds on our discovery that the hidden channels in Mamba can be categorized into local and global channels based on their receptive field lengths, with global channels primarily responsible for long-context capability. These global channels can become the key bottleneck as the input context lengthens. Specifically, when input lengths largely exceed the training sequence length, global channels exhibit limitations in adaptively extend their receptive fields, leading to Mamba's poor long-context performance. The key idea of LongMamba is to mitigate the hidden state memory decay in these global channels by preventing the accumulation of unimportant tokens in their memory. This is achieved by first identifying critical tokens in the global channels and then applying token filtering to accumulate only those critical tokens. Through extensive benchmarking across synthetic and real-world long-context scenarios, LongMamba sets a new standard for Mamba's long-context performance, significantly extending its operational range without requiring additional training. Our code is available at https://github.com/GATECH-EIC/LongMamba.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+      "text": "Title: Design and Research of Medical Image Segmentation Network Based on State-Space Model\n\nAbstract: Medical image segmentation, a pivotal technology for precise radiotherapy planning, encounters performance bottlenecks when dealing with complex anatomical structures in images. Although traditional segmentation networks, such as UNet, have initially succeeded in medical image processing in medical image processing, their inherent limitations-especially the deficiency in long-range context modeling-severely impede the development of this technology in refined diagnosis and treatment scenarios. To address these challenges, this study innovatively proposes the MPD-Unet segmentation network based on state space modeling. This network implements dual technological innovations based on the U-shaped architecture: Firstly, by integrating the selective memory mechanism into the SSM module in the cross layer connection path between the encoder and decoder, the CMamba module is constructed, which effectively enhances the network's perception ability of the core area and achieves dynamic focusing optimization of multiple organ regions. Secondly, in the decoder stage, an innovative dynamic feature upsampling strategy Rise_trends is adopted, which achieves local detail enhancement and global contextual semantic fusion through a dual branch parallel structure, and then uses point by point convolution to achieve adaptive aggregation of multi-level features. Experimental verification shows that MPD-Unet, by virtue of its perception of key areas and collaborative modeling of global-local features, achieves a Dice coefficient of 80.79 % on the Synapse multi-organ segmentation task, representing a 3.94 % improvement over the traditional U-Net method. Its network provides a new approach to the difficult problem of identifying weak boundaries and multi-scale targets in complex medical images.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+      "text": "Title: Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges\n\nAbstract: Sequence modeling is a crucial area across various domains, including Natural Language Processing (NLP), speech recognition, time series forecasting, music generation, and bioinformatics. Recurrent Neural Networks (RNNs) and Long Short Term Memory Networks (LSTMs) have historically dominated sequence modeling tasks like Machine Translation, Named Entity Recognition (NER), etc. However, the advancement of transformers has led to a shift in this paradigm, given their superior performance. Yet, transformers suffer from $O(N^2)$ attention complexity and challenges in handling inductive bias. Several variations have been proposed to address these issues which use spectral networks or convolutions and have performed well on a range of tasks. However, they still have difficulty in dealing with long sequences. State Space Models(SSMs) have emerged as promising alternatives for sequence modeling paradigms in this context, especially with the advent of S4 and its variants, such as S4nd, Hippo, Hyena, Diagnol State Spaces (DSS), Gated State Spaces (GSS), Linear Recurrent Unit (LRU), Liquid-S4, Mamba, etc. In this survey, we categorize the foundational SSMs based on three paradigms namely, Gating architectures, Structural architectures, and Recurrent architectures. This survey also highlights diverse applications of SSMs across domains such as vision, video, audio, speech, language (especially long sequence modeling), medical (including genomics), chemical (like drug design), recommendation systems, and time series analysis, including tabular data. Moreover, we consolidate the performance of SSMs on benchmark datasets like Long Range Arena (LRA), WikiText, Glue, Pile, ImageNet, Kinetics-400, sstv2, as well as video datasets such as Breakfast, COIN, LVU, and various time series datasets. The project page for Mamba-360 work is available on this webpage.\\url{https://github.com/badripatro/mamba360}.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+      "text": "Title: Hydra-Nav: Object Navigation via Adaptive Dual-Process Reasoning\n\nAbstract: While large vision-language models (VLMs) show promise for object goal navigation, current methods still struggle with low success rates and inefficient localization of unseen objects--failures primarily attributed to weak temporal-spatial reasoning. Meanwhile, recent attempts to inject reasoning into VLM-based agents improve success rates but incur substantial computational overhead. To address both the ineffectiveness and inefficiency of existing approaches, we introduce Hydra-Nav, a unified VLM architecture that adaptively switches between a deliberative slow system for analyzing exploration history and formulating high-level plans, and a reactive fast system for efficient execution. We train Hydra-Nav through a three-stage curriculum: (i) spatial-action alignment to strengthen trajectory planning, (ii) memory-reasoning integration to enhance temporal-spatial reasoning over long-horizon exploration, and (iii) iterative rejection fine-tuning to enable selective reasoning at critical decision points. Extensive experiments demonstrate that Hydra-Nav achieves state-of-the-art performance on the HM3D, MP3D, and OVON benchmarks, outperforming the second-best methods by 11.1%, 17.4%, and 21.2%, respectively. Furthermore, we introduce SOT (Success weighted by Operation Time), a new metric to measure search efficiency across VLMs with varying reasoning intensity. Results show that adaptive reasoning significantly enhances search efficiency over fixed-frequency baselines.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+      "text": "Title: Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access\n\nAbstract: A key advantage of Recurrent Neural Networks (RNNs) over Transformers is their linear computational and space complexity enables faster training and inference for long sequences. However, RNNs are fundamentally unable to randomly access historical context, and simply integrating attention mechanisms may undermine their efficiency advantages. To overcome this limitation, we propose Hierarchical Sparse Attention (HSA), a novel attention mechanism that enhances RNNs with long-range random access flexibility while preserving their merits in efficiency and length generalization. HSA divides inputs into chunks, selects the top-$k$ chunks and hierarchically aggregates information. The core innovation lies in learning token-to-chunk relevance based on fine-grained token-level information inside each chunk. This approach enhances the precision of chunk selection across both in-domain and out-of-domain context lengths. To make HSA efficient, we further introduce a hardware-aligned kernel design. By combining HSA with Mamba, we introduce RAMba, which achieves perfect accuracy in passkey retrieval across 64 million contexts despite pre-training on only 4K-length contexts, and significant improvements on various downstream tasks, with nearly constant memory footprint. These results show RAMba's huge potential in long-context modeling.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+      "text": "Title: Link-State-Aware Proactive Data Delivery in Integrated Satellite–Terrestrial Networks for Multi-Modal Remote Sensing\n\nAbstract: This paper seeks to address the limitations of conventional remote sensing data dissemination algorithms, particularly their inability to model fine-grained multi-modal heterogeneous feature correlations and adapt to dynamic network topologies under resource constraints. This paper proposes multi-modal-MAPPO, a novel multi-modal deep reinforcement learning (MDRL) framework designed for a proactive data push in large-scale integrated satellite–terrestrial networks (ISTNs). By integrating satellite cache states, user cache states, and multi-modal data attributes (including imagery, metadata, and temporal request patterns) into a unified Markov decision process (MDP), our approach pioneers the application of the multi-actor-attention-critic with parameter sharing (MAPPO) algorithm to ISTNs push tasks. Central to this framework is a dual-branch actor network architecture that dynamically fuses heterogeneous modalities: a lightweight MobileNet-v3-small backbone extracts semantic features from remote sensing imagery, while parallel branches—a multi-layer perceptron (MLP) for static attributes (e.g., payload specifications, geolocation tags) and a long short-term memory (LSTM) network for temporal user cache patterns—jointly model contextual and historical dependencies. A dynamically weighted attention mechanism further adapts modality-specific contributions to enhance cross-modal correlation modeling in complex, time-varying scenarios. To mitigate the curse of dimensionality in high-dimensional action spaces, we introduce a multi-dimensional discretization strategy that decomposes decisions into hierarchical sub-policies, balancing computational efficiency and decision granularity. Comprehensive experiments against state-of-the-art baselines (MAPPO, MAAC) demonstrate that multi-modal-MAPPO reduces the average content delivery latency by 53.55% and 29.55%, respectively, while improving push hit rates by 0.1718 and 0.4248. These results establish the framework as a scalable and adaptive solution for real-time intelligent data services in next-generation ISTNs, addressing critical challenges in resource-constrained, dynamic satellite–terrestrial environments.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+      "text": "Title: Enhanced ECG Signal Classification Using Multi‐Branch Convolutions and Mamba Blocks With State‐Space Models\n\nAbstract: Electrocardiogram (ECG) classification is crucial for the timely detection of cardiac arrhythmias and related heart conditions. This study presents an innovative deep‐learning model that integrates convolutional neural networks (CNNs), long short‐term memory (LSTM) units, and Mamba blocks with state‐space models (SSMs) to enhance the precision of ECG classification. This model addresses the limitations of transformer‐based approaches, particularly their high computational complexity and inefficiencies during the inference phase, exacerbated by their self‐attention mechanisms when processing long sequences. Evaluations on the MIT‐BIH dataset reveal that our model achieves outstanding classification accuracy, with a computational efficiency of 99.26%. Integrating the multibranch convolutional approach with Mamba blocks provides a robust and efficient framework for ECG signal analysis, offering a promising solution for real‐time cardiovascular monitoring and diagnosis.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+      "text": "Title: Programming Models for Parallel Systems : The Programmer ’ s Perspective 1 st Author",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+      "text": "Title: Understanding and Enhancing Mamba-Transformer Hybrids for Memory Recall and Language Modeling\n\nAbstract: Hybrid models that combine state space models (SSMs) with attention mechanisms have shown strong performance by leveraging the efficiency of SSMs and the high recall ability of attention. However, the architectural design choices behind these hybrid models remain insufficiently understood. In this work, we analyze hybrid architectures through the lens of memory utilization and overall performance, and propose a complementary method to further enhance their effectiveness. We first examine the distinction between sequential and parallel integration of SSM and attention layers. Our analysis reveals several interesting findings, including that sequential hybrids perform better on shorter contexts, whereas parallel hybrids are more effective for longer contexts. We also introduce a data-centric approach of continually training on datasets augmented with paraphrases, which further enhances recall while preserving other capabilities. It generalizes well across different base models and outperforms architectural modifications aimed at enhancing recall. Our findings provide a deeper understanding of hybrid SSM-attention models and offer practical guidance for designing architectures tailored to various use cases. Our findings provide a deeper understanding of hybrid SSM-attention models and offer practical guidance for designing architectures tailored to various use cases.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+      "text": "Title: Education Matters: Innovative Social Science Research",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+      "text": "Title: Notice Title of Work : Multi-cultural visualization : How functional programming can enrich visualization",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+      "text": "Title: Graph-Mamba: Towards Long-Range Graph Sequence Modeling with Selective State Spaces\n\nAbstract: Attention mechanisms have been widely used to capture long-range dependencies among nodes in Graph Transformers. Bottlenecked by the quadratic computational cost, attention mechanisms fail to scale in large graphs. Recent improvements in computational efficiency are mainly achieved by attention sparsification with random or heuristic-based graph subsampling, which falls short in data-dependent context reasoning. State space models (SSMs), such as Mamba, have gained prominence for their effectiveness and efficiency in modeling long-range dependencies in sequential data. However, adapting SSMs to non-sequential graph data presents a notable challenge. In this work, we introduce Graph-Mamba, the first attempt to enhance long-range context modeling in graph networks by integrating a Mamba block with the input-dependent node selection mechanism. Specifically, we formulate graph-centric node prioritization and permutation strategies to enhance context-aware reasoning, leading to a substantial improvement in predictive performance. Extensive experiments on ten benchmark datasets demonstrate that Graph-Mamba outperforms state-of-the-art methods in long-range graph prediction tasks, with a fraction of the computational cost in both FLOPs and GPU memory consumption. The code and models are publicly available at https://github.com/bowang-lab/Graph-Mamba.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+      "text": "Title: Long-Range Dependency Modeling in Decentralized Finance Markets Through Structured State Space Architectures\n\nAbstract: The decentralized finance market exhibits extreme volatility and complex nonlinear  dynamics that pose significant challenges for accurate price prediction and risk management.  Traditional time series models, including Long Short-Term Memory networks and Transformer architectures, struggle with either computational inefficiency in capturing long-rangedependencies or inadequate context retention across extended sequences. This research investigates the application of Structured State Space Models, particularly the Mamba architecture with selective state spaces, for modeling temporal dependencies in DeFi markets. The proposed framework addresses the limitations of conventional approaches by leveraging SSMs' linear-time complexity while maintaining superior long-sequence modeling capabilities through context-aware selective mechanisms. Our methodology integrates SSM architectures with DeFispecific features including on-chain transaction volumes, liquidity metrics, and market microstructure indicators. Experimental validation across multiple cryptocurrency pairs demonstrates that SSM-based models achieve competitive performance compared to attentionbaseTransformers while offering substantial computational advantages. The results indicate that selective state space mechanisms enable effective capture of both short-term volatility patterns and long-horizon price trends in decentralized markets. This work contributes to the emerginintersection of advanced sequence modeling techniques and blockchain-based financial systems, providing insights for algorithmic trading strategies and risk assessment frameworks in the rapidly evolving DeFi ecosystem.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+      "text": "Title: A Progressive Methodology for the Verification of a DSP Chip",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+      "text": "Title: Bidirectional Mamba-Based Continuous Prediction of Human Motion Intention Using Multisource Information Fusion\n\nAbstract: This paper proposes a Bidirectional Mamba-based selective state space model (SSM) for continuously predicting human motion intention using multisource information fusion of surface electromyogram (sEMG) and mechanomyography (MMG). In the proposed prediction model, the bidirectional canning mechanism and the dynamic selection mechanism make the prediction model have global context modeling capability and optimal allocation of computing resources, and the SSM makes the prediction model maintain linear computational complexity. By integrating the complementary features of sEMG and MMG through multimodal signal fusion, the deep information of motion intention is deeply explored, significantly enhancing the model’s intention prediction ability. The effectiveness and superiority of the proposed Bidirectional Mamba-based human motion prediction model are validated in comparison with the information fusion models based on recurrent neural network (RNN), long short-term memory network (LSTM), and temporal convolutional network (TCN). Note to Practitioners—The paper is motivated by the challenge of human robot collaboration of human motion intention prediction in human-robot interaction (HRI). Traditional motion intention prediction has limitations in prediction accuracy and computation efficiency. This article proposes a bidirectional Mamba to predict human motion intention continuously through multi-channel information fusion of sEMG and MMG. The superiority of the proposed method in prediction accuracy and computation efficiency is validated by experiments and the method can be applied in exoskeleton, intelligent prosthetic, and some other HRI devices.",
+      "relevance_score": null
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about PUM-Net being a Transformer-Mamba hybrid and suggests including hybrid architectures as baselines. However, the related work evidence (Samba) describes a different hybrid architecture (Mamba with Sliding Window Attention) and does not provide evidence about PUM-Net's architecture or its composition of attention and Mamba layers. The claim cannot be verified or contradicted based solely on the provided related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's sentence is a claim about the paper (PUM-Net is a Transformer-Mamba hybrid and hybrid architectures should be baselines). The related work evidence is about cognitive linguistics and spatial verbs in classical Chinese texts, with no connection to Transformer-Mamba hybrids or model baselines. Thus, the evidence does not support or contradict the claim; it is irrelevant.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that hybrid architectures (like Transformer-Mamba) should be included as baselines. However, the provided related work (HiMamba2) does not discuss hybrid architectures, baselines, or evaluation comparisons with hybrid models. The evidence is insufficient to verify or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about PUM-Net's architecture being a Transformer-Mamba hybrid and suggests hybrid architectures as baselines. The related work (SSMTrack) is about 3D single object tracking using state space models, not about hybrid Transformer-Mamba architectures or PUM-Net. There is no evidence in the related work to support or contradict the reviewer's claim, making it insufficient for verification.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid, which aligns with the related work's description of hybrid Transformer-Mamba models as interleaving attention (Transformer) and Mamba layers, supporting the reviewer's suggestion to include such hybrids as baselines.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid and suggests including hybrid architectures as baselines. The paper's abstract and introduction describe PUM-Net as a Mamba-based SSM with augmented memory (internal and external), not explicitly as a Transformer-Mamba hybrid; there is no mention of 'Transformer' layers in the architecture. The related work evidence is unrelated (proceedings of a symposium), so the claim cannot be verified or supported by the provided evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid and suggests including hybrid architectures as baselines. The related work (LongMamba) focuses on enhancing Mamba's long-context capabilities but does not mention hybrid architectures or PUM-Net. Evidence is missing to verify or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about PUM-Net being a hybrid architecture, but the related work paper is about medical image segmentation (MPD-Unet) and does not discuss PUM-Net, hybrid architectures, or the inclusion of baselines. There is no evidence in the related work to verify or contradict the reviewer's claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer's claim that PUM-Net is a Transformer-Mamba hybrid architecture aligns with the paper's description of combining attention and Mamba layers. However, the related work (Mamba-360 survey) does not specifically address hybrid architectures as baselines, so evidence is insufficient to fully verify the reviewer's suggestion about including them.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim about including hybrid architectures as baselines is a suggestion regarding experimental methodology. The related work (Hydra-Nav) does not discuss Transformer-Mamba hybrids or baselines for PUM-Net, so there is no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim is about PUM-Net being a Transformer-Mamba hybrid and suggests including hybrid architectures as baselines. The related work describes RAMba (combining Hierarchical Sparse Attention with Mamba), which is a hybrid architecture. However, the claim is not directly about RAMba or the related work; it is a general statement about the paper being reviewed. The evidence does not support or contradict the claim about PUM-Net's architecture, as it does not discuss PUM-Net. Thus, evidence is missing or unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about PUM-Net's hybrid nature and a suggestion for baselines, but the provided related work is about satellite-terrestrial networks and multi-modal reinforcement learning, with no mention of Transformers, Mamba, or hybrid architectures. There is no evidence to assess alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid. The provided paper text does not explicitly describe it as such; it describes it as a dual-memory SSM (Mamba-based) with internal and external memory, but does not mention Transformer layers. The related work (ECG paper) uses CNN+LSTM+Mamba, not Transformer-Mamba hybrids. There is no evidence in either text to verify the hybrid claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about including hybrid architectures as baselines, but the provided related work (a paper on parallel programming models) contains no information about PUM-Net, Transformer-Mamba hybrids, or baselines for long-context models. The evidence is entirely missing or irrelevant.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer claims PUM-Net is a Transformer-Mamba hybrid due to containing both attention and Mamba layers, and suggests hybrid architectures should be baselines. The related work explicitly studies hybrid models combining SSMs (like Mamba) with attention mechanisms, showing they are effective for memory recall and language modeling. This supports the reviewer's suggestion that hybrid architectures are relevant baselines.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer claims that PUM-Net is a Transformer-Mamba hybrid and that hybrid architectures should be included as baselines. However, the provided paper text does not explicitly describe PUM-Net as a Transformer-Mamba hybrid; it only states that PUM-Net uses attention and Mamba layers, which could be interpreted as hybrid. The related work (ID=7ea5ec106915850de9607156893da27adbb412f2) is about education and social science research, which is entirely unrelated to the paper's topic, providing no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid architecture and suggests including hybrid architectures as baselines. The paper describes PUM-Net as augmenting Mamba with memory mechanisms and fusion, but does not explicitly state it is a Transformer-Mamba hybrid; it references Transformers only in related work for inspiration. The related work evidence (title: 'Multi-cultural visualization: How functional programming can enrich visualization') is unrelated to hybrid architectures or baselines, providing no support or contradiction. Thus, the claim cannot be verified with the given evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that PUM-Net is a Transformer-Mamba hybrid architecture and suggests including hybrid architectures as baselines. The related work describes Graph-Mamba, which integrates Mamba into graph networks, but does not discuss Transformer-Mamba hybrids or mention PUM-Net. There is no evidence in the related work to support or contradict the claim about PUM-Net's architecture or the recommendation for baselines.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (PUM-Net being a Transformer-Mamba hybrid) and suggests hybrid architectures as baselines. However, the provided related work (about DeFi markets and SSMs) does not discuss hybrid architectures, baselines, or any comparison to Transformer-Mamba hybrids. There is no evidence in the related work to evaluate this claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims PUM-Net is a hybrid architecture with attention and Mamba layers, and suggests including hybrid baselines. The paper's abstract and introduction describe PUM-Net as a Plastic Unified Memory Network combining internal and external memory for Mamba-based SSMs, but do not mention attention layers. The related work evidence is about a DSP chip verification paper, which is unrelated to the claim. Without evidence from the paper or related work to support the hybrid architecture claim, the evidence is insufficient.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about PUM-Net being a Transformer-Mamba hybrid and suggests hybrid architectures as baselines. However, the provided related work is about a Bidirectional Mamba-based model for human motion intention prediction, which does not discuss Transformer-Mamba hybrids or PUM-Net's architecture. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the method is novel and shows performance gains over vanilla Mamba, but the provided related work (Samba) is about a hybrid architecture combining Mamba with sliding window attention, not directly addressing the novelty or performance gains of the paper's specific method for integrating session-specific and external knowledge. The evidence does not support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. The related work is about cognitive linguistic analysis of spatial verbs in classical Chinese, which is entirely unrelated to the paper's topic (SSMs, Mamba, memory integration). There is no evidence in the provided related work to support or contradict the reviewer's claim about novelty or performance gains.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty in integrating session-specific and external knowledge and performance gains over vanilla Mamba. The related work paper (HiMamba2) focuses on hierarchical SSM for hyperspectral classification with different contributions (multiscale embedding, dual-stage design). It does not discuss integrating external knowledge or compare to vanilla Mamba in the same context. The evidence is missing to verify the claim about the reviewed paper's novelty or performance gains.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim about PUM-Net's novelty and performance gains cannot be verified using the related work evidence, which describes a different paper (SSMTrack) on 3D single object tracking with no mention of session-specific/external knowledge integration or comparisons to vanilla Mamba.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. However, the provided related work (HLX) discusses a unified pipelined architecture for hybrid Transformer-Mamba models, focusing on hardware optimization and performance. It does not address or provide evidence about the novelty of integrating session-specific and external knowledge, nor does it compare performance gains over vanilla Mamba. The evidence is missing for verification.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novel method and empirical results. The related work evidence is a book title from a 2004 symposium, which provides no information about the paper's novelty or performance gains over the vanilla Mamba model. There is no direct evidence to support or contradict the claim, making it unverifiable from the given related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer claims that the method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. The related work (LongMamba) addresses long-context capabilities in Mamba via a training-free approach focusing on hidden channels, but it does not discuss integration of external knowledge or session-specific memory in the same manner as the paper under review. Therefore, while there is some relation to enhancing Mamba, the evidence is not directly supportive of the specific claim about novel integration of external knowledge.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novelty and performance gains. The related work is a different paper on medical image segmentation using SSMs, which does not provide evidence about the reviewed paper's method for integrating session-specific and external knowledge or its empirical results.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novelty and performance gains, but the provided related work (Mamba-360 survey) does not contain evidence about the specific method of integrating session-specific and external knowledge or performance comparisons with vanilla Mamba. Thus, the claim cannot be verified or aligned with the given evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the novelty and performance gains of PUM-Net's method for integrating session-specific and external knowledge. The related work evidence (RAMba/HSA) describes a different method (hierarchical sparse attention for RNNs) that focuses on efficient long-term memory access and hardware-aligned kernels. It does not provide evidence to support or contradict the specific claims about PUM-Net's novel integration method or its performance gains over vanilla Mamba.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the novelty and performance gains of a method in the paper being reviewed, but the provided related work (e4a142...) is about a completely different topic (remote sensing data delivery) and does not mention or provide evidence for the claim. The evidence is missing and unverifiable from the given context.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the method is novel and shows performance gains over vanilla Mamba, but the provided related work is about ECG signal classification using CNNs, LSTMs, and Mamba blocks, which does not provide evidence for the novelty or comparative performance gains of the method described in the paper under review.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the novelty and performance gains of the method in the paper being reviewed, but the provided related work is about parallel programming models and is unrelated to the paper's content. There is no evidence to evaluate the claim's support or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence does not provide information to evaluate the specific claim about novelty or performance gains over vanilla Mamba. The related work discusses hybrid SSM-Transformer models and paraphrase augmentation, which are distinct from the paper's focus on integrating external knowledge and internal memory in Mamba-based SSMs.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work evidence is about 'Education Matters: Innovative Social Science Research', which is unrelated to the technical content of the paper (PUM-Net, Mamba, SSMs, etc.). There is no relevant evidence in the related work to support or contradict the claim about novelty or performance gains.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's method and results, but the related work evidence provided is about 'Multi-cultural visualization: How functional programming can enrich visualization', which is entirely unrelated to the paper's topic (SSMs, memory mechanisms, PUM-Net). There is no evidence in the related work to support or contradict the claim about integrating session-specific and external knowledge or performance gains over vanilla Mamba.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. The related work is about Graph-Mamba, which adapts Mamba for graph data, but does not discuss session-specific or external knowledge integration. There is no evidence to verify or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty and performance gains for the paper's method, but the related work discusses SSMs in DeFi markets, providing no evidence about the paper's specific method (PUM-Net) or its empirical results.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (novel method, performance gains). The related work evidence is about a DSP chip verification methodology, which is unrelated to the content of the paper. There is no evidence in the provided related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that PUM-Net's method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. The related work paper is about a Bidirectional Mamba-based model for human motion intention prediction using sEMG and MMG fusion; it does not discuss external knowledge integration, novelty claims, or comparisons with vanilla Mamba on the same tasks. Thus, there is no evidence in the related work to evaluate the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes the architecture of the paper being reviewed, not the related work. The related work evidence (Samba) does not mention chunk memory, external memory, or gated mechanisms; it describes a different hybrid architecture with sliding window attention. There is no evidence in the related work to support or contradict the claim about the paper's architecture.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes PUM-Net's architecture, which factors long-range retention (internal chunk memory) from world-knowledge access (external memory) and fuses them with a lightweight gated mechanism. However, the provided related work is about cognitive linguistic analysis of spatial verbs in classical Chinese texts, with no mention of PUM-Net, memory mechanisms, or the architectural claims. Thus, there is no evidence to support or contradict the sentence's claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The sentence describes architectural details of PUM-Net (factoring retention from knowledge access, using a gated mechanism). The related work is about HiMamba2, a different model for hyperspectral image classification. There is no overlap or evidence to support or relate the claim, making it insufficient.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a claim about the architecture of the paper being reviewed (PUM-Net). The related work evidence is from a different paper (SSMTrack) about 3D object tracking using state space models. There is no direct evidence in the provided related work text to verify the claim about PUM-Net's design of factoring internal and external memory with a gated mechanism. The claim is too vague relative to the unrelated evidence, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the architecture of PUM-Net from the paper under review, describing its design for factoring retention from access and fusing them with a gated mechanism. The provided related work (HLX) discusses a different architecture (HLX) for optimizing Hybrid Transformer-Mamba models, focusing on pipelined hardware and compute utilization. It does not mention or provide evidence about PUM-Net's internal/external memory design, chunking, gating, or avoiding quadratic attention. Thus, the related work does not support or relate to the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work is a general symposium proceeding and provides no specific evidence about the architecture's memory mechanisms, gating, or attention avoidance mentioned in the review sentence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper factors long-range retention from world-knowledge access and fuses them with a lightweight gated mechanism, avoiding quadratic attention. The related work (LongMamba) focuses on training-free receptive field enlargement for Mamba, not on fusing internal and external memory or using gated mechanisms. There is no evidence in the related work to support or contradict the specific claims about the paper's architecture.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about PUM-Net's architecture (factoring internal/external memory and using a lightweight gated mechanism), but the related work paper discusses a different model (MPD-Unet) for medical image segmentation. There is no direct evidence in the related work to support or contradict the claim about PUM-Net's design.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific architectural claim about PUM-Net (factoring internal chunk memory from external memory with a gated mechanism). The related work is a survey on SSMs generally and does not provide evidence about PUM-Net's design details, making the claim unverifiable from this evidence alone.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific architectural claim about PUM-Net's dual-memory system and fusion mechanism. The related work evidence is about Hydra-Nav, a vision-language navigation system with dual-process reasoning, which does not discuss PUM-Net's architecture, memory factoring, or gated fusion. There is no overlap or evidence to verify the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the architecture of the paper being reviewed (PUM-Net). The related work evidence describes a different paper (RAMba with Hierarchical Sparse Attention). There is no direct evidence in the provided related work text to support or contradict the claim about PUM-Net's architecture, making verification impossible with the given information.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes the architecture of the paper being reviewed, but the related work evidence is about a completely different paper (multi-modal-MAPPO for satellite-terrestrial networks). There is no overlap in topic, methods, or claims, so the related work provides no evidence to evaluate the review sentence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific architectural claim about the paper (factoring internal and external memory with a gated mechanism, avoiding quadratic attention), but the related work is about ECG classification using CNNs, LSTMs, and Mamba blocks, which does not provide any direct evidence about the PUM-Net architecture's design or mechanisms described in the sentence. The evidence is missing or unverifiable from the given related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the PUM-Net architecture (internal/external memory fusion, lightweight gated mechanism, avoiding quadratic attention). The provided related work (ID b4c9ec48...) is about 'Programming Models for Parallel Systems', which is unrelated to the paper's content. There is no evidence in the related work to evaluate the claim's alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's architecture, but the related work evidence focuses on Mamba-Transformer hybrids and does not provide information about PUM-Net's specific design of factoring internal and external memory or its lightweight gated mechanism. Evidence is missing to verify the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence provided is a generic title about social science research with no content about the paper's architecture or mechanisms. There is no evidence to verify the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's architecture, but the provided related work (a paper on multi-cultural visualization and functional programming) contains no relevant evidence about PUM-Net, memory mechanisms, or long-context modeling. There is no connection to verify support or contradiction, making the evidence missing.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific architectural claim about PUM-Net's design (factoring internal/external memory and using a gated mechanism). The provided related work evidence is about Graph-Mamba, which addresses graph sequence modeling and is unrelated to PUM-Net's dual-memory architecture. There is no evidence in the related work to support or contradict the claim about PUM-Net's internal design. Therefore, the claim is unverifiable based solely on the given evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the architecture's design (factoring internal and external memory, using a gated mechanism, avoiding quadratic attention). The related work paper discusses SSMs for DeFi markets but does not mention PUM-Net, its architecture, or its specific memory mechanisms. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes an architectural feature of PUM-Net (factoring long-range retention from world-knowledge access and fusing them with a gated mechanism), but the provided related work is about a DSP chip verification methodology, which is completely unrelated. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the architecture's design (factoring retention and access, fusing via gated mechanism, avoiding quadratic attention). The related work paper discusses a Bidirectional Mamba-based model for human motion intention prediction using sEMG/MMG fusion. There is no direct evidence in the related work about the specific architectural claims in the review sentence (e.g., chunk memory, external memory, gated fusion, avoiding quadratic attention). The evidence is missing, making the claim unverifiable from this related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the proposed method (PUM-Net) combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. The related work evidence (Samba) describes a different hybrid architecture combining Mamba with Sliding Window Attention, but does not mention softmax attention, Bi-Directional Cross-Memory Interaction, or the specific combination described in the claim. Thus, there is no evidence to support or contradict the claim, making it insufficient for verification.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's method combining Mamba and softmax attention with a Bi-Directional Cross-Memory Interaction. The provided related work is about analyzing spatial verbs in classical Chinese texts using SikuBERT and biomechanics, which is entirely unrelated to the paper's technical content. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence (C4) is a claim about PUM-Net's method (combining Mamba and softmax attention via Bi-Directional Cross-Memory Interaction). The provided related work (HiMamba2) is a different paper focusing on hierarchical SSMs for hyperspectral image classification; it does not mention PUM-Net, softmax attention, or the described interaction mechanism. Thus, there is no evidence to assess alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method from the paper being reviewed (PUM-Net), but the related work evidence (SSMTrack) is about 3D object tracking using state space models, with no mention of combining Mamba and softmax attention, Bi-Directional Cross-Memory Interaction, or materialized external/internal states. There is no overlap in content or methodology to support or contradict the claim, making evidence insufficient for verification.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the proposed method (PUM-Net) combining Mamba and softmax attention, specifically mentioning 'Bi-Directional Cross-Memory Interaction'. However, the provided paper text (Abstract + Introduction) describes PUM-Net as augmenting Mamba with internal and external memory systems, using a learned interaction module, but does not mention softmax attention or 'Bi-Directional Cross-Memory Interaction'. The related work paper (HLX) is about hardware optimization for Hybrid Transformer-Mamba models, not about PUM-Net or the specific combination claimed. Therefore, there is insufficient evidence in the provided texts to verify the claim or judge its calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a methodological combination (Mamba + softmax attention with Bi-Directional Cross-Memory Interaction) that is not mentioned or discussed in the provided related work (ISCIS 2004 proceedings). The related work is unrelated to the paper's content, providing no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction). The related work (LongMamba) does not mention softmax attention, Bi-Directional Cross-Memory Interaction, or external/internal states. There is no evidence in the provided related work to support or contradict this claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper being reviewed (PUM-Net), describing its method of combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. The related work evidence is about a different paper (MPD-Unet) in medical image segmentation, which does not mention Mamba, softmax attention, Bi-Directional Cross-Memory Interaction, or the integration of external/internal states. There is no overlap or evidence to support or contradict the claim, making it unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's method combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. The related work (Mamba-360 survey) discusses SSMs including Mamba but does not mention softmax attention, Bi-Directional Cross-Memory Interaction, or the specific combination described. There is no evidence in the provided text to support or contradict the claim, making it unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's proposed method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction). The provided related work (Hydra-Nav) is about object navigation with a VLM architecture, which is unrelated to the technical details of Mamba, softmax attention, or memory mechanisms in the paper under review. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper proposes a method combining Mamba and softmax attention for attending materialized states, which aligns with the paper's description of PUM-Net's dual-memory system integrating static external memory and dynamic internal memory. The related work evidence (HSA/RAMba) supports the general concept of combining attention with RNNs (like Mamba) for long-context memory, but does not directly confirm the specific claim about softmax attention or Bi-Directional Cross-Memory Interaction. However, the claim is sufficiently aligned and not contradicted.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the proposed method's effectiveness in combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. However, the related work (multi-modal-MAPPO) is about satellite-terrestrial networks and remote sensing data delivery, which is unrelated to the reviewed paper's topic of long-context modeling with SSMs and memory mechanisms. There is no evidence in the provided related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method from the paper being reviewed (PUM-Net), but the related work evidence is about a different paper (ECG classification with Mamba). The related work does not provide any evidence about combining Mamba with softmax attention or Bi-Directional Cross-Memory Interaction, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction). However, the provided related work evidence is a book title ('Programming Models for Parallel Systems') which is entirely unrelated to the paper's content about SSMs, attention mechanisms, or memory fusion. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction). The related work evidence discusses hybrid Mamba-Transformer models and a data-centric approach for enhancing recall, but it does not mention the specific mechanisms (e.g., softmax attention, Bi-Directional Cross-Memory Interaction) described in the claim. Therefore, the evidence is insufficient to verify the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific technical claim about the paper's method combining Mamba and softmax attention. The provided related work (titled 'Education Matters: Innovative Social Science Research') is unrelated to machine learning or the paper's content, offering no evidence to evaluate the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about combining Mamba and softmax attention via Bi-Directional Cross-Memory Interaction. The related work provided is entirely about a different topic (multi-cultural visualization and functional programming) and contains no evidence about Mamba, softmax attention, or the described interaction. Therefore, the claim cannot be evaluated against the evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed (PUM-Net) but provides no evidence from the related work (Graph-Mamba). The related work focuses on graph sequence modeling with Mamba and does not mention Bi-Directional Cross-Memory Interaction or the specific combination of Mamba and softmax attention described in the sentence. Therefore, the claim cannot be verified against the provided evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction), but the related work paper is about applying Mamba to DeFi markets and does not mention softmax attention, Bi-Directional Cross-Memory Interaction, or the integration of external/internal states. There is no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's method, but the related work evidence (a paper on DSP chip verification) provides no relevant information about Mamba, softmax attention, or memory interaction, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the method combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. The provided related work is about a Bidirectional Mamba model for motion prediction using sEMG and MMG fusion, which does not mention softmax attention or the specific interaction mechanism. There is no evidence to verify or contradict the claim, so it is insufficient.",
+      "relevance_score": null
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "Since PUM-Net contains both attention and Mamba layers, it can be viewed as a kind of Transformer-Mamba hybrid architecture. Thus, I think it would be fair to include hybrid architectures as baselines as well.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about PUM-Net being a Transformer-Mamba hybrid and suggests including hybrid architectures as baselines. However, the related work evidence (Samba) describes a different hybrid architecture (Mamba with Sliding Window Attention) and does not provide evidence about PUM-Net's architecture or its composition of attention and Mamba layers. The claim cannot be verified or contradicted based solely on the provided related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's sentence is a claim about the paper (PUM-Net is a Transformer-Mamba hybrid and hybrid architectures should be baselines). The related work evidence is about cognitive linguistics and spatial verbs in classical Chinese texts, with no connection to Transformer-Mamba hybrids or model baselines. Thus, the evidence does not support or contradict the claim; it is irrelevant.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that hybrid architectures (like Transformer-Mamba) should be included as baselines. However, the provided related work (HiMamba2) does not discuss hybrid architectures, baselines, or evaluation comparisons with hybrid models. The evidence is insufficient to verify or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about PUM-Net's architecture being a Transformer-Mamba hybrid and suggests hybrid architectures as baselines. The related work (SSMTrack) is about 3D single object tracking using state space models, not about hybrid Transformer-Mamba architectures or PUM-Net. There is no evidence in the related work to support or contradict the reviewer's claim, making it insufficient for verification.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid, which aligns with the related work's description of hybrid Transformer-Mamba models as interleaving attention (Transformer) and Mamba layers, supporting the reviewer's suggestion to include such hybrids as baselines.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid and suggests including hybrid architectures as baselines. The paper's abstract and introduction describe PUM-Net as a Mamba-based SSM with augmented memory (internal and external), not explicitly as a Transformer-Mamba hybrid; there is no mention of 'Transformer' layers in the architecture. The related work evidence is unrelated (proceedings of a symposium), so the claim cannot be verified or supported by the provided evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid and suggests including hybrid architectures as baselines. The related work (LongMamba) focuses on enhancing Mamba's long-context capabilities but does not mention hybrid architectures or PUM-Net. Evidence is missing to verify or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about PUM-Net being a hybrid architecture, but the related work paper is about medical image segmentation (MPD-Unet) and does not discuss PUM-Net, hybrid architectures, or the inclusion of baselines. There is no evidence in the related work to verify or contradict the reviewer's claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer's claim that PUM-Net is a Transformer-Mamba hybrid architecture aligns with the paper's description of combining attention and Mamba layers. However, the related work (Mamba-360 survey) does not specifically address hybrid architectures as baselines, so evidence is insufficient to fully verify the reviewer's suggestion about including them.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim about including hybrid architectures as baselines is a suggestion regarding experimental methodology. The related work (Hydra-Nav) does not discuss Transformer-Mamba hybrids or baselines for PUM-Net, so there is no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim is about PUM-Net being a Transformer-Mamba hybrid and suggests including hybrid architectures as baselines. The related work describes RAMba (combining Hierarchical Sparse Attention with Mamba), which is a hybrid architecture. However, the claim is not directly about RAMba or the related work; it is a general statement about the paper being reviewed. The evidence does not support or contradict the claim about PUM-Net's architecture, as it does not discuss PUM-Net. Thus, evidence is missing or unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about PUM-Net's hybrid nature and a suggestion for baselines, but the provided related work is about satellite-terrestrial networks and multi-modal reinforcement learning, with no mention of Transformers, Mamba, or hybrid architectures. There is no evidence to assess alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid. The provided paper text does not explicitly describe it as such; it describes it as a dual-memory SSM (Mamba-based) with internal and external memory, but does not mention Transformer layers. The related work (ECG paper) uses CNN+LSTM+Mamba, not Transformer-Mamba hybrids. There is no evidence in either text to verify the hybrid claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about including hybrid architectures as baselines, but the provided related work (a paper on parallel programming models) contains no information about PUM-Net, Transformer-Mamba hybrids, or baselines for long-context models. The evidence is entirely missing or irrelevant.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer claims PUM-Net is a Transformer-Mamba hybrid due to containing both attention and Mamba layers, and suggests hybrid architectures should be baselines. The related work explicitly studies hybrid models combining SSMs (like Mamba) with attention mechanisms, showing they are effective for memory recall and language modeling. This supports the reviewer's suggestion that hybrid architectures are relevant baselines.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer claims that PUM-Net is a Transformer-Mamba hybrid and that hybrid architectures should be included as baselines. However, the provided paper text does not explicitly describe PUM-Net as a Transformer-Mamba hybrid; it only states that PUM-Net uses attention and Mamba layers, which could be interpreted as hybrid. The related work (ID=7ea5ec106915850de9607156893da27adbb412f2) is about education and social science research, which is entirely unrelated to the paper's topic, providing no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims PUM-Net is a Transformer-Mamba hybrid architecture and suggests including hybrid architectures as baselines. The paper describes PUM-Net as augmenting Mamba with memory mechanisms and fusion, but does not explicitly state it is a Transformer-Mamba hybrid; it references Transformers only in related work for inspiration. The related work evidence (title: 'Multi-cultural visualization: How functional programming can enrich visualization') is unrelated to hybrid architectures or baselines, providing no support or contradiction. Thus, the claim cannot be verified with the given evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that PUM-Net is a Transformer-Mamba hybrid architecture and suggests including hybrid architectures as baselines. The related work describes Graph-Mamba, which integrates Mamba into graph networks, but does not discuss Transformer-Mamba hybrids or mention PUM-Net. There is no evidence in the related work to support or contradict the claim about PUM-Net's architecture or the recommendation for baselines.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (PUM-Net being a Transformer-Mamba hybrid) and suggests hybrid architectures as baselines. However, the provided related work (about DeFi markets and SSMs) does not discuss hybrid architectures, baselines, or any comparison to Transformer-Mamba hybrids. There is no evidence in the related work to evaluate this claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims PUM-Net is a hybrid architecture with attention and Mamba layers, and suggests including hybrid baselines. The paper's abstract and introduction describe PUM-Net as a Plastic Unified Memory Network combining internal and external memory for Mamba-based SSMs, but do not mention attention layers. The related work evidence is about a DSP chip verification paper, which is unrelated to the claim. Without evidence from the paper or related work to support the hybrid architecture claim, the evidence is insufficient.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about PUM-Net being a Transformer-Mamba hybrid and suggests hybrid architectures as baselines. However, the provided related work is about a Bidirectional Mamba-based model for human motion intention prediction, which does not discuss Transformer-Mamba hybrids or PUM-Net's architecture. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 2.0,
+      "best_evidence": [
+        "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+        "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+        "c6b95bda66e5897adf380e35c905372dc20e3e95"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+          "score": 2.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The method for integrating session-specific and external knowledge is novel, and some of the empirical results show that it gives considerable performance gains over the vanilla Mamba model.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the method is novel and shows performance gains over vanilla Mamba, but the provided related work (Samba) is about a hybrid architecture combining Mamba with sliding window attention, not directly addressing the novelty or performance gains of the paper's specific method for integrating session-specific and external knowledge. The evidence does not support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. The related work is about cognitive linguistic analysis of spatial verbs in classical Chinese, which is entirely unrelated to the paper's topic (SSMs, Mamba, memory integration). There is no evidence in the provided related work to support or contradict the reviewer's claim about novelty or performance gains.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty in integrating session-specific and external knowledge and performance gains over vanilla Mamba. The related work paper (HiMamba2) focuses on hierarchical SSM for hyperspectral classification with different contributions (multiscale embedding, dual-stage design). It does not discuss integrating external knowledge or compare to vanilla Mamba in the same context. The evidence is missing to verify the claim about the reviewed paper's novelty or performance gains.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim about PUM-Net's novelty and performance gains cannot be verified using the related work evidence, which describes a different paper (SSMTrack) on 3D single object tracking with no mention of session-specific/external knowledge integration or comparisons to vanilla Mamba.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. However, the provided related work (HLX) discusses a unified pipelined architecture for hybrid Transformer-Mamba models, focusing on hardware optimization and performance. It does not address or provide evidence about the novelty of integrating session-specific and external knowledge, nor does it compare performance gains over vanilla Mamba. The evidence is missing for verification.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novel method and empirical results. The related work evidence is a book title from a 2004 symposium, which provides no information about the paper's novelty or performance gains over the vanilla Mamba model. There is no direct evidence to support or contradict the claim, making it unverifiable from the given related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer claims that the method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. The related work (LongMamba) addresses long-context capabilities in Mamba via a training-free approach focusing on hidden channels, but it does not discuss integration of external knowledge or session-specific memory in the same manner as the paper under review. Therefore, while there is some relation to enhancing Mamba, the evidence is not directly supportive of the specific claim about novel integration of external knowledge.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novelty and performance gains. The related work is a different paper on medical image segmentation using SSMs, which does not provide evidence about the reviewed paper's method for integrating session-specific and external knowledge or its empirical results.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novelty and performance gains, but the provided related work (Mamba-360 survey) does not contain evidence about the specific method of integrating session-specific and external knowledge or performance comparisons with vanilla Mamba. Thus, the claim cannot be verified or aligned with the given evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the novelty and performance gains of PUM-Net's method for integrating session-specific and external knowledge. The related work evidence (RAMba/HSA) describes a different method (hierarchical sparse attention for RNNs) that focuses on efficient long-term memory access and hardware-aligned kernels. It does not provide evidence to support or contradict the specific claims about PUM-Net's novel integration method or its performance gains over vanilla Mamba.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the novelty and performance gains of a method in the paper being reviewed, but the provided related work (e4a142...) is about a completely different topic (remote sensing data delivery) and does not mention or provide evidence for the claim. The evidence is missing and unverifiable from the given context.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the method is novel and shows performance gains over vanilla Mamba, but the provided related work is about ECG signal classification using CNNs, LSTMs, and Mamba blocks, which does not provide evidence for the novelty or comparative performance gains of the method described in the paper under review.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the novelty and performance gains of the method in the paper being reviewed, but the provided related work is about parallel programming models and is unrelated to the paper's content. There is no evidence to evaluate the claim's support or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence does not provide information to evaluate the specific claim about novelty or performance gains over vanilla Mamba. The related work discusses hybrid SSM-Transformer models and paraphrase augmentation, which are distinct from the paper's focus on integrating external knowledge and internal memory in Mamba-based SSMs.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work evidence is about 'Education Matters: Innovative Social Science Research', which is unrelated to the technical content of the paper (PUM-Net, Mamba, SSMs, etc.). There is no relevant evidence in the related work to support or contradict the claim about novelty or performance gains.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's method and results, but the related work evidence provided is about 'Multi-cultural visualization: How functional programming can enrich visualization', which is entirely unrelated to the paper's topic (SSMs, memory mechanisms, PUM-Net). There is no evidence in the related work to support or contradict the claim about integrating session-specific and external knowledge or performance gains over vanilla Mamba.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. The related work is about Graph-Mamba, which adapts Mamba for graph data, but does not discuss session-specific or external knowledge integration. There is no evidence to verify or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty and performance gains for the paper's method, but the related work discusses SSMs in DeFi markets, providing no evidence about the paper's specific method (PUM-Net) or its empirical results.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (novel method, performance gains). The related work evidence is about a DSP chip verification methodology, which is unrelated to the content of the paper. There is no evidence in the provided related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that PUM-Net's method for integrating session-specific and external knowledge is novel and shows performance gains over vanilla Mamba. The related work paper is about a Bidirectional Mamba-based model for human motion intention prediction using sEMG and MMG fusion; it does not discuss external knowledge integration, novelty claims, or comparisons with vanilla Mamba on the same tasks. Thus, there is no evidence in the related work to evaluate the claim.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.6666666666666666,
+      "best_evidence": [
+        "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+        "28eb18717cfa257f0fc49fb9512c48279cafa031",
+        "269f87fb20ac4edbc384a173ea8bd296259050ef"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "The architecture cleanly factors long-range retention (internal chunk memory) from world-knowledge access (external memory) and fuses them with a lightweight gated mechanism, avoiding quadratic attention.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes the architecture of the paper being reviewed, not the related work. The related work evidence (Samba) does not mention chunk memory, external memory, or gated mechanisms; it describes a different hybrid architecture with sliding window attention. There is no evidence in the related work to support or contradict the claim about the paper's architecture.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes PUM-Net's architecture, which factors long-range retention (internal chunk memory) from world-knowledge access (external memory) and fuses them with a lightweight gated mechanism. However, the provided related work is about cognitive linguistic analysis of spatial verbs in classical Chinese texts, with no mention of PUM-Net, memory mechanisms, or the architectural claims. Thus, there is no evidence to support or contradict the sentence's claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The sentence describes architectural details of PUM-Net (factoring retention from knowledge access, using a gated mechanism). The related work is about HiMamba2, a different model for hyperspectral image classification. There is no overlap or evidence to support or relate the claim, making it insufficient.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a claim about the architecture of the paper being reviewed (PUM-Net). The related work evidence is from a different paper (SSMTrack) about 3D object tracking using state space models. There is no direct evidence in the provided related work text to verify the claim about PUM-Net's design of factoring internal and external memory with a gated mechanism. The claim is too vague relative to the unrelated evidence, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the architecture of PUM-Net from the paper under review, describing its design for factoring retention from access and fusing them with a gated mechanism. The provided related work (HLX) discusses a different architecture (HLX) for optimizing Hybrid Transformer-Mamba models, focusing on pipelined hardware and compute utilization. It does not mention or provide evidence about PUM-Net's internal/external memory design, chunking, gating, or avoiding quadratic attention. Thus, the related work does not support or relate to the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work is a general symposium proceeding and provides no specific evidence about the architecture's memory mechanisms, gating, or attention avoidance mentioned in the review sentence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper factors long-range retention from world-knowledge access and fuses them with a lightweight gated mechanism, avoiding quadratic attention. The related work (LongMamba) focuses on training-free receptive field enlargement for Mamba, not on fusing internal and external memory or using gated mechanisms. There is no evidence in the related work to support or contradict the specific claims about the paper's architecture.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about PUM-Net's architecture (factoring internal/external memory and using a lightweight gated mechanism), but the related work paper discusses a different model (MPD-Unet) for medical image segmentation. There is no direct evidence in the related work to support or contradict the claim about PUM-Net's design.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific architectural claim about PUM-Net (factoring internal chunk memory from external memory with a gated mechanism). The related work is a survey on SSMs generally and does not provide evidence about PUM-Net's design details, making the claim unverifiable from this evidence alone.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific architectural claim about PUM-Net's dual-memory system and fusion mechanism. The related work evidence is about Hydra-Nav, a vision-language navigation system with dual-process reasoning, which does not discuss PUM-Net's architecture, memory factoring, or gated fusion. There is no overlap or evidence to verify the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the architecture of the paper being reviewed (PUM-Net). The related work evidence describes a different paper (RAMba with Hierarchical Sparse Attention). There is no direct evidence in the provided related work text to support or contradict the claim about PUM-Net's architecture, making verification impossible with the given information.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes the architecture of the paper being reviewed, but the related work evidence is about a completely different paper (multi-modal-MAPPO for satellite-terrestrial networks). There is no overlap in topic, methods, or claims, so the related work provides no evidence to evaluate the review sentence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific architectural claim about the paper (factoring internal and external memory with a gated mechanism, avoiding quadratic attention), but the related work is about ECG classification using CNNs, LSTMs, and Mamba blocks, which does not provide any direct evidence about the PUM-Net architecture's design or mechanisms described in the sentence. The evidence is missing or unverifiable from the given related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the PUM-Net architecture (internal/external memory fusion, lightweight gated mechanism, avoiding quadratic attention). The provided related work (ID b4c9ec48...) is about 'Programming Models for Parallel Systems', which is unrelated to the paper's content. There is no evidence in the related work to evaluate the claim's alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's architecture, but the related work evidence focuses on Mamba-Transformer hybrids and does not provide information about PUM-Net's specific design of factoring internal and external memory or its lightweight gated mechanism. Evidence is missing to verify the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence provided is a generic title about social science research with no content about the paper's architecture or mechanisms. There is no evidence to verify the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's architecture, but the provided related work (a paper on multi-cultural visualization and functional programming) contains no relevant evidence about PUM-Net, memory mechanisms, or long-context modeling. There is no connection to verify support or contradiction, making the evidence missing.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific architectural claim about PUM-Net's design (factoring internal/external memory and using a gated mechanism). The provided related work evidence is about Graph-Mamba, which addresses graph sequence modeling and is unrelated to PUM-Net's dual-memory architecture. There is no evidence in the related work to support or contradict the claim about PUM-Net's internal design. Therefore, the claim is unverifiable based solely on the given evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the architecture's design (factoring internal and external memory, using a gated mechanism, avoiding quadratic attention). The related work paper discusses SSMs for DeFi markets but does not mention PUM-Net, its architecture, or its specific memory mechanisms. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes an architectural feature of PUM-Net (factoring long-range retention from world-knowledge access and fusing them with a gated mechanism), but the provided related work is about a DSP chip verification methodology, which is completely unrelated. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the architecture's design (factoring retention and access, fusing via gated mechanism, avoiding quadratic attention). The related work paper discusses a Bidirectional Mamba-based model for human motion intention prediction using sEMG/MMG fusion. There is no direct evidence in the related work about the specific architectural claims in the review sentence (e.g., chunk memory, external memory, gated fusion, avoiding quadratic attention). The evidence is missing, making the claim unverifiable from this related work.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "28eb18717cfa257f0fc49fb9512c48279cafa031",
+        "269f87fb20ac4edbc384a173ea8bd296259050ef",
+        "2066736b1cf7c88255d3920f6db3627eb7130697"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C4",
+      "text": "On a high level, the proposed method effectively provides a new way to combine Mamba and softmax attention (especially given Bi-Directional Cross-Memory Interaction) to attend additionally materialized external and internal states.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the proposed method (PUM-Net) combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. The related work evidence (Samba) describes a different hybrid architecture combining Mamba with Sliding Window Attention, but does not mention softmax attention, Bi-Directional Cross-Memory Interaction, or the specific combination described in the claim. Thus, there is no evidence to support or contradict the claim, making it insufficient for verification.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's method combining Mamba and softmax attention with a Bi-Directional Cross-Memory Interaction. The provided related work is about analyzing spatial verbs in classical Chinese texts using SikuBERT and biomechanics, which is entirely unrelated to the paper's technical content. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2066736b1cf7c88255d3920f6db3627eb7130697",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence (C4) is a claim about PUM-Net's method (combining Mamba and softmax attention via Bi-Directional Cross-Memory Interaction). The provided related work (HiMamba2) is a different paper focusing on hierarchical SSMs for hyperspectral image classification; it does not mention PUM-Net, softmax attention, or the described interaction mechanism. Thus, there is no evidence to assess alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "a270bc32462154ec3f968b6436044b13be41b093",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method from the paper being reviewed (PUM-Net), but the related work evidence (SSMTrack) is about 3D object tracking using state space models, with no mention of combining Mamba and softmax attention, Bi-Directional Cross-Memory Interaction, or materialized external/internal states. There is no overlap in content or methodology to support or contradict the claim, making evidence insufficient for verification.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7026f38dadeb7f28bb58f944d1f08bed9df0190b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the proposed method (PUM-Net) combining Mamba and softmax attention, specifically mentioning 'Bi-Directional Cross-Memory Interaction'. However, the provided paper text (Abstract + Introduction) describes PUM-Net as augmenting Mamba with internal and external memory systems, using a learned interaction module, but does not mention softmax attention or 'Bi-Directional Cross-Memory Interaction'. The related work paper (HLX) is about hardware optimization for Hybrid Transformer-Mamba models, not about PUM-Net or the specific combination claimed. Therefore, there is insufficient evidence in the provided texts to verify the claim or judge its calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a methodological combination (Mamba + softmax attention with Bi-Directional Cross-Memory Interaction) that is not mentioned or discussed in the provided related work (ISCIS 2004 proceedings). The related work is unrelated to the paper's content, providing no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c2f80d5d6839fd154def3eba2452f9275e1483ed",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction). The related work (LongMamba) does not mention softmax attention, Bi-Directional Cross-Memory Interaction, or external/internal states. There is no evidence in the provided related work to support or contradict this claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1b9e090cc912b02378b15407738befb279d04862",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper being reviewed (PUM-Net), describing its method of combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. The related work evidence is about a different paper (MPD-Unet) in medical image segmentation, which does not mention Mamba, softmax attention, Bi-Directional Cross-Memory Interaction, or the integration of external/internal states. There is no overlap or evidence to support or contradict the claim, making it unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ba4c5a116d07b37dea1046b6d16a60cb2d01cd47",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's method combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. The related work (Mamba-360 survey) discusses SSMs including Mamba but does not mention softmax attention, Bi-Directional Cross-Memory Interaction, or the specific combination described. There is no evidence in the provided text to support or contradict the claim, making it unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "4a2fb87e7d860c144d16a34abf85452269aac3d6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's proposed method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction). The provided related work (Hydra-Nav) is about object navigation with a VLM architecture, which is unrelated to the technical details of Mamba, softmax attention, or memory mechanisms in the paper under review. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper proposes a method combining Mamba and softmax attention for attending materialized states, which aligns with the paper's description of PUM-Net's dual-memory system integrating static external memory and dynamic internal memory. The related work evidence (HSA/RAMba) supports the general concept of combining attention with RNNs (like Mamba) for long-context memory, but does not directly confirm the specific claim about softmax attention or Bi-Directional Cross-Memory Interaction. However, the claim is sufficiently aligned and not contradicted.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e4a142ee594fec47eae15907781d40ea9048aa2c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the proposed method's effectiveness in combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. However, the related work (multi-modal-MAPPO) is about satellite-terrestrial networks and remote sensing data delivery, which is unrelated to the reviewed paper's topic of long-context modeling with SSMs and memory mechanisms. There is no evidence in the provided related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "50af671184c72fd38d8aae0b49ccdb66b392e690",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method from the paper being reviewed (PUM-Net), but the related work evidence is about a different paper (ECG classification with Mamba). The related work does not provide any evidence about combining Mamba with softmax attention or Bi-Directional Cross-Memory Interaction, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b4c9ec48b4b12b1f35778c2ce74945ac91cf7d7a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction). However, the provided related work evidence is a book title ('Programming Models for Parallel Systems') which is entirely unrelated to the paper's content about SSMs, attention mechanisms, or memory fusion. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c6b95bda66e5897adf380e35c905372dc20e3e95",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction). The related work evidence discusses hybrid Mamba-Transformer models and a data-centric approach for enhancing recall, but it does not mention the specific mechanisms (e.g., softmax attention, Bi-Directional Cross-Memory Interaction) described in the claim. Therefore, the evidence is insufficient to verify the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific technical claim about the paper's method combining Mamba and softmax attention. The provided related work (titled 'Education Matters: Innovative Social Science Research') is unrelated to machine learning or the paper's content, offering no evidence to evaluate the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3495193de332923a387d7c00332e522c7316e304",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about combining Mamba and softmax attention via Bi-Directional Cross-Memory Interaction. The related work provided is entirely about a different topic (multi-cultural visualization and functional programming) and contains no evidence about Mamba, softmax attention, or the described interaction. Therefore, the claim cannot be evaluated against the evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1df04f33a8ef313cc2067147dbb79c3ca7c5c99f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed (PUM-Net) but provides no evidence from the related work (Graph-Mamba). The related work focuses on graph sequence modeling with Mamba and does not mention Bi-Directional Cross-Memory Interaction or the specific combination of Mamba and softmax attention described in the sentence. Therefore, the claim cannot be verified against the provided evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "5bb7ee05740cab8d154d45376a63115531d0b017",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's method (combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction), but the related work paper is about applying Mamba to DeFi markets and does not mention softmax attention, Bi-Directional Cross-Memory Interaction, or the integration of external/internal states. There is no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1eca0d545889e3f513aa4d9e911e2a447f57651b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's method, but the related work evidence (a paper on DSP chip verification) provides no relevant information about Mamba, softmax attention, or memory interaction, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0505be894afdf1336321376818d7a831e41df3ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the method combining Mamba and softmax attention with Bi-Directional Cross-Memory Interaction. The provided related work is about a Bidirectional Mamba model for motion prediction using sEMG and MMG fusion, which does not mention softmax attention or the specific interaction mechanism. There is no evidence to verify or contradict the claim, so it is insufficient.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.6666666666666666,
+      "best_evidence": [
+        "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+        "28eb18717cfa257f0fc49fb9512c48279cafa031",
+        "269f87fb20ac4edbc384a173ea8bd296259050ef"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "d25cd021507c1a1bfbec89cf980d4920df1073c2",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "269f87fb20ac4edbc384a173ea8bd296259050ef",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 4,
+    "related_works": 21,
+    "pairs_attempted": 84,
+    "pairs_completed": 84,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 4,
+      "claims_with_any_attempt": 4,
+      "claims_with_any_success": 4,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 4,
+      "claims_with_scored_evidence": 4,
+      "claims_with_decisive_evidence": 1,
+      "claims_with_supporting_evidence": 1,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.25,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 21.0
+    }
+  },
+  "errors": []
+}

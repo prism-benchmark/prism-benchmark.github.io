@@ -1,0 +1,182 @@
+{
+  "paper_id": "15KpLriUTU",
+  "source": "sea_iclr2026",
+  "source_format": "txt",
+  "reviews_analysis": {
+    "SEA_ICLR2026": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper proposes the Plastic Unified Memory Network (PUM-Net), an architecture designed to enhance the efficiency and effectiveness of State Space Models (SSMs) in long-context tasks.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "It introduces a chunk-wise internal memory mechanism to mitigate information decay and the \"lost in the middle\" problem, and a novel pre-training methodology for deep integration of static, pre-encoded external knowledge.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "PUM-Net is evaluated on various benchmarks and shows superior performance and efficiency compared to existing SSMs and attention-based models.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The chunk-wise internal memory addresses the inherent limitations of SSMs in retaining information over long sequences, improving in-sequence recall.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "PUM-Net's approach to integrating external knowledge into the model's learning process is novel and could have significant implications for long-context modeling tasks.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The proposed architecture is designed to maintain computational efficiency even as sequence lengths increase, which is a critical aspect for practical applications.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The effectiveness of PUM-Net relies on a static external knowledge base, which might limit its adaptability to different tasks or domains.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The evaluation is primarily focused on text-based tasks and might not fully capture the benefits of the architecture in multi-modal reasoning or in tasks requiring dynamic adaptation of external knowledge.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper does not provide detailed implementation guidelines or code, which is important for reproducibility and further research.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "How does the chunk-wise internal memory mechanism compare to other methods for addressing the \"lost in the middle\" problem in SSMs?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "What are the trade-offs between using a fixed external memory and methods that could adaptively incorporate external knowledge based on the task context?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "How does the performance of PUM-Net scale with very long context lengths, such as in multi-modal or real-world applications?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The paper presents a well-structured argument and detailed methodology for addressing a significant challenge in long-context modeling.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The contributions are clearly articulated, and the experimental design is thorough and relevant to the problem statement.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The paper is well-written, with clear explanations of the problem, methodology, and results.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "The inclusion of related work, detailed architecture descriptions, and evaluation methods enhances the comprehensiveness of the paper.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "The paper makes valuable contributions to the field of long-context modeling, particularly in the areas of internal and external memory mechanisms.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The proposed PUM-Net architecture addresses the limitations of existing SSMs and introduces a novel approach to integrating external knowledge.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "The paper demonstrates significant advancements in addressing challenges in long-context modeling, particularly in the integration of external knowledge.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "The contributions are substantial, but there are a few areas that could be improved for a stronger impact.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "Provide more detailed evaluation on the integration of external knowledge with the internal memory, and consider additional tasks that could better showcase the benefits of PUM-Net.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "Include more detailed implementation guidelines, code snippets, or links to code repositories to enhance reproducibility and facilitate future research.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "The paper presents a novel and well-justified approach to a significant problem in long-context modeling, with clear contributions and a strong potential for practical impact.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "The limitations identified could be addressed through future work, making the paper suitable for acceptance with minor revisions.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 3355,
+    "completion_tokens": 3355,
+    "total_tokens": 6710
+  }
+}

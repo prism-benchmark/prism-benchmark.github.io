@@ -1,0 +1,59 @@
+{
+  "paper": {
+    "core_task": "Referring video segmentation with motion-centric evaluation",
+    "contributions": [
+      {
+        "name": "A motion-centric probing and evaluation benchmark",
+        "author_claim_text": "we propose a motion-centric probing and evaluation to study the shortcomings in video MLLMs with respect to capturing spatiotemporal dynamics",
+        "description": "A benchmark that inserts a static keyframe into videos to test if models truly use motion information, revealing that state-of-the-art methods are biased toward static cues.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Strong single-image and semi-temporal baselines",
+        "author_claim_text": "we propose three strong baselines that outperform the state of the art while being static biased",
+        "description": "Three baselines using MLLMs (like Qwen2.5-VL) and SAM 2.0 that achieve state-of-the-art performance on standard benchmarks but rely on static information, highlighting the benchmarks' limitations.",
+        "source_hint": "Introduction §1"
+      }
+    ],
+    "key_terms": [
+      "referring video segmentation",
+      "motion-centric evaluation",
+      "video MLLMs",
+      "static keyframe",
+      "temporal consistency",
+      "spatiotemporal dynamics",
+      "strong baselines",
+      "Qwen2.5-VL",
+      "MeVIS benchmark",
+      "RefDAVIS17"
+    ],
+    "must_have_entities": [
+      "Qwen2.5-VL",
+      "MeVIS",
+      "RefDAVIS17"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The paper's main contribution is the motion-centric probing and evaluation technique, but the technical novelty is limited.",
+        "stance": "not_novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The core of the method relies on manipulating existing video data by inserting keyframes, which, while effective in highlighting the limitations of current models, does not represent a significant methodological advancement.",
+        "stance": "not_novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

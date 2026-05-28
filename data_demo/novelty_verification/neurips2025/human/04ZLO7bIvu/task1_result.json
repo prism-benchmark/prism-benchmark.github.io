@@ -1,0 +1,72 @@
+{
+  "paper": {
+    "core_task": "Evaluating motion utilization in video MLLMs for referring video segmentation",
+    "contributions": [
+      {
+        "name": "A motion-centric probing and evaluation framework for video segmentation",
+        "author_claim_text": "we provide a study of the ability of video MLLMs in utilizing motion information within language-guided video segmentation. Towards the latter, we create a motion-centric probing and evaluation technique",
+        "description": "A framework that uses a static keyframe paired with a dynamic video to test whether video MLLMs truly use motion cues or are misled by static information in referring video segmentation.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Strong static and semi-temporal baselines for referring video segmentation",
+        "author_claim_text": "we propose three strong baselines that outperform the state of the art while being static biased.",
+        "description": "Three baselines using MLLMs and SAM/SAM 2.0 that rely on static or semi-temporal information, yet achieve state-of-the-art performance on standard benchmarks.",
+        "source_hint": "Conclusion"
+      },
+      {
+        "name": "Analysis of motion referring expression properties",
+        "author_claim_text": "we propose quantitative means to analyze the properties existing in referring expressions that can drive better evaluation for the use of motion beyond a single image.",
+        "description": "An analysis using GPT-4o to categorize motion referring expressions into dynamic and static groups based on properties like multi-step actions and static cues.",
+        "source_hint": "Introduction"
+      }
+    ],
+    "key_terms": [
+      "referring video segmentation",
+      "video MLLMs",
+      "motion-centric evaluation",
+      "static keyframe",
+      "spatiotemporal grounding",
+      "motion referring expressions",
+      "dense prediction",
+      "Qwen2.5-VL",
+      "MeVIS benchmark",
+      "RefDAVIS17"
+    ],
+    "must_have_entities": [
+      "Qwen2.5-VL",
+      "MeVIS",
+      "RefDAVIS17",
+      "VideoGLAMM",
+      "ReferFormer"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The proposed baseline—using an MLLM to identify keyframes and perform grounding, followed by SAM 2 for propagation—lacks technical novelty.",
+        "stance": "not_novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The evaluation technique for referring video segmentation based on keyframe selection is unique.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "Qwen2.5-VL",
+      "SAM 2.0",
+      "SAM 2",
+      "CLIP"
+    ]
+  }
+}

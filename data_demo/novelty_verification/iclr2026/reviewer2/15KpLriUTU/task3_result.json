@@ -1,0 +1,630 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "Despite the emphasis on external memory integration, the paper does not directly compare PUM-Net with established RAG methods like REALM or RETRO."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The contribution lies in the integration of a dual-memory system into SSMs, which is novel in scope."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "7e432ef6664a4871e3d85a56bd57051dadb52599",
+      "text": "Title: Flowing Epigenetic Robots and Systems",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "964ae080494075b2833bea661ee4adaf70438f94",
+      "text": "Title: FEATURES OF THE ORGANIZATION OF ACCOUNTING AND SETTLEMENT BANKING OPERATIONS IN BUDGETARY INSTITUTIONS: CURRENT PROBLEMS AND WAYS OF IMPROVEMENT\n\nAbstract: The organization of accounting and settlement banking operations in budgetary institutions plays a crucial role in ensuring the transparency, accountability, and efficiency of public finance management. In the context of the development of the digital economy and ongoing reforms in the public administration sector of Ukraine, the importance of improving these processes is growing significantly. The modern model of public governance requires prompt control over the movement of budgetary funds, the formation of reliable financial reporting, and the ability to make data-driven managerial decisions. Therefore, accounting and settlement operations are no longer limited to the technical sphere but become strategic instruments of financial management in budgetary institutions. However, current practice reveals a range of systemic challenges, including fragmented regulatory support, methodological inconsistency, information decentralization, and insufficient digital integration, which reduce the effectiveness of public finance administration and complicate the creation of a unified information environment. These issues collectively determine the relevance of researching approaches to improving the organization of accounting and settlement operations in the public sector.\nThe aim of the study is to systematize theoretical and methodological approaches to the organization of accounting and settlement banking operations in budgetary institutions, identify the key issues that hinder their effective implementation, and substantiate practical directions for their improvement in line with digital transformation trends.\nThe methodological basis of the study consists of the principles of systematicity, coherence, and multilevel analysis. The accounting process is examined in the unity of its regulatory, organizational, financial, and informational components. The research employs comparative analysis to reveal differences in accounting practices, logical generalization to identify systemic dysfunctions, and content analysis of regulatory frameworks and scholarly publications. The institutional-functional approach is applied to determine the role of the State Treasury Service in ensuring the uniformity of accounting policies across budgetary institutions. The theoretical foundation includes scientific works addressing three interrelated domains: the regulatory-legal dimension, the methodological aspect of accounting policy formation, and the technological direction related to the digitalization of public sector accounting.\nThe study reveals that the existing system of accounting and settlement banking operations in budgetary institutions is characterized by four interdependent dysfunctions. Regulatory fragmentation manifests as inconsistencies and overlaps in legal acts, which leads to ambiguity in applying national accounting standards. Methodological inconsistency in forming accounting policy results in differences in approaches to recording transactions across various budgetary funds, reducing the comparability and analytical value of financial information. Information fragmentation occurs due to the parallel use of several unintegrated accounting platforms, causing data duplication and delays in reporting. Additionally, insufficient digital literacy among accounting personnel hinders the implementation of electronic accounting systems.\nTo address these challenges, the research proposes a set of interconnected improvement strategies: regulatory and methodological unification of accounting rules; development of a unified accounting policy for the public sector; establishment of an integrated digital accounting platform connecting internal institutional systems with the State Treasury Service; and implementation of continuous professional training aimed at enhancing the digital competencies of accounting personnel.\nThe effective organization of accounting and settlement banking operations in budgetary institutions requires a transition from fragmented management practices to a unified and digitally integrated system. The implementation of the proposed measures will contribute to strengthening financial discipline, improving transparency in the use of public funds, and creating a coherent information space that ensures the sustainability and adaptability of the state financial system in a rapidly changing external environment.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "2b1c3da7d554d51139fa24778ab0e3a63d0e169d",
+      "text": "Title: Digital Soil Mapping in a Changing World",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "ddd7d0761e4cbe4bcea4c71eb1bdbecab019a2c7",
+      "text": "Title: Cognitive Radar Signal Processing",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+      "text": "Title: Measure to Measure: Additional Lengths Using Educative Music Therapy to Increase the Math Aptitude and Social Competency of the Forgotten Middle",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "c4f0ad526ea1ce8e9053ecf13ced28e38fcfba27",
+      "text": "Title: Human-computer interaction - INTERACT 2007 : 11th IFIP TC 13 International Conference, Rio de Janeiro, Brazil, September 10-14, 2007 : proceedings",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "50588e3be5d3bffa8d9adab31b8030f8aca98ef3",
+      "text": "Title: An ecosystem dynamic model for the valuation of externalities of fishing activities",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "text": "Title: Computer and information sciences : ISCIS 2004, 19th international symposium, Kemer-Antalya, Turkey, October 27-29, 2004 : proceedings",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "931639f03c0c9e75a1be670df16cf7dabcbcf2df",
+      "text": "Title: Young Children’s Photographs of Addition in the School Environment\n\nAbstract: Young children often face difficulty in acquiring Mathematics concepts. This study examined how photograph assist young children to understand the concept of early number and engage in addition activities within classroom learning. The study employed case study research design and involved six children (aged six years) in one preschool centre. Data was collected using observation, informal interviews and analysis of photograph produced by the focus group whilst engaged in various addition activities. The findings showed that photographs function as visual mathematical representations that facilitate and reinforce young children’s understanding of addition concept. The study implicated that young children’s creation of visual mathematical representations is an essential learning approach among young children and could be best assisted by the use of information technology and communication applications. Introduction Representation is vital in teaching and learning mathematics. Mathematics educators worldwide utilize various forms of representations including physical and virtual manipulatives, number lines, pictures, written and spoken symbols (Ahmad, Tarmizi, & Nawawi, 2010; Elia, Gagatsis, and Demetriou, 2007). As a result, students use various types of representation to access mathematical ideas and solve mathematical tasks. The study by Mohamed & Johnny (2010) reporting on students’ heavy reliance on a particular form of representation (i.e. symbols) raise concern among mathematics educators; because researchers strongly put emphasis on the link between children’s facility in a variety of representation and their mathematical understanding (Lesh, Post, & Behr, 1987). Research highlights the positive impacts of multiple representation use (including physical, verbal and written symbols) in mathematics teaching and learning: by supporting communication of mathematical thinking, understanding of concepts and the solving of various mathematic problems (Elia et al., 2007). Despite the positive function of multiple representation use as reported in a number of studies, little is International Journal of Academic Research in Business and Social Sciences Vol. 9 , No. 8, August, 2019, E-ISSN: 2222-6990 © 2019 HRMARS 3 reported about visual representations created in early year’s mathematics (Crespo & Kyriakides, 2007; Woleck, 2001) particularly with regards to the use of photographs that gave insight into young children’s understanding of addition concepts. Research Background Zarzycki (2004) indicate the importance of visualization in teaching and learning mathematics. “We could not even imagine introducing many mathematical concepts without illustrating them by pictures, drawings, graphs, etc.” (Zarzycki, 2004, p. 108), especially to young children who are more visual than adults. Presmeg (2006) suggested that visualization involves the creation of visual images which guide the creation of mathematical representations. The advancement of technology enables both teachers and students to benefit from technology (Lokman, Nasri & Khalid, 2019; Khalid, Karim & Husnin, 2018; Ruhil Amal, Nor Fariza & Affendi, 2017; George & Archontia, 2013; Khalid, Nawawi & Roslan 2009). In particular, technology assisted learning has been found useful to enhance children’s learning (Bakar & Nasri, 2018). For example, digital cameras, which offer an aid to the quick generation of visual images when teachers incorporate them into instruction and children utilize them to explore various mathematics concepts. The purpose of including visualization with technology in classrooms is to provide visual representations that facilitate communication about important mathematics concepts to help students develop deeper understanding. Since this technological device is associated with many special features, it offers unlimited opportunities to be integrated into the learning environment to help students “see the beauty and excitement in mathematics” (Cuoco & Curcio, 2001, p. xiii) A large number of studies related to digital camera usage, photography and visual imagery in the early learning environment have documented that integrating photographs with learning has positive impacts on children. For example, combining photography with literacy is helpful in developing language and literacy skills (Britsch, 2010; Byrnes & Wasik, 2009; Marinak, Strickland, & Keat, 2010). Researchers found that photographic activities encouraged meaningful discussion (Marinak et al., 2010) and led students to use longer sentences to describe pictures (Britsch, 2010). Therefore, more studies using digital cameras should be conducted to identify their utility in other subject areas. Researchers are increasingly encouraging various photographic activities to enhance learning of mathematics among students of all ages (Bragg & Nicol, 2011; Furner & Marinas, 2012; Northcote, 2011; Orr & Suh, 2013). Problem-posing and problemsolving using photographs helped develop students’ awareness of mathematics in everyday objects around them as they were searching for images to create the questions and problems (Bragg & Nicol, 2011; Orr & Suh, 2013). In fact, capturing outdoor images is a useful way to bring the mathematics found outside of the classroom into the learning space. Such activities provide a more meaningful way to make useful links between mathematical concepts and objects in the surrounding areas (Northcote, 2011) rather than being dependent on teachers to show the connection (Furner & Marinas, 2012). Exploring mathematics through photography permits students to realize and understand that mathematics is related to their everyday lives (Bragg & Nicol, 2011), therefore, enabling students to experience the International Journal of Academic Research in Business and Social Sciences Vol. 9 , No. 8, August, 2019, E-ISSN: 2222-6990 © 2019 HRMARS 4 beauty of mathematics (Cuoco & Curcio, 2001). Moreover, photos captured by students are often familiar objects found within their educational setting, thereby lessening the cognitive load related to understanding unfamiliar objects. Photography provides great opportunities for children to be active and explore the objects as well as various everyday phenomena in the environment. Further, the photo-taking activities can assist in making learning relevant and natural to the children. In taking their own photos, they are deciding what is important and constructing their own meaning of their experiences (Piaget, 1955). This is important in providing them with the opportunity to optimize their learning experiences. These experiences are imperative in the process of learning mathematical concepts. Researchers emphasize the importance of developing children’s arithmetic skills in the early years of instruction (Patel & Canobi, 2010; Resnick, 1992). Skills learned in the early years of school are important knowledge for use in many aspects of everyday life as well as for use in future learning and life. Children’s early counting experiences provide an important base towards understanding addition concepts (Gelman & Gallistel, 1978). Since teachers reported that their pre-schools’ children faced difficulties understanding the addition concept and continued struggling with this basic operation in Year One (Tyng, Zaman, & Ahmad, 2011), it is important to discover if visualization can help facilitate understanding of the addition topic in similar ways that it facilitates students understanding of other topics such as geometry. The Study This study aimed to examine how visual mathematical representations assist young children to understand the concept of early number and engage in addition activities within classroom learning. The study was underpinned by the significance of visual representation in mathematics learning and the necessity to use technology tools in classroom learning of young children. Although researchers have been investigating children’s representation usage for mathematics learning, researchers have focused mainly on examining either a particular form or neglected the utilization of visual representation. Furthermore, the inclusion of technological tools in this study (digital cameras) is essential to equip children with new and dynamic ways of learning and being prepared for the challenges of life in the 21st century. Specifically, the study explored the ways in which young children used photographs to portray addition concepts by addressing the following research questions: 1. How do young children use photographs to represent numbers and addition concept? 2. In which ways and to what extent do young children’s photographs portrayed their understanding of numbers and addition? Methodology This study was conducted in a ‘pre-school’ in Malacca, Malaysia. Six children (aged six years old) from the same classroom were selected to participate in this study. The researcher worked only with this group of children throughout the study, and the teacher continued lesson with the other children. For the past two months, the children had been learning how to count. They had not been taught the concept of International Journal of Academic Research in Business and Social Sciences Vol. 9 , No. 8, August, 2019, E-ISSN: 2222-6990 © 2019 HRMARS 5 addition. For this study, the researcher acted as the teacher to this focus group. At the beginning, the researcher introduced and modelled the addition processes using concrete materials. Then in the practice task, the children together with the researcher modelled addition situation using various objects. Next, the children were prompted to produce photographs that represent their ideas relating to addition concept. By prompting the children to represent their own meaning of addition through photographs, children were actively exploring and building their own understanding rather than passively receiving knowledge from the researcher. As Goldin and Shteingold (2001) state, internal and external represent",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "78ae0fba0ccad9df5becacff9c295fe26cb501c1",
+      "text": "Title: Investigation on perceived environmental quality in existing high school buildings : focus on thermal comfort measurements and survey",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+      "text": "Title: Techno / natural interfacing: walking and mapping in the age of climate change.",
+      "relevance_score": null
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7e432ef6664a4871e3d85a56bd57051dadb52599",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper does not directly compare PUM-Net with established RAG methods like REALM or RETRO. However, the provided related work text (ID=7e432ef...) is titled 'Flowing Epigenetic Robots and Systems' and contains no relevant information about the paper under review, RAG methods, or PUM-Net. Therefore, there is no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "964ae080494075b2833bea661ee4adaf70438f94",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (PUM-Net) not comparing with RAG methods like REALM or RETRO. The related work (about accounting in budgetary institutions) is entirely unrelated to the paper's content and provides no evidence to verify the claim. Therefore, the evidence is missing and unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2b1c3da7d554d51139fa24778ab0e3a63d0e169d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper does not compare PUM-Net with REALM or RETRO. The related work evidence does not contain information about comparisons or lack thereof; it is about digital soil mapping and is unrelated. The claim cannot be verified or supported.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ddd7d0761e4cbe4bcea4c71eb1bdbecab019a2c7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work provided is about Cognitive Radar Signal Processing, which is unrelated to the paper being reviewed (about PUM-Net and RAG methods like REALM or RETRO). There is no evidence in the provided related work to verify the reviewer's claim about the lack of comparison with established RAG methods.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (PUM-Net) lacking direct comparison with REALM or RETRO. The related work evidence (ID 7dc6af40...) is about music therapy and math aptitude, which is unrelated to the paper's topic of memory-augmented language models. No evidence in the provided texts supports or contradicts the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c4f0ad526ea1ce8e9053ecf13ced28e38fcfba27",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper does not compare PUM-Net with REALM or RETRO. However, the provided related work is about human-computer interaction and is unrelated to the paper's content. There is no evidence to support or contradict the claim about the paper's comparisons, making the evidence insufficient.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "50588e3be5d3bffa8d9adab31b8030f8aca98ef3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper does not directly compare PUM-Net with RAG methods like REALM or RETRO. The provided related work is about an ecosystem dynamic model for fishing externalities, which is entirely unrelated to the paper's content on PUM-Net, SSMs, or RAG methods. There is no evidence in the related work to verify or contradict the claim, making it unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper does not directly compare PUM-Net with REALM or RETRO. However, the provided related work evidence is a book title for a symposium on computer and information sciences, with no content about the paper's comparisons or about REALM/RETRO. There is no textual evidence in the related work to verify or contradict the reviewer's claim, making the evidence insufficient.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "931639f03c0c9e75a1be670df16cf7dabcbcf2df",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper lacking direct comparisons with REALM or RETRO. However, the provided related work paper is entirely unrelated (about children's photographs in mathematics education) and offers no evidence about the paper being reviewed or the mentioned RAG methods. Thus, there is insufficient evidence to evaluate the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "78ae0fba0ccad9df5becacff9c295fe26cb501c1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper (PUM-Net) not comparing with REALM or RETRO. The related work provided is about a different topic (thermal comfort in high school buildings), so it contains no evidence to verify the claim. Therefore, the claim is unverifiable based on the given evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (claim=1) but provides no evidence or proof (proof=0). The related work provided is about a completely different topic (walking and mapping in the age of climate change), which is unrelated to the paper's content on PUM-Net and RAG methods. Therefore, there is no evidence to support or contradict the claim, making the evidence insufficient for verification.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "7e432ef6664a4871e3d85a56bd57051dadb52599",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty in integrating a dual-memory system into SSMs. The paper text describes PUM-Net's dual-memory system (internal and external) as novel, but the provided related work (Flowing Epigenetic Robots and Systems) is unrelated and offers no evidence about SSMs or dual-memory systems. Without relevant evidence, the claim cannot be evaluated.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "964ae080494075b2833bea661ee4adaf70438f94",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (PUM-Net) stating novelty in integrating a dual-memory system into SSMs. The related work is about accounting in budgetary institutions, which is completely unrelated. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "2b1c3da7d554d51139fa24778ab0e3a63d0e169d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's contribution is novel in integrating a dual-memory system into SSMs. However, the provided related work is about 'Digital Soil Mapping in a Changing World', which is entirely unrelated to the paper's topic (SSMs, memory systems, LLMs). There is no evidence in the related work to support or contradict the claim about novelty in SSM memory integration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ddd7d0761e4cbe4bcea4c71eb1bdbecab019a2c7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the novelty of integrating a dual-memory system into SSMs. The provided related work is about cognitive radar signal processing, which is entirely unrelated to SSMs, dual-memory systems, or the paper being reviewed. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the novelty of integrating a dual-memory system into SSMs. However, the related work (ID=7dc6af4070c55a223ffd54bc474ae9016a482699) is entirely unrelated; it is about music therapy for math and social competency, with no mention of SSMs, memory systems, or the paper's topic. There is no evidence in the provided related work to evaluate the claim's validity or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c4f0ad526ea1ce8e9053ecf13ced28e38fcfba27",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty in integrating a dual-memory system into SSMs. The related work provided is a conference proceedings on human-computer interaction (INTERACT 2007) and contains no information about State Space Models, memory systems, or the specific contributions of PUM-Net. There is no evidence in the provided text to support, partially support, or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "50588e3be5d3bffa8d9adab31b8030f8aca98ef3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the novelty of integrating a dual-memory system into SSMs. The related work evidence is from a completely different field (an ecosystem dynamic model for fishing externalities) and provides no information about SSMs or memory systems in machine learning. Therefore, there is no evidence to support or contradict the claim, making it insufficient for evaluation.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work provided is a proceedings volume from ISCIS 2004, which contains no information about the reviewed paper's claim regarding a dual-memory system integration into SSMs. There is no evidence to evaluate the claim's novelty or validity.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "931639f03c0c9e75a1be670df16cf7dabcbcf2df",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim 'The contribution lies in the integration of a dual-memory system into SSMs, which is novel in scope' is a reviewer claim about the paper being reviewed. However, the related work evidence (ID=931639f03c0c9e75a1be670df16cf7dabcbcf2df) is about young children's photographs for mathematics learning, which is entirely unrelated to SSMs, dual-memory systems, or the paper's contributions. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "78ae0fba0ccad9df5becacff9c295fe26cb501c1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim 'The contribution lies in the integration of a dual-memory system into SSMs, which is novel in scope' is a reviewer's assessment of the paper's novelty. The provided related work is about environmental quality in high school buildings, which is entirely unrelated to the paper's topic (SSMs and memory systems). There is no evidence in the related work to support or contradict the claim about novelty.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty in integrating a dual-memory system into SSMs, but the provided related work text is entirely about a different topic (Techno/natural interfacing, walking and mapping in climate change). There is no overlap in subject matter, methodology, or context to evaluate the claim. The evidence is missing or unverifiable for this specific claim about the paper's contribution.",
+      "relevance_score": null
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "Despite the emphasis on external memory integration, the paper does not directly compare PUM-Net with established RAG methods like REALM or RETRO.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "7e432ef6664a4871e3d85a56bd57051dadb52599",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper does not directly compare PUM-Net with established RAG methods like REALM or RETRO. However, the provided related work text (ID=7e432ef...) is titled 'Flowing Epigenetic Robots and Systems' and contains no relevant information about the paper under review, RAG methods, or PUM-Net. Therefore, there is no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "964ae080494075b2833bea661ee4adaf70438f94",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (PUM-Net) not comparing with RAG methods like REALM or RETRO. The related work (about accounting in budgetary institutions) is entirely unrelated to the paper's content and provides no evidence to verify the claim. Therefore, the evidence is missing and unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2b1c3da7d554d51139fa24778ab0e3a63d0e169d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper does not compare PUM-Net with REALM or RETRO. The related work evidence does not contain information about comparisons or lack thereof; it is about digital soil mapping and is unrelated. The claim cannot be verified or supported.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ddd7d0761e4cbe4bcea4c71eb1bdbecab019a2c7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work provided is about Cognitive Radar Signal Processing, which is unrelated to the paper being reviewed (about PUM-Net and RAG methods like REALM or RETRO). There is no evidence in the provided related work to verify the reviewer's claim about the lack of comparison with established RAG methods.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (PUM-Net) lacking direct comparison with REALM or RETRO. The related work evidence (ID 7dc6af40...) is about music therapy and math aptitude, which is unrelated to the paper's topic of memory-augmented language models. No evidence in the provided texts supports or contradicts the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c4f0ad526ea1ce8e9053ecf13ced28e38fcfba27",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper does not compare PUM-Net with REALM or RETRO. However, the provided related work is about human-computer interaction and is unrelated to the paper's content. There is no evidence to support or contradict the claim about the paper's comparisons, making the evidence insufficient.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "50588e3be5d3bffa8d9adab31b8030f8aca98ef3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper does not directly compare PUM-Net with RAG methods like REALM or RETRO. The provided related work is about an ecosystem dynamic model for fishing externalities, which is entirely unrelated to the paper's content on PUM-Net, SSMs, or RAG methods. There is no evidence in the related work to verify or contradict the claim, making it unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper does not directly compare PUM-Net with REALM or RETRO. However, the provided related work evidence is a book title for a symposium on computer and information sciences, with no content about the paper's comparisons or about REALM/RETRO. There is no textual evidence in the related work to verify or contradict the reviewer's claim, making the evidence insufficient.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "931639f03c0c9e75a1be670df16cf7dabcbcf2df",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper lacking direct comparisons with REALM or RETRO. However, the provided related work paper is entirely unrelated (about children's photographs in mathematics education) and offers no evidence about the paper being reviewed or the mentioned RAG methods. Thus, there is insufficient evidence to evaluate the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "78ae0fba0ccad9df5becacff9c295fe26cb501c1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper (PUM-Net) not comparing with REALM or RETRO. The related work provided is about a different topic (thermal comfort in high school buildings), so it contains no evidence to verify the claim. Therefore, the claim is unverifiable based on the given evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (claim=1) but provides no evidence or proof (proof=0). The related work provided is about a completely different topic (walking and mapping in the age of climate change), which is unrelated to the paper's content on PUM-Net and RAG methods. Therefore, there is no evidence to support or contradict the claim, making the evidence insufficient for verification.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "7e432ef6664a4871e3d85a56bd57051dadb52599",
+        "964ae080494075b2833bea661ee4adaf70438f94",
+        "2b1c3da7d554d51139fa24778ab0e3a63d0e169d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "7e432ef6664a4871e3d85a56bd57051dadb52599",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "964ae080494075b2833bea661ee4adaf70438f94",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "2b1c3da7d554d51139fa24778ab0e3a63d0e169d",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The contribution lies in the integration of a dual-memory system into SSMs, which is novel in scope.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "7e432ef6664a4871e3d85a56bd57051dadb52599",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty in integrating a dual-memory system into SSMs. The paper text describes PUM-Net's dual-memory system (internal and external) as novel, but the provided related work (Flowing Epigenetic Robots and Systems) is unrelated and offers no evidence about SSMs or dual-memory systems. Without relevant evidence, the claim cannot be evaluated.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "964ae080494075b2833bea661ee4adaf70438f94",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (PUM-Net) stating novelty in integrating a dual-memory system into SSMs. The related work is about accounting in budgetary institutions, which is completely unrelated. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2b1c3da7d554d51139fa24778ab0e3a63d0e169d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's contribution is novel in integrating a dual-memory system into SSMs. However, the provided related work is about 'Digital Soil Mapping in a Changing World', which is entirely unrelated to the paper's topic (SSMs, memory systems, LLMs). There is no evidence in the related work to support or contradict the claim about novelty in SSM memory integration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ddd7d0761e4cbe4bcea4c71eb1bdbecab019a2c7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the novelty of integrating a dual-memory system into SSMs. The provided related work is about cognitive radar signal processing, which is entirely unrelated to SSMs, dual-memory systems, or the paper being reviewed. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7dc6af4070c55a223ffd54bc474ae9016a482699",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the novelty of integrating a dual-memory system into SSMs. However, the related work (ID=7dc6af4070c55a223ffd54bc474ae9016a482699) is entirely unrelated; it is about music therapy for math and social competency, with no mention of SSMs, memory systems, or the paper's topic. There is no evidence in the provided related work to evaluate the claim's validity or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c4f0ad526ea1ce8e9053ecf13ced28e38fcfba27",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty in integrating a dual-memory system into SSMs. The related work provided is a conference proceedings on human-computer interaction (INTERACT 2007) and contains no information about State Space Models, memory systems, or the specific contributions of PUM-Net. There is no evidence in the provided text to support, partially support, or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "50588e3be5d3bffa8d9adab31b8030f8aca98ef3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the novelty of integrating a dual-memory system into SSMs. The related work evidence is from a completely different field (an ecosystem dynamic model for fishing externalities) and provides no information about SSMs or memory systems in machine learning. Therefore, there is no evidence to support or contradict the claim, making it insufficient for evaluation.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "1a24daae81da97d6b5d0751407fef8b0528d2ef2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work provided is a proceedings volume from ISCIS 2004, which contains no information about the reviewed paper's claim regarding a dual-memory system integration into SSMs. There is no evidence to evaluate the claim's novelty or validity.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "931639f03c0c9e75a1be670df16cf7dabcbcf2df",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim 'The contribution lies in the integration of a dual-memory system into SSMs, which is novel in scope' is a reviewer claim about the paper being reviewed. However, the related work evidence (ID=931639f03c0c9e75a1be670df16cf7dabcbcf2df) is about young children's photographs for mathematics learning, which is entirely unrelated to SSMs, dual-memory systems, or the paper's contributions. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "78ae0fba0ccad9df5becacff9c295fe26cb501c1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim 'The contribution lies in the integration of a dual-memory system into SSMs, which is novel in scope' is a reviewer's assessment of the paper's novelty. The provided related work is about environmental quality in high school buildings, which is entirely unrelated to the paper's topic (SSMs and memory systems). There is no evidence in the related work to support or contradict the claim about novelty.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "98bef9e7cde190d7f5a692dfc90e4b0eb15a936c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty in integrating a dual-memory system into SSMs, but the provided related work text is entirely about a different topic (Techno/natural interfacing, walking and mapping in climate change). There is no overlap in subject matter, methodology, or context to evaluate the claim. The evidence is missing or unverifiable for this specific claim about the paper's contribution.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "7e432ef6664a4871e3d85a56bd57051dadb52599",
+        "964ae080494075b2833bea661ee4adaf70438f94",
+        "2b1c3da7d554d51139fa24778ab0e3a63d0e169d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "7e432ef6664a4871e3d85a56bd57051dadb52599",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "964ae080494075b2833bea661ee4adaf70438f94",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "2b1c3da7d554d51139fa24778ab0e3a63d0e169d",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 11,
+    "pairs_attempted": 22,
+    "pairs_completed": 22,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 11.0
+    }
+  },
+  "errors": []
+}

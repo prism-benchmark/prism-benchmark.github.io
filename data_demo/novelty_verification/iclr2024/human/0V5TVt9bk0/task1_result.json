@@ -1,0 +1,54 @@
+{
+  "paper": {
+    "core_task": "Benchmarking multimodal large language models on low-level visual perception and understanding",
+    "contributions": [
+      {
+        "name": "A benchmark for low-level perception ability of MLLMs",
+        "author_claim_text": "We build a benchmark for MLLMs on low-level perception ability. To achieve this, we construct a first-of-its-kind balanced and comprehensive LLVisionQA dataset with 2,990 images with one low-level-related question-answer pair for each image.",
+        "description": "A new VQA dataset, LLVisionQA, is constructed with 2,990 images and questions covering diverse low-level visual concerns to evaluate the perception ability of MLLMs.",
+        "source_hint": "Abstract"
+      },
+      {
+        "name": "A benchmark process for low-level description ability of MLLMs",
+        "author_claim_text": "We define a benchmark process to evaluate the low-level description ability of MLLMs, including an LLDescription dataset of 499 images with expert-labelled long golden quality descriptions, and a GPT-assisted evaluation.",
+        "description": "A benchmark process and the LLDescribe dataset of 499 images with expert-written golden descriptions are introduced to evaluate the low-level description ability of MLLMs using GPT-assisted scoring.",
+        "source_hint": "Abstract"
+      },
+      {
+        "name": "A softmax-based quality prediction strategy for MLLMs",
+        "author_claim_text": "To evaluate precise quality assessment ability, we propose a unified softmax-based quality prediction strategy for all MLLMs based on their probability outputs.",
+        "description": "A unified strategy using softmax pooling on the logits of 'good' and 'poor' tokens is proposed to enable MLLMs to produce quantifiable quality scores for image quality assessment.",
+        "source_hint": "Abstract"
+      }
+    ],
+    "key_terms": [
+      "multimodal large language models",
+      "low-level visual perception",
+      "image quality assessment",
+      "benchmark",
+      "Q-Bench",
+      "LLVisionQA",
+      "LLDescribe",
+      "softmax pooling",
+      "visual distortions",
+      "aesthetic attributes",
+      "zero-shot evaluation"
+    ],
+    "must_have_entities": [
+      "LLVisionQA",
+      "LLDescribe",
+      "Q-Bench",
+      "CLIP-ViT-Large-14"
+    ]
+  },
+  "review": {
+    "novelty_claims": [],
+    "all_citations_raw": [
+      "Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond",
+      "Improved Baselines with Visual Instruction Tuning",
+      "[1]",
+      "[2]",
+      "[3]"
+    ]
+  }
+}

@@ -1,0 +1,768 @@
+---
+import type { DemoDataset, DemoDimension, DemoSource } from "../lib/demo-data";
+
+/* eslint-disable @typescript-eslint/no-explicit-any -- The component renders compact build-time JSON with dimension-specific shapes. */
+
+interface Props {
+  dataset: DemoDataset;
+}
+
+const { dataset } = Astro.props;
+
+const dimensionLabels: Record<DemoDimension, string> = {
+  depth: "Depth",
+  novelty: "Novelty",
+  flaws: "Flaws",
+  constructiveness: "Constructiveness",
+};
+
+const sourceLabels: Record<DemoSource, string> = {
+  human: "Human",
+  sea: "SEA",
+  tree: "Tree",
+  reviewer2: "Reviewer2",
+  deepreview: "DeepReview",
+  cyclereview: "CycleReview",
+};
+
+const constructivenessDims = [
+  "Action",
+  "Specific",
+  "Justified",
+  "Solution",
+  "Tone",
+];
+const constructivenessKeys = [
+  "D1_actionability_mean",
+  "D2_specificity_mean",
+  "D3_justification_mean",
+  "D4_solution_mean",
+  "D5_tone_mean",
+];
+
+function formatMetric(value: unknown) {
+  if (typeof value !== "number" || !Number.isFinite(value)) return "n/a";
+  return value % 1 === 0 ? String(value) : value.toFixed(2);
+}
+
+function barWidth(value: unknown, max = 1) {
+  const number = typeof value === "number" && Number.isFinite(value) ? value : 0;
+  return Math.max(0, Math.min(100, (number / max) * 100));
+}
+
+type DepthPanel = {
+  kind: "depth";
+  argumentCount: number;
+  premiseCount: number;
+  premiseRatio: unknown;
+  groundingCounts: [string, number][];
+  premiseMax: number;
+  aspects: { aspect: string; items: any[] }[];
+};
+
+type NoveltyPanel = {
+  kind: "novelty";
+  task: string;
+  contributions: any[];
+  claims: {
+    id: string;
+    text: string;
+    stance: string;
+    finalScore: unknown;
+    labels: [string, number][];
+    evidence: any[];
+  }[];
+  priorWorks: any[];
+};
+
+type FlawsPanel = {
+  kind: "flaws";
+  rankings: any[];
+  topics: { topic: string; items: any[] }[];
+};
+
+type ConstructivenessPanel = {
+  kind: "constructiveness";
+  reviewers: {
+    reviewerId: string;
+    metrics: any;
+    dimBars: { label: string; value: unknown }[];
+    comments: any[];
+  }[];
+};
+
+type EmptyPanel = { kind: "empty" };
+
+type PanelEntry = {
+  conference: string;
+  source: DemoSource;
+  dimension: DemoDimension;
+  hidden: boolean;
+  data:
+    | EmptyPanel
+    | DepthPanel
+    | NoveltyPanel
+    | FlawsPanel
+    | ConstructivenessPanel;
+};
+
+const initialConference = dataset.conferences[0];
+const initialSource: DemoSource = "sea";
+const initialAvailable =
+  dataset.availability[initialConference]?.[initialSource] ?? [];
+const initialDimension: DemoDimension = (initialAvailable.includes("depth")
+  ? "depth"
+  : (initialAvailable[0] ?? "depth")) as DemoDimension;
+
+const panels: PanelEntry[] = [];
+
+for (const conference of dataset.conferences) {
+  for (const source of dataset.sources) {
+    for (const dimension of dataset.dimensions) {
+      const record = dataset.records[conference]?.[source]?.[dimension];
+      const hidden = !(
+        conference === initialConference &&
+        source === initialSource &&
+        dimension === initialDimension
+      );
+
+      if (!record) {
+        panels.push({
+          conference,
+          source,
+          dimension,
+          hidden,
+          data: { kind: "empty" },
+        });
+        continue;
+      }
+
+      if (dimension === "depth") {
+        const data: any = record;
+        const argumentsList: any[] = data.arguments ?? [];
+        const aspectMap: Record<string, any[]> = {};
+        for (const item of argumentsList) {
+          const key = item.aspect || "Other";
+          (aspectMap[key] = aspectMap[key] ?? []).push(item);
+        }
+        panels.push({
+          conference,
+          source,
+          dimension,
+          hidden,
+          data: {
+            kind: "depth",
+            argumentCount: data.argumentCount,
+            premiseCount: data.premiseCount,
+            premiseRatio: data.premiseRatio,
+            groundingCounts: Object.entries(data.groundingCounts ?? {}) as [
+              string,
+              number,
+            ][],
+            premiseMax: data.premiseCount || 1,
+            aspects: Object.entries(aspectMap).map(([aspect, items]) => ({
+              aspect,
+              items,
+            })),
+          },
+        });
+      } else if (dimension === "novelty") {
+        const data: any = record;
+        panels.push({
+          conference,
+          source,
+          dimension,
+          hidden,
+          data: {
+            kind: "novelty",
+            task: data.task,
+            contributions: data.contributions ?? [],
+            claims: (data.claims ?? []).map((claim: any) => ({
+              id: claim.id,
+              text: claim.text,
+              stance: claim.stance,
+              finalScore: claim.finalScore,
+              labels: Object.entries(claim.labels ?? {}) as [string, number][],
+              evidence: claim.evidence ?? [],
+            })),
+            priorWorks: data.priorWorks ?? [],
+          },
+        });
+      } else if (dimension === "flaws") {
+        const data: any = record;
+        const issues: any[] = data.issues ?? [];
+        const topicMap: Record<string, any[]> = {};
+        for (const item of issues) {
+          (topicMap[item.topic] = topicMap[item.topic] ?? []).push(item);
+        }
+        panels.push({
+          conference,
+          source,
+          dimension,
+          hidden,
+          data: {
+            kind: "flaws",
+            rankings: data.rankings ?? [],
+            topics: Object.entries(topicMap).map(([topic, items]) => ({
+              topic,
+              items,
+            })),
+          },
+        });
+      } else {
+        const data: any = record;
+        panels.push({
+          conference,
+          source,
+          dimension,
+          hidden,
+          data: {
+            kind: "constructiveness",
+            reviewers: (data.reviewers ?? []).map((reviewer: any) => ({
+              reviewerId: reviewer.reviewerId,
+              metrics: reviewer.metrics ?? {},
+              dimBars: constructivenessDims.map((label, index) => ({
+                label,
+                value: reviewer.metrics?.[constructivenessKeys[index]],
+              })),
+              comments: reviewer.comments ?? [],
+            })),
+          },
+        });
+      }
+    }
+  }
+}
+
+const metadataByConference: Record<string, any> = {};
+for (const conference of dataset.conferences) {
+  metadataByConference[conference] =
+    dataset.records[conference]?.human?.constructiveness?.metadata ?? null;
+}
+
+const availabilityJson = JSON.stringify(dataset.availability);
+const paperIdsJson = JSON.stringify(dataset.paperIds);
+const metadataJson = JSON.stringify(metadataByConference);
+---
+
+<div
+  class="demo-explorer"
+  data-initial-conference={initialConference}
+  data-initial-source={initialSource}
+  data-initial-dimension={initialDimension}
+>
+  <div class="demo-toolbar" aria-label="Demo controls">
+    <label>
+      <span>Conference</span>
+      <select data-role="conference">
+        {
+          dataset.conferences.map((item) => (
+            <option value={item} selected={item === initialConference}>
+              {item.toUpperCase()}
+            </option>
+          ))
+        }
+      </select>
+    </label>
+    <label>
+      <span>Reviewer source</span>
+      <select data-role="source">
+        {
+          dataset.sources.map((item) => (
+            <option value={item} selected={item === initialSource}>
+              {sourceLabels[item]}
+            </option>
+          ))
+        }
+      </select>
+    </label>
+  </div>
+
+  <div class="demo-tabs" role="tablist" aria-label="PRISM dimensions">
+    {
+      dataset.dimensions.map((item) => (
+        <button
+          aria-selected={item === initialDimension ? "true" : "false"}
+          class={item === initialDimension ? "active" : ""}
+          data-role="dimension"
+          data-dimension={item}
+          type="button"
+        >
+          {dimensionLabels[item]}
+        </button>
+      ))
+    }
+  </div>
+
+  <section class="demo-paper-strip" aria-label="Selected paper metadata">
+    <div class="demo-metric">
+      <span>Paper ID</span>
+      <strong data-meta="paperId">{dataset.paperIds[initialConference]}</strong>
+    </div>
+    <div class="demo-metric">
+      <span>Decision</span>
+      <strong data-meta="decision"
+        >{metadataByConference[initialConference]?.decision ?? "n/a"}</strong
+      >
+    </div>
+    <div class="demo-metric">
+      <span>Avg rating</span>
+      <strong data-meta="avgRating"
+        >{
+          formatMetric(metadataByConference[initialConference]?.avg_rating)
+        }</strong
+      >
+    </div>
+    <div class="demo-metric">
+      <span>Confidence</span>
+      <strong data-meta="avgConfidence"
+        >{
+          formatMetric(metadataByConference[initialConference]?.avg_confidence)
+        }</strong
+      >
+    </div>
+    <div class="demo-metric">
+      <span>Reviewers</span>
+      <strong data-meta="numReviewers"
+        >{
+          formatMetric(metadataByConference[initialConference]?.num_reviewers)
+        }</strong
+      >
+    </div>
+  </section>
+
+  <div data-role="panels">
+    {
+      panels.map((panel) => (
+        <div
+          data-conference={panel.conference}
+          data-source={panel.source}
+          data-dimension={panel.dimension}
+          hidden={panel.hidden}
+        >
+          {panel.data.kind === "empty" && (
+            <div class="demo-empty">
+              <strong>
+                {dimensionLabels[panel.dimension]} is unavailable for this
+                selection.
+              </strong>
+              <span>
+                Choose another source or dimension to inspect the available
+                PRISM output.
+              </span>
+            </div>
+          )}
+
+          {panel.data.kind === "depth" && (
+            <div class="demo-panel-grid">
+              <section class="demo-card">
+                <h2>Argument Coverage</h2>
+                <div class="demo-metrics">
+                  <div class="demo-metric">
+                    <span>Arguments</span>
+                    <strong>{formatMetric(panel.data.argumentCount)}</strong>
+                  </div>
+                  <div class="demo-metric">
+                    <span>Premises</span>
+                    <strong>{formatMetric(panel.data.premiseCount)}</strong>
+                  </div>
+                  <div class="demo-metric">
+                    <span>Premise ratio</span>
+                    <strong>{formatMetric(panel.data.premiseRatio)}</strong>
+                  </div>
+                </div>
+                <h3>Grounding Distribution</h3>
+                {panel.data.groundingCounts.map(([label, count]) => (
+                  <div class="demo-row">
+                    <span>Grounding {label}</span>
+                    <span class="demo-bar" aria-hidden="true">
+                      <span
+                        style={`width: ${barWidth(Number(count), (panel.data as DepthPanel).premiseMax)}%`}
+                      />
+                    </span>
+                    <strong>{String(count)}</strong>
+                  </div>
+                ))}
+              </section>
+              <section class="demo-card demo-span">
+                <h2>Arguments By Aspect</h2>
+                <div class="demo-argument-list">
+                  {panel.data.aspects.map((group) => (
+                    <div
+                      class="demo-group"
+                      data-aspect={String(group.aspect).toLowerCase()}
+                    >
+                      <h3>{group.aspect}</h3>
+                      {group.items.map((item: any) => (
+                        <article class="demo-argument">
+                          <div>
+                            <span
+                              class="demo-chip"
+                              data-role={String(item.role).toLowerCase()}
+                            >
+                              {item.role}
+                            </span>
+                            {item.grounding !== null && (
+                              <span class="demo-chip muted">
+                                G{item.grounding}
+                              </span>
+                            )}
+                          </div>
+                          <p>{item.text}</p>
+                        </article>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </div>
+          )}
+
+          {panel.data.kind === "novelty" && (
+            <div class="demo-panel-grid">
+              <section class="demo-card">
+                <h2>Paper Task</h2>
+                <p>{panel.data.task || "No task summary available."}</p>
+                <h3>Contributions</h3>
+                {panel.data.contributions.map((item: any) => (
+                  <article class="demo-argument">
+                    <strong>{item.name}</strong>
+                    <p>{item.description}</p>
+                    <span class="demo-chip muted">{item.sourceHint}</span>
+                  </article>
+                ))}
+              </section>
+              <section class="demo-card demo-span">
+                <h2>Novelty Claims And Evidence</h2>
+                {panel.data.claims.map((claim) => (
+                  <article class="demo-claim">
+                    <div class="demo-claim-head">
+                      <strong>{claim.id}</strong>
+                      <span
+                        class="demo-chip demo-stance"
+                        data-stance={String(claim.stance).toLowerCase()}
+                      >
+                        {claim.stance}
+                      </span>
+                      <span class="demo-chip muted">
+                        score {formatMetric(claim.finalScore)}
+                      </span>
+                    </div>
+                    <p>{claim.text}</p>
+                    <div class="demo-evidence-grid">
+                      {claim.labels.map(([label, count]) => (
+                        <span
+                          class="demo-evidence"
+                          data-label={String(label).toLowerCase()}
+                        >
+                          {label}: {String(count)}
+                        </span>
+                      ))}
+                    </div>
+                    {claim.evidence.map((item: any) => (
+                      <p class="demo-evidence-note">
+                        <strong data-label={String(item.label).toLowerCase()}>
+                          {item.label}
+                        </strong>{" "}
+                        {item.explanation}
+                      </p>
+                    ))}
+                  </article>
+                ))}
+              </section>
+              <section class="demo-card demo-full">
+                <h2>Retrieved Prior Works</h2>
+                <div class="demo-prior-grid">
+                  {panel.data.priorWorks.map((work: any) => (
+                    <article class="demo-prior">
+                      <strong>{work.title}</strong>
+                      <span>
+                        {[work.venue, work.year].filter(Boolean).join(", ") ||
+                          "Unknown venue"}
+                      </span>
+                      <p>{work.abstract}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </div>
+          )}
+
+          {panel.data.kind === "flaws" && (
+            <div class="demo-panel-grid">
+              <section class="demo-card">
+                <h2>Reviewer Ranking</h2>
+                {panel.data.rankings.map((row: any) => (
+                  <div class="demo-ranking">
+                    <strong>{row.reviewer}</strong>
+                    <div class="demo-row">
+                      <span>Critical</span>
+                      <span class="demo-bar" aria-hidden="true">
+                        <span style={`width: ${barWidth(row.criticalRecall)}%`} />
+                      </span>
+                      <b>{formatMetric(row.criticalRecall)}</b>
+                    </div>
+                    <div class="demo-row">
+                      <span>Minor</span>
+                      <span class="demo-bar" aria-hidden="true">
+                        <span style={`width: ${barWidth(row.minorRecall)}%`} />
+                      </span>
+                      <b>{formatMetric(row.minorRecall)}</b>
+                    </div>
+                  </div>
+                ))}
+              </section>
+              <section class="demo-card demo-span">
+                <h2>Valid Issue Bank</h2>
+                {panel.data.topics.map((group) => (
+                  <div class="demo-group">
+                    <h3>{group.topic}</h3>
+                    {group.items.map((issue: any) => (
+                      <article class="demo-argument">
+                        <div>
+                          <span class="demo-chip">{issue.id}</span>
+                          <span
+                            class={`demo-chip severity-${String(issue.severity).toLowerCase()}`}
+                          >
+                            {issue.severity}
+                          </span>
+                        </div>
+                        <p>{issue.summary}</p>
+                      </article>
+                    ))}
+                  </div>
+                ))}
+              </section>
+            </div>
+          )}
+
+          {panel.data.kind === "constructiveness" && (
+            <div class="demo-panel-grid">
+              {panel.data.reviewers.map((reviewer) => (
+                <section class="demo-card demo-reviewer">
+                  <h2>{reviewer.reviewerId}</h2>
+                  <div class="demo-metrics compact">
+                    <div class="demo-metric">
+                      <span>MCS</span>
+                      <strong>{formatMetric(reviewer.metrics.MCS)}</strong>
+                    </div>
+                    <div class="demo-metric">
+                      <span>AR</span>
+                      <strong>{formatMetric(reviewer.metrics.AR)}</strong>
+                    </div>
+                    <div class="demo-metric">
+                      <span>SD</span>
+                      <strong>{formatMetric(reviewer.metrics.SD)}</strong>
+                    </div>
+                    <div class="demo-metric">
+                      <span>CD</span>
+                      <strong>{formatMetric(reviewer.metrics.CD)}</strong>
+                    </div>
+                  </div>
+                  <div class="demo-dim-bars">
+                    {reviewer.dimBars.map((bar) => (
+                      <div class="demo-row">
+                        <span>{bar.label}</span>
+                        <span class="demo-bar" aria-hidden="true">
+                          <span style={`width: ${barWidth(bar.value, 2)}%`} />
+                        </span>
+                        <b>{formatMetric(bar.value)}</b>
+                      </div>
+                    ))}
+                  </div>
+                  {reviewer.comments.map((comment: any) => (
+                    <article
+                      class="demo-argument"
+                      data-comment-type={String(comment.type).toLowerCase()}
+                    >
+                      <div>
+                        <span
+                          class="demo-chip"
+                          data-section={String(comment.section)
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")}
+                        >
+                          {comment.section}
+                        </span>
+                        <span
+                          class="demo-chip muted"
+                          data-comment-type={String(
+                            comment.type,
+                          ).toLowerCase()}
+                        >
+                          {comment.type}
+                        </span>
+                      </div>
+                      <p>{comment.content}</p>
+                      <div class="demo-score-cells">
+                        {comment.scores.map(
+                          (score: number | null, index: number) => (
+                            <span>
+                              {constructivenessDims[index]}{" "}
+                              {formatMetric(score)}
+                            </span>
+                          ),
+                        )}
+                      </div>
+                    </article>
+                  ))}
+                </section>
+              ))}
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script
+  is:inline
+  type="application/json"
+  data-demo-availability
+  set:html={availabilityJson}
+/>
+<script
+  is:inline
+  type="application/json"
+  data-demo-paper-ids
+  set:html={paperIdsJson}
+/>
+<script
+  is:inline
+  type="application/json"
+  data-demo-metadata
+  set:html={metadataJson}
+/>
+
+<script>
+  const root = document.querySelector<HTMLElement>(".demo-explorer");
+  if (root) {
+    const availability = JSON.parse(
+      document.querySelector("[data-demo-availability]")?.textContent || "{}",
+    ) as Record<string, Record<string, string[]>>;
+    const paperIds = JSON.parse(
+      document.querySelector("[data-demo-paper-ids]")?.textContent || "{}",
+    ) as Record<string, string>;
+    const metadata = JSON.parse(
+      document.querySelector("[data-demo-metadata]")?.textContent || "{}",
+    ) as Record<
+      string,
+      {
+        decision?: string;
+        avg_rating?: number;
+        avg_confidence?: number;
+        num_reviewers?: number;
+      } | null
+    >;
+
+    const conferenceSelect = root.querySelector<HTMLSelectElement>(
+      'select[data-role="conference"]',
+    )!;
+    const sourceSelect = root.querySelector<HTMLSelectElement>(
+      'select[data-role="source"]',
+    )!;
+    const tabs = Array.from(
+      root.querySelectorAll<HTMLButtonElement>('button[data-role="dimension"]'),
+    );
+    const panels = Array.from(
+      root.querySelectorAll<HTMLElement>('[data-role="panels"] > div'),
+    );
+    const metaTargets = {
+      paperId: root.querySelector<HTMLElement>('[data-meta="paperId"]'),
+      decision: root.querySelector<HTMLElement>('[data-meta="decision"]'),
+      avgRating: root.querySelector<HTMLElement>('[data-meta="avgRating"]'),
+      avgConfidence: root.querySelector<HTMLElement>(
+        '[data-meta="avgConfidence"]',
+      ),
+      numReviewers: root.querySelector<HTMLElement>(
+        '[data-meta="numReviewers"]',
+      ),
+    };
+
+    let conference = root.dataset.initialConference || conferenceSelect.value;
+    let source = root.dataset.initialSource || sourceSelect.value;
+    let dimension =
+      root.dataset.initialDimension ||
+      tabs.find((t) => t.classList.contains("active"))?.dataset.dimension ||
+      "depth";
+
+    function formatMetric(value: unknown) {
+      if (typeof value !== "number" || !Number.isFinite(value)) return "n/a";
+      return value % 1 === 0 ? String(value) : value.toFixed(2);
+    }
+
+    function getAvailable(conf: string, src: string): string[] {
+      return availability[conf]?.[src] ?? [];
+    }
+
+    function update() {
+      const available = getAvailable(conference, source);
+      if (!available.includes(dimension)) {
+        dimension = available[0] || dimension;
+      }
+
+      for (const tab of tabs) {
+        const tabDim = tab.dataset.dimension || "";
+        const isAvail = available.includes(tabDim);
+        tab.disabled = !isAvail;
+        const isActive = tabDim === dimension;
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      }
+
+      for (const panel of panels) {
+        const match =
+          panel.dataset.conference === conference &&
+          panel.dataset.source === source &&
+          panel.dataset.dimension === dimension;
+        panel.hidden = !match;
+      }
+
+      const meta = metadata[conference];
+      if (metaTargets.paperId)
+        metaTargets.paperId.textContent = paperIds[conference] || "n/a";
+      if (metaTargets.decision)
+        metaTargets.decision.textContent = meta?.decision ?? "n/a";
+      if (metaTargets.avgRating)
+        metaTargets.avgRating.textContent = formatMetric(meta?.avg_rating);
+      if (metaTargets.avgConfidence)
+        metaTargets.avgConfidence.textContent = formatMetric(
+          meta?.avg_confidence,
+        );
+      if (metaTargets.numReviewers)
+        metaTargets.numReviewers.textContent = formatMetric(
+          meta?.num_reviewers,
+        );
+
+      for (const option of Array.from(sourceSelect.options)) {
+        const dims = getAvailable(conference, option.value);
+        option.disabled = dims.length === 0;
+      }
+    }
+
+    conferenceSelect.addEventListener("change", () => {
+      conference = conferenceSelect.value;
+      if (getAvailable(conference, source).length === 0) {
+        source = "sea";
+        sourceSelect.value = source;
+      }
+      update();
+    });
+
+    sourceSelect.addEventListener("change", () => {
+      source = sourceSelect.value;
+      update();
+    });
+
+    for (const tab of tabs) {
+      tab.addEventListener("click", () => {
+        if (tab.disabled) return;
+        dimension = tab.dataset.dimension || dimension;
+        update();
+      });
+    }
+
+    update();
+  }
+</script>

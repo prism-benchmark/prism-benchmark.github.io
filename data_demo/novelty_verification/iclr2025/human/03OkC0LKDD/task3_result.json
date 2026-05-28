@@ -1,0 +1,1375 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper introduces an adaptive gradient clipping method applied to worker outputs before passing them through a robust aggregator in heterogeneous synchronous Byzantine settings."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The authors propose Adaptive Robust Clipping (ARC), a new mechanism to enhance robustness in adversarial settings."
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "The paper introduces dynamic gradient clipping as an improvement to its static counterpart. More importantly it proves that the static approach is not robust, in accordance with the definition of robustness given in the paper."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+      "text": "Title: Improving Communication-Efficient and Byzantine-Robust Distributed Learning with Local Adaptive Momentum\n\nAbstract: Due to increasing interest in collaborative and distributed learning, there has been a significant focus on Byzantine robustness. In Byzantine robust distributed learning, a central server aims to train a machine learning model using data that are distributed among multiple workers. However, a small percentage of these workers may deviate from the prescribed algorithm and send malicious messages. To address this type of attacks, resilient training algorithms combine stochastic gradient descent (SGD) with various robust aggregation rules. Previous work has emphasized the importance of reducing gradient noise in SGD to differentiate malicious updates from normal ones, by applying variance reduction techniques to tackle this issue. This paper aims to advance this frontier by using local adaptive momentum as a means to improve the robustness of SGD against Byzantine attacks. In line with this objective, our study introduces Byz-AdaVR-EF21, a method designed to withstand Byzantine behavior that applies adaptive stochastic gradient variance reduction with communication compression. Each worker calculates the local adaptive momentum to simultaneously achieve variance reduction and fast convergence. These features are crucial for more effective countering of Byzantine workers. Additionally, the use of communication compression provides the added benefit of enabling more efficient communication. Extensive experiments have been conducted to showcase the effectiveness of the proposed algorithm.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "42b380c5c36092400e6ad6259709c90bf37855c1",
+      "text": "Title: Communication Compression for Byzantine Robust Learning: New Efficient Algorithms and Improved Rates\n\nAbstract: Byzantine robustness is an essential feature of algorithms for certain distributed optimization problems, typically encountered in collaborative/federated learning. These problems are usually huge-scale, implying that communication compression is also imperative for their resolution. These factors have spurred recent algorithmic and theoretical developments in the literature of Byzantine-robust learning with compression. In this paper, we contribute to this research area in two main directions. First, we propose a new Byzantine-robust method with compression - Byz-DASHA-PAGE - and prove that the new method has better convergence rate (for non-convex and Polyak-Lojasiewicz smooth optimization problems), smaller neighborhood size in the heterogeneous case, and tolerates more Byzantine workers under over-parametrization than the previous method with SOTA theoretical convergence guarantees (Byz-VR-MARINA). Secondly, we develop the first Byzantine-robust method with communication compression and error feedback - Byz-EF21 - along with its bidirectional compression version - Byz-EF21-BC - and derive the convergence rates for these methods for non-convex and Polyak-Lojasiewicz smooth case. We test the proposed methods and illustrate our theoretical findings in the numerical experiments.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+      "text": "Title: Dynamic Byzantine-Robust Learning: Adapting to Switching Byzantine Workers\n\nAbstract: Byzantine-robust learning has emerged as a prominent fault-tolerant distributed machine learning framework. However, most techniques focus on the static setting, wherein the identity of Byzantine workers remains unchanged throughout the learning process. This assumption fails to capture real-world dynamic Byzantine behaviors, which may include intermittent malfunctions or targeted, time-limited attacks. Addressing this limitation, we propose DynaBRO -- a new method capable of withstanding any sub-linear number of identity changes across rounds. Specifically, when the number of such changes is $\\mathcal{O}(\\sqrt{T})$ (where $T$ is the total number of training rounds), DynaBRO nearly matches the state-of-the-art asymptotic convergence rate of the static setting. Our method utilizes a multi-level Monte Carlo (MLMC) gradient estimation technique applied at the server to robustly aggregated worker updates. By additionally leveraging an adaptive learning rate, we circumvent the need for prior knowledge of the fraction of Byzantine workers.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+      "text": "Title: Order-Optimal Byzantine-Robust Learning Under Heterogeneity via Fair Gradient Clipping\n\nAbstract: Byzantine-robust distributed or federated learning (FL) refers to providing reliable performance under Byzantine attacks, which violate the prescribed protocols and transmit arbitrary information to the server to hamper the convergence of machine learning (ML) algorithms, via designing resilient aggregation rules to combat attacks. Although numerous robust rules have been suggested, their performance degrades for heterogeneous data. A few techniques have been exploited to handle this problem, but they either require preaggregation operations, hence increasing the computational load, or lack breakdown point analysis of their rules. This article proposes a new aggregation rule, which clips the gradients received from all workers according to the distance between the gradient and the aggregation center. That is, when the distance is larger than the radius $\\gamma $ , the gradient will be clipped, and the longer the distance, the closer the clipped gradient is to the center. We theoretically analyze that the breakdown point of the developed rule is 0.5, the maximum value for robust aggregators. Moreover, our rule achieves order-optimal Byzantine-robust training error under data heterogeneity, while the median-based schemes, such as coordinate-wise median (CM) and geometric median (GM), are suboptimal. Experimental results demonstrate that the devised aggregation mechanism can handle different attacks well and outperforms the existing rules.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+      "text": "Title: Byzantine Machine Learning: MultiKrum and an optimal notion of robustness\n\nAbstract: Aggregation rules are the cornerstone of distributed (or federated) learning in the presence of adversaries, under the so-called Byzantine threat model. They are also interesting mathematical objects from the point of view of robust mean estimation. The Krum aggregation rule has been extensively studied, and endowed with formal robustness and convergence guarantees. Yet, MultiKrum, a natural extension of Krum, is often preferred in practice for its superior empirical performance, even though no theoretical guarantees were available until now. In this work, we provide the first proof that MultiKrum is a robust aggregation rule, and bound its robustness coefficient. To do so, we introduce $\\kappa^\\star$, the optimal *robustness coefficient* of an aggregation rule, which quantifies the accuracy of mean estimation in the presence of adversaries in a tighter manner compared with previously adopted notions of robustness. We then construct an upper and a lower bound on MultiKrum's robustness coefficient. As a by-product, we also improve on the best-known bounds on Krum's robustness coefficient. We show that MultiKrum's bounds are never worse than Krum's, and better in realistic regimes. We illustrate this analysis by an experimental investigation on the quality of the lower bound.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "748eaf7c166c77af6c0f7ad5fe4f5d580d2ae80e",
+      "text": "Title: Byzantine Failures Harm the Generalization of Robust Distributed Learning Algorithms More Than Data Poisoning\n\nAbstract: Robust distributed learning algorithms aim to maintain reliable performance despite the presence of misbehaving workers. Such misbehaviors are commonly modeled as Byzantine failures, allowing arbitrarily corrupted communication, or as data poisoning, a weaker form of corruption restricted to local training data. While prior work shows similar optimization guarantees for both models, an important question remains: How do these threat models impact generalization? Empirical evidence suggests a gap, yet it remains unclear whether it is unavoidable or merely an artifact of suboptimal attacks. We show, for the first time, a fundamental gap in generalization guarantees between the two threat models: Byzantine failures yield strictly worse rates than those achievable under data poisoning. Our findings leverage a tight algorithmic stability analysis of robust distributed learning. Specifically, we prove that: (i) under data poisoning, the uniform algorithmic stability of an algorithm with optimal optimization guarantees degrades by an additive factor of $\\varTheta ( \\frac{f}{n-f} )$, with $f$ out of $n$ workers misbehaving; whereas $\\textit{(ii)}$ under Byzantine failures, the degradation is in $\\Omega \\big( \\sqrt{ \\frac{f}{n-2f}} \\big)$.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "21e4f21684f26840df0f86b443ea6137172ef6e1",
+      "text": "Title: Byzantine-Robust Compressed and Momentum-based Variance Reduction in Federated Learning\n\nAbstract: Federated learning involves a group of workers and a central server to train a machine learning model in a distributed manner. However, the distributed structure poses challenges in terms of communication efficiency and robustness against malicious attacks. Our work assumes the presence of Byzantine attackers among workers and considers Byzantine robustness in federated learning. In order to overcome the challenges of communication and Byzantine attacks, we propose a novel method called Byzantine-robust compressed and momentum-based variance reduction (BR-CoMVaR). This method innovatively combines Byzantine-robustness aggregation, gradient difference compression, and momentum-based variance reduction. Gradient difference compression helps to mitigate the effect of compression noise, while momentum-based variance reduction reduces the variance in local stochastic gradients and accelerates convergence. The incorporation of these two techniques with Byzantine-robustness aggregation further enhances the defense capability against Byzantine attacks and improves overall Byzantine robustness. Moreover, the extensive experimental results display the superior performance of BR-CoMVaR compared with other three most related algorithms.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+      "text": "Title: DP2Guard: A Lightweight and Byzantine-Robust Privacy-Preserving Federated Learning Scheme for Industrial IoT\n\nAbstract: Privacy-Preserving Federated Learning (PPFL) has emerged as a secure distributed Machine Learning (ML) paradigm that aggregates locally trained gradients without exposing raw data. To defend against model poisoning threats, several robustness-enhanced PPFL schemes have been proposed by integrating anomaly detection. Nevertheless, they still face two major challenges: (1) the reliance on heavyweight encryption techniques results in substantial communication and computation overhead; and (2) single-strategy defense mechanisms often fail to provide sufficient robustness against adaptive adversaries. To overcome these challenges, we propose DP2Guard, a lightweight PPFL framework that enhances both privacy and robustness. DP2Guard leverages a lightweight gradient masking mechanism to replace costly cryptographic operations while ensuring the privacy of local gradients. A hybrid defense strategy is proposed, which extracts gradient features using singular value decomposition and cosine similarity, and applies a clustering algorithm to effectively identify malicious gradients. Additionally, DP2Guard adopts a trust score-based adaptive aggregation scheme that adjusts client weights according to historical behavior, while blockchain records aggregated results and trust scores to ensure tamper-proof and auditable training. Extensive experiments conducted on two public datasets demonstrate that DP2Guard effectively defends against four advanced poisoning attacks while ensuring privacy with reduced communication and computation costs.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "e4febd711e96ccfbb7fbedc56248967c6dba880d",
+      "text": "Title: Byzantine-Robust Distributed Learning With Compression\n\nAbstract: Communication between workers and the master node to collect local stochastic gradients is a key bottleneck in a large-scale distributed learning system. Various recent works have proposed to compress the local stochastic gradients to mitigate the communication overhead. However, robustness to malicious attacks is rarely considered in such a setting. In this work, we investigate the problem of Byzantine-robust compressed distributed learning, where the attacks from Byzantine workers can be arbitrarily malicious. We theoretically point out that different to the attacks-free compressed stochastic gradient descent (SGD), its vanilla combination with geometric median-based robust aggregation seriously suffers from the compression noise in the presence of Byzantine attacks. In light of this observation, we propose to reduce the compression noise with gradient difference compression so as to improve the Byzantine-robustness. We also observe the impact of the intrinsic stochastic noise caused by selecting random samples, and adopt the stochastic average gradient algorithm (SAGA) to gradually eliminate the inner variations of regular workers. We theoretically prove that the proposed algorithm reaches a neighborhood of the optimal solution at a linear convergence rate, and the asymptotic learning error is in the same order as that of the state-of-the-art uncompressed method. Finally, numerical experiments demonstrate the effectiveness of the proposed method.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "f1c6f3d3868ee9bc397b622190d23345a116d175",
+      "text": "Title: Distributed optimization with faulty nodes: robust aggregation in hyperbolic space",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+      "text": "Title: Adaptive Gradient Clipping for Robust Federated Learning\n\nAbstract: Robust federated learning aims to maintain reliable performance despite the presence of adversarial or misbehaving workers. While state-of-the-art (SOTA) robust distributed gradient descent (Robust-DGD) methods were proven theoretically optimal, their empirical success has often relied on pre-aggregation gradient clipping. However, existing static clipping strategies yield inconsistent results: enhancing robustness against some attacks while being ineffective or even detrimental against others. To address this limitation, we propose a principled adaptive clipping strategy, Adaptive Robust Clipping (ARC), which dynamically adjusts clipping thresholds based on the input gradients. We prove that ARC not only preserves the theoretical robustness guarantees of SOTA Robust-DGD methods but also provably improves asymptotic convergence when the model is well-initialized. Extensive experiments on benchmark image classification tasks confirm these theoretical insights, demonstrating that ARC significantly enhances robustness, particularly in highly heterogeneous and adversarial settings.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "20310fb046406d3648b6c554166d0c0bbd4201b3",
+      "text": "Title: Byzantine-Robust Optimization under $(L_0, L_1)$-Smoothness\n\nAbstract: We consider distributed optimization under Byzantine attacks in the presence of $(L_0,L_1)$-smoothness, a generalization of standard $L$-smoothness that captures functions with state-dependent gradient Lipschitz constants. We propose Byz-NSGDM, a normalized stochastic gradient descent method with momentum that achieves robustness against Byzantine workers while maintaining convergence guarantees. Our algorithm combines momentum normalization with Byzantine-robust aggregation enhanced by Nearest Neighbor Mixing (NNM) to handle both the challenges posed by $(L_0,L_1)$-smoothness and Byzantine adversaries. We prove that Byz-NSGDM achieves a convergence rate of $O(K^{-1/4})$ up to a Byzantine bias floor proportional to the robustness coefficient and gradient heterogeneity. Experimental validation on heterogeneous MNIST classification, synthetic $(L_0,L_1)$-smooth optimization, and character-level language modeling with a small GPT model demonstrates the effectiveness of our approach against various Byzantine attack strategies. An ablation study further shows that Byz-NSGDM is robust across a wide range of momentum and learning rate choices.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "d7ccfc27bdb23d9c9f156d87ad7e8ce5f87ff23f",
+      "text": "Title: Accelerating Byzantine-Robust Distributed Learning with Compressed Communication via Double Momentum and Variance Reduction\n\nAbstract: In collaborative and distributed learning, Byzantine robustness reflects a major facet of optimization algorithms. Such distributed algorithms are often accompanied by transmitting a large number of parameters, so communication compression is essential for an effective solution. In this paper, we propose Byz-DM21, a novel Byzantine-robust and communication-efficient stochastic distributed learning algorithm. Our key innovation is a novel gradient estimator based on a double-momentum mechanism, integrating recent advancements in error feedback techniques. Using this estimator, we design both standard and accelerated algorithms that eliminate the need for large batch sizes while maintaining robustness against Byzantine workers. We prove that the Byz-DM21 algorithm has a smaller neighborhood size and converges to $\\varepsilon$-stationary points in $\\mathcal{O}(\\varepsilon^{-4})$ iterations. To further enhance efficiency, we introduce a distributed variant called Byz-VR-DM21, which incorporates local variance reduction at each node to progressively eliminate variance from random approximations. We show that Byz-VR-DM21 provably converges to $\\varepsilon$-stationary points in $\\mathcal{O}(\\varepsilon^{-3 })$ iterations. Additionally, we extend our results to the case where the functions satisfy the Polyak-{\\L}ojasiewicz condition. Finally, numerical experiments demonstrate the effectiveness of the proposed method.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+      "text": "Title: LDP-Rep: Lightweight Byzantine-Robust Aggregation for Non-IID Federated Learning\n\nAbstract: This article present LDP-Rep, a lightweight Byzantine-robust federated aggregation scheme powered by Local Differential Privacy (LDP) for non-IID data. The method keeps the \"reference-gradient + reputation\" framework but protects only the one-dimensional reputation update of each client with Laplace noise, achieving ε-LDP while eliminating high-dimensional ciphertext operations. We derive closed-form relations among ε, noise variance, convergence rounds, and final accuracy, and propose three practical trade-off strategies: adaptive privacy-budget scheduling, reputation smoothing, and gradient clipping. Evaluated on 10–100 clients with 20%–35% Byzantine attackers, LDP-Rep matches the accuracy of homomorphic-encryption baselines under strong attacks and outperforms them by 2–3% under weak attacks, reducing server aggregation time by two orders of magnitude and adding only one floating-point message. Results confirm the practicality of LDP-Rep on resource-constrained devices.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "c7affa44abbbe825437e5cc341465b05ec3444a9",
+      "text": "Title: TernaryVote: Differentially Private, Communication Efficient, and Byzantine Resilient Distributed Optimization on Heterogeneous Data\n\nAbstract: Distributed training of deep neural networks faces three critical challenges: privacy preservation, communication efficiency, and robustness to fault and adversarial behaviors. Although significant research efforts have been devoted to addressing these challenges independently, their synthesis remains less explored. In this paper, we propose TernaryVote, which combines a ternary compressor and the majority vote mechanism to realize differential privacy, gradient compression, and Byzantine resilience simultaneously. We theoretically quantify the privacy guarantee through the lens of the emerging f-differential privacy (DP) and the Byzantine resilience of the proposed algorithm. Particularly, in terms of privacy guarantees, compared to the existing sign-based approach StoSign, the proposed method improves the dimension dependence on the gradient size and enjoys privacy amplification by mini-batch sampling while ensuring a comparable convergence rate. We also prove that TernaryVote is robust when less than 50% of workers are blind attackers, which matches that of SIGNSGD with majority vote. Extensive experimental results validate the effectiveness of the proposed algorithm.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "48a4a22d3097dea23b47a684eb0791ef85b21f44",
+      "text": "Title: Byzantine-Robust and Communication-Efficient Distributed Learning via Compressed Momentum Filtering\n\nAbstract: Distributed learning is the standard for training large-scale models across private data silos, offering privacy and efficiency but facing challenges in Byzantine robustness and communication efficiency. Existing Byzantine-robust and communication-efficient methods rely on full gradient information, and they only converge to an unnecessarily large neighborhood around the solution. Motivated by these issues, we propose a novel Byzantine-robust and communication-efficient stochastic distributed learning method that imposes no requirements on batch size and converges to a smaller neighborhood, aligning with the theoretical lower bound. Our key innovation is leveraging Polyak Momentum to mitigate the noise caused by both biased compressors and stochastic gradients, thus defending against Byzantine workers under information compression. We provide proof of tight complexity bounds for nonconvex smooth loss functions. Finally, we validate the practical significance of our algorithm through an extensive series of experiments, benchmarking its performance on both binary classification and image classification tasks.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "4460b741752ab7104bd81a1c042f57c656e6a775",
+      "text": "Title: On the Optimal Batch Size for Byzantine-Robust Distributed Learning\n\nAbstract: Byzantine-robust distributed learning (BRDL), in which computing devices are likely to behave abnormally due to accidental failures or malicious attacks, has recently become a hot research topic. However, even in the independent and identically distributed (i.i.d.) case, existing BRDL methods will suffer from a significant drop on model accuracy due to the large variance of stochastic gradients. Increasing batch sizes is a simple yet effective way to reduce the variance. However, when the total number of gradient computation is fixed, a too-large batch size will lead to a too-small iteration number (update number), which may also degrade the model accuracy. In view of this challenge, we mainly study the optimal batch size when the total number of gradient computation is fixed in this work. In particular, we theoretically and empirically show that when the total number of gradient computation is fixed, the optimal batch size in BRDL increases with the fraction of Byzantine workers. Therefore, compared to the case without attacks, the batch size should be set larger when under Byzantine attacks. However, for existing BRDL methods, large batch sizes will lead to a drop on model accuracy, even if there is no Byzantine attack. To deal with this problem, we propose a novel BRDL method, called Byzantine-robust stochastic gradient descent with normalized momentum (ByzSGDnm), which can alleviate the drop on model accuracy in large-batch cases. Moreover, we theoretically prove the convergence of ByzSGDnm for general non-convex cases under Byzantine attacks. Empirical results show that ByzSGDnm has a comparable performance to existing BRDL methods under bit-flipping failure, but can outperform existing BRDL methods under deliberately crafted attacks.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "fb9d2e4c9258973f1de645e5e511d1108a5b3829",
+      "text": "Title: Byzantine-Robust and Communication-Efficient Personalized Federated Learning\n\nAbstract: This paper investigates personalized federated learning, in which a group of workers are coordinated by a server to train correlated local models, in addition to a common global model. This distributed statistical learning problem faces two challenges: efficiency of information exchange between the workers and the server, and robustness to potential malicious messages from the so-called Byzantine workers. We propose a projected stochastic block gradient descent method to address the robustness issue. Therein, each regular worker learns in a personalized manner with the aid of the global model, and the server judiciously aggregates the local models via a Huber function-based descent step. To improve communication efficiency, we allow the regular workers to perform multi-steps of local update per communication round. Convergence of the proposed method is established for non-convex personalized federated learning. Numerical experiments on neural network training validate advantages of the proposed method over the existing ones.",
+      "relevance_score": null
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method (adaptive gradient clipping before robust aggregation) specific to the paper being reviewed. The related work evidence is about a different paper (Byz-AdaVR-EF21) that uses local adaptive momentum for variance reduction and communication compression, with no mention of adaptive gradient clipping or direct relation to the described method. Therefore, the evidence does not support, contradict, or relate to the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "42b380c5c36092400e6ad6259709c90bf37855c1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces an adaptive gradient clipping method, but the related work evidence (about Byzantine-robust compression methods) does not mention clipping or the specific paper's contributions. Evidence is missing or unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence does not discuss adaptive gradient clipping or heterogeneous synchronous Byzantine settings. The related work focuses on dynamic Byzantine workers and MLMC gradient estimation, which are unrelated to the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 1,
+      "label": "OVERSTATED",
+      "explanation": "The review sentence describes an adaptive gradient clipping method applied to worker outputs before passing them through a robust aggregator in heterogeneous synchronous Byzantine settings. The related work paper proposes a new aggregation rule that clips gradients according to distance from an aggregation center, but it does not explicitly mention 'adaptive' clipping in the sense of dynamically adjusting thresholds based on worker gradients and adversarial fraction, nor does it discuss 'heterogeneous synchronous Byzantine settings' in the same specific context. The evidence is related but not directly supportive of the specific claim, making it insufficient for verification.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method (adaptive gradient clipping applied before robust aggregation) from the paper being reviewed, but the related work evidence (about MultiKrum and robustness coefficients) does not mention adaptive clipping or provide information about the specific claim. The evidence is unrelated to the claim's content, making it insufficient to verify or relate to the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "748eaf7c166c77af6c0f7ad5fe4f5d580d2ae80e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method from the paper being reviewed (adaptive gradient clipping before robust aggregation in Byzantine settings). The related work evidence discusses generalization gaps between Byzantine failures and data poisoning, not adaptive clipping. There is no direct evidence in the related work to support or contradict the claim about the paper's method.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "21e4f21684f26840df0f86b443ea6137172ef6e1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method involving adaptive gradient clipping and robust aggregation in Byzantine settings. The related work paper discusses Byzantine-robust compression and variance reduction but does not mention adaptive gradient clipping or directly address the specific method described. There is no evidence to support or contradict the claim, making it unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method (adaptive gradient clipping before robust aggregation in Byzantine settings) that matches the paper being reviewed, but the related work evidence (about DP2Guard) does not provide any direct or indirect support for this claim. There is no mention of adaptive gradient clipping or its specifics in the related work text. Therefore, evidence is missing to verify the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e4febd711e96ccfbb7fbedc56248967c6dba880d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes an adaptive gradient clipping method applied to worker outputs before robust aggregation in Byzantine settings. The related work paper focuses on Byzantine-robust compressed distributed learning using gradient difference compression and SAGA, but it does not mention or provide evidence about an adaptive gradient clipping method applied to worker outputs. There is no direct connection or supporting information in the related work to verify the claim about the reviewed paper.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "f1c6f3d3868ee9bc397b622190d23345a116d175",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method (adaptive gradient clipping before robust aggregation) that is introduced in the paper being reviewed. The related work evidence is about robust aggregation in hyperbolic space for distributed optimization with faulty nodes, which does not provide direct evidence about the specific adaptive gradient clipping method in the paper. The claim is about the paper's contribution, not about the related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The sentence claims the paper introduces an adaptive gradient clipping method (ARC) applied before robust aggregation in Byzantine settings. The related work abstract and the paper's introduction describe ARC as an adaptive clipping scheme that dynamically adjusts thresholds, applied pre-aggregation to improve robustness in heterogeneous synchronous Byzantine settings, supporting the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "20310fb046406d3648b6c554166d0c0bbd4201b3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes the paper's method (adaptive gradient clipping before robust aggregation in heterogeneous synchronous Byzantine settings). The related work (Byz-NSGDM) does not mention adaptive gradient clipping; it focuses on momentum normalization and NNM. No direct evidence is provided in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d7ccfc27bdb23d9c9f156d87ad7e8ce5f87ff23f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a specific method (adaptive gradient clipping) applied in the paper being reviewed. However, the related work evidence (Byz-DM21 paper) does not mention adaptive gradient clipping, robust aggregation, or heterogeneous synchronous Byzantine settings. It focuses on communication compression, double momentum, and variance reduction for Byzantine robustness. There is no evidence to support or relate to the claim about the paper's method.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper introduces an adaptive gradient clipping method for worker outputs before robust aggregation in Byzantine settings. The related work describes LDP-Rep, a method that includes gradient clipping but focuses on local differential privacy for Byzantine-robust aggregation in federated learning. There is no evidence that LDP-Rep is adaptive or that it is the same as the method described in the paper being reviewed. The evidence does not support the claim; instead, it suggests a different approach, making the claim contradicted and the reviewer's statement overstated.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c7affa44abbbe825437e5cc341465b05ec3444a9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces an adaptive gradient clipping method for robust aggregation in Byzantine settings. However, the related work (TernaryVote) focuses on a different method (ternary compressor + majority vote) for differential privacy, communication efficiency, and Byzantine resilience. The related work does not mention adaptive gradient clipping, so there is no evidence to verify or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "48a4a22d3097dea23b47a684eb0791ef85b21f44",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (introducing adaptive gradient clipping before robust aggregation). The related work evidence discusses a different method (compressed momentum filtering) and does not mention adaptive gradient clipping or provide evidence supporting or contradicting the claim. Therefore, evidence is missing to assess alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "4460b741752ab7104bd81a1c042f57c656e6a775",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes an adaptive gradient clipping method (ARC) from the paper being reviewed, but the related work evidence focuses on optimal batch size and a different Byzantine-robust method (ByzSGDnm). There is no direct evidence in the related work to support or contradict the specific claim about ARC's design or application in heterogeneous synchronous Byzantine settings.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fb9d2e4c9258973f1de645e5e511d1108a5b3829",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence describes the paper's adaptive gradient clipping method applied before robust aggregation in heterogeneous synchronous Byzantine settings. The paper's abstract and introduction explicitly introduce ARC (Adaptive Robust Clipping) as a pre-aggregation clipping method that dynamically adjusts thresholds based on worker gradients and adversarial fraction, enhancing robustness in such settings. The related work evidence from the other paper does not mention ARC or directly support this specific claim, but the review sentence is a claim about the paper being reviewed, not about the related work. The classification marks it as a claim (1) with no proof from the related work (0). Since the claim is verifiable from the paper's text, stance alignment is 'aligned' as the paper supports it, and calibration is 'accurate' because the language matches the paper's description. The score of 2 reflects moderate confidence due to clear support from the paper.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes ARC to enhance robustness. The related work evidence (paper ID 20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121) discusses a different method (Byz-AdaVR-EF21) for Byzantine robustness using local adaptive momentum and variance reduction. There is no mention of ARC or a mechanism directly related to the claim in the related work, so evidence is missing to verify the claim's alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "42b380c5c36092400e6ad6259709c90bf37855c1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes Adaptive Robust Clipping (ARC) for robustness in adversarial settings. The related work paper discusses Byzantine-robust methods with compression but does not mention ARC or any clipping mechanism. There is no evidence in the related work to support or contradict the claim, making it unverifiable from the provided evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes Adaptive Robust Clipping (ARC). The related work evidence (DynaBRO) discusses dynamic Byzantine-robust learning but does not mention ARC or provide evidence about it. There is no direct connection to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes ARC to enhance robustness. The related work evidence describes a different method (fair gradient clipping) for Byzantine-robust learning under heterogeneity, but it does not mention ARC or the specific paper being reviewed. The evidence is unrelated to ARC, making it impossible to verify the claim against the provided related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (ARC is a new mechanism for robustness). The related work discusses MultiKrum's robustness coefficient, not ARC. There is no evidence in the provided related work to support or contradict the claim about ARC.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "748eaf7c166c77af6c0f7ad5fe4f5d580d2ae80e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that ARC enhances robustness in adversarial settings, but the provided related work paper focuses on the gap in generalization between Byzantine failures and data poisoning, not on ARC or adaptive clipping. There is no direct evidence in the related work to support or contradict the claim about ARC.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "21e4f21684f26840df0f86b443ea6137172ef6e1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the authors propose Adaptive Robust Clipping (ARC). The related work evidence discusses BR-CoMVaR, a different method for Byzantine-robust federated learning. There is no mention of ARC or any evidence supporting or contradicting the claim about ARC in the related work, making it unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": -2,
+      "label": "UNSUPPORTED",
+      "explanation": "The review sentence claims that Adaptive Robust Clipping (ARC) is a new mechanism proposed to enhance robustness in adversarial settings. However, the related work (DP2Guard) describes a different framework (DP2Guard) with a hybrid defense strategy and trust score-based adaptive aggregation, not ARC. There is no evidence in the related work supporting or aligning with the claim about ARC. The claim is specific to the paper under review, and the related work provides no relevant information. Therefore, the evidence does not support the claim, and calibration is overstated as the related work does not mention ARC.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "e4febd711e96ccfbb7fbedc56248967c6dba880d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (it mentions 'the authors propose Adaptive Robust Clipping (ARC)'). However, the related work evidence (a paper on Byzantine-robust compressed distributed learning) does not mention ARC or any similar adaptive clipping mechanism. The evidence is unrelated to the specific claim, so verification is impossible with the provided text.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "f1c6f3d3868ee9bc397b622190d23345a116d175",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed, but the provided related work evidence (title only) does not contain any information to support or contradict the claim about ARC or its novelty.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the authors propose Adaptive Robust Clipping (ARC) to enhance robustness in adversarial settings. The related work abstract explicitly states 'we propose a principled adaptive clipping strategy, Adaptive Robust Clipping (ARC)' and discusses its use in robust federated learning against adversarial workers, directly supporting the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "20310fb046406d3648b6c554166d0c0bbd4201b3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper proposing ARC, but the related work (ID=20310fb046406d3648b6c554166d0c0bbd4201b3) discusses Byz-NSGDM and NNM, not ARC. No evidence in the provided related work text addresses or supports the claim about ARC, making it unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "d7ccfc27bdb23d9c9f156d87ad7e8ce5f87ff23f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed (proposing ARC), but the related work evidence (about Byz-DM21) does not mention or support this claim. The evidence is unrelated to ARC, making it impossible to verify the claim against the provided related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method (ARC) proposed in the paper being reviewed, but the provided related work evidence is about LDP-Rep, a different method for Byzantine-robust federated aggregation. The evidence does not mention ARC or any clipping scheme, so there is no information to verify or support the claim about ARC.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c7affa44abbbe825437e5cc341465b05ec3444a9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's proposal (ARC). The related work evidence (TernaryVote) does not mention ARC or Adaptive Robust Clipping; it discusses a different mechanism (TernaryVote). Therefore, there is insufficient evidence to evaluate alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "48a4a22d3097dea23b47a684eb0791ef85b21f44",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes Adaptive Robust Clipping (ARC) to enhance robustness, but the related work evidence (from a different paper on Byzantine-robust and communication-efficient distributed learning) does not mention ARC or provide any direct evidence about it. The evidence is about a different method (Polyak Momentum) and does not relate to the claim, making it insufficient for verification.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "4460b741752ab7104bd81a1c042f57c656e6a775",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes ARC as a new mechanism for robustness in adversarial settings, but the provided related work paper focuses on optimal batch size for Byzantine-robust learning and does not mention ARC or any adaptive clipping method. There is no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "fb9d2e4c9258973f1de645e5e511d1108a5b3829",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim states the paper proposes ARC to enhance robustness, which is supported by the paper's content. However, the related work evidence (a paper on Byzantine-robust personalized federated learning) does not discuss ARC or the specific mechanism, making it impossible to verify the claim against the related work evidence. The evidence is missing or unrelated.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes claims about the paper's content (introducing dynamic gradient clipping, proving static approach is not robust) but the related work evidence is about a different paper on Byzantine robust distributed learning with local adaptive momentum. The evidence does not mention or relate to gradient clipping, static clipping, or robustness definitions from the paper being reviewed. Therefore, there is insufficient evidence to assess alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "42b380c5c36092400e6ad6259709c90bf37855c1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper being reviewed (introducing dynamic gradient clipping and proving static clipping is not robust). The related work evidence is about Byzantine-robust communication compression methods (Byz-DASHA-PAGE, Byz-EF21), which does not directly address or relate to the claim about dynamic vs. static gradient clipping. There is no information in the related work to support or contradict the claim, so evidence is missing.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces dynamic gradient clipping and proves static clipping is not robust. The related work evidence describes DynaBRO, which addresses dynamic Byzantine workers, not gradient clipping. No evidence supports or contradicts the specific claim about gradient clipping robustness definitions.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "N/A",
+      "score": -2,
+      "label": "UNSUPPORTED",
+      "explanation": "The review sentence claims the paper proves static clipping is not robust, aligning with the paper's own statements. The related work proposes a different clipping method (distance-based) and claims optimal breakdown point, but does not discuss or provide evidence about static clipping's robustness. The related work's focus on a new aggregation rule does not support or contradict the specific claim about static clipping in the reviewed paper; hence the evidence does not align.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer's claim that the paper introduces dynamic gradient clipping as an improvement to static clipping and proves static clipping is not robust aligns with the paper's content, which discusses the limitations of static clipping and introduces ARC. The related work does not directly address clipping or robustness proofs in the context of the reviewed paper, so the claim is based on the paper itself, not the related work.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "748eaf7c166c77af6c0f7ad5fe4f5d580d2ae80e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims about dynamic gradient clipping and static clipping's lack of robustness in the paper being reviewed. The related work evidence is about generalization gaps between Byzantine failures and data poisoning, which does not address gradient clipping methods or their robustness properties. Therefore, there is no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "21e4f21684f26840df0f86b443ea6137172ef6e1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper introduces dynamic gradient clipping and proves static clipping is not robust. The provided related work abstract discusses Byzantine-robust federated learning with compression and variance reduction, but it does not mention gradient clipping or the robustness proof about static clipping. No evidence is found to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper proves static gradient clipping is not robust according to the paper's definition of robustness. However, the related work evidence (DP2Guard) does not discuss static clipping, robustness definitions, or the paper's specific contributions. There is no direct or indirect evidence in the related work to support or contradict the claim about static clipping's lack of robustness.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "e4febd711e96ccfbb7fbedc56248967c6dba880d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proves static clipping is not robust, but the related work evidence does not mention static clipping or robustness definitions, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "f1c6f3d3868ee9bc397b622190d23345a116d175",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer sentence makes a specific claim about the paper proving that static clipping is not robust according to a given definition, but the provided related work title does not contain any relevant information about static clipping, robustness proofs, or definitions from the paper being reviewed.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer's claim aligns with the related work evidence, which states that static clipping yields inconsistent results and ARC introduces dynamic adjustments, matching the reviewer's description of dynamic gradient clipping as an improvement and static approach lacking robustness. The strength of language is accurate.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "20310fb046406d3648b6c554166d0c0bbd4201b3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper, but the related work evidence (about a different paper on Byzantine-robust optimization) does not provide any information about dynamic gradient clipping or the static approach's robustness as defined in the paper being reviewed. There is no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "d7ccfc27bdb23d9c9f156d87ad7e8ce5f87ff23f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes claims about the paper's introduction of dynamic gradient clipping and proof that static clipping is not robust, but the related work (Accelerating Byzantine-Robust Distributed Learning with Compressed Communication) does not mention gradient clipping, static or dynamic. It focuses on communication compression, double-momentum, and variance reduction. There is no evidence in the related work to support or contradict the claims about clipping, making alignment and calibration assessment impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims about dynamic gradient clipping and static clipping's lack of robustness. The provided paper being reviewed discusses these topics, but the related work evidence (LDP-Rep) does not address gradient clipping, robustness definitions, or static vs. dynamic clipping. The evidence is irrelevant to the claim, making it insufficient to verify.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "c7affa44abbbe825437e5cc341465b05ec3444a9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims about the paper's introduction of dynamic gradient clipping and its proof regarding static clipping's lack of robustness. The related work (TernaryVote) does not mention gradient clipping, static or dynamic, nor does it discuss robustness definitions related to clipping. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "48a4a22d3097dea23b47a684eb0791ef85b21f44",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence discusses dynamic gradient clipping improving static clipping and proving static approach is not robust. The related work paper (ID=48a4a22d3097dea23b47a684eb0791ef85b21f44) focuses on Byzantine-robust and communication-efficient distributed learning via compressed momentum filtering, with no mention of gradient clipping or the specific claim about static vs. dynamic clipping. Evidence is missing to verify or relate to the reviewer's claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "4460b741752ab7104bd81a1c042f57c656e6a775",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's content (dynamic vs. static gradient clipping and robustness definition), but the provided related work evidence is from a different paper on optimal batch size in Byzantine-robust learning. There is no evidence in the related work to support or contradict the claim about dynamic vs. static clipping, making it impossible to assess stance alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "fb9d2e4c9258973f1de645e5e511d1108a5b3829",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's content (dynamic gradient clipping improving robustness, static clipping being non-robust). The related work is a different paper on personalized federated learning with a different focus; it does not provide evidence about gradient clipping methods or robustness definitions from the reviewed paper. The claim cannot be verified or contradicted using the related work evidence.",
+      "relevance_score": null
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper introduces an adaptive gradient clipping method applied to worker outputs before passing them through a robust aggregator in heterogeneous synchronous Byzantine settings.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method (adaptive gradient clipping before robust aggregation) specific to the paper being reviewed. The related work evidence is about a different paper (Byz-AdaVR-EF21) that uses local adaptive momentum for variance reduction and communication compression, with no mention of adaptive gradient clipping or direct relation to the described method. Therefore, the evidence does not support, contradict, or relate to the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "42b380c5c36092400e6ad6259709c90bf37855c1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces an adaptive gradient clipping method, but the related work evidence (about Byzantine-robust compression methods) does not mention clipping or the specific paper's contributions. Evidence is missing or unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence does not discuss adaptive gradient clipping or heterogeneous synchronous Byzantine settings. The related work focuses on dynamic Byzantine workers and MLMC gradient estimation, which are unrelated to the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+          "score": 1,
+          "label": "OVERSTATED",
+          "explanation": "The review sentence describes an adaptive gradient clipping method applied to worker outputs before passing them through a robust aggregator in heterogeneous synchronous Byzantine settings. The related work paper proposes a new aggregation rule that clips gradients according to distance from an aggregation center, but it does not explicitly mention 'adaptive' clipping in the sense of dynamically adjusting thresholds based on worker gradients and adversarial fraction, nor does it discuss 'heterogeneous synchronous Byzantine settings' in the same specific context. The evidence is related but not directly supportive of the specific claim, making it insufficient for verification.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method (adaptive gradient clipping applied before robust aggregation) from the paper being reviewed, but the related work evidence (about MultiKrum and robustness coefficients) does not mention adaptive clipping or provide information about the specific claim. The evidence is unrelated to the claim's content, making it insufficient to verify or relate to the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "748eaf7c166c77af6c0f7ad5fe4f5d580d2ae80e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method from the paper being reviewed (adaptive gradient clipping before robust aggregation in Byzantine settings). The related work evidence discusses generalization gaps between Byzantine failures and data poisoning, not adaptive clipping. There is no direct evidence in the related work to support or contradict the claim about the paper's method.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "21e4f21684f26840df0f86b443ea6137172ef6e1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method involving adaptive gradient clipping and robust aggregation in Byzantine settings. The related work paper discusses Byzantine-robust compression and variance reduction but does not mention adaptive gradient clipping or directly address the specific method described. There is no evidence to support or contradict the claim, making it unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method (adaptive gradient clipping before robust aggregation in Byzantine settings) that matches the paper being reviewed, but the related work evidence (about DP2Guard) does not provide any direct or indirect support for this claim. There is no mention of adaptive gradient clipping or its specifics in the related work text. Therefore, evidence is missing to verify the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e4febd711e96ccfbb7fbedc56248967c6dba880d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes an adaptive gradient clipping method applied to worker outputs before robust aggregation in Byzantine settings. The related work paper focuses on Byzantine-robust compressed distributed learning using gradient difference compression and SAGA, but it does not mention or provide evidence about an adaptive gradient clipping method applied to worker outputs. There is no direct connection or supporting information in the related work to verify the claim about the reviewed paper.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "f1c6f3d3868ee9bc397b622190d23345a116d175",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method (adaptive gradient clipping before robust aggregation) that is introduced in the paper being reviewed. The related work evidence is about robust aggregation in hyperbolic space for distributed optimization with faulty nodes, which does not provide direct evidence about the specific adaptive gradient clipping method in the paper. The claim is about the paper's contribution, not about the related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The sentence claims the paper introduces an adaptive gradient clipping method (ARC) applied before robust aggregation in Byzantine settings. The related work abstract and the paper's introduction describe ARC as an adaptive clipping scheme that dynamically adjusts thresholds, applied pre-aggregation to improve robustness in heterogeneous synchronous Byzantine settings, supporting the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "20310fb046406d3648b6c554166d0c0bbd4201b3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes the paper's method (adaptive gradient clipping before robust aggregation in heterogeneous synchronous Byzantine settings). The related work (Byz-NSGDM) does not mention adaptive gradient clipping; it focuses on momentum normalization and NNM. No direct evidence is provided in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d7ccfc27bdb23d9c9f156d87ad7e8ce5f87ff23f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a specific method (adaptive gradient clipping) applied in the paper being reviewed. However, the related work evidence (Byz-DM21 paper) does not mention adaptive gradient clipping, robust aggregation, or heterogeneous synchronous Byzantine settings. It focuses on communication compression, double momentum, and variance reduction for Byzantine robustness. There is no evidence to support or relate to the claim about the paper's method.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper introduces an adaptive gradient clipping method for worker outputs before robust aggregation in Byzantine settings. The related work describes LDP-Rep, a method that includes gradient clipping but focuses on local differential privacy for Byzantine-robust aggregation in federated learning. There is no evidence that LDP-Rep is adaptive or that it is the same as the method described in the paper being reviewed. The evidence does not support the claim; instead, it suggests a different approach, making the claim contradicted and the reviewer's statement overstated.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c7affa44abbbe825437e5cc341465b05ec3444a9",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces an adaptive gradient clipping method for robust aggregation in Byzantine settings. However, the related work (TernaryVote) focuses on a different method (ternary compressor + majority vote) for differential privacy, communication efficiency, and Byzantine resilience. The related work does not mention adaptive gradient clipping, so there is no evidence to verify or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "48a4a22d3097dea23b47a684eb0791ef85b21f44",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (introducing adaptive gradient clipping before robust aggregation). The related work evidence discusses a different method (compressed momentum filtering) and does not mention adaptive gradient clipping or provide evidence supporting or contradicting the claim. Therefore, evidence is missing to assess alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "4460b741752ab7104bd81a1c042f57c656e6a775",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes an adaptive gradient clipping method (ARC) from the paper being reviewed, but the related work evidence focuses on optimal batch size and a different Byzantine-robust method (ByzSGDnm). There is no direct evidence in the related work to support or contradict the specific claim about ARC's design or application in heterogeneous synchronous Byzantine settings.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "fb9d2e4c9258973f1de645e5e511d1108a5b3829",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence describes the paper's adaptive gradient clipping method applied before robust aggregation in heterogeneous synchronous Byzantine settings. The paper's abstract and introduction explicitly introduce ARC (Adaptive Robust Clipping) as a pre-aggregation clipping method that dynamically adjusts thresholds based on worker gradients and adversarial fraction, enhancing robustness in such settings. The related work evidence from the other paper does not mention ARC or directly support this specific claim, but the review sentence is a claim about the paper being reviewed, not about the related work. The classification marks it as a claim (1) with no proof from the related work (0). Since the claim is verifiable from the paper's text, stance alignment is 'aligned' as the paper supports it, and calibration is 'accurate' because the language matches the paper's description. The score of 2 reflects moderate confidence due to clear support from the paper.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 2.0,
+      "best_evidence": [
+        "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+        "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+        "fb9d2e4c9258973f1de645e5e511d1108a5b3829"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "fb9d2e4c9258973f1de645e5e511d1108a5b3829",
+          "score": 2.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The authors propose Adaptive Robust Clipping (ARC), a new mechanism to enhance robustness in adversarial settings.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes ARC to enhance robustness. The related work evidence (paper ID 20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121) discusses a different method (Byz-AdaVR-EF21) for Byzantine robustness using local adaptive momentum and variance reduction. There is no mention of ARC or a mechanism directly related to the claim in the related work, so evidence is missing to verify the claim's alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "42b380c5c36092400e6ad6259709c90bf37855c1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes Adaptive Robust Clipping (ARC) for robustness in adversarial settings. The related work paper discusses Byzantine-robust methods with compression but does not mention ARC or any clipping mechanism. There is no evidence in the related work to support or contradict the claim, making it unverifiable from the provided evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes Adaptive Robust Clipping (ARC). The related work evidence (DynaBRO) discusses dynamic Byzantine-robust learning but does not mention ARC or provide evidence about it. There is no direct connection to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes ARC to enhance robustness. The related work evidence describes a different method (fair gradient clipping) for Byzantine-robust learning under heterogeneity, but it does not mention ARC or the specific paper being reviewed. The evidence is unrelated to ARC, making it impossible to verify the claim against the provided related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (ARC is a new mechanism for robustness). The related work discusses MultiKrum's robustness coefficient, not ARC. There is no evidence in the provided related work to support or contradict the claim about ARC.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "748eaf7c166c77af6c0f7ad5fe4f5d580d2ae80e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that ARC enhances robustness in adversarial settings, but the provided related work paper focuses on the gap in generalization between Byzantine failures and data poisoning, not on ARC or adaptive clipping. There is no direct evidence in the related work to support or contradict the claim about ARC.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "21e4f21684f26840df0f86b443ea6137172ef6e1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the authors propose Adaptive Robust Clipping (ARC). The related work evidence discusses BR-CoMVaR, a different method for Byzantine-robust federated learning. There is no mention of ARC or any evidence supporting or contradicting the claim about ARC in the related work, making it unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+          "score": -2,
+          "label": "UNSUPPORTED",
+          "explanation": "The review sentence claims that Adaptive Robust Clipping (ARC) is a new mechanism proposed to enhance robustness in adversarial settings. However, the related work (DP2Guard) describes a different framework (DP2Guard) with a hybrid defense strategy and trust score-based adaptive aggregation, not ARC. There is no evidence in the related work supporting or aligning with the claim about ARC. The claim is specific to the paper under review, and the related work provides no relevant information. Therefore, the evidence does not support the claim, and calibration is overstated as the related work does not mention ARC.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e4febd711e96ccfbb7fbedc56248967c6dba880d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (it mentions 'the authors propose Adaptive Robust Clipping (ARC)'). However, the related work evidence (a paper on Byzantine-robust compressed distributed learning) does not mention ARC or any similar adaptive clipping mechanism. The evidence is unrelated to the specific claim, so verification is impossible with the provided text.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "f1c6f3d3868ee9bc397b622190d23345a116d175",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed, but the provided related work evidence (title only) does not contain any information to support or contradict the claim about ARC or its novelty.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the authors propose Adaptive Robust Clipping (ARC) to enhance robustness in adversarial settings. The related work abstract explicitly states 'we propose a principled adaptive clipping strategy, Adaptive Robust Clipping (ARC)' and discusses its use in robust federated learning against adversarial workers, directly supporting the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "20310fb046406d3648b6c554166d0c0bbd4201b3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper proposing ARC, but the related work (ID=20310fb046406d3648b6c554166d0c0bbd4201b3) discusses Byz-NSGDM and NNM, not ARC. No evidence in the provided related work text addresses or supports the claim about ARC, making it unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d7ccfc27bdb23d9c9f156d87ad7e8ce5f87ff23f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed (proposing ARC), but the related work evidence (about Byz-DM21) does not mention or support this claim. The evidence is unrelated to ARC, making it impossible to verify the claim against the provided related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method (ARC) proposed in the paper being reviewed, but the provided related work evidence is about LDP-Rep, a different method for Byzantine-robust federated aggregation. The evidence does not mention ARC or any clipping scheme, so there is no information to verify or support the claim about ARC.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c7affa44abbbe825437e5cc341465b05ec3444a9",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's proposal (ARC). The related work evidence (TernaryVote) does not mention ARC or Adaptive Robust Clipping; it discusses a different mechanism (TernaryVote). Therefore, there is insufficient evidence to evaluate alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "48a4a22d3097dea23b47a684eb0791ef85b21f44",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes Adaptive Robust Clipping (ARC) to enhance robustness, but the related work evidence (from a different paper on Byzantine-robust and communication-efficient distributed learning) does not mention ARC or provide any direct evidence about it. The evidence is about a different method (Polyak Momentum) and does not relate to the claim, making it insufficient for verification.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "4460b741752ab7104bd81a1c042f57c656e6a775",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes ARC as a new mechanism for robustness in adversarial settings, but the provided related work paper focuses on optimal batch size for Byzantine-robust learning and does not mention ARC or any adaptive clipping method. There is no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "fb9d2e4c9258973f1de645e5e511d1108a5b3829",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim states the paper proposes ARC to enhance robustness, which is supported by the paper's content. However, the related work evidence (a paper on Byzantine-robust personalized federated learning) does not discuss ARC or the specific mechanism, making it impossible to verify the claim against the related work evidence. The evidence is missing or unrelated.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+        "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+        "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+          "score": -2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "The paper introduces dynamic gradient clipping as an improvement to its static counterpart. More importantly it proves that the static approach is not robust, in accordance with the definition of robustness given in the paper.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "20ae4e5bf658b8b60e33e07ac2c0fd695cdd2121",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes claims about the paper's content (introducing dynamic gradient clipping, proving static approach is not robust) but the related work evidence is about a different paper on Byzantine robust distributed learning with local adaptive momentum. The evidence does not mention or relate to gradient clipping, static clipping, or robustness definitions from the paper being reviewed. Therefore, there is insufficient evidence to assess alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "42b380c5c36092400e6ad6259709c90bf37855c1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper being reviewed (introducing dynamic gradient clipping and proving static clipping is not robust). The related work evidence is about Byzantine-robust communication compression methods (Byz-DASHA-PAGE, Byz-EF21), which does not directly address or relate to the claim about dynamic vs. static gradient clipping. There is no information in the related work to support or contradict the claim, so evidence is missing.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3144176620cf1f6483c64b163bcf0faf9faa1f34",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces dynamic gradient clipping and proves static clipping is not robust. The related work evidence describes DynaBRO, which addresses dynamic Byzantine workers, not gradient clipping. No evidence supports or contradicts the specific claim about gradient clipping robustness definitions.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+          "score": -2,
+          "label": "UNSUPPORTED",
+          "explanation": "The review sentence claims the paper proves static clipping is not robust, aligning with the paper's own statements. The related work proposes a different clipping method (distance-based) and claims optimal breakdown point, but does not discuss or provide evidence about static clipping's robustness. The related work's focus on a new aggregation rule does not support or contradict the specific claim about static clipping in the reviewed paper; hence the evidence does not align.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer's claim that the paper introduces dynamic gradient clipping as an improvement to static clipping and proves static clipping is not robust aligns with the paper's content, which discusses the limitations of static clipping and introduces ARC. The related work does not directly address clipping or robustness proofs in the context of the reviewed paper, so the claim is based on the paper itself, not the related work.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "748eaf7c166c77af6c0f7ad5fe4f5d580d2ae80e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims about dynamic gradient clipping and static clipping's lack of robustness in the paper being reviewed. The related work evidence is about generalization gaps between Byzantine failures and data poisoning, which does not address gradient clipping methods or their robustness properties. Therefore, there is no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "21e4f21684f26840df0f86b443ea6137172ef6e1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper introduces dynamic gradient clipping and proves static clipping is not robust. The provided related work abstract discusses Byzantine-robust federated learning with compression and variance reduction, but it does not mention gradient clipping or the robustness proof about static clipping. No evidence is found to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "b6ba63ba565d2b4cf1288c1175790e4919ea788e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper proves static gradient clipping is not robust according to the paper's definition of robustness. However, the related work evidence (DP2Guard) does not discuss static clipping, robustness definitions, or the paper's specific contributions. There is no direct or indirect evidence in the related work to support or contradict the claim about static clipping's lack of robustness.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e4febd711e96ccfbb7fbedc56248967c6dba880d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proves static clipping is not robust, but the related work evidence does not mention static clipping or robustness definitions, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "f1c6f3d3868ee9bc397b622190d23345a116d175",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer sentence makes a specific claim about the paper proving that static clipping is not robust according to a given definition, but the provided related work title does not contain any relevant information about static clipping, robustness proofs, or definitions from the paper being reviewed.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer's claim aligns with the related work evidence, which states that static clipping yields inconsistent results and ARC introduces dynamic adjustments, matching the reviewer's description of dynamic gradient clipping as an improvement and static approach lacking robustness. The strength of language is accurate.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "20310fb046406d3648b6c554166d0c0bbd4201b3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper, but the related work evidence (about a different paper on Byzantine-robust optimization) does not provide any information about dynamic gradient clipping or the static approach's robustness as defined in the paper being reviewed. There is no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d7ccfc27bdb23d9c9f156d87ad7e8ce5f87ff23f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes claims about the paper's introduction of dynamic gradient clipping and proof that static clipping is not robust, but the related work (Accelerating Byzantine-Robust Distributed Learning with Compressed Communication) does not mention gradient clipping, static or dynamic. It focuses on communication compression, double-momentum, and variance reduction. There is no evidence in the related work to support or contradict the claims about clipping, making alignment and calibration assessment impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2ceb798280bbadc5dbf243b3d701f2d0aeb9c696",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims about dynamic gradient clipping and static clipping's lack of robustness. The provided paper being reviewed discusses these topics, but the related work evidence (LDP-Rep) does not address gradient clipping, robustness definitions, or static vs. dynamic clipping. The evidence is irrelevant to the claim, making it insufficient to verify.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c7affa44abbbe825437e5cc341465b05ec3444a9",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims about the paper's introduction of dynamic gradient clipping and its proof regarding static clipping's lack of robustness. The related work (TernaryVote) does not mention gradient clipping, static or dynamic, nor does it discuss robustness definitions related to clipping. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "48a4a22d3097dea23b47a684eb0791ef85b21f44",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence discusses dynamic gradient clipping improving static clipping and proving static approach is not robust. The related work paper (ID=48a4a22d3097dea23b47a684eb0791ef85b21f44) focuses on Byzantine-robust and communication-efficient distributed learning via compressed momentum filtering, with no mention of gradient clipping or the specific claim about static vs. dynamic clipping. Evidence is missing to verify or relate to the reviewer's claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "4460b741752ab7104bd81a1c042f57c656e6a775",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's content (dynamic vs. static gradient clipping and robustness definition), but the provided related work evidence is from a different paper on optimal batch size in Byzantine-robust learning. There is no evidence in the related work to support or contradict the claim about dynamic vs. static clipping, making it impossible to assess stance alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "fb9d2e4c9258973f1de645e5e511d1108a5b3829",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's content (dynamic gradient clipping improving robustness, static clipping being non-robust). The related work is a different paper on personalized federated learning with a different focus; it does not provide evidence about gradient clipping methods or robustness definitions from the reviewed paper. The claim cannot be verified or contradicted using the related work evidence.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.6666666666666666,
+      "best_evidence": [
+        "9dcda661a050040c9681a34c24c773b3ef8a429b",
+        "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+        "0c77fce199a96f15e4aacedd197a1a2efe79843b"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+          "score": -2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "fb7491d053682bc6e14b7771ac8a81e2a8e006c1",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "0c77fce199a96f15e4aacedd197a1a2efe79843b",
+          "score": 2.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 3,
+    "related_works": 18,
+    "pairs_attempted": 54,
+    "pairs_completed": 54,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 3,
+      "claims_with_any_attempt": 3,
+      "claims_with_any_success": 3,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 3,
+      "claims_with_scored_evidence": 3,
+      "claims_with_decisive_evidence": 1,
+      "claims_with_supporting_evidence": 1,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.3333,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 18.0
+    }
+  },
+  "errors": []
+}

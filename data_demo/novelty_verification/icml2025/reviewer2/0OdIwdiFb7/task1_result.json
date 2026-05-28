@@ -1,0 +1,86 @@
+{
+  "paper": {
+    "core_task": "Unsupervised categorical pose estimation from images using learned priors.",
+    "contributions": [
+      {
+        "name": "A hierarchical memory method for unsupervised pose prior learning",
+        "author_claim_text": "We propose a new method called the Pose Prior Learner (PPL) for unsupervised pose estimation.",
+        "description": "Introduces a hierarchical memory to store prototypical poses and learn a general pose prior without human annotations.",
+        "source_hint": "Introduction, Contributions list"
+      },
+      {
+        "name": "An iterative inference strategy for occluded pose estimation",
+        "author_claim_text": "During inference, we utilize an iterative strategy in which PPL progressively leverages priors to refine estimated poses by regressing them to the nearest prototypical poses stored in memory.",
+        "description": "Uses iterative refinement with the learned prior and memory to improve pose estimation in occluded scenes.",
+        "source_hint": "Contributions list, Section 3.4"
+      },
+      {
+        "name": "An unsupervised categorical prior learning challenge formulation",
+        "author_claim_text": "We introduce the challenge of unsupervised categorical prior learning in the context of pose estimation.",
+        "description": "Defines and formalizes the problem of learning pose priors from images without supervision for object categories.",
+        "source_hint": "Contributions list"
+      }
+    ],
+    "key_terms": [
+      "unsupervised pose estimation",
+      "pose prior",
+      "hierarchical memory",
+      "prototypical poses",
+      "keypoint prior",
+      "connectivity prior",
+      "iterative inference",
+      "occlusion",
+      "self-supervised learning",
+      "affine transformation",
+      "image reconstruction",
+      "compositional memory"
+    ],
+    "must_have_entities": [
+      "Human3.6m",
+      "Taichi",
+      "AutoLink",
+      "MLP-Mixer"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The introduction of a hierarchical memory structure to store and aggregate prototypical poses is a compelling innovation.",
+        "stance": "novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The novelty is somewhat diluted by the omission of relevant comparisons and lack of deep theoretical grounding.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C3",
+        "text": "The hierarchical memory is claimed to differ from previous compositional memory designs (such as PCT), the explanation is insufficient.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": true,
+        "prior_work_strings": [
+          "PCT"
+        ],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "BKind",
+      "STT",
+      "PCT",
+      "Human3.6m",
+      "Taichi",
+      "CUB-200-2011"
+    ]
+  }
+}

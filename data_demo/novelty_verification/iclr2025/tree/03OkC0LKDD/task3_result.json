@@ -1,0 +1,543 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper presents a novel and theoretically grounded approach to improving the robustness of distributed learning algorithms."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+      "text": "Title: Order-Optimal Byzantine-Robust Learning Under Heterogeneity via Fair Gradient Clipping\n\nAbstract: Byzantine-robust distributed or federated learning (FL) refers to providing reliable performance under Byzantine attacks, which violate the prescribed protocols and transmit arbitrary information to the server to hamper the convergence of machine learning (ML) algorithms, via designing resilient aggregation rules to combat attacks. Although numerous robust rules have been suggested, their performance degrades for heterogeneous data. A few techniques have been exploited to handle this problem, but they either require preaggregation operations, hence increasing the computational load, or lack breakdown point analysis of their rules. This article proposes a new aggregation rule, which clips the gradients received from all workers according to the distance between the gradient and the aggregation center. That is, when the distance is larger than the radius $\\gamma $ , the gradient will be clipped, and the longer the distance, the closer the clipped gradient is to the center. We theoretically analyze that the breakdown point of the developed rule is 0.5, the maximum value for robust aggregators. Moreover, our rule achieves order-optimal Byzantine-robust training error under data heterogeneity, while the median-based schemes, such as coordinate-wise median (CM) and geometric median (GM), are suboptimal. Experimental results demonstrate that the devised aggregation mechanism can handle different attacks well and outperforms the existing rules.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "e949f0208668c53398827f1b6c26df5fbf459970",
+      "text": "Title: Dynamic Regret for Byzantine-Robust Online Federated Learning\n\nAbstract: Federated learning enables decentralized model training across multiple clients without exchanging raw data, making it a crucial paradigm for privacy-preserving machine learning. However, its deployment in adversarial and dynamic environments remains fundamentally challenging, particularly under Byzantine attacks. Existing online Byzantine-robust methods face two critical limitations: (i) a strong reliance on the Independent and Identically Distributed (IID) assumption to achieve sublinear regret, and (ii) an inability to adapt to non-stationary environments due to their reliance on static regret metrics. These challenges substantially limit their applicability in practical federated learning scenarios characterized by heterogeneity and non-stationarity. To address these issues, this paper proposes a Byzantine-robust online algorithm, BR-OMGD, which performs multiple local gradient descent updates and incorporates a robust aggregation mechanism to mitigate adversarial effects under the weak growth condition. The algorithm achieves a near-optimal dynamic regret bound of $\\mathcal{O}(S^{\\ast}_{T})$ without requiring IID assumptions, where $S^{\\ast}_{T}$ denotes the squared path-length. When the online problem reduces to the offline case, BR-OMGD further guarantees exact linear convergence under strong convexity, smoothness, and the weak growth condition, even in the presence of data heterogeneity and Byzantine adversaries. To the best of our knowledge, this is the first result establishing such convergence guarantees under these conditions. Extensive experiments on benchmark datasets (MNIST, CIFAR-100) demonstrate the proposed algorithm’s practical effectiveness, showing improved robustness and lower dynamic regret under Byzantine attacks.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "6f0c7e8039f26a5fe251fce4190cf0f0cc04c157",
+      "text": "Title: Federated Learning for Privacy-Preserving Medical Data Analysis\n\nAbstract: Federated learning FL is an emerging transformative paradigm that facilitates the possibility of collaborative machine-learning models in healthcare where institutions can learn models on distributed data without revealing sensitive patient10 information 36. By transmitting only model updates instead of raw data, FL meets strict privacy constraints e.g., HIPAA, GDPR and solves the problem of data fragmentation in medical imaging, electronic health records EHRs, and IoT-based health monitoring. The main technical innovations are that FL incorporates DP/SMPC to protect against data divergence into gradients, with DP-SGD adding noise to updates for theoretical privacy guarantee. Algorithms such as FedProx and FedBN further reduce the performance degradation due to the heterogeneity of data distributions across hospitals using proximal terms FedProx or local batch normalization FedBN36. FL frameworks now estimate the confidence of a model to improve clinical trust, the cornerstone for processing noisy medical data 3А applications include tumor segmentation in histopathology 92-95% accuracy under FL with DPI, EHR-based prognosis prediction 8 and real-time wearable analytics 2, Sag patients 12b Challenges remain including communication efficiency, adversarial robustness and cross-institutional standardization 1118. This will allow them to contribute to the development of next-generation algorithms such as federated transformers and blockchain-enhanced FL for auditable, distributed healthcare AI.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "dd3481064d3f354f3ef355eeb9fddf9013b1ff90",
+      "text": "Title: RaSA: Robust and Adaptive Secure Aggregation for Edge-Assisted Hierarchical Federated Learning\n\nAbstract: Secure Aggregation (SA), in the Federated Learning (FL) setting, enables distributed clients to collaboratively learn a shared global model while keeping their raw data and local gradients private. However, when SA is implemented in edge-intelligence-driven FL, the open and heterogeneous environments will hinder model aggregation, slow down model convergence speed, and decrease model generalization ability. To address these issues, we present a Robust and adaptive Secure Aggregation (RaSA) protocol to guarantee robustness and privacy in the presence of non-IID data, heterogeneous system, and malicious edge servers. Specifically, we first design an adaptive weights updating strategy to address the non-IID data issue by considering the impact of both gradient similarity and gradient diversity on the model aggregation. Meanwhile, we enhance privacy protection by preventing privacy leakage from both gradients and aggregation weights. Different from previous work, we address system heterogeneity in the case of malicious attacks, and the malicious behavior from edge servers can be detected by the proposed verifiable approach. Moreover, we eliminate the influence of straggling communication links and dropouts on the model convergence by combining efficient product-coded computing with repetition-based secret sharing. Finally, we perform a theoretical analysis that proves the security of RaSA. Extensive experimental results show that RaSA can ensure model convergence without affecting the generalization ability under non-IID scenarios. Moreover, the decoding efficiency of RaSA achieves $1.33\\times $ and $6.4\\times $ faster than the state-of-the-art product-coded and one-dimensional coded computing schemes.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "ed52c467f158255a093fa7ff5b0e05999a6ac63a",
+      "text": "Title: Mitigating Model Poisoning Attacks on Distributed Learning with Heterogeneous Data\n\nAbstract: Gradient-based distributed learning techniques have been essential for machine model training on distributed samples without collecting raw data. However, such learning systems are vulnerable to both internal failures and external attacks. In this work, we study the Byzantine robustness of distributed learning over heterogeneous data for classification tasks, where each worker only contains data samples belonging to some specific classes (aka., label skew) and a fraction of workers are corrupted by a Byzantine adversary to conduct attacks by sending malicious gradients. Existing defenses usually fail under such heterogeneous cases. To remedy this, we propose a gradient decomposition scheme called DeSGD to achieve more robust distributed model training. The key idea for mitigating the impact of data heterogeneity on the Byzantine robustness is to divide the full global gradient into individual gradients of each data class and conduct resilient aggregation in a class-wise manner. The proposed framework can easily integrate existing advanced defense methods and local momentum mechanism. Evaluation results on the Fashion-MNIST dataset with various strong attacks demonstrate the improved robustness of learning over distributed data in the presence of both label skew and attacks.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "d632ef4d9b9bd35fee661761067ee366f539e090",
+      "text": "Title: A Provable Initialization and Robust Clustering Method for General Mixture Models\n\nAbstract: Clustering is a fundamental tool in statistical machine learning in the presence of heterogeneous data. Most recent results focus primarily on optimal mislabeling guarantees when data are distributed around centroids with sub-Gaussian errors. Yet, the restrictive sub-Gaussian model is often invalid in practice, since various real-world applications exhibit heavy-tail distributions around the centroids or suffer from possible adversarial attacks that call for robust clustering with a robust data-driven initialization. In this paper, we present initialization and subsequent clustering methods that provably guarantee near-optimal mislabeling for general mixture models when the number of clusters and data dimensions are finite. We first introduce a hybrid clustering technique with a novel multivariate trimmed mean type centroid estimate to produce mislabeling guarantees under a weak initialization condition for general error distributions around the centroids. A matching lower bound is derived, up to factors depending on the number of clusters. In addition, our approach also produces similar mislabeling guarantees even in the presence of adversarial outliers. Our results reduce to the sub-Gaussian case in finite dimensions when errors follow sub-Gaussian distributions. To solve the problem thoroughly, we also present novel data-driven robust initialization techniques and show that, with probabilities approaching one, these initial centroid estimates are sufficiently good for the subsequent clustering algorithm to achieve the optimal mislabeling rates. Furthermore, we demonstrate that Lloyd’s algorithm is suboptimal for more than two clusters even when errors are Gaussian and for two clusters when error distributions have heavy tails. Both simulated data and real data examples further support our robust initialization procedure and clustering algorithm.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "e153a59a8004eafa2f14ecdbc248a6f29f2c7bef",
+      "text": "Title: Dynamic Noise Optimization and Adaptive Local Aggregation for Personalized Federated Learning\n\nAbstract: Federated learning (FL) mitigates data silos but faces challenges from non-independent and identically distributed (non-IID) data. Personalized federated learning (PFL) with differential privacy (DP) effectively addresses both non-IID heterogeneity and privacy risks. However, existing PFL methods often rely on fixed model components, limiting flexibility, and exhibit poor robustness to gradient clipping under DP, leading to degraded accuracy and unstable convergence. To overcome these issues, this paper proposes a dynamic personalization approach that introduces an adaptive aggregation module with personalized weights to flexibly extract information from the global model. The module dynamically distinguishes between global and personalized parameters, while a modified local objective function mitigates noise effects, enhancing robustness to clipping. Experimental results demonstrate that the proposed method achieves flexible personalization and improved robustness under differential privacy.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "05346eb575883b90297271735b70326b01c7c094",
+      "text": "Title: Robust Data-Driven Decisions Under Model Uncertainty\n\nAbstract: In data-driven decisions, while the extrapolation from sample data is often based on observable similarities within a population, one also needs to take into account possible unobserved heterogeneity across individuals in the population. Because of the unobservability, a decision-maker (DM) can be uncertain about not only how the individuals might vary but also how different individuals are going to be sampled from the population. As a result, she might worry about the possibility that the sample data are more from one type of individual, whereas future draws that determine the payoff of decisions may be more of a different type. This paper captures this concern by considering a decision environment where the underlying data-generating process (DGP) is a sequence of independent but possibly non-identical distributions. Specifically, the DM observes sample data given by realizations of marginal distributions of a DGP and then makes a decision whose payoff depends only on future realizations of the same DGP. In addition, the DM facesmodel uncertainty in the form ofambiguity, i.e., she only knows there is a set of possible DGPs but cannot form any probabilistic assessment over them. For making decisions, I suppose the DM applies the maxmin expected-utility (MEU) criterion [1] to cope with ambiguity. That is, she makes an optimal decision under the worst possible DGP that she contemplates. The DM can either make adata-free decision based on her initial belief, or adata-driven decision based on her updated belief taking into account the sample data. Given these two types of decisions, I study updating rules in terms of how to guarantee the data-driven decisions to be better than the data-free decisions according toobjective payoff, i.e., the expected utility under thetrue DGP that governs the future uncertainty. In other words, while the DM makes decisions considering the worst case, the quality of her decisions will be evaluated against the ground truth. When an updating rule can guarantee improvement for all possible DGPs in the initial belief, the data-driven decisions are said to robustly improve upon the data-free decisions. In this paper, I formalize two achievable notions of how data-driven decisions can robustly improve upon data-free decisions across decision problems. I show that these two notions are both equivalent to the intuitive requirement that the updated set of DGPs should accommodate (i.e., contain with some technical generalization) the true DGP that generates the data (Theorem 4.2, 4.6, Corollary 4.7). Based on this equivalence, I further study updating rules in terms of this property. In Section 2 of the paper, I make a critical observation that in the presence of independent but non-identical distributions, common updating rules such as maximum likelihood and Bayesian updating, can almost surely rule out the true DGP. Thus, implied by the previous result, they can almost surely lead to strictly worse decisions than simply ignoring the data. To achieve robustly better decisions in such a decision environment, I develop two new updating rules in this paper. When the sample size can increase unboundedly to infinity, I propose theaverage-then-update rule that guarantees to accommodate the true DGP asymptotically almost surely (Theorem 5.4). When the sample size is finite, I propose therobust i.i.d. statistical tests that guarantee to accommodate the true DGP with a pre-specified probability (Theorem 5.7). Under the robust i.i.d. statistical tests, one effectively obtains a confidence region of the true DGP. While constructing confidence regions for non-identically distributed DGP can be computationally challenging, the robust i.i.d. statistical tests require constructing confidence regions for only the independent and identically distributed (i.i.d.) DGPs. Therefore, they are very tractable and thus easy to implement. Finally, the decision framework studied in this paper is often applied to model economic problems such as dynamic portfolio choice, asset pricing, and social learning under model uncertainty and under ambiguity. For those problems, the existing literature obtains conclusions primarily by assuming that the DM applies full Bayesian updating (some may refer to it as prior-by-prior updating). However, the asymptotic result under full Bayesian updating is often hard to solve. In a commonly studied model of learning from Gaussian signals with ambiguous variances, I show that applying the average-then-update rule reduces to a simple and intuitive step. More importantly, applying the average-then-update rule also implies that learning is significantly more effective than applying full Bayesian updating (Proposition 6.2). This learning outcome proves to be more intuitive in such a model. In addition, I provide a more concrete illustration of both proposed updating rules in Section 6 by studying a Bernoulli model with ambiguous nuisance parameters. There, I show that the updated sets of DGPs have tractable expressions and intuitive interpretations.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "47ff6766b969ef67443433533e046f5c1e01e947",
+      "text": "Title: An Artificial Intelligence-Based Federated Learning Platform to Boost Precision Medicine in Rare Hematological Diseases: An Initiative By GenoMed4all and Synthema Consortia\n\nAbstract: BACKGROUND. Most oncological and non-oncological hematological conditions fall under the category of rare diseases. Rare diseases present unique challenges due to the limited availability of data, which impacts diagnostic rates and the generation of clinical evidence. Overall, they constitute a public health concern, highlighting the urgent need to develop new methods for improving data accessibility. In this context, Federated Learning (FL) is a Machine Learning approach that allows multiple centers to collaborate on complex research questions without the need to centralize or share data.\n This project was conducted by the Genomed4all and Synthema consortia with the goal of developing an innovative FL platform for rare hematological diseases. This platform enables the development of novel Artificial Intelligence (AI) models for personalized medicine without data sharing, to be implemented in the referral centers of EuroBloodNET, the European Reference Network for rare hematological diseases. The aims of the project were: 1) to develop robust federated models for personalized prediction using multicentric, real-world datasets; 2) to protect patients' privacy; and 3) to enhance collaboration between institutions while avoiding the creation of centralized data repositories.\n METHODS. The FL platform includes a manager node (MN) and multiple worker nodes (WN). Users upload their model to the MN, which distributes it to WNs for local training. Trained weights are returned to the MN for aggregation, repeating until training is complete. The MN is hosted at the Humanitas Research Hospital, and the 3 WNs are located at Humanitas, Universität Leipzig, and the University of Bologna.\n The testing approach is based on MOSAIC, an AI-based framework for multimodal analysis in rare cancers (PMID 38875514). We focused on myelodysplastic syndromes as a use case, since they are a rare hematological disease with high clinical and genomic heterogeneity (which represents a challenging scenario). The dataset includes comprehensive clinical and genomic data, with information on treatments and clinical outcomes. Each of the 3 WNs has a different sample size of patient data, with 2656, 1328, and 443 samples. Our goal was to build an AI-based model for prediction of survival probability, combining molecular information with clinical data. We planned 3 scenarios for testing: a best-case scenario using all available features, a worst-case scenario excluding up to 50% of genomic information, and a random scenario where an incremental percentage of the genomic variables were randomly removed. For each setting, a DeepSurv model is trained using 80% of local data for training and 20% for testing.\n RESULTS. In the best-case scenario, the model achieved a concordance index (c-index) of 0.75. The node with the smallest dataset initially registered the lowest c-index value (0.4); however, after the first training step, its performance began to follow the trend at levels comparable to the nodes with larger samples (0.54). In the random scenarios, the model still achieved a c-index of 0.75 but required more training rounds to converge. The same pattern was also observed in the worst-case scenario that was able to achieve a c-index of 0.74. The most relevant difference between the tested scenarios is the increased training time required to reach a good and stable performance when missing information is present. The developed technology is fully compliant with European GDPR regulations.\n In the upcoming months, the FL platform will be implemented in the referral centers of the EuroBloodNET clinical network. In addition to tabular data, we plan to address the federation of features extracted from medical images, including both histological slides and radiological scans (CT, MRI and PET-CT).\n CONCLUSION. The FL platform for rare hematological diseases allows multicentric training of AI models without sharing sensitive patient data. This approach ensures data privacy and security, addressing specific challenges associated with rare diseases. Moreover, this platform manages scenarios with missing data or variables, maintaining robustness and accuracy of predictive models. Overall, FL approach is expected to facilitate the development of more advanced and reliable healthcare solutions, paving the way toward personalized medicine in hematology.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "19471f2afaef5bf7a5a4505d31b813629494ab5a",
+      "text": "Title: Exploiting Nearest Neighbor Mixing: Nearest Neighbor Poisoning",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "ca7c91134c9e2e5838fd7a23adaf5a76a92a5501",
+      "text": "Title: LightFedSelect: A Lightweight Framework for Byzantine-Robust Federated Learning\n\nAbstract: Federated Learning (FL) enables collaborative model training across decentralized devices while preserving data privacy. However, its decentralized nature exposes FL to Byzantine attacks (e.g., data/model poisoning) and non-IID data heterogeneity, which degrade model performance and compromise robustness. Existing defenses either incur prohibitive computational overhead or fail to adapt to dynamic adversarial strategies. To address these challenges, we propose LightFedSelect, a lightweight framework that enhances FL robustness through client selection and layered aggregation. Experiments on Fashion-MNIST dataset demonstrate LightFedSelect’s superiority over recent works, achieving 90.52% accuracy under label-flipping, backdoor, and noise attacks. Our framework reduces computational overhead compared to client-validation schemes and maintains stability in non-IID settings. LightFedSelect bridges the gap between robustness, efficiency, and adaptability, offering a scalable solution for secure FL deployments.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "text": "Title: for Prediction City Region Re-Weighting",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "10da241f63a7034dbc37b32ebfd52d8e7a998825",
+      "text": "Title: Risk-Aware Adaptive Federated Learning for Cyber-Secure Edge-AI in Smart Edge-IoT Environments\n\nAbstract: : The rapid adoption of Edge-AI in smart edge-IoT environments has dramatically led to an augmented vulnerability to cyber risks arising from distributed learning, data heterogeneity, and adversarial manipulation. This paper proposes a new risk-aware adaptive learning model that federated Edge-AI systems explicitly simulates cyber risk in the process of local training and global aggregation. The proposed solution combines stochastic optimization and adversarial risk bounding with adaptive gradient correction to develop strong learning in non-IID data distributions and malicious client behavior. Convergence guarantees are defined by the theoretical analysis in the case of limited adversarial perturbations. The proposed framework achieves up to 95% detection accuracy and demonstrates more than 20% improvement in robustness, where robustness is defined as the relative degradation in detection performance under adversarial perturbations. The performance is evaluated against state-of-the-art baselines, including HADA-FL and centralized training on the Edge-IIoTset dataset, with results reported as averages over multiple randomized runs. Furthermore, the model converges within 50 communication rounds, which corresponds to a fixed training horizon rather than an early-stopping criterion. These findings demonstrate the usefulness of risk-sensitive adaptive learning in safe and trustworthy Edge-AI implementation in a new generation edge-IoT environment.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "220aadcacb80865e290301145573993be9b228df",
+      "text": "Title: An Adaptive Consistency-Based Detection Scheme for Label-Flipping Attacks in Low-Altitude Economic Networks\n\nAbstract: With the rapid development of intelligent transportation and low-altitude economy, collaborative distillation has emerged as an efficient distributed learning paradigm that enables multi-terminal cooperation without sharing raw data. However, the open participation nature of such systems also exposes them to label-flipping attacks, where adversarial devices intentionally alter the labels of their local datasets to mislead the global model aggregation, thus compromising the reliability and trustworthiness of collaborative intelligence. To address this challenge, this paper proposes a label-flipping attack defense framework based on temporal feature modeling and unsupervised anomaly detection. In the early global training phase, each device’s multi-round prediction results on a shared public dataset are collected to extract statistical descriptors, including class distribution, prediction entropy, and inter-class transition strength—forming a short-term temporal feature sequence. An autoencoder is then employed to learn the evolution pattern of benign devices, and the reconstruction error combined with statistical deviation is used to compute anomaly scores. These scores are further analyzed by Isolation Forest model to identify potential attackers in an unsupervised manner. Finally, the anomaly scores are mapped to trust weights for weighted aggregation during subsequent distillation rounds, dynamically suppressing the influence of malicious devices. The proposed framework requires no access to raw data or model parameters, achieving accurate and robust attack detection while preserving privacy. Experimental results demonstrate that the method effectively identifies label-flipping devices under varying attack intensities, significantly enhancing the reliability and robustness of collaborative distillation systems, and showing strong potential for deployment in secure and scalable collaborative learning scenarios.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "c43099cd5c3fc9aefecf7abfdb33414731a0eb35",
+      "text": "Title: Fishing Villages under",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "d3a2dc97b52ade98db8e4be81f776eb31d617460",
+      "text": "Title: AFL-PRF: Adaptive Federated Learning for Low-Quality Data: Enhancing Performance, Robustness, and Fairness\n\nAbstract: Federated learning (FL) enables collaborative model training across distributed clients while preserving privacy, yet its decentralized nature makes it vulnerable to poisoned updates and performance degradation under highly skewed data. Prior studies typically treat accuracy, robustness, and fairness separately, leaving open the challenge of a unified solution. We propose AFL-PRF, an adaptive federated learning framework that simultaneously enhances accuracy, robustness, and fairness in adversarial and heterogeneous environments. AFL-PRF integrates three key techniques. First, an exponential adaptive weighting mechanism dynamically scales client updates, suppressing poisoned or unreliable contributions while retaining meaningful signals from benign but low-quality clients. Second, a client prioritization strategy guided by the novel Weight Update Divergence (WUD) score promotes reliable updates and their benign neighbors, preventing malicious gradients from dominating aggregation. Third, sensitivity profiling identifies fully connected (FC) layers as highly vulnerable due to large weight variance, motivating a selective clipping strategy that filters extreme updates in these layers while preserving normal learning dynamics. Extensive experiments on benchmark datasets demonstrate that AFL-PRF consistently outperforms state-of-the-art baselines, achieving over 30% improvement in robustness and 20% enhancement in fairness, while maintaining superior predictive accuracy. By unifying adaptive weighting, client prioritization, and targeted clipping, AFL-PRF establishes a new benchmark for federated learning under poisoned and highly non-IID conditions.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "2535a51d5c43712b73dbbc39046393924c1bf565",
+      "text": "Title: A REVIEW : BUG LOCALIZATION USING ANT COLONY OPTIMIZATION",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "aca0ef44f4baf645f8e7bce5fca86a20ac9f877c",
+      "text": "Title: A Defense Scheme of Backdoor Attacks for Federated Learning Based on Multi-Index Cascading\n\nAbstract: Federated Learning (FL) enables collaborative training among multiple data owners without direct sharing of users’ local data, which not only protects user privacy but also enhances model performance. However, due to the invisibility of local model training processes to the aggregation server, FL is vulnerable to Byzantine attacks and backdoor attacks initiated by adversaries. Backdoor attacks are highly covert and difficult to detect, thus posing significant threats to model security. Current backdoor attack defense mechanisms frequently fail to adequately account for the sophisticated capabilities of adversaries and the heterogeneous nature of data distributions encountered in practical deployment environments. Conventional defense approaches relying on singular evaluation metrics exhibit notable limitations when confronting highly self-adaptive adversarial attacks, with their defensive efficacy being particularly compromised under non-independent and identically distributed (Non-IID) data conditions. To overcome these limitations, we present a novel multi-metric cascading defense framework against backdoor attacks in federated learning systems. The proposed methodology systematically integrates five complementary yet mutually constraining evaluation metrics that collectively capture different aspects of model behavior. Through layer-wise feature extraction from distributed local models and adaptive threshold determination via rigorous statistical hypothesis testing, our framework achieves robust detection of both static and adaptive backdoor attacks. Comprehensive experimental evaluations confirm that the proposed solution maintains detection efficacy against sophisticated adversarial strategies while preserving the baseline accuracy of the global model.",
+      "relevance_score": null
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work describes a different paper with a specific aggregation rule (fair gradient clipping) and its theoretical analysis. There is no direct evidence in the provided related work text to support or contradict the claim about the paper being reviewed (C1).",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e949f0208668c53398827f1b6c26df5fbf459970",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness in distributed learning. The paper's abstract and introduction describe Adaptive Robust Clipping (ARC), a novel adaptive clipping scheme that improves robustness theoretically and empirically, with convergence guarantees. The related work focuses on dynamic regret and Byzantine-robust online federated learning, which is a different but related area; the claim is not directly about the related work, but the paper's content supports the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6f0c7e8039f26a5fe251fce4190cf0f0cc04c157",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel approach to improving robustness in distributed learning. The related work evidence is about federated learning for medical data analysis and does not discuss robustness of distributed learning algorithms or the specific novel approach mentioned. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dd3481064d3f354f3ef355eeb9fddf9013b1ff90",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work evidence is about a different paper (RaSA) focusing on secure aggregation, privacy, and heterogeneity, not on the specific ARC method or theoretical robustness improvements described in the reviewed paper. There is no direct evidence in the related work to support or contradict the claim about the reviewed paper's novelty or theoretical grounding.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ed52c467f158255a093fa7ff5b0e05999a6ac63a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper presenting a novel and theoretically grounded approach to improving robustness. The related work abstract discusses a different method (DeSGD) for mitigating model poisoning attacks with heterogeneous data, not directly addressing the specific approach of the reviewed paper (ARC). There is no direct evidence in the related work to support or contradict the claim, making verification impossible with the provided evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d632ef4d9b9bd35fee661761067ee366f539e090",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work evidence is about robust clustering and initialization methods for mixture models, which is a different domain (clustering vs. distributed learning). There is no direct evidence linking the related work to the claim about the paper's novelty or theoretical grounding in distributed learning robustness, making the claim unverifiable from the provided evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e153a59a8004eafa2f14ecdbc248a6f29f2c7bef",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel approach to improving robustness in distributed learning. The related work describes a different paper on personalized federated learning with differential privacy, focusing on dynamic noise optimization and adaptive local aggregation. There is no direct evidence in the related work to support or contradict the claim about the reviewed paper's novelty in robustness for distributed learning algorithms. The related work does not address the same problem or methods (like ARC or robust aggregation) discussed in the reviewed paper, making the evidence insufficient to evaluate the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "05346eb575883b90297271735b70326b01c7c094",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness in distributed learning. The related work discusses robust data-driven decisions under model uncertainty in a different domain (economics, decision theory). There is no direct connection or evidence about distributed learning robustness, novelty, or theoretical grounding in the related work. Thus, the claim cannot be verified or evaluated based on the provided evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "47ff6766b969ef67443433533e046f5c1e01e947",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novelty and theoretical grounding, but the related work describes a different paper about a federated learning platform for rare diseases. There is no overlap in content; the related work does not provide any evidence to support or contradict the claim about the reviewed paper's approach to robustness in distributed learning.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "19471f2afaef5bf7a5a4505d31b813629494ab5a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work evidence is only a title ('Exploiting Nearest Neighbor Mixing: Nearest Neighbor Poisoning') with no substantive content. There is insufficient information to verify whether this claim aligns with or is contradicted by the related work, and no evidence to assess calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ca7c91134c9e2e5838fd7a23adaf5a76a92a5501",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer's claim that the paper presents a novel and theoretically grounded approach to improving robustness is supported by the paper's abstract/introduction, which describes ARC as a novel adaptive clipping scheme with theoretical guarantees. The related work evidence from LightFedSelect, while also addressing robustness, does not contradict the claim; it focuses on a different framework (client selection and layered aggregation), showing alignment in the broader goal of improving robustness.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness of distributed learning algorithms. However, the related work provided (titled 'for Prediction City Region Re-Weighting') is unrelated to distributed learning or robustness, offering no evidence to support or contradict the claim. Therefore, evidence is missing and the claim cannot be verified.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "10da241f63a7034dbc37b32ebfd52d8e7a998825",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about the paper presenting a novel and theoretically grounded approach to improving robustness. The related work evidence (from a different paper on risk-aware adaptive federated learning) does not provide direct evidence about the specific paper being reviewed. The evidence is about a different system and does not mention the novel approach, theoretical grounding, or robustness improvements claimed for the paper in question. Therefore, the claim cannot be verified with the given related work evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "220aadcacb80865e290301145573993be9b228df",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness in distributed learning. However, the related work evidence describes a defense framework for label-flipping attacks in collaborative distillation systems, which does not directly address the claims about robustness improvement or theoretical grounding in the reviewed paper. The evidence is too vague and does not provide sufficient support to verify or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c43099cd5c3fc9aefecf7abfdb33414731a0eb35",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work provided (title: 'Fishing Villages under') is completely unrelated to the paper's content on distributed learning, robustness, or the ARC method. There is no evidence in the provided text to support or contradict the claim about the paper presenting a novel and theoretically grounded approach.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d3a2dc97b52ade98db8e4be81f776eb31d617460",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's approach to improving robustness in distributed learning. However, the related work (AFL-PRF) focuses on adaptive federated learning for accuracy, robustness, and fairness using techniques like exponential adaptive weighting, client prioritization, and selective clipping. It does not provide direct evidence or alignment with the specific novel and theoretically grounded approach described in the paper (which centers on ARC and its integration into Robust-DGD). The evidence is insufficient to verify the claim or assess calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2535a51d5c43712b73dbbc39046393924c1bf565",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novelty and theoretical grounding for improving robustness in distributed learning. However, the related work evidence provided is about bug localization using ant colony optimization, which is completely unrelated to the paper's topic. There is no evidence to support or contradict the claim, making it impossible to verify alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "aca0ef44f4baf645f8e7bce5fca86a20ac9f877c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work evidence describes a different paper on backdoor attack defense, which does not directly address the same approach (adaptive clipping for robust distributed learning) or provide evidence about the novelty or theoretical grounding of the reviewed paper. Thus, the claim cannot be verified or supported by the given evidence.",
+      "relevance_score": null
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper presents a novel and theoretically grounded approach to improving the robustness of distributed learning algorithms.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work describes a different paper with a specific aggregation rule (fair gradient clipping) and its theoretical analysis. There is no direct evidence in the provided related work text to support or contradict the claim about the paper being reviewed (C1).",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e949f0208668c53398827f1b6c26df5fbf459970",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness in distributed learning. The paper's abstract and introduction describe Adaptive Robust Clipping (ARC), a novel adaptive clipping scheme that improves robustness theoretically and empirically, with convergence guarantees. The related work focuses on dynamic regret and Byzantine-robust online federated learning, which is a different but related area; the claim is not directly about the related work, but the paper's content supports the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "6f0c7e8039f26a5fe251fce4190cf0f0cc04c157",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel approach to improving robustness in distributed learning. The related work evidence is about federated learning for medical data analysis and does not discuss robustness of distributed learning algorithms or the specific novel approach mentioned. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "dd3481064d3f354f3ef355eeb9fddf9013b1ff90",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work evidence is about a different paper (RaSA) focusing on secure aggregation, privacy, and heterogeneity, not on the specific ARC method or theoretical robustness improvements described in the reviewed paper. There is no direct evidence in the related work to support or contradict the claim about the reviewed paper's novelty or theoretical grounding.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ed52c467f158255a093fa7ff5b0e05999a6ac63a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper presenting a novel and theoretically grounded approach to improving robustness. The related work abstract discusses a different method (DeSGD) for mitigating model poisoning attacks with heterogeneous data, not directly addressing the specific approach of the reviewed paper (ARC). There is no direct evidence in the related work to support or contradict the claim, making verification impossible with the provided evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d632ef4d9b9bd35fee661761067ee366f539e090",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work evidence is about robust clustering and initialization methods for mixture models, which is a different domain (clustering vs. distributed learning). There is no direct evidence linking the related work to the claim about the paper's novelty or theoretical grounding in distributed learning robustness, making the claim unverifiable from the provided evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e153a59a8004eafa2f14ecdbc248a6f29f2c7bef",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel approach to improving robustness in distributed learning. The related work describes a different paper on personalized federated learning with differential privacy, focusing on dynamic noise optimization and adaptive local aggregation. There is no direct evidence in the related work to support or contradict the claim about the reviewed paper's novelty in robustness for distributed learning algorithms. The related work does not address the same problem or methods (like ARC or robust aggregation) discussed in the reviewed paper, making the evidence insufficient to evaluate the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "05346eb575883b90297271735b70326b01c7c094",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness in distributed learning. The related work discusses robust data-driven decisions under model uncertainty in a different domain (economics, decision theory). There is no direct connection or evidence about distributed learning robustness, novelty, or theoretical grounding in the related work. Thus, the claim cannot be verified or evaluated based on the provided evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "47ff6766b969ef67443433533e046f5c1e01e947",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novelty and theoretical grounding, but the related work describes a different paper about a federated learning platform for rare diseases. There is no overlap in content; the related work does not provide any evidence to support or contradict the claim about the reviewed paper's approach to robustness in distributed learning.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "19471f2afaef5bf7a5a4505d31b813629494ab5a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work evidence is only a title ('Exploiting Nearest Neighbor Mixing: Nearest Neighbor Poisoning') with no substantive content. There is insufficient information to verify whether this claim aligns with or is contradicted by the related work, and no evidence to assess calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ca7c91134c9e2e5838fd7a23adaf5a76a92a5501",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer's claim that the paper presents a novel and theoretically grounded approach to improving robustness is supported by the paper's abstract/introduction, which describes ARC as a novel adaptive clipping scheme with theoretical guarantees. The related work evidence from LightFedSelect, while also addressing robustness, does not contradict the claim; it focuses on a different framework (client selection and layered aggregation), showing alignment in the broader goal of improving robustness.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness of distributed learning algorithms. However, the related work provided (titled 'for Prediction City Region Re-Weighting') is unrelated to distributed learning or robustness, offering no evidence to support or contradict the claim. Therefore, evidence is missing and the claim cannot be verified.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "10da241f63a7034dbc37b32ebfd52d8e7a998825",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about the paper presenting a novel and theoretically grounded approach to improving robustness. The related work evidence (from a different paper on risk-aware adaptive federated learning) does not provide direct evidence about the specific paper being reviewed. The evidence is about a different system and does not mention the novel approach, theoretical grounding, or robustness improvements claimed for the paper in question. Therefore, the claim cannot be verified with the given related work evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "220aadcacb80865e290301145573993be9b228df",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness in distributed learning. However, the related work evidence describes a defense framework for label-flipping attacks in collaborative distillation systems, which does not directly address the claims about robustness improvement or theoretical grounding in the reviewed paper. The evidence is too vague and does not provide sufficient support to verify or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "c43099cd5c3fc9aefecf7abfdb33414731a0eb35",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work provided (title: 'Fishing Villages under') is completely unrelated to the paper's content on distributed learning, robustness, or the ARC method. There is no evidence in the provided text to support or contradict the claim about the paper presenting a novel and theoretically grounded approach.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d3a2dc97b52ade98db8e4be81f776eb31d617460",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's approach to improving robustness in distributed learning. However, the related work (AFL-PRF) focuses on adaptive federated learning for accuracy, robustness, and fairness using techniques like exponential adaptive weighting, client prioritization, and selective clipping. It does not provide direct evidence or alignment with the specific novel and theoretically grounded approach described in the paper (which centers on ARC and its integration into Robust-DGD). The evidence is insufficient to verify the claim or assess calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "2535a51d5c43712b73dbbc39046393924c1bf565",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novelty and theoretical grounding for improving robustness in distributed learning. However, the related work evidence provided is about bug localization using ant colony optimization, which is completely unrelated to the paper's topic. There is no evidence to support or contradict the claim, making it impossible to verify alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "aca0ef44f4baf645f8e7bce5fca86a20ac9f877c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper presents a novel and theoretically grounded approach to improving robustness. The related work evidence describes a different paper on backdoor attack defense, which does not directly address the same approach (adaptive clipping for robust distributed learning) or provide evidence about the novelty or theoretical grounding of the reviewed paper. Thus, the claim cannot be verified or supported by the given evidence.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 1.3333333333333333,
+      "best_evidence": [
+        "e949f0208668c53398827f1b6c26df5fbf459970",
+        "ca7c91134c9e2e5838fd7a23adaf5a76a92a5501",
+        "9dcda661a050040c9681a34c24c773b3ef8a429b"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "e949f0208668c53398827f1b6c26df5fbf459970",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "ca7c91134c9e2e5838fd7a23adaf5a76a92a5501",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "9dcda661a050040c9681a34c24c773b3ef8a429b",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 18,
+    "pairs_attempted": 18,
+    "pairs_completed": 18,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 1,
+      "claims_with_supporting_evidence": 1,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 1.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 18.0
+    }
+  },
+  "errors": []
+}

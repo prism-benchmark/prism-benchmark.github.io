@@ -1,0 +1,55 @@
+---
+import { Font, Image } from "astro:assets";
+
+import DemoExplorer from "../components/DemoExplorer.astro";
+import prismLogo from "../assets/prism-logo.png";
+import { loadDemoDataset } from "../lib/demo-data";
+
+import "../styles/global.css";
+
+const dataset = loadDemoDataset();
+const baseUrl = import.meta.env.BASE_URL;
+const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+---
+
+<!doctype html>
+<html class="bg-white" lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Interactive PRISM demo for exploring peer-review benchmark outputs across depth, novelty, flaw detection, and constructiveness."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href={prefix + "favicon.svg"} />
+    <Font
+      cssVariable="--font-noto-sans"
+      preload={[{ subset: "latin", style: "normal" }]}
+    />
+    <title>PRISM Interactive Demo</title>
+  </head>
+  <body class="demo-page font-(family-name:--font-noto-sans)">
+    <header class="demo-header">
+      <a class="demo-brand" href={prefix} aria-label="PRISM home">
+        <Image src={prismLogo} alt="" class="demo-logo" />
+        <span>PRISM</span>
+      </a>
+      <a class="demo-back" href={prefix}>Paper page</a>
+    </header>
+
+    <main class="demo-main">
+      <section class="demo-intro">
+        <p class="demo-kicker">Interactive benchmark explorer</p>
+        <h1>Inspect PRISM judgments at paper level.</h1>
+        <p>
+          Select one representative paper, reviewer source, and dimension to
+          inspect normalized outputs from the depth, novelty, flaw, and
+          constructiveness pipelines.
+        </p>
+      </section>
+
+      <DemoExplorer dataset={dataset} />
+    </main>
+  </body>
+</html>

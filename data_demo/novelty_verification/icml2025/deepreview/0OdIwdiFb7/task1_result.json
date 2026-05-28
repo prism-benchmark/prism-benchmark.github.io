@@ -1,0 +1,57 @@
+{
+  "paper": {
+    "core_task": "Unsupervised categorical pose estimation from images",
+    "contributions": [
+      {
+        "name": "Unsupervised pose prior learning method",
+        "author_claim_text": "We introduce the challenge of unsupervised categorical prior learning in the context of pose estimation.",
+        "description": "A method for learning a pose prior for an object category from images without manual annotations, using a hierarchical memory to store prototypical poses.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Pose Prior Learner with hierarchical memory",
+        "author_claim_text": "We propose a new method called Pose Prior Learner (PPL) for unsupervised pose estimation. PPL outperforms existing methods across several pose estimation benchmarks and offers explainable visualizations of pose priors.",
+        "description": "A method that uses a hierarchical memory to store compositional parts of prototypical poses and distills them into a general pose prior, outperforming methods with human-defined priors.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Iterative inference for occluded scenes",
+        "author_claim_text": "During inference, we utilize an iterative strategy in which PPL progressively leverages priors to refine estimated poses by regressing them to the nearest prototypical poses stored in memory.",
+        "description": "An inference strategy that iteratively refines pose estimates in occluded scenes by leveraging learned priors and prototypical poses stored in hierarchical memory.",
+        "source_hint": "Introduction"
+      }
+    ],
+    "key_terms": [
+      "unsupervised pose estimation",
+      "pose prior",
+      "hierarchical memory",
+      "prototypical poses",
+      "keypoint prior",
+      "connectivity prior",
+      "iterative inference",
+      "occlusion handling",
+      "compositional memory",
+      "self-supervised learning"
+    ],
+    "must_have_entities": [
+      "Human3.6m",
+      "Taichi",
+      "YouTube dog videos",
+      "AutoLink"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "PPL introduces a new method for unsupervised pose estimation by learning pose priors, which is a novel approach in the field.",
+        "stance": "novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

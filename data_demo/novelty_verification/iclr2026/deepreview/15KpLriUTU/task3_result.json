@@ -1,0 +1,699 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The proposed method is novel and interesting."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "text": "Title: Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling\n\nAbstract: Efficiently modeling sequences with infinite context length has long been a challenging problem. Previous approaches have either suffered from quadratic computational complexity or limited extrapolation ability in length generalization. In this work, we present Samba, a simple hybrid architecture that layer-wise combines Mamba, a selective State Space Model (SSM), with Sliding Window Attention (SWA). Samba selectively compresses a given sequence into recurrent hidden states while still maintaining the ability to precisely recall recent memories with the attention mechanism. We scale Samba up to 3.8B parameters with 3.2T training tokens and demonstrate that it significantly outperforms state-of-the-art models across a variety of benchmarks. Pretrained on sequences of 4K length, Samba shows improved perplexity in context lengths of up to 1M in zero-shot. When finetuned on 4K-length sequences, Samba efficiently extrapolates to a 256K context length with perfect memory recall on the Passkey Retrieval task, and exhibits superior retrieval extrapolation on the challenging Phonebook task compared to full-attention models. As a linear-time sequence model, Samba achieves a 3.73x higher throughput compared to Transformers with grouped-query attention for user prompts of 128K length, and a 3.64x speedup when generating 64K tokens with unlimited streaming. Our code for training on open source data is publicly available at https://github.com/microsoft/Samba.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "5ceb202621cbb7fd75f276b4cd6f87eb75d25663",
+      "text": "Title: Retrieval Meets Reasoning: Dynamic In-Context Editing for Long-Text Understanding\n\nAbstract: Current Large Language Models (LLMs) face inherent limitations due to their pre-defined context lengths, which impede their capacity for multi-hop reasoning within extensive textual contexts. While existing techniques like Retrieval-Augmented Generation (RAG) have attempted to bridge this gap by sourcing external information, they fall short when direct answers are not readily available. We introduce a novel approach that re-imagines information retrieval through dynamic in-context editing, inspired by recent breakthroughs in knowledge editing. By treating lengthy contexts as malleable external knowledge, our method interactively gathers and integrates relevant information, thereby enabling LLMs to perform sophisticated reasoning steps. Experimental results demonstrate that our method effectively empowers context-limited LLMs, such as Llama2, to engage in multi-hop reasoning with improved performance, which outperforms state-of-the-art context window extrapolation methods and even compares favorably to more advanced commercial long-context models. Our interactive method not only enhances reasoning capabilities but also mitigates the associated training and computational costs, making it a pragmatic solution for enhancing LLMs' reasoning within expansive contexts.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "51393dfbfd50a47030023c1ea1ef9f8e4a18941d",
+      "text": "Title: Long-Context State-Space Video World Models\n\nAbstract: Video diffusion models have recently shown promise for world modeling through autoregressive frame prediction conditioned on actions. However, they struggle to maintain long-term memory due to the high computational cost associated with processing extended sequences in attention layers. To overcome this limitation, we propose a novel architecture leveraging state-space models (SSMs) to extend temporal memory without compromising computational efficiency. Unlike previous approaches that retrofit SSMs for non-causal vision tasks, our method fully exploits the inherent advantages of SSMs in causal sequence modeling. Central to our design is a block-wise SSM scanning scheme, which strategically trades off spatial consistency for extended temporal memory, combined with dense local attention to ensure coherence between consecutive frames. We evaluate the long-term memory capabilities of our model through spatial retrieval and reasoning tasks over extended horizons. Experiments on Memory Maze and Minecraft datasets demonstrate that our approach surpasses baselines in preserving long-range memory, while maintaining practical inference speeds suitable for interactive applications.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "ccd9eca10294fe822a25e1133d59deacab005860",
+      "text": "Title: Reasoning Beyond Limits: Advances and Open Problems for LLMs\n\nAbstract: Recent breakthroughs in generative reasoning have fundamentally reshaped how large language models (LLMs) address complex tasks, enabling them to dynamically retrieve, refine, and organize information into coherent multi-step reasoning chains. Techniques such as inference-time scaling, reinforcement learning, supervised fine-tuning, and distillation have been effectively applied to state-of-the-art models, including DeepSeek-R1, OpenAI o1 and o3, GPT-4o, Qwen-32B, and various Llama variants, significantly enhancing their reasoning capabilities. In this paper, we present a comprehensive review of the top 27 LLMs released between 2023 and 2025, such as Mistral AI Small 3 24B, DeepSeek-R1, Search-o1, QwQ-32B, and Phi-4, and analyze their core innovations and performance improvements. We also provide a detailed overview of recent advancements in multilingual large language models (MLLMs), emphasizing methods that improve cross-lingual reasoning and address the limitations of English-centric training. In parallel, we present a comprehensive review of progress in state space model (SSM)-based architectures, including models such as Mamba, which demonstrate improved efficiency for long-context processing compared to transformer-based approaches. Our analysis covers training strategies including general optimization techniques, mixture-of-experts (MoE) configurations, retrieval-augmented generation (RAG), chain-of-thought prompting, self-improvement methods, and test-time compute scaling and distillation frameworks. Finally, we identify key challenges for future research, including enabling multi-step reasoning without human supervision, improving robustness in chained task execution, balancing structured prompting with generative flexibility, and enhancing the integration of long-context retrieval and external tools.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "21d22d71f759102094e58c0258afc147071f453f",
+      "text": "Title: Hydra: A Modular Architecture for Efficient Long-Context Reasoning\n\nAbstract: The quadratic complexity of transformers fundamentally limits reasoning system deployment in resource-constrained and long-context settings. We introduce Hydra, a modular architecture based upon a state-space backbone which adaptively routes between complementary efficiency mechanisms: sparse global attention, mixture-of-experts, and dual memories comprising a reasoning workspace and product key memory. We evaluate a 29M parameter model measuring logical chaining accuracy and throughput on synthetic sequences, plus throughput on WikiText. Ablation studies use component-specific synthetic datasets to isolate individual mechanisms. Hydra achieves $3.01\\times$ and $3.0\\times$ throughput gains at 8K tokens for synthetic and WikiText datasets, respectively, and $10\\times$ accuracy improvements on multi-step logical composition compared to equal-sized transformers. Ablations confirm each component's contribution: sparse attention captures long-range dependencies, experts specialize to input domains, and product key memory enables selective retrieval.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "eabf80d01093d30ca2ca94b70f2f561e9f7c7350",
+      "text": "Title: Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation\n\nAbstract: Recent advances in language modeling have demonstrated the effectiveness of State Space Models (SSMs) for efficient sequence modeling. While hybrid architectures such as Samba and the decoder-decoder architecture, YOCO, have shown promising performance gains over Transformers, prior works have not investigated the efficiency potential of representation sharing between SSM layers. In this paper, we introduce the Gated Memory Unit (GMU), a simple yet effective mechanism for efficient memory sharing across layers. We apply it to create SambaY, a decoder-hybrid-decoder architecture that incorporates GMUs in the cross-decoder to share memory readout states from a Samba-based self-decoder. SambaY significantly enhances decoding efficiency, preserves linear pre-filling time complexity, and boosts long-context performance, all while eliminating the need for explicit positional encoding. Through extensive scaling experiments, we demonstrate that our model exhibits a significantly lower irreducible loss compared to a strong YOCO baseline, indicating superior performance scalability under large-scale compute regimes. Our largest model enhanced with Differential Attention, Phi4-mini-Flash-Reasoning, achieves significantly better performance than Phi4-mini-Reasoning on reasoning tasks such as Math500, AIME24/25, and GPQA Diamond without any reinforcement learning, while delivering up to 10x higher decoding throughput on 2K-length prompts with 32K generation length under the vLLM inference framework. We release our training codebase on open-source data at https://github.com/microsoft/ArchScale.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "368fb35a07076eba01c2e4700499323cd4524513",
+      "text": "Title: RA-DIT: Retrieval-Augmented Dual Instruction Tuning\n\nAbstract: Retrieval-augmented language models (RALMs) improve performance by accessing long-tail and up-to-date knowledge from external data stores, but are challenging to build. Existing approaches require either expensive retrieval-specific modifications to LM pre-training or use post-hoc integration of the data store that leads to suboptimal performance. We introduce Retrieval-Augmented Dual Instruction Tuning (RA-DIT), a lightweight fine-tuning methodology that provides a third option by retrofitting any LLM with retrieval capabilities. Our approach operates in two distinct fine-tuning steps: (1) one updates a pre-trained LM to better use retrieved information, while (2) the other updates the retriever to return more relevant results, as preferred by the LM. By fine-tuning over tasks that require both knowledge utilization and contextual awareness, we demonstrate that each stage yields significant performance improvements, and using both leads to additional gains. Our best model, RA-DIT 65B, achieves state-of-the-art performance across a range of knowledge-intensive zero- and few-shot learning benchmarks, significantly outperforming existing in-context RALM approaches by up to +8.9% in 0-shot setting and +1.4% in 5-shot setting on average.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "e4f739cb3041380ea8019ea0ff82ad957a687e72",
+      "text": "Title: CAWN: Continuous Acoustic Wave Networks for Autoregressive Language Modeling\n\nAbstract: Modern Large Language Models (LLMs) rely on Transformer self-attention, which scales quadratically with sequence length. Recent linear-time alternatives, like State Space Models (SSMs), often suffer from signal degradation over extended contexts. We introduce the Continuous Acoustic Wave Network (CAWN), a fully continuous sequence-mixing architecture. Instead of discrete matrix-based attention, CAWN projects hidden states into multi-headed complex-domain phasors, achieving sequence mixing through a causal, $O(L)$ Phase Accumulation mechanism. To prevent signal degradation over ultra-long contexts, we introduce a dual-gated Selective Phase Resonance mechanism incorporating Frequency-Dependent Retention, Hard-Threshold Gating via Straight-Through Estimation, and a Temporal Syntax Cache to capture short-term local dependencies. We also replace standard dense linear projections with Depth-wise Harmonic Convolutions for optimal spatial frequency mixing, augmented by Block Attention Residuals for depth-wise state routing. Scaled to a 150M-parameter model, CAWN utilizes custom Triton kernels for hardware-efficient, true-complex phase accumulation in float32. Trained via a continuous streaming loop on a 100-Billion-token corpus, the prototype is evaluated at a 5-Billion-token milestone. Empirical evaluations via a Targeted Semantic Retrieval protocol demonstrate robust vocabulary acquisition and extended explicitly learned contextual denoising. By leveraging $O(1)$ state-passing via chunked prefill, the model retrieves targeted information across 2,000,000 tokens while strictly plateauing at 8.72 GB of Peak VRAM, empirically overcoming the $O(L^2)$ context memory wall.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "e84fb028bcea9b4e0e293187e6c7f432e4b44741",
+      "text": "Title: Characterizing State Space Model and Hybrid Language Model Performance with Long Context\n\nAbstract: Emerging applications such as AR are driving demands for machine intelligence capable of processing continuous and/or long-context inputs on local devices. However, currently dominant models based on Transformer architecture suffers from the quadratic computational and memory overhead, which hinders applications required to process long contexts. This has spurred a paradigm shift towards new architectures like State Space Models (SSMs) and SSM-Transformer hybrid models, which provide near-linear scaling. The near-linear scaling enabled efficient handling of millions of tokens while delivering high performance in recent studies. Although such works present promising results, their workload characteristics in terms of computational performance and hardware resource requirements are not yet thoroughly explored, which limits our understanding of their implications to the system level optimizations. To address this gap, we present a comprehensive, compara-ive benchmarking of carefully selected Transformers, SSMs, and hybrid models specifically for long-context inference on consumer and embedded GPUs. Our analysis shows that SSMs are well-suited for on-device AI on consumer and embedded GPUs for long context inferences. While Transformers are up to 1.9x faster at short sequences (<8K tokens), SSMs demonstrate a dramatic performance inversion, becoming up to 4x faster at very long contexts (~57K tokens), thanks to their linear computational complexity and ~64% reduced memory footrprint. Our operator-level analysis reveals that custom SSM kernels like selective scan despite being hardware-aware to minimize memory IO, dominate the inference runtime on edge platforms, accounting for over 55% of latency due to their sequential, element-wise nature. SSM-Scope is open-sourced at https://github.com/sapmitra/ssm-scope",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "d874548e5ac4058bd8424894955ef27a5b39caa2",
+      "text": "Title: Bayesian Information Extraction Network Content Areas : information extraction , probabilistic reasoning , information retrieval",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "0602b015c64394c0802f53dc15b678a64bc9a46e",
+      "text": "Title: EnerVerse: Envisioning Embodied Future Space for Robotics Manipulation\n\nAbstract: We introduce EnerVerse, a generative robotics foundation model that constructs and interprets embodied spaces. EnerVerse employs a chunk-wise autoregressive video diffusion framework to predict future embodied spaces from instructions, enhanced by a sparse context memory for long-term reasoning. To model the 3D robotics world, we adopt a multi-view video representation, providing rich perspectives to address challenges like motion ambiguity and 3D grounding. Additionally, EnerVerse-D, a data engine pipeline combining generative modeling with 4D Gaussian Splatting, forms a self-reinforcing data loop to reduce the sim-to-real gap. Leveraging these innovations, EnerVerse translates 4D world representations into physical actions via a policy head (EnerVerse-A), achieving state-of-the-art performance in both simulation and real-world tasks. For efficiency, EnerVerse-A reuses features from the first denoising step and predicts action chunks, achieving about 280 ms per 8-step action chunk on a single RTX 4090. Further video demos, dataset samples could be found in our project page.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "8630e880829c82269861d396f61f23a8ada3db1f",
+      "text": "Title: Decoupled Reasoning with Implicit Fact Tokens (DRIFT): A Dual-Model Framework for Efficient Long-Context Inference\n\nAbstract: The integration of extensive, dynamic knowledge into Large Language Models (LLMs) remains a significant challenge due to the inherent entanglement of factual data and reasoning patterns. Existing solutions, ranging from non-parametric Retrieval-Augmented Generation (RAG) to parametric knowledge editing, are often constrained in practice by finite context windows, retriever noise, or the risk of catastrophic forgetting. In this paper, we propose DRIFT, a novel dual-model architecture designed to explicitly decouple knowledge extraction from the reasoning process. Unlike static prompt compression, DRIFT employs a lightweight knowledge model to dynamically compress document chunks into implicit fact tokens conditioned on the query. These dense representations are projected into the reasoning model's embedding space, replacing raw, redundant text while maintaining inference accuracy. Extensive experiments show that DRIFT significantly improves performance on long-context tasks, outperforming strong baselines among comparably sized models. Our approach provides a scalable and efficient paradigm for extending the effective context window and reasoning capabilities of LLMs. Our code is available at https://github.com/Lancelot-Xie/DRIFT.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "050a8b1e19cdec2b389e2a295388f7269d39ff22",
+      "text": "Title: Evaluation and Mentoring of Online Faculty",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "da649d7ca5cb629243328400f8845e4186537f92",
+      "text": "Title: Apriel-H1: Towards Efficient Enterprise Reasoning Models\n\nAbstract: Large Language Models (LLMs) achieve remarkable reasoning capabilities through transformer architectures with attention mechanisms. However, transformers suffer from quadratic time and memory complexity in the attention module (MHA) and require caching key-value states during inference, which severely limits throughput and scalability. High inference throughput is critical for agentic tasks, long-context reasoning, efficient deployment under high request loads, and more efficient test-time compute scaling. State Space Models (SSMs) such as Mamba offer a promising alternative with linear inference complexity and a constant memory footprint via recurrent computation with fixed-size hidden states. In this technical report we introduce the Apriel-H1 family of hybrid LLMs that combine transformer attention and SSM sequence mixers for efficient reasoning at 15B model size. These models are obtained through incremental distillation from a pretrained reasoning transformer, Apriel-Nemotron-15B-Thinker, progressively replacing less critical attention layers with linear Mamba blocks. We release multiple post-distillation variants of Apriel-H1-15B-Thinker with different SSM-to-MHA ratios and analyse how reasoning performance degrades as more Mamba layers replace MHA. Additionally, we release a 30/50 hybrid variant of Apriel-H1, further fine-tuned on a supervised dataset of reasoning traces, achieving over 2x higher inference throughput when deployed in the production-ready vLLM environment, with minimal degradation in reasoning performance. This shows that distilled hybrid SSM-Transformer architectures can deliver substantial efficiency gains over the pretrained transformer equivalent without substantially compromising the reasoning quality.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "d5b686df9dad0fe5e77ccbacbf203beac5782e8c",
+      "text": "Title: Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective\n\nAbstract: As embodied agents operate in increasingly complex environments, the ability to perceive, track, and reason about individual object instances over time becomes essential, especially in tasks requiring sequenced interactions with visually similar objects. In these non-Markovian settings, key decision cues are often hidden in object-specific histories rather than the current scene. Without persistent memory of prior interactions (what has been interacted with, where it has been, or how it has changed) visuomotor policies may fail, repeat past actions, or overlook completed ones. To surface this challenge, we introduce LIBERO-Mem, a non-Markovian task suite for stress-testing robotic manipulation under object-level partial observability. It combines short- and long-horizon object tracking with temporally sequenced subgoals, requiring reasoning beyond the current frame. However, vision-language-action (VLA) models often struggle in such settings, with token scaling quickly becoming intractable even for tasks spanning just a few hundred frames. We propose Embodied-SlotSSM, a slot-centric VLA framework built for temporal scalability. It maintains spatio-temporally consistent slot identities and leverages them through two mechanisms: (1) slot-state-space modeling for reconstructing short-term history, and (2) a relational encoder to align the input tokens with action decoding. Together, these components enable temporally grounded, context-aware action prediction. Experiments show Embodied-SlotSSM's baseline performance on LIBERO-Mem and general tasks, offering a scalable solution for non-Markovian reasoning in object-centric robotic policies.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "65b2c9808da0549290f0cad02648a68c0e6621de",
+      "text": "Title: UniCAIM: A Unified CAM/CIM Architecture with Static-Dynamic KV Cache Pruning for Efficient Long-Context LLM Inference\n\nAbstract: Transformer-based large language models (LLMs) have achieved impressive performance in various natural language processing (NLP) applications. However, the high memory and computation cost induced by the KV cache limits the inference efficiency, especially for long input sequences. Compute-in-memory (CIM)-based accelerators have been proposed for LLM acceleration with KV cache pruning. However, as existing accelerators only support static pruning with a fixed pattern or dynamic pruning with primitive implementations, they suffer from either high accuracy degradation or low efficiency. In this paper, we propose a ferroelectric FET (FeFET)-based unified content addressable memory (CAM) and CIM architecture, dubbed as UniCAIM. UniCAIM features simultaneous support for static and dynamic pruning with 3 computation modes: 1) in the CAM mode, UniCAIM enables approximate similarity measurement in $\\mathcal{O}(1)$ time for dynamic KV cache pruning with high energy efficiency; 2) in the charge-domain CIM mode, static pruning can be supported based on accumulative similarity score, which is much more flexible compared to fixed patterns; 3) in the current-domain mode, exact attention computation can be conducted with a subset of selected KV cache. We further propose a novel CAM/CIM cell design that leverages the multi-level characteristics of FeFETs for signed multibit storage of the KV cache and in-place attention computation. With extensive experimental results, we demonstrate UniCAIM can reduce the area-energy-delay product (AEDP) by $8.2 \\sim 831 \\times$ over the state-of-the-art CIM-based LLM accelerators at the circuit level, along with high accuracy comparable with dense attention at the application level, showing its great potential for efficient long-context LLM inference.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "fbbee999e9aca892f7606fb146075d7c39837312",
+      "text": "Title: 04|3D MODELLING AND VISUALISATION",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+      "text": "Title: Achieving Constant Memory Complexity in Long Context Transformers Through Linear Attention\n\nAbstract: The transformer architecture has emerged as the dominant paradigm for sequence modeling, yet its standard self-attention mechanism imposes quadratic time and memory cost with respect to sequence length, presenting a fundamental scalability barrier for long-context applications. This paper investigates linear attention as a principled mechanism for achieving constant memory complexity (KM) during autoregressive inference in transformer models. By replacing the softmax normalization in scaled dot-product attention with a kernel decomposition, the computation is restructured so that keys and values are combined before interacting with queries, yielding an equivalent recurrent form that maintains a fixed-size hidden state regardless of sequence length. We present a unified theoretical derivation of this parallel-to-recurrent equivalence, introduce a learnable positive feature map paired with data-dependent gating and structured state normalization, and evaluate the resulting architecture on long-context language modeling and downstream comprehension benchmarks. Empirical results confirm that peak GPU memory consumption remains constant at 2.1 gigabytes across context lengths from 1,024 to 131,072 tokens, achieving a 13.6× throughput advantage over standard softmax attention at length 65,536, with only a 4.8% relative perplexity increase on the Pile dataset. These findings establish constant-complexity linear attention as a viable deployment mechanism for memory-constrained long-context transformer inference.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+      "text": "Title: Education Matters: Innovative Social Science Research",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "214ba3038e6aa37d1f17b4049bac54b161e6c0f7",
+      "text": "Title: Taipan: Efficient and Expressive State Space Language Models with Selective Attention\n\nAbstract: Efficient long-context language modeling remains a significant challenge in Natural Language Processing (NLP). While Transformers dominate language tasks, they struggle with long sequences due to quadratic computational complexity in training and linearly scaling memory costs during inference. Recent State Space Models (SSMs) such as Mamba offer alternatives with constant memory usage, but they underperform in tasks requiring extensive in-context retrieval. We introduce Taipan, a novel hybrid architecture that combines Mamba-2 with Selective Attention Layers (SALs). These SALs identify tokens requiring long-range interactions, remove less important features, and then augment their representations using the attention module. This approach balances Mamba's efficiency with Transformer-like performance in memory-intensive tasks. By constraining the attention budget, Taipan extends accurate predictions to context lengths of up to 1 million tokens while preserving computational efficiency. Our experiments demonstrate Taipan's superior performance across various scales and tasks, offering a promising solution for efficient long-context language modeling.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "301bf75c331a9c933822d914b6a87a050187a96f",
+      "text": "Title: MDLA: Multi-Head Latent Linear Attention for Low-Complexity and Memory-Efficient KV Cache\n\nAbstract: Large language models (LLMs) have achieved remarkable progress with Transformer-based architectures. However, the quadratic complexity of the multi-head attention (MHA) mechanism imposes significant computational and memory bottlenecks, limiting scalability for long-context reasoning. To address these challenges, we propose Multi-Head Latent Linear Attention (MDLA), a unified attention architecture that integrates low-rank joint compression, linear attention, and a state space model (SSM)-based reconstruction mechanism. MDLA inherits the memory-efficient design of multi-head latent attention (MLA) while introducing a linearized attention formulation to achieve computational scalability and an SSMbased reconstruction module to restore sequential dependencies lost during compression. This hybrid design effectively balances efficiency and expressiveness, reducing both FLOPs and memory usage without compromising representational quality. Experimental results demonstrate that MDLA achieves up to 63.6% reduction in total computation compared with MLA at a 16 K -token sequence length, while maintaining competitive performance across language understanding benchmarks such as MMLU, HellaSwag, ARC, and TruthfulQA. These results confirm that MDLA provides an efficient and scalable foundation for next-generation large language models requiring long-context processing.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "08bad2daddbfe6b61d422c779535276771fd5a58",
+      "text": "Title: Representing and Reasoning over Time in a Unified Cognitive Architecture - eScholarship",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "d2caa91a9c0b373694de027c78cfcd9390f4c503",
+      "text": "Title: GLUS: Global-Local Reasoning Unified into A Single Large Language Model for Video Segmentation\n\nAbstract: This paper proposes a novel framework utilizing multimodal large language models (MLLMs) for referring video object segmentation (RefVOS). Previous MLLMbased methods commonly struggle with the dilemma between \"Ref\" and \"VOS\": they either specialize in understanding a few key frames (global reasoning) or tracking objects on continuous frames (local reasoning), and rely on external VOS or frame selectors to mitigate the other end of the challenge. However, our framework GLUS shows that Global and Local consistency can be Unified into a single video Segmentation MLLM: a set of sparse \"context frames\" provides global information, while a stream of continuous \"query frames\" conducts local object tracking. This is further supported by jointly training the MLLM with a pre-trained VOS memory bank to simultaneously digest short-range and long-range temporal information. To improve the information efficiency within the limited context window of MLLMs, we introduce object contrastive learning to distinguish hard false-positive objects and a self-refined framework to identify crucial frames and perform propagation. By collectively integrating these insights, our GLUS delivers a simple yet effective baseline, achieving new state-of-the-art for MLLMs on the MeViS and Ref-Youtube-VOS benchmark. Our project page is at https://glus-video.github.io/.",
+      "relevance_score": null
+    },
+    {
+      "related_paper_id": "3198b0215598537b9a3fa43ac14664157ba51471",
+      "text": "Title: Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective\n\nAbstract: As embodied agents operate in increasingly complex environments, the ability to perceive, track, and reason about individual object instances over time becomes essential, especially in tasks requiring sequenced interactions with visually similar objects. In non-Markovian settings, critical decision cues lie in object histories rather than the current scene. Without persistent memory of prior interactions (what was used, where it was placed, or how it changed), visuomotor policies may fail, repeat past actions, or overlook completed ones. To surface this challenge, we introduce LIBERO-Mem, a non-Markovian task suite for stress-testing robotic manipulation under object-level partial observability. It combines short- and long-horizon object tracking with temporally sequenced subgoals, requiring reasoning beyond the current frame. However, vision-language-action (VLA) models often struggle in such settings, with token scaling quickly becoming intractable even for tasks spanning just a few hundred frames. We propose Embodied-SlotSSM, a slot-centric VLA framework built for temporal scalability. It maintains spatio-temporally consistent slot identities and leverages them through two mechanisms: (1) slot-state-space modeling for reconstructing short-term history, and (2) a relational encoder to align the input tokens with action decoding. Together, these components enable temporally grounded, context-aware action prediction. Experiments show Embodied-SlotSSM's baseline performance on LIBERO-Mem and general tasks, offering a scalable solution for non-Markovian reasoning in object-centric policies.",
+      "relevance_score": null
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a subjective claim about the proposed method (PUM-Net) being novel and interesting, but the related work evidence (Samba) does not directly address or provide evidence for this claim. Samba describes a different hybrid architecture (Mamba + Sliding Window Attention) and its efficiency, not the novelty or interest of PUM-Net. There is insufficient information in the related work to verify or align with the reviewer's claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5ceb202621cbb7fd75f276b4cd6f87eb75d25663",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a vague claim about the paper's novelty and interestingness, but the related work evidence (an abstract about dynamic in-context editing for long-text understanding) does not provide specific information about the proposed method in the paper being reviewed (PUM-Net) to verify this claim. The evidence is unrelated to the paper's contributions, making it insufficient to judge alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "51393dfbfd50a47030023c1ea1ef9f8e4a18941d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a vague claim about novelty and interest. The provided related work focuses on video world models and state-space models for long-term memory, but it does not directly address the specific innovations (e.g., PUM-Net's dual-memory system, pre-encoded external knowledge) claimed in the paper being reviewed. There is insufficient evidence to evaluate alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ccd9eca10294fe822a25e1133d59deacab005860",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (novelty/interest). The provided related work (a general review of LLMs, SSMs, RAG, etc.) does not contain specific evidence about the novelty or interestingness of the PUM-Net method described in the paper. The claim is vague and cannot be verified or contradicted using the given related work text.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "21d22d71f759102094e58c0258afc147071f453f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (Hydra) does not provide information to evaluate or compare with the novelty claim of PUM-Net. The evidence is insufficient to judge support or contradiction.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "eabf80d01093d30ca2ca94b70f2f561e9f7c7350",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a claim about the paper being reviewed, but the related work provided (about SambaY and Gated Memory Units) does not contain any evidence to support or contradict this claim regarding the novelty or interest of PUM-Net. The related work discusses a different architecture and does not address PUM-Net's internal or external memory mechanisms, making the claim unverifiable with the given evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "368fb35a07076eba01c2e4700499323cd4524513",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the proposed method (PUM-Net) is novel and interesting, but the related work (RA-DIT) does not provide evidence about PUM-Net's novelty or interest. RA-DIT is a different approach (fine-tuning methodology for RALMs) and does not discuss or compare to PUM-Net's dual-memory system or its contributions.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e4f739cb3041380ea8019ea0ff82ad957a687e72",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague claim about the paper's novelty, but the related work (CAWN) does not provide any evidence to support or contradict this claim about PUM-Net's novelty. No direct comparison or reference is made between the two works.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e84fb028bcea9b4e0e293187e6c7f432e4b44741",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a vague evaluative claim about the paper being reviewed ('novel and interesting'). The related work evidence provides a performance benchmarking study of SSMs and hybrids, which does not directly support or contradict the novelty or interest claim about the specific PUM-Net method. There is no direct evidence in the related work to verify this claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d874548e5ac4058bd8424894955ef27a5b39caa2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about novelty and interest of the proposed method. However, the related work evidence does not discuss the novelty or interest of PUM-Net; it only describes a different paper's topic (Bayesian Information Extraction Network) in a different field. There is no direct evidence to support or contradict the claim about PUM-Net's novelty.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0602b015c64394c0802f53dc15b678a64bc9a46e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim 'novel and interesting' is a subjective evaluation about the proposed method in the reviewed paper, but the provided related work (EnerVerse) does not contain any evidence about the novelty or interest of the method being reviewed. There is no direct or indirect support from the related work to assess alignment or calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8630e880829c82269861d396f61f23a8ada3db1f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (PUM-Net), but the related work provided (DRIFT) does not contain any information to evaluate the novelty or interestingness of PUM-Net. There is no evidence in the related work about PUM-Net's design, contributions, or comparisons.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "050a8b1e19cdec2b389e2a295388f7269d39ff22",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim about novelty is too vague; the provided related work discusses faculty evaluation, which is unrelated to the paper's content on memory-augmented SSMs, offering no evidence to support or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "da649d7ca5cb629243328400f8845e4186537f92",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a claim about the paper being reviewed (PUM-Net). However, the provided related work (Apriel-H1) does not contain any evidence to support or contradict this claim. The related work focuses on a different hybrid SSM-Transformer model and does not discuss the novelty or interest of PUM-Net. Therefore, the evidence is missing or unverifiable.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d5b686df9dad0fe5e77ccbacbf203beac5782e8c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague claim about the paper being reviewed (PUM-Net). The provided related work (about Embodied-SlotSSM in robotics) does not contain any information about PUM-Net's novelty or interest, making it impossible to verify the claim or assess alignment and calibration.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "65b2c9808da0549290f0cad02648a68c0e6621de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (PUM-Net). However, the related work (UniCAIM) is a different paper on a different topic (a hardware accelerator for LLM inference). The related work does not provide any evidence or context about the novelty or interestingness of PUM-Net, making it impossible to align or calibrate the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fbbee999e9aca892f7606fb146075d7c39837312",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague claim about the paper. The provided related work (on 3D modelling and visualisation) is entirely unrelated to the paper's topic (long-context modeling with SSMs and PUM-Net). There is no evidence in the related work to evaluate novelty or interest, making verification impossible.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (novelty and interest). However, the provided related work evidence does not discuss the paper's novelty or interest; it only describes an alternative approach to long-context transformers using linear attention. There is no information to verify or relate the reviewer's claim to the related work evidence.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novelty and interest, but the related work is unrelated (a social science research paper). There is no evidence in the provided text to evaluate the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "214ba3038e6aa37d1f17b4049bac54b161e6c0f7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (Taipan) does not directly address or provide evidence for the novelty or interestingness of PUM-Net. No specific comparison or contradiction is present in the provided abstract of Taipan.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "301bf75c331a9c933822d914b6a87a050187a96f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a vague claim about novelty and interest, but the related work evidence (MDLA) is about a different architecture (MDLA vs. PUM-Net) and does not directly address the novelty claim. No specific support or contradiction is found.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "08bad2daddbfe6b61d422c779535276771fd5a58",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the proposed method is novel and interesting, but the provided related work text focuses on a different paper (representing and reasoning over time) and does not mention PUM-Net or its novelty. No evidence is available to verify or contradict the claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d2caa91a9c0b373694de027c78cfcd9390f4c503",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the proposed method is novel and interesting, but the provided related work (GLUS) is about a different paper on video segmentation, which does not provide evidence about the novelty of the method in the paper being reviewed (PUM-Net). The evidence is missing for verifying this claim.",
+      "relevance_score": null
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3198b0215598537b9a3fa43ac14664157ba51471",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a generic claim about novelty and interest, which is vague and cannot be verified or contradicted by the provided related work. The related work describes a different paper on robotic manipulation with object-centric memory, which does not provide evidence about the novelty of the method under review (PUM-Net). Thus, evidence is missing.",
+      "relevance_score": null
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The proposed method is novel and interesting.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a subjective claim about the proposed method (PUM-Net) being novel and interesting, but the related work evidence (Samba) does not directly address or provide evidence for this claim. Samba describes a different hybrid architecture (Mamba + Sliding Window Attention) and its efficiency, not the novelty or interest of PUM-Net. There is insufficient information in the related work to verify or align with the reviewer's claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "5ceb202621cbb7fd75f276b4cd6f87eb75d25663",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a vague claim about the paper's novelty and interestingness, but the related work evidence (an abstract about dynamic in-context editing for long-text understanding) does not provide specific information about the proposed method in the paper being reviewed (PUM-Net) to verify this claim. The evidence is unrelated to the paper's contributions, making it insufficient to judge alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "51393dfbfd50a47030023c1ea1ef9f8e4a18941d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a vague claim about novelty and interest. The provided related work focuses on video world models and state-space models for long-term memory, but it does not directly address the specific innovations (e.g., PUM-Net's dual-memory system, pre-encoded external knowledge) claimed in the paper being reviewed. There is insufficient evidence to evaluate alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "ccd9eca10294fe822a25e1133d59deacab005860",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (novelty/interest). The provided related work (a general review of LLMs, SSMs, RAG, etc.) does not contain specific evidence about the novelty or interestingness of the PUM-Net method described in the paper. The claim is vague and cannot be verified or contradicted using the given related work text.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "21d22d71f759102094e58c0258afc147071f453f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (Hydra) does not provide information to evaluate or compare with the novelty claim of PUM-Net. The evidence is insufficient to judge support or contradiction.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "eabf80d01093d30ca2ca94b70f2f561e9f7c7350",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a claim about the paper being reviewed, but the related work provided (about SambaY and Gated Memory Units) does not contain any evidence to support or contradict this claim regarding the novelty or interest of PUM-Net. The related work discusses a different architecture and does not address PUM-Net's internal or external memory mechanisms, making the claim unverifiable with the given evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "368fb35a07076eba01c2e4700499323cd4524513",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the proposed method (PUM-Net) is novel and interesting, but the related work (RA-DIT) does not provide evidence about PUM-Net's novelty or interest. RA-DIT is a different approach (fine-tuning methodology for RALMs) and does not discuss or compare to PUM-Net's dual-memory system or its contributions.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e4f739cb3041380ea8019ea0ff82ad957a687e72",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague claim about the paper's novelty, but the related work (CAWN) does not provide any evidence to support or contradict this claim about PUM-Net's novelty. No direct comparison or reference is made between the two works.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e84fb028bcea9b4e0e293187e6c7f432e4b44741",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a vague evaluative claim about the paper being reviewed ('novel and interesting'). The related work evidence provides a performance benchmarking study of SSMs and hybrids, which does not directly support or contradict the novelty or interest claim about the specific PUM-Net method. There is no direct evidence in the related work to verify this claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d874548e5ac4058bd8424894955ef27a5b39caa2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about novelty and interest of the proposed method. However, the related work evidence does not discuss the novelty or interest of PUM-Net; it only describes a different paper's topic (Bayesian Information Extraction Network) in a different field. There is no direct evidence to support or contradict the claim about PUM-Net's novelty.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "0602b015c64394c0802f53dc15b678a64bc9a46e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim 'novel and interesting' is a subjective evaluation about the proposed method in the reviewed paper, but the provided related work (EnerVerse) does not contain any evidence about the novelty or interest of the method being reviewed. There is no direct or indirect support from the related work to assess alignment or calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "8630e880829c82269861d396f61f23a8ada3db1f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (PUM-Net), but the related work provided (DRIFT) does not contain any information to evaluate the novelty or interestingness of PUM-Net. There is no evidence in the related work about PUM-Net's design, contributions, or comparisons.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "050a8b1e19cdec2b389e2a295388f7269d39ff22",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim about novelty is too vague; the provided related work discusses faculty evaluation, which is unrelated to the paper's content on memory-augmented SSMs, offering no evidence to support or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "da649d7ca5cb629243328400f8845e4186537f92",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a claim about the paper being reviewed (PUM-Net). However, the provided related work (Apriel-H1) does not contain any evidence to support or contradict this claim. The related work focuses on a different hybrid SSM-Transformer model and does not discuss the novelty or interest of PUM-Net. Therefore, the evidence is missing or unverifiable.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d5b686df9dad0fe5e77ccbacbf203beac5782e8c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague claim about the paper being reviewed (PUM-Net). The provided related work (about Embodied-SlotSSM in robotics) does not contain any information about PUM-Net's novelty or interest, making it impossible to verify the claim or assess alignment and calibration.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "65b2c9808da0549290f0cad02648a68c0e6621de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (PUM-Net). However, the related work (UniCAIM) is a different paper on a different topic (a hardware accelerator for LLM inference). The related work does not provide any evidence or context about the novelty or interestingness of PUM-Net, making it impossible to align or calibrate the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "fbbee999e9aca892f7606fb146075d7c39837312",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague claim about the paper. The provided related work (on 3D modelling and visualisation) is entirely unrelated to the paper's topic (long-context modeling with SSMs and PUM-Net). There is no evidence in the related work to evaluate novelty or interest, making verification impossible.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (novelty and interest). However, the provided related work evidence does not discuss the paper's novelty or interest; it only describes an alternative approach to long-context transformers using linear attention. There is no information to verify or relate the reviewer's claim to the related work evidence.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "7ea5ec106915850de9607156893da27adbb412f2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novelty and interest, but the related work is unrelated (a social science research paper). There is no evidence in the provided text to evaluate the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "214ba3038e6aa37d1f17b4049bac54b161e6c0f7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (Taipan) does not directly address or provide evidence for the novelty or interestingness of PUM-Net. No specific comparison or contradiction is present in the provided abstract of Taipan.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "301bf75c331a9c933822d914b6a87a050187a96f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a vague claim about novelty and interest, but the related work evidence (MDLA) is about a different architecture (MDLA vs. PUM-Net) and does not directly address the novelty claim. No specific support or contradiction is found.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "08bad2daddbfe6b61d422c779535276771fd5a58",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the proposed method is novel and interesting, but the provided related work text focuses on a different paper (representing and reasoning over time) and does not mention PUM-Net or its novelty. No evidence is available to verify or contradict the claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "d2caa91a9c0b373694de027c78cfcd9390f4c503",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the proposed method is novel and interesting, but the provided related work (GLUS) is about a different paper on video segmentation, which does not provide evidence about the novelty of the method in the paper being reviewed (PUM-Net). The evidence is missing for verifying this claim.",
+          "relevance_score": null
+        },
+        {
+          "related_paper_id": "3198b0215598537b9a3fa43ac14664157ba51471",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a generic claim about novelty and interest, which is vague and cannot be verified or contradicted by the provided related work. The related work describes a different paper on robotic manipulation with object-centric memory, which does not provide evidence about the novelty of the method under review (PUM-Net). Thus, evidence is missing.",
+          "relevance_score": null
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "28eb18717cfa257f0fc49fb9512c48279cafa031",
+        "5ceb202621cbb7fd75f276b4cd6f87eb75d25663",
+        "51393dfbfd50a47030023c1ea1ef9f8e4a18941d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "28eb18717cfa257f0fc49fb9512c48279cafa031",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "5ceb202621cbb7fd75f276b4cd6f87eb75d25663",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "51393dfbfd50a47030023c1ea1ef9f8e4a18941d",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 24,
+    "pairs_attempted": 24,
+    "pairs_completed": 24,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 24.0
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,61 @@
+{
+  "paper": {
+    "core_task": "Benchmarking multimodal large language models on low-level visual perception and understanding",
+    "contributions": [
+      {
+        "name": "A benchmark for low-level visual perception of MLLMs",
+        "author_claim_text": "We build a benchmark for MLLMs on low-level perception ability. To achieve this, we construct a first-of-its-kind balanced and comprehensive LLVisionQA dataset with 2,990 images with one low-level-related question-answer pair for each image.",
+        "description": "The authors construct the LLVisionQA dataset with 2,990 images and question-answer pairs to evaluate the low-level perception ability of MLLMs, covering diverse sources and question types.",
+        "source_hint": "Conclusion"
+      },
+      {
+        "name": "A benchmark process for low-level description evaluation",
+        "author_claim_text": "We define a benchmark process to evaluate the low-level description ability of MLLMs, including an LLDescription dataset of 499 images with expert-labelled long golden quality descriptions, and a GPT-assisted evaluation to rate MLLM-descriptions in terms of completeness, preciseness, and relevance.",
+        "description": "The authors propose a benchmark with the LLDescription dataset and a GPT-assisted evaluation process to assess MLLMs' ability to describe low-level visual information.",
+        "source_hint": "Conclusion"
+      },
+      {
+        "name": "A unified softmax-based quality prediction strategy",
+        "author_claim_text": "To evaluate precise quality assessment ability, we propose a unified softmax-based quality prediction strategy for all MLLMs based on their probability outputs.",
+        "description": "The authors introduce a softmax-based method to extract quantifiable quality scores from MLLMs by pooling logits of 'good' and 'poor' tokens, bridging MLLMs with traditional IQA tasks.",
+        "source_hint": "Conclusion"
+      }
+    ],
+    "key_terms": [
+      "multimodal large language models",
+      "low-level visual perception",
+      "low-level visual understanding",
+      "image quality assessment",
+      "visual question answering",
+      "LLVisionQA dataset",
+      "LLDescribe dataset",
+      "softmax-based prediction",
+      "low-level attributes",
+      "distortions",
+      "aesthetics",
+      "Q-Bench"
+    ],
+    "must_have_entities": [
+      "ChatGPT",
+      "Bard",
+      "LLaMA",
+      "LLaVA",
+      "MiniGPT-4",
+      "InstructBLIP",
+      "Otter",
+      "CLIP-ViT-Large-14",
+      "Shikra",
+      "InternLM-XComposer-VL",
+      "Qwen-VL",
+      "Kosmos-2",
+      "IDEFICS-Instruct",
+      "mPLUG-Owl",
+      "LLaMA-Adapter-V2",
+      "VisualGLM-6B"
+    ]
+  },
+  "review": {
+    "novelty_claims": [],
+    "all_citations_raw": []
+  }
+}
