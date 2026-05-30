@@ -1,0 +1,98 @@
+{
+  "paper": {
+    "core_task": "Enhancing multiturn human-LLM collaboration for long-term interaction goals",
+    "contributions": [
+      {
+        "name": "A collaborative simulation framework for multiturn LLM training",
+        "author_claim_text": "We introduce COLLABLLM, a novel and general training framework that enhances multiturn human-LLM collaboration.",
+        "description": "A training framework that uses collaborative simulation with forward sampling to estimate long-term response impacts via Multiturn-aware Rewards, then applies reinforcement fine-tuning to promote proactive, goal-aligned behavior in LLMs.",
+        "source_hint": "Abstract"
+      },
+      {
+        "name": "Multiturn-aware reward function for long-term impact estimation",
+        "author_claim_text": "The key innovation of COLLABLLM is to promote LLMs' forward-looking behavior that leads to longterm collaboration gains.",
+        "description": "A reward formulation that evaluates model responses by simulating future conversation trajectories, combining extrinsic task-specific metrics with intrinsic efficiency and interactivity measures to estimate long-term collaboration quality.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Three multiturn benchmark tasks for training and evaluation",
+        "author_claim_text": "We also devise a multiturn interaction benchmark with three challenging tasks such as document creation.",
+        "description": "Three challenging multiturn tasks—MediumDocEdit-Chat for document creation, BigCodeBench-Chat for code generation, and MATH-Chat for math problem solving—designed for training and evaluating collaborative LLMs in simulated environments.",
+        "source_hint": "Abstract"
+      }
+    ],
+    "key_terms": [
+      "multiturn human-LLM collaboration",
+      "collaborative simulation",
+      "Multiturn-aware Rewards",
+      "forward sampling",
+      "reinforcement fine-tuning",
+      "user intent discovery",
+      "long-term impact estimation",
+      "user simulator",
+      "conversation-level reward",
+      "interactivity",
+      "task performance"
+    ],
+    "must_have_entities": [
+      "Llama-3.1-8B",
+      "GPT-4o-mini",
+      "MediumDocEdit-Chat",
+      "BigCodeBench-Chat",
+      "MATH-Chat",
+      "Abg-CoQA",
+      "Pass Rate",
+      "MTurk"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "This paper introduces COLLABLLM, a novel training framework for Large Language Models (LLMs) that enhances their ability to collaborate with humans in multi-turn conversations.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The paper's contributions include a novel training framework, multiturn tasks, and a user study, advancing the field of human-LLM collaboration.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "task_similarity"
+      },
+      {
+        "claim_id": "C3",
+        "text": "The paper introduces a novel training framework, COLLABLLM, which enhances the ability of LLMs to collaborate with humans in multi-turn conversations.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C4",
+        "text": "This paper proposes a novel training framework, COLLABLLM, that enhances the ability of LLMs to collaborate with humans in multi-turn conversations.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C5",
+        "text": "This paper introduces a novel training framework, COLLABLLM, that enhances the ability of LLMs to collaborate with humans in multi-turn conversations.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

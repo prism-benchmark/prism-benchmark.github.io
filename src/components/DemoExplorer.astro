@@ -269,10 +269,10 @@ const metadataJson = JSON.stringify(metadataByConference);
       <select data-role="source">
         {
           dataset.sources.map((item) => (
-            <option value={item} selected={item === initialSource}>
-              {sourceLabels[item]}
-            </option>
-          ))
+              <option value={item} selected={item === initialSource}>
+                {sourceLabels[item]}
+              </option>
+            ))
         }
       </select>
     </label>
@@ -282,6 +282,7 @@ const metadataJson = JSON.stringify(metadataByConference);
     {
       dataset.dimensions.map((item) => (
         <button
+          role="tab"
           aria-selected={item === initialDimension ? "true" : "false"}
           class={item === initialDimension ? "active" : ""}
           data-role="dimension"
@@ -584,14 +585,18 @@ const metadataJson = JSON.stringify(metadataByConference);
                         >
                           {comment.section}
                         </span>
-                        <span
-                          class="demo-chip muted"
-                          data-comment-type={String(
-                            comment.type,
-                          ).toLowerCase()}
-                        >
-                          {comment.type}
-                        </span>
+                        {!String(comment.section)
+                          .toLowerCase()
+                          .includes(String(comment.type).toLowerCase()) && (
+                          <span
+                            class="demo-chip muted"
+                            data-comment-type={String(
+                              comment.type,
+                            ).toLowerCase()}
+                          >
+                            {comment.type}
+                          </span>
+                        )}
                       </div>
                       <p>{comment.content}</p>
                       <div class="demo-score-cells">

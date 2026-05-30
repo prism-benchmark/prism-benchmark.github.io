@@ -1,0 +1,205 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The novelty is somewhat diluted by the absence of a thorough comparison to existing multiturn frameworks."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "da625b2e2f32b3ee4eb655d8cdb96f74b20e0bce",
+      "text": "Title: GOLF: Goal-Oriented Long-term liFe tasks supported by human-AI collaboration\n\nAbstract: The advent of ChatGPT and similar large language models (LLMs) has revolutionized the human-AI interaction and information-seeking process. Leveraging LLMs as an alternative to search engines, users can now access summarized information tailored to their queries, significantly reducing the cognitive load in navigating vast information resources. This shift underscores the potential of LLMs in redefining information access paradigms [1]. Drawing on the foundation of task-focused information retrieval and LLMs' task planning ability, this research extends the scope of LLM capabilities beyond short-term task automation (i.e., smaller-scale and routine tasks that LLM agents can automate with less human intervention) to support users in navigating long-term and significant life tasks. The long-term tasks encompass broader personal life goals or development in aspects like health, finances, education, and professional development, which cannot be fully completed by LLM agents but require significant human involvement. This study introduces the GOLF framework (Goal-Oriented Long-term liFe tasks), which focuses on enhancing LLMs' ability to assist in significant life decisions through goal orientation and long-term planning. Figure 1 presents the GOLF framework, including a task taxonomy and the process for task management. The GOLF framework envisions the completion of complex tasks as a strategic journey toward a final goal, incorporating a sequence of activities, tasks, and subtasks, adopting the task taxonomy in Figure 1a [2]. Figure 1b illustrates the task process within the GOLF framework, which operates on AutoGen [3], a sophisticated multi-agent system, and involves multiple LLM agents to facilitate user support and workload distribution for achieving long-term goals. The multi-agent system processes the task following steps: Initial Planning, Step Planning, Task Assignment, Multi-Agent Coordination, User Engagement, and Evaluation and Iteration. The methodology encompasses a comprehensive simulation study to test the framework's efficacy, followed by model and human evaluations to develop a dataset benchmark for long-term life tasks, and experiments across different models and settings. By shifting the focus from short-term tasks to the broader spectrum of long-term life goals, this research underscores the transformative potential of LLMs in enhancing human decision-making processes and task management, marking a significant step forward in the evolution of human-AI collaboration.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "text": "Title: CollabLLM: From Passive Responders to Active Collaborators\n\nAbstract: Large Language Models are typically trained with next-turn rewards, limiting their ability to optimize for long-term interaction. As a result, they often respond passively to ambiguous or open-ended user requests, failing to help users reach their ultimate intents and leading to inefficient conversations. To address these limitations, we introduce CollabLLM, a novel and general training framework that enhances multiturn human-LLM collaboration. Its key innovation is a collaborative simulation that estimates the long-term contribution of responses using Multiturn-aware Rewards. By reinforcement fine-tuning these rewards, CollabLLM goes beyond responding to user requests, and actively uncovers user intent and offers insightful suggestions-a key step towards more human-centered AI. We also devise a multiturn interaction benchmark with three challenging tasks such as document creation. CollabLLM significantly outperforms our baselines with averages of 18.5% higher task performance and 46.3% improved interactivity by LLM judges. Finally, we conduct a large user study with 201 judges, where CollabLLM increases user satisfaction by 17.6% and reduces user spent time by 10.4%.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "9e5e96f78f4e5f53fa0dc8f090d189ceae5bac7b",
+      "text": "Title: Hello Again! LLM-powered Personalized Agent for Long-term Dialogue\n\nAbstract: Open-domain dialogue systems have seen remarkable advancements with the development of large language models (LLMs). Nonetheless, most existing dialogue systems predominantly focus on brief single-session interactions, neglecting the real-world demands for long-term companionship and personalized interactions with chatbots. Crucial to addressing this real-world need are event summary and persona management, which enable reasoning for appropriate long-term dialogue responses. Recent progress in the human-like cognitive and reasoning capabilities of LLMs suggests that LLM-based agents could significantly enhance automated perception, decision-making, and problem-solving. In response to this potential, we introduce a model-agnostic framework, the Long-term Dialogue Agent (LD-Agent), which incorporates three independently tunable modules dedicated to event perception, persona extraction, and response generation. For the event memory module, long and short-term memory banks are employed to separately focus on historical and ongoing sessions, while a topic-based retrieval mechanism is introduced to enhance the accuracy of memory retrieval. Furthermore, the persona module conducts dynamic persona modeling for both users and agents. The integration of retrieved memories and extracted personas is subsequently fed into the generator to induce appropriate responses. The effectiveness, generality, and cross-domain capabilities of LD-Agent are empirically demonstrated across various illustrative benchmarks, models, and tasks. The code is released at https://github.com/leolee99/LD-Agent.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "text": "Title: Technologies for E-Learning and Digital Entertainment, Second International Conference, Edutainment 2007, Hong Kong, China, June 11-13, 2007, Proceedings",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "af02099d8b1ce1f0d224fcbb4a4e4b77608db168",
+      "text": "Title: MemoryART: Enhancing LLMs via Multi-Memory Models with Adaptive Resonance Theory for Healthcare Agents\n\nAbstract: Though promising in healthcare consultation applications, large language models (LLMs) face critical limitations in retaining and utilizing long-term memory across multi-turn interactions. In particular, existing memory enhancing paradigms are constrained by limited context windows and embedding-based retrieval, often failing to maintain task relevance and still suffering from memory prototype collapse in multi-turn healthcare consultation. To address these challenges, we propose a cognitively-inspired memory framework named MemoryART, which is grounded in Adaptive Resonance Theory (ART)—a cognitive and learning theory of how humans and animals adapt to dynamic environments. MemoryART employs three memory modules—working memory, episodic memory, and semantic memory to support task-aware memory organization and dynamic retrieval. Specifically, episodic memory provides the storage of specific experiences along with contextual clues, which is crucial for managing patient-specific information and perfect for multi-turn healthcare consultation interactions. Building upon this concept, MemoryART leverages multi-channel competitive learning and resonance matching to enable efficient and interpretable episodic memory encoding, alleviating issues of prototype collapse and noisy memory associations. For evaluation, we construct a long-term medical dialogue benchmark called MediLongChat using a LLM-based generation pipeline. The resulting dataset features realistic, multi-disease chat histories, each exceeding 100K tokens across 20–30 dialogues, simulating real-world healthcare interaction patterns. Our experimental results show that MemoryART outperforms mainstream approaches in memory-intensive tasks, achieving SOTA results and significantly reducing token consumption across five popular LLMs, confirming its effectiveness and efficiency in providing scalable, reliable memory for LLMs in healthcare.",
+      "relevance_score": 0.25
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "da625b2e2f32b3ee4eb655d8cdb96f74b20e0bce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novelty being diluted by the absence of a comparison to existing multiturn frameworks. The provided related work (GOLF) describes a different framework for long-term life tasks, not a multiturn collaboration framework comparable to COLLABLLM. There is no evidence in the related work about a comparison or lack thereof between COLLABLLM and existing multiturn frameworks, so the claim cannot be verified or evaluated for alignment and calibration.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer claims the novelty is diluted by lack of comparison to existing multiturn frameworks. The related work (the paper itself) introduces a novel framework with significant benchmarks and comparisons to baselines but does not explicitly mention comparison to other existing multiturn frameworks, supporting the claim that such a comparison is absent.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9e5e96f78f4e5f53fa0dc8f090d189ceae5bac7b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (COLLABLLM) lacking a thorough comparison to existing multiturn frameworks. The related work provided is about a different paper (LD-Agent) focused on long-term dialogue with personalized agents. This related work does not provide evidence for or against the claim about the absence of comparison in COLLABLLM, as it is a separate work and not part of COLLABLLM's comparison set. Thus, evidence is missing.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's lack of comparison to existing multiturn frameworks, but the related work evidence provided is a book title unrelated to the paper's content, offering no relevant information to verify the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "af02099d8b1ce1f0d224fcbb4a4e4b77608db168",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the novelty is diluted by lack of comparison to existing multiturn frameworks. The related work is about a different paper (MemoryART) focusing on memory frameworks for healthcare, not a multiturn collaboration framework like COLLABLLM. No direct evidence is provided about existing multiturn frameworks or their comparison with COLLABLLM, making the claim unverifiable from the given texts.",
+      "relevance_score": 0.25
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The novelty is somewhat diluted by the absence of a thorough comparison to existing multiturn frameworks.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "da625b2e2f32b3ee4eb655d8cdb96f74b20e0bce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novelty being diluted by the absence of a comparison to existing multiturn frameworks. The provided related work (GOLF) describes a different framework for long-term life tasks, not a multiturn collaboration framework comparable to COLLABLLM. There is no evidence in the related work about a comparison or lack thereof between COLLABLLM and existing multiturn frameworks, so the claim cannot be verified or evaluated for alignment and calibration.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer claims the novelty is diluted by lack of comparison to existing multiturn frameworks. The related work (the paper itself) introduces a novel framework with significant benchmarks and comparisons to baselines but does not explicitly mention comparison to other existing multiturn frameworks, supporting the claim that such a comparison is absent.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "9e5e96f78f4e5f53fa0dc8f090d189ceae5bac7b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (COLLABLLM) lacking a thorough comparison to existing multiturn frameworks. The related work provided is about a different paper (LD-Agent) focused on long-term dialogue with personalized agents. This related work does not provide evidence for or against the claim about the absence of comparison in COLLABLLM, as it is a separate work and not part of COLLABLLM's comparison set. Thus, evidence is missing.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's lack of comparison to existing multiturn frameworks, but the related work evidence provided is a book title unrelated to the paper's content, offering no relevant information to verify the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "af02099d8b1ce1f0d224fcbb4a4e4b77608db168",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the novelty is diluted by lack of comparison to existing multiturn frameworks. The related work is about a different paper (MemoryART) focusing on memory frameworks for healthcare, not a multiturn collaboration framework like COLLABLLM. No direct evidence is provided about existing multiturn frameworks or their comparison with COLLABLLM, making the claim unverifiable from the given texts.",
+          "relevance_score": 0.25
+        }
+      ],
+      "final_score": 0.7272727272727273,
+      "best_evidence": [
+        "da625b2e2f32b3ee4eb655d8cdb96f74b20e0bce",
+        "33c8fde911526140a85cdfc654c8ee318f83906d",
+        "9e5e96f78f4e5f53fa0dc8f090d189ceae5bac7b"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "da625b2e2f32b3ee4eb655d8cdb96f74b20e0bce",
+          "score": 0.0,
+          "weight": 0.3636
+        },
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2.0,
+          "weight": 0.3636
+        },
+        {
+          "related_paper_id": "9e5e96f78f4e5f53fa0dc8f090d189ceae5bac7b",
+          "score": 0.0,
+          "weight": 0.2727
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 5,
+    "pairs_attempted": 5,
+    "pairs_completed": 5,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 5.0
+    }
+  },
+  "errors": []
+}

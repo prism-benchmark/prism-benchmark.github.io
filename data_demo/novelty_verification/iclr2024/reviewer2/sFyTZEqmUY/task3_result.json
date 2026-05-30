@@ -1,0 +1,153 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The integration of diverse datasets is novel, but the applications (planning, RL, captioning) do not clearly differentiate from prior work."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "cffd7238aba668e399a82581b17efa3c21f20de8",
+      "text": "Title: Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals\n\nAbstract: Recent advances in video generation models have sparked interest in world models capable of simulating realistic environments. While navigation has been well-explored, physically meaningful interactions that mimic real-world forces remain largely understudied. In this work, we investigate using physical forces as a control signal for video generation and propose force prompts which enable users to interact with images through both localized point forces, such as poking a plant, and global wind force fields, such as wind blowing on fabric. We demonstrate that these force prompts can enable videos to respond realistically to physical control signals by leveraging the visual and motion prior in the original pretrained model, without using any 3D asset or physics simulator at inference. The primary challenge of force prompting is the difficulty in obtaining high quality paired force-video training data, both in the real world due to the difficulty of obtaining force signals, and in synthetic data due to limitations in the visual quality and domain diversity of physics simulators. Our key finding is that video generation models can generalize remarkably well when adapted to follow physical force conditioning from videos synthesized by Blender, even with limited demonstrations of few objects. Our method can generate videos which simulate forces across diverse geometries, settings, and materials. We also try to understand the source of this generalization and perform ablations that reveal two key elements: visual diversity and the use of specific text keywords during training. Our approach is trained on only around 15k training examples for a single day on four A100 GPUs, and outperforms existing methods on force adherence and physics realism, bringing world models closer to real-world physics interactions. We release all datasets, code, weights, and interactive video demos at our project page.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+      "text": "Title: EnerVerse-AC: Envisioning Embodied Environments with Action Condition\n\nAbstract: Robotic imitation learning has advanced from solving static tasks to addressing dynamic interaction scenarios, but testing and evaluation remain costly and challenging due to the need for real-time interaction with dynamic environments. We propose EnerVerse-AC (EVAC), an action-conditional world model that generates future visual observations based on an agent's predicted actions, enabling realistic and controllable robotic inference. Building on prior architectures, EVAC introduces a multi-level action-conditioning mechanism and ray map encoding for dynamic multi-view image generation while expanding training data with diverse failure trajectories to improve generalization. As both a data engine and evaluator, EVAC augments human-collected trajectories into diverse datasets and generates realistic, action-conditioned video observations for policy testing, eliminating the need for physical robots or complex simulations. This approach significantly reduces costs while maintaining high fidelity in robotic manipulation evaluation. Extensive experiments validate the effectiveness of our method. Code, checkpoints, and datasets can be found at.",
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "related_paper_id": "e5b7a5f1ddb1a0062c3aa55e82f30c40a3107500",
+      "text": "Title: Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation\n\nAbstract: Simulating robot-world interactions is a cornerstone of Embodied AI. Recently, a few works have shown promise in leveraging video generations to transcend the rigid visual/physical constraints of traditional simulators. However, they primarily operate in 2D space or are guided by static environmental cues, ignoring the fundamental reality that robot-world interactions are inherently 4D spatiotemporal events that require precise interactive modeling. To restore this 4D essence while ensuring the precise robot control, we introduce Kinema4D, a new action-conditioned 4D generative robotic simulator that disentangles the robot-world interaction into: i) Precise 4D representation of robot controls: we drive a URDF-based 3D robot via kinematics, producing a precise 4D robot control trajectory. ii) Generative 4D modeling of environmental reactions: we project the 4D robot trajectory into a pointmap as a spatiotemporal visual signal, controlling the generative model to synthesize complex environments'reactive dynamics into synchronized RGB/pointmap sequences. To facilitate training, we curated a large-scale dataset called Robo4D-200k, comprising 201,426 robot interaction episodes with high-quality 4D annotations. Extensive experiments demonstrate that our method effectively simulates physically-plausible, geometry-consistent, and embodiment-agnostic interactions that faithfully mirror diverse real-world dynamics. For the first time, it shows potential zero-shot transfer capability, providing a high-fidelity foundation for advancing next-generation embodied simulation.",
+      "relevance_score": 0.3333333333333333
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cffd7238aba668e399a82581b17efa3c21f20de8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the applications (planning, RL, captioning) do not clearly differentiate from prior work. However, the related work evidence (paper on force prompting) does not discuss planning, RL, or captioning applications, nor does it compare to the reviewed paper's specific applications. The evidence is about physics-based control signals for video generation, which is not directly relevant to evaluating the novelty of the reviewed paper's applications. Thus, the claim cannot be verified or supported using the provided related work text.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the applications (planning, RL, captioning) in the paper do not clearly differentiate from prior work. However, the provided related work (EnerVerse-AC) is about a different method (action-conditional world model for robotic imitation learning) and does not directly address the specific applications or their novelty compared to prior work. The evidence is missing or unverifiable from the given related work text.",
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e5b7a5f1ddb1a0062c3aa55e82f30c40a3107500",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 1,
+      "label": "OVERSTATED",
+      "explanation": "The review sentence claims that the applications (planning, RL, captioning) do not clearly differentiate from prior work. The provided related work (Kinema4D) is a different paper focusing on 4D spatiotemporal simulation for robotics, which does not directly address or evidence the differentiation of the applications in the reviewed paper. The evidence is insufficient to verify the claim about differentiation from prior work in general.",
+      "relevance_score": 0.3333333333333333
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The integration of diverse datasets is novel, but the applications (planning, RL, captioning) do not clearly differentiate from prior work.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "cffd7238aba668e399a82581b17efa3c21f20de8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the applications (planning, RL, captioning) do not clearly differentiate from prior work. However, the related work evidence (paper on force prompting) does not discuss planning, RL, or captioning applications, nor does it compare to the reviewed paper's specific applications. The evidence is about physics-based control signals for video generation, which is not directly relevant to evaluating the novelty of the reviewed paper's applications. Thus, the claim cannot be verified or supported using the provided related work text.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the applications (planning, RL, captioning) in the paper do not clearly differentiate from prior work. However, the provided related work (EnerVerse-AC) is about a different method (action-conditional world model for robotic imitation learning) and does not directly address the specific applications or their novelty compared to prior work. The evidence is missing or unverifiable from the given related work text.",
+          "relevance_score": 0.6666666666666666
+        },
+        {
+          "related_paper_id": "e5b7a5f1ddb1a0062c3aa55e82f30c40a3107500",
+          "score": 1,
+          "label": "OVERSTATED",
+          "explanation": "The review sentence claims that the applications (planning, RL, captioning) do not clearly differentiate from prior work. The provided related work (Kinema4D) is a different paper focusing on 4D spatiotemporal simulation for robotics, which does not directly address or evidence the differentiation of the applications in the reviewed paper. The evidence is insufficient to verify the claim about differentiation from prior work in general.",
+          "relevance_score": 0.3333333333333333
+        }
+      ],
+      "final_score": 0.16666666666666666,
+      "best_evidence": [
+        "cffd7238aba668e399a82581b17efa3c21f20de8",
+        "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+        "e5b7a5f1ddb1a0062c3aa55e82f30c40a3107500"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "cffd7238aba668e399a82581b17efa3c21f20de8",
+          "score": 0.0,
+          "weight": 0.5
+        },
+        {
+          "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "e5b7a5f1ddb1a0062c3aa55e82f30c40a3107500",
+          "score": 1.0,
+          "weight": 0.1667
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 3,
+    "pairs_attempted": 3,
+    "pairs_completed": 3,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 3.0
+    }
+  },
+  "errors": []
+}

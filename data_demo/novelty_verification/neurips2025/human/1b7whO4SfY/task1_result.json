@@ -1,0 +1,95 @@
+{
+  "paper": {
+    "core_task": "Analyzing gating mechanisms in softmax attention for language model training",
+    "contributions": [
+      {
+        "name": "Systematic investigation of gating positions in self-attention",
+        "author_claim_text": "In this work, we investigate gating mechanisms in the standard softmax attention... we introduce gating at distinct positions",
+        "description": "A comprehensive empirical study of gating placement at five distinct positions within the multi-head attention layer, analyzing their impact on performance.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Analysis of gating's effect on non-linearity and sparsity",
+        "author_claim_text": "We identify two factors contributing to the efficacy of gating: (i) Non-Linearity... (ii) Sparsity.",
+        "description": "An analysis revealing that gating effectiveness stems from introducing non-linearity between low-rank linear layers and creating input-dependent sparsity in SDPA outputs.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Elimination of attention sink phenomenon via gating",
+        "author_claim_text": "Sparse gating eliminates the massive activation and attention sink... these models demonstrate superior performance in length generalization.",
+        "description": "Demonstration that sparse, query-dependent gating at the SDPA output eliminates attention sinks and massive activations, improving training stability and long-context generalization.",
+        "source_hint": "Introduction"
+      }
+    ],
+    "key_terms": [
+      "gating mechanism",
+      "softmax attention",
+      "attention sink",
+      "massive activation",
+      "non-linearity",
+      "sparsity",
+      "SDPA output gating",
+      "head-specific gating",
+      "long-context generalization",
+      "training stability",
+      "MoE models",
+      "dense models"
+    ],
+    "must_have_entities": [
+      "MoE-15A2B",
+      "1.7B dense model",
+      "RULER benchmark",
+      "GSM8k",
+      "Hellaswag",
+      "HumanEval",
+      "C-eval",
+      "YaRN"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The specific study has the potential to separate itself from previous works in the area.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "This claim is too broad, the impact of gating has been explored in linear attention [1] and standard attention [2,3] networks.",
+        "stance": "not_novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": true,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C3",
+        "text": "Proposed analysis is novel and makes a lot of sense.",
+        "stance": "novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "arXiv:2411.13676",
+      "arXiv:2410.07145",
+      "arXiv:2503.02130",
+      "2411.13676",
+      "2410.07145",
+      "2503.02130",
+      "[R1]",
+      "[1]",
+      "[2,3]",
+      "[2]",
+      "[3]",
+      "[33, 34, 35]",
+      "[34, 36, 37]"
+    ]
+  }
+}

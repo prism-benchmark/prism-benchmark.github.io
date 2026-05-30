@@ -1,0 +1,72 @@
+{
+  "paper": {
+    "core_task": "Learning a universal real-world simulator for interactive video generation from diverse action inputs",
+    "contributions": [
+      {
+        "name": "A unified action-in-video-out framework for real-world simulation",
+        "author_claim_text": "We take the first step toward building a universal simulator of real-world interaction by combining diverse datasets rich in along different dimensions -e.g., objects, scenes, actions, motions, language, and motor controls -in a unified action-in-video-out generative framework.",
+        "description": "A universal simulator that unifies diverse datasets covering objects, scenes, actions, motions, language, and motor controls into a single action-conditioned video generation framework for real-world interaction simulation.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "An observation prediction model parametrized by a video diffusion model",
+        "author_claim_text": "We formulate the action-in-video-out framework as an observation prediction model conditioned on finite history and parametrized by a video diffusion model.",
+        "description": "A video diffusion model that predicts future observations conditioned on past frames and actions, supporting autoregressive rollout for consistent long-horizon simulation.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Sim-to-real transfer of policies trained purely in simulation",
+        "author_claim_text": "We illustrate how the simulator can enable both high-level language policies, low-level control policies, and video captioning models to generalize to the real world when trained purely in simulation, thereby bridging the sim-to-real gap.",
+        "description": "Demonstration that vision-language policies, RL control policies, and captioning models trained exclusively on simulated data from UniSim can generalize to real-world robotic settings.",
+        "source_hint": "Introduction §1"
+      }
+    ],
+    "key_terms": [
+      "universal simulator",
+      "action-in-video-out",
+      "video diffusion model",
+      "observation prediction model",
+      "autoregressive rollout",
+      "sim-to-real gap",
+      "hindsight relabeling",
+      "model-based reinforcement learning",
+      "diverse datasets",
+      "embodied learning"
+    ],
+    "must_have_entities": [
+      "UniSim",
+      "Language Table",
+      "PaLI",
+      "PaLI-X",
+      "Ego4D",
+      "Something-Something V2",
+      "Habitat",
+      "Matterport3D",
+      "Bridge Data",
+      "ActivityNet Captions"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The paper proposes a novel method for learning a simulator of the real world through generative modeling.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The use of a diffusion model to predict observations conditioned on actions and previous observations is a creative and effective way to fuse information from diverse datasets.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

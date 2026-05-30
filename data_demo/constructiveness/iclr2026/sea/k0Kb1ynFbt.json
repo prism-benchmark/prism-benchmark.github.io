@@ -1,0 +1,138 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "metadata": {
+    "decision": "Accept (Oral)",
+    "avg_rating": 6.0,
+    "avg_confidence": 3.25,
+    "num_reviewers": 4
+  },
+  "reviewer_id": "SEA",
+  "status": "success",
+  "atomic_comments": [
+    {
+      "arc_id": "ARC_01",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks a comprehensive comparison with state-of-the-art techniques in unsupervised RL.",
+      "anchor_quote": "does not provide a comprehensive comparison of the method with state-of-the-art techniques in unsupervised RL",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 1,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_02",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The theoretical analysis is limited and its practical implications are not clearly demonstrated.",
+      "anchor_quote": "theoretical analysis is somewhat limited to a specific theorem that is not deeply explored, and its practical implications are not clearly demonstrated",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 1,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_03",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "How does ExDM compare to other state-of-the-art unsupervised RL methods in exploration efficiency and downstream performance?",
+      "anchor_quote": "How does ExDM compare to other state-of-the-art unsupervised RL methods in terms of exploration efficiency and downstream task performance?",
+      "D1_actionability": 1,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_04",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "What are the specific limitations of the theoretical analysis and how do they impact practical applicability?",
+      "anchor_quote": "What are the specific limitations of the theoretical analysis presented, and how do they impact the practical applicability of the method?",
+      "D1_actionability": 1,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_05",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "How does the alternating optimization procedure improve upon existing methods for fine-tuning diffusion models?",
+      "anchor_quote": "How does the proposed alternating optimization procedure improve upon existing methods for fine-tuning diffusion models, and what are its practical implications?",
+      "D1_actionability": 1,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_06",
+      "section": "Strengths",
+      "comment_type": "strength",
+      "content": "The paper addresses a key challenge in unsupervised RL for strong modeling capacity.",
+      "anchor_quote": "addresses a key challenge in unsupervised RL: the demand for strong modeling capacity during both pre-training and fine-tuning",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_07",
+      "section": "Strengths",
+      "comment_type": "strength",
+      "content": "It introduces a novel method, ExDM, that enhances exploration and provides a powerful initialization for downstream tasks.",
+      "anchor_quote": "introduces a novel method, ExDM, that enhances exploration in reward-free environments and provides a powerful initialization for downstream tasks",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_08",
+      "section": "Strengths",
+      "comment_type": "strength",
+      "content": "The method is designed to be scalable and efficient, with a decoupled training scheme that separates modeling from acting.",
+      "anchor_quote": "designed to be scalable and efficient, with a decoupled training scheme that separates modeling from acting",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_09",
+      "section": "Strengths",
+      "comment_type": "strength",
+      "content": "It includes theoretical analysis and an alternating optimization procedure for efficient fine-tuning of diffusion components.",
+      "anchor_quote": "includes theoretical analysis and an alternating optimization procedure for efficient fine-tuning of diffusion components to downstream tasks",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    }
+  ],
+  "metrics": {
+    "MCS": 0.3222,
+    "AR": 0.5556,
+    "SD": 0.0,
+    "CD": 0.0,
+    "D1_actionability_mean": 0.5556,
+    "D2_specificity_mean": 0.6667,
+    "D3_justification_mean": 0.0,
+    "D4_solution_mean": 0.2222,
+    "D5_tone_mean": 1.7778,
+    "n_arcs": 9,
+    "n_weaknesses": 2,
+    "n_strengths": 4,
+    "n_questions": 3,
+    "n_suggestions": 0,
+    "n_observations": 0
+  }
+}

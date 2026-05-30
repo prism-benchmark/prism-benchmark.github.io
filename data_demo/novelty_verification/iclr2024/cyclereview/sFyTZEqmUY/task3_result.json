@@ -1,0 +1,254 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper proposes a novel method for learning a simulator of the real world through generative modeling."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The use of a diffusion model to predict observations conditioned on actions and previous observations is a creative and effective way to fuse information from diverse datasets."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+      "text": "Title: UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling\n\nAbstract: Scaling humanoid foundation models is bottlenecked by the scarcity of robotic data. While massive egocentric human data offers a scalable alternative, bridging the cross-embodiment chasm remains a fundamental challenge due to kinematic mismatches. We introduce UniT (Unified Latent Action Tokenizer via Visual Anchoring), a framework that establishes a unified physical language for human-to-humanoid transfer. Grounded in the philosophy that heterogeneous kinematics share universal visual consequences, UniT employs a tri-branch cross-reconstruction mechanism: actions predict vision to anchor kinematics to physical outcomes, while vision reconstructs actions to filter out irrelevant visual confounders. Concurrently, a fusion branch synergies these purified modalities into a shared discrete latent space of embodiment-agnostic physical intents. We validate UniT across two paradigms: 1) Policy Learning (VLA-UniT): By predicting these unified tokens, it effectively leverages diverse human data to achieve state-of-the-art data efficiency and robust out-of-distribution (OOD) generalization on both humanoid simulation benchmark and real-world deployments, notably demonstrating zero-shot task transfer. 2) World Modeling (WM-UniT): By aligning cross-embodiment dynamics via unified tokens as conditions, it realizes direct human-to-humanoid action transfer. This alignment ensures that human data seamlessly translates into enhanced action controllability for humanoid video generation. Ultimately, by inducing a highly aligned cross-embodiment representation (empirically verified by t-SNE visualizations revealing the convergence of human and humanoid features into a shared manifold), UniT offers a scalable path to distill vast human knowledge into general-purpose humanoid capabilities.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+      "text": "Title: Learning Real-World Action-Video Dynamics with Heterogeneous Masked Autoregression\n\nAbstract: We propose Heterogeneous Masked Autoregression (HMA) for modeling action-video dynamics to generate high-quality data and evaluation in scaling robot learning. Building interactive video world models and policies for robotics is difficult due to the challenge of handling diverse settings while maintaining computational efficiency to run in real time. HMA uses heterogeneous pre-training from observations and action sequences across different robotic embodiments, domains, and tasks. HMA uses masked autoregression to generate quantized or soft tokens for video predictions. \\ourshort achieves better visual fidelity and controllability than the previous robotic video generation models with 15 times faster speed in the real world. After post-training, this model can be used as a video simulator from low-level action inputs for evaluating policies and generating synthetic data. See this link https://liruiw.github.io/hma for more information.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "text": "Title: Nano World Models: A Minimalist Implementation of Future Video Prediction\n\nAbstract: World models have become a central paradigm for learning predictive simulators that support generation, planning, and decision-making. Yet, despite rapid progress in industry-scale interactive video generation, the broader research community still lacks compact, reproducible, and easily extensible implementations for studying the design choices underlying modern world models. We introduce Nano World Models, a minimalist codebase for future video prediction centered around diffusion forcing. Nano World Models provides a unified interface for generative objectives, model scales, action-conditioning mechanisms, latent observation spaces, datasets, evaluation protocols, and long-horizon rollout procedures. This design enables controlled studies of world-modeling components that are often entangled across separate implementations. Through experiments across simple control environments, game simulation, and real-robot data, we examine how prediction parameterization, architecture scale, action injection, sampling budget, and domain complexity affect video prediction quality and autoregressive rollout behavior. By releasing code, configurations, evaluation scripts, and pretrained checkpoints, Nano World Models aims to provide a compact yet extensible experimental substrate for open, reproducible, and scientific world-model research.",
+      "relevance_score": 0.5
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about the paper proposing a novel method for learning a simulator via generative modeling, which is supported by the paper's abstract/introduction. However, the related work (UniT) is about a unified physical language for human-to-humanoid policy learning and world modeling, which is a different approach and does not provide direct evidence for or against the claim. The claim is too vague and the evidence is missing or unrelated, making verification impossible.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about the paper proposing a novel method for learning a simulator via generative modeling. However, the related work (HMA) describes a different method (Heterogeneous Masked Autoregression) for action-video dynamics, not generative modeling for a universal simulator as in the reviewed paper. The evidence does not address the specific claim about the reviewed paper's novelty or method.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novel method for learning a simulator via generative modeling. However, the related work (Nano World Models) is about a minimalist codebase for future video prediction, not the paper under review. There is no evidence in the related work to verify or contradict the claim about the paper's novelty or methodology, making the evidence insufficient for alignment or calibration assessment.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence is a claim about the paper being reviewed (UniSim), describing its method as 'creative and effective' for fusing diverse datasets. The related work (UniT) also addresses fusing diverse data (human and humanoid) for world modeling and policy learning, providing a conceptual parallel. However, the evidence is not directly about UniSim's specific use of diffusion models for observation prediction, so support is only partial.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The sentence is a reviewer claim about the paper being reviewed (UniSim). The related work (HMA) also uses autoregressive methods for action-conditioned video prediction and highlights its efficiency and fidelity, supporting the idea that diffusion models for this purpose are creative and effective. The claim aligns with the evidence, and the strength of language is appropriate given the evidence.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer sentence claims the approach is creative and effective, but the related work (Nano World Models) does not discuss the specific diffusion model or action-conditioning methodology described in the reviewed paper. The related work is about a different minimalist implementation, not evaluating the creativity or effectiveness of the reviewed approach.",
+      "relevance_score": 0.5
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper proposes a novel method for learning a simulator of the real world through generative modeling.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about the paper proposing a novel method for learning a simulator via generative modeling, which is supported by the paper's abstract/introduction. However, the related work (UniT) is about a unified physical language for human-to-humanoid policy learning and world modeling, which is a different approach and does not provide direct evidence for or against the claim. The claim is too vague and the evidence is missing or unrelated, making verification impossible.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about the paper proposing a novel method for learning a simulator via generative modeling. However, the related work (HMA) describes a different method (Heterogeneous Masked Autoregression) for action-video dynamics, not generative modeling for a universal simulator as in the reviewed paper. The evidence does not address the specific claim about the reviewed paper's novelty or method.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novel method for learning a simulator via generative modeling. However, the related work (Nano World Models) is about a minimalist codebase for future video prediction, not the paper under review. There is no evidence in the related work to verify or contradict the claim about the paper's novelty or methodology, making the evidence insufficient for alignment or calibration assessment.",
+          "relevance_score": 0.5
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+        "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+        "301530307604741d8f9d39bb16fe0f69922a6b5d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+          "score": 0.0,
+          "weight": 0.4
+        },
+        {
+          "related_paper_id": "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+          "score": 0.0,
+          "weight": 0.4
+        },
+        {
+          "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+          "score": 0.0,
+          "weight": 0.2
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The use of a diffusion model to predict observations conditioned on actions and previous observations is a creative and effective way to fuse information from diverse datasets.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence is a claim about the paper being reviewed (UniSim), describing its method as 'creative and effective' for fusing diverse datasets. The related work (UniT) also addresses fusing diverse data (human and humanoid) for world modeling and policy learning, providing a conceptual parallel. However, the evidence is not directly about UniSim's specific use of diffusion models for observation prediction, so support is only partial.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The sentence is a reviewer claim about the paper being reviewed (UniSim). The related work (HMA) also uses autoregressive methods for action-conditioned video prediction and highlights its efficiency and fidelity, supporting the idea that diffusion models for this purpose are creative and effective. The claim aligns with the evidence, and the strength of language is appropriate given the evidence.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer sentence claims the approach is creative and effective, but the related work (Nano World Models) does not discuss the specific diffusion model or action-conditioning methodology described in the reviewed paper. The related work is about a different minimalist implementation, not evaluating the creativity or effectiveness of the reviewed approach.",
+          "relevance_score": 0.5
+        }
+      ],
+      "final_score": 1.6,
+      "best_evidence": [
+        "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+        "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+        "301530307604741d8f9d39bb16fe0f69922a6b5d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "a6a5b912d369bad8b95a833e0d6c9841f1c47fe0",
+          "score": 2.0,
+          "weight": 0.4
+        },
+        {
+          "related_paper_id": "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+          "score": 2.0,
+          "weight": 0.4
+        },
+        {
+          "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+          "score": 0.0,
+          "weight": 0.2
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 3,
+    "pairs_attempted": 6,
+    "pairs_completed": 6,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 1,
+      "claims_with_supporting_evidence": 1,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.5,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 3.0
+    }
+  },
+  "errors": []
+}

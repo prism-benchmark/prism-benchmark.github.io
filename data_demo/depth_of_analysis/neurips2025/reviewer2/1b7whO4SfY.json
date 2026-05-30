@@ -1,0 +1,189 @@
+{
+  "paper_id": "1b7whO4SfY",
+  "source": "reviewer2_neurips2025",
+  "source_format": "reviewer2_txt",
+  "reviews_analysis": {
+    "REVIEWER2_NEURIPS2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper presents a comprehensive empirical and analytical study of gating mechanisms in the softmax attention layer of transformer models.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "It explores the placement, granularity, and types of gating (multiplicative/additive, head-specific/shared, sigmoid/SiLU) and evaluates their impact on model performance, training stability, and attention dynamics.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The authors argue that placing gating after the Scaled Dot Product Attention (SDPA) output (G1) yields the greatest improvements—such as a 0.2 PPL reduction and 2-point MMLU boost—and enhances training stability by reducing loss spikes.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "Two key factors are identified: (1) introducing non-linearity to the low-rank mapping formed by the value and output projections, and (2) inducing input-dependent sparsity in SDPA outputs, which mitigates attention sink and massive activation effects.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper concludes with practical recommendations for implementing SDPA output gating with moderate learning rate adjustments.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Comprehensive Exploration: The paper thoroughly examines multiple dimensions of gating—position (G1–G5), granularity (elementwise/headwise), and activation functions (sigmoid/SiLU)—and provides a rich comparative evaluation across dense and MoE models.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Empirical Evidence for Attention Sink Mitigation: The authors empirically demonstrate that SDPA output gating with head-specific sigmoid gates significantly reduces attention sink (e.g., attention allocation to the first token drops from 46.7% to 4.8%) and massive activation effects, as evidenced by Table 4 and Figures 2–3.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "Insightful Theoretical Contributions: The paper offers a theoretical rationale for the effectiveness of gating by showing how it breaks the low-rank structure imposed by the sequential value and output projections (Equations 6–8), and how it introduces input-dependent sparsity that helps alleviate attention sink.",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "Practical Recommendations: The authors provide actionable advice for practitioners, such as applying SDPA output gating with head-specific sigmoid and adjusting learning rates accordingly.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "Lack of Statistical Significance Testing: The paper reports performance improvements (e.g., 0.2 PPL reduction, 2-point MMLU gain) without accompanying error bars, confidence intervals, or p-values. Without such measures, it is impossible to assess whether these differences are statistically meaningful.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "For example, in Table 1, the difference between the baseline and G1 is claimed to be significant, but no statistical test supports this assertion.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Ambiguous Hyperparameter Choices: The paper does not justify the selected hyperparameters (learning rates, batch sizes) in a systematic way.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "For instance, in Table 2, the learning rate is increased from 4e-3 to 4.5e-3 for the 3.5T token setup, but the rationale for this change is unclear.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "There is also no ablation study to determine the sensitivity of results to these choices.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Overgeneralization of Findings: The paper makes broad claims about the universality of SDPA output gating (e.g., “best results” across all setups), but the supporting evidence comes from a limited set of experiments on dense and MoE models.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Generalizability to other tasks (vision, reinforcement learning) or architectures is not assessed.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Lack of Theoretical Justification for Sparsity Benefits: While the paper discusses the empirical benefits of input-dependent sparsity, it does not theoretically justify why this kind of sparsity specifically mitigates attention sink.",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "A derivation linking sparsity patterns to attention sink behavior would strengthen the argument.",
+        "role": "Backing",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "Neglect of Downstream Task Impact: The paper focuses exclusively on language modeling benchmarks (PPL, MMLU). It does not investigate how the proposed gating mechanism affects performance in other domains, such as computer vision or reinforcement learning.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "Unaddressed Trade-offs: The paper omits a discussion of potential trade-offs of using gating, such as increased computational overhead or inference latency. Understanding these costs is crucial for real-world deployment.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "Ethical and Societal Considerations: While the paper briefly mentions broader impacts, it does not elaborate on potential ethical concerns (e.g., bias amplification, misuse of models) or safeguarding mechanisms for deployed systems.",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "The paper makes a timely and impactful contribution to the field of attention mechanisms in transformers by investigating the role of gating in improving performance and training stability.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "Its empirical results are convincing, and the theoretical insights into non-linearity and sparsity are thought-provoking.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "However, the absence of statistical significance analyses and inadequate justification for hyperparameter choices limits the persuasiveness of the claims.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_25",
+        "argument": "Despite these flaws, the work is sufficiently strong and novel to warrant acceptance.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 4482,
+    "completion_tokens": 4482,
+    "total_tokens": 8964
+  }
+}

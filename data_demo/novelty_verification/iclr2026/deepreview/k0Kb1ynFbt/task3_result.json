@@ -1,0 +1,865 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper does not compare ExDM with recent state-of-the-art methods like PEAC and CeSD in the Maze2d environment, which could provide a more comprehensive evaluation of its exploration capabilities."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper does not provide a detailed analysis of the computational cost associated with training and deploying the diffusion model, which could be a concern for practical applications."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "text": "Title: Exploratory Diffusion Model for Unsupervised Reinforcement Learning\n\nAbstract: Unsupervised reinforcement learning (URL) aims to pre-train agents by exploring diverse states or skills in reward-free environments, facilitating efficient adaptation to downstream tasks. As the agent cannot access extrinsic rewards during unsupervised exploration, existing methods design intrinsic rewards to model the explored data and encourage further exploration. However, the explored data are always heterogeneous, posing the requirements of powerful representation abilities for both intrinsic reward models and pre-trained policies. In this work, we propose the Exploratory Diffusion Model (ExDM), which leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks. Specifically, ExDM can accurately estimate the distribution of collected data in the replay buffer with the diffusion model and introduces the score-based intrinsic reward, encouraging the agent to explore less-visited states. After obtaining the pre-trained policies, ExDM enables rapid adaptation to downstream tasks. In detail, we provide theoretical analyses and practical algorithms for fine-tuning diffusion policies, addressing key challenges such as training instability and computational complexity caused by multi-step sampling. Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks, especially in structurally complicated environments.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "text": "Title: Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning",
+      "relevance_score": 0.8235294117647058
+    },
+    {
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "text": "Title: Contrastive Intrinsic Control for Unsupervised Reinforcement Learning\n\nAbstract: We introduce Contrastive Intrinsic Control (CIC), an unsupervised reinforcement learning (RL) algorithm that maximizes the mutual information between state-transitions and latent skill vectors. CIC utilizes contrastive learning between state-transitions and skills vectors to learn behaviour embeddings and maximizes the entropy of these embeddings as an intrinsic reward to encourage behavioural diversity. We evaluate our algorithm on the Unsupervised RL Benchmark (URLB) in the asymptotic state-based setting, which consists of a long reward-free pre-training phase followed by a short adaptation phase to downstream tasks with extrinsic rewards. We find that CIC improves over prior exploration algorithms in terms of adaptation efficiency to downstream tasks on state-based URLB. 1 Deep RL is a powerful approach toward solving complex control tasks in the presence of extrinsic rewards. Successful applications include playing video games from pixels [1], mastering the game of Go [2, 3], robotic locomotion [4, 5, 6] and dexterous manipulation [7, 8, 9] policies. While effective, the above advances produced agents that are unable to generalize to new downstream tasks beyond the one they were trained to solve. Humans and animals on the other hand are able to acquire skills with minimal supervision and apply them to solve a variety of downstream tasks. In this work, we seek to train agents that acquire skills without supervision with generalization capabilities by efficiently adapting these skills to downstream tasks.",
+      "relevance_score": 0.9411764705882353
+    },
+    {
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "text": "Title: Balancing State Exploration and Skill Diversity in Unsupervised Skill Discovery\n\nAbstract: Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised reinforcement learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this article, we propose contrastive dynamic skill discovery (ComSD) which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multijoint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2-D maze.",
+      "relevance_score": 0.8823529411764706
+    },
+    {
+      "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "text": "Title: Constrained Ensemble Exploration for Unsupervised Skill Discovery\n\nAbstract: Unsupervised Reinforcement Learning (RL) provides a promising paradigm for learning useful behaviors via reward-free per-training. Existing methods for unsupervised RL mainly conduct empowerment-driven skill discovery or entropy-based exploration. However, empowerment often leads to static skills, and pure exploration only maximizes the state coverage rather than learning useful behaviors. In this paper, we propose a novel unsupervised RL framework via an ensemble of skills, where each skill performs partition exploration based on the state prototypes. Thus, each skill can explore the clustered area locally, and the ensemble skills maximize the overall state coverage. We adopt state-distribution constraints for the skill occupancy and the desired cluster for learning distinguishable skills. Theoretical analysis is provided for the state entropy and the resulting skill distributions. Based on extensive experiments on several challenging tasks, we find our method learns well-explored ensemble skills and achieves superior performance in various downstream tasks compared to previous methods.",
+      "relevance_score": 0.7647058823529411
+    },
+    {
+      "related_paper_id": "857db7cdf087f36ec54b7ed1487666f3f14de80d",
+      "text": "Title: SCOPED: Score-Curvature Out-of-distribution Proximity Evaluator for Diffusion\n\nAbstract: Out-of-distribution (OOD) detection is essential for reliable deployment of machine learning systems in vision, robotics, reinforcement learning, and beyond. We introduce Score-Curvature Out-of-distribution Proximity Evaluator for Diffusion (SCOPED), a fast and general-purpose OOD detection method for diffusion models that reduces the number of forward passes on the trained model by an order of magnitude compared to prior methods, outperforming most diffusion-based baselines and closely approaching the accuracy of the strongest ones. SCOPED is computed from a single diffusion model trained once on a diverse dataset, and combines the Jacobian trace and squared norm of the model's score function into a single test statistic. Rather than thresholding on a fixed value, we estimate the in-distribution density of SCOPED scores using kernel density estimation, enabling a flexible, unsupervised test that, in the simplest case, only requires a single forward pass and one Jacobian-vector product (JVP), made efficient by Hutchinson's trace estimator. On four vision benchmarks, SCOPED achieves competitive or state-of-the-art precision-recall scores despite its low computational cost. The same method generalizes to robotic control tasks with shared state and action spaces, identifying distribution shifts across reward functions and training regimes. These results position SCOPED as a practical foundation for fast and reliable OOD detection in real-world domains, including perceptual artifacts in vision, outlier detection in autoregressive models, exploration in reinforcement learning, and dataset curation for unsupervised training.",
+      "relevance_score": 0.5882352941176471
+    },
+    {
+      "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "text": "Title: Unsupervised Skill Discovery Through Skill Regions Differentiation\n\nAbstract: Unsupervised reinforcement learning (RL) aims to discover diverse behaviors that can accelerate the learning of downstream tasks. Previous methods typically focus on entropy-based exploration or empowerment-driven skill learning. However, entropy-based exploration struggles in large-scale state spaces (e.g., images), and empowerment-based methods with mutual information (MI) estimations have limitations in state exploration. To address these challenges, we propose a novel skill discovery objective that maximizes the deviation of the state density of one skill from the explored regions of other skills, encouraging inter-skill state diversity similar to the initial MI objective. For state-density estimation, we construct a novel conditional autoencoder with soft modularization for different skill policies in high-dimensional space. Meanwhile, to incentivize intra-skill exploration, we formulate an intrinsic reward based on the learned autoencoder that resembles count-based exploration in a compact latent space. Through extensive experiments in challenging state and image-based tasks, we find our method learns meaningful skills and achieves superior performance in various downstream tasks.",
+      "relevance_score": 0.7058823529411765
+    },
+    {
+      "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+      "text": "Title: Unsupervised Skill Discovery via Recurrent Skill Training\n\nAbstract: Being able to discover diverse useful skills without external reward functions is beneﬁcial in reinforcement learning research. Previous unsupervised skill discovery approaches mainly train different skills in parallel. Although impressive results have been provided, we found that parallel training procedure can sometimes block exploration when the state visited by different skills overlap, which leads to poor state coverage and restricts the diversity of learned skills. In this paper, we take a deeper look into this phenomenon and propose a novel framework to address this issue, which we call Recurrent Skill Training (ReST). Instead of training all the skills in parallel, ReST trains different skills one after another recurrently, along with a state coverage based intrinsic reward. We conduct experiments on a number of challenging 2D navigation environments and robotic locomotion environments. Evaluation results show that our proposed approach outperforms previous parallel training approaches in terms of state coverage and skill diversity. Videos of the discovered skills are available at https://sites.google.com/ view/neurips22-rest .",
+      "relevance_score": 0.47058823529411764
+    },
+    {
+      "related_paper_id": "0933669ea312ad4e9fba16443ef7d925a6e400d6",
+      "text": "Title: Group-Invariant Unsupervised Skill Discovery: Symmetry-aware Skill Representations for Generalizable Behavior\n\nAbstract: Unsupervised skill discovery aims to acquire behavior primitives that improve exploration and accelerate downstream task learning. However, existing approaches often ignore the geometric symmetries of physical environments, leading to redundant behaviors and sample inefficiency. To address this, we introduce Group-Invariant Skill Discovery (GISD), a framework that explicitly embeds group structure into the skill discovery objective. Our approach is grounded in a theoretical guarantee: we prove that in group-symmetric environments, the standard Wasserstein dependency measure admits a globally optimal solution comprised of an equivariant policy and a group-invariant scoring function. Motivated by this, we formulate the Group-Invariant Wasserstein dependency measure, which restricts the optimization to this symmetry-aware subspace without loss of optimality. Practically, we parameterize the scoring function using a group Fourier representation and define the intrinsic reward via the alignment of equivariant latent features, ensuring that the discovered skills generalize systematically under group transformations. Experiments on state-based and pixel-based locomotion benchmarks demonstrate that GISD achieves broader state-space coverage and improved efficiency in downstream task learning compared to a strong baseline.",
+      "relevance_score": 0.4117647058823529
+    },
+    {
+      "related_paper_id": "12b58f56b763da96d044439e742a2d2878ea2ff5",
+      "text": "Title: Disentangling Disentangled Representations: Towards Improved Latent Units via Diffusion Models\n\nAbstract: Disentangled representation learning (DRL) aims to break down observed data into core intrinsic factors for a profound understanding of the data. In real-world scenarios, manually defining and labeling these factors are non-trivial, making unsupervised methods attractive. Recently, there have been limited explorations of utilizing diffusion models (DMs), which are already mainstream in generative modeling, for unsupervised DRL. They implement their own inductive bias to ensure that each latent unit input to the DM expresses only one distinct factor. In this context, we design Dynamic Gaussian Anchoring to enforce attribute-separated latent units for more interpretable DRL. This unconventional inductive bias explicitly delineates the decision boundaries between attributes while also promoting the independence among latent units. Additionally, we also propose Skip Dropout technique, which easily modifies the denoising U-Net to be more DRL-friendly, addressing its uncooperative nature with the disentangling feature extractor. Our methods, which carefully consider the latent unit semantics and the distinct DM structure, enhance the practicality of DM-based disentangled representations, demonstrating state-of-the-art disentanglement performance on both synthetic and real data, as well as advantages in downstream tasks.",
+      "relevance_score": 0.35294117647058826
+    },
+    {
+      "related_paper_id": "ba3719cb73046896dc3af3f709436e417b100571",
+      "text": "Title: Balancing Both Diversity and Exploration in Unsupervised Discovery of Complex Behaviors",
+      "relevance_score": 0.29411764705882354
+    },
+    {
+      "related_paper_id": "bdde840366784131c4eccffea913620cda63cb57",
+      "text": "Title: Advances in Artificial Life: 5th European Conference, ECAL'99, Lausanne, Switzerland, September 13-17, 1999 Proceedings",
+      "relevance_score": 0.058823529411764705
+    },
+    {
+      "related_paper_id": "916967189d9520cb5c0c2a0b52c5cfc0abb19a3f",
+      "text": "Title: Impact Makes a Sound and Sound Makes an Impact: Sound Guides Representations and Explorations\n\nAbstract: Sound is one of the most informative and abundant modalities in the real world while being robust to sense without contacts by small and cheap sensors that can be placed on mobile devices. Although deep learning is capable of extracting information from multiple sensory inputs, there has been little use of sound for the control and learning of robotic actions. For unsupervised reinforcement learning, an agent is expected to actively collect experiences and jointly learn representations and policies in a self-supervised way. We build realistic robotic manipulation scenarios with physics-based sound simulation and propose the Intrinsic Sound Curiosity Module (ISCM). The ISCM provides feedback to a reinforcement learner to learn robust representations and to reward a more efficient exploration behavior. We perform experiments with sound enabled during pre-training and disabled during adaptation, and show that representations learned by ISCM outperform the ones by vision-only baselines and pre-trained policies can accelerate the learning process when applied to downstream tasks.",
+      "relevance_score": 0.17647058823529413
+    },
+    {
+      "related_paper_id": "cd6d59659fc4e64bbb8d111ace040288e5237bae",
+      "text": "Title: A Vision for Reinforcement Learning and its Implications for Neural Compuation",
+      "relevance_score": 0.23529411764705882
+    },
+    {
+      "related_paper_id": "92edf4d699a139b757e6cfb5407872af5472a758",
+      "text": "Title: Explore and Control with Adversarial Surprise\n\nAbstract: Unsupervised reinforcement learning (RL) studies how to leverage environment statistics to learn useful behaviors without the cost of reward engineering. However, a central challenge in unsupervised RL is to extract behaviors that meaningfully affect the world and cover the range of possible outcomes, without getting distracted by inherently unpredictable, uncontrollable, and stochastic elements in the environment. To this end, we propose an unsupervised RL method designed for high-dimensional, stochastic environments based on an adversarial game between two policies (which we call Explore and Control) controlling a single body and competing over the amount of observation entropy the agent experiences. The Explore agent seeks out states that maximally surprise the Control agent, which in turn aims to minimize surprise, and thereby manipulate the environment to return to familiar and predictable states. The competition between these two policies drives them to seek out increasingly surprising parts of the environment while learning to gain mastery over them. We show formally that the resulting algorithm maximizes coverage of the underlying state in block MDPs with stochastic observations, providing theoretical backing to our hypothesis that this procedure avoids uncontrollable and stochastic distractions. Our experiments further demonstrate that Adversarial Surprise leads to the emergence of complex and meaningful skills, and outperforms state-of-the-art unsupervised reinforcement learning methods in terms of both exploration and zero-shot transfer to downstream tasks.",
+      "relevance_score": 0.11764705882352941
+    },
+    {
+      "related_paper_id": "ce37384218421d884f0aff8d3ca0242fbbda25fd",
+      "text": "Title: ComSD: Balancing Behavioral Quality and Diversity in Unsupervised Skill Discovery\n\nAbstract: This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible. Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised Reinforcement Learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this paper, we propose \\textbf{Co}ntrastive dyna\\textbf{m}ic \\textbf{S}kill \\textbf{D}iscovery \\textbf{(ComSD)}\\footnote{Code and videos: https://github.com/liuxin0824/ComSD} which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multi-joint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2D maze.",
+      "relevance_score": 0.5294117647058824
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper does not compare ExDM with PEAC and CeSD in Maze2d. The related work (abstract) mentions evaluating on Maze2d and achieving higher coverage than all baselines, but does not list specific methods like PEAC and CeSD. Therefore, the claim is partially supported: the paper evaluates on Maze2d, but the absence of comparison with those specific methods is not explicitly stated in the provided text.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that ExDM is not compared with PEAC and CeSD in the Maze2d environment. However, the provided related work text does not mention PEAC or CeSD, nor does it provide evidence about comparisons in Maze2d. The claim cannot be verified with the given evidence.",
+      "relevance_score": 0.8235294117647058
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim concerns the paper's omission of comparisons with specific methods (PEAC, CeSD) in Maze2d. The provided related work is an abstract/introduction for a different paper (CIC) that does not mention PEAC, CeSD, or provide evidence about their use in Maze2d comparisons. Therefore, the claim cannot be verified or supported using only the given text.",
+      "relevance_score": 0.9411764705882353
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer's claim that the paper does not compare with recent methods like PEAC and CeSD in Maze2d is supported by the related work evidence, which introduces ComSD but does not mention PEAC or CeSD comparisons, indicating a potential gap in the paper's evaluation. The language is appropriately calibrated as a suggestion for improvement.",
+      "relevance_score": 0.8823529411764706
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's sentence is a claim about the paper not comparing ExDM with methods like PEAC and CeSD in Maze2d. The related work evidence (abstract of Constrained Ensemble Exploration) does not mention PEAC or CeSD, nor does it discuss comparisons in Maze2d; it describes a different method focused on skill discovery. Thus, the evidence is insufficient to verify or relate to the claim.",
+      "relevance_score": 0.7647058823529411
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "857db7cdf087f36ec54b7ed1487666f3f14de80d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper does not compare ExDM with PEAC and CeSD in Maze2d. However, the provided related work (SCOPED) is about OOD detection for diffusion models and does not mention PEAC, CeSD, or Maze2d comparisons. The paper's text mentions Maze2d experiments but not PEAC or CeSD. Evidence is missing to verify or contradict the claim.",
+      "relevance_score": 0.5882352941176471
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that ExDM is not compared with PEAC and CeSD in Maze2d, but the provided related work does not mention these methods or their evaluation in Maze2d. The evidence is missing, making the claim unverifiable.",
+      "relevance_score": 0.7058823529411765
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.47058823529411764
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0933669ea312ad4e9fba16443ef7d925a6e400d6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper does not compare with PEAC and CeSD in Maze2d. However, the provided related work evidence is about GISD, a different method, and does not mention PEAC, CeSD, or Maze2d comparisons. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.4117647058823529
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "12b58f56b763da96d044439e742a2d2878ea2ff5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's missing comparisons with recent methods (PEAC, CeSD) in Maze2d. The related work provided is about disentangled representations using diffusion models, not about RL exploration methods or those specific baselines. There is no evidence in the provided text to verify the claim about missing comparisons.",
+      "relevance_score": 0.35294117647058826
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ba3719cb73046896dc3af3f709436e417b100571",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that ExDM is not compared with PEAC and CeSD in Maze2d. However, the provided related work text does not mention PEAC or CeSD, nor does it discuss any specific comparisons in Maze2d. The evidence is missing to verify the claim.",
+      "relevance_score": 0.29411764705882354
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bdde840366784131c4eccffea913620cda63cb57",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper does not compare ExDM with PEAC and CeSD in Maze2d. However, the provided related work text is a book title about Artificial Life and does not mention PEAC, CeSD, or any specific comparisons, so evidence is missing.",
+      "relevance_score": 0.058823529411764705
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "916967189d9520cb5c0c2a0b52c5cfc0abb19a3f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (ExDM) lacking comparison with recent methods like PEAC and CeSD in Maze2d. The related work evidence (ISCM paper) does not mention PEAC, CeSD, or Maze2d comparisons, and is unrelated to ExDM's evaluation. No evidence exists to support or contradict the claim.",
+      "relevance_score": 0.17647058823529413
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cd6d59659fc4e64bbb8d111ace040288e5237bae",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work text does not mention PEAC or CeSD methods, nor does it discuss comparisons in the Maze2d environment. There is no evidence to support or contradict the reviewer's claim.",
+      "relevance_score": 0.23529411764705882
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "92edf4d699a139b757e6cfb5407872af5472a758",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's evaluation (comparing ExDM with PEAC and CeSD in Maze2d), but the provided related work (Adversarial Surprise) does not mention PEAC, CeSD, or any direct comparison in Maze2d. Thus, evidence is missing to verify the claim.",
+      "relevance_score": 0.11764705882352941
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ce37384218421d884f0aff8d3ca0242fbbda25fd",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review claims the paper does not compare with recent methods like PEAC and CeSD in Maze2d. The related work (ComSD) is itself a recent skill discovery method evaluated on tree-like 2D maze, which is a type of Maze2d environment. The paper's introduction mentions evaluating on Maze2d but does not list PEAC or CeSD as baselines, supporting the claim that these recent methods are missing from the comparison. The claim aligns with the evidence that such methods exist and are relevant to the domain.",
+      "relevance_score": 0.5294117647058824
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for training/deploying the diffusion model. The related work abstract acknowledges computational complexity from multi-step sampling and mentions addressing it theoretically/practically, but does not present a detailed analysis in the provided text. The evidence aligns with the claim as it indicates awareness of the issue without providing the detailed analysis the reviewer notes.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost. The related work evidence does not discuss the paper's computational cost analysis, making the claim unverifiable from the provided text.",
+      "relevance_score": 0.8235294117647058
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (ExDM) regarding lack of analysis of computational cost. The provided related work (CIC) does not discuss computational cost of diffusion models or ExDM, so there is no evidence to verify or contradict the claim.",
+      "relevance_score": 0.9411764705882353
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper does not provide a detailed analysis of computational cost for training and deploying the diffusion model. The related work (ComSD) does not discuss the paper's computational cost analysis; it focuses on balancing state exploration and skill diversity, not diffusion model efficiency. The claim cannot be verified from the provided related work evidence.",
+      "relevance_score": 0.8823529411764706
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks computational cost analysis. The related work evidence discusses skill discovery and state entropy but provides no information about computational cost analysis in the reviewed paper. Evidence is missing to verify the claim.",
+      "relevance_score": 0.7647058823529411
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "857db7cdf087f36ec54b7ed1487666f3f14de80d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper lacking detailed analysis of computational cost for the diffusion model. The related work (SCOPED) discusses OOD detection for diffusion models and mentions reducing computational cost, but does not provide evidence about the computational cost of training and deploying diffusion models in the context of the reviewed paper's unsupervised RL framework. There is no direct support or contradiction for the specific claim.",
+      "relevance_score": 0.5882352941176471
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (ExDM), stating it lacks analysis of computational cost for training/deploying diffusion models. The related work evidence is about a different paper (Unsupervised Skill Discovery Through Skill Regions Differentiation) and does not contain any information about the computational cost of ExDM or diffusion models in that context. Thus, there is no evidence to support or contradict the claim.",
+      "relevance_score": 0.7058823529411765
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim is about the computational cost of the diffusion model in the paper being reviewed. The related work (ReST) does not discuss computational cost or diffusion models, providing no evidence to support or contradict the claim. Therefore, evidence is missing.",
+      "relevance_score": 0.47058823529411764
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0933669ea312ad4e9fba16443ef7d925a6e400d6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for not analyzing computational cost, but the provided related work (GISD) does not discuss computational cost or efficiency of diffusion models. The paper being reviewed (ExDM) mentions efficiency considerations, but the related work evidence is unrelated to the claim, making it insufficient to verify alignment or calibration.",
+      "relevance_score": 0.4117647058823529
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "12b58f56b763da96d044439e742a2d2878ea2ff5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's lack of detailed computational cost analysis for training/deploying the diffusion model. The provided related work evidence is about a different paper on disentangled representations using diffusion models, which does not discuss the computational cost of the paper under review. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.35294117647058826
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ba3719cb73046896dc3af3f709436e417b100571",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for training/deploying the diffusion model. The related work evidence discusses balancing diversity and exploration in unsupervised behavior discovery, not computational cost analysis. No direct evidence is provided to support or contradict the claim.",
+      "relevance_score": 0.29411764705882354
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "bdde840366784131c4eccffea913620cda63cb57",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for diffusion models, but the related work evidence is a 1999 conference proceeding on artificial life, which provides no information about the paper's content or computational analysis. Thus, evidence is missing and the claim cannot be verified.",
+      "relevance_score": 0.058823529411764705
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "916967189d9520cb5c0c2a0b52c5cfc0abb19a3f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper (C2) lacking detailed computational cost analysis. The provided related work (sound-based RL paper) is unrelated to this claim and offers no evidence about computational costs or diffusion model efficiency in the reviewed paper. Without evidence from the paper's own text or directly related work, the claim cannot be verified.",
+      "relevance_score": 0.17647058823529413
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "cd6d59659fc4e64bbb8d111ace040288e5237bae",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for diffusion models. The related work evidence is unrelated to this claim, discussing a vision for RL and neural computation. No evidence in the related work addresses computational cost or training/deployment efficiency of diffusion models, so the claim cannot be verified or aligned.",
+      "relevance_score": 0.23529411764705882
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "92edf4d699a139b757e6cfb5407872af5472a758",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, stating it lacks detailed analysis of computational cost. The related work provided is about 'Adversarial Surprise' and does not mention computational cost or diffusion models, offering no evidence to support or contradict the claim. Therefore, the evidence is insufficient to verify the claim.",
+      "relevance_score": 0.11764705882352941
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ce37384218421d884f0aff8d3ca0242fbbda25fd",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for training/deploying diffusion models. The provided paper text does not contain specific information about computational cost analysis, and the related work (ComSD) is about skill discovery, not computational cost. No evidence supports or contradicts the claim.",
+      "relevance_score": 0.5294117647058824
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper does not compare ExDM with recent state-of-the-art methods like PEAC and CeSD in the Maze2d environment, which could provide a more comprehensive evaluation of its exploration capabilities.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper does not compare ExDM with PEAC and CeSD in Maze2d. The related work (abstract) mentions evaluating on Maze2d and achieving higher coverage than all baselines, but does not list specific methods like PEAC and CeSD. Therefore, the claim is partially supported: the paper evaluates on Maze2d, but the absence of comparison with those specific methods is not explicitly stated in the provided text.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that ExDM is not compared with PEAC and CeSD in the Maze2d environment. However, the provided related work text does not mention PEAC or CeSD, nor does it provide evidence about comparisons in Maze2d. The claim cannot be verified with the given evidence.",
+          "relevance_score": 0.8235294117647058
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim concerns the paper's omission of comparisons with specific methods (PEAC, CeSD) in Maze2d. The provided related work is an abstract/introduction for a different paper (CIC) that does not mention PEAC, CeSD, or provide evidence about their use in Maze2d comparisons. Therefore, the claim cannot be verified or supported using only the given text.",
+          "relevance_score": 0.9411764705882353
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer's claim that the paper does not compare with recent methods like PEAC and CeSD in Maze2d is supported by the related work evidence, which introduces ComSD but does not mention PEAC or CeSD comparisons, indicating a potential gap in the paper's evaluation. The language is appropriately calibrated as a suggestion for improvement.",
+          "relevance_score": 0.8823529411764706
+        },
+        {
+          "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's sentence is a claim about the paper not comparing ExDM with methods like PEAC and CeSD in Maze2d. The related work evidence (abstract of Constrained Ensemble Exploration) does not mention PEAC or CeSD, nor does it discuss comparisons in Maze2d; it describes a different method focused on skill discovery. Thus, the evidence is insufficient to verify or relate to the claim.",
+          "relevance_score": 0.7647058823529411
+        },
+        {
+          "related_paper_id": "857db7cdf087f36ec54b7ed1487666f3f14de80d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper does not compare ExDM with PEAC and CeSD in Maze2d. However, the provided related work (SCOPED) is about OOD detection for diffusion models and does not mention PEAC, CeSD, or Maze2d comparisons. The paper's text mentions Maze2d experiments but not PEAC or CeSD. Evidence is missing to verify or contradict the claim.",
+          "relevance_score": 0.5882352941176471
+        },
+        {
+          "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that ExDM is not compared with PEAC and CeSD in Maze2d, but the provided related work does not mention these methods or their evaluation in Maze2d. The evidence is missing, making the claim unverifiable.",
+          "relevance_score": 0.7058823529411765
+        },
+        {
+          "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.47058823529411764
+        },
+        {
+          "related_paper_id": "0933669ea312ad4e9fba16443ef7d925a6e400d6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper does not compare with PEAC and CeSD in Maze2d. However, the provided related work evidence is about GISD, a different method, and does not mention PEAC, CeSD, or Maze2d comparisons. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.4117647058823529
+        },
+        {
+          "related_paper_id": "12b58f56b763da96d044439e742a2d2878ea2ff5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's missing comparisons with recent methods (PEAC, CeSD) in Maze2d. The related work provided is about disentangled representations using diffusion models, not about RL exploration methods or those specific baselines. There is no evidence in the provided text to verify the claim about missing comparisons.",
+          "relevance_score": 0.35294117647058826
+        },
+        {
+          "related_paper_id": "ba3719cb73046896dc3af3f709436e417b100571",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that ExDM is not compared with PEAC and CeSD in Maze2d. However, the provided related work text does not mention PEAC or CeSD, nor does it discuss any specific comparisons in Maze2d. The evidence is missing to verify the claim.",
+          "relevance_score": 0.29411764705882354
+        },
+        {
+          "related_paper_id": "bdde840366784131c4eccffea913620cda63cb57",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper does not compare ExDM with PEAC and CeSD in Maze2d. However, the provided related work text is a book title about Artificial Life and does not mention PEAC, CeSD, or any specific comparisons, so evidence is missing.",
+          "relevance_score": 0.058823529411764705
+        },
+        {
+          "related_paper_id": "916967189d9520cb5c0c2a0b52c5cfc0abb19a3f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (ExDM) lacking comparison with recent methods like PEAC and CeSD in Maze2d. The related work evidence (ISCM paper) does not mention PEAC, CeSD, or Maze2d comparisons, and is unrelated to ExDM's evaluation. No evidence exists to support or contradict the claim.",
+          "relevance_score": 0.17647058823529413
+        },
+        {
+          "related_paper_id": "cd6d59659fc4e64bbb8d111ace040288e5237bae",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work text does not mention PEAC or CeSD methods, nor does it discuss comparisons in the Maze2d environment. There is no evidence to support or contradict the reviewer's claim.",
+          "relevance_score": 0.23529411764705882
+        },
+        {
+          "related_paper_id": "92edf4d699a139b757e6cfb5407872af5472a758",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's evaluation (comparing ExDM with PEAC and CeSD in Maze2d), but the provided related work (Adversarial Surprise) does not mention PEAC, CeSD, or any direct comparison in Maze2d. Thus, evidence is missing to verify the claim.",
+          "relevance_score": 0.11764705882352941
+        },
+        {
+          "related_paper_id": "ce37384218421d884f0aff8d3ca0242fbbda25fd",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review claims the paper does not compare with recent methods like PEAC and CeSD in Maze2d. The related work (ComSD) is itself a recent skill discovery method evaluated on tree-like 2D maze, which is a type of Maze2d environment. The paper's introduction mentions evaluating on Maze2d but does not list PEAC or CeSD as baselines, supporting the claim that these recent methods are missing from the comparison. The claim aligns with the evidence that such methods exist and are relevant to the domain.",
+          "relevance_score": 0.5294117647058824
+        }
+      ],
+      "final_score": 1.3333333333333335,
+      "best_evidence": [
+        "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+        "0292a7e356152a842aa47ff4336703cac540a86d",
+        "81a5ef40de4cb64267a3a408675d078efe4d4b63"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2.0,
+          "weight": 0.3542
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 2.0,
+          "weight": 0.3125
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper does not provide a detailed analysis of the computational cost associated with training and deploying the diffusion model, which could be a concern for practical applications.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for training/deploying the diffusion model. The related work abstract acknowledges computational complexity from multi-step sampling and mentions addressing it theoretically/practically, but does not present a detailed analysis in the provided text. The evidence aligns with the claim as it indicates awareness of the issue without providing the detailed analysis the reviewer notes.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost. The related work evidence does not discuss the paper's computational cost analysis, making the claim unverifiable from the provided text.",
+          "relevance_score": 0.8235294117647058
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (ExDM) regarding lack of analysis of computational cost. The provided related work (CIC) does not discuss computational cost of diffusion models or ExDM, so there is no evidence to verify or contradict the claim.",
+          "relevance_score": 0.9411764705882353
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper does not provide a detailed analysis of computational cost for training and deploying the diffusion model. The related work (ComSD) does not discuss the paper's computational cost analysis; it focuses on balancing state exploration and skill diversity, not diffusion model efficiency. The claim cannot be verified from the provided related work evidence.",
+          "relevance_score": 0.8823529411764706
+        },
+        {
+          "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks computational cost analysis. The related work evidence discusses skill discovery and state entropy but provides no information about computational cost analysis in the reviewed paper. Evidence is missing to verify the claim.",
+          "relevance_score": 0.7647058823529411
+        },
+        {
+          "related_paper_id": "857db7cdf087f36ec54b7ed1487666f3f14de80d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper lacking detailed analysis of computational cost for the diffusion model. The related work (SCOPED) discusses OOD detection for diffusion models and mentions reducing computational cost, but does not provide evidence about the computational cost of training and deploying diffusion models in the context of the reviewed paper's unsupervised RL framework. There is no direct support or contradiction for the specific claim.",
+          "relevance_score": 0.5882352941176471
+        },
+        {
+          "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (ExDM), stating it lacks analysis of computational cost for training/deploying diffusion models. The related work evidence is about a different paper (Unsupervised Skill Discovery Through Skill Regions Differentiation) and does not contain any information about the computational cost of ExDM or diffusion models in that context. Thus, there is no evidence to support or contradict the claim.",
+          "relevance_score": 0.7058823529411765
+        },
+        {
+          "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim is about the computational cost of the diffusion model in the paper being reviewed. The related work (ReST) does not discuss computational cost or diffusion models, providing no evidence to support or contradict the claim. Therefore, evidence is missing.",
+          "relevance_score": 0.47058823529411764
+        },
+        {
+          "related_paper_id": "0933669ea312ad4e9fba16443ef7d925a6e400d6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for not analyzing computational cost, but the provided related work (GISD) does not discuss computational cost or efficiency of diffusion models. The paper being reviewed (ExDM) mentions efficiency considerations, but the related work evidence is unrelated to the claim, making it insufficient to verify alignment or calibration.",
+          "relevance_score": 0.4117647058823529
+        },
+        {
+          "related_paper_id": "12b58f56b763da96d044439e742a2d2878ea2ff5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's lack of detailed computational cost analysis for training/deploying the diffusion model. The provided related work evidence is about a different paper on disentangled representations using diffusion models, which does not discuss the computational cost of the paper under review. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.35294117647058826
+        },
+        {
+          "related_paper_id": "ba3719cb73046896dc3af3f709436e417b100571",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for training/deploying the diffusion model. The related work evidence discusses balancing diversity and exploration in unsupervised behavior discovery, not computational cost analysis. No direct evidence is provided to support or contradict the claim.",
+          "relevance_score": 0.29411764705882354
+        },
+        {
+          "related_paper_id": "bdde840366784131c4eccffea913620cda63cb57",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for diffusion models, but the related work evidence is a 1999 conference proceeding on artificial life, which provides no information about the paper's content or computational analysis. Thus, evidence is missing and the claim cannot be verified.",
+          "relevance_score": 0.058823529411764705
+        },
+        {
+          "related_paper_id": "916967189d9520cb5c0c2a0b52c5cfc0abb19a3f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper (C2) lacking detailed computational cost analysis. The provided related work (sound-based RL paper) is unrelated to this claim and offers no evidence about computational costs or diffusion model efficiency in the reviewed paper. Without evidence from the paper's own text or directly related work, the claim cannot be verified.",
+          "relevance_score": 0.17647058823529413
+        },
+        {
+          "related_paper_id": "cd6d59659fc4e64bbb8d111ace040288e5237bae",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for diffusion models. The related work evidence is unrelated to this claim, discussing a vision for RL and neural computation. No evidence in the related work addresses computational cost or training/deployment efficiency of diffusion models, so the claim cannot be verified or aligned.",
+          "relevance_score": 0.23529411764705882
+        },
+        {
+          "related_paper_id": "92edf4d699a139b757e6cfb5407872af5472a758",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, stating it lacks detailed analysis of computational cost. The related work provided is about 'Adversarial Surprise' and does not mention computational cost or diffusion models, offering no evidence to support or contradict the claim. Therefore, the evidence is insufficient to verify the claim.",
+          "relevance_score": 0.11764705882352941
+        },
+        {
+          "related_paper_id": "ce37384218421d884f0aff8d3ca0242fbbda25fd",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks detailed analysis of computational cost for training/deploying diffusion models. The provided paper text does not contain specific information about computational cost analysis, and the related work (ComSD) is about skill discovery, not computational cost. No evidence supports or contradicts the claim.",
+          "relevance_score": 0.5294117647058824
+        }
+      ],
+      "final_score": 0.7083333333333334,
+      "best_evidence": [
+        "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+        "0292a7e356152a842aa47ff4336703cac540a86d",
+        "81a5ef40de4cb64267a3a408675d078efe4d4b63"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2.0,
+          "weight": 0.3542
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 0.0,
+          "weight": 0.3125
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 16,
+    "pairs_attempted": 32,
+    "pairs_completed": 32,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 1,
+      "claims_with_supporting_evidence": 1,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.5,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 16.0
+    }
+  },
+  "errors": []
+}

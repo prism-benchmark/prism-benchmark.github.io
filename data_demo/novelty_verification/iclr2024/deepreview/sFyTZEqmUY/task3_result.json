@@ -1,0 +1,153 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper should clarify the novelty of the proposed approach. While the idea of combining multiple datasets is interesting, the paper does not clearly articulate what makes UniSim different from existing world models."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "text": "Title: Interactive World Simulator for Robot Policy Training and Evaluation\n\nAbstract: Action-conditioned video prediction models (often referred to as world models) have shown strong potential for robotics applications, but existing approaches are often slow and struggle to capture physically consistent interactions over long horizons, limiting their usefulness for scalable robot policy training and evaluation. We present Interactive World Simulator, a framework for building interactive world models from a moderate-sized robot interaction dataset. Our approach leverages consistency models for both image decoding and latent-space dynamics prediction, enabling fast and stable simulation of physical interactions. In our experiments, the learned world models produce interaction-consistent pixel-level predictions and support stable long-horizon interactions for more than 10 minutes at 15 FPS on a single RTX 4090 GPU. Our framework enables scalable demonstration collection solely within the world models to train state-of-the-art imitation policies. Through extensive real-world evaluation across diverse tasks involving rigid objects, deformable objects, object piles, and their interactions, we find that policies trained on world-model-generated data perform comparably to those trained on the same amount of real-world data. Additionally, we evaluate policies both within the world models and in the real world across diverse tasks, and observe a strong correlation between simulated and real-world performance. Together, these results establish the Interactive World Simulator as a stable and physically consistent surrogate for scalable robotic data generation and faithful, reproducible policy evaluation.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "1cada6a84e29ec5b27939e5cef977fa654779e3c",
+      "text": "Title: 2022 MATH + X Symposium on Matter under Extreme Conditions in Solar System Giant Planets and Exoplanets, Inverse Problems and Deep Learning",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "1453764a5b879ec342f3691d4207384626d589fa",
+      "text": "Title: DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving\n\nAbstract: Video generation models, as one form of world models, have emerged as one of the most exciting frontiers in AI, promising agents the ability to imagine the future by modeling the temporal evolution of complex scenes. In autonomous driving, this vision gives rise to driving world models: generative simulators that imagine ego and agent futures, enabling scalable simulation, safe testing of corner cases, and rich synthetic data generation. Yet, despite fast-growing research activity, the field lacks a rigorous benchmark to measure progress and guide priorities. Existing evaluations remain limited: generic video metrics overlook safety-critical imaging factors; trajectory plausibility is rarely quantified; temporal and agent-level consistency is neglected; and controllability with respect to ego conditioning is ignored. Moreover, current datasets fail to cover the diversity of conditions required for real-world deployment. To address these gaps, we present DrivingGen, the first comprehensive benchmark for generative driving world models. DrivingGen combines a diverse evaluation dataset curated from both driving datasets and internet-scale video sources, spanning varied weather, time of day, geographic regions, and complex maneuvers, with a suite of new metrics that jointly assess visual realism, trajectory plausibility, temporal coherence, and controllability. Benchmarking 14 state-of-the-art models reveals clear trade-offs: general models look better but break physics, while driving-specific ones capture motion realistically but lag in visual quality. DrivingGen offers a unified evaluation framework to foster reliable, controllable, and deployable driving world models, enabling scalable simulation, planning, and data-driven decision-making.",
+      "relevance_score": 0.5
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper does not articulate what makes UniSim different from existing world models. The related work describes an Interactive World Simulator with its own specific focus (robot policy training/evaluation, fast simulation, physical consistency). However, the related work does not provide direct evidence about the novelty or differentiation claims made in the reviewed paper's abstract/introduction. The reviewed paper's own text discusses combining diverse datasets as a key novelty, but this is not evaluated against the related work evidence. The claim is too vague and evidence is missing to determine alignment or calibration.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1cada6a84e29ec5b27939e5cef977fa654779e3c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper does not clearly articulate UniSim's novelty relative to existing world models. The related work provided is about a math and physics symposium, not about world models or UniSim, offering no evidence to support or refute the claim. Thus, evidence is missing for verification.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1453764a5b879ec342f3691d4207384626d589fa",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (UniSim) but the provided related work (DrivingGen) does not discuss UniSim or its novelty relative to other world models. Therefore, there is no evidence to assess alignment or calibration.",
+      "relevance_score": 0.5
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper should clarify the novelty of the proposed approach. While the idea of combining multiple datasets is interesting, the paper does not clearly articulate what makes UniSim different from existing world models.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper does not articulate what makes UniSim different from existing world models. The related work describes an Interactive World Simulator with its own specific focus (robot policy training/evaluation, fast simulation, physical consistency). However, the related work does not provide direct evidence about the novelty or differentiation claims made in the reviewed paper's abstract/introduction. The reviewed paper's own text discusses combining diverse datasets as a key novelty, but this is not evaluated against the related work evidence. The claim is too vague and evidence is missing to determine alignment or calibration.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "1cada6a84e29ec5b27939e5cef977fa654779e3c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper does not clearly articulate UniSim's novelty relative to existing world models. The related work provided is about a math and physics symposium, not about world models or UniSim, offering no evidence to support or refute the claim. Thus, evidence is missing for verification.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "1453764a5b879ec342f3691d4207384626d589fa",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (UniSim) but the provided related work (DrivingGen) does not discuss UniSim or its novelty relative to other world models. Therefore, there is no evidence to assess alignment or calibration.",
+          "relevance_score": 0.5
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+        "1cada6a84e29ec5b27939e5cef977fa654779e3c",
+        "1453764a5b879ec342f3691d4207384626d589fa"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+          "score": 0.0,
+          "weight": 0.4
+        },
+        {
+          "related_paper_id": "1cada6a84e29ec5b27939e5cef977fa654779e3c",
+          "score": 0.0,
+          "weight": 0.4
+        },
+        {
+          "related_paper_id": "1453764a5b879ec342f3691d4207384626d589fa",
+          "score": 0.0,
+          "weight": 0.2
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 3,
+    "pairs_attempted": 3,
+    "pairs_completed": 3,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 3.0
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,652 @@
+{
+  "paper_id": "sFyTZEqmUY",
+  "micro_flaws": {
+    "micro_flaws": [
+      {
+        "flaw_id": "F01",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "The paper lacks experimental evidence for fine-grained low-level action control beyond simple object rearrangement, such as grasping or pulling.",
+        "raw_arguments": {
+          "Human_1": "Specifically, section 4.2 only shows results for a relatively simple object (mostly blocks) re-arrangement (without grasping, e.g.) on a table. What about grasping objects, pulling objects (e.g., opening a drawer), etc? It will give us insights as to how fine-grained the controls are supported by the proposed simulator, even if it cannot simulate low-level actions perfectly."
+        }
+      },
+      {
+        "flaw_id": "F02",
+        "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines",
+        "core_summary": "The paper lacks direct comparisons to prior work on internet-scale generative models and world models.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The paper claims novelty in integrating diverse datasets and approximating POMDPs, but it lacks direct comparisons to prior work on internet-scale generative models (e.g., Godiva (Wu et al. 2021), Make-a-Video (Singer et al. 2022)) and world models (SlotFormer (Wu et al. 2022), TransDreamer (Chen et al. 2022a))."
+        }
+      },
+      {
+        "flaw_id": "F03",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "The paper's key claim about the benefit of combining diverse datasets lacks sufficient experimental support, as ablations are limited.",
+        "raw_arguments": {
+          "Human_2": "A lack of strong baselines might be expected for this kind of scale-up work. But in their absence, ablations become more important, to verify that the various components of the model were all necessary. The paper only presents a brief study of which frames to condition on."
+        }
+      },
+      {
+        "flaw_id": "F04",
+        "macro_topic": "1. Novelty & Contribution - Lack of Significance/Impact",
+        "core_summary": "The paper's framing and naming ('universal simulator') risk feeling grandiose given the demonstrated scope.",
+        "raw_arguments": {
+          "Human_2": "Whilst it's difficult to accuse the paper of overclaiming in any specific place, the writing and framing risk feeling a little showy. The title is very general, and applies to any paper on model-based RL for the real-world rather than something specific to this paper, and naming the method a 'universal simulator' feels grandiose."
+        }
+      },
+      {
+        "flaw_id": "F05",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The connection between POMDPs and action-conditioned video generation is assumed rather than justified as a novel contribution.",
+        "raw_arguments": {
+          "Human_2": "The connection between POMDP's and action-conditioned video generation is more-or-less assumed by any world model paper (e.g. [1]), and shouldn't be highlighted as a main contribution of the paper."
+        }
+      },
+      {
+        "flaw_id": "F06",
+        "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues",
+        "core_summary": "It is unclear if actions can generalize across different video domains, given the need to include dataset names as part of the action during training.",
+        "raw_arguments": {
+          "Human_2": "I think it'd be useful to investigate how entwined the effect of actions is with the dataset distribution. For example, could camera commands (zoom in etc) successfully be applied to kitchen scenes as in Figure 3? The fact that the name of the dataset had to be included as part of the action during training, makes me suspect actions may not be able to generalise well to new kinds of video."
+        }
+      },
+      {
+        "flaw_id": "F07",
+        "macro_topic": "2. Clarity & Presentation - Unclear Math/Notations",
+        "core_summary": "The model section uses potentially misleading notation and lacks clarity in key descriptions.",
+        "raw_arguments": {
+          "Human_2": "The model section is poorly written. The use of $\\mathcal{T}$ is (I think) slightly misleading -- usually the transition fn of a POMDP is defined as operating on the states, $\\mathcal{T}(s_t,a_t) \to s_{t+1}$, and there is a separate emission function producing the observations, $p(o_t|s_t)$. Eq. 1 implicitly combines these -- I might recommend renaming it $f$ or $g$ or whatever. I didn't follow why $o_l$ notation needed to be introduced, since it's immediately unrolled into $[o_t, o_{t+1}]$ and never referred to again. I also didn't understand why the model conditions on the noised, rather than clean, previous observations. It's said the last four frames are concatenated from $o_{t-1}$, which confused me -- does $o_{t-1}$ represent four frames, or should it read $o_{t-1:t-4}$ or similar?"
+        }
+      },
+      {
+        "flaw_id": "F08",
+        "macro_topic": "7. Reproducibility & Open Science - Insufficient Implementation Details",
+        "core_summary": "Key model and architecture details are relegated to the appendix rather than the main body.",
+        "raw_arguments": {
+          "Human_2": "It's a shame to give the model details only in the Appendix C, as I believe many readers would be interested in them. I hope some of these can be shifted to the main body, particularly key details around the diffusion architecture (such as the core and super-resolution modules) and the amount of compute required."
+        }
+      },
+      {
+        "flaw_id": "F09",
+        "macro_topic": "1. Novelty & Contribution - Limited Novelty",
+        "core_summary": "The algorithmic and model novelty is considered light, being more or less a straightforward video diffusion approach.",
+        "raw_arguments": {
+          "Human_2": "Any algorithmic or model novelty is light (more or less straightforward video diffusion)."
+        }
+      },
+      {
+        "flaw_id": "F10",
+        "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues",
+        "core_summary": "The main experiments were conducted on environments within the training distribution, limiting the demonstration of generalization to new environments.",
+        "raw_arguments": {
+          "Human_2": "The two main experiments were conducted on environments that were within the training distribution of UniSim. It would have been more impressive to investigate the performance on new environments."
+        }
+      },
+      {
+        "flaw_id": "F11",
+        "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues",
+        "core_summary": "Generalization across different embodiments (e.g., from robotic to human scenes) is questionable, as generated videos appear similar to the training data distribution.",
+        "raw_arguments": {
+          "Human_3": "One of my questions is, the shown demo looks like generally still in distribution, in terms of generalization across different embodiment: the generated video contaiing robot are very similar to robotic dataset, and in more complex scenes training using human videos the model seems only handling human hands. How does it work in those complex scenes when the model is commanded to predict outcomes given a robot action input?"
+        }
+      },
+      {
+        "flaw_id": "F12",
+        "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues",
+        "core_summary": "The method's ability to handle more general end-effector actions in SE3 space or when the robot arm is not initially visible is unclear.",
+        "raw_arguments": {
+          "Human_3": "Also, when it comes to low level control input, the paper seems only handling delta motion in the cartesion space. Does it handle more general end- effector action in SE3 space? (joint space seems out of reach for this family of method since it's not observable) Is it true that for predicting outcomes conditioned on robot action, the robot arm needs to be visible in the first place?"
+        }
+      },
+      {
+        "flaw_id": "F13",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations",
+        "core_summary": "The paper lacks a deeper discussion of the model's limitations and generalization capabilities.",
+        "raw_arguments": {
+          "Human_4": "It would be nice if the paper delved more into the limitations of the models. The paper has shown that exciting results can be obtained, but it's useful for the community to know the limits of the generalization capabilities, especially if people want to use this in the future for various applications."
+        }
+      },
+      {
+        "flaw_id": "F14",
+        "macro_topic": "7. Reproducibility & Open Science - Missing Code/Data Repository",
+        "core_summary": "For reproducibility, the authors should release the code and some example pre-trained checkpoints.",
+        "raw_arguments": {
+          "Human_4": "For reproducibility, it would be helpful if the authors could release the code and some example pre-trained checkpoints."
+        }
+      },
+      {
+        "flaw_id": "F15",
+        "macro_topic": "5. Related work & Citations - Missing Comparisons with Prior Work",
+        "core_summary": "The related work section cites but does not analyze how UniSim differs from or improves upon key prior methods.",
+        "raw_arguments": {
+          "LLM_Reviewer": "Section 5 ('Related Work') briefly cites these works but does not analyze how UniSim differs or improves upon them."
+        }
+      },
+      {
+        "flaw_id": "F16",
+        "macro_topic": "4. Experimental Design & Evaluation - Questionable Evaluation Metrics",
+        "core_summary": "The sensitivity of the reward function to errors in a pre-trained model used for evaluation is not evaluated.",
+        "raw_arguments": {
+          "LLM_Reviewer": "How was the sensitivity of the reward function $ r = -[d(o_{t+1}, g) - d(o_t, g)] \\cdot \\mathcal{C} $ (Section 4.2) to errors in the pre-trained PaLI model evaluated?"
+        }
+      },
+      {
+        "flaw_id": "F17",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations",
+        "core_summary": "The paper does not discuss steps to mitigate hallucination risks for physically impossible actions.",
+        "raw_arguments": {
+          "LLM_Reviewer": "What specific steps were taken to mitigate hallucination risks when actions are physically impossible (e.g., washing hands on a tabletop robot)?"
+        }
+      },
+      {
+        "flaw_id": "F18",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Scalability & Complexity Concerns",
+        "core_summary": "The paper does not evaluate how performance changes with further scaling of model parameters.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The paper claims UniSim is trained on ~5.6B parameters but does not evaluate how performance changes with further scaling (e.g., 10B+ parameters)."
+        }
+      },
+      {
+        "flaw_id": "F19",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Missing Broader Impact/Ethical Concerns",
+        "core_summary": "The paper ignores ethical concerns about generating potentially unsafe or misleading content.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The paper discusses simulating rare events (e.g., car crashes) but ignores ethical concerns about generating potentially unsafe or misleading content."
+        }
+      },
+      {
+        "flaw_id": "F20",
+        "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues",
+        "core_summary": "The paper does not quantify poor generalization to unseen robot morphologies or out-of-domain data.",
+        "raw_arguments": {
+          "LLM_Reviewer": "While the paper notes poor generalization to unseen robot morphologies (Section 6), it does not quantify this limitation (e.g., performance drop on withheld robot data)."
+        }
+      }
+    ]
+  },
+  "evaluations": {
+    "evaluations": {
+      "F01": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F02": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F03": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F04": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F05": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F06": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F07": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F08": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F09": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F10": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F11": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F12": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F13": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F14": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F15": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F16": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F17": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F18": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F19": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F20": {
+        "is_valid": true,
+        "severity": "Minor"
+      }
+    }
+  },
+  "metrics_report": {
+    "cfi": {
+      "Severity_Points": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Flaw_Weights_Summary": {
+        "F01": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F02": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F03": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F04": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F06": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F07": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F08": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F09": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F10": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F11": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F12": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F13": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F14": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F15": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F16": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F17": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F19": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F20": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        }
+      },
+      "Ground_Truth_Summary": {
+        "Total_Valid_Flaws": 18,
+        "Total_Critical_Flaws": 8,
+        "Total_Minor_Flaws": 10,
+        "Total_Critical_ConsensusWeight": 1.6,
+        "Total_Minor_ConsensusWeight": 2.0
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_2",
+          "Critical_Recall": 0.375,
+          "Minor_Recall": 0.4,
+          "Critical_Recall_ConsensusWeighted": 0.375,
+          "Minor_Recall_ConsensusWeighted": 0.4,
+          "Detected_Critical_Flaws": 3,
+          "Detected_Minor_Flaws": 4,
+          "Detected_Critical_ConsensusWeight": 0.6,
+          "Detected_Minor_ConsensusWeight": 0.8,
+          "Total_Valid_Flaws_Found": 7
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Critical_Recall": 0.25,
+          "Minor_Recall": 0.4,
+          "Critical_Recall_ConsensusWeighted": 0.25,
+          "Minor_Recall_ConsensusWeighted": 0.4,
+          "Detected_Critical_Flaws": 2,
+          "Detected_Minor_Flaws": 4,
+          "Detected_Critical_ConsensusWeight": 0.4,
+          "Detected_Minor_ConsensusWeight": 0.8,
+          "Total_Valid_Flaws_Found": 6
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Critical_Recall": 0.25,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.25,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 2,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0.4,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 2
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Critical_Recall": 0.125,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.125,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0.2,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 1
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.2,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.2,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 2,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 0.4,
+          "Total_Valid_Flaws_Found": 2
+        }
+      ]
+    },
+    "cps": {
+      "Severity_Map": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Canonical_Issue_Bank": {
+        "issues": [
+          {
+            "issue_id": "F01",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper lacks experimental evidence for fine-grained low-level action control beyond simple object rearrangement, such as grasping or pulling.",
+            "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation"
+          },
+          {
+            "issue_id": "F02",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper lacks direct comparisons to prior work on internet-scale generative models and world models.",
+            "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines"
+          },
+          {
+            "issue_id": "F03",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper's key claim about the benefit of combining diverse datasets lacks sufficient experimental support, as ablations are limited.",
+            "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation"
+          },
+          {
+            "issue_id": "F04",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper's framing and naming ('universal simulator') risk feeling grandiose given the demonstrated scope.",
+            "macro_topic": "1. Novelty & Contribution - Lack of Significance/Impact"
+          },
+          {
+            "issue_id": "F06",
+            "shared_severity": "Critical",
+            "canonical_summary": "It is unclear if actions can generalize across different video domains, given the need to include dataset names as part of the action during training.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues"
+          },
+          {
+            "issue_id": "F07",
+            "shared_severity": "Minor",
+            "canonical_summary": "The model section uses potentially misleading notation and lacks clarity in key descriptions.",
+            "macro_topic": "2. Clarity & Presentation - Unclear Math/Notations"
+          },
+          {
+            "issue_id": "F08",
+            "shared_severity": "Minor",
+            "canonical_summary": "Key model and architecture details are relegated to the appendix rather than the main body.",
+            "macro_topic": "7. Reproducibility & Open Science - Insufficient Implementation Details"
+          },
+          {
+            "issue_id": "F09",
+            "shared_severity": "Minor",
+            "canonical_summary": "The algorithmic and model novelty is considered light, being more or less a straightforward video diffusion approach.",
+            "macro_topic": "1. Novelty & Contribution - Limited Novelty"
+          },
+          {
+            "issue_id": "F10",
+            "shared_severity": "Critical",
+            "canonical_summary": "The main experiments were conducted on environments within the training distribution, limiting the demonstration of generalization to new environments.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues"
+          },
+          {
+            "issue_id": "F11",
+            "shared_severity": "Critical",
+            "canonical_summary": "Generalization across different embodiments (e.g., from robotic to human scenes) is questionable, as generated videos appear similar to the training data distribution.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues"
+          },
+          {
+            "issue_id": "F12",
+            "shared_severity": "Critical",
+            "canonical_summary": "The method's ability to handle more general end-effector actions in SE3 space or when the robot arm is not initially visible is unclear.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues"
+          },
+          {
+            "issue_id": "F13",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper lacks a deeper discussion of the model's limitations and generalization capabilities.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations"
+          },
+          {
+            "issue_id": "F14",
+            "shared_severity": "Minor",
+            "canonical_summary": "For reproducibility, the authors should release the code and some example pre-trained checkpoints.",
+            "macro_topic": "7. Reproducibility & Open Science - Missing Code/Data Repository"
+          },
+          {
+            "issue_id": "F15",
+            "shared_severity": "Critical",
+            "canonical_summary": "The related work section cites but does not analyze how UniSim differs from or improves upon key prior methods.",
+            "macro_topic": "5. Related work & Citations - Missing Comparisons with Prior Work"
+          },
+          {
+            "issue_id": "F16",
+            "shared_severity": "Minor",
+            "canonical_summary": "The sensitivity of the reward function to errors in a pre-trained model used for evaluation is not evaluated.",
+            "macro_topic": "4. Experimental Design & Evaluation - Questionable Evaluation Metrics"
+          },
+          {
+            "issue_id": "F17",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper does not discuss steps to mitigate hallucination risks for physically impossible actions.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations"
+          },
+          {
+            "issue_id": "F19",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper ignores ethical concerns about generating potentially unsafe or misleading content.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Missing Broader Impact/Ethical Concerns"
+          },
+          {
+            "issue_id": "F20",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper does not quantify poor generalization to unseen robot morphologies or out-of-domain data.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues"
+          }
+        ]
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Raw_CPS": 6.5237,
+          "ICPS": 6.5237,
+          "nCPS": 1.0,
+          "Total_Arguments": 6,
+          "Critical_Count": 2,
+          "Minor_Count": 4,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 2,
+              "CPS_s": 3.2619,
+              "ICPS_s": 3.2619,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Questions",
+              "n_args": 2,
+              "CPS_s": 1.6309,
+              "ICPS_s": 1.6309,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Limitations Not Addressed By The Authors",
+              "n_args": 2,
+              "CPS_s": 1.6309,
+              "ICPS_s": 1.6309,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 1.0
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Raw_CPS": 3.2619,
+          "ICPS": 3.2619,
+          "nCPS": 1.0,
+          "Total_Arguments": 2,
+          "Critical_Count": 2,
+          "Minor_Count": 0,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 2,
+              "CPS_s": 3.2619,
+              "ICPS_s": 3.2619,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.3333
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Raw_CPS": 2.0,
+          "ICPS": 2.0,
+          "nCPS": 1.0,
+          "Total_Arguments": 1,
+          "Critical_Count": 1,
+          "Minor_Count": 0,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 1,
+              "CPS_s": 2.0,
+              "ICPS_s": 2.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.0754
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Raw_CPS": 1.6309,
+          "ICPS": 1.6309,
+          "nCPS": 1.0,
+          "Total_Arguments": 2,
+          "Critical_Count": 0,
+          "Minor_Count": 2,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 2,
+              "CPS_s": 1.6309,
+              "ICPS_s": 1.6309,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.0
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Raw_CPS": 5.8305,
+          "ICPS": 6.5151,
+          "nCPS": 0.8949,
+          "Total_Arguments": 8,
+          "Critical_Count": 4,
+          "Minor_Count": 4,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 8,
+              "CPS_s": 5.8305,
+              "ICPS_s": 6.5151,
+              "nCPS_s": 0.8949
+            }
+          ],
+          "CPS_norm": 0.8583
+        }
+      ]
+    },
+    "mode": "all"
+  }
+}

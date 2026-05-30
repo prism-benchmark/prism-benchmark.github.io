@@ -1,0 +1,327 @@
+{
+  "paper_id": "1b7whO4SfY",
+  "micro_flaws": {
+    "micro_flaws": [
+      {
+        "flaw_id": "F01",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The paper lacks a clear justification for why gating after SDPA output is more effective than other gating variants (e.g., G2, G3, G4, G5).",
+        "raw_arguments": {
+          "Human_4": "However, it remains unclear why gating applied after SDPA outperforms other variants such as G2, G3, G4, and G5."
+        }
+      },
+      {
+        "flaw_id": "F02",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "Claims about enabling stable training with larger batch sizes and learning rates are not supported by isolated experiments, as batch size and training tokens are varied together.",
+        "raw_arguments": {
+          "Human_2": "It is difficult to make this claim definitively, since the batch size is varied with the total training tokens. Thus, a carefully isolated experiment would compare... Instead, the only comparison we have is between (a) and (d)."
+        }
+      },
+      {
+        "flaw_id": "F03",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "Key experimental comparisons are missing, such as not repeating placement experiments for the dense model in Table 2 and omitting certain 'Max LR' configurations.",
+        "raw_arguments": {
+          "Human_2": "Why were the same placement experiments in Table 1 not repeated for the dense model in Table 2? The missing 'Max LR' experiments for different configurations (e.g., (9) SDPA Headwise trained with max LR 8.0 \u00d7 10\u22123) make it difficult to draw definitive conclusions."
+        }
+      },
+      {
+        "flaw_id": "F04",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "The paper lacks a 'more-layer' baseline to control for the effect of additional parameters when comparing gating mechanisms.",
+        "raw_arguments": {
+          "Human_3": "It would be valuable to add a 'more-layer' baseline, especially for the 2.54B activation model. Adding ~200M parameters via extra layers is feasible and would help compare against the current approaches under a similar parameter budget."
+        }
+      },
+      {
+        "flaw_id": "F05",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "An experiment is missing to isolate the architectural impact of gating from the effect of parameter count, specifically comparing v-elementwise G2 with a multi-head variant.",
+        "raw_arguments": {
+          "Human_3": "Could you consider adding an experiment comparing v-elementwise G2 with multi-head (i.e., n \u00d7 q \u00d7 d_k) to control for parameter count and isolate the architectural impact?"
+        }
+      },
+      {
+        "flaw_id": "F06",
+        "macro_topic": "5. Related work & Citations - Missing Comparisons with Prior Work",
+        "core_summary": "The paper does not compare or discuss complementary techniques for mitigating attention sinks, such as 'Quiet Attention' or Meta tokens.",
+        "raw_arguments": {
+          "Human_1": "The attention sink can be suppressed by using 'Quiet Attention' or Meta tokens from [R1]. It would be great to see if such techniques are complementary."
+        }
+      },
+      {
+        "flaw_id": "F07",
+        "macro_topic": "5. Related work & Citations - Missing Comparisons with Prior Work",
+        "core_summary": "The paper's claim that gating mechanisms are 'insufficiently explored' is too broad and overlooks prior work on gating in linear attention and standard attention networks.",
+        "raw_arguments": {
+          "Human_2": "This claim is too broad, the impact of gating has been explored in linear attention [1] and standard attention [2,3] networks."
+        }
+      },
+      {
+        "flaw_id": "F08",
+        "macro_topic": "5. Related work & Citations - Other Citation Issues",
+        "core_summary": "Several citations are incorrect or do not support the claims made in the text regarding training instabilities.",
+        "raw_arguments": {
+          "Human_2": "Citations 34 and 36 do not support the above claim. 34 attributed instability to pre vs post residual placement of the norm, while 36 did not attribute instability to any particular factor."
+        }
+      },
+      {
+        "flaw_id": "F09",
+        "macro_topic": "2. Clarity & Presentation - General writing & Clarity issues",
+        "core_summary": "Tables 1, 2, and 3 are confusing due to inconsistent comparison settings and unclear labeling of gating mechanisms (e.g., which methods correspond to G1, G2, etc.).",
+        "raw_arguments": {
+          "Human_4": "Table 1, Table 2, and Table 3 are quite confusing in terms of the methods. It seems different gating mechanisms are not compared on the same settings. Which methods (positions like G1, G2, G3, etc are not stated) are compared in Table 2? Is G1 the default setting?"
+        }
+      },
+      {
+        "flaw_id": "10",
+        "macro_topic": "1. Novelty & Contribution - Lack of Significance/Impact",
+        "core_summary": "Some reported performance improvements (e.g., in perplexity) are modest and may not be considered significant.",
+        "raw_arguments": {
+          "Human_2": "Some of the performance improvements are not as substantial as reported. For example, overall, results in Table 1 are not significant performance improvements. It is difficult to say 'significant reduction in PPL' in Table 3."
+        }
+      },
+      {
+        "flaw_id": "F11",
+        "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues",
+        "core_summary": "The study's architectures are limited, raising questions about the generalizability of the findings to other architectures like Llama.",
+        "raw_arguments": {
+          "Human_4": "The architectures of the target LLMs are limited. It is a challenge to claim whether these findings can be generalized to other architectures such as Llama."
+        }
+      },
+      {
+        "flaw_id": "F12",
+        "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues",
+        "core_summary": "The paper's focus on softmax attention may limit the generalizability of its findings to other attention mechanisms or architectures.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The paper focuses primarily on the softmax attention mechanism, potentially limiting the generalizability of the findings to other types of attention mechanisms or architectures."
+        }
+      },
+      {
+        "flaw_id": "F13",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations",
+        "core_summary": "The paper lacks a discussion on the broader impacts and societal implications of the work, focusing only on potential misuse.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The discussion of broader impacts and potential societal implications is limited, focusing mainly on the potential misuse of the findings."
+        }
+      },
+      {
+        "flaw_id": "F14",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The paper provides limited investigation into the underlying causes of performance differences across gating configurations, relying more on empirical benchmarking.",
+        "raw_arguments": {
+          "Human_4": "This work emphasizes empirical result analysis from a benchmarking perspective, while offering limited investigation into the underlying causes of performance differences across gating configurations."
+        }
+      },
+      {
+        "flaw_id": "F15",
+        "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues",
+        "core_summary": "The paper does not include post-training quantization results, which would be beneficial given the demonstrated reduction of massive activations.",
+        "raw_arguments": {
+          "Human_1": "The reduction of massive activations should be beneficial for quantization. Adding post-training quantization results would be beneficial."
+        }
+      }
+    ]
+  },
+  "evaluations": {
+    "evaluations": {
+      "F01": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F02": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F03": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F04": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F05": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F06": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F07": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F08": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F09": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F10": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F11": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F12": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F13": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F14": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F15": {
+        "is_valid": true,
+        "severity": "Minor"
+      }
+    }
+  },
+  "metrics_report": {
+    "cfi": {
+      "Severity_Points": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Flaw_Weights_Summary": {
+        "F01": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F02": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F03": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F04": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F05": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F06": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F08": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F09": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F11": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F14": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F15": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        }
+      },
+      "Ground_Truth_Summary": {
+        "Total_Valid_Flaws": 11,
+        "Total_Critical_Flaws": 5,
+        "Total_Minor_Flaws": 6,
+        "Total_Critical_ConsensusWeight": 1.0,
+        "Total_Minor_ConsensusWeight": 1.2
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_2",
+          "Critical_Recall": 0.4,
+          "Minor_Recall": 0.1667,
+          "Critical_Recall_ConsensusWeighted": 0.4,
+          "Minor_Recall_ConsensusWeighted": 0.1667,
+          "Detected_Critical_Flaws": 2,
+          "Detected_Minor_Flaws": 1,
+          "Detected_Critical_ConsensusWeight": 0.4,
+          "Detected_Minor_ConsensusWeight": 0.2,
+          "Total_Valid_Flaws_Found": 3
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Critical_Recall": 0.4,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.4,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 2,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0.4,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 2
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Critical_Recall": 0.2,
+          "Minor_Recall": 0.5,
+          "Critical_Recall_ConsensusWeighted": 0.2,
+          "Minor_Recall_ConsensusWeighted": 0.5,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 3,
+          "Detected_Critical_ConsensusWeight": 0.2,
+          "Detected_Minor_ConsensusWeight": 0.6,
+          "Total_Valid_Flaws_Found": 4
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.3333,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.3333,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 2,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 0.4,
+          "Total_Valid_Flaws_Found": 2
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 0
+        }
+      ]
+    },
+    "mode": "cfi_only"
+  }
+}

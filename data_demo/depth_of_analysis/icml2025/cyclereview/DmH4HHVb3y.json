@@ -1,0 +1,91 @@
+{
+  "paper_id": "DmH4HHVb3y",
+  "source": "cyclereview_icml2025",
+  "source_format": "cyclereview_json",
+  "reviews_analysis": {
+    "CYCLEREVIEW_ICML2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper proposes a framework for training LLMs to collaborate with humans in multi-turn conversations.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The key innovation is a collaborative simulation module that samples future conversations with users to estimate the long-term impact of model responses.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The paper also introduces three multiturn tasks for training and evaluation and shows that the proposed approach outperforms baselines on these tasks.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The paper also presents results from a user study that shows the proposed approach leads to higher user satisfaction and time savings compared to non-collaborative LLMs.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper is well-written and easy to follow.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The proposed approach is well-motivated and the results are promising.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The paper also provides a good discussion of related work and a comprehensive evaluation of the proposed approach.",
+        "role": "Premise",
+        "aspect": "Related Work",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The paper does not provide a detailed analysis of the limitations of the proposed approach.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper also does not discuss potential risks associated with training LLMs to collaborate with humans in multi-turn conversations.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "What are the limitations of the proposed approach?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "What are the potential risks associated with training LLMs to collaborate with humans in multi-turn conversations?",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 1736,
+    "completion_tokens": 1736,
+    "total_tokens": 3472
+  }
+}

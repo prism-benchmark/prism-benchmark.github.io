@@ -1,0 +1,154 @@
+{
+  "paper_id": "1b7whO4SfY",
+  "source": "cyclereview_neurlps2025",
+  "source_format": "cyclereview_json",
+  "reviews_analysis": {
+    "CYCLEREVIEW_NEURLPS2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper investigates the effect of gating in the transformer architecture.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "They introduce gating at different positions and find that applying SDPA output head-specific gating yields the most significant performance improvements.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "They identify two factors contributing to the efficacy of gating: (i) Non-Linearity and (ii) Sparsity.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "They also find that gating helps in reducing the attention sink and facilitates context length extension.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper is well-written and easy to follow.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The paper is missing a detailed theoretical analysis of the effect of gating.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The authors only mention that the two consecutive linear layers - the value and dense projections - can be rewritten into one low-rank linear projection. However, they do not provide a detailed analysis of how this low-rank linear projection affects the model's performance.",
+        "role": "Backing",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The paper does not compare the proposed method with other gating methods.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The authors only compare their method with the baseline model. They do not compare their method with other gating methods such as Switch Heads [19,20], NSA [21], and MoSA [67].",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper does not provide a detailed analysis of the effect of gating on the model's performance.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The authors only provide a brief analysis of the effect of gating on the model's performance. They do not provide a detailed analysis of how gating affects the model's performance on different tasks and datasets.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The paper does not provide a detailed analysis of the effect of gating on the model's training stability.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The authors only mention that gating helps in reducing the loss spikes and enabling larger learning rates and enhancing model scalability. They do not provide a detailed analysis of how gating affects the model's training stability and how it helps in reducing the loss spikes.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The paper does not provide a detailed analysis of the effect of gating on the model's attention dynamics.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The authors only mention that gating helps in reducing the attention sink. They do not provide a detailed analysis of how gating affects the model's attention dynamics and how it helps in reducing the attention sink.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "What is the effect of gating on the model's performance on different tasks and datasets?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "How does gating affect the model's training stability?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "How does gating affect the model's attention dynamics?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "What are the limitations of the proposed method?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "How does the proposed method compare with other gating methods?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 2582,
+    "completion_tokens": 2582,
+    "total_tokens": 5164
+  }
+}

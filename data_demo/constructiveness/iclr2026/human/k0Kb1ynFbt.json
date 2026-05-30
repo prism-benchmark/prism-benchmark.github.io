@@ -1,0 +1,439 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "metadata": {
+    "decision": "Accept (Oral)",
+    "avg_rating": 6.0,
+    "avg_confidence": 3.25,
+    "num_reviewers": 4
+  },
+  "reviewers": [
+    {
+      "reviewer_id": "Human_1",
+      "status": "success",
+      "atomic_comments": [
+        {
+          "arc_id": "ARC_01",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The paper's own experiments show the simpler Gaussian policy fine-tuning outperforms the proposed complex diffusion policy fine-tuning, requiring intensive explanation.",
+          "anchor_quote": "fine-tuning the simple Gaussian policy (π_g) actually achieves better final performance than the proposed new, complex diffusion policy fine-tuning algorithm",
+          "D1_actionability": 2,
+          "D2_specificity": 2,
+          "D3_justification": 2,
+          "D4_solution": 1,
+          "D5_tone": 1
+        },
+        {
+          "arc_id": "ARC_02",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The authors' claim of performance degradation due to limited interaction timesteps needs further discussion of advanced works to address this problem.",
+          "anchor_quote": "The advanced works to overcome this problem should be discussed further.",
+          "D1_actionability": 1,
+          "D2_specificity": 1,
+          "D3_justification": 1,
+          "D4_solution": 1,
+          "D5_tone": 1
+        },
+        {
+          "arc_id": "ARC_03",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The novel diffusion policy fine-tuning method is not fully optimized and is outperformed by simpler standard approaches like DDPG.",
+          "anchor_quote": "not yet fully optimized and is outperformed by a simpler, standard approach such as DDPG.",
+          "D1_actionability": 1,
+          "D2_specificity": 1,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 1
+        },
+        {
+          "arc_id": "ARC_04",
+          "section": "Weaknesses",
+          "comment_type": "observation",
+          "content": "The paper's primary strength likely lies in its pre-training exploration producing a superior Gaussian policy, not its diffusion policy fine-tuning performance.",
+          "anchor_quote": "the paper's primary strength lies in its pre-training exploration (which produces a superior Gaussian policy) rather than its diffusion policy fine-tuning performance.",
+          "D1_actionability": 1,
+          "D2_specificity": 1,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 1
+        }
+      ],
+      "metrics": {
+        "MCS": 0.525,
+        "AR": 1.0,
+        "SD": 0.0,
+        "CD": 0.25,
+        "D1_actionability_mean": 1.25,
+        "D2_specificity_mean": 1.25,
+        "D3_justification_mean": 1.25,
+        "D4_solution_mean": 0.5,
+        "D5_tone_mean": 1.0,
+        "n_arcs": 4,
+        "n_weaknesses": 3,
+        "n_strengths": 0,
+        "n_questions": 0,
+        "n_suggestions": 0,
+        "n_observations": 1
+      }
+    },
+    {
+      "reviewer_id": "Human_2",
+      "status": "success",
+      "atomic_comments": [
+        {
+          "arc_id": "ARC_01",
+          "section": "Strengths",
+          "comment_type": "strength",
+          "content": "The method shows consistent empirical improvements over strong baselines in multiple transfer and exploration settings.",
+          "anchor_quote": "Empirical gains across multiple settings: The figure indicates consistent improvements over strong unsupervised exploration baselines",
+          "D1_actionability": 0,
+          "D2_specificity": 1,
+          "D3_justification": 2,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_02",
+          "section": "Strengths",
+          "comment_type": "strength",
+          "content": "The diffusion-based exploratory prior is presented as a potentially general mechanism for inducing diverse skills or state coverage.",
+          "anchor_quote": "Potentially general mechanism: A diffusion-based exploratory prior could be a broadly applicable way to induce diverse skills or state coverage",
+          "D1_actionability": 0,
+          "D2_specificity": 1,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_03",
+          "section": "Strengths",
+          "comment_type": "strength",
+          "content": "The paper is noted to include sufficient theoretical proof.",
+          "anchor_quote": "Sufficient theoretical proof.",
+          "D1_actionability": 0,
+          "D2_specificity": 1,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_04",
+          "section": "Questions",
+          "comment_type": "question",
+          "content": "Asks for details on the intrinsic reward design, its rationale, and whether alternative schemes were considered.",
+          "anchor_quote": "How is the intrinsic reward designed, what is the underlying rationale, and were alternative design schemes considered?",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 0,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_05",
+          "section": "Questions",
+          "comment_type": "question",
+          "content": "Asks for clarification on the distinction between unsupervised reinforcement learning and Meta-RL.",
+          "anchor_quote": "What is the difference between unsupervised reinforcement learning and Meta-RL, given that both seem to aim at rapidly solving new tasks?",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 0,
+          "D4_solution": 0,
+          "D5_tone": 2
+        }
+      ],
+      "metrics": {
+        "MCS": 0.46,
+        "AR": 0.4,
+        "SD": 0.0,
+        "CD": 0.0,
+        "D1_actionability_mean": 0.4,
+        "D2_specificity_mean": 1.4,
+        "D3_justification_mean": 0.8,
+        "D4_solution_mean": 0.0,
+        "D5_tone_mean": 2.0,
+        "n_arcs": 5,
+        "n_weaknesses": 0,
+        "n_strengths": 3,
+        "n_questions": 2,
+        "n_suggestions": 0,
+        "n_observations": 0
+      }
+    },
+    {
+      "reviewer_id": "Human_3",
+      "status": "success",
+      "atomic_comments": [
+        {
+          "arc_id": "ARC_01",
+          "section": "Strengths",
+          "comment_type": "strength",
+          "content": "The performance is very strong compared to baselines.",
+          "anchor_quote": "The performance seems to be very strong compared to baselines",
+          "D1_actionability": 0,
+          "D2_specificity": 0,
+          "D3_justification": 0,
+          "D4_solution": 0,
+          "D5_tone": 1
+        },
+        {
+          "arc_id": "ARC_02",
+          "section": "Strengths",
+          "comment_type": "strength",
+          "content": "The presentation is clear and easy to follow.",
+          "anchor_quote": "The presentation is clear and easy to follow",
+          "D1_actionability": 0,
+          "D2_specificity": 0,
+          "D3_justification": 0,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_03",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The motivation for the work is weak.",
+          "anchor_quote": "The motivation is somewhat weak",
+          "D1_actionability": 0,
+          "D2_specificity": 1,
+          "D3_justification": 0,
+          "D4_solution": 0,
+          "D5_tone": 1
+        },
+        {
+          "arc_id": "ARC_04",
+          "section": "Questions",
+          "comment_type": "question",
+          "content": "Why were the baselines APT and APS by Liu et al. not included in the URLB results?",
+          "anchor_quote": "why APT and APS by Liu et al. were not included in the baseline?",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 1,
+          "D5_tone": 1
+        }
+      ],
+      "metrics": {
+        "MCS": 0.275,
+        "AR": 0.25,
+        "SD": 0.0,
+        "CD": 0.25,
+        "D1_actionability_mean": 0.25,
+        "D2_specificity_mean": 0.75,
+        "D3_justification_mean": 0.25,
+        "D4_solution_mean": 0.25,
+        "D5_tone_mean": 1.25,
+        "n_arcs": 4,
+        "n_weaknesses": 1,
+        "n_strengths": 2,
+        "n_questions": 1,
+        "n_suggestions": 0,
+        "n_observations": 0
+      }
+    },
+    {
+      "reviewer_id": "Human_4",
+      "status": "success",
+      "atomic_comments": [
+        {
+          "arc_id": "ARC_01",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The diffusion policy, a key novel contribution, does not appear to provide meaningful performance benefits over the Gaussian policy, raising questions about its value.",
+          "anchor_quote": "the diffusion policy is arguably the biggest and most complex novel contribution of this work, but it appears to not contribute meaningfully to the performance",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_02",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The motivation for the diffusion policy based on Theorem 4.1 is undermined because pre-training exploration still uses the Gaussian policy and Gaussian fine-tuning outperforms diffusion fine-tuning.",
+          "anchor_quote": "the environment interactions during pre-training are still done only using the Gaussian policy... fine-tuning of the Gaussian policy... still leads to higher performance than fine-tuning the diffusion policy",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 2,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_03",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The empirical results' validity is questionable due to potential unequal hyperparameter tuning effort across methods for the Maze2D tasks.",
+          "anchor_quote": "Were these hyperparameters explicitly tuned for the Maze2D tasks evaluated in this work? How about ExDM hyperparameters...?",
+          "D1_actionability": 2,
+          "D2_specificity": 1,
+          "D3_justification": 1,
+          "D4_solution": 1,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_04",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The statement that 'the optimal policy of standard RL is a simple deterministic policy' is imprecise and not generally true, especially in partially observable or multi-agent settings.",
+          "anchor_quote": "the optimal policy of standard RL is a simple deterministic policy",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 2,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_05",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The claim that URL requires capturing heterogeneous distributions from multiple policies is imprecise; it is a consequence of using off-policy algorithms with a replay buffer, not a core requirement.",
+          "anchor_quote": "URL requires capturing the heterogeneous distribution of collected data and obtaining policies with high diversity",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_06",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The claim that 'The Gaussian behavior policy π_g can then be trained using any RL algorithm' is incorrect because the training data from the replay buffer is off-policy, requiring an off-policy algorithm.",
+          "anchor_quote": "The Gaussian behavior policy π_g can then be trained using any RL algorithm",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 2,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_07",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "Figure 2 is misleading because it omits the strongest baselines (MEPOL, RE3, CIC), potentially exaggerating ExDM's visual performance.",
+          "anchor_quote": "The baselines visualized in Figure 2 appear to be mostly poor performing or middle of the pack... None of the strongest baselines... are included",
+          "D1_actionability": 2,
+          "D2_specificity": 2,
+          "D3_justification": 2,
+          "D4_solution": 2,
+          "D5_tone": 1
+        },
+        {
+          "arc_id": "ARC_08",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "The fine-tune box in Figure 1 has confusing labels where the policy titles for Gaussian and diffusion fine-tuning appear reversed.",
+          "anchor_quote": "The fine-tune box of Figure 1 appears confusing to me and I believe the policy titles should be flipped.",
+          "D1_actionability": 2,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 2,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_09",
+          "section": "Weaknesses",
+          "comment_type": "weakness",
+          "content": "Inconsistent baseline colors in Figure 3(a) and (b) hinder easy cross-referencing of results.",
+          "anchor_quote": "baseline algorithms do not have identical colors in Figure 3 (a) and (b)",
+          "D1_actionability": 2,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 2,
+          "D5_tone": 1
+        },
+        {
+          "arc_id": "ARC_10",
+          "section": "Strengths",
+          "comment_type": "strength",
+          "content": "The approach is original and novel, particularly in applying diffusion models to unsupervised RL for exploration, which is new to the reviewer's knowledge.",
+          "anchor_quote": "their application to URL is novel to the best of my knowledge",
+          "D1_actionability": 0,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_11",
+          "section": "Strengths",
+          "comment_type": "strength",
+          "content": "The theoretical contributions, including Theorem 4.1 and the novel fine-tuning algorithm, are valuable.",
+          "anchor_quote": "the theoretical contributions in Theorem 4.1... and in deriving a novel algorithm for online fine-tuning of the diffusion policy are valuable",
+          "D1_actionability": 0,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_12",
+          "section": "Strengths",
+          "comment_type": "strength",
+          "content": "The writing, presentation, and empirical evaluation are of high quality, including useful ablations and analyses.",
+          "anchor_quote": "I find the writing and presentation of this work of a high quality. The empirical evaluation also appears to follow good practice",
+          "D1_actionability": 0,
+          "D2_specificity": 1,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_13",
+          "section": "Questions",
+          "comment_type": "question",
+          "content": "Clarify what specific benefits the diffusion policy provides, if any, over the Gaussian policy.",
+          "anchor_quote": "What are the benefits of the diffusion policy of ExDM, or does it not contribute to the performance",
+          "D1_actionability": 1,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_14",
+          "section": "Questions",
+          "comment_type": "question",
+          "content": "Specify the number of fine-tuning steps used for diffusion policies and explain if different from the 2M steps for Gaussian policies.",
+          "anchor_quote": "Were the diffusion policies fine-tuned with less than the 2M steps used for Gaussian policies?",
+          "D1_actionability": 2,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        },
+        {
+          "arc_id": "ARC_15",
+          "section": "Questions",
+          "comment_type": "question",
+          "content": "Explain the hyperparameter selection process for all baselines and ExDM in the Maze2D experiments.",
+          "anchor_quote": "How were hyperparameters of all baselines and ExDM selected for the empirical Maze2D experiments?",
+          "D1_actionability": 2,
+          "D2_specificity": 2,
+          "D3_justification": 1,
+          "D4_solution": 0,
+          "D5_tone": 2
+        }
+      ],
+      "metrics": {
+        "MCS": 0.6667,
+        "AR": 0.8,
+        "SD": 0.2,
+        "CD": 0.8,
+        "D1_actionability_mean": 1.2,
+        "D2_specificity_mean": 1.8667,
+        "D3_justification_mean": 1.2667,
+        "D4_solution_mean": 0.4667,
+        "D5_tone_mean": 1.8667,
+        "n_arcs": 15,
+        "n_weaknesses": 9,
+        "n_strengths": 3,
+        "n_questions": 3,
+        "n_suggestions": 0,
+        "n_observations": 0
+      }
+    }
+  ]
+}

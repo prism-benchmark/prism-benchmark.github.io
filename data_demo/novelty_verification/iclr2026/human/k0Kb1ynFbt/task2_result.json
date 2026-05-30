@@ -1,0 +1,247 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Unsupervised exploration downstream adaptation reinforcement learning diffusion Diffusion unsupervised RL exploration",
+      "status": "ok",
+      "count": 20
+    },
+    {
+      "id": "C2",
+      "query": "Unsupervised exploration downstream adaptation reinforcement learning diffusion Efficient decoupled training fine-tuning algorithm",
+      "status": "ok",
+      "count": 6
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+      "title": "Unsupervised Model-based Pre-training for Data-efficient Reinforcement Learning from Pixels",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/e40c241f1a6484a9c9713d3ee7840153e87912c3",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "title": "Exploratory Diffusion Model for Unsupervised Reinforcement Learning",
+      "year": 2025,
+      "venue": "",
+      "abstract": "Unsupervised reinforcement learning (URL) aims to pre-train agents by exploring diverse states or skills in reward-free environments, facilitating efficient adaptation to downstream tasks. As the agent cannot access extrinsic rewards during unsupervised exploration, existing methods design intrinsic rewards to model the explored data and encourage further exploration. However, the explored data are always heterogeneous, posing the requirements of powerful representation abilities for both intrinsic reward models and pre-trained policies. In this work, we propose the Exploratory Diffusion Model (ExDM), which leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks. Specifically, ExDM can accurately estimate the distribution of collected data in the replay buffer with the diffusion model and introduces the score-based intrinsic reward, encouraging the agent to explore less-visited states. After obtaining the pre-trained policies, ExDM enables rapid adaptation to downstream tasks. In detail, we provide theoretical analyses and practical algorithms for fine-tuning diffusion policies, addressing key challenges such as training instability and computational complexity caused by multi-step sampling. Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks, especially in structurally complicated environments.",
+      "url": "https://www.semanticscholar.org/paper/9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "9b5dafe432446d9b627699aff65f4e81ac3fc914",
+      "title": "METRA: Scalable Unsupervised RL with Metric-Aware Abstraction",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "Unsupervised pre-training strategies have proven to be highly effective in natural language processing and computer vision. Likewise, unsupervised reinforcement learning (RL) holds the promise of discovering a variety of potentially useful behaviors that can accelerate the learning of a wide array of downstream tasks. Previous unsupervised RL approaches have mainly focused on pure exploration and mutual information skill learning. However, despite the previous attempts, making unsupervised RL truly scalable still remains a major open challenge: pure exploration approaches might struggle in complex environments with large state spaces, where covering every possible transition is infeasible, and mutual information skill learning approaches might completely fail to explore the environment due to the lack of incentives. To make unsupervised RL scalable to complex, high-dimensional environments, we propose a novel unsupervised RL objective, which we call Metric-Aware Abstraction (METRA). Our main idea is, instead of directly covering the entire state space, to only cover a compact latent space $Z$ that is metrically connected to the state space $S$ by temporal distances. By learning to move in every direction in the latent space, METRA obtains a tractable set of diverse behaviors that approximately cover the state space, being scalable to high-dimensional environments. Through our experiments in five locomotion and manipulation environments, we demonstrate that METRA can discover a variety of useful behaviors even in complex, pixel-based environments, being the first unsupervised RL method that discovers diverse locomotion behaviors in pixel-based Quadruped and Humanoid. Our code and videos are available at https://seohong.me/projects/metra/",
+      "url": "https://www.semanticscholar.org/paper/9b5dafe432446d9b627699aff65f4e81ac3fc914",
+      "embedding": null,
+      "relevance_score": 0.95
+    },
+    {
+      "cand_id": "3096bf7886a94d6dd9cb92cdc164b56330593b2b",
+      "title": "Ocean Diviner: A Diffusion-Augmented Reinforcement Learning for AUV Robust Control in the Underwater Tasks",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/3096bf7886a94d6dd9cb92cdc164b56330593b2b",
+      "embedding": null,
+      "relevance_score": 0.9
+    },
+    {
+      "cand_id": "53e71d6a11a2c94462aedd854f8c030804cd3997",
+      "title": "Maximum Entropy Behavior Exploration for Sim2Real Zero-Shot Reinforcement Learning",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Zero-shot reinforcement learning (RL) algorithms aim to learn a family of policies from a reward-free dataset, and recover optimal policies for any reward function directly at test time. Naturally, the quality of the pretraining dataset determines the performance of the recovered policies across tasks. However, pre-collecting a relevant, diverse dataset without prior knowledge of the downstream tasks of interest remains a challenge. In this work, we study $\\textit{online}$ zero-shot RL for quadrupedal control on real robotic systems, building upon the Forward-Backward (FB) algorithm. We observe that undirected exploration yields low-diversity data, leading to poor downstream performance and rendering policies impractical for direct hardware deployment. Therefore, we introduce FB-MEBE, an online zero-shot RL algorithm that combines an unsupervised behavior exploration strategy with a regularization critic. FB-MEBE promotes exploration by maximizing the entropy of the achieved behavior distribution. Additionally, a regularization critic shapes the recovered policies toward more natural and physically plausible behaviors. We empirically demonstrate that FB-MEBE achieves and improved performance compared to other exploration strategies in a range of simulated downstream tasks, and that it renders natural policies that can be seamlessly deployed to hardware without further finetuning. Videos and code available on our website.",
+      "url": "https://www.semanticscholar.org/paper/53e71d6a11a2c94462aedd854f8c030804cd3997",
+      "embedding": null,
+      "relevance_score": 0.85
+    },
+    {
+      "cand_id": "d6c314c406ed5b517f774a895f0852876ae95ed9",
+      "title": "Latent State-Predictive Exploration for Deep Reinforcement Learning",
+      "year": 2026,
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "abstract": "Reinforcement learning (RL) has achieved promising results in continuous control tasks, where efficient exploration of the state space is crucial for success. However, many recent RL approaches still struggle with sample inefficiency and insufficient exploration for long-horizon tasks, particularly in environments characterized by high-dimensional and complex state spaces.\nTo address these challenges, we propose a novel exploration framework, Latent State Predictive Exploration (LSPE). The core idea behind LSPE is to endow the agent with a form of ``foresight\" to enhance exploration in long-horizon settings. Specifically, LSPE employs a state encoder to learn compact latent representations from high-dimensional visual observations, effectively filtering out irrelevant or noisy information. To further enrich and stabilize these representations, we incorporate a diffusion-based self-predictive module that enforces temporal consistency by predicting future states, thereby improving both exploration and downstream predictive control.\nAdditionally, we introduce an Exploration Reward Function (ERF) that explicitly encourages the agent to visit novel latent states. This reward signal promotes more efficient and scalable exploration in complex environments.\nWe evaluate LSPE across a diverse set of challenging long-horizon navigation and manipulation tasks, spanning simulation environments such as Habitat and Robosuite, as well as deployment on a real robot in a **physical indoor environment**. Experimental results show that LSPE substantially enhances exploration efficiency and scales effectively to complex, high-dimensional tasks.",
+      "url": "https://www.semanticscholar.org/paper/d6c314c406ed5b517f774a895f0852876ae95ed9",
+      "embedding": null,
+      "relevance_score": 0.8
+    },
+    {
+      "cand_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+      "title": "Unifying Unsupervised and Offline RL for Fast Adaptation Using World Models",
+      "year": 2026,
+      "venue": "IEEE Robotics and Automation Letters",
+      "abstract": "Deep reinforcement learning has proven an effective method to solve many intricate tasks, yet it still struggles with data efficiency and generalization to novel scenarios, as required in settings such as robotics. Recent approaches to deal with this include (1) unsupervised pretraining of the agent in an environment without reward signals, and (2) training the agent using offline data coming from various possible sources. In this letter we propose to consider both of these approaches together, resulting in a setting where different types of data streams are available and fast online adaptation to new tasks is required. Towards this goal we consider the Unsupervised Reinforcement Learning Benchmark and show that unsupervised training’s primary value lies in its use as a source of exploration trajectories, beyond its role in pretraining a policy. Following this observation we develop a method based on a world-model as a generative model of offline exploration data and model predictive control (MPC) planning. We show that this approach outperforms previous methods and demonstrates task adaptation which is 10 times faster than previously shown. We then propose a setup that includes access to both unsupervised exploratory data and offline expert demonstrations when testing the agents’ online performance on adaptation to novel tasks in the environment.",
+      "url": "https://www.semanticscholar.org/paper/e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "title": "Balancing State Exploration and Skill Diversity in Unsupervised Skill Discovery",
+      "year": 2025,
+      "venue": "IEEE Transactions on Cybernetics",
+      "abstract": "Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised reinforcement learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this article, we propose contrastive dynamic skill discovery (ComSD) which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multijoint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2-D maze.",
+      "url": "https://www.semanticscholar.org/paper/81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "embedding": null,
+      "relevance_score": 0.7
+    },
+    {
+      "cand_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+      "title": "Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Unsupervised pre-training can equip reinforcement learning agents with prior knowledge and accelerate learning in downstream tasks. A promising direction, grounded in human development, investigates agents that learn by setting and pursuing their own goals. The core challenge lies in how to effectively generate, select, and learn from such goals. Our focus is on broad distributions of downstream tasks where solving every task zero-shot is infeasible. Such settings naturally arise when the target tasks lie outside of the pre-training distribution or when their identities are unknown to the agent. In this work, we (i) optimize for efficient multi-episode exploration and adaptation within a meta-learning framework, and (ii) guide the training curriculum with evolving estimates of the agent's post-adaptation performance. We present ULEE, an unsupervised meta-learning method that combines an in-context learner with an adversarial goal-generation strategy that maintains training at the frontier of the agent's capabilities. On XLand-MiniGrid benchmarks, ULEE pre-training yields improved exploration and adaptation abilities that generalize to novel objectives, environment dynamics, and map structures. The resulting policy attains improved zero-shot and few-shot performance, and provides a strong initialization for longer fine-tuning processes. It outperforms learning from scratch, DIAYN pre-training, and alternative curricula.",
+      "url": "https://www.semanticscholar.org/paper/0191d340d3e70103bc7c0a3207be505034fc1729",
+      "embedding": null,
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "cand_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "title": "Contrastive Intrinsic Control for Unsupervised Reinforcement Learning",
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems 35",
+      "abstract": "We introduce Contrastive Intrinsic Control (CIC), an unsupervised reinforcement learning (RL) algorithm that maximizes the mutual information between state-transitions and latent skill vectors. CIC utilizes contrastive learning between state-transitions and skills vectors to learn behaviour embeddings and maximizes the entropy of these embeddings as an intrinsic reward to encourage behavioural diversity. We evaluate our algorithm on the Unsupervised RL Benchmark (URLB) in the asymptotic state-based setting, which consists of a long reward-free pre-training phase followed by a short adaptation phase to downstream tasks with extrinsic rewards. We find that CIC improves over prior exploration algorithms in terms of adaptation efficiency to downstream tasks on state-based URLB. 1 Deep RL is a powerful approach toward solving complex control tasks in the presence of extrinsic rewards. Successful applications include playing video games from pixels [1], mastering the game of Go [2, 3], robotic locomotion [4, 5, 6] and dexterous manipulation [7, 8, 9] policies. While effective, the above advances produced agents that are unable to generalize to new downstream tasks beyond the one they were trained to solve. Humans and animals on the other hand are able to acquire skills with minimal supervision and apply them to solve a variety of downstream tasks. In this work, we seek to train agents that acquire skills without supervision with generalization capabilities by efficiently adapting these skills to downstream tasks.",
+      "url": "https://www.semanticscholar.org/paper/0292a7e356152a842aa47ff4336703cac540a86d",
+      "embedding": null,
+      "relevance_score": 0.55
+    },
+    {
+      "cand_id": "ded711d2593522e0134d3404e5232bbb6af02e61",
+      "title": "Pre-Training and Fine-Tuning Generative Flow Networks",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "Generative Flow Networks (GFlowNets) are amortized samplers that learn stochastic policies to sequentially generate compositional objects from a given unnormalized reward distribution. They can generate diverse sets of high-reward objects, which is an important consideration in scientific discovery tasks. However, as they are typically trained from a given extrinsic reward function, it remains an important open challenge about how to leverage the power of pre-training and train GFlowNets in an unsupervised fashion for efficient adaptation to downstream tasks. Inspired by recent successes of unsupervised pre-training in various domains, we introduce a novel approach for reward-free pre-training of GFlowNets. By framing the training as a self-supervised problem, we propose an outcome-conditioned GFlowNet (OC-GFN) that learns to explore the candidate space. Specifically, OC-GFN learns to reach any targeted outcomes, akin to goal-conditioned policies in reinforcement learning. We show that the pre-trained OC-GFN model can allow for a direct extraction of a policy capable of sampling from any new reward functions in downstream tasks. Nonetheless, adapting OC-GFN on a downstream task-specific reward involves an intractable marginalization over possible outcomes. We propose a novel way to approximate this marginalization by learning an amortized predictor enabling efficient fine-tuning. Extensive experimental results validate the efficacy of our approach, demonstrating the effectiveness of pre-training the OC-GFN, and its ability to swiftly adapt to downstream tasks and discover modes more efficiently. This work may serve as a foundation for further exploration of pre-training strategies in the context of GFlowNets.",
+      "url": "https://www.semanticscholar.org/paper/ded711d2593522e0134d3404e5232bbb6af02e61",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "79b151befc13141bf04175a9938f2d9b370b5c86",
+      "title": "Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Diffusion-based generative methods have shown promising potential for modeling trajectories from offline reinforcement learning (RL) datasets, and hierarchical diffusion has been introduced to mitigate variance accumulation and computational challenges in long-horizon planning tasks. However, existing approaches typically assume a fixed two-layer diffusion hierarchy with a single predefined temporal scale, which limits adaptability to diverse downstream tasks and reduces flexibility in decision making. In this work, we propose SIHD, a novel Structural Information-based Hierarchical Diffusion framework for effective and stable offline policy learning in long-horizon environments with sparse rewards. Specifically, we analyze structural information embedded in offline trajectories to construct the diffusion hierarchy adaptively, enabling flexible trajectory modeling across multiple temporal scales. Rather than relying on reward predictions from localized sub-trajectories, we quantify the structural information gain of each state community and use it as a conditioning signal within the corresponding diffusion layer. To reduce overreliance on offline datasets, we introduce a structural entropy regularizer that encourages exploration of underrepresented states while avoiding extrapolation errors from distributional shifts. Extensive evaluations on challenging offline RL tasks show that SIHD significantly outperforms state-of-the-art baselines in decision-making performance and demonstrates superior generalization across diverse scenarios.",
+      "url": "https://www.semanticscholar.org/paper/79b151befc13141bf04175a9938f2d9b370b5c86",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+      "title": "Robotic Locomotion Skill Learning Using Unsupervised Reinforcement Learning With Controllable Latent Space Partition",
+      "year": 2025,
+      "venue": "IEEE Transactions on Industrial Informatics",
+      "abstract": "Effective skill learning in an unsupervised manner is one of the capabilities an intelligent agent or robot should have. The discovered task-agnostic skills can be fine-tuned to downstream long-horizon tasks to improve execution efficiency. Unfortunately, the self-learning of locomotion skills, which occurs naturally in infancy, has been slow to develop in robotics. The instability exhibited by existing skill-learning methods makes it difficult to directly apply to complex control tasks, such as humanoid robots. To acquire reliable robotic locomotion skills, this article proposes a controllable latent space partition framework to assist reinforcement learning in accomplishing practicability-oriented unsupervised skill discovery (PoSD). Specifically, we use the distance similarity measure of the trajectory feature space to introduce the indicative information of the expert demonstrations into the partitioning and mapping process of the latent space. In addition, the intrinsic subrewards based on contrastive learning and particle entropy are designed to promote skill diversity and encourage exploration. Finally, reinforcement learning completes the generation of skill-conditioned policy driven by composite intrinsic rewards. The performance investigation of our method is conducted on five robots with more than 15 skills. The results indicate that PoSD achieves noticeable improvements in adaptation efficiency and practicability compared with other SOTA unsupervised skill discovery methods.",
+      "url": "https://www.semanticscholar.org/paper/8afe69a050d999c642170295c478ebdfa686eff1",
+      "embedding": null,
+      "relevance_score": 0.45
+    },
+    {
+      "cand_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "title": "See, Act, Adapt: Active Perception for Unsupervised Cross-Domain Visual Adaptation via Personalized VLM-Guided Agent",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Pre-trained perception models excel in generic image domains but degrade significantly in novel environments like indoor scenes. The conventional remedy is fine-tuning on downstream data which incurs catastrophic forgetting of prior knowledge and demands costly, scene-specific annotations. We propose a paradigm shift through Sea$^2$ (See, Act, Adapt): rather than adapting the perception modules themselves, we adapt how they are deployed through an intelligent pose-control agent. Sea$^2$ keeps all perception modules frozen, requiring no downstream labels during training, and uses only scalar perceptual feedback to navigate the agent toward informative viewpoints. Specially, we transform a vision-language model (VLM) into a low-level pose controller through a two-stage training pipeline: first fine-tuning it on rule-based exploration trajectories that systematically probe indoor scenes, and then refining the policy via unsupervised reinforcement learning that constructs rewards from the perception module's outputs and confidence. Unlike prior active perception methods that couple exploration with specific models or collect data for retraining them, Sea$^2$ directly leverages off-the-shelf perception models for various tasks without the need for retraining. We conducted experiments on three visual perception tasks, including visual grounding, segmentation and 3D box estimation, with performance improvements of 13.54%, 15.92% and 27.68% respectively on dataset ReplicaCAD.",
+      "url": "https://www.semanticscholar.org/paper/284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "embedding": null,
+      "relevance_score": 0.35
+    },
+    {
+      "cand_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "title": "Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning",
+      "year": 2024,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "embedding": null,
+      "relevance_score": 0.4
+    },
+    {
+      "cand_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+      "title": "EUCLID: Towards Efficient Unsupervised Reinforcement Learning with Multi-choice Dynamics Model",
+      "year": 2022,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "Unsupervised reinforcement learning (URL) poses a promising paradigm to learn useful behaviors in a task-agnostic environment without the guidance of extrinsic rewards to facilitate the fast adaptation of various downstream tasks. Previous works focused on the pre-training in a model-free manner while lacking the study of transition dynamics modeling that leaves a large space for the improvement of sample efficiency in downstream tasks. To this end, we propose an Efficient Unsupervised Reinforcement Learning Framework with Multi-choice Dynamics model (EUCLID), which introduces a novel model-fused paradigm to jointly pre-train the dynamics model and unsupervised exploration policy in the pre-training phase, thus better leveraging the environmental samples and improving the downstream task sampling efficiency. However, constructing a generalizable model which captures the local dynamics under different behaviors remains a challenging problem. We introduce the multi-choice dynamics model that covers different local dynamics under different behaviors concurrently, which uses different heads to learn the state transition under different behaviors during unsupervised pre-training and selects the most appropriate head for prediction in the downstream task. Experimental results in the manipulation and locomotion domains demonstrate that EUCLID achieves state-of-the-art performance with high sample efficiency, basically solving the state-based URLB benchmark and reaching a mean normalized score of 104.0$\\pm$1.2$\\%$ in downstream tasks with 100k fine-tuning steps, which is equivalent to DDPG's performance at 2M interactive steps with 20x more data.",
+      "url": "https://www.semanticscholar.org/paper/8cb359a03b499319c05eb7d36726341579dbe56f",
+      "embedding": null,
+      "relevance_score": 0.3333333333333333
+    },
+    {
+      "cand_id": "46bd3c20e6f7a9b6e413ea9f3452965601fd6de9",
+      "title": "Unsupervised Reinforcement Learning for Transferable Manipulation Skill Discovery",
+      "year": 2022,
+      "venue": "IEEE Robotics and Automation Letters",
+      "abstract": "Current reinforcement learning (RL) in robotics often experiences difficulty in generalizing to new downstream tasks due to the innate task-specific training paradigm. To alleviate it, unsupervised RL, a framework that pre-trains the agent in a task-agnostic manner without access to the task-specific reward, leverages active exploration for distilling diverse experience into essential skills or reusable knowledge. For exploiting such benefits also in robotic manipulation, we propose an unsupervised method for transferable manipulation skill discovery that ties structured exploration toward interacting behavior and transferable skill learning. It not only enables the agent to learn interaction behavior, the key aspect of the robotic manipulation learning, without access to the environment reward, but also to generalize to arbitrary downstream manipulation tasks with the learned task-agnostic skills. Through comparative experiments, we show that our approach achieves the most diverse interacting behavior and significantly improves sample efficiency in downstream tasks including the extension to multi-object, multitask problems.",
+      "url": "https://www.semanticscholar.org/paper/46bd3c20e6f7a9b6e413ea9f3452965601fd6de9",
+      "embedding": null,
+      "relevance_score": 0.25
+    },
+    {
+      "cand_id": "aa475f7900389f242dbe344c46e3474043759398",
+      "title": "Explore-Execute Chain: Towards an Efficient Structured Reasoning Paradigm",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Chain-of-Thought (CoT) and its variants have markedly advanced the reasoning abilities of Large Language Models (LLMs), yet their monolithic and auto-regressive architecture inherently conflates high-level strategic planning with low-level step-by-step execution, leading to computational inefficiency, limited exploration of reasoning paths, and reduced interpretability. To overcome these issues, we propose the Explore-Execute Chain ($E^2C$), a structured reasoning framework that decouples reasoning into two distinct phases: an exploratory phase that stochastically generates succinct high-level plans, followed by an execution phase that deterministically carries out the chosen plan. Our approach incorporates a two-stage training methodology, which combines Supervised Fine-Tuning (SFT) - augmented by a novel data generation algorithm enforcing strict plan adherence - with a subsequent Reinforcement Learning (RL) stage that capitalizes on the informativeness of exploration and reinforces the determinism of execution. This decomposition enables an efficient test-time scaling strategy: on AIME'2024, $E^2C$ Test Time Scaling reaches 58.1% accuracy using<10% of the decoding tokens required by comparable methods (e.g., Forest-of-Thought), sharply cutting self-consistency overhead. For cross-domain adaptation, our Exploration-Focused SFT (EF-SFT) fine-tunes with only 3.5% of the tokens used by standard SFT yet yields up to 14.5% higher accuracy than standard SFT on medical benchmarks, delivering state-of-the-art performance, strong generalization, and greater interpretability by separating planning from execution. The code and pre-trained models for the project are available at: https://github.com/yks23/Explore-Execute-Chain.git",
+      "url": "https://www.semanticscholar.org/paper/aa475f7900389f242dbe344c46e3474043759398",
+      "embedding": null,
+      "relevance_score": 0.16666666666666666
+    },
+    {
+      "cand_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "title": "PEAC: Unsupervised Pre-training for Cross-Embodiment Reinforcement Learning",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "Designing generalizable agents capable of adapting to diverse embodiments has achieved significant attention in Reinforcement Learning (RL), which is critical for deploying RL agents in various real-world applications. Previous Cross-Embodiment RL approaches have focused on transferring knowledge across embodiments within specific tasks. These methods often result in knowledge tightly coupled with those tasks and fail to adequately capture the distinct characteristics of different embodiments. To address this limitation, we introduce the notion of Cross-Embodiment Unsupervised RL (CEURL), which leverages unsupervised learning to enable agents to acquire embodiment-aware and task-agnostic knowledge through online interactions within reward-free environments. We formulate CEURL as a novel Controlled Embodiment Markov Decision Process (CE-MDP) and systematically analyze CEURL's pre-training objectives under CE-MDP. Based on these analyses, we develop a novel algorithm Pre-trained Embodiment-Aware Control (PEAC) for handling CEURL, incorporating an intrinsic reward function specifically designed for cross-embodiment pre-training. PEAC not only provides an intuitive optimization strategy for cross-embodiment pre-training but also can integrate flexibly with existing unsupervised RL methods, facilitating cross-embodiment exploration and skill discovery. Extensive experiments in both simulated (e.g., DMC and Robosuite) and real-world environments (e.g., legged locomotion) demonstrate that PEAC significantly improves adaptation performance and cross-embodiment generalization, demonstrating its effectiveness in overcoming the unique challenges of CEURL. The project page and code are in https://yingchengyang.github.io/ceurl.",
+      "url": "https://www.semanticscholar.org/paper/dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "embedding": null,
+      "relevance_score": 0.2
+    },
+    {
+      "cand_id": "af66187d02889719bd1dd410794413c6db9c2f3a",
+      "title": "Don't Trade Off Safety: Diffusion Regularization for Constrained Offline RL",
+      "year": 2025,
+      "venue": "",
+      "abstract": "Constrained reinforcement learning (RL) seeks high-performance policies under safety constraints. We focus on an offline setting where the agent has only a fixed dataset -- common in realistic tasks to prevent unsafe exploration. To address this, we propose Diffusion-Regularized Constrained Offline Reinforcement Learning (DRCORL), which first uses a diffusion model to capture the behavioral policy from offline data and then extracts a simplified policy to enable efficient inference. We further apply gradient manipulation for safety adaptation, balancing the reward objective and constraint satisfaction. This approach leverages high-quality offline data while incorporating safety requirements. Empirical results show that DRCORL achieves reliable safety performance, fast inference, and strong reward outcomes across robot learning tasks. Compared to existing safe offline RL methods, it consistently meets cost limits and performs well with the same hyperparameters, indicating practical applicability in real-world scenarios.",
+      "url": "https://www.semanticscholar.org/paper/af66187d02889719bd1dd410794413c6db9c2f3a",
+      "embedding": null,
+      "relevance_score": 0.15
+    },
+    {
+      "cand_id": "139a84c6fc4887ce2374489d79af0df9e1e7e4d6",
+      "title": "Craftax: A Lightning-Fast Benchmark for Open-Ended Reinforcement Learning",
+      "year": 2024,
+      "venue": "International Conference on Machine Learning",
+      "abstract": "Benchmarks play a crucial role in the development and analysis of reinforcement learning (RL) algorithms. We identify that existing benchmarks used for research into open-ended learning fall into one of two categories. Either they are too slow for meaningful research to be performed without enormous computational resources, like Crafter, NetHack and Minecraft, or they are not complex enough to pose a significant challenge, like Minigrid and Procgen. To remedy this, we first present Craftax-Classic: a ground-up rewrite of Crafter in JAX that runs up to 250x faster than the Python-native original. A run of PPO using 1 billion environment interactions finishes in under an hour using only a single GPU and averages 90% of the optimal reward. To provide a more compelling challenge we present the main Craftax benchmark, a significant extension of the Crafter mechanics with elements inspired from NetHack. Solving Craftax requires deep exploration, long term planning and memory, as well as continual adaptation to novel situations as more of the world is discovered. We show that existing methods including global and episodic exploration, as well as unsupervised environment design fail to make material progress on the benchmark. We believe that Craftax can for the first time allow researchers to experiment in a complex, open-ended environment with limited computational resources.",
+      "url": "https://www.semanticscholar.org/paper/139a84c6fc4887ce2374489d79af0df9e1e7e4d6",
+      "embedding": null,
+      "relevance_score": 0.1
+    },
+    {
+      "cand_id": "6a4f1c742e7851ed6c7cb73b3ecf82c460ad0ad2",
+      "title": "Cross-Domain Random Pretraining With Prototypes for Reinforcement Learning",
+      "year": 2023,
+      "venue": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+      "abstract": "Unsupervised cross-domain reinforcement learning (RL) pretraining shows great potential for challenging continuous visual control but poses a big challenge. In this article, we propose cross-domain random pretraining with prototypes (CRPTpro), a novel, efficient, and effective self-supervised cross-domain RL pretraining framework. CRPTpro decouples data sampling from encoder pretraining, proposing decoupled random collection to easily and quickly generate a qualified cross-domain pretraining dataset. Moreover, a novel prototypical self-supervised algorithm is proposed to pretrain an effective visual encoder that is generic across different domains. Without finetuning, the cross-domain encoder can be implemented for challenging downstream tasks defined in different domains, either seen or unseen. Compared with recent advanced methods, CRPTpro achieves better performance on downstream policy learning without extra training on exploration agents for data collection, greatly reducing the burden of pretraining. We conduct extensive experiments across multiple challenging continuous visual-control domains, including balance control, robot locomotion, and manipulation. CRPTpro significantly outperforms the next best Proto-RL(C) on 11/12 cross-domain downstream tasks with only 54.5% wall-clock pretraining time, exhibiting state-of-the-art pretraining performance with greatly improved pretraining efficiency.",
+      "url": "https://www.semanticscholar.org/paper/6a4f1c742e7851ed6c7cb73b3ecf82c460ad0ad2",
+      "embedding": null,
+      "relevance_score": 0.05
+    }
+  ],
+  "stats": {
+    "total_candidates": 26,
+    "after_dedup": 22,
+    "after_nontechnical_filter": 22,
+    "after_year_filter": 22,
+    "final": 22
+  }
+}

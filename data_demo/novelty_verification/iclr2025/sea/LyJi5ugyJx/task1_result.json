@@ -1,0 +1,57 @@
+{
+  "paper": {
+    "core_task": "Few-step image generation using continuous-time consistency models",
+    "contributions": [
+      {
+        "name": "A trigonometric formulation unifying EDM and flow matching",
+        "author_claim_text": "Our first contribution is TrigFlow, a new formulation that unifies EDM and Flow Matching, significantly simplifying the formulation of diffusion models, the associated probability flow ODE and CMs.",
+        "description": "TrigFlow is a trigonometric formulation that unifies EDM and flow matching, simplifying the diffusion process, model parameterization, and consistency model definitions.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "A stabilization recipe for continuous-time consistency model training",
+        "author_claim_text": "Building on this foundation, we analyze the root causes of instability in CM training and propose a complete recipe for mitigation. Our approach includes improved time-conditioning and adaptive group normalization within the network architecture.",
+        "description": "A recipe of architectural and training improvements, including time-conditioning and normalization changes, to stabilize the training of continuous-time consistency models.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "A re-formulated training objective for continuous-time consistency models",
+        "author_claim_text": "Additionally, we re-formulate the training objective for continuous-time CMs, incorporating adaptive weighting and normalization of key terms, and progressive annealing for stable and scalable training.",
+        "description": "A re-formulated training objective for continuous-time consistency models that uses adaptive weighting, tangent normalization, and progressive annealing to improve stability.",
+        "source_hint": "Introduction §1"
+      }
+    ],
+    "key_terms": [
+      "consistency models",
+      "continuous-time",
+      "few-step generation",
+      "TrigFlow",
+      "diffusion distillation",
+      "ImageNet",
+      "training stability",
+      "scaling",
+      "sCM",
+      "flow matching"
+    ],
+    "must_have_entities": [
+      "ImageNet 64x64",
+      "ImageNet 512x512",
+      "Flash Attention",
+      "DPM-Solver"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The paper does not provide extensive qualitative analysis of generated samples.",
+        "stance": "unclear",
+        "confidence_lang": "low",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

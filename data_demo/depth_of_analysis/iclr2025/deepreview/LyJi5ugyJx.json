@@ -1,0 +1,84 @@
+{
+  "paper_id": "LyJi5ugyJx",
+  "source": "deepreview_iclr2025",
+  "source_format": "deepreview_json",
+  "reviews_analysis": {
+    "DEEPREVIEW_ICLR2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper presents a new formulation called TrigFlow, which unifies EDM and Flow Matching, simplifying the formulation of diffusion models, probability flow ODE, and CMs.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The paper also addresses the training instability of continuous-time CMs by improving time-conditioning and using adaptive group normalization.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Additionally, the paper reformulates the training objective for continuous-time CMs, incorporating adaptive weighting and normalization of key terms, and progressive annealing for stable and scalable training.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The authors demonstrate the effectiveness of their methods through experiments on various datasets and model sizes, showing improved performance and scalability compared to previous methods.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The proposed TrigFlow formulation simplifies the formulation of diffusion models, probability flow ODE, and CMs, making it easier to understand and implement.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The paper addresses the training instability of continuous-time CMs, which has been a long-standing issue in the field.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The proposed methods are shown to be effective through experiments on various datasets and model sizes, demonstrating improved performance and scalability compared to previous methods.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The paper provides a complete recipe for mitigating the training instability of continuous-time CMs, including improved time-conditioning, adaptive group normalization, and a reformulated training objective.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper focuses on continuous-time CMs, but it is not clear how the proposed methods would perform on discrete-time CMs.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper does not provide a theoretical analysis of the proposed methods, which could help to better understand their properties and limitations.",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 1753,
+    "completion_tokens": 1753,
+    "total_tokens": 3506
+  }
+}

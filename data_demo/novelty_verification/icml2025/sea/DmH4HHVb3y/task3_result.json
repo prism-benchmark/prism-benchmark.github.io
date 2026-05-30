@@ -1,0 +1,52 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "**Summary:**\nThe paper introduces COLLABLLM, a novel training framework for enhancing Large Language Models (LLMs) in multiturn human-LLM collaboration."
+    }
+  ],
+  "related_works": [],
+  "pair_results": [],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "**Summary:**\nThe paper introduces COLLABLLM, a novel training framework for enhancing Large Language Models (LLMs) in multiturn human-LLM collaboration.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [],
+      "final_score": 0.0,
+      "best_evidence": [],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": []
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 0,
+    "pairs_attempted": 0,
+    "pairs_completed": 0,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 0,
+      "claims_with_any_success": 0,
+      "claims_without_pair_attempt": 1,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 0,
+      "claims_with_scored_evidence": 0,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 0.0,
+      "claim_success_coverage_rate": 0.0,
+      "evidence_coverage_rate": 0.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 0.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 0.0
+    }
+  },
+  "errors": []
+}

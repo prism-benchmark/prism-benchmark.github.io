@@ -1,0 +1,161 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "source": "reviewer2_iclr2026",
+  "source_format": "reviewer2_txt",
+  "reviews_analysis": {
+    "REVIEWER2_ICLR2026": [
+      {
+        "arg_id": "A_01",
+        "argument": "Novel Application of Diffusion Models: The integration of diffusion models into URL is innovative, leveraging their strong density estimation capabilities to model complex, non-stationary state distributions—a critical challenge in URL.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Theoretical Contributions: The paper provides formal analysis of the fine-tuning procedure (Theorem 4.2) and discusses the properties of entropy-maximizing policies (Theorem 4.1), though details remain sparse.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Empirical Performance: ExDM demonstrates substantial improvements in state coverage (e.g., 51% increase in Maze2d) and rapid adaptation in URLB, surpassing SOTA URL and diffusion fine-tuning baselines.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "Practical Design Choices: Decoupling diffusion modeling from action selection reduces computational overhead, enabling scalable training while retaining modeling power—this balances expressiveness with efficiency.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "Missing Computational Cost Analysis (Major): The paper does not quantify the computational burden of training/exploring with ExDM versus baselines. Diffusion models are inherently expensive; omitting metrics like wall-clock time or GPU memory usage undermines practical applicability.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Insufficient Theoretical Rigor (Major): Theorems 4.1 and 4.2 lack precise definitions of assumptions (e.g., “mild assumptions” in Theorem 4.1, convergence conditions in Theorem 4.2). Without formal problem formulations or mathematical derivations, the theoretical claims remain opaque.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Incomplete Baseline Comparisons (Major): The paper excludes key competitors like diffusion planners/policies (e.g., Janner et al., 2022; Wang et al., 2023) and generative models (VAEs/GANs) in URL, weakening novelty claims.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "No Statistical Validity in Experiments (Major): Results (e.g., 51% coverage gain) lack error bars, p-values, or replication counts. Without statistical rigor, it is unclear whether gains are robust or artifacts of random seeds.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "Limited Ablation Studies (Minor): The role of the score-based intrinsic reward versus alternatives (e.g., count-based or entropy-based rewards) is untested. Similarly, the necessity of decoupling diffusion modeling from acting is not evaluated.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "Score Function Interpretation: How is the score function $ \\nabla_{a_t} \\log p_t(a_t | s, t) $ mapped to $ R_{\\text{score}} $? Does this directly incentivize exploration of under-visited states, or is there a disconnect between the score’s probabilistic meaning and the exploration goal?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "Gaussian Policy Training: Is the Gaussian policy trained online with the same replay buffer as the diffusion model? What prevents the Gaussian policy from diverging from the diffusion model’s learned distribution during training?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Assumptions in Theorem 4.1: What are the exact “mild assumptions” required for Theorem 4.1 to hold? How does the theorem scale to continuous state/action spaces?",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "Convergence Conditions in Theorem 4.2: Under what conditions (e.g., convexity, smoothness) does the alternating optimization procedure guarantee convergence? Are these conditions satisfied in practice?",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "Baseline Selection: Why are prominent URL methods like SKILL (Eysenbach et al., 2018) or diffusion planners (Janner et al., 2022) excluded from comparisons?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Statistical Robustness: How many independent runs were performed for Maze2d/URLB experiments? Are the reported gains (e.g., 51%) statistically significant?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Ablation on Key Components: Was the score-based intrinsic reward compared to alternatives (e.g., entropy-based rewards)? What happens if the Gaussian policy is replaced with a skill-based policy?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Downstream Task Definitions: In URLB’s “cross-embodiment” setting, how are agent morphologies (e.g., arm lengths, sensor ranges) varied? Is the limited-interaction constraint strictly enforced across all baselines?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "Scalability Concerns: Diffusion models’ high memory/compute demands are not discussed. How feasible is ExDM for real-world applications (e.g., robotics) with constrained resources?",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "Generative Model Comparison: The paper does not compare ExDM to VAEs/GANs for URL, despite prior work (e.g., Pathak et al., 2017) using these for representation learning. What advantages does diffusion offer over these alternatives?",
+        "role": "Claim",
+        "aspect": "Related Work",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "Reproducibility Gaps: Missing reproducibility section raises concerns about code availability, hyperparameter choices, and implementation details.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "Ethical Implications: The paper omits ethical considerations, such as safety risks in deploying agents with open-ended exploration or biases in diffusion model priors.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 3309,
+    "completion_tokens": 3309,
+    "total_tokens": 6618
+  }
+}

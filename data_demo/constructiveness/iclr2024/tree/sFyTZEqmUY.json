@@ -1,0 +1,126 @@
+{
+  "paper_id": "sFyTZEqmUY",
+  "metadata": {
+    "decision": "Accept (oral)",
+    "avg_rating": 7.5,
+    "avg_confidence": 4.0,
+    "num_reviewers": 4
+  },
+  "reviewer_id": "TreeReview",
+  "status": "success",
+  "atomic_comments": [
+    {
+      "arc_id": "ARC_01",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks a thorough comparison with existing real-world simulators and generative models.",
+      "anchor_quote": "lacks a thorough comparison with existing real-world simulators and generative models",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_02",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The methodology section is insufficiently detailed, omitting critical implementation details.",
+      "anchor_quote": "methodology section is insufficiently detailed, omitting critical implementation details",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 1,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_03",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The justification for real-world impact is limited by the absence of comprehensive experimental setups and detailed performance evaluations.",
+      "anchor_quote": "justification for the real-world impact of UniSim is limited by the absence of comprehensive experimental setups",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_04",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper briefly mentions limitations without discussing potential mitigation strategies.",
+      "anchor_quote": "briefly mentions limitations without discussing potential mitigation strategies",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 1,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_05",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Clarify how UniSim compares to existing simulators and generative models in performance, scalability, and realism.",
+      "anchor_quote": "clarify how UniSim compares to existing simulators and generative models in terms of performance, scalability, and realism",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 1,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_06",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Provide detailed implementation and training procedures to improve reproducibility.",
+      "anchor_quote": "Providing detailed implementation and training procedures... would greatly improve reproducibility",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 1,
+      "D4_solution": 2,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_07",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Expand on the experimental setups and provide more comprehensive evaluations of UniSim's performance across different tasks and environments.",
+      "anchor_quote": "expand on the experimental setups and provide more comprehensive evaluations of UniSim's performance",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 1,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_08",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Elaborate on plans to address the limitations of generalization and robustness in real-world deployment.",
+      "anchor_quote": "elaborate on how they plan to address the limitations of generalization and robustness",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    }
+  ],
+  "metrics": {
+    "MCS": 0.4625,
+    "AR": 0.875,
+    "SD": 0.125,
+    "CD": 0.375,
+    "D1_actionability_mean": 1.25,
+    "D2_specificity_mean": 1.0,
+    "D3_justification_mean": 0.375,
+    "D4_solution_mean": 0.5,
+    "D5_tone_mean": 1.5,
+    "n_arcs": 8,
+    "n_weaknesses": 4,
+    "n_strengths": 0,
+    "n_questions": 4,
+    "n_suggestions": 0,
+    "n_observations": 0
+  }
+}

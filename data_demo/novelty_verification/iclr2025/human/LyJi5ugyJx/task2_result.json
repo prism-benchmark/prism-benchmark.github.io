@@ -1,0 +1,193 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Improving training stability scalability continuous-time consistency few-step image generation unified diffusion formulation combining EDM Flow Matching",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C2",
+      "query": "Improving training stability scalability continuous-time consistency few-step image generation Techniques stabilize continuous-time consistency training",
+      "status": "ok",
+      "count": 16
+    },
+    {
+      "id": "C3",
+      "query": "Improving training stability scalability continuous-time consistency few-step image generation Efficient Jacobian-vector product computation Flash Attention",
+      "status": "ok",
+      "count": 0
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "title": "Image-Free Timestep Distillation via Continuous-Time Consistency with Trajectory-Sampled Pairs",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Timestep distillation is an effective approach for improving the generation efficiency of diffusion models. The Consistency Model (CM), as a trajectory-based framework, demonstrates significant potential due to its strong theoretical foundation and high-quality few-step generation. Nevertheless, current continuous-time consistency distillation methods still rely heavily on training data and computational resources, hindering their deployment in resource-constrained scenarios and limiting their scalability to diverse domains. To address this issue, we propose Trajectory-Backward Consistency Model (TBCM), which eliminates the dependence on external training data by extracting latent representations directly from the teacher model's generation trajectory. Unlike conventional methods that require VAE encoding and large-scale datasets, our self-contained distillation paradigm significantly improves both efficiency and simplicity. Moreover, the trajectory-extracted samples naturally bridge the distribution gap between training and inference, thereby enabling more effective knowledge transfer. Empirically, TBCM achieves 6.52 FID and 28.08 CLIP scores on MJHQ-30k under one-step generation, while reducing training time by approximately 40% compared to Sana-Sprint and saving a substantial amount of GPU memory, demonstrating superior efficiency without sacrificing quality. We further reveal the diffusion-generation space discrepancy in continuous-time consistency distillation and analyze how sampling strategies affect distillation performance, offering insights for future distillation research. GitHub Link: https://github.com/hustvl/TBCM.",
+      "url": "https://www.semanticscholar.org/paper/5808f526934396c7269bc8d3f7d91da5970b97de",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "331dfe0f72acc614c4008776870caed930366602",
+      "title": "BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Recent diffusion and flow matching models have demonstrated strong capabilities in image generation and editing by progressively removing noise through iterative sampling. While this enables flexible inversion for semantic-preserving edits, few-step sampling regimes suffer from poor forward process approximation, leading to degraded editing quality. Existing few-step inversion methods often rely on pretrained generators and auxiliary modules, limiting scalability and generalization across different architectures. To address these limitations, we propose BiFM (Bidirectional Flow Matching), a unified framework that jointly learns generation and inversion within a single model. BiFM directly estimates average velocity fields in both ``image $\\to$ noise\"and ``noise $\\to$ image\"directions, constrained by a shared instantaneous velocity field derived from either predefined schedules or pretrained multi-step diffusion models. Additionally, BiFM introduces a novel training strategy using continuous time-interval supervision, stabilized by a bidirectional consistency objective and a lightweight time-interval embedding. This bidirectional formulation also enables one-step inversion and can integrate seamlessly into popular diffusion and flow matching backbones. Across diverse image editing and generation tasks, BiFM consistently outperforms existing few-step approaches, achieving superior performance and editability.",
+      "url": "https://www.semanticscholar.org/paper/331dfe0f72acc614c4008776870caed930366602",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "title": "Align Your Flow: Scaling Continuous-Time Flow Map Distillation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Diffusion- and flow-based models have emerged as state-of-the-art generative modeling approaches, but they require many sampling steps. Consistency models can distill these models into efficient one-step generators; however, unlike flow- and diffusion-based methods, their performance inevitably degrades when increasing the number of steps, which we show both analytically and empirically. Flow maps generalize these approaches by connecting any two noise levels in a single step and remain effective across all step counts. In this paper, we introduce two new continuous-time objectives for training flow maps, along with additional novel training techniques, generalizing existing consistency and flow matching objectives. We further demonstrate that autoguidance can improve performance, using a low-quality model for guidance during distillation, and an additional boost can be achieved by adversarial finetuning, with minimal loss in sample diversity. We extensively validate our flow map models, called Align Your Flow, on challenging image generation benchmarks and achieve state-of-the-art few-step generation performance on both ImageNet 64x64 and 512x512, using small and efficient neural networks. Finally, we show text-to-image flow map models that outperform all existing non-adversarially trained few-step samplers in text-conditioned synthesis.",
+      "url": "https://www.semanticscholar.org/paper/1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "embedding": null,
+      "relevance_score": 0.875
+    },
+    {
+      "cand_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "title": "Trajectory Consistency for One-Step Generation on Euler Mean Flows",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "We propose \\emph{Euler Mean Flows (EMF)}, a flow-based generative framework for one-step and few-step generation that enforces long-range trajectory consistency with minimal sampling cost. The key idea of EMF is to replace the trajectory consistency constraint, which is difficult to supervise and optimize over long time scales, with a principled linear surrogate that enables direct data supervision for long-horizon flow-map compositions. We derive this approximation from the semigroup formulation of flow-based models and show that, under mild regularity assumptions, it faithfully approximates the original consistency objective while being substantially easier to optimize. This formulation leads to a unified, JVP-free training framework that supports both $u$-prediction and $x_1$-prediction variants, avoiding explicit Jacobian computations and significantly reducing memory and computational overhead. Experiments on image synthesis, particle-based geometry generation, and functional generation demonstrate improved optimization stability and sample quality under fixed sampling budgets, together with approximately $50\\%$ reductions in training time and memory consumption compared to existing one-step methods for image generation.",
+      "url": "https://www.semanticscholar.org/paper/af73142fd329ab57393ccdb7fad9d440808266ce",
+      "embedding": null,
+      "relevance_score": 0.8125
+    },
+    {
+      "cand_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "title": "ROCM: RLHF on consistency models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Diffusion models have revolutionized generative modeling in continuous domains like image, audio, and video synthesis. However, their iterative sampling process leads to slow generation and inefficient training, challenges that are further exacerbated when incorporating Reinforcement Learning from Human Feedback (RLHF) due to sparse rewards and long time horizons. Consistency models address these issues by enabling single-step or efficient multi-step generation, significantly reducing computational costs. In this work, we propose a direct reward optimization framework for applying RLHF to consistency models, incorporating distributional regularization to enhance training stability and prevent reward hacking. We investigate various $f$-divergences as regularization strategies, striking a balance between reward maximization and model consistency. Unlike policy gradient methods, our approach leverages first-order gradients, making it more efficient and less sensitive to hyperparameter tuning. Empirical results show that our method achieves competitive or superior performance compared to policy gradient based RLHF methods, across various automatic metrics and human evaluation. Additionally, our analysis demonstrates the impact of different regularization techniques in improving model generalization and preventing overfitting.",
+      "url": "https://www.semanticscholar.org/paper/7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "title": "Flow-Anchored Consistency Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Continuous-time Consistency Models (CMs) promise efficient few-step generation but face significant challenges with training instability. We argue this instability stems from a fundamental conflict: Training the network exclusively on a shortcut objective leads to the catastrophic forgetting of the instantaneous velocity field that defines the flow. Our solution is to explicitly anchor the model in the underlying flow, ensuring high trajectory fidelity during training. We introduce the Flow-Anchored Consistency Model (FACM), where a Flow Matching (FM) task serves as a dynamic anchor for the primary CM shortcut objective. Key to this Flow-Anchoring approach is a novel expanded time interval strategy that unifies optimization for a single model while decoupling the two tasks to ensure stable, architecturally-agnostic training. By distilling a pre-trained LightningDiT model, our method achieves a state-of-the-art FID of 1.32 with two steps (NFE=2) and 1.70 with just one step (NFE=1) on ImageNet 256x256. To address the challenge of scalability, we develop a memory-efficient Chain-JVP that resolves key incompatibilities with FSDP. This method allows us to scale FACM training on a 14B parameter model (Wan 2.2), accelerating its Text-to-Image inference from 2x40 to 2-8 steps. Our code and pretrained models: https://github.com/ali-vilab/FACM.",
+      "url": "https://www.semanticscholar.org/paper/c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "embedding": null,
+      "relevance_score": 0.6875
+    },
+    {
+      "cand_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+      "title": "Continuous Manufacturing – Producing More with Less ’",
+      "year": 2014,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/302d5350f12b81e478b8a21869a696a82ef2780a",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "title": "Improved Training Technique for Shortcut Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Shortcut models represent a promising, non-adversarial paradigm for generative modeling, uniquely supporting one-step, few-step, and multi-step sampling from a single trained network. However, their widespread adoption has been stymied by critical performance bottlenecks. This paper tackles the five core issues that held shortcut models back: (1) the hidden flaw of compounding guidance, which we are the first to formalize, causing severe image artifacts; (2) inflexible fixed guidance that restricts inference-time control; (3) a pervasive frequency bias driven by a reliance on low-level distances in the direct domain, which biases reconstructions toward low frequencies; (4) divergent self-consistency arising from a conflict with EMA training; and (5) curvy flow trajectories that impede convergence. To address these challenges, we introduce iSM, a unified training framework that systematically resolves each limitation. Our framework is built on four key improvements: Intrinsic Guidance provides explicit, dynamic control over guidance strength, resolving both compounding guidance and inflexibility. A Multi-Level Wavelet Loss mitigates frequency bias to restore high-frequency details. Scaling Optimal Transport (sOT) reduces training variance and learns straighter, more stable generative paths. Finally, a Twin EMA strategy reconciles training stability with self-consistency. Extensive experiments on ImageNet 256 x 256 demonstrate that our approach yields substantial FID improvements over baseline shortcut models across one-step, few-step, and multi-step generation, making shortcut models a viable and competitive class of generative models.",
+      "url": "https://www.semanticscholar.org/paper/b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "embedding": null,
+      "relevance_score": 0.625
+    },
+    {
+      "cand_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "title": "A NON INVASIVE COMPUTER AIDED DIAGNOSIS SYSTEM FOR EARLY DETECTION OF LUNG CARCINOMA IN CT MEDICAL IMAGES",
+      "year": 2017,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "embedding": null,
+      "relevance_score": 0.4375
+    },
+    {
+      "cand_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "title": "Dual-End Consistency Model",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "The slow iterative sampling nature remains a major bottleneck for the practical deployment of diffusion and flow-based generative models. While consistency models (CMs) represent a state-of-the-art distillation-based approach for efficient generation, their large-scale application is still limited by two key issues: training instability and inflexible sampling. Existing methods seek to mitigate these problems through architectural adjustments or regularized objectives, yet overlook the critical reliance on trajectory selection. In this work, we first conduct an analysis on these two limitations: training instability originates from loss divergence induced by unstable self-supervised term, whereas sampling inflexibility arises from error accumulation. Based on these insights and analysis, we propose the Dual-End Consistency Model (DE-CM) that selects vital sub-trajectory clusters to achieve stable and effective training. DE-CM decomposes the PF-ODE trajectory and selects three critical sub-trajectories as optimization targets. Specifically, our approach leverages continuous-time CMs objectives to achieve few-step distillation and utilizes flow matching as a boundary regularizer to stabilize the training process. Furthermore, we propose a novel noise-to-noisy (N2N) mapping that can map noise to any point, thereby alleviating the error accumulation in the first step. Extensive experimental results show the effectiveness of our method: it achieves a state-of-the-art FID score of 1.70 in one-step generation on the ImageNet 256x256 dataset, outperforming existing CM-based one-step approaches.",
+      "url": "https://www.semanticscholar.org/paper/66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "embedding": null,
+      "relevance_score": 0.5625
+    },
+    {
+      "cand_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+      "title": "A FUTURE PRODUCT ON HRVIS WINDS-HRW-FROM THE METEOSAT SECOND GENERATION-MSG-FOR THE NOWCASTING AND OTHER APPLICATIONS",
+      "year": 2010,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/4677a41af305578a94cebaa6d976bd07d3fff305",
+      "embedding": null,
+      "relevance_score": 0.375
+    },
+    {
+      "cand_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+      "title": "Discontinuity Mapping Using Ground-Based LiDAR: Case Study from an Open Pit Mine",
+      "year": 2013,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/6803d37fce90a915d55d3b5a60c957ef07dae957",
+      "embedding": null,
+      "relevance_score": 0.3125
+    },
+    {
+      "cand_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "title": "Advances in Knowledge Discovery and Data Mining: 9th Pacific-Asia Conference, PAKDD 2005, Hanoi, Vietnam, May 18-20, 2005, Proceedings",
+      "year": 1997,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "embedding": null,
+      "relevance_score": 0.1875
+    },
+    {
+      "cand_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "title": "Full-chip application of machine learning SRAFs on DRAM case using auto pattern selection",
+      "year": 2019,
+      "venue": "Optical Microlithography XXXII",
+      "abstract": "As technology continues to scale aggressively, Sub-Resolution Assist Features (SRAF) are becoming an increasingly key resolution enhancement technique (RET) to maximize the process window enhancement. For the past few technology generations, lithographers have chosen to use a rules-based (RB-SRAF) or a model-based (MB-SRAF) approach to place assist features on the design. The inverse lithography solution, which provides the maximum process window entitlement, has always been out of reach for full-chip applications due to its very high computational cost. ASML has developed and demonstrated a deep learning SRAF placement methodology, Newron™ SRAF, which can provide the performance benefit of an inverse lithography solution while meeting the cycle time requirements for full-chip applications [1]. One of the biggest challenges for a deep learning approach is pattern selection for neural network training. To ensure pattern coverage for maximum accuracy while maintaining turn-around time (TAT,) a deep-learning-based Auto Pattern Selection (APS) tool is evaluated. APS works in conjunction with Newron SRAF to provide the optimal lithography solution. In this paper, Newron SRAF is used on a DRAM layer. A Deep Convolutional Neural Network (DCNN) is trained using the target images and Continuous Transmission Mask (CTM) images. CTM images are gray tone images that are fully optimized by the Tachyon inverse mask optimization engine. Representative patterns selected by APS are used to train the neural network. The trained neural network generates SRAFs on the full-chip and then Tachyon OPC+ is performed to correct main and SRAF simultaneously. The neural network trained by APS patterns is compared with those trained by patterns from manual selection and multiple random selections to demonstrate its robustness on pattern coverage. Tachyon Hierarchical OPC+ (HScan+) is used to apply Newron SRAF at full-chip level in order to keep consistency and increase speed. Full-chip simulation results from Newron SRAF are compared with the baseline OPC flow using RBSRAF and MB-SRAF. The Newron SRAF flow shows significant improvements in NILS and PV band over the baseline flows. This whole flow including APS, Newron SRAF and full-chip HScan+ OPC enables the inverse mask optimization on full-chip level to achieve superior mask performance with production-affordable TAT.",
+      "url": "https://www.semanticscholar.org/paper/bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "embedding": null,
+      "relevance_score": 0.25
+    },
+    {
+      "cand_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "title": "for Prediction City Region Re-Weighting",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "embedding": null,
+      "relevance_score": 0.125
+    },
+    {
+      "cand_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+      "title": "MICAI 2007: Advances in Artificial Intelligence, 6th Mexican International Conference on Artificial Intelligence, Aguascalientes, Mexico, November 4-10, 2007, Proceedings",
+      "year": 2007,
+      "venue": "Mexican International Conference on Artificial Intelligence",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+      "embedding": null,
+      "relevance_score": 0.0625
+    }
+  ],
+  "stats": {
+    "total_candidates": 17,
+    "after_dedup": 16,
+    "after_nontechnical_filter": 16,
+    "after_year_filter": 16,
+    "final": 16
+  }
+}

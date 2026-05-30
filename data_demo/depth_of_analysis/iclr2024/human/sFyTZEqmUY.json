@@ -1,0 +1,236 @@
+{
+  "paper_id": "sFyTZEqmUY",
+  "source": "human",
+  "evaluator_model": "mimo-v2.5-pro",
+  "reviews_analysis": {
+    "Human_1": [
+      {
+        "arg_id": "A_01",
+        "argument": "In this work, the authors propose to learn a universal simulator (UniSim) of real-world interaction through generative modeling (a diffusion model for outputting the next frame given the previous frame and the input actions).",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "They achieve so by careful orchestration of diverse datasets, which are rich along completely different axes (e.g., some videos have object-level diversity, some have densely labeled language instructions, and some have scene-level diversity).",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "They show applications of the proposed simulator such as training long-horizon embodied planners and low-level object manipulators.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "Reasonably scalable approach to collect training data for the proposed simulator",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The use of diffusion models to fuse different aspects of the diverse datasets with decent results is impressive",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Particularly the sim-to-real transfer is a promising direction for using the proposed real-world simulator.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "While this work shows great promise in a range of downstream applications, I believe it might need more experimental evidence to support the claim that it can simulate low-level actions well.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "Specifically, section 4.2 only shows results for a relatively simple object (mostly blocks) re-arrangement (without grasping, e.g.) on a table.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "What about grasping objects, pulling objects (e.g., opening a drawer), etc?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "It will give us insights as to how fine-grained the controls are supported by the proposed simulator, even if it cannot simulate low-level actions perfectly.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      }
+    ],
+    "Human_2": [],
+    "Human_3": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper presents UniSim, a video prediction and generative model aiming for serving as a universal simulator of diverse scenarios conditioned on input language-described actions.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "It devotes a big effort in combining dataset with different modalities and information axes, trained a unified generative model, and shows the trained model can be used for downstream policy learning.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Very cool and impressive research direction and proposed method",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "Huge effort devoted in unifying multiple large scale datasets",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "Experiments demonstrated effectiveness for downstream policy learning",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "I think the paper presents a very important step towards learning a universal video predictive world model.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "One of my questions is, the shown demo looks like generally still in distribution, in terms of generalization across different embodiment: the generated video containing robot are very similar to robotic dataset, and in more complex scenes training using human videos the model seems only handling human hands.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "How does it work in those complex scenes when the model is commanded to predict outcomes given a robot action input?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "Also, when it comes to low level control input, the paper seems only handling delta motion in the Cartesian space.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "Does it handle more general end-effector action in SE3 space? (joint space seems out of reach for this family of method since it's not observable)",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "Is it true that for predicting outcomes conditioned on robot action, the robot arm needs to be visible in the first place?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      }
+    ],
+    "Human_4": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper introduces a universal simulator (UniSim) that aims to simulate how humans and agents interact with the world.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The proposed framework combines various types of datasets, including internet text-image pairs and robotics data, with the motivation that existing datasets are useful along different axes.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The paper uses a video diffusion model as an interactive simulator of the world.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "UniSim can simulate both high-level instructions and low-level control, which show zero-shot transferability to real-world scenarios, addressing the sim-to-real transferability problem.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The authors highlight the potential for UniSim to be used in broader applications, such as video captioning and rare event detection.",
+        "role": "Premise",
+        "aspect": "Novelty",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "This is an interesting paper that presents some exciting results.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The paper is well organized and well-written.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "It would be nice if the paper delved more into the limitations of the models.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper has shown that exciting results can be obtained, but it's useful for the community to know the limits of the generalization capabilities, especially if people want to use this in the future for various applications.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "For reproducibility, it would be helpful if the authors could release the code and some example pre-trained checkpoints.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 7590,
+    "completion_tokens": 7590,
+    "total_tokens": 15180
+  }
+}

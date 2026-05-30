@@ -1,0 +1,210 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "source": "deepreview_iclr2026",
+  "source_format": "deepreview_json",
+  "reviews_analysis": {
+    "DEEPREVIEW_ICLR2026": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper proposes the Exploratory Diffusion Model (ExDM), a novel approach in unsupervised reinforcement learning (URL) that leverages diffusion models to enhance exploration and state coverage in reward-free environments.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Unlike traditional methods that rely on simpler Gaussian or discrete skill-based policies, ExDM trains a diffusion model on the diverse and nonstationary state distributions in the replay buffer, using the score function to define an intrinsic reward that targets under-visited states.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "This approach not only improves exploration efficiency but also provides a robust prior for downstream tasks.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "ExDM decouples the diffusion modeling from action selection, using a lightweight Gaussian policy for efficient interaction, which enables scalable training and rapid adaptation to downstream tasks.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper demonstrates that ExDM achieves higher state coverage and faster adaptation compared to existing URL methods, establishing new state-of-the-art performance in both exploration and transfer.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The paper introduces a novel application of diffusion models in unsupervised RL, using them to model complex state distributions and define a score-based intrinsic reward. This approach significantly enhances exploration capabilities and provides a reusable prior for downstream tasks.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The authors provide a solid theoretical foundation, including a formal analysis of the fine-tuning objective and an alternating optimization procedure with guarantees of convergence and optimality. This adds credibility to the proposed method.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "Extensive experiments on Maze2d and URLB benchmarks demonstrate that ExDM outperforms existing methods in both exploration efficiency and downstream task adaptation, showcasing its practical effectiveness.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "By decoupling diffusion modeling from action selection, ExDM maintains the modeling strength of diffusion while enabling efficient training and rapid adaptation, making it suitable for complex environments.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper includes thorough ablation studies and comparisons with a wide range of baselines, providing a detailed understanding of ExDM's performance and robustness across different settings.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The paper does not compare ExDM with recent state-of-the-art methods like PEAC and CeSD in the Maze2d environment, which could provide a more comprehensive evaluation of its exploration capabilities.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The absence of these comparisons makes it difficult to ascertain the true relative performance of ExDM against the current leading approaches in complex maze environments.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "Specifically, the paper should include a direct comparison with PEAC, which utilizes a pre-trained, embodiment-aware controller for efficient exploration, and CeSD, which employs constrained ensemble exploration for skill discovery, as these methods represent significant advancements in the field.",
+        "role": "Backing",
+        "aspect": "Related Work",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The paper lacks a detailed analysis of how the number of fine-tuning steps affects the performance of ExDM, particularly in the fine-tuning of diffusion policies.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "This makes it challenging to understand the sensitivity of the method to this hyperparameter.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "The paper should include a more granular analysis, showing performance at various fine-tuning step intervals (e.g., every 10,000 steps) to better understand the convergence behavior and the trade-off between fine-tuning duration and performance gains.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "This is crucial for practical application, as it determines the computational cost required to achieve optimal results.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The paper does not thoroughly investigate the sensitivity of ExDM to hyperparameters like β, which controls the trade-off between exploration and exploitation during fine-tuning.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "This limits the understanding of the method's robustness and generalizability across different environments.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "A more detailed analysis is needed, showing how performance varies with different values of β, and whether the optimal value is consistent across different environments and tasks.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "This analysis should also consider the interaction between β and other hyperparameters, as these interactions can significantly impact the overall performance.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "While ExDM shows promising results, the computational cost associated with training and fine-tuning diffusion policies is not fully addressed.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "This could be a limiting factor for real-world applications, especially in environments requiring long-term interaction.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "The paper should provide a detailed breakdown of the computational resources required for training and fine-tuning, including GPU memory usage, training time, and the number of steps required for convergence.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_25",
+        "argument": "This information is essential for assessing the practical feasibility of the method.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_26",
+        "argument": "The paper focuses primarily on benchmark environments, with limited discussion on how ExDM could be applied to real-world control tasks.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_27",
+        "argument": "This makes it difficult to assess the method's practical utility beyond simulated settings.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_28",
+        "argument": "The paper should include a discussion on the challenges and potential solutions for applying ExDM to real-world robotic tasks, such as dealing with noisy sensor data, high-dimensional state spaces, and the need for robust control policies.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 5252,
+    "completion_tokens": 5252,
+    "total_tokens": 10504
+  }
+}

@@ -1,0 +1,1006 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper introduces the Exploratory Diffusion Model (ExDM), a novel approach that leverages diffusion models for unsupervised reinforcement learning (RL) to enhance exploration in reward-free environments and provide a strong initialization for downstream tasks."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper does not provide a comprehensive comparison of the method with state-of-the-art techniques in unsupervised RL, which could help in assessing its novelty and effectiveness."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "text": "Title: Exploratory Diffusion Model for Unsupervised Reinforcement Learning\n\nAbstract: Unsupervised reinforcement learning (URL) aims to pre-train agents by exploring diverse states or skills in reward-free environments, facilitating efficient adaptation to downstream tasks. As the agent cannot access extrinsic rewards during unsupervised exploration, existing methods design intrinsic rewards to model the explored data and encourage further exploration. However, the explored data are always heterogeneous, posing the requirements of powerful representation abilities for both intrinsic reward models and pre-trained policies. In this work, we propose the Exploratory Diffusion Model (ExDM), which leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks. Specifically, ExDM can accurately estimate the distribution of collected data in the replay buffer with the diffusion model and introduces the score-based intrinsic reward, encouraging the agent to explore less-visited states. After obtaining the pre-trained policies, ExDM enables rapid adaptation to downstream tasks. In detail, we provide theoretical analyses and practical algorithms for fine-tuning diffusion policies, addressing key challenges such as training instability and computational complexity caused by multi-step sampling. Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks, especially in structurally complicated environments.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+      "text": "Title: Deep Reinforcement Learning with Hybrid Intrinsic Reward Model\n\nAbstract: Intrinsic reward shaping has emerged as a prevalent approach to solving hard-exploration and sparse-rewards environments in reinforcement learning (RL). While single intrinsic rewards, such as curiosity-driven or novelty-based methods, have shown effectiveness, they often limit the diversity and efficiency of exploration. Moreover, the potential and principle of combining multiple intrinsic rewards remains insufficiently explored. To address this gap, we introduce HIRE (Hybrid Intrinsic REward), a flexible and elegant framework for creating hybrid intrinsic rewards through deliberate fusion strategies. With HIRE, we conduct a systematic analysis of the application of hybrid intrinsic rewards in both general and unsupervised RL across multiple benchmarks. Extensive experiments demonstrate that HIRE can significantly enhance exploration efficiency and diversity, as well as skill acquisition in complex and dynamic settings.",
+      "relevance_score": 0.95
+    },
+    {
+      "related_paper_id": "2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+      "text": "Title: Diffusion-based Curriculum Reinforcement Learning\n\nAbstract: Curriculum Reinforcement Learning (CRL) is an approach to facilitate the learning process of agents by structuring tasks in a sequence of increasing complexity. Despite its potential, many existing CRL methods struggle to efficiently guide agents toward desired outcomes, particularly in the absence of domain knowledge. This paper introduces DiCuRL (Diffusion Curriculum Reinforcement Learning), a novel method that leverages conditional diffusion models to generate curriculum goals. To estimate how close an agent is to achieving its goal, our method uniquely incorporates a Q -function and a trainable reward function based on Adversarial Intrinsic Motivation within the diffusion model. Furthermore, it promotes exploration through the inherent noising and denoising mechanism present in the diffusion models and is environment-agnostic. This combination allows for the generation of challenging yet achievable goals, enabling agents to learn effectively without relying on domain knowledge. We demonstrate the effectiveness of DiCuRL in three different maze environments and two robotic manipulation tasks simulated in MuJoCo, where it outperforms or matches nine state-of-the-art CRL algorithms from the literature.",
+      "relevance_score": 0.9
+    },
+    {
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "text": "Title: Contrastive Intrinsic Control for Unsupervised Reinforcement Learning\n\nAbstract: We introduce Contrastive Intrinsic Control (CIC), an unsupervised reinforcement learning (RL) algorithm that maximizes the mutual information between state-transitions and latent skill vectors. CIC utilizes contrastive learning between state-transitions and skills vectors to learn behaviour embeddings and maximizes the entropy of these embeddings as an intrinsic reward to encourage behavioural diversity. We evaluate our algorithm on the Unsupervised RL Benchmark (URLB) in the asymptotic state-based setting, which consists of a long reward-free pre-training phase followed by a short adaptation phase to downstream tasks with extrinsic rewards. We find that CIC improves over prior exploration algorithms in terms of adaptation efficiency to downstream tasks on state-based URLB. 1 Deep RL is a powerful approach toward solving complex control tasks in the presence of extrinsic rewards. Successful applications include playing video games from pixels [1], mastering the game of Go [2, 3], robotic locomotion [4, 5, 6] and dexterous manipulation [7, 8, 9] policies. While effective, the above advances produced agents that are unable to generalize to new downstream tasks beyond the one they were trained to solve. Humans and animals on the other hand are able to acquire skills with minimal supervision and apply them to solve a variety of downstream tasks. In this work, we seek to train agents that acquire skills without supervision with generalization capabilities by efficiently adapting these skills to downstream tasks.",
+      "relevance_score": 0.85
+    },
+    {
+      "related_paper_id": "74ac7a357a5bddc38e783a4d4f248c376564d935",
+      "text": "Title: Keyframe-Guided Structured Rewards for Reinforcement Learning in Long-Horizon Laboratory Robotics\n\nAbstract: Long-horizon precision manipulation in laboratory automation, such as pipette tip attachment and liquid transfer, requires policies that respect strict procedural logic while operating in continuous, high-dimensional state spaces. However, existing approaches struggle with reward sparsity, multi-stage structural constraints, and noisy or imperfect demonstrations, leading to inefficient exploration and unstable convergence. We propose a Keyframe-Guided Reward Generation Framework that automatically extracts kinematics-aware keyframes from demonstrations, generates stage-wise targets via a diffusion-based predictor in latent space, and constructs a geometric progress-based reward to guide online reinforcement learning. The framework integrates multi-view visual encoding, latent similarity-based progress tracking, and human-in-the-loop reinforcement fine-tuning on a Vision-Language-Action backbone to align policy optimization with the intrinsic stepwise logic of biological protocols. Across four real-world laboratory tasks, including high-precision pipette attachment and dynamic liquid transfer, our method achieves an average success rate of 82% after 40--60 minutes of online fine-tuning. Compared with HG-DAgger (42%) and Hil-ConRFT (47%), our approach demonstrates the effectiveness of structured keyframe-guided rewards in overcoming exploration bottlenecks and providing a scalable solution for high-precision, long-horizon robotic laboratory automation.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "text": "Title: Balancing State Exploration and Skill Diversity in Unsupervised Skill Discovery\n\nAbstract: Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised reinforcement learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this article, we propose contrastive dynamic skill discovery (ComSD) which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multijoint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2-D maze.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "text": "Title: PEAC: Unsupervised Pre-training for Cross-Embodiment Reinforcement Learning\n\nAbstract: Designing generalizable agents capable of adapting to diverse embodiments has achieved significant attention in Reinforcement Learning (RL), which is critical for deploying RL agents in various real-world applications. Previous Cross-Embodiment RL approaches have focused on transferring knowledge across embodiments within specific tasks. These methods often result in knowledge tightly coupled with those tasks and fail to adequately capture the distinct characteristics of different embodiments. To address this limitation, we introduce the notion of Cross-Embodiment Unsupervised RL (CEURL), which leverages unsupervised learning to enable agents to acquire embodiment-aware and task-agnostic knowledge through online interactions within reward-free environments. We formulate CEURL as a novel Controlled Embodiment Markov Decision Process (CE-MDP) and systematically analyze CEURL's pre-training objectives under CE-MDP. Based on these analyses, we develop a novel algorithm Pre-trained Embodiment-Aware Control (PEAC) for handling CEURL, incorporating an intrinsic reward function specifically designed for cross-embodiment pre-training. PEAC not only provides an intuitive optimization strategy for cross-embodiment pre-training but also can integrate flexibly with existing unsupervised RL methods, facilitating cross-embodiment exploration and skill discovery. Extensive experiments in both simulated (e.g., DMC and Robosuite) and real-world environments (e.g., legged locomotion) demonstrate that PEAC significantly improves adaptation performance and cross-embodiment generalization, demonstrating its effectiveness in overcoming the unique challenges of CEURL. The project page and code are in https://yingchengyang.github.io/ceurl.",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "text": "Title: Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning",
+      "relevance_score": 0.55
+    },
+    {
+      "related_paper_id": "5dce3f2cfe018ada4bebeaa15aac6fe1d01b18ba",
+      "text": "Title: Imagine, Initialize, and Explore: An Effective Exploration Method in Multi-Agent Reinforcement Learning\n\nAbstract: Effective exploration is crucial to discovering optimal strategies for multi-agent reinforcement learning (MARL) in complex coordination tasks. Existing methods mainly utilize intrinsic rewards to enable committed exploration or use role-based learning for decomposing joint action spaces instead of directly conducting a collective search in the entire action-observation space. However, they often face challenges obtaining specific joint action sequences to reach successful states in long-horizon tasks. To address this limitation, we propose Imagine, Initialize, and Explore (IIE), a novel method that offers a promising solution for efficient multi-agent exploration in complex scenarios. IIE employs a transformer model to imagine how the agents reach a critical state that can influence each other's transition functions. Then, we initialize the environment at this state using a simulator before the exploration phase. We formulate the imagination as a sequence modeling problem, where the states, observations, prompts, actions, and rewards are predicted autoregressively. The prompt consists of timestep-to-go, return-to-go, influence value, and one-shot demonstration, specifying the desired state and trajectory as well as guiding the action generation. By initializing agents at the critical states, IIE significantly increases the likelihood of discovering potentially important under-explored regions. Despite its simplicity, empirical results demonstrate that our method outperforms multi-agent exploration baselines on the StarCraft Multi-Agent Challenge (SMAC) and SMACv2 environments. Particularly, IIE shows improved performance in the sparse-reward SMAC tasks and produces more effective curricula over the initialized states than other generative methods, such as CVAE-GAN and diffusion models.",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "985a1140bfbbb9622fd22dcd5eb1c6aa2ddbcc25",
+      "text": "Title: SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning\n\nAbstract: Photorealistic color retouching plays a vital role in visual content creation, yet manual retouching remains inaccessible to non-experts due to its reliance on specialized expertise. Reference-based methods offer a promising alternative by transferring the preset color of a reference image to a source image. However, these approaches often operate as novice learners, performing global color mappings derived from pixel-level statistics, without a true understanding of semantic context or human aesthetics. To address this issue, we propose SemiNFT, a Diffusion Transformer (DiT)-based retouching framework that mirrors the trajectory of human artistic training: beginning with rigid imitation and evolving into intuitive creation. Specifically, SemiNFT is first taught with paired triplets to acquire basic structural preservation and color mapping skills, and then advanced to reinforcement learning (RL) on unpaired data to cultivate nuanced aesthetic perception. Crucially, during the RL stage, to prevent catastrophic forgetting of old skills, we design a hybrid online-offline reward mechanism that anchors aesthetic exploration with structural review. % experiments Extensive experiments show that SemiNFT not only outperforms state-of-the-art methods on standard preset transfer benchmarks but also demonstrates remarkable intelligence in zero-shot tasks, such as black-and-white photo colorization and cross-domain (anime-to-photo) preset transfer. These results confirm that SemiNFT transcends simple statistical matching and achieves a sophisticated level of aesthetic comprehension. Our project can be found at https://melanyyang.github.io/SemiNFT/.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "9d528f7e641c922bddd83f4af687806d685490d6",
+      "text": "Title: Feature Control as Intrinsic Motivation for Hierarchical Reinforcement Learning\n\nAbstract: One of the main concerns of deep reinforcement learning (DRL) is the data inefficiency problem, which stems both from an inability to fully utilize data acquired and from naive exploration strategies. In order to alleviate these problems, we propose a DRL algorithm that aims to improve data efficiency via both the utilization of unrewarded experiences and the exploration strategy by combining ideas from unsupervised auxiliary tasks, intrinsic motivation, and hierarchical reinforcement learning (HRL). Our method is based on a simple HRL architecture with a metacontroller and a subcontroller. The subcontroller is intrinsically motivated by the metacontroller to learn to control aspects of the environment, with the intention of giving the agent: 1) a neural representation that is generically useful for tasks that involve manipulation of the environment and 2) the ability to explore the environment in a temporally extended manner through the control of the metacontroller. In this way, we reinterpret the notion of pixel- and feature-control auxiliary tasks as reusable skills that can be learned via an intrinsic reward. We evaluate our method on a number of Atari 2600 games. We found that it outperforms the baseline in several environments and significantly improves performance in one of the hardest games—Montezuma’s revenge—for which the ability to utilize sparse data is key. We found that the inclusion of intrinsic reward is crucial for the improvement in the performance and that most of the benefit seems to be derived from the representations learned during training.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+      "text": "Title: SURF: Semantic-level Unsupervised Reward Function for Machine Translation\n\nAbstract: The performance of Reinforcement Learning (RL) for natural language tasks including Machine Translation (MT) is crucially dependent on the reward formulation. This is due to the intrinsic difficulty of the task in the high-dimensional discrete action space as well as the sparseness of the standard reward functions defined for limited set of ground-truth sequences biased towards singular lexical choices. To address this issue, we formulate SURF, a maximally dense semantic-level unsupervised reward function which mimics human evaluation by considering both sentence fluency and semantic similarity. We demonstrate the strong potential of SURF to leverage a family of Actor-Critic Transformer-based Architectures with synchronous and asynchronous multi-agent variants. To tackle the problem of large action-state spaces, each agent is equipped with unique exploration strategies, promoting diversity during its exploration of the hypothesis space. When BLEU scores are compared, our dense unsupervised reward outperforms the standard sparse reward by 2% on average for in- and out-of-domain settings.",
+      "relevance_score": 0.45
+    },
+    {
+      "related_paper_id": "ceb4e0c2ad601831c056901e9f1ab5f5500d8520",
+      "text": "Title: Did I do that? Blame as a means to identify controlled effects in reinforcement learning\n\nAbstract: Identifying controllable aspects of the environment has proven to be an extraordinary intrinsic motivator to reinforcement learning agents. Despite repeatedly achieving State-of-the-Art results, this approach has only been studied as a proxy to a reward-based task and has not yet been evaluated on its own. Current methods are based on action-prediction. Humans, on the other hand, assign blame to their actions to decide what they controlled. This work proposes Controlled Effect Network (CEN), an unsupervised method based on counterfactual measures of blame to identify effects on the environment controlled by the agent. CEN is evaluated in a wide range of environments showing that it can accurately identify controlled effects. Moreover, we demonstrate CEN's capabilities as intrinsic motivator by integrating it in the state-of-the-art exploration method, achieving substantially better performance than action-prediction models.",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "5c460d8e8e4e6304f2ee82ebae621c0c2f0aaa9e",
+      "text": "Title: Unsupervised Skill Discovery through Skill Regions Differentiation\n\nAbstract: Unsupervised Reinforcement Learning (RL) aims to discover diverse behaviors that can accelerate the learning of downstream tasks. Previous methods typically focus on entropy-based exploration or empowerment-driven skill learning. However, entropy-based exploration struggles in large-scale state spaces (e.g., images), and empowerment-based methods with Mutual Information (MI) estimations have limitations in state exploration. To address these challenges, we propose a novel skill discovery objective that maximizes the deviation of the state density of one skill from the explored regions of other skills, encouraging inter-skill state diversity similar to the initial MI objective. For state-density estimation, we construct a novel conditional autoencoder with soft modularization for different skill policies in high-dimensional space. Meanwhile, to incentivize intra-skill exploration, we formulate an intrinsic reward based on the learned autoencoder that resembles count-based exploration in a compact latent space. Through extensive experiments in challenging state and image-based tasks, we find our method learns meaningful skills and achieves superior performance in various downstream tasks.",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "6df5d79885bf1af65323a055684b2b92439a65c3",
+      "text": "Title: GRIMGEP: Learning Progress for Robust Goal Sampling in Visual Deep Reinforcement Learning\n\nAbstract: Autotelic reinforcement learning (RL) agents sample their own goals, and try to reach them. They often prioritize goal sampling according to some intrinsic reward, ex. novelty or absolute learning progress (ALPs). Novelty-based approaches work robustly in unsupervised image-based environments when there are no distractors. However, they construct simple curricula that do not take the agent’s performance into account: in complex environments, they often get attracted by impossible tasks. ALP-based approaches, which are often combined with a clustering mechanism, construct complex curricula tuned to the agent’s current capabilities. Such curricula sample goals on which the agent is currently learning the most, and do not get attracted by impossible tasks. However, ALP approaches have not so far been applied to DRL agents perceiving complex environments directly in the image space. Goal regions guided intrinsically motivated goal exploration process (GRIMGEP), without using any expert knowledge, combines the ALP clustering approaches with novelty-based approaches and extends them to those complex scenarios. We experiment on a rich 3-D image-based environment with distractors using novelty-based exploration approaches: Skewfit and CountBased. We show that wrapping them with GRIMGEP—using them only in the cluster sampled by ALP—creates a better curriculum. The wrapped approaches are attracted less by the distractors, and achieve drastically better performances.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "dd383606d4183ff5b7b2c4b8a55980c8f385630b",
+      "text": "Title: Explore Intrinsic Geometry of Sleep Dynamics and Predict Sleep Stage by Unsupervised Learning Techniques\n\nAbstract: We propose a novel unsupervised approach for sleep dynamics exploration and automatic annotation by combining modern harmonic analysis tools. Specifically, we apply diffusion-based algorithms, diffusion map (DM) and alternating diffusion (AD) algorithms, to reconstruct the intrinsic geometry of sleep dynamics by reorganizing the spectral information of an electroencephalogram (EEG) extracted from a nonlinear-type time frequency analysis tool, the synchrosqueezing transform (SST). The visualization is achieved by the nonlinear dimension reduction properties of DM and AD. Moreover, the reconstructed nonlinear geometric structure of the sleep dynamics allows us to achieve the automatic annotation purpose. The hidden Markov model is trained to predict the sleep stage. The prediction performance is validated on a publicly available benchmark database, Physionet Sleep-EDF [extended] SC* and ST*, with the leave-one-subject-out cross validation. The overall accuracy and macro F1 achieve 82:57% and 76% in Sleep-EDF SC* and 77.01% and 71:53% in Sleep-EDF ST*, which is compatible with the state-of-the-art results by supervised learning-based algorithms. The results suggest the potential of the proposed algorithm for clinical applications.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "4813be9599249bc024aad1d674c8d1da3479d532",
+      "text": "Title: Unsupervised Curricula for Visual Meta-Reinforcement Learning\n\nAbstract: In principle, meta-reinforcement learning algorithms leverage experience across many tasks to learn fast and effective reinforcement learning (RL) strategies. However, current meta-RL approaches rely on manually-defined distributions of training tasks, and hand-crafting these task distributions can be challenging and time-consuming. Can ``useful'' pre-training tasks be discovered in an unsupervised manner? We develop an unsupervised algorithm for inducing an adaptive meta-training task distribution, i.e. an automatic curriculum, by modeling unsupervised interaction in a visual environment. The task distribution is scaffolded by a parametric density model of the meta-learner's trajectory distribution. We formulate unsupervised meta-RL as information maximization between a latent task variable and the meta-learner’s data distribution, and describe a practical instantiation which alternates between integration of recent experience into the task distribution and meta-learning of the updated tasks. Repeating this procedure leads to iterative reorganization such that the curriculum adapts as the meta-learner's data distribution shifts. Moreover, we show how discriminative clustering frameworks for visual representations can support trajectory-level task acquisition and exploration in domains with pixel observations, avoiding the pitfalls of alternatives. In experiments on vision-based navigation and manipulation domains, we show that the algorithm allows for unsupervised meta-learning that both transfers to downstream tasks specified by hand-crafted reward functions and serves as pre-training for more efficient meta-learning of test task distributions.",
+      "relevance_score": 0.15
+    },
+    {
+      "related_paper_id": "b2da2ea6387c81e7b48e88249a82ee91297a80f6",
+      "text": "Title: Leveraging Separated World Model for Exploration in Visually Distracted Environments\n\nAbstract: Model-based unsupervised reinforcement learning (URL) has gained prominence for reducing environment interactions and learning general skills using intrinsic rewards. However, distractors in observations can severely affect intrinsic reward estimation, leading to a biased exploration process, especially in environments with visual inputs like images or videos. To address this challenge, we propose a bi-level optimization framework named Se paration-assisted eX plorer (SeeX). In the inner optimization, SeeX trains a separated world model to extract exogenous and endogenous information, minimizing uncertainty to ensure task relevance. In the outer optimization, it learns a policy on imaginary trajectories generated within the endogenous state space to maximize task-relevant uncertainty. Evaluations on multiple locomotion and manipulation tasks demonstrate SeeX’s effectiveness",
+      "relevance_score": 0.1
+    },
+    {
+      "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+      "text": "Title: Unsupervised Skill Discovery via Recurrent Skill Training\n\nAbstract: Being able to discover diverse useful skills without external reward functions is beneﬁcial in reinforcement learning research. Previous unsupervised skill discovery approaches mainly train different skills in parallel. Although impressive results have been provided, we found that parallel training procedure can sometimes block exploration when the state visited by different skills overlap, which leads to poor state coverage and restricts the diversity of learned skills. In this paper, we take a deeper look into this phenomenon and propose a novel framework to address this issue, which we call Recurrent Skill Training (ReST). Instead of training all the skills in parallel, ReST trains different skills one after another recurrently, along with a state coverage based intrinsic reward. We conduct experiments on a number of challenging 2D navigation environments and robotic locomotion environments. Evaluation results show that our proposed approach outperforms previous parallel training approaches in terms of state coverage and skill diversity. Videos of the discovered skills are available at https://sites.google.com/ view/neurips22-rest .",
+      "relevance_score": 0.05
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence describes ExDM as leveraging diffusion models for unsupervised RL to enhance exploration and provide initialization for downstream tasks. The related work evidence (abstract) directly states ExDM 'leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks.' The claim aligns exactly with the evidence, and the language strength is accurate (no overstatement or understatement).",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (ExDM), but the provided related work (HIRE) discusses hybrid intrinsic rewards in RL, not diffusion models or the specific method ExDM. There is no direct evidence in the related work to support or contradict the claim about ExDM's novelty or approach.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The sentence (ID=C1) is a claim about the paper being reviewed, stating it introduces ExDM for unsupervised RL to enhance exploration and provide initialization. The related work paper describes DiCuRL, a diffusion-based curriculum RL method, which is a different approach and does not directly support or contradict the specific claims about ExDM's novelty or contributions in unsupervised RL. Evidence is missing for alignment.",
+      "relevance_score": 0.9
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces ExDM, a novel approach using diffusion models for unsupervised RL to enhance exploration and provide initialization for downstream tasks. The related work evidence (CIC paper) does not mention diffusion models, ExDM, or the specific claims about leveraging diffusion for exploration and initialization. Therefore, the claim cannot be verified against the provided evidence, making it insufficient.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "74ac7a357a5bddc38e783a4d4f248c376564d935",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper 'Exploratory Diffusion Model (ExDM)', but the related work evidence is about a different paper on keyframe-guided rewards for laboratory robotics, with no information about ExDM or unsupervised RL exploration with diffusion models. Therefore, the claim cannot be evaluated against the provided evidence.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's contribution (introducing ExDM). The related work text discusses a different method (ComSD) for skill discovery, with no mention of ExDM or diffusion models for unsupervised RL. There is no evidence to support or contradict the claim about the paper being reviewed.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes the paper's contribution (ExDM) as novel for using diffusion models in unsupervised RL. The related work is about PEAC, a different method for cross-embodiment unsupervised RL. There is no evidence in the related work to support or contradict the claim about ExDM's novelty, as they address different problems.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contribution (introducing ExDM for unsupervised RL using diffusion models), but the provided related work text does not mention ExDM, diffusion models in RL, or the specific claim. The evidence is missing, making it impossible to verify alignment or calibration.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5dce3f2cfe018ada4bebeaa15aac6fe1d01b18ba",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper 'The paper introduces the Exploratory Diffusion Model (ExDM)' and its approach. The provided related work (IIE paper) is about a different method (Imagine, Initialize, and Explore) for multi-agent RL exploration, which does not contain any evidence about ExDM or the paper being reviewed. Therefore, the claim cannot be verified or supported by the given related work evidence.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "985a1140bfbbb9622fd22dcd5eb1c6aa2ddbcc25",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence provided is about SemiNFT, a different paper on image retouching, not about the Exploratory Diffusion Model (ExDM) or unsupervised RL. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9d528f7e641c922bddd83f4af687806d685490d6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims ExDM is the first to introduce diffusion models into unsupervised RL. The related work is about feature control for HRL and does not mention diffusion models or ExDM, providing no evidence for this claim. The claim is overstated given the evidence from the related work alone.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (introducing ExDM), but the provided related work (SURF) does not mention ExDM, diffusion models in unsupervised RL, or the specific claims in the sentence. There is no evidence in the related work to support, contradict, or relate to the claim, making verification impossible.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ceb4e0c2ad601831c056901e9f1ab5f5500d8520",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims ExDM is novel for using diffusion models in unsupervised RL, but the related work is about 'blame' for controlled effects and is unrelated to diffusion models or the specific novelty claim.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5c460d8e8e4e6304f2ee82ebae621c0c2f0aaa9e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper introduces ExDM for unsupervised RL using diffusion models to enhance exploration and provide a strong initialization. The related work paper proposes a skill discovery method for unsupervised RL but does not use diffusion models or define a score-based intrinsic reward. The evidence from the related work supports that it is a distinct approach in unsupervised RL, aligning with the claim's context but not directly contradicting it.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6df5d79885bf1af65323a055684b2b92439a65c3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work evidence (GRIMGEP) is about a different method (GRIMGEP) for goal sampling in visual RL, with no direct connection to the review sentence's claim about the Exploratory Diffusion Model (ExDM) or its use of diffusion models for unsupervised RL. The evidence does not support or contradict the claim, making it insufficient for verification.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dd383606d4183ff5b7b2c4b8a55980c8f385630b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work evidence is from a completely different domain (sleep dynamics) and does not mention the paper's topic (unsupervised RL, diffusion models for exploration). There is no evidence to support or contradict the claim about ExDM.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "4813be9599249bc024aad1d674c8d1da3479d532",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper introducing ExDM, a diffusion model for unsupervised RL. The related work is about unsupervised meta-RL and does not mention diffusion models or ExDM. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b2da2ea6387c81e7b48e88249a82ee91297a80f6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper being reviewed (ExDM). The related work (SeeX) is about a different method for URL in visually distracted environments; it does not provide evidence about ExDM's approach or contributions. Therefore, the relationship cannot be assessed.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper introducing ExDM and its purpose (enhancing exploration in reward-free environments). The related work (ReST) focuses on unsupervised skill discovery with recurrent training, but does not discuss diffusion models, ExDM, or the specific exploration method described. There is no evidence in the provided related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": 0.05
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art (SOTA) techniques in unsupervised RL. The related work text mentions 'Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks,' indicating the paper does compare with SOTA baselines. However, the review's specific focus on 'comprehensive comparison' and its role in assessing novelty and effectiveness is not directly addressed in the evidence. The evidence suggests the paper includes comparisons, but does not confirm their comprehensiveness or directly contradict the claim. The claim is plausible and aligns with typical reviewer concerns, but the evidence is not explicit enough to fully support or refute it, leading to an 'aligned' stance with 'accurate' calibration.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The related work evidence (HIRE paper) discusses hybrid intrinsic rewards and benchmarks, but it does not provide specific evidence about comparisons in the reviewed paper or its novelty/effectiveness assessment. The claim is about the reviewed paper's methodological evaluation, not directly supported or contradicted by the abstract of a related paper. Evidence is missing to verify the claim's accuracy or alignment.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks comprehensive comparison with state-of-the-art unsupervised RL techniques. The related work evidence is about a different method (DiCuRL) for curriculum RL, not unsupervised RL comparison baselines. The paper's own text mentions evaluating on URLB benchmarks and comparing to SOTA URL baselines, but this evidence is not from the provided related work. Thus, there is insufficient evidence from the related work to verify the claim.",
+      "relevance_score": 0.9
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The provided related work (CIC) is an example of such a state-of-the-art technique evaluated on URLB, indicating that comparative methods exist. The paper's introduction mentions evaluating on URLB and outperforming SOTA URL baselines, but does not explicitly detail a comprehensive comparison with methods like CIC, supporting the reviewer's claim about insufficient comparative analysis.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "74ac7a357a5bddc38e783a4d4f248c376564d935",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper lacks comparison with state-of-the-art in unsupervised RL. However, the paper's abstract and introduction explicitly mention comparisons on Maze2d and URLB benchmarks, outperforming SOTA URL baselines. The related work (different paper) does not address this claim about the reviewed paper. Therefore, the claim is contradicted by the paper's own text, and the reviewer's language is overstated.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper does not provide a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work evidence is a paper on unsupervised skill discovery, which does not contain information about the reviewed paper's comparative analysis or lack thereof. Therefore, the evidence is insufficient to verify the claim.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work (PEAC) is a different paper on cross-embodiment unsupervised RL; it does not provide evidence about the paper's comparison methods or state-of-the-art benchmarks, making the claim unverifiable from the given evidence.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The related work evidence (from a different paper) discusses representation learning for exploration and goal-conditioned RL, but does not provide information about the methods compared in the paper being reviewed. Without evidence from the paper's own evaluation or related work that directly addresses the comparison claim, the evidence is insufficient to verify the reviewer's assertion.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5dce3f2cfe018ada4bebeaa15aac6fe1d01b18ba",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's lack of comprehensive comparison with state-of-the-art techniques in unsupervised RL. The provided related work is about a different method (IIE) in multi-agent RL, not about unsupervised RL techniques or comparisons with the paper's method. Therefore, there is insufficient evidence to support or refute the claim.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "985a1140bfbbb9622fd22dcd5eb1c6aa2ddbcc25",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's lack of comparison with state-of-the-art techniques in unsupervised RL. The related work (SemiNFT) is about a different domain (photorealistic color retouching) and does not discuss unsupervised RL comparisons. There is no evidence in the provided related work to verify or contradict the claim about the paper's methodological comparisons.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "9d528f7e641c922bddd83f4af687806d685490d6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The related work evidence describes a different paper on hierarchical RL with intrinsic motivation and does not provide information about the specific comparisons made in the reviewed paper. Therefore, the evidence is insufficient to verify the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work evidence is about SURF, a reward function for machine translation, which does not provide any information about comparisons or the paper's methodology in unsupervised RL. Thus, evidence is missing to evaluate the claim.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ceb4e0c2ad601831c056901e9f1ab5f5500d8520",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": -2,
+      "label": "UNSUPPORTED",
+      "explanation": "The review sentence claims the paper does not provide a comprehensive comparison with state-of-the-art techniques in unsupervised RL. However, the paper's introduction and abstract explicitly mention evaluating on standard benchmarks (Maze2d, URLB) and outperforming SOTA URL and diffusion fine-tuning baselines, indicating a comparison is provided. The related work (CEN) is about blame-based intrinsic motivation, which is not directly relevant to verifying the claim about the paper's comparison scope. Thus, the reviewer's claim is contradicted by the paper's own description.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5c460d8e8e4e6304f2ee82ebae621c0c2f0aaa9e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer claims the paper lacks a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work evidence is a different paper's abstract, which does not provide information about comparisons in the paper being reviewed. No direct evidence is available to verify the claim.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "6df5d79885bf1af65323a055684b2b92439a65c3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper does not provide a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work paper (GRIMGEP) focuses on goal sampling in visual deep RL with ALP and novelty, not on unsupervised RL comparison methods. There is no evidence in the related work to support or contradict the claim about the paper's comparison methodology.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "dd383606d4183ff5b7b2c4b8a55980c8f385630b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "4813be9599249bc024aad1d674c8d1da3479d532",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The provided related work is a different paper about unsupervised meta-RL curricula, not a state-of-the-art technique in unsupervised RL for direct comparison. The evidence does not support or contradict the claim about the paper's comparison; it is irrelevant.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b2da2ea6387c81e7b48e88249a82ee91297a80f6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks comprehensive comparison with state-of-the-art techniques in unsupervised RL, but the related work evidence (SeeX) is a different paper and does not provide any information about the methods or comparisons in the paper being reviewed (ExDM).",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The provided related work evidence is an abstract of another paper (ReST) that addresses skill discovery, but it does not provide information about the coverage or lack of comparison in the paper under review. There is no evidence to support or contradict the claim.",
+      "relevance_score": 0.05
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper introduces the Exploratory Diffusion Model (ExDM), a novel approach that leverages diffusion models for unsupervised reinforcement learning (RL) to enhance exploration in reward-free environments and provide a strong initialization for downstream tasks.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence describes ExDM as leveraging diffusion models for unsupervised RL to enhance exploration and provide initialization for downstream tasks. The related work evidence (abstract) directly states ExDM 'leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks.' The claim aligns exactly with the evidence, and the language strength is accurate (no overstatement or understatement).",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (ExDM), but the provided related work (HIRE) discusses hybrid intrinsic rewards in RL, not diffusion models or the specific method ExDM. There is no direct evidence in the related work to support or contradict the claim about ExDM's novelty or approach.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The sentence (ID=C1) is a claim about the paper being reviewed, stating it introduces ExDM for unsupervised RL to enhance exploration and provide initialization. The related work paper describes DiCuRL, a diffusion-based curriculum RL method, which is a different approach and does not directly support or contradict the specific claims about ExDM's novelty or contributions in unsupervised RL. Evidence is missing for alignment.",
+          "relevance_score": 0.9
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces ExDM, a novel approach using diffusion models for unsupervised RL to enhance exploration and provide initialization for downstream tasks. The related work evidence (CIC paper) does not mention diffusion models, ExDM, or the specific claims about leveraging diffusion for exploration and initialization. Therefore, the claim cannot be verified against the provided evidence, making it insufficient.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "74ac7a357a5bddc38e783a4d4f248c376564d935",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper 'Exploratory Diffusion Model (ExDM)', but the related work evidence is about a different paper on keyframe-guided rewards for laboratory robotics, with no information about ExDM or unsupervised RL exploration with diffusion models. Therefore, the claim cannot be evaluated against the provided evidence.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's contribution (introducing ExDM). The related work text discusses a different method (ComSD) for skill discovery, with no mention of ExDM or diffusion models for unsupervised RL. There is no evidence to support or contradict the claim about the paper being reviewed.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes the paper's contribution (ExDM) as novel for using diffusion models in unsupervised RL. The related work is about PEAC, a different method for cross-embodiment unsupervised RL. There is no evidence in the related work to support or contradict the claim about ExDM's novelty, as they address different problems.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contribution (introducing ExDM for unsupervised RL using diffusion models), but the provided related work text does not mention ExDM, diffusion models in RL, or the specific claim. The evidence is missing, making it impossible to verify alignment or calibration.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "5dce3f2cfe018ada4bebeaa15aac6fe1d01b18ba",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper 'The paper introduces the Exploratory Diffusion Model (ExDM)' and its approach. The provided related work (IIE paper) is about a different method (Imagine, Initialize, and Explore) for multi-agent RL exploration, which does not contain any evidence about ExDM or the paper being reviewed. Therefore, the claim cannot be verified or supported by the given related work evidence.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "985a1140bfbbb9622fd22dcd5eb1c6aa2ddbcc25",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence provided is about SemiNFT, a different paper on image retouching, not about the Exploratory Diffusion Model (ExDM) or unsupervised RL. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "9d528f7e641c922bddd83f4af687806d685490d6",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims ExDM is the first to introduce diffusion models into unsupervised RL. The related work is about feature control for HRL and does not mention diffusion models or ExDM, providing no evidence for this claim. The claim is overstated given the evidence from the related work alone.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (introducing ExDM), but the provided related work (SURF) does not mention ExDM, diffusion models in unsupervised RL, or the specific claims in the sentence. There is no evidence in the related work to support, contradict, or relate to the claim, making verification impossible.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "ceb4e0c2ad601831c056901e9f1ab5f5500d8520",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims ExDM is novel for using diffusion models in unsupervised RL, but the related work is about 'blame' for controlled effects and is unrelated to diffusion models or the specific novelty claim.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "5c460d8e8e4e6304f2ee82ebae621c0c2f0aaa9e",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper introduces ExDM for unsupervised RL using diffusion models to enhance exploration and provide a strong initialization. The related work paper proposes a skill discovery method for unsupervised RL but does not use diffusion models or define a score-based intrinsic reward. The evidence from the related work supports that it is a distinct approach in unsupervised RL, aligning with the claim's context but not directly contradicting it.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "6df5d79885bf1af65323a055684b2b92439a65c3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work evidence (GRIMGEP) is about a different method (GRIMGEP) for goal sampling in visual RL, with no direct connection to the review sentence's claim about the Exploratory Diffusion Model (ExDM) or its use of diffusion models for unsupervised RL. The evidence does not support or contradict the claim, making it insufficient for verification.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "dd383606d4183ff5b7b2c4b8a55980c8f385630b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work evidence is from a completely different domain (sleep dynamics) and does not mention the paper's topic (unsupervised RL, diffusion models for exploration). There is no evidence to support or contradict the claim about ExDM.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "4813be9599249bc024aad1d674c8d1da3479d532",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper introducing ExDM, a diffusion model for unsupervised RL. The related work is about unsupervised meta-RL and does not mention diffusion models or ExDM. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "b2da2ea6387c81e7b48e88249a82ee91297a80f6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper being reviewed (ExDM). The related work (SeeX) is about a different method for URL in visually distracted environments; it does not provide evidence about ExDM's approach or contributions. Therefore, the relationship cannot be assessed.",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper introducing ExDM and its purpose (enhancing exploration in reward-free environments). The related work (ReST) focuses on unsupervised skill discovery with recurrent training, but does not discuss diffusion models, ExDM, or the specific exploration method described. There is no evidence in the provided related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 0.7017543859649122,
+      "best_evidence": [
+        "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+        "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+        "2a5c1474526ca9d46164e4e64db99a2404ff94ad"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2.0,
+          "weight": 0.3509
+        },
+        {
+          "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+          "score": 0.0,
+          "weight": 0.3158
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper does not provide a comprehensive comparison of the method with state-of-the-art techniques in unsupervised RL, which could help in assessing its novelty and effectiveness.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art (SOTA) techniques in unsupervised RL. The related work text mentions 'Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks,' indicating the paper does compare with SOTA baselines. However, the review's specific focus on 'comprehensive comparison' and its role in assessing novelty and effectiveness is not directly addressed in the evidence. The evidence suggests the paper includes comparisons, but does not confirm their comprehensiveness or directly contradict the claim. The claim is plausible and aligns with typical reviewer concerns, but the evidence is not explicit enough to fully support or refute it, leading to an 'aligned' stance with 'accurate' calibration.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The related work evidence (HIRE paper) discusses hybrid intrinsic rewards and benchmarks, but it does not provide specific evidence about comparisons in the reviewed paper or its novelty/effectiveness assessment. The claim is about the reviewed paper's methodological evaluation, not directly supported or contradicted by the abstract of a related paper. Evidence is missing to verify the claim's accuracy or alignment.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks comprehensive comparison with state-of-the-art unsupervised RL techniques. The related work evidence is about a different method (DiCuRL) for curriculum RL, not unsupervised RL comparison baselines. The paper's own text mentions evaluating on URLB benchmarks and comparing to SOTA URL baselines, but this evidence is not from the provided related work. Thus, there is insufficient evidence from the related work to verify the claim.",
+          "relevance_score": 0.9
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The provided related work (CIC) is an example of such a state-of-the-art technique evaluated on URLB, indicating that comparative methods exist. The paper's introduction mentions evaluating on URLB and outperforming SOTA URL baselines, but does not explicitly detail a comprehensive comparison with methods like CIC, supporting the reviewer's claim about insufficient comparative analysis.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "74ac7a357a5bddc38e783a4d4f248c376564d935",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper lacks comparison with state-of-the-art in unsupervised RL. However, the paper's abstract and introduction explicitly mention comparisons on Maze2d and URLB benchmarks, outperforming SOTA URL baselines. The related work (different paper) does not address this claim about the reviewed paper. Therefore, the claim is contradicted by the paper's own text, and the reviewer's language is overstated.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper does not provide a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work evidence is a paper on unsupervised skill discovery, which does not contain information about the reviewed paper's comparative analysis or lack thereof. Therefore, the evidence is insufficient to verify the claim.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work (PEAC) is a different paper on cross-embodiment unsupervised RL; it does not provide evidence about the paper's comparison methods or state-of-the-art benchmarks, making the claim unverifiable from the given evidence.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The related work evidence (from a different paper) discusses representation learning for exploration and goal-conditioned RL, but does not provide information about the methods compared in the paper being reviewed. Without evidence from the paper's own evaluation or related work that directly addresses the comparison claim, the evidence is insufficient to verify the reviewer's assertion.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "5dce3f2cfe018ada4bebeaa15aac6fe1d01b18ba",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's lack of comprehensive comparison with state-of-the-art techniques in unsupervised RL. The provided related work is about a different method (IIE) in multi-agent RL, not about unsupervised RL techniques or comparisons with the paper's method. Therefore, there is insufficient evidence to support or refute the claim.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "985a1140bfbbb9622fd22dcd5eb1c6aa2ddbcc25",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's lack of comparison with state-of-the-art techniques in unsupervised RL. The related work (SemiNFT) is about a different domain (photorealistic color retouching) and does not discuss unsupervised RL comparisons. There is no evidence in the provided related work to verify or contradict the claim about the paper's methodological comparisons.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "9d528f7e641c922bddd83f4af687806d685490d6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The related work evidence describes a different paper on hierarchical RL with intrinsic motivation and does not provide information about the specific comparisons made in the reviewed paper. Therefore, the evidence is insufficient to verify the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work evidence is about SURF, a reward function for machine translation, which does not provide any information about comparisons or the paper's methodology in unsupervised RL. Thus, evidence is missing to evaluate the claim.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "ceb4e0c2ad601831c056901e9f1ab5f5500d8520",
+          "score": -2,
+          "label": "UNSUPPORTED",
+          "explanation": "The review sentence claims the paper does not provide a comprehensive comparison with state-of-the-art techniques in unsupervised RL. However, the paper's introduction and abstract explicitly mention evaluating on standard benchmarks (Maze2d, URLB) and outperforming SOTA URL and diffusion fine-tuning baselines, indicating a comparison is provided. The related work (CEN) is about blame-based intrinsic motivation, which is not directly relevant to verifying the claim about the paper's comparison scope. Thus, the reviewer's claim is contradicted by the paper's own description.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "5c460d8e8e4e6304f2ee82ebae621c0c2f0aaa9e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer claims the paper lacks a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work evidence is a different paper's abstract, which does not provide information about comparisons in the paper being reviewed. No direct evidence is available to verify the claim.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "6df5d79885bf1af65323a055684b2b92439a65c3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper does not provide a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The related work paper (GRIMGEP) focuses on goal sampling in visual deep RL with ALP and novelty, not on unsupervised RL comparison methods. There is no evidence in the related work to support or contradict the claim about the paper's comparison methodology.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "dd383606d4183ff5b7b2c4b8a55980c8f385630b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "4813be9599249bc024aad1d674c8d1da3479d532",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art techniques in unsupervised RL. The provided related work is a different paper about unsupervised meta-RL curricula, not a state-of-the-art technique in unsupervised RL for direct comparison. The evidence does not support or contradict the claim about the paper's comparison; it is irrelevant.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "b2da2ea6387c81e7b48e88249a82ee91297a80f6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks comprehensive comparison with state-of-the-art techniques in unsupervised RL, but the related work evidence (SeeX) is a different paper and does not provide any information about the methods or comparisons in the paper being reviewed (ExDM).",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "60da2965da20122fb30921c2547806200427d1ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks a comprehensive comparison with state-of-the-art unsupervised RL techniques. The provided related work evidence is an abstract of another paper (ReST) that addresses skill discovery, but it does not provide information about the coverage or lack of comparison in the paper under review. There is no evidence to support or contradict the claim.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 0.7017543859649122,
+      "best_evidence": [
+        "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+        "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+        "2a5c1474526ca9d46164e4e64db99a2404ff94ad"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2.0,
+          "weight": 0.3509
+        },
+        {
+          "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+          "score": 0.0,
+          "weight": 0.3158
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 19,
+    "pairs_attempted": 38,
+    "pairs_completed": 38,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 19.0
+    }
+  },
+  "errors": []
+}

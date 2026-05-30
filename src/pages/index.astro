@@ -231,7 +231,13 @@ const heroTitle = heroTitleParts.join(":").trim();
     >
       <div class="prism-hero-shell">
         <div class="prism-hero-lockup" aria-label="PRISM">
-          <Image class="prism-hero-logo" src={prismLogo} alt="PRISM logo" />
+          <Image
+            class="prism-hero-logo"
+            src={prismLogo}
+            alt="PRISM logo"
+            loading="eager"
+            decoding="sync"
+          />
           <span class="prism-hero-brand">{heroBrand}</span>
         </div>
 

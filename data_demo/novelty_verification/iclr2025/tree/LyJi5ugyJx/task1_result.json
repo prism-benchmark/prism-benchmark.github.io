@@ -1,0 +1,57 @@
+{
+  "paper": {
+    "core_task": "Improving training stability and scalability of continuous-time consistency models for few-step generative modeling",
+    "contributions": [
+      {
+        "name": "A unified diffusion model formulation combining EDM and flow matching",
+        "author_claim_text": "Our first contribution is TrigFlow, a new formulation that unifies EDM and Flow Matching, significantly simplifying the formulation of diffusion models, the associated probability flow ODE and CMs.",
+        "description": "Introduces TrigFlow, a simplified framework that merges EDM and flow matching principles, enabling simpler expressions for diffusion processes, model parameterization, and consistency models.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Techniques to stabilize continuous-time consistency model training",
+        "author_claim_text": "We analyze the root causes of instability in CM training and propose a complete recipe for mitigation. Our approach includes improved time-conditioning and adaptive group normalization within the network architecture.",
+        "description": "Addresses training instability in continuous-time CMs via architectural improvements like positional time embeddings and adaptive double normalization, and a reformulated training objective with adaptive weighting and tangent normalization.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Scalable continuous-time consistency models achieving state-of-the-art few-step generation",
+        "author_claim_text": "We elevate the performance of consistency models in both consistency training and distillation, achieving comparable or better results compared to previous discrete-time formulations. Our models, referred to as sCMs, demonstrate success across various datasets and model sizes.",
+        "description": "Demonstrates that the stabilized continuous-time CMs (sCMs) scale effectively to large model sizes and datasets, achieving sample quality within 10% FID of teacher diffusion models using only two-step sampling.",
+        "source_hint": "Introduction"
+      }
+    ],
+    "key_terms": [
+      "consistency models",
+      "continuous-time",
+      "distillation",
+      "TrigFlow",
+      "flow matching",
+      "few-step generation",
+      "training stability",
+      "adaptive weighting",
+      "tangent normalization",
+      "ImageNet"
+    ],
+    "must_have_entities": [
+      "Flow Matching",
+      "sCM",
+      "ImageNet 64×64",
+      "ImageNet 512×512"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The introduction of TrigFlow offers a unified and simplified formulation that bridges existing methods, which is a significant contribution to the field.",
+        "stance": "novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "paper_id": "LyJi5ugyJx",
+  "source": "tree_iclr2025",
+  "source_format": "tree_json",
+  "reviews_analysis": {
+    "TREE_ICLR2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper introduces significant advancements in consistency models (CMs) for generative modeling, focusing on improving their training stability, scalability, and performance.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The authors propose TrigFlow, a novel formulation that unifies existing diffusion model and flow matching approaches, simplifying the training of continuous-time CMs.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "They address key challenges in CM training, such as instability and discretization errors, by introducing improved time-conditioning, adaptive group normalization, and a re-formulated training objective.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The paper demonstrates that their proposed sCMs achieve comparable or better sample quality than previous discrete-time CMs and VSD methods, using significantly less sampling compute.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The results are validated on multiple datasets, including ImageNet 512×512, with a model size reaching 1.5 billion parameters, the largest CMs trained to date.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The work also highlights the advantages of continuous-time CMs over discrete-time variants and compares sCMs with VSD in terms of sample diversity and guidance compatibility.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The paper presents a novel and technically sound approach to improving the training and performance of continuous-time consistency models.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The introduction of TrigFlow offers a unified and simplified formulation that bridges existing methods, which is a significant contribution to the field.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The authors address critical issues in CM training, such as instability and discretization errors, with practical solutions like adaptive group normalization and improved time-conditioning.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The empirical results are compelling, showing that sCMs achieve high sample quality with reduced computational cost, particularly in two-step generation.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The paper also provides a comparative analysis with VSD and discrete-time CMs, highlighting the practical benefits of their approach in terms of sample diversity and guidance compatibility.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Despite its technical contributions, the paper lacks sufficient theoretical and practical discussion of the broader implications of its findings.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The methodology section is not detailed enough to ensure reproducibility, with missing information on hyperparameters, training settings, and computational resources.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The conclusions are partially supported by the evidence but lack explicit logical connections to the results, and some claims are made without direct reference to the supporting data.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Additionally, the paper does not adequately address the limitations of its approach or provide a comprehensive discussion of how these limitations might affect the broader field of generative modeling.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Could the authors provide more detailed information on the hyperparameters, training settings, and computational resources used in their experiments? This would greatly enhance the reproducibility of the study.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "How do the proposed improvements in time-conditioning and training objectives specifically contribute to the stability of continuous-time CMs? A more detailed analysis of the training dynamics would help clarify this.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The paper claims that sCMs produce more diverse samples and are more compatible with guidance than VSD. Could the authors provide specific metrics or visual comparisons to substantiate this claim?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "What are the theoretical implications of the proposed TrigFlow formulation? How does it relate to existing theoretical frameworks in diffusion modeling and flow matching?",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "The paper mentions that the FID gap is narrowed to within 10% using two-step generation. Could the authors elaborate on how this compares to other distillation techniques in terms of computational efficiency and sample quality?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "The paper presents a technically sound approach with a clear methodology and empirical validation.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "The proposed techniques for improving the training of continuous-time CMs are well-motivated and supported by experimental results.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "However, the lack of detailed methodology and theoretical analysis limits the depth of the soundness assessment.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "The paper is generally well-structured and provides a clear overview of the problem and proposed solutions.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_25",
+        "argument": "However, the presentation could be improved with more detailed descriptions of the methodology, clearer logical connections between results and conclusions, and a more thorough discussion of the broader implications of the findings.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_26",
+        "argument": "The paper makes a meaningful contribution to the field of generative modeling by introducing TrigFlow and addressing key challenges in the training of continuous-time CMs.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_27",
+        "argument": "The empirical results demonstrate the effectiveness of the proposed approach, and the comparative analysis with existing methods adds value.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_28",
+        "argument": "However, the broader significance of these contributions is not fully explored, limiting the overall impact of the work.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_29",
+        "argument": "The paper presents a novel and technically sound approach with promising empirical results.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_30",
+        "argument": "However, it requires improvements in methodology detail, theoretical discussion, and logical flow to fully support its conclusions and enhance reproducibility.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_31",
+        "argument": "The assessment is based on a thorough analysis of the paper's content and the provided Q&A pairs.",
+        "role": "Premise",
+        "aspect": "Other",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_32",
+        "argument": "While the technical contributions are clear, the lack of detailed methodology and theoretical discussion introduces some uncertainty regarding the full impact and reproducibility of the work.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 5489,
+    "completion_tokens": 5489,
+    "total_tokens": 10978
+  }
+}

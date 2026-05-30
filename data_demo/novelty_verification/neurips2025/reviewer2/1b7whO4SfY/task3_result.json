@@ -1,0 +1,1141 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The novelty is partially diluted by the lack of direct comparisons to existing methods and the omission of a theoretical grounding for the sparsity-related benefits."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "text": "Title: Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free\n\nAbstract: Gating mechanisms have been widely utilized, from early models like LSTMs and Highway Networks to recent state space models, linear attention, and also softmax attention. Yet, existing literature rarely examines the specific effects of gating. In this work, we conduct comprehensive experiments to systematically investigate gating-augmented softmax attention variants. Specifically, we perform a comprehensive comparison over 30 variants of 15B Mixture-of-Experts (MoE) models and 1.7B dense models trained on a 3.5 trillion token dataset. Our central finding is that a simple modification-applying a head-specific sigmoid gate after the Scaled Dot-Product Attention (SDPA)-consistently improves performance. This modification also enhances training stability, tolerates larger learning rates, and improves scaling properties. By comparing various gating positions and computational variants, we attribute this effectiveness to two key factors: (1) introducing non-linearity upon the low-rank mapping in the softmax attention, and (2) applying query-dependent sparse gating scores to modulate the SDPA output. Notably, we find this sparse gating mechanism mitigates 'attention sink' and enhances long-context extrapolation performance, and we also release related $\\href{https://github.com/qiuzh20/gated_attention}{codes}$ and $\\href{https://huggingface.co/QwQZh/gated_attention}{models}$ to facilitate future research.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "b33c14de27361872b6974fb4eb4f50092e9a3698",
+      "text": "Title: Forgetting Transformer: Softmax Attention with a Forget Gate\n\nAbstract: An essential component of modern recurrent sequence models is the forget gate. While Transformers do not have an explicit recurrent form, we show that a forget gate can be naturally incorporated into Transformers by down-weighting the unnormalized attention scores in a data-dependent way. We name this attention mechanism Forgetting Attention and the resulting model the Forgetting Transformer (FoX). We show that FoX outperforms the Transformer on long-context language modeling, length extrapolation, and short-context downstream tasks, while performing on par with the Transformer on long-context downstream tasks. Moreover, it is compatible with the FlashAttention algorithm and does not require any positional embeddings. Several analyses, including the needle-in-the-haystack test, show that FoX also retains the Transformer's superior long-context capabilities over recurrent sequence models such as Mamba-2, HGRN2, and DeltaNet. We also introduce a\"Pro\"block design that incorporates some common architectural components in recurrent sequence models and find it significantly improves the performance of both FoX and the Transformer. Our code is available at https://github.com/zhixuan-lin/forgetting-transformer.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "6c0dd9641e15054cb7ce151726aec7b69ba6cd9e",
+      "text": "Title: Universal Approximation with Softmax Attention\n\nAbstract: We prove that with linear transformations, both (i) two-layer self-attention and (ii) one-layer self-attention followed by a softmax function are universal approximators for continuous sequence-to-sequence functions on compact domains. Our main technique is a new interpolation-based method for analyzing attention's internal mechanism. This leads to our key insight: self-attention is able to approximate a generalized version of ReLU to arbitrary precision, and hence subsumes many known universal approximators. Building on these, we show that two-layer multi-head attention alone suffices as a sequence-to-sequence universal approximator. In contrast, prior works rely on feed-forward networks to establish universal approximation in Transformers. Furthermore, we extend our techniques to show that, (softmax-)attention-only layers are capable of approximating various statistical models in-context. We believe these techniques hold independent interest.",
+      "relevance_score": 0.95
+    },
+    {
+      "related_paper_id": "e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+      "text": "Title: Achieving Constant Memory Complexity in Long Context Transformers Through Linear Attention\n\nAbstract: The transformer architecture has emerged as the dominant paradigm for sequence modeling, yet its standard self-attention mechanism imposes quadratic time and memory cost with respect to sequence length, presenting a fundamental scalability barrier for long-context applications. This paper investigates linear attention as a principled mechanism for achieving constant memory complexity (KM) during autoregressive inference in transformer models. By replacing the softmax normalization in scaled dot-product attention with a kernel decomposition, the computation is restructured so that keys and values are combined before interacting with queries, yielding an equivalent recurrent form that maintains a fixed-size hidden state regardless of sequence length. We present a unified theoretical derivation of this parallel-to-recurrent equivalence, introduce a learnable positive feature map paired with data-dependent gating and structured state normalization, and evaluate the resulting architecture on long-context language modeling and downstream comprehension benchmarks. Empirical results confirm that peak GPU memory consumption remains constant at 2.1 gigabytes across context lengths from 1,024 to 131,072 tokens, achieving a 13.6× throughput advantage over standard softmax attention at length 65,536, with only a 4.8% relative perplexity increase on the Pile dataset. These findings establish constant-complexity linear attention as a viable deployment mechanism for memory-constrained long-context transformer inference.",
+      "relevance_score": 0.95
+    },
+    {
+      "related_paper_id": "4515619daea41ca054a6aaa7951465ac8bb6fe8f",
+      "text": "Title: Custom Algorithm-based Fault Tolerance for Attention Layers in Transformers\n\nAbstract: Transformers and large language models (LLMs), powered by the attention mechanism, have transformed numerous AI applications, driving the need for specialized hardware accelerators. A major challenge in these accelerators is efficiently detecting errors caused by random hardware faults. Traditional algorithm-based fault tolerance (ABFT) techniques verify individual matrix multiplications but fall short in handling the full attention mechanism, particularly due to intermediate softmax normalization. This work proposes Flash-ABFT, a novel method that computes an online checksum across the entire three-matrix product of query, key and value matrices, of an attention layer, including the softmax operation, with a single check. This approach significantly reduces overhead by eliminating redundant checks while maintaining high fault-detection accuracy. Experimental results demonstrate that Flash-ABFT incurs only 5.3% hardware area overhead and less than 1.9% energy overhead, making it a cost-effective and robust solution for error detection in attention accelerators.",
+      "relevance_score": 0.9
+    },
+    {
+      "related_paper_id": "8847bd8617f072fc9d00381b65c6e25b230677b2",
+      "text": "Title: Soft Error Reliability Analysis of Vision Transformers\n\nAbstract: Vision transformers (ViTs) that leverage self-attention mechanism have shown superior performance on many classical vision tasks compared to convolutional neural networks (CNNs) and gain increasing popularity recently. Existing ViTs’ works mainly optimize performance and accuracy, but ViTs’ reliability issues induced by soft errors in large-scale VLSI designs have generally been overlooked. In this work, we mainly study the reliability of ViTs and investigate the vulnerability from different architecture granularities ranging from models, layers, modules, and patches for the first time. The investigation reveals that ViTs with the self-attention mechanism are generally more resilient on linear computing including general matrix–matrix multiplication (GEMM) and full connection (FC) and show a relatively even vulnerability distribution across the patches. ViTs involve more fragile non-linear computing such as softmax and GELU compared to typical CNNs. With the above observations, we propose a lightweight block-wise algorithm-based fault-tolerance (LB-ABFT) approach to protect the linear computing implemented with distinct sizes of GEMM and apply a range-based protection scheme to mitigate soft errors in non-linear computing. According to our experiments, the proposed fault-tolerant approaches enhance ViTs’ accuracy significantly with minor computing overhead in the presence of various soft errors.",
+      "relevance_score": 0.9
+    },
+    {
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "text": "Title: Threshold Differential Attention for Sink-Free, Ultra-Sparse, and Non-Dispersive Language Modeling\n\nAbstract: Softmax attention struggles with long contexts due to structural limitations: the strict sum-to-one constraint forces attention sinks on irrelevant tokens, and probability mass disperses as sequence lengths increase. We tackle these problems with Threshold Differential Attention (TDA), a sink-free attention mechanism that achieves ultra-sparsity and improved robustness at longer sequence lengths without the computational overhead of projection methods or the performance degradation caused by noise accumulation of standard rectified attention. TDA applies row-wise extreme-value thresholding with a length-dependent gate, retaining only exceedances. Inspired by the differential transformer, TDA also subtracts an inhibitory view to enhance expressivity. Theoretically, we prove that TDA controls the expected number of spurious survivors per row to $O(1)$ and that consensus spurious matches across independent views vanish as context grows. Empirically, TDA produces $>99\\%$ exact zeros and eliminates attention sinks while maintaining competitive performance on standard and long-context benchmarks.",
+      "relevance_score": 0.85
+    },
+    {
+      "related_paper_id": "dfabdaaf06a67a958045f79be14c2aea557fbdd0",
+      "text": "Title: Degrees of Freedom for Linear Attention: Distilling Softmax Attention with Optimal Feature Efficiency\n\nAbstract: Linear attention has attracted interest as a computationally efficient approximation to softmax attention, especially for long sequences. Recent studies have explored distilling softmax attention in pre-trained Transformers into linear attention. However, a critical challenge remains: how to choose the feature dimension that governs the approximation quality. Existing methods fix this dimension uniformly across all attention layers, overlooking the diverse roles and complexities of them. In this paper, we propose a principled method to automatically determine the feature dimension in linear attention using the concept of statistical degrees of freedom, which represent the effective dimensionality of the inputs. We provide a theoretical bound on the approximation error and show that the dimension chosen by our method achieves smaller error under a fixed computational budget. Furthermore, we introduce an efficient layerwise training strategy to learn nonlinear features tailored to each layer. Experiments on multiple pre-trained transformers demonstrate that our method improves the performance of distilled models compared to baselines without increasing the inference cost. Our findings also provide insight into how the complexity of the attention mechanism evolves across layers.",
+      "relevance_score": 0.85
+    },
+    {
+      "related_paper_id": "d28df8d04967fe06a6e2763c5f2e3ec4b005bfe0",
+      "text": "Title: Bitcoin Price Prediction Using a Deep Learning-based Hybrid Model with Sentiment Analysis and Attention Mechanism\n\nAbstract: Cryptocurrency, particularly Bitcoin, holds significant importance for investors and researchers due to its volatile price dynamics, which are influenced by various internal and external factors. The non-linear nature of cryptocurrency price fluctuations presents a considerable challenge in accurately predicting Bitcoin price changes. In addition to internal price fluctuations in the Bitcoin market, external public sentiment can also have a significant impact on Bitcoin prices. Based on the current situation, aimed to achieve more accurate prediction result of Bitcoin price, a hybrid forecasting model combining multiple high-precision technologies is proposed in this study. Bidirectional Long Short-Term Memory (Bi-LSTM) and Gated Recurring Unit (GRU) hybrid deep learning architectures are integrated in this model to analyse historical data, followed by the application of the FbProphet model to account for seasonal and temporal effects. To enhance prediction reliability, sentiment analysis of Bitcoin-related news is conducted using a combined Bidirectional Encoder Representations from Transformers (BERT) and Valence Aware Dictionary and sEntiment Reasoner (VADER) model, capturing the influence of public sentiment on price trends. Furthermore, an attention mechanism is incorporated to enable dynamic adjustment of the fusion weights, improving the model's adaptability to changing market conditions. Experimental results demonstrate the effectiveness of this hybrid model in producing more accurate Bitcoin price predictions. Future research will extend this model to other cryptocurrencies, further validating its robustness and exploring additional external factors affecting market prices.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+      "text": "Title: Deconstructing Attention: Investigating Design Principles for Effective Language Modeling\n\nAbstract: The success of Transformer language models is widely credited to their dot-product attention mechanism, which interweaves a set of key design principles: mixing information across positions (enabling multi-token interactions), sequence-dependent activations (where attention weights adapt to each input), a specific mathematical form (dot-product similarities plus softmax weighting), and coupling of queries and keys to evolving hidden states (grounding attention in the current layer). However, the necessity of each of these principles remains largely untested. In this work, we systematically deconstruct attention by designing controlled variants that selectively relax these principles, applied both uniformly across all layers and in hybrid architectures where only some layers retain standard attention. Our empirical analysis reveals that mechanisms for mixing tokens are indispensable, as their absence collapses models to near-random behavior, while the exact mathematical form and sequence dependency can be substantially relaxed, especially when preserved in just a subset of layers. Surprisingly, even variants that fail in isolation can achieve robust performance when interleaved with standard attention, highlighting a cooperative effect. These findings deepen our understanding of what truly underpins attention's effectiveness and open new avenues for simplifying language models without sacrificing performance.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "fb00a9d4c3ebde47848408f388b0947f6738ecce",
+      "text": "Title: LLM-driven hybrid architecture for multi-variate and multi-horizon forecasting of consumption patterns using graphs, recurrent units, and transformers",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "8bcbfb556f956056f4cca03e4106a0d7da2887b3",
+      "text": "Title: Counting in Small Transformers: The Delicate Interplay between Attention and Feed-Forward Layers\n\nAbstract: Next to scaling considerations, architectural design choices profoundly shape the solution space of transformers. In this work, we analyze the solutions simple transformer blocks implement when tackling the histogram task: counting items in sequences. Despite its simplicity, this task reveals a complex interplay between predictive performance, vocabulary and embedding sizes, token-mixing mechanisms, and feed-forward layer capacity. We identify two theoretical counting strategies transformers adopt, relation-based and inventory-based counting, each defining distinct learning regimes for the task. These strategies dictate how functionality is distributed between attention and feed-forward layers. We further show that adding softmax and beginning-of-sequence tokens allow for more robustness when embedding dimensions are comparatively small. Empirical introspection of trained models closely confirms both the learning regimes of the various architectures and the formation of these strategies during training. We demonstrate how a basic task that requires only aggregation and selection is significantly impacted by minor design changes.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "dc7c1a5ef6f81a8ba15eb0aaaaca8153c2886fd8",
+      "text": "Title: GFormer: Accelerating Large Language Models with Optimized Transformers on Gaudi Processors\n\nAbstract: Heterogeneous hardware like Gaudi processor has been developed to enhance computations, especially matrix operations for Transformer-based large language models (LLMs) for generative AI tasks. However, our analysis indicates that Transformers are not fully optimized on such emerging hardware, primarily due to inadequate optimizations in non-matrix computational kernels like Softmax and in heterogeneous resource utilization, particularly when processing long sequences. To address these issues, we propose an integrated approach (called GFormer) that merges sparse and linear attention mechanisms. GFormer aims to maximize the computational capabilities of the Gaudi processor's Matrix Multiplication Engine (MME) and Tensor Processing Cores (TPC) without compromising model quality. GFormer includes a windowed self-attention kernel and an efficient outer product kernel for causal linear attention, aiming to optimize LLM inference on Gaudi processors. Evaluation shows that GFormer significantly improves efficiency and model performance across various tasks on the Gaudi processor and outperforms state-of-the-art GPUs.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "0d9171e8fd811e1fe57c4e36ad0ce1af556497f7",
+      "text": "Title: Deconstructing Recurrence, Attention, and Gating: Investigating the transferability of Transformers and Gated Recurrent Neural Networks in forecasting of dynamical systems\n\nAbstract: Machine learning architectures, including transformers and recurrent neural networks (RNNs) have revolutionized forecasting in applications ranging from text processing to extreme weather. Notably, advanced network architectures, tuned for applications such as natural language processing, are transferable to other tasks such as spatiotemporal forecasting tasks. However, there is a scarcity of ablation studies to illustrate the key components that enable this forecasting accuracy. The absence of such studies, although explainable due to the associated computational cost, intensifies the belief that these models ought to be considered as black boxes. In this work, we decompose the key architectural components of the most powerful neural architectures, namely gating and recurrence in RNNs, and attention mechanisms in transformers. Then, we synthesize and build novel hybrid architectures from the standard blocks, performing ablation studies to identify which mechanisms are effective for each task. The importance of considering these components as hyper-parameters that can augment the standard architectures is exhibited on various forecasting datasets, from the spatiotemporal chaotic dynamics of the multiscale Lorenz 96 system, the Kuramoto-Sivashinsky equation, as well as standard real world time-series benchmarks. A key finding is that neural gating and attention improves the performance of all standard RNNs in most tasks, while the addition of a notion of recurrence in transformers is detrimental. Furthermore, our study reveals that a novel, sparsely used, architecture which integrates Recurrent Highway Networks with neural gating and attention mechanisms, emerges as the best performing architecture in high-dimensional spatiotemporal forecasting of dynamical systems.",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+      "text": "Title: Dissecting Linear Recurrent Models: How Different Gating Strategies Drive Selectivity and Generalization\n\nAbstract: Linear recurrent neural networks have emerged as efficient alternatives to the original Transformer's softmax attention mechanism, thanks to their highly parallelizable training and constant memory and computation requirements at inference. Iterative refinements of these models have introduced an increasing number of architectural mechanisms, leading to increased complexity and computational costs. Nevertheless, systematic direct comparisons among these models remain limited. Existing benchmark tasks are either too simplistic to reveal substantial differences or excessively resource-intensive for experimentation. In this work, we propose a refined taxonomy of linear recurrent models and introduce SelectivBench, a set of lightweight and customizable synthetic benchmark tasks for systematically evaluating sequence models. SelectivBench specifically evaluates selectivity in sequence models at small to medium scale, such as the capacity to focus on relevant inputs while ignoring context-based distractors. It employs rule-based grammars to generate sequences with adjustable complexity, incorporating irregular gaps that intentionally violate transition rules. Evaluations of linear recurrent models on SelectivBench reveal performance patterns consistent with results from large-scale language tasks. Our analysis clarifies the roles of essential architectural features: gating and rapid forgetting mechanisms facilitate recall, in-state channel mixing is unnecessary for selectivity, but critical for generalization, and softmax attention remains dominant due to its memory capacity scaling with sequence length. Our benchmark enables targeted, efficient exploration of linear recurrent models and provides a controlled setting for studying behaviors observed in large-scale evaluations. Code is available at https://github.com/symseqbench/selectivbench",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "6c8597eba86c4ed4fc9b5df4d8cf1b2a17d64a69",
+      "text": "Title: Strassen Attention, Split VC Dimension and Compositionality in Transformers\n\nAbstract: We propose the first method to show theoretical limitations for one-layer softmax transformers with arbitrarily many precision bits (even infinite). We establish those limitations for three tasks that require advanced reasoning. The first task, Match 3 (Sanford et al., 2023), requires looking at all possible token triplets in an input sequence. The second and third tasks address compositionality-based reasoning: function composition (Peng et al., 2024) and binary relations composition, respectively. We formally prove the inability of one-layer softmax Transformers to solve any of these tasks. To overcome these limitations, we introduce Strassen attention and prove that, equipped with this mechanism, a one-layer transformer can in principle solve all these tasks. Importantly, we show that it enjoys sub-cubic running-time complexity, making it more scalable than similar previously proposed mechanisms, such as higher-order attention (Sanford et al., 2023). To complement our theoretical findings, we experimentally studied Strassen attention and compared it against standard (Vaswani et al, 2017), higher-order attention (Sanford et al., 2023), and triangular attention (Bergen et al. 2021). Our results help to disentangle all these attention mechanisms, highlighting their strengths and limitations. In particular, Strassen attention outperforms standard attention significantly on all the tasks. Altogether, understanding the theoretical limitations can guide research towards scalable attention mechanisms that improve the reasoning abilities of Transformers.",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "bcd8a3df75fa5904cecc3616017f3a9a24dad8ea",
+      "text": "Title: Intrinsic and Extrinsic Organized Attention: Softmax Invariance and Network Sparsity\n\nAbstract: We examine the intrinsic (within the attention head) and extrinsic (amongst the attention heads) structure of the self-attention mechanism in transformers. Theoretical evidence for invariance of the self-attention mechanism to softmax activation is obtained by appealing to paradifferential calculus, (and is supported by computational examples), which relies on the intrinsic organization of the attention heads. Furthermore, we use an existing methodology for hierarchical organization of tensors to examine network structure by constructing hierarchal partition trees with respect to the query, key, and head axes of network 3-tensors. Such an organization is consequential since it allows one to profitably execute common signal processing tasks on a geometry where the organized network 3-tensors exhibit regularity. We exemplify this qualitatively, by visualizing the hierarchical organization of the tree comprised of attention heads and the diffusion map embeddings, and quantitatively by investigating network sparsity with the expansion coefficients of individual attention heads and the entire network with respect to the bi and tri-haar bases (respectively) on the space of queries, keys, and heads of the network. To showcase the utility of our theoretical and methodological findings, we provide computational examples using vision and language transformers. The ramifications of these findings are two-fold: (1) a subsequent step in interpretability analysis is theoretically admitted, and can be exploited empirically for downstream interpretability tasks (2) one can use the network 3-tensor organization for empirical network applications such as model pruning (by virtue of network sparsity) and network architecture comparison.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "fd5605155ea5f997611c76ed9ecb740821396372",
+      "text": "Title: Enabling Robust In-Context Memory and Rapid Task Adaptation in Transformers with Hebbian and Gradient-Based Plasticity\n\nAbstract: Large language models display in-context learning as an emergent effect of scale, but they rely on static weights during inference. In contrast, biological systems continually adapt via synaptic plasticity. We investigate whether explicit, biologically inspired plasticity can endow Transformers with faster in-sequence adaptation. To this end, we augment decoder-only Transformers with fast-weight modules updated either by (i) a neuromodulated Hebbian rule or (ii) the gradient-based plasticity mechanism of Duan et al. (2023). Across copying, regression, and few-shot classification tasks (CIFAR-FS, Omniglot), Hebbian plasticity consistently achieves lower loss and stronger few-shot generalization, while gradient-based updates perform best on long-horizon credit assignment. When associations are short and linearly separable, static weights suffice, defining a clear boundary condition for when plasticity helps. Analysis of learned modulatory signals reveals that gradient-based rules maintain large, persistent updates, whereas Hebbian plasticity is sharply gated around salient events. Together, these results show that explicit plasticity complements attention by enabling rapid, task-specific adaptation, and clarify when different plasticity mechanisms are most effective.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "0433028461c5fc2481355afb54542f6c2f505844",
+      "text": "Title: Interpreting the Synchronization Gap: The Hidden Mechanism Inside Diffusion Transformers\n\nAbstract: Recent theoretical models of diffusion processes, conceptualized as coupled Ornstein-Uhlenbeck systems, predict a hierarchy of interaction timescales, and consequently, the existence of a synchronization gap between modes that commit at different stages of the reverse process. However, because these predictions rely on continuous time and analytically tractable score functions, it remains unclear how this phenomenology manifests in the deep, discrete architectures deployed in practice. In this work, we investigate how the synchronization gap is mechanistically realized within pretrained Diffusion Transformers (DiTs). We construct an explicit architectural realization of replica coupling by embedding two generative trajectories into a joint token sequence, modulated by a symmetric cross attention gate with variable coupling strength g. Through a linearized analysis of the attention difference, we show that the replica interaction decomposes mechanistically. We empirically validate our theoretical framework on a pretrained DiT-XL/2 model by tracking commitment and per layer internal mode energies. Our results reveal that: (1) the synchronization gap is an intrinsic architectural property of DiTs that persists even when external coupling is turned off; (2) as predicted by our spatial routing bounds, the gap completely collapses under strong coupling; (3) the gap is strictly depth localized, emerging sharply only within the final layers of the Transformer; and (4) global, low frequency structures consistently commit before local, high frequency details. Ultimately, our findings provide a mechanistic interpretation of how Diffusion Transformers resolve generative ambiguity, isolating speciation transitions to the terminal layers of the network.",
+      "relevance_score": 0.55
+    },
+    {
+      "related_paper_id": "886679b1916ec5d67d30159c249e04243ab02a79",
+      "text": "Title: Learning to Skip the Middle Layers of Transformers\n\nAbstract: Conditional computation is a popular strategy to make Transformers more efficient. Existing methods often target individual modules (e.g., mixture-of-experts layers) or skip layers independently of one another. However, interpretability research has demonstrated that the middle layers of Transformers exhibit greater redundancy, and that early layers aggregate information into token positions. Guided by these insights, we propose a novel architecture that dynamically skips a variable number of layers from the middle outward. In particular, a learned gating mechanism determines whether to bypass a symmetric span of central blocks based on the input, and a gated attention mechanism prevents subsequent tokens from attending to skipped token positions. Residual norms are controlled with a'sandwich'or'perilayernorm'scheme and gate sparsity with an adaptive regularization loss. We had aimed to reduce compute requirements for'simpler'tokens and potentially foster an emergent multi-level representational hierarchy but, at the scales investigated, our approach does not achieve improvements in the trade-off between validation cross-entropy and estimated FLOPs compared to dense baselines with fewer layers. We release our code at https://github.com/tim-lawson/skip-middle.",
+      "relevance_score": 0.55
+    },
+    {
+      "related_paper_id": "56c04d687916c12313abcd50564263acfdd45a3c",
+      "text": "Title: Sequential Neural Operator Transformer for High-Fidelity Surrogates of Time-Dependent Non-linear Partial Differential Equations\n\nAbstract: Partial differential equations (PDEs) are fundamental to modeling complex and nonlinear physical phenomena, but their numerical solution often requires significant computational resources, particularly when a large number of forward full solution evaluations are necessary, such as in design, optimization, sensitivity analysis, and uncertainty quantification. Recent progress in operator learning has enabled surrogate models that efficiently predict full PDE solution fields; however, these models often struggle with accuracy and robustness when faced with highly nonlinear responses driven by sequential input functions. To address these challenges, we propose the Sequential Neural Operator Transformer (S-NOT), a architecture that combines gated recurrent units (GRUs) with the self-attention mechanism of transformers to address time-dependent,nonlinear PDEs. Unlike S-DeepONet (S-DON), which uses a dot product to merge encoded outputs from the branch and trunk sub-networks, S-NOT leverages attention to better capture intricate dependencies between sequential inputs and spatial query points. We benchmark S-NOT on three challenging datasets from real-world applications with plastic and thermo-viscoplastic highly nonlinear material responses: multiphysics steel solidification, a 3D lug specimen, and a dogbone specimen under temporal and path-dependent loadings. The results show that S-NOT consistently achieves a higher prediction accuracy than S-DON even for data outliers, demonstrating its accuracy and robustness for drastically accelerating computational frameworks in scientific and engineering applications.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "0f0d807f1e84f4e75e75dd67f6764d2a532df5b5",
+      "text": "Title: Joint Classification of Hyperspectral and LiDAR Data Based on Adaptive Gating Mechanism and Learnable Transformer\n\nAbstract: Utilizing multi-modal data, as opposed to only hyperspectral image (HSI), enhances target identification accuracy in remote sensing. Transformers are applied to multi-modal data classification for their long-range dependency but often overlook intrinsic image structure by directly flattening image blocks into vectors. Moreover, as the encoder deepens, unprofitable information negatively impacts classification performance. Therefore, this paper proposes a learnable transformer with an adaptive gating mechanism (AGMLT). Firstly, a spectral–spatial adaptive gating mechanism (SSAGM) is designed to comprehensively extract the local information from images. It mainly contains point depthwise attention (PDWA) and asymmetric depthwise attention (ADWA). The former is for extracting spectral information of HSI, and the latter is for extracting spatial information of HSI and elevation information of LiDAR-derived rasterized digital surface models (LiDAR-DSM). By omitting linear layers, local continuity is maintained. Then, the layer Scale and learnable transition matrix are introduced to the original transformer encoder and self-attention to form the learnable transformer (L-Former). It improves data dynamics and prevents performance degradation as the encoder deepens. Subsequently, learnable cross-attention (LC-Attention) with the learnable transfer matrix is designed to augment the fusion of multi-modal data by enriching feature information. Finally, poly loss, known for its adaptability with multi-modal data, is employed in training the model. Experiments in the paper are conducted on four famous multi-modal datasets: Trento (TR), MUUFL (MU), Augsburg (AU), and Houston2013 (HU). The results show that AGMLT achieves optimal performance over some existing models.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+      "text": "Title: FLUID: Continuous-Time Hyperconnected Sparse Transformer for Sink-Free Learning\n\nAbstract: Continuous-time (CT) Transformers improve irregular and long-range modeling over CT-RNNs by exploiting inputs or outputs embeddings with continuous dynamics. However, the core scaled-dot-product-attention (SDPA) mechanism remains inherently discrete. We propose FLUID (Flexible Unified Information Dynamics), a CT Transformer that incorporates continuous dynamics directly into the attention computation by replacing it with Liquid Attention Network (LAN). LAN reinterprets attention logits as continuous dynamical system and reformulates them as the solution to a linear ODE modulated by input-dependent nonlinear recurrent gates. Theoretically, we establish stability guarantees for LAN dynamics and show that it serves as an interpolating middle ground between SDPA and CT-RNNs, recovering each as special case under well-defined parameterization of its gating functions. LAN also introduces an explicit attention-sink gate to eliminate disproportionate attention mass on uninformative nodes. FLUID replaces standard residual connections with input-dependent Liquid Hyper-Connections to adaptively regulate interlayer information flow. Empirically, we evaluate FLUID on a broad set of learning tasks, including (i) irregular time-series, (ii) long-range modeling, (iii) lane-keeping control of autonomous vehicles, and (iv) learning physical dynamics under a scarce data regime. Across all the tasks, FLUID consistently matches or outperforms CT baselines, achieving improvements of up to 47% in certain scenarios and enhancing generalization under distributional shifts. Additionally, FLUID demonstrates superior noise robustness and a self-correcting inductive bias in autonomous vehicle control. We also provide a detailed analysis of key hyperparameters to guide tuning and show that FLUID occupies an intermediate position among competing approaches in terms of runtime and memory efficiency.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "35d136a0940a4bce9b5d697bd5699871e9936043",
+      "text": "Title: Enhancing Attention-Based Visual Processing With Noise-Boosted Activation Functions\n\nAbstract: Motivated by the principle of stochastic resonance, we investigate the noise-boosted activations within both channel attention mechanisms of convolutional networks and gated linear unit (GLU)-based feedforward networks (FFNs) of Vision Transformers (ViTs) under attention-based visual processing frameworks. Specifically, we replace conventional ReLU or ReLU-based GLU (ReGLU) activations with noise-boosted variants, which incorporate learnable noise scale parameters during training. Experiments on the CIFAR-10 and STL-10 image classifications, Kvasir-SEG medical image segmentation, and Cityscapes semantic segmentation show significant improvements over conventional baselines across diverse attention architectures. The learnable noise scale parameters in activations converge to non-zero values after training, demonstrating the existence of stochastic resonance in deep attention mechanisms. These results indicate that controlled noise injection can enhance information transfer efficiency of neural networks, and establish a coherent framework that connects the theoretical principle of stochastic resonance with its practical applicability in attention-based visual processing.",
+      "relevance_score": 0.45
+    },
+    {
+      "related_paper_id": "3ecc9c4df941d08dc396ad4736d4ab0da8f6d7ab",
+      "text": "Title: Gating is Weighting: Understanding Gated Linear Attention through In-context Learning\n\nAbstract: Linear attention methods offer a compelling alternative to softmax attention due to their efficiency in recurrent decoding. Recent research has focused on enhancing standard linear attention by incorporating gating while retaining its computational benefits. Such Gated Linear Attention (GLA) architectures include competitive models such as Mamba and RWKV. In this work, we investigate the in-context learning capabilities of the GLA model and make the following contributions. We show that a multilayer GLA can implement a general class of Weighted Preconditioned Gradient Descent (WPGD) algorithms with data-dependent weights. These weights are induced by the gating mechanism and the input, enabling the model to control the contribution of individual tokens to prediction. To further understand the mechanics of this weighting, we introduce a novel data model with multitask prompts and characterize the optimization landscape of learning a WPGD algorithm. Under mild conditions, we establish the existence and uniqueness (up to scaling) of a global minimum, corresponding to a unique WPGD solution. Finally, we translate these findings to explore the optimization landscape of GLA and shed light on how gating facilitates context-aware learning and when it is provably better than vanilla linear attention.",
+      "relevance_score": 0.45
+    },
+    {
+      "related_paper_id": "ed091b29e1efc522c2a8a1844b5a0a56943ec237",
+      "text": "Title: Softmax Linear Attention: Reclaiming Global Competition\n\nAbstract: While linear attention reduces the quadratic complexity of standard Transformers to linear time, it often lags behind in expressivity due to the removal of softmax normalization. This omission eliminates \\emph{global competition}, a critical mechanism that enables models to sharply focus on relevant information amidst long-context noise. In this work, we propose \\textbf{Softmax Linear Attention (SLA)}, a framework designed to restore this competitive selection without sacrificing efficiency. By lifting the softmax operation from the token level to the head level, SLA leverages attention heads as coarse semantic slots, applying a competitive gating mechanism to dynamically select the most relevant subspaces. This reintroduces the ``winner-take-all''dynamics essential for precise retrieval and robust long-context understanding. Distinct from prior methods that focus on refining local kernel functions, SLA adopts a broader perspective by exploiting the higher-level multi-head aggregation structure. Extensive experiments demonstrate that SLA consistently enhances state-of-the-art linear baselines (RetNet, GLA, GDN) across language modeling and long-context benchmarks, particularly in challenging retrieval scenarios where it significantly boosts robustness against noise, validating its capability to restore precise focus while maintaining linear complexity.",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "de3e70154546a2cbaeaf39e893d0a6c96f111e43",
+      "text": "Title: Word-wise Sparse Attention for Multimodal Sentiment Analysis\n\nAbstract: For multimodal sentiment analysis (MSA), the text-centric approach has been shown to be superior in performance, which adopts powerful text models (e.g., BERT) as backbone and studies how to effectively incorporate non-verbal modalities (i.e., audio and visual) to obtain more reﬁned and expressive word representations. In previous methods, the non-verbal information injected into a word representation only comes from a non-verbal segment corresponding to the time span of the word, ignoring the long-range dependencies across modalities. Meanwhile, these methods utilize the Softmax normalization function-based attention mechanism, which makes it difﬁcult to highlight the important information in non-verbal sequences. To this end, this paper proposes a non-verbal information injection method called Word-wise Sparse Attention (WSA) to capture the cross-modal long-range dependencies. When injecting the non-verbal information into a word, the word is used as the semantic anchor to search for the most relevant non-verbal information from holistic non-verbal sequences. Furthermore, an advanced Multimodal Adaptive Gating (MAG) mechanism is introduced to determine the amount of information injected from non-verbal modalities. We evaluate our method on the two publicly available multimodal sentiment datasets. Experimental results show that the proposed approach improves the baseline model consistently on all metrics.",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "e588df297874773ee6a3f240e30969130e576dde",
+      "text": "Title: An integrated multimodal feature fusion with adaptive and attention residual deep learning network for personalized learning recommendation\n\nAbstract: In this research work, a novel multimodal data-based recommendation system is introduced to ultimately enhance student's talents and broaden knowledge without any interference. Initially, the required multimodal data, such as video, images, and text data are gathered from standard sources and it is given to the feature extraction phase. Here, the Bidirectional Encoder Representations from Transformers (BERT), Visual Geometry Group 16-based Autoencoder (VGG16-AE) and 3D VGG16-AE mechanisms are utilized for accurately recognizing and differentiating the significant feature sets such as, first set of features (f1), second set of features (f2) and third set of features (f3) from the input data. Then, the extracted three set of features are fed into the learning recommendation phase here, the Multi-scale Feature Fusion-based Residual Bidirectional Gated recurrent unit with Sparse Attention (MFF-RBG-SA) mechanism is designed to efficiently analyze and generate better solution in an earlier stage. Moreover, the overall performance of the designed approach is estimated with various performance measures and compared with conventional methods to guarantee its reliable effectiveness in the educational sector. In the validation phase, the designed approach has attained higher accuracy value of 95.35%, 95.28%, 95.38% and 95.33% in terms of Linear, Tanh, softmax and sigmoid activation functions, which demonstrate its superior learning recommendation performance than other conventional methods.",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "da9f32757b5bf7878ad77268a71a38f828b34fc2",
+      "text": "Title: SAGA: Selective Adaptive Gating for Efficient and Expressive Linear Attention\n\nAbstract: While Transformer architecture excel at modeling long-range dependencies contributing to its widespread adoption in vision tasks the quadratic complexity of softmax-based attention mechanisms imposes a major bottleneck, particularly when processing high-resolution images. Linear attention presents a promising alternative by reformulating the attention computation from $(QK)V$ to $Q(KV)$, thereby reducing the complexity from $\\mathcal{O}(N^2)$ to $\\mathcal{O}(N)$ while preserving the global receptive field. However, most existing methods compress historical key-value (KV) information uniformly, which can lead to feature redundancy and the loss of directional alignment with the query (Q). This uniform compression results in low-rank $KV$ feature maps, contributing to a performance gap compared to softmax attention. To mitigate this limitation, we propose \\textbf{S}elective \\textbf{A}daptive \\textbf{GA}ting for Efficient and Expressive Linear Attention (SAGA) , which introduces input-adaptive learnable gates to selectively modulate information aggregation into the $KV$ feature map. These gates enhance semantic diversity and alleviate the low-rank constraint inherent in conventional linear attention. Additionally, we propose an efficient Hadamard-product decomposition method for gate computation, which introduces no additional memory overhead. Experiments demonstrate that SAGA achieves a 1.76$\\times$ improvement in throughput and a 2.69$\\times$ reduction in peak GPU memory compared to PVT-T at a resolution of $1280 \\times 1280$. Moreover, it improves top-1 accuracy by up to 4.4\\% on the ImageNet dataset, demonstrating both computational efficiency and model effectiveness.",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "9ed25f101f19ea735ca300848948ed64064b97ca",
+      "text": "Title: Random Feature Attention\n\nAbstract: Transformers are state-of-the-art models for a variety of sequence modeling tasks. At their core is an attention function which models pairwise interactions between the inputs at every timestep. While attention is powerful, it does not scale efficiently to long sequences due to its quadratic time and space complexity in the sequence length. We propose RFA, a linear time and space attention that uses random feature methods to approximate the softmax function, and explore its application in transformers. RFA can be used as a drop-in replacement for conventional softmax attention and offers a straightforward way of learning with recency bias through an optional gating mechanism. Experiments on language modeling and machine translation demonstrate that RFA achieves similar or better performance compared to strong transformer baselines. In the machine translation experiment, RFA decodes twice as fast as a vanilla transformer. Compared to existing efficient transformer variants, RFA is competitive in terms of both accuracy and efficiency on three long text classification datasets. Our analysis shows that RFA's efficiency gains are especially notable on long sequences, suggesting that RFA will be particularly useful in tasks that require working with large inputs, fast decoding speed, or low memory footprints.",
+      "relevance_score": 0.3
+    },
+    {
+      "related_paper_id": "054990a9dae58df37703b2be489dffcb608bab30",
+      "text": "Title: XAG-Net: A Cross-Slice Attention and Skip Gating Network for 2.5D Femur MRI Segmentation\n\nAbstract: Accurate segmentation of femur structures from Magnetic Resonance Imaging (MRI) is critical for orthopedic diagnosis and surgical planning but remains challenging due to the limitations of existing 2D and 3D deep learning-based segmentation approaches. In this study, we propose XAG-Net, a novel 2.5D U-Net-based architecture that incorporates pixel-wise cross-slice attention (CSA) and skip attention gating (AG) mechanisms to enhance inter-slice contextual modeling and intra-slice feature refinement. Unlike previous CSA-based models, XAG-Net applies pixel-wise softmax attention across adjacent slices at each spatial location for fine-grained inter-slice modeling. Extensive evaluations demonstrate that XAG-Net surpasses baseline 2D, 2.5D, and 3D U-Net models in femur segmentation accuracy while maintaining computational efficiency. Ablation studies further validate the critical role of the CSA and AG modules, establishing XAG-Net as a promising framework for efficient and accurate femur MRI segmentation.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+      "text": "Title: Affine-Scaled Attention: Towards Flexible and Stable Transformer Attention\n\nAbstract: Transformer attention is typically implemented using softmax normalization, which enforces attention weights with unit sum normalization. While effective in many settings, this constraint can limit flexibility in controlling attention magnitudes and may contribute to overly concentrated or unstable attention patterns during training. Prior work has explored modifications such as attention sinks or gating mechanisms, but these approaches provide only limited or indirect control over attention reweighting. We propose Affine-Scaled Attention, a simple extension to standard attention that introduces input-dependent scaling and a corresponding bias term applied to softmax-normalized attention weights. This design relaxes the strict normalization constraint while maintaining aggregation of value representations, allowing the model to adjust both the relative distribution and the scale of attention in a controlled manner. We empirically evaluate Affine-Scaled Attention in large-scale language model pretraining across multiple model sizes. Experimental results show consistent improvements in training stability, optimization behavior, and downstream task performance compared to standard softmax attention and attention sink baselines. These findings suggest that modest reweighting of attention outputs provides a practical and effective way to improve attention behavior in Transformer models.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+      "text": "Title: Sparse Attention with Linear Units\n\nAbstract: Recently, it has been argued that encoder-decoder models can be made more interpretable by replacing the softmax function in the attention with its sparse variants. In this work, we introduce a novel, simple method for achieving sparsity in attention: we replace the softmax activation with a ReLU, and show that sparsity naturally emerges from such a formulation. Training stability is achieved with layer normalization with either a specialized initialization or an additional gating function. Our model, which we call Rectified Linear Attention (ReLA), is easy to implement and more efficient than previously proposed sparse attention mechanisms. We apply ReLA to the Transformer and conduct experiments on five machine translation tasks. ReLA achieves translation performance comparable to several strong baselines, with training and decoding speed similar to that of the vanilla attention. Our analysis shows that ReLA delivers high sparsity rate and head diversity, and the induced cross attention achieves better accuracy with respect to source-target word alignment than recent sparsified softmax-based models. Intriguingly, ReLA heads also learn to attend to nothing (i.e. ‘switch off’) for some queries, which is not possible with sparsified softmax alternatives.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "d0f800acb7bfa6e2dca21676fcaa12c9c27a53ff",
+      "text": "Title: Research on Personalized Recommendation Algorithm Integrating Cross-Grained Sentiment and Rating Interaction Features\n\nAbstract: To investigate the impact of cross-grained sentiments on user feature representation and address the issue of data sparsity, this paper proposes a Personalized Recommendation Algorithm Integrating Cross-Grained Sentiment and Rating Interaction Features (ICSR). The algorithm begins by employing a pre-trained BERT (Bidirectional Encoder Representations from Transformers) model and a Bi-GRU (Bidirectional Gated Recurrent Units) network to derive feature vectors from user and item reviews. Sentiment dictionaries and attention mechanisms are then applied to assign appropriate weights to the review features of users and items, respectively. To capture a richer set of sentiment features, a cross-grained sentiment feature fusion module is introduced. This module leverages an LDA (Latent Dirichlet Allocation) model and dependency syntactic analysis techniques to extract fine-grained sentiment features, while a word2vec pre-trained model and sentiment dictionaries are used to capture coarse-grained sentiment features. These features are then fused to form comprehensive cross-grained sentiment representations. Finally, rating interaction features are extracted using matrix factorization techniques, and all features are integrated and fed into a DeepFM model for rating prediction. Experimental results on Amazon datasets demonstrate that the proposed ICSR algorithm significantly outperforms baseline algorithms in terms of recommendation performance.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "62b18cc55dcc7ffe52c28e1086aee893b7bc4334",
+      "text": "Title: Gated Linear Attention Transformers with Hardware-Efficient Training\n\nAbstract: Transformers with linear attention allow for efficient parallel training but can simultaneously be formulated as an RNN with 2D (matrix-valued) hidden states, thus enjoying linear-time inference complexity. However, linear attention generally underperforms ordinary softmax attention. Moreover, current implementations of linear attention lack I/O-awareness and are thus slower than highly optimized implementations of softmax attention. This work describes a hardware-efficient algorithm for linear attention that trades off memory movement against parallelizability. The resulting implementation, dubbed FLASHLINEARATTENTION, is faster than FLASHATTENTION-2 (Dao, 2023) as a standalone layer even on short sequence lengths (e.g., 1K). We then generalize this algorithm to a more expressive variant of linear attention with data-dependent gates. When used as a replacement for the standard attention layer in Transformers, the resulting gated linear attention (GLA) Transformer is found to perform competitively against the LLaMA-architecture Transformer (Touvron et al., 2023) as well recent linear-time-inference baselines such as RetNet (Sun et al., 2023a) and Mamba (Gu&Dao, 2023) on moderate-scale language modeling experiments. GLA Transformer is especially effective at length generalization, enabling a model trained on 2K to generalize to sequences longer than 20K without significant perplexity degradations. For training speed, the GLA Transformer has higher throughput than a similarly-sized Mamba model.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "0083441df759656c14cc5c2ead894bd55973a00b",
+      "text": "Title: Exploring Diffusion Transformer Designs via Grafting\n\nAbstract: Designing model architectures requires decisions such as selecting operators (e.g., attention, convolution) and configurations (e.g., depth, width). However, evaluating the impact of these decisions on model quality requires costly pretraining, limiting architectural investigation. Inspired by how new software is built on existing code, we ask: can new architecture designs be studied using pretrained models? To this end, we present grafting, a simple approach for editing pretrained diffusion transformers (DiTs) to materialize new architectures under small compute budgets. Informed by our analysis of activation behavior and attention locality, we construct a testbed based on the DiT-XL/2 design to study the impact of grafting on model quality. Using this testbed, we develop a family of hybrid designs via grafting: replacing softmax attention with gated convolution, local attention, and linear attention, and replacing MLPs with variable expansion ratio and convolutional variants. Notably, many hybrid designs achieve good quality (FID: 2.38-2.64 vs. 2.27 for DiT-XL/2) using<2% pretraining compute. We then graft a text-to-image model (PixArt-Sigma), achieving a 1.43x speedup with less than a 2% drop in GenEval score. Finally, we present a case study that restructures DiT-XL/2 by converting every pair of sequential transformer blocks into parallel blocks via grafting. This reduces model depth by 2x and yields better quality (FID: 2.77) than other models of comparable depth. Together, we show that new diffusion model designs can be explored by grafting pretrained DiTs, with edits ranging from operator replacement to architecture restructuring. Code and grafted models: https://grafting.stanford.edu",
+      "relevance_score": 0.15
+    },
+    {
+      "related_paper_id": "44644239973382ebe8510ef829532657d8fbdd7e",
+      "text": "Title: Emotion-Aware RoBERTa enhanced with emotion-specific attention and TF-IDF gating for fine-grained emotion recognition\n\nAbstract: Emotion recognition in text is a fundamental task in natural language processing, underpinning applications such as sentiment analysis, mental health monitoring, and content moderation. Although transformer-based models like RoBERTa have advanced contextual understanding in text, they still face limitations in identifying subtle emotional cues, handling class imbalances, and processing noisy or informal input. To address these challenges, this paper introduces Emotion-Aware RoBERTa, an enhanced framework that integrates an Emotion-Specific Attention (ESA) layer and a TF-IDF based gating mechanism. These additions are designed to dynamically prioritize emotionally salient tokens while suppressing irrelevant content, thereby improving both classification accuracy and robustness. The model achieved 96.77% accuracy and a weighted F1-score of 0.97 on the primary dataset, outperforming baseline RoBERTa and other benchmark models such as DistilBERT and ALBERT with a relative improvement ranging from 9.68% to 10.87%. Its generalization capability was confirmed across two external datasets, achieving 88.03% on a large-scale corpus and 65.67% on a smaller, noisier dataset. An ablation study revealed the complementary impact of the ESA and TF-IDF components, balancing performance and inference efficiency. Attention heatmaps were used to visualize ESA’s ability to focus on key emotional expressions, while inference-time optimizations using FP16 and Automatic Mixed Precision (AMP) reduced memory consumption and latency. Additionally, McNemar’s statistical test confirmed the significance of the improvements over the baseline. These findings demonstrate that Emotion-Aware RoBERTa offers a scalable, interpretable, and deployment-friendly solution for fine-grained emotion recognition, making it well-suited for real-world NLP applications in emotion-aware systems.",
+      "relevance_score": 0.15
+    },
+    {
+      "related_paper_id": "fb671ac14bef8703b3bb680107ea992e25e025d4",
+      "text": "Title: Attention Saturation and Gradient Suppression at Inflection Layers: Diagnosing and Mitigating Bottlenecks in Transformer Adaptation\n\nAbstract: Pre-trained Transformers often exhibit over-confidence in source patterns and difficulty in forming new target-domain patterns during fine-tuning. We formalize the mechanism of output saturation leading to gradient suppression through standard cross-entropy and softmax analysis, showing that gradient suppression at inflection layers confines adaptation to high-level recombination of existing features while preventing low-level reconstruction. We introduce a set of layer-wise diagnostic metrics -- attention entropy (saturation proxy), activation gradient norm, parameter gradient norm, and Delta-CKA under a shared PCA basis -- to identify inflection layers characterized by both low attention entropy and steep gradient decay. Building on these findings, we propose a diagnose-first, inject-light fine-tuning strategy: selectively inserting LoRA adapters at inflection layers to restore suppressed backward signals with minimal parameter overhead. Experiments on BERT-base transfer from SST-2 to Rotten Tomatoes under under-trained and over-trained source regimes reveal that over-trained initialization benefits from inflection-layer LoRA injection, while under-trained initialization suffers performance degradation. When base features are strong, unblocking inflection layers facilitates high-level compositional adaptation; when base features are weak, full-pathway unblocking is required for low-level reconstruction, as supported by joint analysis of layer-wise activation gradients and Delta-CKA dynamics.",
+      "relevance_score": 0.1
+    },
+    {
+      "related_paper_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+      "text": "Title: LINA: Linear Autoregressive Image Generative Models with Continuous Tokens\n\nAbstract: Autoregressive models with continuous tokens form a promising paradigm for visual generation, especially for text-to-image (T2I) synthesis, but they suffer from high computational cost. We study how to design compute-efficient linear attention within this framework. Specifically, we conduct a systematic empirical analysis of scaling behavior with respect to parameter counts under different design choices, focusing on (1) normalization paradigms in linear attention (division-based vs. subtraction-based) and (2) depthwise convolution for locality augmentation. Our results show that although subtraction-based normalization is effective for image classification, division-based normalization scales better for linear generative transformers. In addition, incorporating convolution for locality modeling plays a crucial role in autoregressive generation, consistent with findings in diffusion models. We further extend gating mechanisms, commonly used in causal linear attention, to the bidirectional setting and propose a KV gate. By introducing data-independent learnable parameters to the key and value states, the KV gate assigns token-wise memory weights, enabling flexible memory management similar to forget gates in language models. Based on these findings, we present LINA, a simple and compute-efficient T2I model built entirely on linear attention, capable of generating high-fidelity 1024x1024 images from user instructions. LINA achieves competitive performance on both class-conditional and T2I benchmarks, obtaining 2.18 FID on ImageNet (about 1.4B parameters) and 0.74 on GenEval (about 1.5B parameters). A single linear attention module reduces FLOPs by about 61 percent compared to softmax attention. Code and models are available at: https://github.com/techmonsterwang/LINA.",
+      "relevance_score": 0.1
+    },
+    {
+      "related_paper_id": "ddd3fa6fd2ddb64c9a2eac8939fee3bf3831a16c",
+      "text": "Title: A Differentiable Gating Mechanism for DETR: Improving Attention Efficiency in Real-Time Road Anomaly Detection\n\nAbstract: Accurate detection of road-surface anomalies such as potholes and bumps, along with safety-critical dynamic objects including vehicles and pedestrians, is essential for ensuring traffic safety and enabling reliable autonomous navigation. In this work, \"anomalies\" refer specifically to static road defects, whereas dynamic objects are treated as safety-relevant events that require immediate attention by intelligent systems. Conventional convolution–based detectors like Faster Region-based Convolutional Neural Network (Faster R-CNN), Single Shot MultiBox Detector (SSD), and You Only Look Once (YOLO) perform well on structured objects but struggle to capture long-range contextual dependencies, limiting performance in complex scenes. Transformer-based models such as the Detection Transformer (DETR) overcome these limitations through global self-attention but suffer from redundant attention activations and slow convergence. To address this, we introduce a Differentiable Gating Mechanism integrated into the encoder's self-attention layers of DETR, employing learnable sigmoid-based gates to selectively emphasize informative heads while suppressing redundant ones. Experiments on a custom COCO-annotated dataset of over 4,700 road images demonstrate that the proposed model improves mean Average Precision (mAP)@0.5 from 82.9% to 96.2%, increases mean Intersection over Union (mIoU) from 0.79 to 0.84, reduces trainable parameters by 56%, and achieves a 4.58× faster per image inference time (147.6 ms to 32.2 ms). These results confirm that adaptive gating enhances attention efficiency, accelerates convergence, and significantly improves detection accuracy for real-time road anomaly detection.",
+      "relevance_score": 0.05
+    },
+    {
+      "related_paper_id": "f32502fa8147320b48be351360de43dd22b0006f",
+      "text": "Title: Mixture of Experts Meets Prompt-Based Continual Learning\n\nAbstract: Exploiting the power of pre-trained models, prompt-based approaches stand out compared to other continual learning solutions in effectively preventing catastrophic forgetting, even with very few learnable parameters and without the need for a memory buffer. While existing prompt-based continual learning methods excel in leveraging prompts for state-of-the-art performance, they often lack a theoretical explanation for the effectiveness of prompting. This paper conducts a theoretical analysis to unravel how prompts bestow such advantages in continual learning, thus offering a new perspective on prompt design. We first show that the attention block of pre-trained models like Vision Transformers inherently encodes a special mixture of experts architecture, characterized by linear experts and quadratic gating score functions. This realization drives us to provide a novel view on prefix tuning, reframing it as the addition of new task-specific experts, thereby inspiring the design of a novel gating mechanism termed Non-linear Residual Gates (NoRGa). Through the incorporation of non-linear activation and residual connection, NoRGa enhances continual learning performance while preserving parameter efficiency. The effectiveness of NoRGa is substantiated both theoretically and empirically across diverse benchmarks and pretraining paradigms. Our code is publicly available at https://github.com/Minhchuyentoancbn/MoE_PromptCL",
+      "relevance_score": 0.05
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and a theoretical grounding for sparsity benefits. The related work's abstract states it systematically investigates gating variants and attributes effectiveness to non-linearity and sparse gating scores, but does not mention direct comparisons to prior methods or theoretical grounding for sparsity, aligning with the reviewer's claim of omission. The strength of the claim (partial dilution) matches the evidence of limited disentanglement or comparison.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b33c14de27361872b6974fb4eb4f50092e9a3698",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (Forgetting Transformer) does not provide evidence about comparisons or theoretical analysis in the reviewed paper; it only describes its own method. Therefore, the claim cannot be verified using the related work evidence.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6c0dd9641e15054cb7ce151726aec7b69ba6cd9e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and a theoretical grounding for sparsity-related benefits. The related work evidence is a theoretical paper on universal approximation with softmax attention, which does not address comparisons or sparsity claims. Therefore, there is insufficient evidence to evaluate the claim's alignment or calibration.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper's novelty due to lack of direct comparisons and theoretical grounding for sparsity benefits. The related work is about linear attention for constant memory complexity, not about the paper's gating mechanisms or sparsity analysis. There is no evidence in the related work to evaluate the reviewer's claim about the paper's omissions, making the evidence missing or unverifiable.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "4515619daea41ca054a6aaa7951465ac8bb6fe8f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work evidence is about Flash-ABFT, a method for fault tolerance in attention layers, which is unrelated to the topics of gating mechanisms, sparsity, or comparisons in the reviewed paper. There is no evidence in the provided text to support or contradict the reviewer's claim, making the evidence insufficient for verification.",
+      "relevance_score": 0.9
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8847bd8617f072fc9d00381b65c6e25b230677b2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence critiques the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity-related benefits. However, the related work evidence is about soft error reliability in Vision Transformers, which is unrelated to the paper's focus on gating mechanisms in attention layers, sparsity, or comparisons to existing methods. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.9
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims a lack of direct comparisons to existing methods and omission of theoretical grounding for sparsity-related benefits. The paper's abstract and introduction extensively discuss comparisons (e.g., with Switch Heads, NSA, and baseline models) and provide theoretical analysis (e.g., non-linearity and sparsity factors in Sec. 4.1 and 4.2). The related work (TDA) does not address this claim; it is a separate paper. Therefore, the claim is contradicted by the evidence from the reviewed paper itself.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dfabdaaf06a67a958045f79be14c2aea557fbdd0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity-related benefits. The related work is about linear attention and feature dimension selection, which is not directly relevant to evaluating the novelty claims of the paper under review (which focuses on gating mechanisms). There is no evidence in the related work to assess the claim about comparisons or theoretical grounding.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d28df8d04967fe06a6e2763c5f2e3ec4b005bfe0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work is about Bitcoin price prediction using a hybrid model, which is entirely unrelated to the paper's topic (gating mechanisms in attention). There is no evidence in the related work to support or contradict the reviewer's claim, making it impossible to judge alignment or calibration.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and a theoretical grounding for sparsity benefits. The related work is about deconstructing attention principles, not about gating mechanisms or sparsity. It provides no evidence about comparisons or theoretical grounding in the reviewed paper's context, making the claim unverifiable from the given related work.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fb00a9d4c3ebde47848408f388b0947f6738ecce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and a theoretical grounding for sparsity benefits. The related work evidence is from a different paper on forecasting with graphs and transformers, which does not provide information about comparisons or theoretical grounding in the reviewed paper. Thus, the claim cannot be verified or supported by the given related work.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8bcbfb556f956056f4cca03e4106a0d7da2887b3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for lacking direct comparisons and theoretical grounding on sparsity benefits. The related work is about counting tasks in transformers and does not mention sparsity, gating mechanisms, or direct method comparisons, providing no evidence to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dc7c1a5ef6f81a8ba15eb0aaaaca8153c2886fd8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim concerns the paper's lack of direct comparisons to existing methods and omission of theoretical grounding for sparsity-related benefits. The provided related work is about GFormer, a different paper focused on hardware optimization for Transformers on Gaudi processors. There is no information in the related work that can support, contradict, or relate to the specific claim about the paper being reviewed, making evidence missing and verification impossible.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0d9171e8fd811e1fe57c4e36ad0ce1af556497f7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work paper is about deconstructing recurrence, attention, and gating in forecasting, not about comparing to existing methods or providing theoretical grounding for sparsity in the reviewed paper. There is no evidence in the related work that directly supports or contradicts the claim about the reviewed paper's missing elements. The claim is about the reviewed paper's methodology, but the related work does not address these specific shortcomings.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper lacks direct comparisons and theoretical grounding. The related work explicitly states that systematic direct comparisons are limited and that their benchmark is needed because existing tasks are insufficient. This supports the reviewer's point about missing comparisons. The related work does not address theoretical grounding, but the paper's omission of direct comparisons is confirmed, aligning with the reviewer's claim.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6c8597eba86c4ed4fc9b5df4d8cf1b2a17d64a69",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the novelty is partially diluted by lack of direct comparisons to existing methods and omission of theoretical grounding for sparsity benefits. The related work paper focuses on theoretical limitations of softmax transformers and proposes Strassen attention for reasoning tasks, which does not directly relate to the claims about gating mechanisms or sparsity in the reviewed paper. There is no evidence in the provided related work to support or contradict the specific claims about novelty dilution due to missing comparisons or theoretical grounding.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bcd8a3df75fa5904cecc3616017f3a9a24dad8ea",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the novelty is diluted due to lack of direct comparisons and theoretical grounding for sparsity-related benefits. The related work discusses network sparsity in attention mechanisms but does not provide direct comparisons or theoretical grounding for sparsity benefits in the specific context of gating mechanisms as presented in the reviewed paper. Evidence is insufficient to verify or contradict the claim.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fd5605155ea5f997611c76ed9ecb740821396372",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (on plasticity in Transformers) does not provide evidence about comparisons or theoretical grounding in the reviewed paper; it is a separate study on a different topic, so the relation is unverifiable from the given evidence.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0433028461c5fc2481355afb54542f6c2f505844",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence critiques the paper's lack of direct comparisons and theoretical grounding for sparsity-related benefits. The related work (ID 0433028461c5fc2481355afb54542f6c2f505844) is about Diffusion Transformers and synchronization gaps, which is unrelated to the gating mechanisms, sparsity, or comparisons discussed in the reviewed paper. Thus, there is no evidence from the related work to support or contradict the claim.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "886679b1916ec5d67d30159c249e04243ab02a79",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty is diluted by lack of direct comparisons and omission of theoretical grounding for sparsity benefits. The related work paper on skipping middle layers does not provide evidence to support or contradict this claim; it describes a different architectural approach with its own gating mechanism but does not discuss comparisons to existing methods or theoretical grounding for sparsity in the context of the paper being reviewed.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "56c04d687916c12313abcd50564263acfdd45a3c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (novelty diluted by lack of comparisons and theoretical grounding). The related work is about a different paper (S-NOT for PDE surrogates) and provides no evidence about the paper's novelty, comparisons, or theoretical grounding for sparsity benefits.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0f0d807f1e84f4e75e75dd67f6764d2a532df5b5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer sentence is a claim about the paper being reviewed, but the provided related work evidence (from a different paper on hyperspectral/LiDAR data classification) does not address the paper's novelty, comparisons to existing methods, or theoretical grounding for sparsity. The evidence is unrelated to the claim, making verification impossible.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (FLUID) is about a continuous-time transformer with liquid attention, which is a different method. There is no evidence in the related work text about direct comparisons to existing methods or theoretical grounding for sparsity in the reviewed paper. Thus, the evidence is insufficient to support or contradict the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "35d136a0940a4bce9b5d697bd5699871e9936043",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (noise-boosted activations in vision transformers) does not provide evidence about comparisons or theoretical grounding in the context of the reviewed paper's gating mechanisms. The claim is too vague and evidence is missing.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3ecc9c4df941d08dc396ad4736d4ab0da8f6d7ab",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (GLA paper) provides theoretical analysis of gating in linear attention, but it does not address the specific paper's claims about sparsity benefits or provide comparative evidence against the paper's methods. Therefore, there is insufficient evidence from the related work to evaluate the claim.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ed091b29e1efc522c2a8a1844b5a0a56943ec237",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence critiques the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (Softmax Linear Attention) is a different paper proposing a distinct method (SLA). It does not provide evidence about the reviewed paper's novelty, comparisons, or theoretical justifications. Therefore, the claim cannot be verified or supported by the given related work evidence.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "de3e70154546a2cbaeaf39e893d0a6c96f111e43",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (about multimodal sentiment analysis) does not address these specific points; it describes a different approach (Word-wise Sparse Attention) and does not provide evidence for or against the reviewer's claim about the paper's omissions.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e588df297874773ee6a3f240e30969130e576dde",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novelty being diluted due to lack of direct comparisons and theoretical grounding. The related work evidence (a paper on multimodal recommendation) does not discuss the gating mechanisms or sparsity benefits of the reviewed paper, nor does it provide evidence for or against the claim. Therefore, the evidence is insufficient to evaluate the claim.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "da9f32757b5bf7878ad77268a71a38f828b34fc2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim is about the paper being reviewed (lack of direct comparisons and theoretical grounding for sparsity-related benefits). The related work (SAGA) is a different paper on linear attention gating; it does not provide evidence about the reviewed paper's novelty or comparisons. Thus, the claim cannot be verified against the related work evidence.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9ed25f101f19ea735ca300848948ed64064b97ca",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence critiques the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (RFA) describes a different attention mechanism (linear attention via random features) with optional gating, but does not provide evidence about the paper's novelty, comparisons, or sparsity theory. The claim is too vague and unverifiable with the given evidence.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "054990a9dae58df37703b2be489dffcb608bab30",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty is diluted by lack of direct comparisons and theoretical grounding. The related work describes XAG-Net for MRI segmentation, which is unrelated to the paper's focus on gating mechanisms in attention layers. No evidence in the related work addresses comparisons or theoretical grounding for sparsity-related benefits in the reviewed paper.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity-related benefits. The related work evidence describes a similar focus on improving attention mechanisms via gating/scaling but does not directly address the paper's specific novelty dilution or theoretical omissions. Thus, the claim is partially related but not fully supported or contradicted by the provided related work.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (novelty diluted by lack of direct comparisons and theoretical grounding). The related work evidence (about Sparse Attention with Linear Units) does not provide any information on whether the paper being reviewed makes direct comparisons to existing methods or offers theoretical grounding for sparsity-related benefits. Thus, the evidence is insufficient to assess alignment or calibration.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d0f800acb7bfa6e2dca21676fcaa12c9c27a53ff",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. However, the provided related work is about a personalized recommendation algorithm (ICSR) and has no relevance to the paper's focus on gating mechanisms in attention layers. There is no evidence in the related work to evaluate the claim, making it unverifiable.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "62b18cc55dcc7ffe52c28e1086aee893b7bc4334",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence critiques the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work describes a different paper on gated linear attention with hardware-efficient training, which does not provide evidence about comparisons or theoretical grounding for sparsity in the reviewed paper. Thus, the claim cannot be verified or supported using the related work.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0083441df759656c14cc5c2ead894bd55973a00b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed (novelty diluted by lack of comparisons and theoretical grounding). However, the related work evidence (about grafting diffusion transformers) does not address or provide evidence about direct comparisons or theoretical grounding for sparsity in the gating paper. The claim cannot be verified or refuted using the provided related work text.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "44644239973382ebe8510ef829532657d8fbdd7e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (Emotion-Aware RoBERTa) is about a different domain (emotion recognition) and does not provide evidence related to comparisons or theoretical grounding for sparsity in gating mechanisms, as discussed in the main paper. The claim is about the paper being reviewed, but the related work does not offer relevant support or contradiction.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fb671ac14bef8703b3bb680107ea992e25e025d4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's novelty is diluted by lack of comparisons and theoretical grounding for sparsity benefits. The related work is about LINA, a different paper on linear autoregressive image generation with gating. It does not provide evidence about the reviewed paper's comparisons or theoretical analysis of sparsity, so the claim cannot be evaluated against it.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ddd3fa6fd2ddb64c9a2eac8939fee3bf3831a16c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding. The related work describes a different paper (on DETR for road anomaly detection) and does not provide evidence about the paper being reviewed's novelty, comparisons, or theoretical grounding. The evidence is missing and the claim is unverifiable from the provided related work.",
+      "relevance_score": 0.05
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "f32502fa8147320b48be351360de43dd22b0006f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity-related benefits. The related work discusses theoretical analysis of prompts in continual learning, but it does not address sparsity-related benefits in gating mechanisms, which is the focus of the reviewed paper. Thus, there is no evidence to support or contradict the claim.",
+      "relevance_score": 0.05
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The novelty is partially diluted by the lack of direct comparisons to existing methods and the omission of a theoretical grounding for the sparsity-related benefits.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and a theoretical grounding for sparsity benefits. The related work's abstract states it systematically investigates gating variants and attributes effectiveness to non-linearity and sparse gating scores, but does not mention direct comparisons to prior methods or theoretical grounding for sparsity, aligning with the reviewer's claim of omission. The strength of the claim (partial dilution) matches the evidence of limited disentanglement or comparison.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "b33c14de27361872b6974fb4eb4f50092e9a3698",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (Forgetting Transformer) does not provide evidence about comparisons or theoretical analysis in the reviewed paper; it only describes its own method. Therefore, the claim cannot be verified using the related work evidence.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "6c0dd9641e15054cb7ce151726aec7b69ba6cd9e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and a theoretical grounding for sparsity-related benefits. The related work evidence is a theoretical paper on universal approximation with softmax attention, which does not address comparisons or sparsity claims. Therefore, there is insufficient evidence to evaluate the claim's alignment or calibration.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper's novelty due to lack of direct comparisons and theoretical grounding for sparsity benefits. The related work is about linear attention for constant memory complexity, not about the paper's gating mechanisms or sparsity analysis. There is no evidence in the related work to evaluate the reviewer's claim about the paper's omissions, making the evidence missing or unverifiable.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "4515619daea41ca054a6aaa7951465ac8bb6fe8f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work evidence is about Flash-ABFT, a method for fault tolerance in attention layers, which is unrelated to the topics of gating mechanisms, sparsity, or comparisons in the reviewed paper. There is no evidence in the provided text to support or contradict the reviewer's claim, making the evidence insufficient for verification.",
+          "relevance_score": 0.9
+        },
+        {
+          "related_paper_id": "8847bd8617f072fc9d00381b65c6e25b230677b2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence critiques the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity-related benefits. However, the related work evidence is about soft error reliability in Vision Transformers, which is unrelated to the paper's focus on gating mechanisms in attention layers, sparsity, or comparisons to existing methods. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.9
+        },
+        {
+          "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims a lack of direct comparisons to existing methods and omission of theoretical grounding for sparsity-related benefits. The paper's abstract and introduction extensively discuss comparisons (e.g., with Switch Heads, NSA, and baseline models) and provide theoretical analysis (e.g., non-linearity and sparsity factors in Sec. 4.1 and 4.2). The related work (TDA) does not address this claim; it is a separate paper. Therefore, the claim is contradicted by the evidence from the reviewed paper itself.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "dfabdaaf06a67a958045f79be14c2aea557fbdd0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity-related benefits. The related work is about linear attention and feature dimension selection, which is not directly relevant to evaluating the novelty claims of the paper under review (which focuses on gating mechanisms). There is no evidence in the related work to assess the claim about comparisons or theoretical grounding.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "d28df8d04967fe06a6e2763c5f2e3ec4b005bfe0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work is about Bitcoin price prediction using a hybrid model, which is entirely unrelated to the paper's topic (gating mechanisms in attention). There is no evidence in the related work to support or contradict the reviewer's claim, making it impossible to judge alignment or calibration.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and a theoretical grounding for sparsity benefits. The related work is about deconstructing attention principles, not about gating mechanisms or sparsity. It provides no evidence about comparisons or theoretical grounding in the reviewed paper's context, making the claim unverifiable from the given related work.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "fb00a9d4c3ebde47848408f388b0947f6738ecce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and a theoretical grounding for sparsity benefits. The related work evidence is from a different paper on forecasting with graphs and transformers, which does not provide information about comparisons or theoretical grounding in the reviewed paper. Thus, the claim cannot be verified or supported by the given related work.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "8bcbfb556f956056f4cca03e4106a0d7da2887b3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for lacking direct comparisons and theoretical grounding on sparsity benefits. The related work is about counting tasks in transformers and does not mention sparsity, gating mechanisms, or direct method comparisons, providing no evidence to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "dc7c1a5ef6f81a8ba15eb0aaaaca8153c2886fd8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim concerns the paper's lack of direct comparisons to existing methods and omission of theoretical grounding for sparsity-related benefits. The provided related work is about GFormer, a different paper focused on hardware optimization for Transformers on Gaudi processors. There is no information in the related work that can support, contradict, or relate to the specific claim about the paper being reviewed, making evidence missing and verification impossible.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "0d9171e8fd811e1fe57c4e36ad0ce1af556497f7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work paper is about deconstructing recurrence, attention, and gating in forecasting, not about comparing to existing methods or providing theoretical grounding for sparsity in the reviewed paper. There is no evidence in the related work that directly supports or contradicts the claim about the reviewed paper's missing elements. The claim is about the reviewed paper's methodology, but the related work does not address these specific shortcomings.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper lacks direct comparisons and theoretical grounding. The related work explicitly states that systematic direct comparisons are limited and that their benchmark is needed because existing tasks are insufficient. This supports the reviewer's point about missing comparisons. The related work does not address theoretical grounding, but the paper's omission of direct comparisons is confirmed, aligning with the reviewer's claim.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "6c8597eba86c4ed4fc9b5df4d8cf1b2a17d64a69",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the novelty is partially diluted by lack of direct comparisons to existing methods and omission of theoretical grounding for sparsity benefits. The related work paper focuses on theoretical limitations of softmax transformers and proposes Strassen attention for reasoning tasks, which does not directly relate to the claims about gating mechanisms or sparsity in the reviewed paper. There is no evidence in the provided related work to support or contradict the specific claims about novelty dilution due to missing comparisons or theoretical grounding.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "bcd8a3df75fa5904cecc3616017f3a9a24dad8ea",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the novelty is diluted due to lack of direct comparisons and theoretical grounding for sparsity-related benefits. The related work discusses network sparsity in attention mechanisms but does not provide direct comparisons or theoretical grounding for sparsity benefits in the specific context of gating mechanisms as presented in the reviewed paper. Evidence is insufficient to verify or contradict the claim.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "fd5605155ea5f997611c76ed9ecb740821396372",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (on plasticity in Transformers) does not provide evidence about comparisons or theoretical grounding in the reviewed paper; it is a separate study on a different topic, so the relation is unverifiable from the given evidence.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "0433028461c5fc2481355afb54542f6c2f505844",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence critiques the paper's lack of direct comparisons and theoretical grounding for sparsity-related benefits. The related work (ID 0433028461c5fc2481355afb54542f6c2f505844) is about Diffusion Transformers and synchronization gaps, which is unrelated to the gating mechanisms, sparsity, or comparisons discussed in the reviewed paper. Thus, there is no evidence from the related work to support or contradict the claim.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "886679b1916ec5d67d30159c249e04243ab02a79",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty is diluted by lack of direct comparisons and omission of theoretical grounding for sparsity benefits. The related work paper on skipping middle layers does not provide evidence to support or contradict this claim; it describes a different architectural approach with its own gating mechanism but does not discuss comparisons to existing methods or theoretical grounding for sparsity in the context of the paper being reviewed.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "56c04d687916c12313abcd50564263acfdd45a3c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (novelty diluted by lack of comparisons and theoretical grounding). The related work is about a different paper (S-NOT for PDE surrogates) and provides no evidence about the paper's novelty, comparisons, or theoretical grounding for sparsity benefits.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "0f0d807f1e84f4e75e75dd67f6764d2a532df5b5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer sentence is a claim about the paper being reviewed, but the provided related work evidence (from a different paper on hyperspectral/LiDAR data classification) does not address the paper's novelty, comparisons to existing methods, or theoretical grounding for sparsity. The evidence is unrelated to the claim, making verification impossible.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (FLUID) is about a continuous-time transformer with liquid attention, which is a different method. There is no evidence in the related work text about direct comparisons to existing methods or theoretical grounding for sparsity in the reviewed paper. Thus, the evidence is insufficient to support or contradict the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "35d136a0940a4bce9b5d697bd5699871e9936043",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (noise-boosted activations in vision transformers) does not provide evidence about comparisons or theoretical grounding in the context of the reviewed paper's gating mechanisms. The claim is too vague and evidence is missing.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "3ecc9c4df941d08dc396ad4736d4ab0da8f6d7ab",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (GLA paper) provides theoretical analysis of gating in linear attention, but it does not address the specific paper's claims about sparsity benefits or provide comparative evidence against the paper's methods. Therefore, there is insufficient evidence from the related work to evaluate the claim.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "ed091b29e1efc522c2a8a1844b5a0a56943ec237",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence critiques the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (Softmax Linear Attention) is a different paper proposing a distinct method (SLA). It does not provide evidence about the reviewed paper's novelty, comparisons, or theoretical justifications. Therefore, the claim cannot be verified or supported by the given related work evidence.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "de3e70154546a2cbaeaf39e893d0a6c96f111e43",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (about multimodal sentiment analysis) does not address these specific points; it describes a different approach (Word-wise Sparse Attention) and does not provide evidence for or against the reviewer's claim about the paper's omissions.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "e588df297874773ee6a3f240e30969130e576dde",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novelty being diluted due to lack of direct comparisons and theoretical grounding. The related work evidence (a paper on multimodal recommendation) does not discuss the gating mechanisms or sparsity benefits of the reviewed paper, nor does it provide evidence for or against the claim. Therefore, the evidence is insufficient to evaluate the claim.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "da9f32757b5bf7878ad77268a71a38f828b34fc2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim is about the paper being reviewed (lack of direct comparisons and theoretical grounding for sparsity-related benefits). The related work (SAGA) is a different paper on linear attention gating; it does not provide evidence about the reviewed paper's novelty or comparisons. Thus, the claim cannot be verified against the related work evidence.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "9ed25f101f19ea735ca300848948ed64064b97ca",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence critiques the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (RFA) describes a different attention mechanism (linear attention via random features) with optional gating, but does not provide evidence about the paper's novelty, comparisons, or sparsity theory. The claim is too vague and unverifiable with the given evidence.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "054990a9dae58df37703b2be489dffcb608bab30",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty is diluted by lack of direct comparisons and theoretical grounding. The related work describes XAG-Net for MRI segmentation, which is unrelated to the paper's focus on gating mechanisms in attention layers. No evidence in the related work addresses comparisons or theoretical grounding for sparsity-related benefits in the reviewed paper.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity-related benefits. The related work evidence describes a similar focus on improving attention mechanisms via gating/scaling but does not directly address the paper's specific novelty dilution or theoretical omissions. Thus, the claim is partially related but not fully supported or contradicted by the provided related work.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (novelty diluted by lack of direct comparisons and theoretical grounding). The related work evidence (about Sparse Attention with Linear Units) does not provide any information on whether the paper being reviewed makes direct comparisons to existing methods or offers theoretical grounding for sparsity-related benefits. Thus, the evidence is insufficient to assess alignment or calibration.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "d0f800acb7bfa6e2dca21676fcaa12c9c27a53ff",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. However, the provided related work is about a personalized recommendation algorithm (ICSR) and has no relevance to the paper's focus on gating mechanisms in attention layers. There is no evidence in the related work to evaluate the claim, making it unverifiable.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "62b18cc55dcc7ffe52c28e1086aee893b7bc4334",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence critiques the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work describes a different paper on gated linear attention with hardware-efficient training, which does not provide evidence about comparisons or theoretical grounding for sparsity in the reviewed paper. Thus, the claim cannot be verified or supported using the related work.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "0083441df759656c14cc5c2ead894bd55973a00b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed (novelty diluted by lack of comparisons and theoretical grounding). However, the related work evidence (about grafting diffusion transformers) does not address or provide evidence about direct comparisons or theoretical grounding for sparsity in the gating paper. The claim cannot be verified or refuted using the provided related work text.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "44644239973382ebe8510ef829532657d8fbdd7e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for lacking direct comparisons to existing methods and theoretical grounding for sparsity benefits. The related work (Emotion-Aware RoBERTa) is about a different domain (emotion recognition) and does not provide evidence related to comparisons or theoretical grounding for sparsity in gating mechanisms, as discussed in the main paper. The claim is about the paper being reviewed, but the related work does not offer relevant support or contradiction.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "fb671ac14bef8703b3bb680107ea992e25e025d4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's novelty is diluted by lack of comparisons and theoretical grounding for sparsity benefits. The related work is about LINA, a different paper on linear autoregressive image generation with gating. It does not provide evidence about the reviewed paper's comparisons or theoretical analysis of sparsity, so the claim cannot be evaluated against it.",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "ddd3fa6fd2ddb64c9a2eac8939fee3bf3831a16c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding. The related work describes a different paper (on DETR for road anomaly detection) and does not provide evidence about the paper being reviewed's novelty, comparisons, or theoretical grounding. The evidence is missing and the claim is unverifiable from the provided related work.",
+          "relevance_score": 0.05
+        },
+        {
+          "related_paper_id": "f32502fa8147320b48be351360de43dd22b0006f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks direct comparisons to existing methods and theoretical grounding for sparsity-related benefits. The related work discusses theoretical analysis of prompts in continual learning, but it does not address sparsity-related benefits in gating mechanisms, which is the focus of the reviewed paper. Thus, there is no evidence to support or contradict the claim.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 0.6779661016949152,
+      "best_evidence": [
+        "a295e71055248f4145257ed88f25503a75a78406",
+        "b33c14de27361872b6974fb4eb4f50092e9a3698",
+        "6c0dd9641e15054cb7ce151726aec7b69ba6cd9e"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 2.0,
+          "weight": 0.339
+        },
+        {
+          "related_paper_id": "b33c14de27361872b6974fb4eb4f50092e9a3698",
+          "score": 0.0,
+          "weight": 0.339
+        },
+        {
+          "related_paper_id": "6c0dd9641e15054cb7ce151726aec7b69ba6cd9e",
+          "score": 0.0,
+          "weight": 0.322
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 41,
+    "pairs_attempted": 41,
+    "pairs_completed": 41,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 41.0
+    }
+  },
+  "errors": []
+}

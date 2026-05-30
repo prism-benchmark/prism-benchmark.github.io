@@ -1,0 +1,73 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Analyzing gating mechanisms softmax attention performance stability attention dynamics Systematic investigation gating positions softmax attention",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C2",
+      "query": "Analyzing gating mechanisms softmax attention performance stability attention dynamics Analysis non-linearity sparsity gating effectiveness",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "id": "C3",
+      "query": "Analyzing gating mechanisms softmax attention performance stability attention dynamics Dense MoE evaluation gating",
+      "status": "ok",
+      "count": 3
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Gating mechanisms have been widely utilized, from early models like LSTMs and Highway Networks to recent state space models, linear attention, and also softmax attention. Yet, existing literature rarely examines the specific effects of gating. In this work, we conduct comprehensive experiments to systematically investigate gating-augmented softmax attention variants. Specifically, we perform a comprehensive comparison over 30 variants of 15B Mixture-of-Experts (MoE) models and 1.7B dense models trained on a 3.5 trillion token dataset. Our central finding is that a simple modification-applying a head-specific sigmoid gate after the Scaled Dot-Product Attention (SDPA)-consistently improves performance. This modification also enhances training stability, tolerates larger learning rates, and improves scaling properties. By comparing various gating positions and computational variants, we attribute this effectiveness to two key factors: (1) introducing non-linearity upon the low-rank mapping in the softmax attention, and (2) applying query-dependent sparse gating scores to modulate the SDPA output. Notably, we find this sparse gating mechanism mitigates 'attention sink' and enhances long-context extrapolation performance, and we also release related $\\href{https://github.com/qiuzh20/gated_attention}{codes}$ and $\\href{https://huggingface.co/QwQZh/gated_attention}{models}$ to facilitate future research.",
+      "url": "https://www.semanticscholar.org/paper/a295e71055248f4145257ed88f25503a75a78406",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "de51d98f728bada429d83b088ed74ca3ae39dd9d",
+      "title": "Groundwater depth prediction based on CNN-GRU-attention model",
+      "year": 2026,
+      "venue": "Environmental Monitoring & Assessment",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/de51d98f728bada429d83b088ed74ca3ae39dd9d",
+      "embedding": null,
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "cand_id": "7ecf9e37aeefa82cb0ba4ef3ed4c96f08815c028",
+      "title": "Multi-Scale Convolution-Transformer for Long-Term Correlation Prediction of High-Dimensional Time Series",
+      "year": 2025,
+      "venue": "2025 5th International Conference on Computer Science, Electronic Information Engineering and Intelligent Control Technology (CEI)",
+      "abstract": "This study investigates the long-term forecasting of high-dimensional time series in finance, energy, and the Industrial Internet of Things. We construct a unified forecasting framework based on the Multiscale Convolutional Transformer (MSCT) core. Using a multiscale convolutional front-end, we successfully extract local and cross-scale patterns. We employ sparse attention and low-rank approximation (Nyström/linear projection) techniques to effectively model long-range dependencies. We combine time- and variable-aware positional encoding with gating techniques to optimize both representational power and computational scalability. Based on the 321-dimensional UCI Electric Load (ECL) dataset, collected every 15 minutes over approximately 3.5 years, we develop a unified preprocessing and evaluation standard. Comparative analysis reveals that the MSCT achieves lower RMSE, MAE, and MAPE than other models, including ARIMA, VAR, 1D-CNN/TCN, LSTM, and pure Transformer. The model also achieves best-in-class performance on the intra-week seasonality retention metric. With a p95 latency of nearly 20.5 milliseconds, nearly 10.4 million parameters, and nearly 8.9 gigabytes of peak video memory, this study successfully achieved an optimal balance between efficiency and accuracy. Multi-scale convolution demonstrated significant effectiveness in suppressing redundancy and non-stationary noise in high-dimensional data. The application of sparse/low-rank attention mechanisms significantly reduced the computational cost of long sequences. Deeply coupling these two mechanisms effectively mitigated the degradation of multi-step predictions while enhancing interperiod stability.",
+      "url": "https://www.semanticscholar.org/paper/7ecf9e37aeefa82cb0ba4ef3ed4c96f08815c028",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "95b0592503564ff1b44fdb04d9862faa6ab17202",
+      "title": "Deep Learning Approaches for Water Quality Prediction in Aquaponics Systems: A Comparative Study of Recurrent and Feedforward Architectures",
+      "year": 2025,
+      "venue": "Buletin Ilmiah Sarjana Teknik Elektro",
+      "abstract": "Accurate prediction of water quality parameters is critical for the effective management and sustainability of aquaponics systems. This study evaluates the performance of four deep learning architectures: Long Short-Term Memory (LSTM), Gated Recurrent Unit (GRU), Simple Recurrent Neural Network (SimpleRNN), and Dense Neural Network (DenseNN) for forecasting key water quality parameters, including temperature, turbidity, dissolved oxygen, pH, ammonia, and nitrate. A significant research gap is addressed by analyzing how these models perform on noisy and minimally preprocessed datasets, advancing prior studies that lack robust preprocessing techniques tailored for aquaponics systems. A ten-fold cross-validation framework was employed to rigorously assess the models, with Mean Squared Error (MSE) and Mean Absolute Error (MAE) as evaluation metrics. The results demonstrate that LSTM and GRU models outperform other architectures, achieving average validation losses of 0.0028 and 0.0028, respectively, and mean absolute errors of 0.0473 and 0.0478. These models effectively capture the temporal dependencies inherent in time-series data, making them highly suitable for the complex dynamics of aquaponics systems. Unlike previous studies, this research highlights the trade-offs between computational efficiency and predictive accuracy in these models. In contrast, the SimpleRNN model exhibited higher error rates due to its inability to model long-term dependencies, while the DenseNN model, lacking temporal processing mechanisms, showed the lowest performance with an average validation loss of 0.0075 and MAE of 0.0797. This study underscores the importance of selecting appropriate model architectures for time-series forecasting tasks and provides a foundation for deploying predictive systems to optimize aquaponics operations. Future work includes exploring hybrid models with attention mechanisms and real-time data integration for enhanced operational efficiency.",
+      "url": "https://www.semanticscholar.org/paper/95b0592503564ff1b44fdb04d9862faa6ab17202",
+      "embedding": null,
+      "relevance_score": 0.3333333333333333
+    }
+  ],
+  "stats": {
+    "total_candidates": 6,
+    "after_dedup": 4,
+    "after_nontechnical_filter": 4,
+    "after_year_filter": 4,
+    "final": 4
+  }
+}

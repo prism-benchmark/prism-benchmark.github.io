@@ -1,0 +1,154 @@
+{
+  "paper_id": "DmH4HHVb3y",
+  "source": "deepreview_icml2025",
+  "source_format": "deepreview_json",
+  "reviews_analysis": {
+    "DEEPREVIEW_ICML2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper studies the problem of training LLMs to better collaborate with humans in multi-turn interactions.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The key challenge is that existing LLMs are typically trained with single-turn data and RL methods that incentivize immediate rewards, which leads to passive and unhelpful responses in multi-turn scenarios.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The authors propose a novel training framework, COLLABLLM, that incorporates a multi-turn reward estimation mechanism through collaborative simulation.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "This allows the model to consider the long-term impact of its responses and engage in more proactive and helpful interactions.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The framework is evaluated on three multi-turn tasks (MediumDocEdit-Chat, BigCodeBench-Chat, and MATH-Chat) and shows significant improvements in task performance, efficiency, and interactivity compared to baselines.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "A real-world user study with 201 participants further confirms the effectiveness of COLLABLLM in improving user satisfaction and time savings.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The paper introduces a novel approach to training LLMs for multi-turn collaboration by estimating multi-turn rewards through collaborative simulation.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "This addresses the limitations of traditional single-turn training methods and enables the model to engage in more proactive and helpful interactions.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The writing is clear and well-structured, making it easy to follow the authors' arguments and understand the technical details of the proposed framework.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper also provides sufficient background information and motivation for the problem being addressed.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The user simulator relies on an LLM to role-play as users, which may not fully capture the diversity and complexity of real-world user behaviors.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "This could limit the generalizability of the proposed approach to real-world scenarios where user interactions are more varied and unpredictable.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The evaluation of the proposed method relies on LLM judges to evaluate interactivity, which can be subjective and potentially biased.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "It would be better to have more objective evaluation metrics or human evaluations to validate the results.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The paper does not extensively discuss the potential limitations or failure cases of the proposed approach.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "It would be helpful to include a discussion of scenarios where the method might not perform well or could potentially lead to negative outcomes.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "It is unclear how the proposed method handles situations where the user's intent is unclear or changes over the course of the interaction.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The paper could benefit from a more detailed discussion of how the model adapts to evolving user needs and preferences.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "The paper does not provide a thorough analysis of the computational cost and scalability of the proposed method.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "It would be helpful to include a discussion of the resources required for training and deploying the model, as well as its potential limitations in terms of scalability.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 3575,
+    "completion_tokens": 3575,
+    "total_tokens": 7150
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "paper_id": "1b7whO4SfY",
+  "metadata": {
+    "decision": "Accept (oral)",
+    "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+    "primary_area": "deep_learning",
+    "keywords": "['Attention', 'Large Language Model', 'Gating']",
+    "avg_rating": 5.25,
+    "avg_confidence": 4.0,
+    "num_reviewers": 4
+  },
+  "reviewer_id": "TreeReview",
+  "status": "success",
+  "atomic_comments": [
+    {
+      "arc_id": "ARC_01",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper fails to clearly state its novel contributions upfront, which reduces its immediate impact.",
+      "anchor_quote": "The paper lacks a clear and upfront articulation of its novel contributions, which limits the immediate impact of the work.",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_02",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The methodology section is not detailed enough, omitting information like data sources and preprocessing, hindering reproducibility.",
+      "anchor_quote": "The methodology section is insufficiently detailed, omitting critical information such as data sources, preprocessing steps, and software environments, which hinders reproducibility.",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 1,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_03",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The theoretical justification for the chosen gating positions and forms is underdeveloped.",
+      "anchor_quote": "The theoretical justification for the selection of specific gating positions and forms is not fully developed",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_04",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks controlled experiments to separate the effect of gating from other architectural components.",
+      "anchor_quote": "the paper does not include controlled experiments to isolate the effect of gating from other architectural components.",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 1,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_05",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The discussion of limitations, alternative interpretations, and generalizability is inadequate, weakening the conclusions.",
+      "anchor_quote": "the discussion of limitations, alternative interpretations, and generalizability is inadequate, which weakens the validity of the conclusions.",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_06",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Request for a more explicit statement of the paper's novel contributions in the abstract and introduction.",
+      "anchor_quote": "Could the authors provide a more explicit statement of the paper's novel contributions in the abstract and introduction to enhance clarity and impact?",
+      "D1_actionability": 2,
+      "D2_specificity": 2,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_07",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Asks for detailed information on data sources and preprocessing for the 4T token dataset.",
+      "anchor_quote": "What specific data sources and preprocessing steps were used for the 4T high-quality tokens dataset?",
+      "D1_actionability": 2,
+      "D2_specificity": 2,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_08",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Inquires about ablation studies or controlled experiments isolating gating's effect.",
+      "anchor_quote": "Are there any ablation studies or controlled experiments that isolate the effect of gating from other architectural components",
+      "D1_actionability": 2,
+      "D2_specificity": 2,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_09",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Asks for analysis on how results generalize across different model sizes, tasks, or domains.",
+      "anchor_quote": "How do the results generalize across different model sizes, tasks, or domains?",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_10",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Asks about potential limitations of the gating mechanisms and their impact in different scenarios.",
+      "anchor_quote": "What are the potential limitations of the proposed gating mechanisms, and how might they affect model performance in different scenarios?",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 2
+    }
+  ],
+  "metrics": {
+    "MCS": 0.55,
+    "AR": 0.9,
+    "SD": 0.5,
+    "CD": 0.5,
+    "D1_actionability_mean": 1.5,
+    "D2_specificity_mean": 1.3,
+    "D3_justification_mean": 0.2,
+    "D4_solution_mean": 1.0,
+    "D5_tone_mean": 1.5,
+    "n_arcs": 10,
+    "n_weaknesses": 5,
+    "n_strengths": 0,
+    "n_questions": 5,
+    "n_suggestions": 0,
+    "n_observations": 0
+  }
+}

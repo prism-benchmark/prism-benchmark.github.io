@@ -1,0 +1,243 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Few-step image generation continuous-time consistency trigonometric formulation unifying EDM flow matching",
+      "status": "ok",
+      "count": 5
+    },
+    {
+      "id": "C2",
+      "query": "Few-step image generation continuous-time consistency stabilization recipe continuous-time consistency training",
+      "status": "ok",
+      "count": 18
+    },
+    {
+      "id": "C3",
+      "query": "Few-step image generation continuous-time consistency re-formulated training objective continuous-time consistency",
+      "status": "ok",
+      "count": 12
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+      "title": "SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency Distillation",
+      "year": 2025,
+      "venue": "IEEE International Conference on Computer Vision",
+      "abstract": "This paper presents SANA-Sprint, an efficient diffusion model for ultra-fast text-to-image (T2I) generation. SANA-Sprint is built on a pre-trained foundation model and augmented with hybrid distillation, dramatically reducing inference steps from 20 to 1-4. We introduce three key innovations: (1) We propose a training-free approach that transforms a pretrained flow-matching model for continuous-time consistency distillation (sCM), eliminating costly training from scratch and achieving high training efficiency. Our hybrid distillation strategy combines sCM with latent adversarial distillation (LADD): sCM ensures alignment with the teacher model, while LADD enhances single-step generation fidelity. (2) SANA-Sprint is a unified step-adaptive model that achieves high-quality generation in $1-4$ steps, eliminating step-specific training and improving efficiency. (3) We integrate ControlNet with SANA-Sprint for real-time interactive image generation, enabling instant visual feedback for user interaction. SANA-Sprint establishes a new Pareto frontier in speed-quality tradeoffs, achieving state-of-the-art performance with 7.59 FID and 0.74 GenEval in only 1 step - outperforming FLUX-schnell (7.94 FID / 0.71 GenEval) while being $10 \\times$ faster (0.1 s vs 1.1 s on H100). It also achieves 0.1s (T2I) and 0.25s (ControlNet) latency for $1024 \\times 1024$ images on H100, and 0.31s (T2I) on an RTX 4090, showcasing its exceptional efficiency and potential for AI-powered consumer applications (AIPC). Code and pre-trained models will be open-sourced.",
+      "url": "https://www.semanticscholar.org/paper/ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "331dfe0f72acc614c4008776870caed930366602",
+      "title": "BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Recent diffusion and flow matching models have demonstrated strong capabilities in image generation and editing by progressively removing noise through iterative sampling. While this enables flexible inversion for semantic-preserving edits, few-step sampling regimes suffer from poor forward process approximation, leading to degraded editing quality. Existing few-step inversion methods often rely on pretrained generators and auxiliary modules, limiting scalability and generalization across different architectures. To address these limitations, we propose BiFM (Bidirectional Flow Matching), a unified framework that jointly learns generation and inversion within a single model. BiFM directly estimates average velocity fields in both ``image $\\to$ noise\"and ``noise $\\to$ image\"directions, constrained by a shared instantaneous velocity field derived from either predefined schedules or pretrained multi-step diffusion models. Additionally, BiFM introduces a novel training strategy using continuous time-interval supervision, stabilized by a bidirectional consistency objective and a lightweight time-interval embedding. This bidirectional formulation also enables one-step inversion and can integrate seamlessly into popular diffusion and flow matching backbones. Across diverse image editing and generation tasks, BiFM consistently outperforms existing few-step approaches, achieving superior performance and editability.",
+      "url": "https://www.semanticscholar.org/paper/331dfe0f72acc614c4008776870caed930366602",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "title": "Image-Free Timestep Distillation via Continuous-Time Consistency with Trajectory-Sampled Pairs",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Timestep distillation is an effective approach for improving the generation efficiency of diffusion models. The Consistency Model (CM), as a trajectory-based framework, demonstrates significant potential due to its strong theoretical foundation and high-quality few-step generation. Nevertheless, current continuous-time consistency distillation methods still rely heavily on training data and computational resources, hindering their deployment in resource-constrained scenarios and limiting their scalability to diverse domains. To address this issue, we propose Trajectory-Backward Consistency Model (TBCM), which eliminates the dependence on external training data by extracting latent representations directly from the teacher model's generation trajectory. Unlike conventional methods that require VAE encoding and large-scale datasets, our self-contained distillation paradigm significantly improves both efficiency and simplicity. Moreover, the trajectory-extracted samples naturally bridge the distribution gap between training and inference, thereby enabling more effective knowledge transfer. Empirically, TBCM achieves 6.52 FID and 28.08 CLIP scores on MJHQ-30k under one-step generation, while reducing training time by approximately 40% compared to Sana-Sprint and saving a substantial amount of GPU memory, demonstrating superior efficiency without sacrificing quality. We further reveal the diffusion-generation space discrepancy in continuous-time consistency distillation and analyze how sampling strategies affect distillation performance, offering insights for future distillation research. GitHub Link: https://github.com/hustvl/TBCM.",
+      "url": "https://www.semanticscholar.org/paper/5808f526934396c7269bc8d3f7d91da5970b97de",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "e7ff70d919f500da2a0efb8511b2efb7177c3636",
+      "title": "Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Scene Graph Generation (SGG) unifies object localization and visual relationship reasoning by predicting boxes and subject-predicate-object triples. Yet most pipelines treat SGG as a one-shot, deterministic classification problem rather than a genuinely progressive, generative task. We propose FlowSG, which recasts SGG as continuous-time transport on a hybrid discrete-continuous state: starting from a noised graph, the model progressively grows an image-conditioned scene graph through constraint-aware refinements that jointly synthesize nodes (objects) and edges (predicates). Specifically, we first leverage a VQ-VAE to quantize a scene graph (e.g., continuous visual features) into compact, predictable tokens; a graph Transformer then (i) predicts a conditional velocity field to transport continuous geometry (boxes) and (ii) updates discrete posteriors for categorical tokens (object features and predicate labels), coupling semantics and geometry via flow-conditioned message aggregation. Training combines flow-matching losses for geometry with a discrete-flow objective for tokens, yielding few-step inference and plug-and-play compatibility with standard detectors and segmenters. Extensive experiments on VG and PSG under closed- and open-vocabulary protocols show consistent gains in predicate R/mR and graph-level metrics, validating the mixed discrete-continuous generative formulation over one-shot classification baselines, with an average improvement of about 3 points over the state-of-the-art USG-Par.",
+      "url": "https://www.semanticscholar.org/paper/e7ff70d919f500da2a0efb8511b2efb7177c3636",
+      "embedding": null,
+      "relevance_score": 0.8
+    },
+    {
+      "cand_id": "2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+      "title": "Continuous-Time Distribution Matching for Few-Step Diffusion Distillation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Step distillation has become a leading technique for accelerating diffusion models, among which Distribution Matching Distillation (DMD) and Consistency Distillation are two representative paradigms. While consistency methods enforce self-consistency along the full PF-ODE trajectory to steer it toward the clean data manifold, vanilla DMD relies on sparse supervision at a few predefined discrete timesteps. This restricted discrete-time formulation and mode-seeking nature of the reverse KL divergence tends to exhibit visual artifacts and over-smoothed outputs, often necessitating complex auxiliary modules -- such as GANs or reward models -- to restore visual fidelity. In this work, we introduce Continuous-Time Distribution Matching (CDM), migrating the DMD framework from discrete anchoring to continuous optimization for the first time. CDM achieves this through two continuous-time designs. First, we replace the fixed discrete schedule with a dynamic continuous schedule of random length, so that distribution matching is enforced at arbitrary points along sampling trajectories rather than only at a few fixed anchors. Second, we propose a continuous-time alignment objective that performs active off-trajectory matching on latents extrapolated via the student's velocity field, improving generalization and preserving fine visual details. Extensive experiments on different architectures, including SD3-Medium and Longcat-Image, demonstrate that CDM provides highly competitive visual fidelity for few-step image generation without relying on complex auxiliary objectives. Code is available at https://github.com/byliutao/cdm.",
+      "url": "https://www.semanticscholar.org/paper/2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+      "embedding": null,
+      "relevance_score": 0.8333333333333334
+    },
+    {
+      "cand_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "title": "Align Your Flow: Scaling Continuous-Time Flow Map Distillation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Diffusion- and flow-based models have emerged as state-of-the-art generative modeling approaches, but they require many sampling steps. Consistency models can distill these models into efficient one-step generators; however, unlike flow- and diffusion-based methods, their performance inevitably degrades when increasing the number of steps, which we show both analytically and empirically. Flow maps generalize these approaches by connecting any two noise levels in a single step and remain effective across all step counts. In this paper, we introduce two new continuous-time objectives for training flow maps, along with additional novel training techniques, generalizing existing consistency and flow matching objectives. We further demonstrate that autoguidance can improve performance, using a low-quality model for guidance during distillation, and an additional boost can be achieved by adversarial finetuning, with minimal loss in sample diversity. We extensively validate our flow map models, called Align Your Flow, on challenging image generation benchmarks and achieve state-of-the-art few-step generation performance on both ImageNet 64x64 and 512x512, using small and efficient neural networks. Finally, we show text-to-image flow map models that outperform all existing non-adversarially trained few-step samplers in text-conditioned synthesis.",
+      "url": "https://www.semanticscholar.org/paper/1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "embedding": null,
+      "relevance_score": 0.8333333333333334
+    },
+    {
+      "cand_id": "081a3ea51c9c261872754ec4ef367a36f82f8906",
+      "title": "ArbitraryFlow: Towards One Step Generative Biomedical Image Segmentation",
+      "year": 2025,
+      "venue": "IEEE International Conference on Bioinformatics and Biomedicine",
+      "abstract": "Biomedical image segmentation has witnessed significant advancements through deep learning, wherein diffusionbased generative models have emerged as compelling alternatives to traditional discriminative methodologies by reconceptualizing segmentation through an image-guided noise-to-mask generation paradigm. Yet, their clinical deployment remains constrained by intensive iterative denoising procedures necessitating hundreds to thousands of model function evaluations, compounded by inherent stochastic sampling mechanisms that invariably produce non-deterministic outputs violating the consistency imperatives of clinical decision-making requirements. To overcome these limitations, we propose ArbitraryFlow, a deterministic flowmatching framework that reformulates segmentation as a direct image-to-mask transport problem through an ordinary differential equation (ODE) modeling a continuous-time velocity field that governs the distribution transport dynamics. Crucially, our framework incorporates a two-time flow map mechanism that learns an average velocity field between arbitrary temporal endpoints, consequently enabling few(one)-step mask synthesis without recourse to ODE integration procedures. The velocity field is instantiated via a Diffusion Transformer (DiT) backbone equipped with adaptive layer normalization for effective dual time-conditioned feature modulation while preserving parametric and computational efficiency. Comprehensive experiments across three multimodal datasets (MSD-BraTS, GlaS, BUSI) demonstrate ArbitraryFlow achieves superior segmentation performance relative to established prior arts and consistently outperforms alternative sampling acceleration techniques under various inference budgets. Its single-step instantiation manifests a Dice decline of less than 1.5 % compared to its optimal 1000 step configuration, preserving parity with exhaustive diffusion baselines while delivering computational acceleration exceeding two orders of magnitude. ArbitraryFlow redefines the efficiency- accuracy trade-off in generative segmentation, enabling realtime clinical applications previously unattainable with diffusion paradigms, opening new possibilities for real-time biomedical image analysis. Our code is available at https://github.com/lyupengju/shortcut_flows.",
+      "url": "https://www.semanticscholar.org/paper/081a3ea51c9c261872754ec4ef367a36f82f8906",
+      "embedding": null,
+      "relevance_score": 0.7222222222222222
+    },
+    {
+      "cand_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "title": "ROCM: RLHF on consistency models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Diffusion models have revolutionized generative modeling in continuous domains like image, audio, and video synthesis. However, their iterative sampling process leads to slow generation and inefficient training, challenges that are further exacerbated when incorporating Reinforcement Learning from Human Feedback (RLHF) due to sparse rewards and long time horizons. Consistency models address these issues by enabling single-step or efficient multi-step generation, significantly reducing computational costs. In this work, we propose a direct reward optimization framework for applying RLHF to consistency models, incorporating distributional regularization to enhance training stability and prevent reward hacking. We investigate various $f$-divergences as regularization strategies, striking a balance between reward maximization and model consistency. Unlike policy gradient methods, our approach leverages first-order gradients, making it more efficient and less sensitive to hyperparameter tuning. Empirical results show that our method achieves competitive or superior performance compared to policy gradient based RLHF methods, across various automatic metrics and human evaluation. Additionally, our analysis demonstrates the impact of different regularization techniques in improving model generalization and preventing overfitting.",
+      "url": "https://www.semanticscholar.org/paper/7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "embedding": null,
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "cand_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "title": "Flow-Anchored Consistency Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Continuous-time Consistency Models (CMs) promise efficient few-step generation but face significant challenges with training instability. We argue this instability stems from a fundamental conflict: Training the network exclusively on a shortcut objective leads to the catastrophic forgetting of the instantaneous velocity field that defines the flow. Our solution is to explicitly anchor the model in the underlying flow, ensuring high trajectory fidelity during training. We introduce the Flow-Anchored Consistency Model (FACM), where a Flow Matching (FM) task serves as a dynamic anchor for the primary CM shortcut objective. Key to this Flow-Anchoring approach is a novel expanded time interval strategy that unifies optimization for a single model while decoupling the two tasks to ensure stable, architecturally-agnostic training. By distilling a pre-trained LightningDiT model, our method achieves a state-of-the-art FID of 1.32 with two steps (NFE=2) and 1.70 with just one step (NFE=1) on ImageNet 256x256. To address the challenge of scalability, we develop a memory-efficient Chain-JVP that resolves key incompatibilities with FSDP. This method allows us to scale FACM training on a 14B parameter model (Wan 2.2), accelerating its Text-to-Image inference from 2x40 to 2-8 steps. Our code and pretrained models: https://github.com/ali-vilab/FACM.",
+      "url": "https://www.semanticscholar.org/paper/c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "embedding": null,
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "cand_id": "ac88d87be3320331a1a9614b505e3560143da352",
+      "title": "CM-TTS: Enhancing Real Time Text-to-Speech Synthesis Efficiency through Weighted Samplers and Consistency Models",
+      "year": 2024,
+      "venue": "NAACL-HLT",
+      "abstract": "Neural Text-to-Speech (TTS) systems find broad applications in voice assistants, e-learning, and audiobook creation. The pursuit of modern models, like Diffusion Models (DMs), holds promise for achieving high-fidelity, real-time speech synthesis. Yet, the efficiency of multi-step sampling in Diffusion Models presents challenges. Efforts have been made to integrate GANs with DMs, speeding up inference by approximating denoising distributions, but this introduces issues with model convergence due to adversarial training. To overcome this, we introduce CM-TTS, a novel architecture grounded in consistency models (CMs). Drawing inspiration from continuous-time diffusion models, CM-TTS achieves top-quality speech synthesis in fewer steps without adversarial training or pre-trained model dependencies. We further design weighted samplers to incorporate different sampling positions into model training with dynamic probabilities, ensuring unbiased learning throughout the entire training process. We present a real-time mel-spectrogram generation consistency model, validated through comprehensive evaluations. Experimental results underscore CM-TTS's superiority over existing single-step speech synthesis systems, representing a significant advancement in the field.",
+      "url": "https://www.semanticscholar.org/paper/ac88d87be3320331a1a9614b505e3560143da352",
+      "embedding": null,
+      "relevance_score": 0.6111111111111112
+    },
+    {
+      "cand_id": "03278c329f8e5b4765e3dacb20c3bb049d18bab5",
+      "title": "Riemannian Consistency Model",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Consistency models are a class of generative models that enable few-step generation for diffusion and flow matching models. While consistency models have achieved promising results on Euclidean domains like images, their applications to Riemannian manifolds remain challenging due to the curved geometry. In this work, we propose the Riemannian Consistency Model (RCM), which, for the first time, enables few-step consistency modeling while respecting the intrinsic manifold constraint imposed by the Riemannian geometry. Leveraging the covariant derivative and exponential-map-based parameterization, we derive the closed-form solutions for both discrete- and continuous-time training objectives for RCM. We then demonstrate theoretical equivalence between the two variants of RCM: Riemannian consistency distillation (RCD) that relies on a teacher model to approximate the marginal vector field, and Riemannian consistency training (RCT) that utilizes the conditional vector field for training. We further propose a simplified training objective that eliminates the need for the complicated differential calculation. Finally, we provide a unique kinematics perspective for interpreting the RCM objective, offering new theoretical angles. Through extensive experiments, we manifest the superior generative quality of RCM in few-step generation on various non-Euclidean manifolds, including flat-tori, spheres, and the 3D rotation group SO(3).",
+      "url": "https://www.semanticscholar.org/paper/03278c329f8e5b4765e3dacb20c3bb049d18bab5",
+      "embedding": null,
+      "relevance_score": 0.5833333333333334
+    },
+    {
+      "cand_id": "3371e7745e8ad225391c9393e0e7a3bf66757c35",
+      "title": "Categorical Flow Maps",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "We introduce Categorical Flow Maps, a flow-matching method for accelerated few-step generation of categorical data via self-distillation. Building on recent variational formulations of flow matching and the broader trend towards accelerated inference in diffusion and flow-based models, we define a flow map towards the simplex that transports probability mass toward a predicted endpoint, yielding a parametrisation that naturally constrains model predictions. Since our trajectories are continuous rather than discrete, Categorical Flow Maps can be trained with existing distillation techniques, as well as a new objective based on endpoint consistency. This continuous formulation also automatically unlocks test-time inference: we can directly reuse existing guidance and reweighting techniques in the categorical setting to steer sampling toward downstream objectives. Empirically, we achieve state-of-the-art few-step results on images, molecular graphs, and text, with strong performance even in single-step generation.",
+      "url": "https://www.semanticscholar.org/paper/3371e7745e8ad225391c9393e0e7a3bf66757c35",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "title": "A NON INVASIVE COMPUTER AIDED DIAGNOSIS SYSTEM FOR EARLY DETECTION OF LUNG CARCINOMA IN CT MEDICAL IMAGES",
+      "year": 2017,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "embedding": null,
+      "relevance_score": 0.2777777777777778
+    },
+    {
+      "cand_id": "41966ca5e134b398f3def2251429bab287ff4e37",
+      "title": "Intelligent Data Engineering and Automated Learning - IDEAL 2014 - 15th International Conference, Salamanca, Spain, September 10-12, 2014. Proceedings",
+      "year": 2014,
+      "venue": "Ideal",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/41966ca5e134b398f3def2251429bab287ff4e37",
+      "embedding": null,
+      "relevance_score": 0.25
+    },
+    {
+      "cand_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "title": "Dual-End Consistency Model",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "The slow iterative sampling nature remains a major bottleneck for the practical deployment of diffusion and flow-based generative models. While consistency models (CMs) represent a state-of-the-art distillation-based approach for efficient generation, their large-scale application is still limited by two key issues: training instability and inflexible sampling. Existing methods seek to mitigate these problems through architectural adjustments or regularized objectives, yet overlook the critical reliance on trajectory selection. In this work, we first conduct an analysis on these two limitations: training instability originates from loss divergence induced by unstable self-supervised term, whereas sampling inflexibility arises from error accumulation. Based on these insights and analysis, we propose the Dual-End Consistency Model (DE-CM) that selects vital sub-trajectory clusters to achieve stable and effective training. DE-CM decomposes the PF-ODE trajectory and selects three critical sub-trajectories as optimization targets. Specifically, our approach leverages continuous-time CMs objectives to achieve few-step distillation and utilizes flow matching as a boundary regularizer to stabilize the training process. Furthermore, we propose a novel noise-to-noisy (N2N) mapping that can map noise to any point, thereby alleviating the error accumulation in the first step. Extensive experimental results show the effectiveness of our method: it achieves a state-of-the-art FID score of 1.70 in one-step generation on the ImageNet 256x256 dataset, outperforming existing CM-based one-step approaches.",
+      "url": "https://www.semanticscholar.org/paper/66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "embedding": null,
+      "relevance_score": 0.4444444444444444
+    },
+    {
+      "cand_id": "87e3b490387e91033fe08a00038393235ba49ff2",
+      "title": "Consistent Diffusion Language Models",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Diffusion language models (DLMs) are an attractive alternative to autoregressive models because they promise sublinear-time, parallel generation, yet practical gains remain elusive as high-quality samples still demand hundreds of refinement steps. In continuous domains, consistency training along the probability-flow ODE is a popular recipe to accelerate diffusion. For discrete diffusion, no analogous sample-space ODE exists, making direct adaptation ill-defined. We argue that the natural discrete substitute is not a deterministic trajectory but its stochastic counterpart: the exact posterior bridge, available in closed form for broad corruption families including masked and uniform diffusion. Building on this observation, we introduce Multi-Path Discrete Consistency (MPDC), a new principle that trains a denoiser to be path-invariant in expectation across these stochastic bridges, and instantiate it as the Consistent Diffusion Language Model (CDLM), a single-stage, teacher-free training framework. A single CDLM objective unifies masked diffusion, continuous consistency models, and progressive/discrete distillation as analytic limits or empirical approximations of one common view. Empirically, CDLM establishes a new state of the art on both conditional and unconditional text-generation, consistently outperforming strong base discrete diffusion models and often even multi-stage distilled baselines across sampling budgets, with the largest gains in the few-step regime. Together, these results position CDLM as a principled and scalable foundation for the next generation of fast, high-fidelity discrete generative modeling.",
+      "url": "https://www.semanticscholar.org/paper/87e3b490387e91033fe08a00038393235ba49ff2",
+      "embedding": null,
+      "relevance_score": 0.3888888888888889
+    },
+    {
+      "cand_id": "b0dc0dd4a180cd0472b32b1c0b53d9a2c12d1a21",
+      "title": "Equivariant Efficient Joint Discrete and Continuous MeanFlow for Molecular Graph Generation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Graph-structured data jointly contain discrete topology and continuous geometry, which poses fundamental challenges for generative modeling due to heterogeneous distributions, incompatible noise dynamics, and the need for equivariant inductive biases. Existing flow-matching approaches for graph generation typically decouple structure from geometry, lack synchronized cross-domain dynamics, and rely on iterative sampling, often resulting in physically inconsistent molecular conformations and slow sampling. To address these limitations, we propose Equivariant MeanFlow (EQUIMF), a unified SE(3)-equivariant generative framework that jointly models discrete and continuous components through synchronized MeanFlow dynamics. EQUIMF introduces a unified time bridge and average-velocity updates with mutual conditioning between structure and geometry, enabling efficient few-step generation while preserving physical consistency. Moreover, we develop a novel discrete MeanFlow formulation with a simple yet effective parameterization to support efficient generation over discrete graph structures. Extensive experiments demonstrate that EQUIMF consistently outperforms prior diffusion and flow-matching methods in generation quality, physical validity, and sampling efficiency.",
+      "url": "https://www.semanticscholar.org/paper/b0dc0dd4a180cd0472b32b1c0b53d9a2c12d1a21",
+      "embedding": null,
+      "relevance_score": 0.4
+    },
+    {
+      "cand_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "title": "Full-chip application of machine learning SRAFs on DRAM case using auto pattern selection",
+      "year": 2019,
+      "venue": "Optical Microlithography XXXII",
+      "abstract": "As technology continues to scale aggressively, Sub-Resolution Assist Features (SRAF) are becoming an increasingly key resolution enhancement technique (RET) to maximize the process window enhancement. For the past few technology generations, lithographers have chosen to use a rules-based (RB-SRAF) or a model-based (MB-SRAF) approach to place assist features on the design. The inverse lithography solution, which provides the maximum process window entitlement, has always been out of reach for full-chip applications due to its very high computational cost. ASML has developed and demonstrated a deep learning SRAF placement methodology, Newron™ SRAF, which can provide the performance benefit of an inverse lithography solution while meeting the cycle time requirements for full-chip applications [1]. One of the biggest challenges for a deep learning approach is pattern selection for neural network training. To ensure pattern coverage for maximum accuracy while maintaining turn-around time (TAT,) a deep-learning-based Auto Pattern Selection (APS) tool is evaluated. APS works in conjunction with Newron SRAF to provide the optimal lithography solution. In this paper, Newron SRAF is used on a DRAM layer. A Deep Convolutional Neural Network (DCNN) is trained using the target images and Continuous Transmission Mask (CTM) images. CTM images are gray tone images that are fully optimized by the Tachyon inverse mask optimization engine. Representative patterns selected by APS are used to train the neural network. The trained neural network generates SRAFs on the full-chip and then Tachyon OPC+ is performed to correct main and SRAF simultaneously. The neural network trained by APS patterns is compared with those trained by patterns from manual selection and multiple random selections to demonstrate its robustness on pattern coverage. Tachyon Hierarchical OPC+ (HScan+) is used to apply Newron SRAF at full-chip level in order to keep consistency and increase speed. Full-chip simulation results from Newron SRAF are compared with the baseline OPC flow using RBSRAF and MB-SRAF. The Newron SRAF flow shows significant improvements in NILS and PV band over the baseline flows. This whole flow including APS, Newron SRAF and full-chip HScan+ OPC enables the inverse mask optimization on full-chip level to achieve superior mask performance with production-affordable TAT.",
+      "url": "https://www.semanticscholar.org/paper/bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "embedding": null,
+      "relevance_score": 0.2222222222222222
+    },
+    {
+      "cand_id": "8e3ef009dbd284d9ea75fa36ed34cf46a526c7bb",
+      "title": "An assessment of an Australasian pathway for the introduction of transanal total mesorectal excision ( taTME )",
+      "year": 2017,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/8e3ef009dbd284d9ea75fa36ed34cf46a526c7bb",
+      "embedding": null,
+      "relevance_score": 0.16666666666666666
+    },
+    {
+      "cand_id": "dea423fdae8c7a88f710dd0c86d40e3d8f2638a7",
+      "title": "Modeling and simulation of compressible multi-material interface instabilities",
+      "year": 2013,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/dea423fdae8c7a88f710dd0c86d40e3d8f2638a7",
+      "embedding": null,
+      "relevance_score": 0.1111111111111111
+    },
+    {
+      "cand_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "title": "Advances in Knowledge Discovery and Data Mining: 9th Pacific-Asia Conference, PAKDD 2005, Hanoi, Vietnam, May 18-20, 2005, Proceedings",
+      "year": 1997,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "embedding": null,
+      "relevance_score": 0.08333333333333333
+    }
+  ],
+  "stats": {
+    "total_candidates": 35,
+    "after_dedup": 21,
+    "after_nontechnical_filter": 21,
+    "after_year_filter": 21,
+    "final": 21
+  }
+}

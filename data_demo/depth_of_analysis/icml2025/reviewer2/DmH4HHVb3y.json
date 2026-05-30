@@ -1,0 +1,154 @@
+{
+  "paper_id": "DmH4HHVb3y",
+  "source": "reviewer2_icml2025",
+  "source_format": "reviewer2_txt",
+  "reviews_analysis": {
+    "REVIEWER2_ICML2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "Clear Problem Identification and Motivation: The paper identifies a critical issue in current LLM training—that is, the inability to optimize for long-term interaction and user intent discovery—and frames this as a foundational challenge for improving human-LLM collaboration. This is supported by citations from prior literature on user frustration and inefficiencies in multiturn interactions.",
+        "role": "Premise",
+        "aspect": "Novelty",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Novel Multiturn-Aware Reward (MR) Mechanism: The introduction of the MR is a compelling technical contribution. It integrates both extrinsic (task-specific) and intrinsic (efficiency, engagement) metrics to evaluate responses in a multiturn context. This holistic approach distinguishes COLLABLLM from prior methods that focus exclusively on immediate response quality.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Comprehensive Empirical Validation: The paper reports results across three distinct multiturn benchmarks and a large-scale user study, demonstrating measurable improvements in task performance, interactivity, and user satisfaction. The inclusion of a real-world user study adds practical relevance and credibility to the findings.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "Training Methodology and Data Generation: The use of user simulators and synthetic data generation is well-explained, and the paper highlights how this enables scalable training without human annotations. The release of datasets, code, and models is a strong asset for reproducibility and community contribution.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "Generalizability Demonstrated: The framework is shown to generalize across tasks beyond those used for training, such as the Abg-CoQA benchmark. This suggests robustness and adaptability, which is important for real-world deployment.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Insufficient Justification for Reward Composition and Weighting (Severe): The paper combines extrinsic and intrinsic rewards in a linear fashion (Equation 2), but it does not justify this choice nor explain how the weights were determined. The lack of sensitivity analysis or ablation studies on the weighting parameters undermines the robustness of the reward formulation. Furthermore, the penalty factor on token count (λ) is mentioned as being adjusted differently across tasks, but the rationale for this adjustment is unclear.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Ambiguous Definition of 'Long-Term Collaboration Gain' (Major): The core concept of long-term collaboration gain is not formally defined anywhere in the paper. While the MR is derived from Equation 1, the operational definition of what constitutes a 'gain' is lacking. This leaves the reader questioning whether the MR truly captures the intended long-term benefits or merely proxies for them.",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "Limited Analysis of User Simulator Behavior (Major): The user simulator (based on GPT-4o-mini) plays a crucial role in estimating the MR. However, the paper provides little analysis of how well this simulator mimics real user behavior. It is unclear whether the simulator introduces systematic biases or whether the results are sensitive to the choice of simulator. This limits the validity of the MR estimation and the generalizability of the results.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "No Statistical Significance Testing (Moderate): The reported improvements in task performance, interactivity, and user satisfaction are impressive, but the paper does not provide confidence intervals, p-values, or statistical tests to establish whether these differences are statistically significant. Without this, it is difficult to assess the reliability of the results.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "Incomplete Comparison to Prior Work (Moderate): While the paper briefly references MTPO and STaR-GATE, it does not provide a detailed comparison in terms of scalability, generalizability, or computational efficiency. This omission weakens the novelty argument and makes it hard to position COLLABLLM within the broader landscape of multiturn LLM training methods.",
+        "role": "Rebuttal",
+        "aspect": "Related Work",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "Reproducibility Concerns (Minor): Despite claiming to release code, models, and datasets, the paper does not provide exact hyperparameters or training scripts required to reproduce the results. This raises concerns about replicability and limits the usefulness of the published materials for future research.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Lack of Fairness and Bias Analysis: The paper does not address bias or fairness considerations in the proposed method or the evaluation benchmarks. This is concerning, as multiturn interactions may involve demographic or cultural nuances that could affect performance or user satisfaction.",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "Unclear Handling of Open-Ended Tasks: The paper claims that COLLABLLM is generalizable across tasks, but the evaluation is limited to document editing, code generation, and math problem solving. It is unclear how the method handles subjective or open-ended tasks (e.g., creative writing, ethical dilemmas).",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "No Control Group in User Study: The real-world user study does not mention a control group receiving no assistance or a baseline condition. Without this, it is impossible to determine whether the improvements in user satisfaction and task performance are attributable to COLLABLLM or simply to the presence of any AI assistant.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Insufficient Discussion of Failure Modes: The paper does not describe known failure modes or limitations of the approach. This is problematic because understanding the boundaries of the system is essential for responsible deployment.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Soundness: 3 (Good): While the paper presents a novel idea and provides empirical results, the lack of statistical rigor, unclear definitions, and insufficient validation of the user simulator weaken the soundness of the claims.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Contribution: 3 (Good): The introduction of the multiturn-aware reward (MR) is a meaningful contribution, although the novelty is somewhat diluted by the absence of a thorough comparison to existing multiturn frameworks.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "Confidence: 3 (Moderate): The results are promising, but the lack of statistical significance testing and reproducibility details reduces confidence in the validity of the findings.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "Rating: 7 (Accept): Despite the noted shortcomings, the paper presents a novel and technically sound approach with strong empirical results. The method is well-documented and the release of resources is commendable. However, the lack of statistical rigor and insufficient comparison to prior work prevents a stronger recommendation.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "The paper introduces a novel framework (COLLABLLM) with a clear motivation and solid empirical validation. However, the lack of statistical significance testing, insufficient justification for key design choices, and limited comparison to prior work reduce confidence in the novelty and robustness of the contributions. Nonetheless, the method is well-described and the release of code/data is a strong plus, warranting acceptance.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 4841,
+    "completion_tokens": 4841,
+    "total_tokens": 9682
+  }
+}

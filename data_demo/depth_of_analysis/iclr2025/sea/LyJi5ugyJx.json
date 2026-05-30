@@ -1,0 +1,182 @@
+{
+  "paper_id": "LyJi5ugyJx",
+  "source": "sea_iclr2025",
+  "source_format": "txt",
+  "reviews_analysis": {
+    "SEA_ICLR2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper introduces simplified, stabilized, and scalable continuous-time consistency models (sCMs) for few-step generative modeling.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "It proposes TrigFlow, a new formulation unifying EDM and flow matching, simplifying diffusion models and their associated probability flow ODE and consistency models.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The paper analyzes instability in consistency model training, proposes a complete recipe to mitigate it, including improved time-conditioning, adaptive group normalization, and a re-formulated training objective.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "These improvements lead to better performance in consistency training and distillation, achieving comparable or better results compared to previous discrete-time formulations.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The models, referred to as sCMs, demonstrate success across various datasets and model sizes, scaling effectively with increased compute and narrowing the FID gap with state-of-the-art diffusion models.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Simplification and unification of diffusion model formulations through TrigFlow.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Mitigation of training instability with improved techniques.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "Achieving state-of-the-art or competitive results across different datasets and model sizes.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "Effective scaling to large models on high-resolution datasets.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper does not provide extensive qualitative analysis of generated samples.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The paper focuses on few-step generative models, which might limit its applicability to models requiring more sampling steps.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The paper does not compare against the latest diffusion models for higher resolution datasets.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "How does the proposed method compare to the latest advancements in diffusion models for higher resolution datasets?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "Can the proposed method be extended to models requiring more than two sampling steps?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "What are the potential limitations of using continuous-time consistency models in scenarios where discrete-time models are more computationally efficient?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Soundness result: 4 (excellent)",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Presentation result: 4 (excellent)",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "Contribution result: 4 (excellent)",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "Rating result: 7 (accept, but needs minor improvements)",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "Decision: Accept",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "Reasons: The paper presents significant contributions to the field of few-step generative modeling, specifically in the context of continuous-time consistency models.",
+        "role": "Backing",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "It introduces novel techniques to simplify, stabilize, and scale up the training of these models, achieving state-of-the-art or competitive results.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "However, the paper could benefit from additional qualitative analysis and comparisons against the latest advancements in diffusion models for higher resolution datasets.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "The need for minor improvements in these areas makes the paper suitable for acceptance with appropriate revisions.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 2843,
+    "completion_tokens": 2843,
+    "total_tokens": 5686
+  }
+}

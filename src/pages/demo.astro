@@ -32,7 +32,7 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
   <body class="demo-page font-(family-name:--font-noto-sans)">
     <header class="demo-header">
       <a class="demo-brand" href={prefix} aria-label="PRISM home">
-        <Image src={prismLogo} alt="" class="demo-logo" />
+        <Image src={prismLogo} alt="" class="demo-logo" loading="eager" decoding="sync" />
         <span>PRISM</span>
       </a>
       <a class="demo-back" href={prefix}>Paper page</a>

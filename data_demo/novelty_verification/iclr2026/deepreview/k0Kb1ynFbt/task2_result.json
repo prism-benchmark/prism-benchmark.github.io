@@ -1,0 +1,193 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Unsupervised reinforcement learning diffusion-based exploration state coverage downstream adaptation diffusion-based intrinsic reward unsupervised exploration",
+      "status": "ok",
+      "count": 17
+    },
+    {
+      "id": "C2",
+      "query": "Unsupervised reinforcement learning diffusion-based exploration state coverage downstream adaptation decoupled training scheme diffusion policies",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "id": "C3",
+      "query": "Unsupervised reinforcement learning diffusion-based exploration state coverage downstream adaptation alternating optimization procedure diffusion policy fine-tuning",
+      "status": "ok",
+      "count": 0
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "title": "Exploratory Diffusion Model for Unsupervised Reinforcement Learning",
+      "year": 2025,
+      "venue": "",
+      "abstract": "Unsupervised reinforcement learning (URL) aims to pre-train agents by exploring diverse states or skills in reward-free environments, facilitating efficient adaptation to downstream tasks. As the agent cannot access extrinsic rewards during unsupervised exploration, existing methods design intrinsic rewards to model the explored data and encourage further exploration. However, the explored data are always heterogeneous, posing the requirements of powerful representation abilities for both intrinsic reward models and pre-trained policies. In this work, we propose the Exploratory Diffusion Model (ExDM), which leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks. Specifically, ExDM can accurately estimate the distribution of collected data in the replay buffer with the diffusion model and introduces the score-based intrinsic reward, encouraging the agent to explore less-visited states. After obtaining the pre-trained policies, ExDM enables rapid adaptation to downstream tasks. In detail, we provide theoretical analyses and practical algorithms for fine-tuning diffusion policies, addressing key challenges such as training instability and computational complexity caused by multi-step sampling. Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks, especially in structurally complicated environments.",
+      "url": "https://www.semanticscholar.org/paper/9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "title": "Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning",
+      "year": 2024,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "embedding": null,
+      "relevance_score": 0.8235294117647058
+    },
+    {
+      "cand_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "title": "Contrastive Intrinsic Control for Unsupervised Reinforcement Learning",
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems 35",
+      "abstract": "We introduce Contrastive Intrinsic Control (CIC), an unsupervised reinforcement learning (RL) algorithm that maximizes the mutual information between state-transitions and latent skill vectors. CIC utilizes contrastive learning between state-transitions and skills vectors to learn behaviour embeddings and maximizes the entropy of these embeddings as an intrinsic reward to encourage behavioural diversity. We evaluate our algorithm on the Unsupervised RL Benchmark (URLB) in the asymptotic state-based setting, which consists of a long reward-free pre-training phase followed by a short adaptation phase to downstream tasks with extrinsic rewards. We find that CIC improves over prior exploration algorithms in terms of adaptation efficiency to downstream tasks on state-based URLB. 1 Deep RL is a powerful approach toward solving complex control tasks in the presence of extrinsic rewards. Successful applications include playing video games from pixels [1], mastering the game of Go [2, 3], robotic locomotion [4, 5, 6] and dexterous manipulation [7, 8, 9] policies. While effective, the above advances produced agents that are unable to generalize to new downstream tasks beyond the one they were trained to solve. Humans and animals on the other hand are able to acquire skills with minimal supervision and apply them to solve a variety of downstream tasks. In this work, we seek to train agents that acquire skills without supervision with generalization capabilities by efficiently adapting these skills to downstream tasks.",
+      "url": "https://www.semanticscholar.org/paper/0292a7e356152a842aa47ff4336703cac540a86d",
+      "embedding": null,
+      "relevance_score": 0.9411764705882353
+    },
+    {
+      "cand_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "title": "Balancing State Exploration and Skill Diversity in Unsupervised Skill Discovery",
+      "year": 2025,
+      "venue": "IEEE Transactions on Cybernetics",
+      "abstract": "Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised reinforcement learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this article, we propose contrastive dynamic skill discovery (ComSD) which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multijoint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2-D maze.",
+      "url": "https://www.semanticscholar.org/paper/81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "embedding": null,
+      "relevance_score": 0.8823529411764706
+    },
+    {
+      "cand_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "title": "Constrained Ensemble Exploration for Unsupervised Skill Discovery",
+      "year": 2024,
+      "venue": "International Conference on Machine Learning",
+      "abstract": "Unsupervised Reinforcement Learning (RL) provides a promising paradigm for learning useful behaviors via reward-free per-training. Existing methods for unsupervised RL mainly conduct empowerment-driven skill discovery or entropy-based exploration. However, empowerment often leads to static skills, and pure exploration only maximizes the state coverage rather than learning useful behaviors. In this paper, we propose a novel unsupervised RL framework via an ensemble of skills, where each skill performs partition exploration based on the state prototypes. Thus, each skill can explore the clustered area locally, and the ensemble skills maximize the overall state coverage. We adopt state-distribution constraints for the skill occupancy and the desired cluster for learning distinguishable skills. Theoretical analysis is provided for the state entropy and the resulting skill distributions. Based on extensive experiments on several challenging tasks, we find our method learns well-explored ensemble skills and achieves superior performance in various downstream tasks compared to previous methods.",
+      "url": "https://www.semanticscholar.org/paper/d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "embedding": null,
+      "relevance_score": 0.7647058823529411
+    },
+    {
+      "cand_id": "857db7cdf087f36ec54b7ed1487666f3f14de80d",
+      "title": "SCOPED: Score-Curvature Out-of-distribution Proximity Evaluator for Diffusion",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Out-of-distribution (OOD) detection is essential for reliable deployment of machine learning systems in vision, robotics, reinforcement learning, and beyond. We introduce Score-Curvature Out-of-distribution Proximity Evaluator for Diffusion (SCOPED), a fast and general-purpose OOD detection method for diffusion models that reduces the number of forward passes on the trained model by an order of magnitude compared to prior methods, outperforming most diffusion-based baselines and closely approaching the accuracy of the strongest ones. SCOPED is computed from a single diffusion model trained once on a diverse dataset, and combines the Jacobian trace and squared norm of the model's score function into a single test statistic. Rather than thresholding on a fixed value, we estimate the in-distribution density of SCOPED scores using kernel density estimation, enabling a flexible, unsupervised test that, in the simplest case, only requires a single forward pass and one Jacobian-vector product (JVP), made efficient by Hutchinson's trace estimator. On four vision benchmarks, SCOPED achieves competitive or state-of-the-art precision-recall scores despite its low computational cost. The same method generalizes to robotic control tasks with shared state and action spaces, identifying distribution shifts across reward functions and training regimes. These results position SCOPED as a practical foundation for fast and reliable OOD detection in real-world domains, including perceptual artifacts in vision, outlier detection in autoregressive models, exploration in reinforcement learning, and dataset curation for unsupervised training.",
+      "url": "https://www.semanticscholar.org/paper/857db7cdf087f36ec54b7ed1487666f3f14de80d",
+      "embedding": null,
+      "relevance_score": 0.5882352941176471
+    },
+    {
+      "cand_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "title": "Unsupervised Skill Discovery Through Skill Regions Differentiation",
+      "year": 2025,
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+      "abstract": "Unsupervised reinforcement learning (RL) aims to discover diverse behaviors that can accelerate the learning of downstream tasks. Previous methods typically focus on entropy-based exploration or empowerment-driven skill learning. However, entropy-based exploration struggles in large-scale state spaces (e.g., images), and empowerment-based methods with mutual information (MI) estimations have limitations in state exploration. To address these challenges, we propose a novel skill discovery objective that maximizes the deviation of the state density of one skill from the explored regions of other skills, encouraging inter-skill state diversity similar to the initial MI objective. For state-density estimation, we construct a novel conditional autoencoder with soft modularization for different skill policies in high-dimensional space. Meanwhile, to incentivize intra-skill exploration, we formulate an intrinsic reward based on the learned autoencoder that resembles count-based exploration in a compact latent space. Through extensive experiments in challenging state and image-based tasks, we find our method learns meaningful skills and achieves superior performance in various downstream tasks.",
+      "url": "https://www.semanticscholar.org/paper/bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "embedding": null,
+      "relevance_score": 0.7058823529411765
+    },
+    {
+      "cand_id": "60da2965da20122fb30921c2547806200427d1ea",
+      "title": "Unsupervised Skill Discovery via Recurrent Skill Training",
+      "year": 2022,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "Being able to discover diverse useful skills without external reward functions is beneﬁcial in reinforcement learning research. Previous unsupervised skill discovery approaches mainly train different skills in parallel. Although impressive results have been provided, we found that parallel training procedure can sometimes block exploration when the state visited by different skills overlap, which leads to poor state coverage and restricts the diversity of learned skills. In this paper, we take a deeper look into this phenomenon and propose a novel framework to address this issue, which we call Recurrent Skill Training (ReST). Instead of training all the skills in parallel, ReST trains different skills one after another recurrently, along with a state coverage based intrinsic reward. We conduct experiments on a number of challenging 2D navigation environments and robotic locomotion environments. Evaluation results show that our proposed approach outperforms previous parallel training approaches in terms of state coverage and skill diversity. Videos of the discovered skills are available at https://sites.google.com/ view/neurips22-rest .",
+      "url": "https://www.semanticscholar.org/paper/60da2965da20122fb30921c2547806200427d1ea",
+      "embedding": null,
+      "relevance_score": 0.47058823529411764
+    },
+    {
+      "cand_id": "0933669ea312ad4e9fba16443ef7d925a6e400d6",
+      "title": "Group-Invariant Unsupervised Skill Discovery: Symmetry-aware Skill Representations for Generalizable Behavior",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Unsupervised skill discovery aims to acquire behavior primitives that improve exploration and accelerate downstream task learning. However, existing approaches often ignore the geometric symmetries of physical environments, leading to redundant behaviors and sample inefficiency. To address this, we introduce Group-Invariant Skill Discovery (GISD), a framework that explicitly embeds group structure into the skill discovery objective. Our approach is grounded in a theoretical guarantee: we prove that in group-symmetric environments, the standard Wasserstein dependency measure admits a globally optimal solution comprised of an equivariant policy and a group-invariant scoring function. Motivated by this, we formulate the Group-Invariant Wasserstein dependency measure, which restricts the optimization to this symmetry-aware subspace without loss of optimality. Practically, we parameterize the scoring function using a group Fourier representation and define the intrinsic reward via the alignment of equivariant latent features, ensuring that the discovered skills generalize systematically under group transformations. Experiments on state-based and pixel-based locomotion benchmarks demonstrate that GISD achieves broader state-space coverage and improved efficiency in downstream task learning compared to a strong baseline.",
+      "url": "https://www.semanticscholar.org/paper/0933669ea312ad4e9fba16443ef7d925a6e400d6",
+      "embedding": null,
+      "relevance_score": 0.4117647058823529
+    },
+    {
+      "cand_id": "12b58f56b763da96d044439e742a2d2878ea2ff5",
+      "title": "Disentangling Disentangled Representations: Towards Improved Latent Units via Diffusion Models",
+      "year": 2024,
+      "venue": "IEEE Workshop/Winter Conference on Applications of Computer Vision",
+      "abstract": "Disentangled representation learning (DRL) aims to break down observed data into core intrinsic factors for a profound understanding of the data. In real-world scenarios, manually defining and labeling these factors are non-trivial, making unsupervised methods attractive. Recently, there have been limited explorations of utilizing diffusion models (DMs), which are already mainstream in generative modeling, for unsupervised DRL. They implement their own inductive bias to ensure that each latent unit input to the DM expresses only one distinct factor. In this context, we design Dynamic Gaussian Anchoring to enforce attribute-separated latent units for more interpretable DRL. This unconventional inductive bias explicitly delineates the decision boundaries between attributes while also promoting the independence among latent units. Additionally, we also propose Skip Dropout technique, which easily modifies the denoising U-Net to be more DRL-friendly, addressing its uncooperative nature with the disentangling feature extractor. Our methods, which carefully consider the latent unit semantics and the distinct DM structure, enhance the practicality of DM-based disentangled representations, demonstrating state-of-the-art disentanglement performance on both synthetic and real data, as well as advantages in downstream tasks.",
+      "url": "https://www.semanticscholar.org/paper/12b58f56b763da96d044439e742a2d2878ea2ff5",
+      "embedding": null,
+      "relevance_score": 0.35294117647058826
+    },
+    {
+      "cand_id": "ba3719cb73046896dc3af3f709436e417b100571",
+      "title": "Balancing Both Diversity and Exploration in Unsupervised Discovery of Complex Behaviors",
+      "year": null,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/ba3719cb73046896dc3af3f709436e417b100571",
+      "embedding": null,
+      "relevance_score": 0.29411764705882354
+    },
+    {
+      "cand_id": "bdde840366784131c4eccffea913620cda63cb57",
+      "title": "Advances in Artificial Life: 5th European Conference, ECAL'99, Lausanne, Switzerland, September 13-17, 1999 Proceedings",
+      "year": 1999,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/bdde840366784131c4eccffea913620cda63cb57",
+      "embedding": null,
+      "relevance_score": 0.058823529411764705
+    },
+    {
+      "cand_id": "916967189d9520cb5c0c2a0b52c5cfc0abb19a3f",
+      "title": "Impact Makes a Sound and Sound Makes an Impact: Sound Guides Representations and Explorations",
+      "year": 2022,
+      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+      "abstract": "Sound is one of the most informative and abundant modalities in the real world while being robust to sense without contacts by small and cheap sensors that can be placed on mobile devices. Although deep learning is capable of extracting information from multiple sensory inputs, there has been little use of sound for the control and learning of robotic actions. For unsupervised reinforcement learning, an agent is expected to actively collect experiences and jointly learn representations and policies in a self-supervised way. We build realistic robotic manipulation scenarios with physics-based sound simulation and propose the Intrinsic Sound Curiosity Module (ISCM). The ISCM provides feedback to a reinforcement learner to learn robust representations and to reward a more efficient exploration behavior. We perform experiments with sound enabled during pre-training and disabled during adaptation, and show that representations learned by ISCM outperform the ones by vision-only baselines and pre-trained policies can accelerate the learning process when applied to downstream tasks.",
+      "url": "https://www.semanticscholar.org/paper/916967189d9520cb5c0c2a0b52c5cfc0abb19a3f",
+      "embedding": null,
+      "relevance_score": 0.17647058823529413
+    },
+    {
+      "cand_id": "cd6d59659fc4e64bbb8d111ace040288e5237bae",
+      "title": "A Vision for Reinforcement Learning and its Implications for Neural Compuation",
+      "year": 2010,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/cd6d59659fc4e64bbb8d111ace040288e5237bae",
+      "embedding": null,
+      "relevance_score": 0.23529411764705882
+    },
+    {
+      "cand_id": "92edf4d699a139b757e6cfb5407872af5472a758",
+      "title": "Explore and Control with Adversarial Surprise",
+      "year": 2021,
+      "venue": "arXiv.org",
+      "abstract": "Unsupervised reinforcement learning (RL) studies how to leverage environment statistics to learn useful behaviors without the cost of reward engineering. However, a central challenge in unsupervised RL is to extract behaviors that meaningfully affect the world and cover the range of possible outcomes, without getting distracted by inherently unpredictable, uncontrollable, and stochastic elements in the environment. To this end, we propose an unsupervised RL method designed for high-dimensional, stochastic environments based on an adversarial game between two policies (which we call Explore and Control) controlling a single body and competing over the amount of observation entropy the agent experiences. The Explore agent seeks out states that maximally surprise the Control agent, which in turn aims to minimize surprise, and thereby manipulate the environment to return to familiar and predictable states. The competition between these two policies drives them to seek out increasingly surprising parts of the environment while learning to gain mastery over them. We show formally that the resulting algorithm maximizes coverage of the underlying state in block MDPs with stochastic observations, providing theoretical backing to our hypothesis that this procedure avoids uncontrollable and stochastic distractions. Our experiments further demonstrate that Adversarial Surprise leads to the emergence of complex and meaningful skills, and outperforms state-of-the-art unsupervised reinforcement learning methods in terms of both exploration and zero-shot transfer to downstream tasks.",
+      "url": "https://www.semanticscholar.org/paper/92edf4d699a139b757e6cfb5407872af5472a758",
+      "embedding": null,
+      "relevance_score": 0.11764705882352941
+    },
+    {
+      "cand_id": "ce37384218421d884f0aff8d3ca0242fbbda25fd",
+      "title": "ComSD: Balancing Behavioral Quality and Diversity in Unsupervised Skill Discovery",
+      "year": 2023,
+      "venue": "",
+      "abstract": "This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible. Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised Reinforcement Learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this paper, we propose \\textbf{Co}ntrastive dyna\\textbf{m}ic \\textbf{S}kill \\textbf{D}iscovery \\textbf{(ComSD)}\\footnote{Code and videos: https://github.com/liuxin0824/ComSD} which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multi-joint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2D maze.",
+      "url": "https://www.semanticscholar.org/paper/ce37384218421d884f0aff8d3ca0242fbbda25fd",
+      "embedding": null,
+      "relevance_score": 0.5294117647058824
+    }
+  ],
+  "stats": {
+    "total_candidates": 17,
+    "after_dedup": 16,
+    "after_nontechnical_filter": 16,
+    "after_year_filter": 16,
+    "final": 16
+  }
+}

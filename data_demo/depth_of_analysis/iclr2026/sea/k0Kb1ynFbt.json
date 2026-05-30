@@ -1,0 +1,154 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "source": "sea_iclr2026",
+  "source_format": "txt",
+  "reviews_analysis": {
+    "SEA_ICLR2026": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper introduces the Exploratory Diffusion Model (ExDM), a novel approach that leverages diffusion models for unsupervised reinforcement learning (RL) to enhance exploration in reward-free environments and provide a strong initialization for downstream tasks.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The method trains a diffusion model to capture the heterogeneous state distribution in the replay buffer, defining an intrinsic reward based on the score function to drive broad state coverage and maximize entropy.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "It decouples modeling from acting, employing a lightweight Gaussian policy to maximize the intrinsic reward, and introduces an efficient decoupled training scheme for fine-tuning the diffusion components to downstream tasks under limited interaction, with theoretical guarantees of convergence and optimality.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The paper addresses a key challenge in unsupervised RL: the demand for strong modeling capacity during both pre-training and fine-tuning.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "It introduces a novel method, ExDM, that enhances exploration in reward-free environments and provides a powerful initialization for downstream tasks.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The method is designed to be scalable and efficient, with a decoupled training scheme that separates modeling from acting.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "It includes theoretical analysis and an alternating optimization procedure for efficient fine-tuning of diffusion components to downstream tasks.",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The paper does not provide a comprehensive comparison of the method with state-of-the-art techniques in unsupervised RL, which could help in assessing its novelty and effectiveness.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The theoretical analysis is somewhat limited to a specific theorem that is not deeply explored, and its practical implications are not clearly demonstrated.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "How does ExDM compare to other state-of-the-art unsupervised RL methods in terms of exploration efficiency and downstream task performance?",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "What are the specific limitations of the theoretical analysis presented, and how do they impact the practical applicability of the method?",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "How does the proposed alternating optimization procedure improve upon existing methods for fine-tuning diffusion models, and what are its practical implications?",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "Soundness result: 4 (excellent)",
+        "role": "Premise",
+        "aspect": "Other",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "Presentation result: 4 (excellent)",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Contribution result: 4 (excellent)",
+        "role": "Premise",
+        "aspect": "Novelty",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Rating result: 7 (accept, but needs minor improvements)",
+        "role": "Premise",
+        "aspect": "Other",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Decision: Accept",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The paper presents a novel and theoretically grounded approach to unsupervised RL that addresses a significant challenge in the field.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "It includes a strong empirical evaluation on standard benchmarks, demonstrating state-of-the-art performance in both exploration and transfer.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "However, the paper would benefit from a more comprehensive comparison with existing methods and a more in-depth discussion of the theoretical analysis and its practical implications.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 3150,
+    "completion_tokens": 3150,
+    "total_tokens": 6300
+  }
+}

@@ -1,0 +1,658 @@
+{
+  "paper_id": "LyJi5ugyJx",
+  "source": "human",
+  "evaluator_model": "mimo-v2.5-pro",
+  "reviews_analysis": {
+    "Human_1": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper investigates a fundamental topic in consistency models (CMs), specifically the challenges of discretization errors and the resulting training stability issue.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Consistency Models can be trained in discrete or continuous time, either from scratch using a dataset or distilled from pretrained teacher scores.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "CMs' theoretical foundation elucidates the importance of controlling the discretization error and eventually achieving consistency in continuous time.",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "While continuous-time CMs eliminate the discretization errors present in their discrete-time counterparts, they suffer from training instability, a problem that is not yet well understood in the research community.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "This work conducts a comprehensive study into continuous-time CMs, covering forward process parameterization, network architecture, and training techniques.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The authors first develop a simplified diffusion process formulation called TrigFlow, which unifies EDM and Flow Matching for the first time.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Building upon this foundation, they analyze the gradient flow of continuous-time CMs, identify the root cause of training instability, and mitigate this issue through modifications to time embeddings and adaptive group normalization.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "Additional training techniques, such as adaptive weighting functions and annealing, further contribute to improved training stability and scalability.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The resulting method, sCT/sCD, allows continuous-time CMs to be trained at an unprecedented scale, scaling up to 1.5B parameters on ImageNet 512x512.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "These results significantly narrow the performance gap between CMs and state-of-the-art diffusion models to less than 10% in FID, while matching or even surpassing adversarial methods and discrete/continuous autoregressive models in both performance and efficiency.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "This is a very strong paper in analysis, practical techniques, writing, and experiment results.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Novelty. This paper's novelty is evident in several aspects.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "First, it studies an important but less studied problem: consistency models in continuous time, together with the training stability and discretization error of consistency models.",
+        "role": "Premise",
+        "aspect": "Novelty",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The proposed TrigFlow, as a novel unification of EDM and Flow Matching, substantially simplifies the analysis presented later and the practical techniques.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The gradient analysis of continuous-time objective reveals the root cause of instability. To the best of my knowledge, this is the first paper to establish the gradient analysis for CMs.",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Model architecture modifications are original since existing works are mostly inherited from Diffusion Models' design and focus on the training techniques and formulations, leaving the architectural design underexplored.",
+        "role": "Premise",
+        "aspect": "Novelty",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Soundness. Its technical claims are well backed up by both theoretical analysis and empirical results.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "I particularly appreciate the in-depth investigation into the training dynamics and gradient analysis of continuous-time CMs.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "Presentation. The logical flow of this paper is well structured and smooth.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "The problem statement is clearly defined, and the explanation of why discretization errors matter for CMs and the motivation toward continuous-time formulation is crystal clear.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "The gradient analysis into continuous-time CMs is thoughtfully motivated and carefully organized.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "Even the appendix is well-written, offering useful insights into the proposed techniques.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "Experiments. Proposed techniques allow for training continuous-time Consistency Models (sCMs) at an unprecedented scale.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "Experiment results are impressive, matching/outperforming adversarial approaches, score distillation, and recent autoregressive models.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_25",
+        "argument": "Gradient variances have been carefully controlled via adaptive weighting and normalization techniques.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_26",
+        "argument": "Comprehensively studying the scaling behaviors of sCMs under continuous-time training.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_27",
+        "argument": "Comparisons with improved score distillation baseline using many methods developed in this work confirm the mode coverage of CMs.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_28",
+        "argument": "Additionally, the paper discusses efficient and stable implementation strategies for continuous-time CMs.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_29",
+        "argument": "Given the potential impact of this paper, I strongly recommend acceptance with conference highlights.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_30",
+        "argument": "It was a great pleasure to read through the manuscript!",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_31",
+        "argument": "I did not find any apparent weaknesses in the analysis or experiments (including both ablation studies and performance evaluation).",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_32",
+        "argument": "There are research questions worth further investigation, as discussed below.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ],
+    "Human_2": [
+      {
+        "arg_id": "A_01",
+        "argument": "The authors propose improvements to the consistency models generative paradigm and named their new method sCM.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Specifically they -vastly- improve the FID for consistency models with the introduction of several new ideas to both stabilize and simplify continuous consistency models.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "My understanding is the main claim of simplification for sCM comes from the simplification of EDM (Kerras et al.) normalizing design, resulting in $c_{in}=c_{skip}=1$ which in turns simplifies the continuous expression of consistency models.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "Another simplification is the combination of both EDM and Flow Matching concepts into their method which they call TrigFlow.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "Yet another simplification, not claimed as such by authors, is the use of vanilla L2 loss compared to Huber/LPIPS use in previous iterations of consistency models.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "This last simplification has the additional benefit to be more probabilistically grounded.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "There are 3 main proposed ideas to stabilize the training of consistency models: 1. Identity-time transformation as a replacement to the log-transformation from EDM 2. Fourier embedding of the time dimension are replaced by positional embeddings 3. AdaGN is modified to also normalize the conditioning inputs for scale and bias.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "More ideas are also proposed in the training objective to stabilize training, namely: tangent normalization and tangent warmup.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "It is my understanding that the adaptative weighing is the same as in EDM.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper also provides ample ablations to demonstrate the effects and the reasoning motivating these 3 proposed improvements.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The paper is very well grounded mathematically and experimentally.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The analysis is based on understanding the causes of training instabilities by decomposing the loss, validating each component experimentally and proposing changes to solve the root causes.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The mathematics while greatly simplified are still pretty complex and the paper shines in its clarity to make the logical reasoning easy to follow.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The experimental results are also outstanding resulting in very significant gains, essentially taking consistency models within 10% of the SOTA for diffusion models.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The limitations of the method are not very clear to me besides the fact that it's still 10% worse than SOTA for diffusion.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "The section on positional embeddings (line 269 and on) lacks details to be fully understandable without having to read another paper.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Maybe beefing up that section would make the paper more self-contained.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "I found all figure very useful with the exception of Figure (3) which I felt did not add much value.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      }
+    ],
+    "Human_3": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper presents a unified perspective on diffusion-based and flow-based generative models and introduces a comprehensive set of techniques aimed at improving the training stability and overall performance of continuous-time consistency models for large-scale image generation.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The techniques include: 1) enhancing time transformation and embeddings, 2) replacing the AdaGN layer with Adaptive Double Normalization, 3) normalizing the tangent function and applying tangent warm-up, 4) implementing an adaptive weighting function in the training objective, and 5) optimizing forward-mode differentiation.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "These techniques mitigate the numerical instability issues in continuous-time consistency models and enable the model to achieve highly competitive performance in class-conditioned image generation.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "S1 - The paper provides a comprehensive analysis and set of solutions addressing the numerical instability issues in continuous-time consistency models, significantly improving performance and enabling the model to achieve competitive results on selected benchmarks.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "S2 - Many of the enhancements are supported by detailed theoretical justification and experimental results.",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "S3 - The unified perspective on previous diffusion and flow-matching parameterizations is thorough, complete, and well-grounded, offering novel insights that could benefit the community.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "S4 - The paper is well-structured and easy to follow.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "W1 - Several design choices appear arbitrary and lack supporting evidence.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "For example, in Section 4.1, the authors discuss the preference for Adaptive Double Normalization over AdaGN, but there is no experimental evidence supporting this choice.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "It would be more insightful to add a Figure similar to Figure 5 show experimental comparison between Adaptive Double Norm and AdaGN.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "Similarly, in Section 4.2, the authors propose training with linear warm-up w.r.t the model's time derivative, yet no evidence is provided to demonstrate this choice’s effectiveness.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Again, including an ablation study or comparative analysis showing the impact of the linear warm-up on training stability or performance metrics would provide more concrete evidence for the effectiveness of this specific choice.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "Furthermore, Figure 5(b) suggests that incorporating adaptive weighting in a two-step setting may lead to worse performance, while in the one-step setting, it only yields marginal improvement.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "Have the authors considered alternative designs for the two step case?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "W2 - In Sections 4.1 and 5.2, the paper discusses the training compute of sCM. However, including a comparison of compute efficiency with other models (e.g., ECT [1]) would be more insightful.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "maybe a table or figure comparing the compute efficiency (e.g., FLOPs or training time) of sCM against ECT and other relevant baselines for a given performance level.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Additionally, given that the model is trained on a large-scale dataset (ImageNet 512) under latent setting, it would be beneficial to include discussions related to text-to-image generation.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      }
+    ],
+    "Human_4": [],
+    "Human_5": [
+      {
+        "arg_id": "A_01",
+        "argument": "This work proposed a set of improved training techniques to stabilize the training of continuous-time consistency models, including new consistency function formulations, new network architectures and new training objectives.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "With these new training techniques, the proposed method called sCMs outperformed all previous consistency models in terms of one-step and two-step FIDs.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "This paper is very well-written and easy to read.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "This work proposed a new diffusion formulation, called TrigFlow, that unifies EDM and Flowing Matching, and also simplifies the analysis of continuous-time consistency models.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "It provided a thorough analysis of the training stability of continuous-time consistency models, from the perspective of network architecture, training objective and diffusion process parameterization.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Experiments on CIFAR-10, ImageNet-64 and ImageNet-512 demonstrate the effectiveness of the proposed method and the scalability of continuous-time consistency models.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Although I really like the improvements of continuous-time consistency models, which could fundamentally eliminate the discretization error in discrete-time consistency models, it comes with more time and memory costs related to JVP computation in the loss function.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "To this end, this work introduces JVP of Flash Attention to reduce the costs, which is great.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "Still, there may be a considerable gap between the continuous-time and discrete-time consistency models.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "I wonder if the paper can provide a more detailed comparison between sCMs and the previous discrete-time consistency models - ECMs, in terms of the training convergence and memory cost.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "There is no explanation for the phenomenon that sCT performs better than sCD on CIFAR-10 and ImageNet-64, but sCTs performs worse on ImageNet-512.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Any intuition of why sCT suffers from increased variance at larger scales?",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "There are no ablation study results on “Adaptive Double Normalization” except for claiming it “removes its instability in CM training”.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "In Figure 5b, it looks like “w/o adaptive weighting” achieves better two-step FIDs than “w/ adaptive weighting” and very similar one-step FIDs to “w/ adaptive weighting”.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Why do we need adaptive weighting?",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "In Figure 5c, do discrete-time CMs have a constant number of time steps $N$ or a timestep schedule up to the maximum number of steps $N$?",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "If it is the former one, it seems to be a bit unfair to discrete-time CMs because the scheduling of time steps is very important to them.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "Does it make more sense to compare with the best-performing discrete-time CMs?",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "In Figure 7, does the paper apply TTUR proposed by DMD2 (Yin et al. 2024a)?",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "From the DMD2 paper, TTUR improves the performance of VSD.",
+        "role": "Premise",
+        "aspect": "Related Work",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "Thus, a comparison with VSD + TTUR is more convincing.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "In Figure 7, sCDs condition the consistency network on the guidance scale $s$.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "I wonder if VSD also condition the generator on the guidance scale, for a consistent evaluation setting?",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "A minor issue: In line 266, should it be $c_{\\text{noise}}(t) = \\frac{1}{4} \\log(\\sigma_d \\tan t)$?",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 16776,
+    "completion_tokens": 16776,
+    "total_tokens": 33552
+  }
+}

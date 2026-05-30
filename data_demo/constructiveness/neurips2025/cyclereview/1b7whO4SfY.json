@@ -1,0 +1,153 @@
+{
+  "paper_id": "1b7whO4SfY",
+  "metadata": {
+    "decision": "Accept (oral)",
+    "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+    "primary_area": "deep_learning",
+    "keywords": "['Attention', 'Large Language Model', 'Gating']",
+    "avg_rating": 5.25,
+    "avg_confidence": 4.0,
+    "num_reviewers": 4
+  },
+  "reviewer_id": "CycleReview",
+  "status": "success",
+  "atomic_comments": [
+    {
+      "arc_id": "ARC_01",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks a detailed theoretical analysis of the effect of gating and the low-rank linear projection's impact on performance.",
+      "anchor_quote": "missing a detailed theoretical analysis of the effect of gating",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 1,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_02",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper does not compare the proposed method with other gating methods like Switch Heads, NSA, and MoSA.",
+      "anchor_quote": "does not compare the proposed method with other gating methods",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 1,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_03",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks detailed analysis of how gating affects performance on different tasks and datasets.",
+      "anchor_quote": "does not provide a detailed analysis of the effect of gating on the model's performance",
+      "D1_actionability": 1,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_04",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper does not provide a detailed analysis of how gating affects training stability and reduces loss spikes.",
+      "anchor_quote": "does not provide a detailed analysis of the effect of gating on the model's training stability",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_05",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks detailed analysis of how gating affects attention dynamics and reduces the attention sink.",
+      "anchor_quote": "does not provide a detailed analysis of the effect of gating on the model's attention dynamics",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_06",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Question asks for the effect of gating on performance across different tasks and datasets.",
+      "anchor_quote": "What is the effect of gating on the model's performance on different tasks and datasets?",
+      "D1_actionability": 1,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_07",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Question asks how gating affects the model's training stability.",
+      "anchor_quote": "How does gating affect the model's training stability?",
+      "D1_actionability": 1,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_08",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Question asks how gating affects the model's attention dynamics.",
+      "anchor_quote": "How does gating affect the model's attention dynamics?",
+      "D1_actionability": 1,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_09",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Question asks about the limitations of the proposed method.",
+      "anchor_quote": "What are the limitations of the proposed method?",
+      "D1_actionability": 0,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_10",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Question asks how the proposed method compares with other gating methods.",
+      "anchor_quote": "How does the proposed method compare with other gating methods?",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 1,
+      "D5_tone": 1
+    }
+  ],
+  "metrics": {
+    "MCS": 0.29,
+    "AR": 0.9,
+    "SD": 0.0,
+    "CD": 0.0,
+    "D1_actionability_mean": 1.1,
+    "D2_specificity_mean": 0.5,
+    "D3_justification_mean": 0.1,
+    "D4_solution_mean": 0.2,
+    "D5_tone_mean": 1.0,
+    "n_arcs": 10,
+    "n_weaknesses": 5,
+    "n_strengths": 0,
+    "n_questions": 5,
+    "n_suggestions": 0,
+    "n_observations": 0
+  }
+}

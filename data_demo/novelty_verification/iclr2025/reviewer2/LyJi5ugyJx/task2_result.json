@@ -1,0 +1,103 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Accelerating few-step image generation simplified stabilized continuous-time consistency unified diffusion formulation combining EDM flow matching",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C2",
+      "query": "Accelerating few-step image generation simplified stabilized continuous-time consistency training stabilization recipe continuous-time consistency",
+      "status": "ok",
+      "count": 5
+    },
+    {
+      "id": "C3",
+      "query": "Accelerating few-step image generation simplified stabilized continuous-time consistency Scalable continuous-time consistency achieving state-of-the-art few-step generation",
+      "status": "ok",
+      "count": 4
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "331dfe0f72acc614c4008776870caed930366602",
+      "title": "BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Recent diffusion and flow matching models have demonstrated strong capabilities in image generation and editing by progressively removing noise through iterative sampling. While this enables flexible inversion for semantic-preserving edits, few-step sampling regimes suffer from poor forward process approximation, leading to degraded editing quality. Existing few-step inversion methods often rely on pretrained generators and auxiliary modules, limiting scalability and generalization across different architectures. To address these limitations, we propose BiFM (Bidirectional Flow Matching), a unified framework that jointly learns generation and inversion within a single model. BiFM directly estimates average velocity fields in both ``image $\\to$ noise\"and ``noise $\\to$ image\"directions, constrained by a shared instantaneous velocity field derived from either predefined schedules or pretrained multi-step diffusion models. Additionally, BiFM introduces a novel training strategy using continuous time-interval supervision, stabilized by a bidirectional consistency objective and a lightweight time-interval embedding. This bidirectional formulation also enables one-step inversion and can integrate seamlessly into popular diffusion and flow matching backbones. Across diverse image editing and generation tasks, BiFM consistently outperforms existing few-step approaches, achieving superior performance and editability.",
+      "url": "https://www.semanticscholar.org/paper/331dfe0f72acc614c4008776870caed930366602",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "title": "Align Your Flow: Scaling Continuous-Time Flow Map Distillation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Diffusion- and flow-based models have emerged as state-of-the-art generative modeling approaches, but they require many sampling steps. Consistency models can distill these models into efficient one-step generators; however, unlike flow- and diffusion-based methods, their performance inevitably degrades when increasing the number of steps, which we show both analytically and empirically. Flow maps generalize these approaches by connecting any two noise levels in a single step and remain effective across all step counts. In this paper, we introduce two new continuous-time objectives for training flow maps, along with additional novel training techniques, generalizing existing consistency and flow matching objectives. We further demonstrate that autoguidance can improve performance, using a low-quality model for guidance during distillation, and an additional boost can be achieved by adversarial finetuning, with minimal loss in sample diversity. We extensively validate our flow map models, called Align Your Flow, on challenging image generation benchmarks and achieve state-of-the-art few-step generation performance on both ImageNet 64x64 and 512x512, using small and efficient neural networks. Finally, we show text-to-image flow map models that outperform all existing non-adversarially trained few-step samplers in text-conditioned synthesis.",
+      "url": "https://www.semanticscholar.org/paper/1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "03278c329f8e5b4765e3dacb20c3bb049d18bab5",
+      "title": "Riemannian Consistency Model",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Consistency models are a class of generative models that enable few-step generation for diffusion and flow matching models. While consistency models have achieved promising results on Euclidean domains like images, their applications to Riemannian manifolds remain challenging due to the curved geometry. In this work, we propose the Riemannian Consistency Model (RCM), which, for the first time, enables few-step consistency modeling while respecting the intrinsic manifold constraint imposed by the Riemannian geometry. Leveraging the covariant derivative and exponential-map-based parameterization, we derive the closed-form solutions for both discrete- and continuous-time training objectives for RCM. We then demonstrate theoretical equivalence between the two variants of RCM: Riemannian consistency distillation (RCD) that relies on a teacher model to approximate the marginal vector field, and Riemannian consistency training (RCT) that utilizes the conditional vector field for training. We further propose a simplified training objective that eliminates the need for the complicated differential calculation. Finally, we provide a unique kinematics perspective for interpreting the RCM objective, offering new theoretical angles. Through extensive experiments, we manifest the superior generative quality of RCM in few-step generation on various non-Euclidean manifolds, including flat-tori, spheres, and the 3D rotation group SO(3).",
+      "url": "https://www.semanticscholar.org/paper/03278c329f8e5b4765e3dacb20c3bb049d18bab5",
+      "embedding": null,
+      "relevance_score": 0.8
+    },
+    {
+      "cand_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "title": "Flow-Anchored Consistency Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Continuous-time Consistency Models (CMs) promise efficient few-step generation but face significant challenges with training instability. We argue this instability stems from a fundamental conflict: Training the network exclusively on a shortcut objective leads to the catastrophic forgetting of the instantaneous velocity field that defines the flow. Our solution is to explicitly anchor the model in the underlying flow, ensuring high trajectory fidelity during training. We introduce the Flow-Anchored Consistency Model (FACM), where a Flow Matching (FM) task serves as a dynamic anchor for the primary CM shortcut objective. Key to this Flow-Anchoring approach is a novel expanded time interval strategy that unifies optimization for a single model while decoupling the two tasks to ensure stable, architecturally-agnostic training. By distilling a pre-trained LightningDiT model, our method achieves a state-of-the-art FID of 1.32 with two steps (NFE=2) and 1.70 with just one step (NFE=1) on ImageNet 256x256. To address the challenge of scalability, we develop a memory-efficient Chain-JVP that resolves key incompatibilities with FSDP. This method allows us to scale FACM training on a 14B parameter model (Wan 2.2), accelerating its Text-to-Image inference from 2x40 to 2-8 steps. Our code and pretrained models: https://github.com/ali-vilab/FACM.",
+      "url": "https://www.semanticscholar.org/paper/c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "title": "Dual-End Consistency Model",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "The slow iterative sampling nature remains a major bottleneck for the practical deployment of diffusion and flow-based generative models. While consistency models (CMs) represent a state-of-the-art distillation-based approach for efficient generation, their large-scale application is still limited by two key issues: training instability and inflexible sampling. Existing methods seek to mitigate these problems through architectural adjustments or regularized objectives, yet overlook the critical reliance on trajectory selection. In this work, we first conduct an analysis on these two limitations: training instability originates from loss divergence induced by unstable self-supervised term, whereas sampling inflexibility arises from error accumulation. Based on these insights and analysis, we propose the Dual-End Consistency Model (DE-CM) that selects vital sub-trajectory clusters to achieve stable and effective training. DE-CM decomposes the PF-ODE trajectory and selects three critical sub-trajectories as optimization targets. Specifically, our approach leverages continuous-time CMs objectives to achieve few-step distillation and utilizes flow matching as a boundary regularizer to stabilize the training process. Furthermore, we propose a novel noise-to-noisy (N2N) mapping that can map noise to any point, thereby alleviating the error accumulation in the first step. Extensive experimental results show the effectiveness of our method: it achieves a state-of-the-art FID score of 1.70 in one-step generation on the ImageNet 256x256 dataset, outperforming existing CM-based one-step approaches.",
+      "url": "https://www.semanticscholar.org/paper/66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "87e3b490387e91033fe08a00038393235ba49ff2",
+      "title": "Consistent Diffusion Language Models",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Diffusion language models (DLMs) are an attractive alternative to autoregressive models because they promise sublinear-time, parallel generation, yet practical gains remain elusive as high-quality samples still demand hundreds of refinement steps. In continuous domains, consistency training along the probability-flow ODE is a popular recipe to accelerate diffusion. For discrete diffusion, no analogous sample-space ODE exists, making direct adaptation ill-defined. We argue that the natural discrete substitute is not a deterministic trajectory but its stochastic counterpart: the exact posterior bridge, available in closed form for broad corruption families including masked and uniform diffusion. Building on this observation, we introduce Multi-Path Discrete Consistency (MPDC), a new principle that trains a denoiser to be path-invariant in expectation across these stochastic bridges, and instantiate it as the Consistent Diffusion Language Model (CDLM), a single-stage, teacher-free training framework. A single CDLM objective unifies masked diffusion, continuous consistency models, and progressive/discrete distillation as analytic limits or empirical approximations of one common view. Empirically, CDLM establishes a new state of the art on both conditional and unconditional text-generation, consistently outperforming strong base discrete diffusion models and often even multi-stage distilled baselines across sampling budgets, with the largest gains in the few-step regime. Together, these results position CDLM as a principled and scalable foundation for the next generation of fast, high-fidelity discrete generative modeling.",
+      "url": "https://www.semanticscholar.org/paper/87e3b490387e91033fe08a00038393235ba49ff2",
+      "embedding": null,
+      "relevance_score": 0.2
+    },
+    {
+      "cand_id": "3371e7745e8ad225391c9393e0e7a3bf66757c35",
+      "title": "Categorical Flow Maps",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "We introduce Categorical Flow Maps, a flow-matching method for accelerated few-step generation of categorical data via self-distillation. Building on recent variational formulations of flow matching and the broader trend towards accelerated inference in diffusion and flow-based models, we define a flow map towards the simplex that transports probability mass toward a predicted endpoint, yielding a parametrisation that naturally constrains model predictions. Since our trajectories are continuous rather than discrete, Categorical Flow Maps can be trained with existing distillation techniques, as well as a new objective based on endpoint consistency. This continuous formulation also automatically unlocks test-time inference: we can directly reuse existing guidance and reweighting techniques in the categorical setting to steer sampling toward downstream objectives. Empirically, we achieve state-of-the-art few-step results on images, molecular graphs, and text, with strong performance even in single-step generation.",
+      "url": "https://www.semanticscholar.org/paper/3371e7745e8ad225391c9393e0e7a3bf66757c35",
+      "embedding": null,
+      "relevance_score": 0.25
+    }
+  ],
+  "stats": {
+    "total_candidates": 10,
+    "after_dedup": 7,
+    "after_nontechnical_filter": 7,
+    "after_year_filter": 7,
+    "final": 7
+  }
+}

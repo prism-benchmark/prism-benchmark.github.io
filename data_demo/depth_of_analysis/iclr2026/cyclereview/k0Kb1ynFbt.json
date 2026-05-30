@@ -1,0 +1,105 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "source": "cyclereview_iclr2026",
+  "source_format": "cyclereview_json",
+  "reviews_analysis": {
+    "CYCLEREVIEW_ICLR2026": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper proposes the Exploratory Diffusion Model (ExDM) for unsupervised RL.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The key idea is to train a diffusion model on the replay buffer and use the score function to define an intrinsic reward for exploration.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The paper also proposes an efficient decoupled training scheme and a fine-tuning algorithm for adapting pre-trained diffusion components to downstream tasks.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The paper provides theoretical analysis and experimental results on Maze2d and URLB benchmarks.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper is well-written and easy to follow.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The idea of using diffusion models for exploration in RL is interesting.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The paper provides theoretical analysis and experimental results to support the proposed method.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The paper lacks a thorough discussion of the limitations of the proposed method.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "For example, the paper mentions that the diffusion model is computationally expensive, but does not provide a detailed analysis of the computational cost and how it compares to other methods.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper does not provide a detailed analysis of the trade-off between exploration and exploitation in the proposed method.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The paper mentions that the intrinsic reward is designed to encourage exploration, but does not provide a detailed analysis of how the method balances exploration and exploitation.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The paper does not provide a detailed analysis of the generalization ability of the proposed method.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The paper mentions that the method can be applied to downstream tasks, but does not provide a detailed analysis of how well the method generalizes to new tasks.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 2117,
+    "completion_tokens": 2117,
+    "total_tokens": 4234
+  }
+}

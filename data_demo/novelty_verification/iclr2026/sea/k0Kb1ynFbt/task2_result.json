@@ -1,0 +1,217 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Unsupervised reinforcement learning diffusion exploration transfer diffusion-based intrinsic reward unsupervised exploration",
+      "status": "ok",
+      "count": 20
+    },
+    {
+      "id": "C2",
+      "query": "Unsupervised reinforcement learning diffusion exploration transfer efficient decoupled training fine-tuning scheme diffusion policies",
+      "status": "ok",
+      "count": 1
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "title": "Exploratory Diffusion Model for Unsupervised Reinforcement Learning",
+      "year": 2025,
+      "venue": "",
+      "abstract": "Unsupervised reinforcement learning (URL) aims to pre-train agents by exploring diverse states or skills in reward-free environments, facilitating efficient adaptation to downstream tasks. As the agent cannot access extrinsic rewards during unsupervised exploration, existing methods design intrinsic rewards to model the explored data and encourage further exploration. However, the explored data are always heterogeneous, posing the requirements of powerful representation abilities for both intrinsic reward models and pre-trained policies. In this work, we propose the Exploratory Diffusion Model (ExDM), which leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks. Specifically, ExDM can accurately estimate the distribution of collected data in the replay buffer with the diffusion model and introduces the score-based intrinsic reward, encouraging the agent to explore less-visited states. After obtaining the pre-trained policies, ExDM enables rapid adaptation to downstream tasks. In detail, we provide theoretical analyses and practical algorithms for fine-tuning diffusion policies, addressing key challenges such as training instability and computational complexity caused by multi-step sampling. Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks, especially in structurally complicated environments.",
+      "url": "https://www.semanticscholar.org/paper/9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+      "title": "Deep Reinforcement Learning with Hybrid Intrinsic Reward Model",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Intrinsic reward shaping has emerged as a prevalent approach to solving hard-exploration and sparse-rewards environments in reinforcement learning (RL). While single intrinsic rewards, such as curiosity-driven or novelty-based methods, have shown effectiveness, they often limit the diversity and efficiency of exploration. Moreover, the potential and principle of combining multiple intrinsic rewards remains insufficiently explored. To address this gap, we introduce HIRE (Hybrid Intrinsic REward), a flexible and elegant framework for creating hybrid intrinsic rewards through deliberate fusion strategies. With HIRE, we conduct a systematic analysis of the application of hybrid intrinsic rewards in both general and unsupervised RL across multiple benchmarks. Extensive experiments demonstrate that HIRE can significantly enhance exploration efficiency and diversity, as well as skill acquisition in complex and dynamic settings.",
+      "url": "https://www.semanticscholar.org/paper/bae3be5baadfc50fbbc466470de4e1b87f25f079",
+      "embedding": null,
+      "relevance_score": 0.95
+    },
+    {
+      "cand_id": "2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+      "title": "Diffusion-based Curriculum Reinforcement Learning",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "Curriculum Reinforcement Learning (CRL) is an approach to facilitate the learning process of agents by structuring tasks in a sequence of increasing complexity. Despite its potential, many existing CRL methods struggle to efficiently guide agents toward desired outcomes, particularly in the absence of domain knowledge. This paper introduces DiCuRL (Diffusion Curriculum Reinforcement Learning), a novel method that leverages conditional diffusion models to generate curriculum goals. To estimate how close an agent is to achieving its goal, our method uniquely incorporates a Q -function and a trainable reward function based on Adversarial Intrinsic Motivation within the diffusion model. Furthermore, it promotes exploration through the inherent noising and denoising mechanism present in the diffusion models and is environment-agnostic. This combination allows for the generation of challenging yet achievable goals, enabling agents to learn effectively without relying on domain knowledge. We demonstrate the effectiveness of DiCuRL in three different maze environments and two robotic manipulation tasks simulated in MuJoCo, where it outperforms or matches nine state-of-the-art CRL algorithms from the literature.",
+      "url": "https://www.semanticscholar.org/paper/2a5c1474526ca9d46164e4e64db99a2404ff94ad",
+      "embedding": null,
+      "relevance_score": 0.9
+    },
+    {
+      "cand_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "title": "Contrastive Intrinsic Control for Unsupervised Reinforcement Learning",
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems 35",
+      "abstract": "We introduce Contrastive Intrinsic Control (CIC), an unsupervised reinforcement learning (RL) algorithm that maximizes the mutual information between state-transitions and latent skill vectors. CIC utilizes contrastive learning between state-transitions and skills vectors to learn behaviour embeddings and maximizes the entropy of these embeddings as an intrinsic reward to encourage behavioural diversity. We evaluate our algorithm on the Unsupervised RL Benchmark (URLB) in the asymptotic state-based setting, which consists of a long reward-free pre-training phase followed by a short adaptation phase to downstream tasks with extrinsic rewards. We find that CIC improves over prior exploration algorithms in terms of adaptation efficiency to downstream tasks on state-based URLB. 1 Deep RL is a powerful approach toward solving complex control tasks in the presence of extrinsic rewards. Successful applications include playing video games from pixels [1], mastering the game of Go [2, 3], robotic locomotion [4, 5, 6] and dexterous manipulation [7, 8, 9] policies. While effective, the above advances produced agents that are unable to generalize to new downstream tasks beyond the one they were trained to solve. Humans and animals on the other hand are able to acquire skills with minimal supervision and apply them to solve a variety of downstream tasks. In this work, we seek to train agents that acquire skills without supervision with generalization capabilities by efficiently adapting these skills to downstream tasks.",
+      "url": "https://www.semanticscholar.org/paper/0292a7e356152a842aa47ff4336703cac540a86d",
+      "embedding": null,
+      "relevance_score": 0.85
+    },
+    {
+      "cand_id": "74ac7a357a5bddc38e783a4d4f248c376564d935",
+      "title": "Keyframe-Guided Structured Rewards for Reinforcement Learning in Long-Horizon Laboratory Robotics",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Long-horizon precision manipulation in laboratory automation, such as pipette tip attachment and liquid transfer, requires policies that respect strict procedural logic while operating in continuous, high-dimensional state spaces. However, existing approaches struggle with reward sparsity, multi-stage structural constraints, and noisy or imperfect demonstrations, leading to inefficient exploration and unstable convergence. We propose a Keyframe-Guided Reward Generation Framework that automatically extracts kinematics-aware keyframes from demonstrations, generates stage-wise targets via a diffusion-based predictor in latent space, and constructs a geometric progress-based reward to guide online reinforcement learning. The framework integrates multi-view visual encoding, latent similarity-based progress tracking, and human-in-the-loop reinforcement fine-tuning on a Vision-Language-Action backbone to align policy optimization with the intrinsic stepwise logic of biological protocols. Across four real-world laboratory tasks, including high-precision pipette attachment and dynamic liquid transfer, our method achieves an average success rate of 82% after 40--60 minutes of online fine-tuning. Compared with HG-DAgger (42%) and Hil-ConRFT (47%), our approach demonstrates the effectiveness of structured keyframe-guided rewards in overcoming exploration bottlenecks and providing a scalable solution for high-precision, long-horizon robotic laboratory automation.",
+      "url": "https://www.semanticscholar.org/paper/74ac7a357a5bddc38e783a4d4f248c376564d935",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "title": "Balancing State Exploration and Skill Diversity in Unsupervised Skill Discovery",
+      "year": 2025,
+      "venue": "IEEE Transactions on Cybernetics",
+      "abstract": "Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised reinforcement learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this article, we propose contrastive dynamic skill discovery (ComSD) which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multijoint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2-D maze.",
+      "url": "https://www.semanticscholar.org/paper/81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "embedding": null,
+      "relevance_score": 0.8
+    },
+    {
+      "cand_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "title": "PEAC: Unsupervised Pre-training for Cross-Embodiment Reinforcement Learning",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "Designing generalizable agents capable of adapting to diverse embodiments has achieved significant attention in Reinforcement Learning (RL), which is critical for deploying RL agents in various real-world applications. Previous Cross-Embodiment RL approaches have focused on transferring knowledge across embodiments within specific tasks. These methods often result in knowledge tightly coupled with those tasks and fail to adequately capture the distinct characteristics of different embodiments. To address this limitation, we introduce the notion of Cross-Embodiment Unsupervised RL (CEURL), which leverages unsupervised learning to enable agents to acquire embodiment-aware and task-agnostic knowledge through online interactions within reward-free environments. We formulate CEURL as a novel Controlled Embodiment Markov Decision Process (CE-MDP) and systematically analyze CEURL's pre-training objectives under CE-MDP. Based on these analyses, we develop a novel algorithm Pre-trained Embodiment-Aware Control (PEAC) for handling CEURL, incorporating an intrinsic reward function specifically designed for cross-embodiment pre-training. PEAC not only provides an intuitive optimization strategy for cross-embodiment pre-training but also can integrate flexibly with existing unsupervised RL methods, facilitating cross-embodiment exploration and skill discovery. Extensive experiments in both simulated (e.g., DMC and Robosuite) and real-world environments (e.g., legged locomotion) demonstrate that PEAC significantly improves adaptation performance and cross-embodiment generalization, demonstrating its effectiveness in overcoming the unique challenges of CEURL. The project page and code are in https://yingchengyang.github.io/ceurl.",
+      "url": "https://www.semanticscholar.org/paper/dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "embedding": null,
+      "relevance_score": 0.7
+    },
+    {
+      "cand_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "title": "Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning",
+      "year": 2024,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "embedding": null,
+      "relevance_score": 0.55
+    },
+    {
+      "cand_id": "5dce3f2cfe018ada4bebeaa15aac6fe1d01b18ba",
+      "title": "Imagine, Initialize, and Explore: An Effective Exploration Method in Multi-Agent Reinforcement Learning",
+      "year": 2024,
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "abstract": "Effective exploration is crucial to discovering optimal strategies for multi-agent reinforcement learning (MARL) in complex coordination tasks. Existing methods mainly utilize intrinsic rewards to enable committed exploration or use role-based learning for decomposing joint action spaces instead of directly conducting a collective search in the entire action-observation space. However, they often face challenges obtaining specific joint action sequences to reach successful states in long-horizon tasks. To address this limitation, we propose Imagine, Initialize, and Explore (IIE), a novel method that offers a promising solution for efficient multi-agent exploration in complex scenarios. IIE employs a transformer model to imagine how the agents reach a critical state that can influence each other's transition functions. Then, we initialize the environment at this state using a simulator before the exploration phase. We formulate the imagination as a sequence modeling problem, where the states, observations, prompts, actions, and rewards are predicted autoregressively. The prompt consists of timestep-to-go, return-to-go, influence value, and one-shot demonstration, specifying the desired state and trajectory as well as guiding the action generation. By initializing agents at the critical states, IIE significantly increases the likelihood of discovering potentially important under-explored regions. Despite its simplicity, empirical results demonstrate that our method outperforms multi-agent exploration baselines on the StarCraft Multi-Agent Challenge (SMAC) and SMACv2 environments. Particularly, IIE shows improved performance in the sparse-reward SMAC tasks and produces more effective curricula over the initialized states than other generative methods, such as CVAE-GAN and diffusion models.",
+      "url": "https://www.semanticscholar.org/paper/5dce3f2cfe018ada4bebeaa15aac6fe1d01b18ba",
+      "embedding": null,
+      "relevance_score": 0.65
+    },
+    {
+      "cand_id": "985a1140bfbbb9622fd22dcd5eb1c6aa2ddbcc25",
+      "title": "SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Photorealistic color retouching plays a vital role in visual content creation, yet manual retouching remains inaccessible to non-experts due to its reliance on specialized expertise. Reference-based methods offer a promising alternative by transferring the preset color of a reference image to a source image. However, these approaches often operate as novice learners, performing global color mappings derived from pixel-level statistics, without a true understanding of semantic context or human aesthetics. To address this issue, we propose SemiNFT, a Diffusion Transformer (DiT)-based retouching framework that mirrors the trajectory of human artistic training: beginning with rigid imitation and evolving into intuitive creation. Specifically, SemiNFT is first taught with paired triplets to acquire basic structural preservation and color mapping skills, and then advanced to reinforcement learning (RL) on unpaired data to cultivate nuanced aesthetic perception. Crucially, during the RL stage, to prevent catastrophic forgetting of old skills, we design a hybrid online-offline reward mechanism that anchors aesthetic exploration with structural review. % experiments Extensive experiments show that SemiNFT not only outperforms state-of-the-art methods on standard preset transfer benchmarks but also demonstrates remarkable intelligence in zero-shot tasks, such as black-and-white photo colorization and cross-domain (anime-to-photo) preset transfer. These results confirm that SemiNFT transcends simple statistical matching and achieves a sophisticated level of aesthetic comprehension. Our project can be found at https://melanyyang.github.io/SemiNFT/.",
+      "url": "https://www.semanticscholar.org/paper/985a1140bfbbb9622fd22dcd5eb1c6aa2ddbcc25",
+      "embedding": null,
+      "relevance_score": 0.6
+    },
+    {
+      "cand_id": "9d528f7e641c922bddd83f4af687806d685490d6",
+      "title": "Feature Control as Intrinsic Motivation for Hierarchical Reinforcement Learning",
+      "year": 2017,
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+      "abstract": "One of the main concerns of deep reinforcement learning (DRL) is the data inefficiency problem, which stems both from an inability to fully utilize data acquired and from naive exploration strategies. In order to alleviate these problems, we propose a DRL algorithm that aims to improve data efficiency via both the utilization of unrewarded experiences and the exploration strategy by combining ideas from unsupervised auxiliary tasks, intrinsic motivation, and hierarchical reinforcement learning (HRL). Our method is based on a simple HRL architecture with a metacontroller and a subcontroller. The subcontroller is intrinsically motivated by the metacontroller to learn to control aspects of the environment, with the intention of giving the agent: 1) a neural representation that is generically useful for tasks that involve manipulation of the environment and 2) the ability to explore the environment in a temporally extended manner through the control of the metacontroller. In this way, we reinterpret the notion of pixel- and feature-control auxiliary tasks as reusable skills that can be learned via an intrinsic reward. We evaluate our method on a number of Atari 2600 games. We found that it outperforms the baseline in several environments and significantly improves performance in one of the hardest games—Montezuma’s revenge—for which the ability to utilize sparse data is key. We found that the inclusion of intrinsic reward is crucial for the improvement in the performance and that most of the benefit seems to be derived from the representations learned during training.",
+      "url": "https://www.semanticscholar.org/paper/9d528f7e641c922bddd83f4af687806d685490d6",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+      "title": "SURF: Semantic-level Unsupervised Reward Function for Machine Translation",
+      "year": 2022,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "abstract": "The performance of Reinforcement Learning (RL) for natural language tasks including Machine Translation (MT) is crucially dependent on the reward formulation. This is due to the intrinsic difficulty of the task in the high-dimensional discrete action space as well as the sparseness of the standard reward functions defined for limited set of ground-truth sequences biased towards singular lexical choices. To address this issue, we formulate SURF, a maximally dense semantic-level unsupervised reward function which mimics human evaluation by considering both sentence fluency and semantic similarity. We demonstrate the strong potential of SURF to leverage a family of Actor-Critic Transformer-based Architectures with synchronous and asynchronous multi-agent variants. To tackle the problem of large action-state spaces, each agent is equipped with unique exploration strategies, promoting diversity during its exploration of the hypothesis space. When BLEU scores are compared, our dense unsupervised reward outperforms the standard sparse reward by 2% on average for in- and out-of-domain settings.",
+      "url": "https://www.semanticscholar.org/paper/0c863681a8aaca2089aaac55e68535b0cda7482f",
+      "embedding": null,
+      "relevance_score": 0.45
+    },
+    {
+      "cand_id": "ceb4e0c2ad601831c056901e9f1ab5f5500d8520",
+      "title": "Did I do that? Blame as a means to identify controlled effects in reinforcement learning",
+      "year": 2021,
+      "venue": "Trans. Mach. Learn. Res.",
+      "abstract": "Identifying controllable aspects of the environment has proven to be an extraordinary intrinsic motivator to reinforcement learning agents. Despite repeatedly achieving State-of-the-Art results, this approach has only been studied as a proxy to a reward-based task and has not yet been evaluated on its own. Current methods are based on action-prediction. Humans, on the other hand, assign blame to their actions to decide what they controlled. This work proposes Controlled Effect Network (CEN), an unsupervised method based on counterfactual measures of blame to identify effects on the environment controlled by the agent. CEN is evaluated in a wide range of environments showing that it can accurately identify controlled effects. Moreover, we demonstrate CEN's capabilities as intrinsic motivator by integrating it in the state-of-the-art exploration method, achieving substantially better performance than action-prediction models.",
+      "url": "https://www.semanticscholar.org/paper/ceb4e0c2ad601831c056901e9f1ab5f5500d8520",
+      "embedding": null,
+      "relevance_score": 0.4
+    },
+    {
+      "cand_id": "5c460d8e8e4e6304f2ee82ebae621c0c2f0aaa9e",
+      "title": "Unsupervised Skill Discovery through Skill Regions Differentiation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Unsupervised Reinforcement Learning (RL) aims to discover diverse behaviors that can accelerate the learning of downstream tasks. Previous methods typically focus on entropy-based exploration or empowerment-driven skill learning. However, entropy-based exploration struggles in large-scale state spaces (e.g., images), and empowerment-based methods with Mutual Information (MI) estimations have limitations in state exploration. To address these challenges, we propose a novel skill discovery objective that maximizes the deviation of the state density of one skill from the explored regions of other skills, encouraging inter-skill state diversity similar to the initial MI objective. For state-density estimation, we construct a novel conditional autoencoder with soft modularization for different skill policies in high-dimensional space. Meanwhile, to incentivize intra-skill exploration, we formulate an intrinsic reward based on the learned autoencoder that resembles count-based exploration in a compact latent space. Through extensive experiments in challenging state and image-based tasks, we find our method learns meaningful skills and achieves superior performance in various downstream tasks.",
+      "url": "https://www.semanticscholar.org/paper/5c460d8e8e4e6304f2ee82ebae621c0c2f0aaa9e",
+      "embedding": null,
+      "relevance_score": 0.35
+    },
+    {
+      "cand_id": "6df5d79885bf1af65323a055684b2b92439a65c3",
+      "title": "GRIMGEP: Learning Progress for Robust Goal Sampling in Visual Deep Reinforcement Learning",
+      "year": 2020,
+      "venue": "IEEE Transactions on Cognitive and Developmental Systems",
+      "abstract": "Autotelic reinforcement learning (RL) agents sample their own goals, and try to reach them. They often prioritize goal sampling according to some intrinsic reward, ex. novelty or absolute learning progress (ALPs). Novelty-based approaches work robustly in unsupervised image-based environments when there are no distractors. However, they construct simple curricula that do not take the agent’s performance into account: in complex environments, they often get attracted by impossible tasks. ALP-based approaches, which are often combined with a clustering mechanism, construct complex curricula tuned to the agent’s current capabilities. Such curricula sample goals on which the agent is currently learning the most, and do not get attracted by impossible tasks. However, ALP approaches have not so far been applied to DRL agents perceiving complex environments directly in the image space. Goal regions guided intrinsically motivated goal exploration process (GRIMGEP), without using any expert knowledge, combines the ALP clustering approaches with novelty-based approaches and extends them to those complex scenarios. We experiment on a rich 3-D image-based environment with distractors using novelty-based exploration approaches: Skewfit and CountBased. We show that wrapping them with GRIMGEP—using them only in the cluster sampled by ALP—creates a better curriculum. The wrapped approaches are attracted less by the distractors, and achieve drastically better performances.",
+      "url": "https://www.semanticscholar.org/paper/6df5d79885bf1af65323a055684b2b92439a65c3",
+      "embedding": null,
+      "relevance_score": 0.25
+    },
+    {
+      "cand_id": "dd383606d4183ff5b7b2c4b8a55980c8f385630b",
+      "title": "Explore Intrinsic Geometry of Sleep Dynamics and Predict Sleep Stage by Unsupervised Learning Techniques",
+      "year": 2019,
+      "venue": "Springer Optimization and Its Applications",
+      "abstract": "We propose a novel unsupervised approach for sleep dynamics exploration and automatic annotation by combining modern harmonic analysis tools. Specifically, we apply diffusion-based algorithms, diffusion map (DM) and alternating diffusion (AD) algorithms, to reconstruct the intrinsic geometry of sleep dynamics by reorganizing the spectral information of an electroencephalogram (EEG) extracted from a nonlinear-type time frequency analysis tool, the synchrosqueezing transform (SST). The visualization is achieved by the nonlinear dimension reduction properties of DM and AD. Moreover, the reconstructed nonlinear geometric structure of the sleep dynamics allows us to achieve the automatic annotation purpose. The hidden Markov model is trained to predict the sleep stage. The prediction performance is validated on a publicly available benchmark database, Physionet Sleep-EDF [extended] SC* and ST*, with the leave-one-subject-out cross validation. The overall accuracy and macro F1 achieve 82:57% and 76% in Sleep-EDF SC* and 77.01% and 71:53% in Sleep-EDF ST*, which is compatible with the state-of-the-art results by supervised learning-based algorithms. The results suggest the potential of the proposed algorithm for clinical applications.",
+      "url": "https://www.semanticscholar.org/paper/dd383606d4183ff5b7b2c4b8a55980c8f385630b",
+      "embedding": null,
+      "relevance_score": 0.2
+    },
+    {
+      "cand_id": "4813be9599249bc024aad1d674c8d1da3479d532",
+      "title": "Unsupervised Curricula for Visual Meta-Reinforcement Learning",
+      "year": 2019,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "In principle, meta-reinforcement learning algorithms leverage experience across many tasks to learn fast and effective reinforcement learning (RL) strategies. However, current meta-RL approaches rely on manually-defined distributions of training tasks, and hand-crafting these task distributions can be challenging and time-consuming. Can ``useful'' pre-training tasks be discovered in an unsupervised manner? We develop an unsupervised algorithm for inducing an adaptive meta-training task distribution, i.e. an automatic curriculum, by modeling unsupervised interaction in a visual environment. The task distribution is scaffolded by a parametric density model of the meta-learner's trajectory distribution. We formulate unsupervised meta-RL as information maximization between a latent task variable and the meta-learner’s data distribution, and describe a practical instantiation which alternates between integration of recent experience into the task distribution and meta-learning of the updated tasks. Repeating this procedure leads to iterative reorganization such that the curriculum adapts as the meta-learner's data distribution shifts. Moreover, we show how discriminative clustering frameworks for visual representations can support trajectory-level task acquisition and exploration in domains with pixel observations, avoiding the pitfalls of alternatives. In experiments on vision-based navigation and manipulation domains, we show that the algorithm allows for unsupervised meta-learning that both transfers to downstream tasks specified by hand-crafted reward functions and serves as pre-training for more efficient meta-learning of test task distributions.",
+      "url": "https://www.semanticscholar.org/paper/4813be9599249bc024aad1d674c8d1da3479d532",
+      "embedding": null,
+      "relevance_score": 0.15
+    },
+    {
+      "cand_id": "b2da2ea6387c81e7b48e88249a82ee91297a80f6",
+      "title": "Leveraging Separated World Model for Exploration in Visually Distracted Environments",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "Model-based unsupervised reinforcement learning (URL) has gained prominence for reducing environment interactions and learning general skills using intrinsic rewards. However, distractors in observations can severely affect intrinsic reward estimation, leading to a biased exploration process, especially in environments with visual inputs like images or videos. To address this challenge, we propose a bi-level optimization framework named Se paration-assisted eX plorer (SeeX). In the inner optimization, SeeX trains a separated world model to extract exogenous and endogenous information, minimizing uncertainty to ensure task relevance. In the outer optimization, it learns a policy on imaginary trajectories generated within the endogenous state space to maximize task-relevant uncertainty. Evaluations on multiple locomotion and manipulation tasks demonstrate SeeX’s effectiveness",
+      "url": "https://www.semanticscholar.org/paper/b2da2ea6387c81e7b48e88249a82ee91297a80f6",
+      "embedding": null,
+      "relevance_score": 0.1
+    },
+    {
+      "cand_id": "60da2965da20122fb30921c2547806200427d1ea",
+      "title": "Unsupervised Skill Discovery via Recurrent Skill Training",
+      "year": 2022,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "Being able to discover diverse useful skills without external reward functions is beneﬁcial in reinforcement learning research. Previous unsupervised skill discovery approaches mainly train different skills in parallel. Although impressive results have been provided, we found that parallel training procedure can sometimes block exploration when the state visited by different skills overlap, which leads to poor state coverage and restricts the diversity of learned skills. In this paper, we take a deeper look into this phenomenon and propose a novel framework to address this issue, which we call Recurrent Skill Training (ReST). Instead of training all the skills in parallel, ReST trains different skills one after another recurrently, along with a state coverage based intrinsic reward. We conduct experiments on a number of challenging 2D navigation environments and robotic locomotion environments. Evaluation results show that our proposed approach outperforms previous parallel training approaches in terms of state coverage and skill diversity. Videos of the discovered skills are available at https://sites.google.com/ view/neurips22-rest .",
+      "url": "https://www.semanticscholar.org/paper/60da2965da20122fb30921c2547806200427d1ea",
+      "embedding": null,
+      "relevance_score": 0.05
+    }
+  ],
+  "stats": {
+    "total_candidates": 21,
+    "after_dedup": 19,
+    "after_nontechnical_filter": 19,
+    "after_year_filter": 19,
+    "final": 19
+  }
+}

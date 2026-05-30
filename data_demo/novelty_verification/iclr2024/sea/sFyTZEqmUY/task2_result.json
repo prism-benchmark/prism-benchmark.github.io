@@ -1,0 +1,93 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Learning universal real-world interaction simulator conditional video generation universal action-conditioned video generation framework",
+      "status": "ok",
+      "count": 4
+    },
+    {
+      "id": "C2",
+      "query": "Learning universal real-world interaction simulator conditional video generation observation prediction autoregressive rollout",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C3",
+      "query": "Learning universal real-world interaction simulator conditional video generation Bridging sim-to-real gap simulation-trained policies",
+      "status": "ok",
+      "count": 1
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "a25d153ec91da56224f97bc80b1fb9cb9cfc9a58",
+      "title": "V-Dreamer: Automating Robotic Simulation and Trajectory Synthesis via Video Generation Priors",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Training generalist robots demands large-scale, diverse manipulation data, yet real-world collection is prohibitively expensive, and existing simulators are often constrained by fixed asset libraries and manual heuristics. To bridge this gap, we present V-Dreamer, a fully automated framework that generates open-vocabulary, simulation-ready manipulation environments and executable expert trajectories directly from natural language instructions. V-Dreamer employs a novel generative pipeline that constructs physically grounded 3D scenes using large language models and 3D generative models, validated by geometric constraints to ensure stable, collision-free layouts. Crucially, for behavior synthesis, we leverage video generation models as rich motion priors. These visual predictions are then mapped into executable robot trajectories via a robust Sim-to-Gen visual-kinematic alignment module utilizing CoTracker3 and VGGT. This pipeline supports high visual diversity and physical fidelity without manual intervention. To evaluate the generated data, we train imitation learning policies on synthesized trajectories encompassing diverse object and environment variations. Extensive evaluations on tabletop manipulation tasks using the Piper robotic arm demonstrate that our policies robustly generalize to unseen objects in simulation and achieve effective sim-to-real transfer, successfully manipulating novel real-world objects.",
+      "url": "https://www.semanticscholar.org/paper/a25d153ec91da56224f97bc80b1fb9cb9cfc9a58",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "title": "Nano World Models: A Minimalist Implementation of Future Video Prediction",
+      "year": 2026,
+      "venue": "",
+      "abstract": "World models have become a central paradigm for learning predictive simulators that support generation, planning, and decision-making. Yet, despite rapid progress in industry-scale interactive video generation, the broader research community still lacks compact, reproducible, and easily extensible implementations for studying the design choices underlying modern world models. We introduce Nano World Models, a minimalist codebase for future video prediction centered around diffusion forcing. Nano World Models provides a unified interface for generative objectives, model scales, action-conditioning mechanisms, latent observation spaces, datasets, evaluation protocols, and long-horizon rollout procedures. This design enables controlled studies of world-modeling components that are often entangled across separate implementations. Through experiments across simple control environments, game simulation, and real-robot data, we examine how prediction parameterization, architecture scale, action injection, sampling budget, and domain complexity affect video prediction quality and autoregressive rollout behavior. By releasing code, configurations, evaluation scripts, and pretrained checkpoints, Nano World Models aims to provide a compact yet extensible experimental substrate for open, reproducible, and scientific world-model research.",
+      "url": "https://www.semanticscholar.org/paper/301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+      "title": "ARDuP: Active Region Video Diffusion for Universal Policies",
+      "year": 2024,
+      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+      "abstract": "Sequential decision-making can be formulated as a text-conditioned video generation problem, where a video planner, guided by a text-defined goal, generates future frames visualizing planned actions, from which control actions are subsequently derived. In this work, we introduce Active Region Video Diffusion for Universal Policies (ARDuP), a novel framework for video-based policy learning that emphasizes the generation of active regions, i.e. potential interaction areas, enhancing the conditional policy’s focus on interactive areas critical for task execution. This innovative framework integrates active region conditioning with latent diffusion models for video planning and employs latent representations for direct action decoding during inverse dynamic modeling. By utilizing motion cues in videos for automatic active region discovery, our method eliminates the need for manual annotations of active regions. We validate ARDuP’s efficacy via extensive experiments on simulator CLIPort and the real-world dataset BridgeData v2, achieving notable improvements in success rates and generating convincingly realistic video plans.",
+      "url": "https://www.semanticscholar.org/paper/62105b85beef58ce528daf6a324277441ec07cb3",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "5dd875f259b715d17371a93ca5bfe29a14e116b9",
+      "title": "GE-Sim 2.0: A Roadmap Towards Comprehensive Closed-loop Video World Simulators for Robotic Manipulation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "We introduce GE-Sim 2.0 (Genie Envisioner World Simulator 2.0), a closed-loop video world simulator for robotic manipulation. Building on the action-conditioned video generation framework of Genie Envisioner, GE-Sim 2.0 is re-trained on thousands of hours of real-world robot data spanning teleoperation, contact-rich interaction, and on-robot policy deployment, substantially improving action-following fidelity and trajectory coverage. On top of this foundation, three new modules close the loop from video simulation to policy learning: a state expert that decodes proprioceptive state from video latents to support next-chunk prediction by downstream VLA policies; a world judge that scores generated rollouts against task instructions, yielding machine-verifiable success signals and rewards in place of manual inspection; and an acceleration framework that delivers a 25-frame rollout in 2.3 seconds on a single H100, with up to 4* frame skipping at inference for long-horizon evaluation. GE-Sim 2.0 tops the public WorldArena leaderboard at only 2B parameters, outperforming both dedicated robotic world models and closed-source general video generators, and policies trained against its rollouts and rewards translate into measurable real-world gains, establishing GE-Sim 2.0 as a practical platform for scalable evaluation and closed-loop learning of manipulation policies.",
+      "url": "https://www.semanticscholar.org/paper/5dd875f259b715d17371a93ca5bfe29a14e116b9",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+      "title": "Interacting in various application domains",
+      "year": 2009,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "4bbcdf467e15c8eed31c9eb27f3b5a499e54ec6a",
+      "title": "Online communities and social computing : Third International Conference, OCSC 2009, held as part of HCI International 2009, San Diego, CA, USA, July 19-24, 2009 : proceedings",
+      "year": 2009,
+      "venue": "IFIP TC13 International Conference on Human-Computer Interaction",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/4bbcdf467e15c8eed31c9eb27f3b5a499e54ec6a",
+      "embedding": null,
+      "relevance_score": 0.25
+    }
+  ],
+  "stats": {
+    "total_candidates": 6,
+    "after_dedup": 6,
+    "after_nontechnical_filter": 6,
+    "after_year_filter": 6,
+    "final": 6
+  }
+}

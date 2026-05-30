@@ -1,0 +1,87 @@
+{
+  "paper": {
+    "core_task": "Investigating gating mechanisms in softmax attention for transformers",
+    "contributions": [
+      {
+        "name": "Systematic investigation of gating positions and variants in softmax attention",
+        "author_claim_text": "In this work, we investigate gating mechanisms in the standard softmax attention.",
+        "description": "The paper systematically explores gating at five distinct positions within the attention layer, testing variants like elementwise/headwise, head-specific/shared, and multiplicative/additive forms.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Analysis of non-linearity and sparsity from gating in attention",
+        "author_claim_text": "We identify two factors contributing to the efficacy of gating: (i) Non-Linearity... (ii) Sparsity.",
+        "description": "The analysis reveals that gating introduces non-linearity between the value and output projections, enhancing expressiveness, and creates input-dependent sparsity that filters irrelevant information.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Demonstration of attention-sink elimination via sparse gating",
+        "author_claim_text": "Sparse gating eliminates the massive activation and attention sink: the initial tokens have large activation values... and disproportionately dominate attention scores.",
+        "description": "Empirical verification shows that input-dependent sparse gating after SDPA output eliminates attention sinks and massive activations in both dense and MoE models.",
+        "source_hint": "Introduction §1"
+      }
+    ],
+    "key_terms": [
+      "gating mechanism",
+      "softmax attention",
+      "SDPA output gating",
+      "non-linearity",
+      "input-dependent sparsity",
+      "attention sink",
+      "massive activation",
+      "training stability",
+      "context length extension",
+      "mixture-of-experts",
+      "dense models",
+      "elementwise gating"
+    ],
+    "must_have_entities": [
+      "1.7B dense model",
+      "15A2B MoE model",
+      "RULER benchmark",
+      "YaRN",
+      "RoPE",
+      "RMSNorm",
+      "SiLU"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The study primarily focuses on gating mechanisms within the context of softmax-attention. It does not explore the applicability of gating mechanisms to other attention variants, such as linear attention mechanisms (e.",
+        "stance": "not_novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": true,
+        "prior_work_strings": [
+          "Performer",
+          "Linformer",
+          "RNNs",
+          "state-space models"
+        ],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The paper primarily focuses on empirical results and lacks a theoretical explanation for why gating mechanisms improve performance and stability.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "theory_overlap"
+      }
+    ],
+    "all_citations_raw": [
+      "Performer",
+      "Linformer",
+      "RNNs",
+      "state-space models",
+      "Linear Attention",
+      "softmax attention",
+      "RoPE",
+      "GQA",
+      "PPL",
+      "[22]"
+    ]
+  }
+}

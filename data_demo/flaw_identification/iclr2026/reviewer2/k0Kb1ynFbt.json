@@ -1,0 +1,521 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "micro_flaws": {
+    "micro_flaws": [
+      {
+        "flaw_id": "F01",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "The diffusion policy fine-tuning algorithm (Algorithm 2) is outperformed by the simpler Gaussian policy fine-tuned with standard DDPG, raising questions about its practical benefit and optimization.",
+        "raw_arguments": {
+          "Human_1": "While their new fine-tuning method (Algorithm 2) is a novel contribution, it is not yet fully optimized and is outperformed by a simpler, standard approach such as DDPG.",
+          "Human_4": "fine-tuning of the Gaussian policy of ExDM still leads to higher performance than fine-tuning the diffusion policy (see Figure 3 (a) vs (c)), a fact that is acknowledged by the authors in Section 5.4."
+        }
+      },
+      {
+        "flaw_id": "F02",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The primary benefit of the diffusion policy component of ExDM is unclear, as the pre-training exploration and intrinsic reward generation appear to be the main drivers of performance.",
+        "raw_arguments": {
+          "Human_4": "All this makes me question what the diffusion policy of ExDM truly adds to the method. It appears the benefits of ExDM are not from training a more expressive policy in the diffusion policy, but from the diffusion model of state distributions that appears to provide a more informative intrinsic reward to exhaustively explore the environment."
+        }
+      },
+      {
+        "flaw_id": "F03",
+        "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines",
+        "core_summary": "Key baseline algorithms (APT, APS, MEPOL, RE3, CIC, SKILL) and diffusion planners are missing from the comparison, weakening the empirical claims.",
+        "raw_arguments": {
+          "Human_3": "The results on URLB seems to be promising, but why APT and APS by Liu et al. were not included in the baseline?",
+          "Human_4": "The baselines visualized in Figure 2 appear to be mostly poor performing or middle of the pack when looking at Table 1. None of the strongest baselines (MEPOL, RE3, CIC) are included in Figure 2, supposedly to make the result of ExDM appear more impressive.",
+          "LLM_Reviewer": "Incomplete Baseline Comparisons (Major): The paper excludes key competitors like diffusion planners/policies (e.g., Janner et al., 2022; Wang et al., 2023) and generative models (VAEs/GANs) in URL, weakening novelty claims."
+        }
+      },
+      {
+        "flaw_id": "F04",
+        "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues",
+        "core_summary": "The experimental results lack statistical validity, with no error bars, p-values, or replication counts provided.",
+        "raw_arguments": {
+          "LLM_Reviewer": "No Statistical Validity in Experiments (Major): Results (e.g., 51% coverage gain) lack error bars, p-values, or replication counts. Without statistical rigor, it is unclear whether gains are robust or artifacts of random seeds."
+        }
+      },
+      {
+        "flaw_id": "F05",
+        "macro_topic": "7. Reproducibility & Open Science - Insufficient Implementation Details",
+        "core_summary": "The paper does not report the computational costs (wall-clock time, GPU memory) of training ExDM, which is critical for assessing its practicality.",
+        "raw_arguments": {
+          "LLM_Reviewer": "Missing Computational Cost Analysis (Major): The paper does not quantify the computational burden of training/exploring with ExDM versus baselines. Diffusion models are inherently expensive; omitting metrics like wall-clock time or GPU memory usage undermines practical applicability."
+        }
+      },
+      {
+        "flaw_id": "F06",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Weak Theoretical Justification/Proofs",
+        "core_summary": "The theoretical claims (Theorems 4.1 and 4.2) lack precise definitions of assumptions and formal derivations, rendering them opaque.",
+        "raw_arguments": {
+          "LLM_Reviewer": "Insufficient Theoretical Rigor (Major): Theorems 4.1 and 4.2 lack precise definitions of assumptions (e.g., 'mild assumptions' in Theorem 4.1, convergence conditions in Theorem 4.2). Without formal problem formulations or mathematical derivations, the theoretical claims remain opaque."
+        }
+      },
+      {
+        "flaw_id": "F07",
+        "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues",
+        "core_summary": "The hyperparameter tuning process for the proposed method and all baselines is not clarified, raising concerns about fair comparison.",
+        "raw_arguments": {
+          "Human_4": "Appendix C.3 states that 'hyperparameters of baselines are taken from their implementations'. Were these hyperparameters explicitly tuned for the Maze2D tasks evaluated in this work? How about ExDM hyperparameters listed in Table 2? Were these tuned in any form for the Maze2D tasks?"
+        }
+      },
+      {
+        "flaw_id": "F08",
+        "macro_topic": "5. Related work & Citations - Missing Comparisons with Prior Work",
+        "core_summary": "The paper does not compare to alternative generative models (VAEs, GANs) used in prior URL work, missing an opportunity to justify the choice of diffusion models.",
+        "raw_arguments": {
+          "LLM_Reviewer": "Generative Model Comparison: The paper does not compare ExDM to VAEs/GANs for URL, despite prior work (e.g., Pathak et al., 2017) using these for representation learning. What advantages does diffusion offer over these alternatives?"
+        }
+      },
+      {
+        "flaw_id": "F09",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Strong/Unrealistic Assumptions",
+        "core_summary": "The claim that the optimal policy in 'standard RL' is a simple deterministic policy is imprecise and not generally true in partially observable or multi-agent settings.",
+        "raw_arguments": {
+          "Human_4": "'[...] the optimal policy of standard RL is a simple deterministic policy' (Section 4.1). It is unclear to me what 'standard RL' means; to the best of my knowledge, the statement is only generally true in fully observable (single-agent) RL; partially observable or multi-agent environments might have stochastic optimal policies."
+        }
+      },
+      {
+        "flaw_id": "F10",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The rationale behind the score-based intrinsic reward design is not explained, and alternative designs were not considered or discussed.",
+        "raw_arguments": {
+          "Human_2": "How is the intrinsic reward designed, what is the underlying rationale, and were alternative design schemes considered?"
+        }
+      },
+      {
+        "flaw_id": "F11",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "The paper lacks ablation studies to validate the necessity of key components, such as the score-based intrinsic reward and the decoupling design.",
+        "raw_arguments": {
+          "LLM_Reviewer": "Limited Ablation Studies (Minor): The role of the score-based intrinsic reward versus alternatives (e.g., count-based or entropy-based rewards) is untested. Similarly, the necessity of decoupling diffusion modeling from acting is not evaluated."
+        }
+      },
+      {
+        "flaw_id": "F12",
+        "macro_topic": "2. Clarity & Presentation - Poor Figures/Tables Quality",
+        "core_summary": "Key figures are unclear or potentially misleading, such as confusing labels in Figure 1 and inconsistent colors in Figure 3.",
+        "raw_arguments": {
+          "Human_4": "(Minor) I noticed that baseline algorithms do not have identical colors in Figure 3 (a) and (b) which makes it slightly harder to cross-reference these results at a glance."
+        }
+      },
+      {
+        "flaw_id": "F13",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Scalability & Complexity Concerns",
+        "core_summary": "The scalability and practical feasibility of using diffusion models in URL are not discussed, given their high computational demands.",
+        "raw_arguments": {
+          "LLM_Reviewer": "Scalability Concerns: Diffusion models\u2019 high memory/compute demands are not discussed. How feasible is ExDM for real-world applications (e.g., robotics) with constrained resources?"
+        }
+      },
+      {
+        "flaw_id": "F14",
+        "macro_topic": "7. Reproducibility & Open Science - Other Reproducibility Issues",
+        "core_summary": "The paper omits a reproducibility section, raising concerns about code availability, hyperparameter choices, and implementation details.",
+        "raw_arguments": {
+          "LLM_Reviewer": "Reproducibility Gaps: Missing reproducibility section raises concerns about code availability, hyperparameter choices, and implementation details."
+        }
+      }
+    ]
+  },
+  "evaluations": {
+    "evaluations": {
+      "F01": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F02": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F03": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F04": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F05": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F06": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F07": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F08": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F09": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F10": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F11": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F12": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F13": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F14": {
+        "is_valid": true,
+        "severity": "Minor"
+      }
+    }
+  },
+  "metrics_report": {
+    "cfi": {
+      "Severity_Points": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Flaw_Weights_Summary": {
+        "F01": {
+          "weight": 0.4,
+          "severity": "Critical",
+          "consensus_count": 2
+        },
+        "F02": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F03": {
+          "weight": 0.6,
+          "severity": "Critical",
+          "consensus_count": 3
+        },
+        "F05": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F06": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F07": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F08": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F09": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F10": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F11": {
+          "weight": 0.2,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F12": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F13": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F14": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        }
+      },
+      "Ground_Truth_Summary": {
+        "Total_Valid_Flaws": 13,
+        "Total_Critical_Flaws": 5,
+        "Total_Minor_Flaws": 8,
+        "Total_Critical_ConsensusWeight": 1.6,
+        "Total_Minor_ConsensusWeight": 1.6
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_4",
+          "Critical_Recall": 0.6,
+          "Minor_Recall": 0.375,
+          "Critical_Recall_ConsensusWeighted": 0.75,
+          "Minor_Recall_ConsensusWeighted": 0.375,
+          "Detected_Critical_Flaws": 3,
+          "Detected_Minor_Flaws": 3,
+          "Detected_Critical_ConsensusWeight": 1.2,
+          "Detected_Minor_ConsensusWeight": 0.6,
+          "Total_Valid_Flaws_Found": 6
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Critical_Recall": 0.6,
+          "Minor_Recall": 0.5,
+          "Critical_Recall_ConsensusWeighted": 0.625,
+          "Minor_Recall_ConsensusWeighted": 0.5,
+          "Detected_Critical_Flaws": 3,
+          "Detected_Minor_Flaws": 4,
+          "Detected_Critical_ConsensusWeight": 1.0,
+          "Detected_Minor_ConsensusWeight": 0.8,
+          "Total_Valid_Flaws_Found": 7
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Critical_Recall": 0.2,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.375,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0.6,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 1
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Critical_Recall": 0.2,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.25,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0.4,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 1
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.125,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.125,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 1,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 0.2,
+          "Total_Valid_Flaws_Found": 1
+        }
+      ]
+    },
+    "cps": {
+      "Severity_Map": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Canonical_Issue_Bank": {
+        "issues": [
+          {
+            "issue_id": "F01",
+            "shared_severity": "Critical",
+            "canonical_summary": "The diffusion policy fine-tuning algorithm (Algorithm 2) is outperformed by the simpler Gaussian policy fine-tuned with standard DDPG, raising questions about its practical benefit and optimization.",
+            "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation"
+          },
+          {
+            "issue_id": "F02",
+            "shared_severity": "Critical",
+            "canonical_summary": "The primary benefit of the diffusion policy component of ExDM is unclear, as the pre-training exploration and intrinsic reward generation appear to be the main drivers of performance.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F03",
+            "shared_severity": "Critical",
+            "canonical_summary": "Key baseline algorithms (APT, APS, MEPOL, RE3, CIC, SKILL) and diffusion planners are missing from the comparison, weakening the empirical claims.",
+            "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines"
+          },
+          {
+            "issue_id": "F05",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper does not report the computational costs (wall-clock time, GPU memory) of training ExDM, which is critical for assessing its practicality.",
+            "macro_topic": "7. Reproducibility & Open Science - Insufficient Implementation Details"
+          },
+          {
+            "issue_id": "F06",
+            "shared_severity": "Minor",
+            "canonical_summary": "The theoretical claims (Theorems 4.1 and 4.2) lack precise definitions of assumptions and formal derivations, rendering them opaque.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Weak Theoretical Justification/Proofs"
+          },
+          {
+            "issue_id": "F07",
+            "shared_severity": "Minor",
+            "canonical_summary": "The hyperparameter tuning process for the proposed method and all baselines is not clarified, raising concerns about fair comparison.",
+            "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues"
+          },
+          {
+            "issue_id": "F08",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper does not compare to alternative generative models (VAEs, GANs) used in prior URL work, missing an opportunity to justify the choice of diffusion models.",
+            "macro_topic": "5. Related work & Citations - Missing Comparisons with Prior Work"
+          },
+          {
+            "issue_id": "F09",
+            "shared_severity": "Minor",
+            "canonical_summary": "The claim that the optimal policy in 'standard RL' is a simple deterministic policy is imprecise and not generally true in partially observable or multi-agent settings.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Strong/Unrealistic Assumptions"
+          },
+          {
+            "issue_id": "F10",
+            "shared_severity": "Minor",
+            "canonical_summary": "The rationale behind the score-based intrinsic reward design is not explained, and alternative designs were not considered or discussed.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F11",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper lacks ablation studies to validate the necessity of key components, such as the score-based intrinsic reward and the decoupling design.",
+            "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation"
+          },
+          {
+            "issue_id": "F12",
+            "shared_severity": "Minor",
+            "canonical_summary": "Key figures are unclear or potentially misleading, such as confusing labels in Figure 1 and inconsistent colors in Figure 3.",
+            "macro_topic": "2. Clarity & Presentation - Poor Figures/Tables Quality"
+          },
+          {
+            "issue_id": "F13",
+            "shared_severity": "Minor",
+            "canonical_summary": "The scalability and practical feasibility of using diffusion models in URL are not discussed, given their high computational demands.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Scalability & Complexity Concerns"
+          },
+          {
+            "issue_id": "F14",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper omits a reproducibility section, raising concerns about code availability, hyperparameter choices, and implementation details.",
+            "macro_topic": "7. Reproducibility & Open Science - Other Reproducibility Issues"
+          }
+        ]
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_1",
+          "Raw_CPS": 3.2619,
+          "ICPS": 3.2619,
+          "nCPS": 1.0,
+          "Total_Arguments": 2,
+          "Critical_Count": 2,
+          "Minor_Count": 0,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 2,
+              "CPS_s": 3.2619,
+              "ICPS_s": 3.2619,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.4305
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Raw_CPS": 2.0,
+          "ICPS": 2.0,
+          "nCPS": 1.0,
+          "Total_Arguments": 1,
+          "Critical_Count": 1,
+          "Minor_Count": 0,
+          "Section_Breakdown": [
+            {
+              "section": "Questions",
+              "n_args": 1,
+              "CPS_s": 2.0,
+              "ICPS_s": 2.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.1903
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Raw_CPS": 1.0,
+          "ICPS": 1.0,
+          "nCPS": 1.0,
+          "Total_Arguments": 1,
+          "Critical_Count": 0,
+          "Minor_Count": 1,
+          "Section_Breakdown": [
+            {
+              "section": "Questions",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.0
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Raw_CPS": 5.3224,
+          "ICPS": 5.4356,
+          "nCPS": 0.9792,
+          "Total_Arguments": 6,
+          "Critical_Count": 3,
+          "Minor_Count": 3,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 6,
+              "CPS_s": 5.3224,
+              "ICPS_s": 5.4356,
+              "nCPS_s": 0.9792
+            }
+          ],
+          "CPS_norm": 0.8227
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Raw_CPS": 6.2541,
+          "ICPS": 7.3235,
+          "nCPS": 0.854,
+          "Total_Arguments": 7,
+          "Critical_Count": 3,
+          "Minor_Count": 4,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 4,
+              "CPS_s": 3.4923,
+              "ICPS_s": 4.1925,
+              "nCPS_s": 0.833
+            },
+            {
+              "section": "Limitations Not Addressed By The Authors",
+              "n_args": 3,
+              "CPS_s": 2.7619,
+              "ICPS_s": 3.1309,
+              "nCPS_s": 0.8821
+            }
+          ],
+          "CPS_norm": 1.0
+        }
+      ]
+    },
+    "mode": "all"
+  }
+}

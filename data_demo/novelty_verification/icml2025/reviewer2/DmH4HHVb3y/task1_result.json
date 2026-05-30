@@ -1,0 +1,73 @@
+{
+  "paper": {
+    "core_task": "Enhancing multiturn human-LLM collaboration for long-term interaction",
+    "contributions": [
+      {
+        "name": "A multiturn-aware reward framework for LLM training",
+        "author_claim_text": "Its key innovation is a collaborative simulation that estimates the long-term contribution of responses using Multiturn-aware Rewards.",
+        "description": "A training framework that estimates the long-term impact of model responses via collaborative simulation, using both extrinsic and intrinsic metrics to form multiturn-aware rewards.",
+        "source_hint": "Abstract"
+      },
+      {
+        "name": "A collaborative simulation module for forward sampling",
+        "author_claim_text": "We introduce a collaborative simulation module that samples future conversations with users to estimate the long-term impact of model responses across multiple turns.",
+        "description": "A module that samples possible future conversations with a user simulator to compute the expected long-term reward of a response, enabling forward-looking behavior.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "A multiturn interaction benchmark with three tasks",
+        "author_claim_text": "We also devise a multiturn interaction benchmark with three challenging tasks such as document creation.",
+        "description": "A new benchmark comprising three multiturn tasks—document editing, code generation, and math problem solving—for evaluating collaborative LLM performance.",
+        "source_hint": "Abstract"
+      }
+    ],
+    "key_terms": [
+      "multiturn-aware reward",
+      "collaborative simulation",
+      "forward sampling",
+      "user simulator",
+      "reinforcement fine-tuning",
+      "long-term collaboration",
+      "interactivity",
+      "intent discovery",
+      "multiturn interaction",
+      "extrinsic reward",
+      "intrinsic reward",
+      "causal effect estimation"
+    ],
+    "must_have_entities": [
+      "Multiturn-aware Reward (MR)",
+      "MediumDocEdit-Chat",
+      "BigCodeBench-Chat",
+      "MATH-Chat",
+      "Llama-3.1-8B",
+      "GPT-4o-mini",
+      "Abg-CoQA"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The novelty is somewhat diluted by the absence of a thorough comparison to existing multiturn frameworks.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": true,
+        "prior_work_strings": [
+          "MTPO",
+          "STaR-GATE"
+        ],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "MTPO",
+      "STaR-GATE",
+      "Abg-CoQA",
+      "GPT-4o-mini",
+      "MediumDocEdit-Chat",
+      "BigCodeBench-Chat",
+      "MATH-Chat"
+    ]
+  }
+}

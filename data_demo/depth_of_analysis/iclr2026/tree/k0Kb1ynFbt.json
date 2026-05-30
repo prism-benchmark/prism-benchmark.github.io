@@ -1,0 +1,140 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "source": "tree_iclr2026",
+  "source_format": "tree_json",
+  "reviews_analysis": {
+    "TREE_ICLR2026": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper presents a novel and well-motivated approach to URL by introducing diffusion models, which have not been previously applied in this context.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The use of a score-based intrinsic reward to guide exploration is a significant innovation that addresses a known limitation in existing methods.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The proposed decoupled training scheme and fine-tuning algorithm with theoretical guarantees represent a valuable contribution to the field.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The experimental results on standard benchmarks are strong and demonstrate the effectiveness of ExDM in both exploration and adaptation tasks.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper lacks sufficient detail in the methodology section, making it difficult to reproduce the experiments and critically evaluate the approach.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Key parameters, implementation specifics, and data preprocessing steps are not clearly described.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Additionally, the paper does not provide a formal definition of research questions or hypotheses, and the structure is not fully coherent, with a missing discussion section and unclear transitions between sections.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The theoretical implications of the contributions are also not thoroughly discussed, limiting the understanding of how this work advances the field.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper would benefit from a more detailed description of the methodology, including specific hyperparameters, implementation details, and data preprocessing steps to ensure reproducibility.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The authors should also clarify the research questions and hypotheses, and provide a structured discussion that interprets the results in the context of these questions.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "Furthermore, the paper should address the theoretical and practical implications of the proposed method in relation to existing work, as well as its limitations and potential for broader applicability.",
+        "role": "Rebuttal",
+        "aspect": "Related Work",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The paper presents a technically sound approach with a clear motivation and experimental validation.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "However, the lack of detailed methodology and theoretical discussion limits the ability to fully assess the robustness and generalizability of the claims.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The paper is generally well-written but suffers from structural issues, including the absence of a discussion section and unclear transitions between sections.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The methodology is not sufficiently detailed, and the research questions are not formally defined, which affects the clarity and coherence of the presentation.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "The paper makes a significant contribution to the field of unsupervised reinforcement learning by introducing a novel application of diffusion models for exploration and adaptation.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "The proposed method addresses a key limitation in existing URL approaches and demonstrates strong empirical performance on standard benchmarks.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The paper presents a novel and impactful contribution to the field of URL, but it requires improvements in methodology description, structure, and theoretical discussion to enhance clarity, reproducibility, and interpretability.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 2846,
+    "completion_tokens": 2846,
+    "total_tokens": 5692
+  }
+}

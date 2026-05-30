@@ -1,0 +1,150 @@
+{
+  "paper_id": "DmH4HHVb3y",
+  "metadata": {
+    "decision": "Accept (oral)",
+    "avg_rating": 4.0,
+    "avg_confidence": null,
+    "num_reviewers": 5
+  },
+  "reviewer_id": "SEA",
+  "status": "success",
+  "atomic_comments": [
+    {
+      "arc_id": "ARC_01",
+      "section": "Strengths",
+      "comment_type": "strength",
+      "content": "The collaborative simulation module with Multiturn-aware Rewards is highlighted as a key strength.",
+      "anchor_quote": "COLLABLLM's collaborative simulation module that uses Multiturn-aware Rewards to estimate long-term impact and optimize responses for multiturn collaboration.",
+      "D1_actionability": 0,
+      "D2_specificity": 2,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_02",
+      "section": "Strengths",
+      "comment_type": "strength",
+      "content": "The multiturn interaction benchmark with three challenging tasks is praised.",
+      "anchor_quote": "The multiturn interaction benchmark that includes three challenging tasks, providing a comprehensive evaluation of COLLABLLM's performance.",
+      "D1_actionability": 0,
+      "D2_specificity": 2,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_03",
+      "section": "Strengths",
+      "comment_type": "strength",
+      "content": "The paper demonstrates significant improvements over baselines across various metrics.",
+      "anchor_quote": "The significant improvements in task performance, efficiency, and interactivity over baselines across various metrics.",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_04",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The approach has high complexity and computational cost for computing Multiturn-aware Rewards.",
+      "anchor_quote": "The complexity and computational cost associated with computing the Multiturn-aware Rewards.",
+      "D1_actionability": 1,
+      "D2_specificity": 2,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_05",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The method relies on forward sampling and user simulators, which may not fully capture real-world human behavior nuances.",
+      "anchor_quote": "The reliance on forward sampling and user simulators, which may not fully capture the nuances of real-world human behavior.",
+      "D1_actionability": 1,
+      "D2_specificity": 2,
+      "D3_justification": 1,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_06",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The reviewer asks for a comparison of COLLABLLM's approach to other recent multiturn collaboration methods in terms of effectiveness and efficiency.",
+      "anchor_quote": "How does COLLABLLM's approach to multiturn collaboration compare to other recent approaches in terms of effectiveness and efficiency?",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_07",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The reviewer questions whether Multiturn-aware Rewards can accurately capture long-term impact in complex, open-ended tasks.",
+      "anchor_quote": "Can COLLABLLM's Multiturn-aware Rewards accurately capture the long-term impact of responses in complex, open-ended tasks?",
+      "D1_actionability": 1,
+      "D2_specificity": 2,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_08",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The reviewer asks about the limitations and generalizability challenges of using user simulators in training.",
+      "anchor_quote": "What are the potential limitations and challenges of using user simulators in the training process, and how do they affect the generalizability of COLLABLLM?",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_09",
+      "section": "Paper Decision",
+      "comment_type": "observation",
+      "content": "The paper could benefit from a more in-depth discussion of limitations and future directions.",
+      "anchor_quote": "However, it could benefit from a more in-depth discussion of the limitations and potential future directions for COLLABLLM",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 1,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_10",
+      "section": "Paper Decision",
+      "comment_type": "observation",
+      "content": "The paper should include more comparisons with other recent approaches in the field.",
+      "anchor_quote": "as well as comparisons with other recent approaches in the field.",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 1,
+      "D5_tone": 1
+    }
+  ],
+  "metrics": {
+    "MCS": 0.44,
+    "AR": 0.7,
+    "SD": 0.1,
+    "CD": 0.1,
+    "D1_actionability_mean": 0.8,
+    "D2_specificity_mean": 1.5,
+    "D3_justification_mean": 0.1,
+    "D4_solution_mean": 0.4,
+    "D5_tone_mean": 1.6,
+    "n_arcs": 10,
+    "n_weaknesses": 2,
+    "n_strengths": 3,
+    "n_questions": 3,
+    "n_suggestions": 0,
+    "n_observations": 2
+  }
+}

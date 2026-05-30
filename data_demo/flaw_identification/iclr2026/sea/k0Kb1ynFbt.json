@@ -1,0 +1,388 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "micro_flaws": {
+    "micro_flaws": [
+      {
+        "flaw_id": "F01",
+        "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines",
+        "core_summary": "The paper fails to include strong, state-of-the-art baselines (e.g., APT, APS, MEPOL, RE3, CIC) in its experiments, which weakens the claimed contributions and makes results appear less impressive.",
+        "raw_arguments": {
+          "Human_3": "The results on URLB seems to be promising, but why APT and APS by Liu et al. were not included in the baseline?",
+          "Human_4": "The baselines visualized in Figure 2 appear to be mostly poor performing or middle of the pack when looking at Table 1. None of the strongest baselines (MEPOL, RE3, CIC) are included in Figure 2, supposedly to make the result of ExDM appear more impressive.",
+          "LLM_Reviewer": "The paper does not provide a comprehensive comparison of the method with state-of-the-art techniques in unsupervised RL, which could help in assessing its novelty and effectiveness."
+        }
+      },
+      {
+        "flaw_id": "F02",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The paper's core motivation\u2014that using a more expressive diffusion policy will improve exploration and fine-tuning\u2014is contradicted by its own results, as the simpler Gaussian policy outperforms the diffusion policy after fine-tuning.",
+        "raw_arguments": {
+          "Human_1": "There is a limitation in terms of performance gap: The paper's own experiments (Fig. 3) show that fine-tuning the simple Gaussian policy (\u03c0_g) actually achieves better final performance than the proposed new, complex diffusion policy fine-tuning algorithm (Algorithm 2).",
+          "Human_4": "Despite this motivation and more expressive diffusion policy, the environment interactions during pre-training are still done only using the Gaussian policy... Furthermore, fine-tuning of the Gaussian policy of ExDM still leads to higher performance than fine-tuning the diffusion policy (see Figure 3 (a) vs (c))... All this makes me question what the diffusion policy of ExDM truly adds to the method."
+        }
+      },
+      {
+        "flaw_id": "F03",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations",
+        "core_summary": "The paper acknowledges but fails to adequately explain or discuss the limitation that its novel diffusion policy fine-tuning method (Algorithm 2) is outperformed by the simpler Gaussian policy baseline.",
+        "raw_arguments": {
+          "Human_1": "While their new fine-tuning method (Algorithm 2) is a novel contribution, it is not yet fully optimized and is outperformed by a simpler, standard approach such as DDPG.",
+          "Human_4": "Did you fine-tune the diffusion policies with the same 2M steps as used for Gaussian policy fine-tuning? If not, how many steps were used to fine-tune diffusion policies and why was a different number of fine-tuning steps used for these policies?"
+        }
+      },
+      {
+        "flaw_id": "F04",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "The hyperparameter tuning process for the baselines and for ExDM on the evaluated Maze2D tasks is not described, raising concerns about fairness in the empirical comparison.",
+        "raw_arguments": {
+          "Human_4": "Appendix C.3 states that 'hyperparameters of baselines are taken from their implementations'. Were these hyperparameters explicitly tuned for the Maze2D tasks evaluated in this work? How about ExDM hyperparameters listed in Table 2? Were these tuned in any form for the Maze2D tasks?"
+        }
+      },
+      {
+        "flaw_id": "F05",
+        "macro_topic": "2. Clarity & Presentation - General writing & Clarity issues",
+        "core_summary": "The paper contains imprecise or incorrect statements that undermine its theoretical and conceptual clarity, such as claims about 'standard RL' and the requirements of URL.",
+        "raw_arguments": {
+          "Human_4": "The work makes the following two statements that are unclear, imprecise, or incorrect... '[...] the optimal policy of standard RL is a simple deterministic policy'... It is unclear to me what 'standard RL' means... '[...] the explored replay buffer is always diverse and heterogeneous... Consequently, URL requires capturing the heterogeneous distribution...'"
+        }
+      },
+      {
+        "flaw_id": "F06",
+        "macro_topic": "2. Clarity & Presentation - Poor Figures/Tables Quality",
+        "core_summary": "Key figures are confusing or misleading, such as Figure 1 where policy titles for Gaussian and diffusion fine-tuning appear reversed, and Figure 3 where baseline colors are inconsistent across subplots.",
+        "raw_arguments": {
+          "Human_4": "The fine-tune box of Figure 1 appears confusing to me and I believe the policy titles should be flipped... I noticed that baseline algorithms do not have identical colors in Figure 3 (a) and (b) which makes it slightly harder to cross-reference these results at a glance."
+        }
+      },
+      {
+        "flaw_id": "F07",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Weak Theoretical Justification/Proofs",
+        "core_summary": "The theoretical analysis is limited to a single theorem (Theorem 4.1) whose practical implications and connection to the empirical results are not deeply explored or demonstrated.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The theoretical analysis is somewhat limited to a specific theorem that is not deeply explored, and its practical implications are not clearly demonstrated."
+        }
+      },
+      {
+        "flaw_id": "F08",
+        "macro_topic": "1. Novelty & Contribution - Lack of Significance/Impact",
+        "core_summary": "The paper's primary contribution may be limited to the pre-training exploration mechanism (providing a good intrinsic reward), while its proposed diffusion policy and fine-tuning method do not yet offer clear practical benefits over simpler baselines.",
+        "raw_arguments": {
+          "Human_1": "It is expected that the paper's primary strength lies in its pre-training exploration (which produces a superior Gaussian policy) rather than its diffusion policy fine-tuning performance.",
+          "Human_4": "It appears the benefits of ExDM are not from training a more expressive policy in the diffusion policy, but from the diffusion model of state distributions that appears to provide a more informative intrinsic reward... Given Theorem 4.1, one might expect the more expressive diffusion policy of ExDM to provide clear benefits."
+        }
+      }
+    ]
+  },
+  "evaluations": {
+    "evaluations": {
+      "F01": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F02": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F03": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F04": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F05": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F06": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F07": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F08": {
+        "is_valid": true,
+        "severity": "Critical"
+      }
+    }
+  },
+  "metrics_report": {
+    "cfi": {
+      "Severity_Points": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Flaw_Weights_Summary": {
+        "F01": {
+          "weight": 0.6,
+          "severity": "Critical",
+          "consensus_count": 3
+        },
+        "F02": {
+          "weight": 0.4,
+          "severity": "Critical",
+          "consensus_count": 2
+        },
+        "F03": {
+          "weight": 0.4,
+          "severity": "Minor",
+          "consensus_count": 2
+        },
+        "F04": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F05": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F06": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F07": {
+          "weight": 0.2,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F08": {
+          "weight": 0.4,
+          "severity": "Critical",
+          "consensus_count": 2
+        }
+      },
+      "Ground_Truth_Summary": {
+        "Total_Valid_Flaws": 8,
+        "Total_Critical_Flaws": 3,
+        "Total_Minor_Flaws": 5,
+        "Total_Critical_ConsensusWeight": 1.4,
+        "Total_Minor_ConsensusWeight": 1.2
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_4",
+          "Critical_Recall": 1.0,
+          "Minor_Recall": 0.8,
+          "Critical_Recall_ConsensusWeighted": 1.0,
+          "Minor_Recall_ConsensusWeighted": 0.8333,
+          "Detected_Critical_Flaws": 3,
+          "Detected_Minor_Flaws": 4,
+          "Detected_Critical_ConsensusWeight": 1.4,
+          "Detected_Minor_ConsensusWeight": 1.0,
+          "Total_Valid_Flaws_Found": 7
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Critical_Recall": 0.6667,
+          "Minor_Recall": 0.2,
+          "Critical_Recall_ConsensusWeighted": 0.5714,
+          "Minor_Recall_ConsensusWeighted": 0.3333,
+          "Detected_Critical_Flaws": 2,
+          "Detected_Minor_Flaws": 1,
+          "Detected_Critical_ConsensusWeight": 0.8,
+          "Detected_Minor_ConsensusWeight": 0.4,
+          "Total_Valid_Flaws_Found": 3
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Critical_Recall": 0.3333,
+          "Minor_Recall": 0.2,
+          "Critical_Recall_ConsensusWeighted": 0.4286,
+          "Minor_Recall_ConsensusWeighted": 0.1667,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 1,
+          "Detected_Critical_ConsensusWeight": 0.6,
+          "Detected_Minor_ConsensusWeight": 0.2,
+          "Total_Valid_Flaws_Found": 2
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Critical_Recall": 0.3333,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.4286,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0.6,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 1
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 0
+        }
+      ]
+    },
+    "cps": {
+      "Severity_Map": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Canonical_Issue_Bank": {
+        "issues": [
+          {
+            "issue_id": "F01",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper fails to include strong, state-of-the-art baselines (e.g., APT, APS, MEPOL, RE3, CIC) in its experiments, which weakens the claimed contributions and makes results appear less impressive.",
+            "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines"
+          },
+          {
+            "issue_id": "F02",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper's core motivation\u2014that using a more expressive diffusion policy will improve exploration and fine-tuning\u2014is contradicted by its own results, as the simpler Gaussian policy outperforms the diffusion policy after fine-tuning.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F03",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper acknowledges but fails to adequately explain or discuss the limitation that its novel diffusion policy fine-tuning method (Algorithm 2) is outperformed by the simpler Gaussian policy baseline.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations"
+          },
+          {
+            "issue_id": "F04",
+            "shared_severity": "Minor",
+            "canonical_summary": "The hyperparameter tuning process for the baselines and for ExDM on the evaluated Maze2D tasks is not described, raising concerns about fairness in the empirical comparison.",
+            "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation"
+          },
+          {
+            "issue_id": "F05",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper contains imprecise or incorrect statements that undermine its theoretical and conceptual clarity, such as claims about 'standard RL' and the requirements of URL.",
+            "macro_topic": "2. Clarity & Presentation - General writing & Clarity issues"
+          },
+          {
+            "issue_id": "F06",
+            "shared_severity": "Minor",
+            "canonical_summary": "Key figures are confusing or misleading, such as Figure 1 where policy titles for Gaussian and diffusion fine-tuning appear reversed, and Figure 3 where baseline colors are inconsistent across subplots.",
+            "macro_topic": "2. Clarity & Presentation - Poor Figures/Tables Quality"
+          },
+          {
+            "issue_id": "F07",
+            "shared_severity": "Minor",
+            "canonical_summary": "The theoretical analysis is limited to a single theorem (Theorem 4.1) whose practical implications and connection to the empirical results are not deeply explored or demonstrated.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Weak Theoretical Justification/Proofs"
+          },
+          {
+            "issue_id": "F08",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper's primary contribution may be limited to the pre-training exploration mechanism (providing a good intrinsic reward), while its proposed diffusion policy and fine-tuning method do not yet offer clear practical benefits over simpler baselines.",
+            "macro_topic": "1. Novelty & Contribution - Lack of Significance/Impact"
+          }
+        ]
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_3",
+          "Raw_CPS": 4.0,
+          "ICPS": 4.0,
+          "nCPS": 1.0,
+          "Total_Arguments": 2,
+          "Critical_Count": 2,
+          "Minor_Count": 0,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 1,
+              "CPS_s": 2.0,
+              "ICPS_s": 2.0,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Questions",
+              "n_args": 1,
+              "CPS_s": 2.0,
+              "ICPS_s": 2.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.7515
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Raw_CPS": 2.6309,
+          "ICPS": 2.6309,
+          "nCPS": 1.0,
+          "Total_Arguments": 2,
+          "Critical_Count": 1,
+          "Minor_Count": 1,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 2,
+              "CPS_s": 2.6309,
+              "ICPS_s": 2.6309,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.4943
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Raw_CPS": 5.3224,
+          "ICPS": 5.4356,
+          "nCPS": 0.9792,
+          "Total_Arguments": 6,
+          "Critical_Count": 3,
+          "Minor_Count": 3,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 6,
+              "CPS_s": 5.3224,
+              "ICPS_s": 5.4356,
+              "nCPS_s": 0.9792
+            }
+          ],
+          "CPS_norm": 1.0
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Raw_CPS": 3.6309,
+          "ICPS": 3.7619,
+          "nCPS": 0.9652,
+          "Total_Arguments": 3,
+          "Critical_Count": 2,
+          "Minor_Count": 1,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 3,
+              "CPS_s": 3.6309,
+              "ICPS_s": 3.7619,
+              "nCPS_s": 0.9652
+            }
+          ],
+          "CPS_norm": 0.6822
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Raw_CPS": 0.0,
+          "ICPS": 0.0,
+          "nCPS": 0.0,
+          "Total_Arguments": 0,
+          "Critical_Count": 0,
+          "Minor_Count": 0,
+          "Section_Breakdown": [],
+          "CPS_norm": 0.0
+        }
+      ]
+    },
+    "mode": "all"
+  }
+}

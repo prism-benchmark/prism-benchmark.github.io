@@ -1,0 +1,83 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Enhancing multiturn human-LLM collaboration long-term interaction multiturn-aware reward framework LLM training",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C2",
+      "query": "Enhancing multiturn human-LLM collaboration long-term interaction collaborative simulation module forward sampling",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "id": "C3",
+      "query": "Enhancing multiturn human-LLM collaboration long-term interaction multiturn interaction benchmark three tasks",
+      "status": "ok",
+      "count": 4
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "da625b2e2f32b3ee4eb655d8cdb96f74b20e0bce",
+      "title": "GOLF: Goal-Oriented Long-term liFe tasks supported by human-AI collaboration",
+      "year": 2024,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "abstract": "The advent of ChatGPT and similar large language models (LLMs) has revolutionized the human-AI interaction and information-seeking process. Leveraging LLMs as an alternative to search engines, users can now access summarized information tailored to their queries, significantly reducing the cognitive load in navigating vast information resources. This shift underscores the potential of LLMs in redefining information access paradigms [1]. Drawing on the foundation of task-focused information retrieval and LLMs' task planning ability, this research extends the scope of LLM capabilities beyond short-term task automation (i.e., smaller-scale and routine tasks that LLM agents can automate with less human intervention) to support users in navigating long-term and significant life tasks. The long-term tasks encompass broader personal life goals or development in aspects like health, finances, education, and professional development, which cannot be fully completed by LLM agents but require significant human involvement. This study introduces the GOLF framework (Goal-Oriented Long-term liFe tasks), which focuses on enhancing LLMs' ability to assist in significant life decisions through goal orientation and long-term planning. Figure 1 presents the GOLF framework, including a task taxonomy and the process for task management. The GOLF framework envisions the completion of complex tasks as a strategic journey toward a final goal, incorporating a sequence of activities, tasks, and subtasks, adopting the task taxonomy in Figure 1a [2]. Figure 1b illustrates the task process within the GOLF framework, which operates on AutoGen [3], a sophisticated multi-agent system, and involves multiple LLM agents to facilitate user support and workload distribution for achieving long-term goals. The multi-agent system processes the task following steps: Initial Planning, Step Planning, Task Assignment, Multi-Agent Coordination, User Engagement, and Evaluation and Iteration. The methodology encompasses a comprehensive simulation study to test the framework's efficacy, followed by model and human evaluations to develop a dataset benchmark for long-term life tasks, and experiments across different models and settings. By shifting the focus from short-term tasks to the broader spectrum of long-term life goals, this research underscores the transformative potential of LLMs in enhancing human decision-making processes and task management, marking a significant step forward in the evolution of human-AI collaboration.",
+      "url": "https://www.semanticscholar.org/paper/da625b2e2f32b3ee4eb655d8cdb96f74b20e0bce",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "title": "CollabLLM: From Passive Responders to Active Collaborators",
+      "year": 2025,
+      "venue": "International Conference on Machine Learning",
+      "abstract": "Large Language Models are typically trained with next-turn rewards, limiting their ability to optimize for long-term interaction. As a result, they often respond passively to ambiguous or open-ended user requests, failing to help users reach their ultimate intents and leading to inefficient conversations. To address these limitations, we introduce CollabLLM, a novel and general training framework that enhances multiturn human-LLM collaboration. Its key innovation is a collaborative simulation that estimates the long-term contribution of responses using Multiturn-aware Rewards. By reinforcement fine-tuning these rewards, CollabLLM goes beyond responding to user requests, and actively uncovers user intent and offers insightful suggestions-a key step towards more human-centered AI. We also devise a multiturn interaction benchmark with three challenging tasks such as document creation. CollabLLM significantly outperforms our baselines with averages of 18.5% higher task performance and 46.3% improved interactivity by LLM judges. Finally, we conduct a large user study with 201 judges, where CollabLLM increases user satisfaction by 17.6% and reduces user spent time by 10.4%.",
+      "url": "https://www.semanticscholar.org/paper/33c8fde911526140a85cdfc654c8ee318f83906d",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "9e5e96f78f4e5f53fa0dc8f090d189ceae5bac7b",
+      "title": "Hello Again! LLM-powered Personalized Agent for Long-term Dialogue",
+      "year": 2024,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "abstract": "Open-domain dialogue systems have seen remarkable advancements with the development of large language models (LLMs). Nonetheless, most existing dialogue systems predominantly focus on brief single-session interactions, neglecting the real-world demands for long-term companionship and personalized interactions with chatbots. Crucial to addressing this real-world need are event summary and persona management, which enable reasoning for appropriate long-term dialogue responses. Recent progress in the human-like cognitive and reasoning capabilities of LLMs suggests that LLM-based agents could significantly enhance automated perception, decision-making, and problem-solving. In response to this potential, we introduce a model-agnostic framework, the Long-term Dialogue Agent (LD-Agent), which incorporates three independently tunable modules dedicated to event perception, persona extraction, and response generation. For the event memory module, long and short-term memory banks are employed to separately focus on historical and ongoing sessions, while a topic-based retrieval mechanism is introduced to enhance the accuracy of memory retrieval. Furthermore, the persona module conducts dynamic persona modeling for both users and agents. The integration of retrieved memories and extracted personas is subsequently fed into the generator to induce appropriate responses. The effectiveness, generality, and cross-domain capabilities of LD-Agent are empirically demonstrated across various illustrative benchmarks, models, and tasks. The code is released at https://github.com/leolee99/LD-Agent.",
+      "url": "https://www.semanticscholar.org/paper/9e5e96f78f4e5f53fa0dc8f090d189ceae5bac7b",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "title": "Technologies for E-Learning and Digital Entertainment, Second International Conference, Edutainment 2007, Hong Kong, China, June 11-13, 2007, Proceedings",
+      "year": 2007,
+      "venue": "International Conference on E-learning and Games",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "af02099d8b1ce1f0d224fcbb4a4e4b77608db168",
+      "title": "MemoryART: Enhancing LLMs via Multi-Memory Models with Adaptive Resonance Theory for Healthcare Agents",
+      "year": 2026,
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "abstract": "Though promising in healthcare consultation applications, large language models (LLMs) face critical limitations in retaining and utilizing long-term memory across multi-turn interactions. In particular, existing memory enhancing paradigms are constrained by limited context windows and embedding-based retrieval, often failing to maintain task relevance and still suffering from memory prototype collapse in multi-turn healthcare consultation. To address these challenges, we propose a cognitively-inspired memory framework named MemoryART, which is grounded in Adaptive Resonance Theory (ART)—a cognitive and learning theory of how humans and animals adapt to dynamic environments. MemoryART employs three memory modules—working memory, episodic memory, and semantic memory to support task-aware memory organization and dynamic retrieval. Specifically, episodic memory provides the storage of specific experiences along with contextual clues, which is crucial for managing patient-specific information and perfect for multi-turn healthcare consultation interactions. Building upon this concept, MemoryART leverages multi-channel competitive learning and resonance matching to enable efficient and interpretable episodic memory encoding, alleviating issues of prototype collapse and noisy memory associations. For evaluation, we construct a long-term medical dialogue benchmark called MediLongChat using a LLM-based generation pipeline. The resulting dataset features realistic, multi-disease chat histories, each exceeding 100K tokens across 20–30 dialogues, simulating real-world healthcare interaction patterns. Our experimental results show that MemoryART outperforms mainstream approaches in memory-intensive tasks, achieving SOTA results and significantly reducing token consumption across five popular LLMs, confirming its effectiveness and efficiency in providing scalable, reliable memory for LLMs in healthcare.",
+      "url": "https://www.semanticscholar.org/paper/af02099d8b1ce1f0d224fcbb4a4e4b77608db168",
+      "embedding": null,
+      "relevance_score": 0.25
+    }
+  ],
+  "stats": {
+    "total_candidates": 7,
+    "after_dedup": 5,
+    "after_nontechnical_filter": 5,
+    "after_year_filter": 5,
+    "final": 5
+  }
+}

@@ -1,0 +1,771 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The novelty is in the mix of data trained on. Rather than focusing on a single environment or even single action space, the model (UniSim) is trained jointly on 14 common datasets, from the text-image LAION dataset (often used for image generation), to the Something-somethingV2 video dataset (often used for video classification)."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "Any algorithmic or model novelty is light (more or less straightforward video diffusion)."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "text": "Title: Nano World Models: A Minimalist Implementation of Future Video Prediction\n\nAbstract: World models have become a central paradigm for learning predictive simulators that support generation, planning, and decision-making. Yet, despite rapid progress in industry-scale interactive video generation, the broader research community still lacks compact, reproducible, and easily extensible implementations for studying the design choices underlying modern world models. We introduce Nano World Models, a minimalist codebase for future video prediction centered around diffusion forcing. Nano World Models provides a unified interface for generative objectives, model scales, action-conditioning mechanisms, latent observation spaces, datasets, evaluation protocols, and long-horizon rollout procedures. This design enables controlled studies of world-modeling components that are often entangled across separate implementations. Through experiments across simple control environments, game simulation, and real-robot data, we examine how prediction parameterization, architecture scale, action injection, sampling budget, and domain complexity affect video prediction quality and autoregressive rollout behavior. By releasing code, configurations, evaluation scripts, and pretrained checkpoints, Nano World Models aims to provide a compact yet extensible experimental substrate for open, reproducible, and scientific world-model research.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "c3d14e7a319ab764297a60112ce74af201762a73",
+      "text": "Title: Learning Interactive Real-World Simulators\n\nAbstract: Generative models trained on internet data have revolutionized how text, image, and video content can be created. Perhaps the next milestone for generative models is to simulate realistic experience in response to actions taken by humans, robots, and other interactive agents. Applications of a real-world simulator range from controllable content creation in games and movies, to training embodied agents purely in simulation that can be directly deployed in the real world. We explore the possibility of learning a universal simulator (UniSim) of real-world interaction through generative modeling. We first make the important observation that natural datasets available for learning a real-world simulator are often rich along different dimensions (e.g., abundant objects in image data, densely sampled actions in robotics data, and diverse movements in navigation data). With careful orchestration of diverse datasets, each providing a different aspect of the overall experience, we can simulate the visual outcome of both high-level instructions such as\"open the drawer\"and low-level controls from otherwise static scenes and objects. We use the simulator to train both high-level vision-language policies and low-level reinforcement learning policies, each of which can be deployed in the real world in zero shot after training purely in simulation. We also show that other types of intelligence such as video captioning models can benefit from training with simulated experience, opening up even wider applications. Video demos can be found at https://universal-simulator.github.io.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+      "text": "Title: ARDuP: Active Region Video Diffusion for Universal Policies\n\nAbstract: Sequential decision-making can be formulated as a text-conditioned video generation problem, where a video planner, guided by a text-defined goal, generates future frames visualizing planned actions, from which control actions are subsequently derived. In this work, we introduce Active Region Video Diffusion for Universal Policies (ARDuP), a novel framework for video-based policy learning that emphasizes the generation of active regions, i.e. potential interaction areas, enhancing the conditional policy’s focus on interactive areas critical for task execution. This innovative framework integrates active region conditioning with latent diffusion models for video planning and employs latent representations for direct action decoding during inverse dynamic modeling. By utilizing motion cues in videos for automatic active region discovery, our method eliminates the need for manual annotations of active regions. We validate ARDuP’s efficacy via extensive experiments on simulator CLIPort and the real-world dataset BridgeData v2, achieving notable improvements in success rates and generating convincingly realistic video plans.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "text": "Title: Interactive World Simulator for Robot Policy Training and Evaluation\n\nAbstract: Action-conditioned video prediction models (often referred to as world models) have shown strong potential for robotics applications, but existing approaches are often slow and struggle to capture physically consistent interactions over long horizons, limiting their usefulness for scalable robot policy training and evaluation. We present Interactive World Simulator, a framework for building interactive world models from a moderate-sized robot interaction dataset. Our approach leverages consistency models for both image decoding and latent-space dynamics prediction, enabling fast and stable simulation of physical interactions. In our experiments, the learned world models produce interaction-consistent pixel-level predictions and support stable long-horizon interactions for more than 10 minutes at 15 FPS on a single RTX 4090 GPU. Our framework enables scalable demonstration collection solely within the world models to train state-of-the-art imitation policies. Through extensive real-world evaluation across diverse tasks involving rigid objects, deformable objects, object piles, and their interactions, we find that policies trained on world-model-generated data perform comparably to those trained on the same amount of real-world data. Additionally, we evaluate policies both within the world models and in the real world across diverse tasks, and observe a strong correlation between simulated and real-world performance. Together, these results establish the Interactive World Simulator as a stable and physically consistent surrogate for scalable robotic data generation and faithful, reproducible policy evaluation.",
+      "relevance_score": 0.8333333333333334
+    },
+    {
+      "related_paper_id": "64dc637480d6952318ffcaa746d462b0e80cb388",
+      "text": "Title: Scenario-Based Curriculum Generation for Multi-Agent Driving\n\nAbstract: The automated generation of diversified training scenarios has been an important ingredient in many complex learning tasks, especially in real-world application domains such as autonomous driving, where auto-curriculum generation is considered vital for obtaining robust and general policies. However, crafting traffic scenarios with multiple, heterogeneous agents is typically considered a tedious and time-consuming task, especially in more complex simulation environments. To this end, we introduce MATS-Gym, a multi-agent training framework for autonomous driving that uses partial-scenario specifications to generate traffic scenarios with a variable number of agents which are executed in CARLA, a high-fidelity driving simulator. MATS-Gym reconciles scenario execution engines, such as Scenic and ScenarioRunner, with established multi-agent training frameworks where the interaction between the environment and the agents is modeled as a partially observable stochastic game. Furthermore, we integrate MATSGym with techniques from unsupervised environment design to automate the generation of adaptive auto-curricula, which is the first application of such algorithms to the domain of autonomous driving. The code is available at https://github.com/AutonomousDrivingExaminer/mats-gym.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+      "text": "Title: EnerVerse-AC: Envisioning Embodied Environments with Action Condition\n\nAbstract: Robotic imitation learning has advanced from solving static tasks to addressing dynamic interaction scenarios, but testing and evaluation remain costly and challenging due to the need for real-time interaction with dynamic environments. We propose EnerVerse-AC (EVAC), an action-conditional world model that generates future visual observations based on an agent's predicted actions, enabling realistic and controllable robotic inference. Building on prior architectures, EVAC introduces a multi-level action-conditioning mechanism and ray map encoding for dynamic multi-view image generation while expanding training data with diverse failure trajectories to improve generalization. As both a data engine and evaluator, EVAC augments human-collected trajectories into diverse datasets and generates realistic, action-conditioned video observations for policy testing, eliminating the need for physical robots or complex simulations. This approach significantly reduces costs while maintaining high fidelity in robotic manipulation evaluation. Extensive experiments validate the effectiveness of our method. Code, checkpoints, and datasets can be found at.",
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "related_paper_id": "b960b6d4b6555fcf78f000de86f52b9f7605489d",
+      "text": "Title: Sky-Drive: A Distributed Multi-Agent Simulation Platform for Socially-Aware and Human-AI Collaborative Future Transportation\n\nAbstract: Recent advances in autonomous system simulation platforms have significantly enhanced the safe and scalable testing of driving policies. However, existing simulators do not yet fully meet the needs of future transportation research-particularly in enabling effective human-AI collaboration and modeling socially-aware driving agents. This paper introduces Sky-Drive, a novel distributed multi-agent simulation platform that addresses these limitations through four key innovations: (a) a distributed architecture for synchronized simulation across multiple terminals; (b) a multi-modal human-in-the-loop framework integrating diverse sensors to collect rich behavioral data; (c) a human-AI collaboration mechanism supporting continuous and adaptive knowledge exchange; and (d) a digital twin framework for constructing high-fidelity virtual replicas of real-world transportation environments. Sky-Drive supports diverse applications such as autonomous vehicle-human road users interaction modeling, human-in-the-loop training, socially-aware reinforcement learning, personalized driving development, and customized scenario generation. Future extensions will incorporate foundation models for context-aware decision support and hardware-in-the-loop testing for real-world validation. By bridging scenario generation, data collection, algorithm training, and hardware integration, Sky-Drive has the potential to become a foundational platform for the next generation of human-centered and socially-aware autonomous transportation systems research. The demo video and code are available at:https://sky-lab-uw.github.io/Sky-Drive-website/",
+      "relevance_score": 0.5833333333333334
+    },
+    {
+      "related_paper_id": "b6c8c1745a18d6e59c7a8a99f0df7aa4c18a1e73",
+      "text": "Title: Octopus: Embodied Vision-Language Programmer from Environmental Feedback\n\nAbstract: Large vision-language models (VLMs) have achieved substantial progress in multimodal perception and reasoning. When integrated into an embodied agent, existing embodied VLM works either output detailed action sequences at the manipulation level or only provide plans at an abstract level, leaving a gap between high-level planning and real-world manipulation. To bridge this gap, we introduce Octopus, an embodied vision-language programmer that uses executable code generation as a medium to connect planning and manipulation. Octopus is designed to 1) proficiently comprehend an agent's visual and textual task objectives, 2) formulate intricate action sequences, and 3) generate executable code. To facilitate Octopus model development, we introduce OctoVerse: a suite of environments tailored for benchmarking vision-based code generators on a wide spectrum of tasks, ranging from mundane daily chores in simulators to sophisticated interactions in complex video games such as Grand Theft Auto (GTA) and Minecraft. To train Octopus, we leverage GPT-4 to control an explorative agent that generates training data, i.e., action blueprints and corresponding executable code. We also collect feedback that enables an enhanced training scheme called Reinforcement Learning with Environmental Feedback (RLEF). Through a series of experiments, we demonstrate Octopus's functionality and present compelling results, showing that the proposed RLEF refines the agent's decision-making. By open-sourcing our simulation environments, dataset, and model architecture, we aspire to ignite further innovation and foster collaborative applications within the broader embodied AI community.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "5dd875f259b715d17371a93ca5bfe29a14e116b9",
+      "text": "Title: GE-Sim 2.0: A Roadmap Towards Comprehensive Closed-loop Video World Simulators for Robotic Manipulation\n\nAbstract: We introduce GE-Sim 2.0 (Genie Envisioner World Simulator 2.0), a closed-loop video world simulator for robotic manipulation. Building on the action-conditioned video generation framework of Genie Envisioner, GE-Sim 2.0 is re-trained on thousands of hours of real-world robot data spanning teleoperation, contact-rich interaction, and on-robot policy deployment, substantially improving action-following fidelity and trajectory coverage. On top of this foundation, three new modules close the loop from video simulation to policy learning: a state expert that decodes proprioceptive state from video latents to support next-chunk prediction by downstream VLA policies; a world judge that scores generated rollouts against task instructions, yielding machine-verifiable success signals and rewards in place of manual inspection; and an acceleration framework that delivers a 25-frame rollout in 2.3 seconds on a single H100, with up to 4* frame skipping at inference for long-horizon evaluation. GE-Sim 2.0 tops the public WorldArena leaderboard at only 2B parameters, outperforming both dedicated robotic world models and closed-source general video generators, and policies trained against its rollouts and rewards translate into measurable real-world gains, establishing GE-Sim 2.0 as a practical platform for scalable evaluation and closed-loop learning of manipulation policies.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "text": "Title: Technologies for E-Learning and Digital Entertainment, Second International Conference, Edutainment 2007, Hong Kong, China, June 11-13, 2007, Proceedings",
+      "relevance_score": 0.3333333333333333
+    },
+    {
+      "related_paper_id": "17a475b82f0eead0df3cb75466a4eb77cdaef111",
+      "text": "Title: Stochastic Observation Prediction for Efficient Reinforcement Learning in Robotics\n\nAbstract: Although the recent progress of deep learning has enabled reinforcement learning (RL) algorithms to achieve human-level performance in retro video games within a short training time, the application of real-world robotics remains limited. The conventional RL procedure requires agents to interact with the environment. Meanwhile, the interactions with the physical world can not be easily parallelized or accelerated as in other tasks. Moreover, the gap between the real world and simulation makes it harder to transfer the policy trained in simulators to physical robots. Thus, we propose a model-based method to mitigate the interaction overheads for real-world robotic tasks. In particular, our model incorporates an autoencoder, a recurrent network, and a generative network to make stochastic predictions of observations. We conduct the experiments on a collision avoidance task for disc-like robots and show that the generative model can serve as a virtual RL environment. Our method has the benefit of lower interaction overheads as inference of deep neural networks on GPUs is faster than observing the transitions in the real environment, and it can replace the real RL environment with limited rollout length.",
+      "relevance_score": 0.4166666666666667
+    },
+    {
+      "related_paper_id": "1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+      "text": "Title: Interacting in various application domains",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "41243fd0cc7dd0534dd1af99a32c33590c750173",
+      "text": "Title: Applications and services",
+      "relevance_score": 0.16666666666666666
+    },
+    {
+      "related_paper_id": "f1f1dd734e7c4ee6a1e5ea486c4d3f24c5b2e409",
+      "text": "Title: Artificial neural networks - ICANN 2010 : 20th International Conference, Thessaloniki, Greece, September 15-18, 2010 : proceedings",
+      "relevance_score": 0.08333333333333333
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the novelty of UniSim in mixing 14 datasets, but the related work (Nano World Models) does not discuss UniSim or its dataset composition. The evidence is about a different codebase for world models, not the paper being reviewed, so there is no evidence to evaluate alignment or calibration.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c3d14e7a319ab764297a60112ce74af201762a73",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence states that the novelty is in the mix of data trained on, specifically mentioning joint training on 14 common datasets including LAION and Something-somethingV2. The related work abstract confirms the focus on orchestrating diverse datasets, listing image data, robotics data, and navigation data as examples, which aligns with the claim. The strength of language matches the evidence, as the abstract supports the idea of combining diverse datasets without overstating specifics.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that UniSim's novelty is in training jointly on 14 common datasets, including LAION and Something-somethingV2. However, the related work (ARDuP) does not mention UniSim or its training data composition; it focuses on ARDuP's own method. The sentence cannot be verified against the provided related work evidence.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes the novelty of combining diverse datasets (14 common datasets, including LAION and Something-somethingV2) for training UniSim. The related work paper is about an 'Interactive World Simulator' built from a moderate-sized robot interaction dataset, focusing on robotics applications and consistency models. There is no mention of training on multiple datasets like LAION or Something-somethingV2 in the related work evidence. Thus, the claim is not supported or contradicted by the provided evidence; evidence is missing.",
+      "relevance_score": 0.8333333333333334
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "64dc637480d6952318ffcaa746d462b0e80cb388",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the novelty of UniSim being in the mix of 14 datasets trained jointly, but the related work evidence is about a different paper on multi-agent driving scenario generation (MATS-Gym). There is no evidence in the related work text to support or contradict the claim about UniSim's training data mix, so the claim is unverifiable based on the provided evidence.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims UniSim's novelty is in training jointly on 14 datasets including LAION and Something-somethingV2. However, the provided related work (EnerVerse-AC) does not discuss UniSim or its training datasets. It describes a different action-conditional world model (EVAC). There is no evidence in the related work to support or contradict the review sentence's claim about UniSim's dataset mixture. Thus, the evidence is missing for verification.",
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b960b6d4b6555fcf78f000de86f52b9f7605489d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the novelty and training data of UniSim, but the related work (Sky-Drive) does not provide any evidence about UniSim's datasets or training approach. There is no direct or indirect support in the related work for the claim about combining diverse datasets, so the claim cannot be verified or calibrated.",
+      "relevance_score": 0.5833333333333334
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b6c8c1745a18d6e59c7a8a99f0df7aa4c18a1e73",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about UniSim being trained on 14 common datasets. However, the related work (Octopus) does not discuss UniSim or its training datasets; it describes a different model (Octopus) and its environments (OctoVerse). There is no evidence in the provided related work text to support or contradict the claim about UniSim's training data.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5dd875f259b715d17371a93ca5bfe29a14e116b9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes UniSim's training on 14 common datasets (e.g., LAION, Something-somethingV2) as its novelty. The related work (GE-Sim 2.0) does not mention UniSim, its datasets, or this specific aspect; it focuses on a different simulator for robotic manipulation. No evidence in the related work supports or contradicts the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work evidence is from a completely different conference and topic (Edutainment 2007), providing no information about UniSim, datasets, or training methods. The claim cannot be verified against this unrelated evidence.",
+      "relevance_score": 0.3333333333333333
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "17a475b82f0eead0df3cb75466a4eb77cdaef111",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the novelty of UniSim is in training jointly on 14 common datasets. The related work evidence describes a stochastic observation prediction method for robotics RL, but does not mention UniSim, its datasets, or its novelty claim. There is no direct or indirect evidence to support or contradict the reviewer's claim about UniSim's novelty.",
+      "relevance_score": 0.4166666666666667
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work evidence only provides a title 'Interacting in various application domains' and does not contain any information about the novelty claim about mixing data or training on 14 datasets. The claim cannot be verified or supported with the given evidence.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "41243fd0cc7dd0534dd1af99a32c33590c750173",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the novelty is in mixing 14 common datasets for training UniSim. The paper's abstract and introduction indeed describe combining diverse datasets (e.g., LAION, Something-Something V2) in a unified framework. However, the related work evidence provided is only a title 'Applications and services' with no content, making it impossible to verify alignment or calibration. Thus, evidence is insufficient.",
+      "relevance_score": 0.16666666666666666
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "f1f1dd734e7c4ee6a1e5ea486c4d3f24c5b2e409",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's novelty in combining datasets. The provided related work (a 2010 conference on artificial neural networks) does not contain any information about UniSim, its training data, or the datasets mentioned (LAION, Something-SomethingV2). There is no evidence to support or contradict the claim.",
+      "relevance_score": 0.08333333333333333
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's novelty is 'light' and describes it as 'more or less straightforward video diffusion.' However, the related work (Nano World Models) is a separate minimalist codebase for video prediction, not evidence about the novelty of the reviewed paper. The provided paper abstract and introduction do not contain information about the novelty claim relative to related work, and the related work does not directly address the novelty assessment. Evidence is missing to verify or contradict the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c3d14e7a319ab764297a60112ce74af201762a73",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer claims that the algorithmic or model novelty is 'light' and 'more or less straightforward video diffusion,' suggesting minimal contribution. However, the paper's introduction and related work describe a comprehensive and novel system (UniSim) that combines diverse datasets, formulates an observation prediction model using video diffusion, and demonstrates applications in training policies and bridging the sim-to-real gap. The evidence indicates significant novelty in data orchestration and model formulation, contradicting the claim of 'light' novelty.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper's algorithmic or model novelty is light, referring to it as 'more or less straightforward video diffusion.' However, the provided related work (ARDuP) does not discuss the novelty of the paper being reviewed (UniSim). It only describes its own method, which is a different framework (ARDuP) for video-based policy learning. There is no evidence in the related work text that supports or contradicts the claim about UniSim's novelty. Therefore, the evidence is insufficient to verify the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's algorithmic novelty is light, describing it as straightforward video diffusion. The provided abstract and introduction of the paper being reviewed does not contain evidence about the novelty being 'light' or 'straightforward'. The related work evidence (Interactive World Simulator) discusses a different paper and does not provide information about the novelty of the UniSim paper. Thus, there is insufficient evidence to verify the claim.",
+      "relevance_score": 0.8333333333333334
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "64dc637480d6952318ffcaa746d462b0e80cb388",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims algorithmic novelty is light and describes the method as straightforward video diffusion. The related work is about multi-agent driving scenario generation, which does not provide evidence about the novelty or complexity of the paper's video diffusion approach. Therefore, there is insufficient evidence to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's novelty is light and straightforward, but the related work (EnerVerse-AC) does not directly address or provide evidence about the novelty level of the paper's video diffusion approach. The related work describes a different system (EVAC) and does not offer comparative evidence to evaluate the claim's calibration.",
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b960b6d4b6555fcf78f000de86f52b9f7605489d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": -2,
+      "label": "UNSUPPORTED",
+      "explanation": "The review sentence claims the paper has light algorithmic novelty, describing it as 'more or less straightforward video diffusion.' However, the related work (Sky-Drive) focuses on a distributed multi-agent simulation platform with innovations like distributed architecture, human-in-the-loop framework, and digital twin—none of which directly relate to the technical novelty of video diffusion models in the reviewed paper. The evidence does not support the claim about the paper's novelty; instead, it suggests the reviewed paper introduces a novel video diffusion-based simulator (UniSim) for universal simulation, contradicting the 'light novelty' assertion.",
+      "relevance_score": 0.5833333333333334
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b6c8c1745a18d6e59c7a8a99f0df7aa4c18a1e73",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (UniSim), stating that its algorithmic or model novelty is 'light' and that it uses 'more or less straightforward video diffusion.' However, the provided related work (Octopus) does not discuss UniSim or its technical approach, so there is no evidence to support or contradict the claim. The claim is too vague and evidence is missing.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5dd875f259b715d17371a93ca5bfe29a14e116b9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": -2,
+      "label": "UNSUPPORTED",
+      "explanation": "The reviewer claims the paper's algorithmic novelty is 'light' and 'more or less straightforward video diffusion,' but the related work (GE-Sim 2.0) describes a comprehensive closed-loop simulator with novel modules (state expert, world judge, acceleration framework) that significantly extend beyond standard video diffusion. The evidence contradicts the claim of minimal novelty.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper's algorithmic or model novelty is light, describing it as 'more or less straightforward video diffusion.' However, the related work evidence is a proceedings volume title for an unrelated conference on e-learning and digital entertainment, which contains no information about the paper's novelty or video diffusion models. Therefore, there is no evidence to verify or contradict the claim, making it insufficient.",
+      "relevance_score": 0.3333333333333333
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "17a475b82f0eead0df3cb75466a4eb77cdaef111",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims 'Any algorithmic or model novelty is light (more or less straightforward video diffusion)' about the paper. However, the related work evidence describes a different paper (Stochastic Observation Prediction for Efficient Reinforcement Learning in Robotics) that focuses on model-based RL with autoencoders, recurrent networks, and generative models for observation prediction, not video diffusion or the specific novelty assessment of the reviewed paper. There is no direct evidence in the related work to support or contradict the claim about algorithmic novelty in the reviewed paper, making the evidence insufficient for verification.",
+      "relevance_score": 0.4166666666666667
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about algorithmic novelty ('light') and compares the work to 'video diffusion'. The provided paper text describes the method as using video diffusion models and emphasizes combining diverse datasets and long-horizon simulation, but does not explicitly assess its own novelty as 'light' or 'straightforward'. The related work section only lists titles of papers on application domains without providing specific evidence to support or contradict the novelty claim. Thus, there is insufficient evidence in the provided text to verify the claim.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "41243fd0cc7dd0534dd1af99a32c33590c750173",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that algorithmic/model novelty is light, describing it as 'more or less straightforward video diffusion.' However, the provided related work text only contains a title 'Applications and services' without any substantive content to compare or verify this claim. There is no evidence in the related work to assess the novelty of the paper's approach, making it impossible to determine alignment or calibration.",
+      "relevance_score": 0.16666666666666666
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "f1f1dd734e7c4ee6a1e5ea486c4d3f24c5b2e409",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the algorithmic/model novelty is light, describing it as straightforward video diffusion. However, the related work evidence (title of a 2010 conference proceedings) does not provide any information about the paper's novelty or methods, making it impossible to verify the claim. The evidence is too vague and unrelated.",
+      "relevance_score": 0.08333333333333333
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The novelty is in the mix of data trained on. Rather than focusing on a single environment or even single action space, the model (UniSim) is trained jointly on 14 common datasets, from the text-image LAION dataset (often used for image generation), to the Something-somethingV2 video dataset (often used for video classification).",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the novelty of UniSim in mixing 14 datasets, but the related work (Nano World Models) does not discuss UniSim or its dataset composition. The evidence is about a different codebase for world models, not the paper being reviewed, so there is no evidence to evaluate alignment or calibration.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "c3d14e7a319ab764297a60112ce74af201762a73",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence states that the novelty is in the mix of data trained on, specifically mentioning joint training on 14 common datasets including LAION and Something-somethingV2. The related work abstract confirms the focus on orchestrating diverse datasets, listing image data, robotics data, and navigation data as examples, which aligns with the claim. The strength of language matches the evidence, as the abstract supports the idea of combining diverse datasets without overstating specifics.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that UniSim's novelty is in training jointly on 14 common datasets, including LAION and Something-somethingV2. However, the related work (ARDuP) does not mention UniSim or its training data composition; it focuses on ARDuP's own method. The sentence cannot be verified against the provided related work evidence.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes the novelty of combining diverse datasets (14 common datasets, including LAION and Something-somethingV2) for training UniSim. The related work paper is about an 'Interactive World Simulator' built from a moderate-sized robot interaction dataset, focusing on robotics applications and consistency models. There is no mention of training on multiple datasets like LAION or Something-somethingV2 in the related work evidence. Thus, the claim is not supported or contradicted by the provided evidence; evidence is missing.",
+          "relevance_score": 0.8333333333333334
+        },
+        {
+          "related_paper_id": "64dc637480d6952318ffcaa746d462b0e80cb388",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the novelty of UniSim being in the mix of 14 datasets trained jointly, but the related work evidence is about a different paper on multi-agent driving scenario generation (MATS-Gym). There is no evidence in the related work text to support or contradict the claim about UniSim's training data mix, so the claim is unverifiable based on the provided evidence.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims UniSim's novelty is in training jointly on 14 datasets including LAION and Something-somethingV2. However, the provided related work (EnerVerse-AC) does not discuss UniSim or its training datasets. It describes a different action-conditional world model (EVAC). There is no evidence in the related work to support or contradict the review sentence's claim about UniSim's dataset mixture. Thus, the evidence is missing for verification.",
+          "relevance_score": 0.6666666666666666
+        },
+        {
+          "related_paper_id": "b960b6d4b6555fcf78f000de86f52b9f7605489d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the novelty and training data of UniSim, but the related work (Sky-Drive) does not provide any evidence about UniSim's datasets or training approach. There is no direct or indirect support in the related work for the claim about combining diverse datasets, so the claim cannot be verified or calibrated.",
+          "relevance_score": 0.5833333333333334
+        },
+        {
+          "related_paper_id": "b6c8c1745a18d6e59c7a8a99f0df7aa4c18a1e73",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about UniSim being trained on 14 common datasets. However, the related work (Octopus) does not discuss UniSim or its training datasets; it describes a different model (Octopus) and its environments (OctoVerse). There is no evidence in the provided related work text to support or contradict the claim about UniSim's training data.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "5dd875f259b715d17371a93ca5bfe29a14e116b9",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes UniSim's training on 14 common datasets (e.g., LAION, Something-somethingV2) as its novelty. The related work (GE-Sim 2.0) does not mention UniSim, its datasets, or this specific aspect; it focuses on a different simulator for robotic manipulation. No evidence in the related work supports or contradicts the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work evidence is from a completely different conference and topic (Edutainment 2007), providing no information about UniSim, datasets, or training methods. The claim cannot be verified against this unrelated evidence.",
+          "relevance_score": 0.3333333333333333
+        },
+        {
+          "related_paper_id": "17a475b82f0eead0df3cb75466a4eb77cdaef111",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the novelty of UniSim is in training jointly on 14 common datasets. The related work evidence describes a stochastic observation prediction method for robotics RL, but does not mention UniSim, its datasets, or its novelty claim. There is no direct or indirect evidence to support or contradict the reviewer's claim about UniSim's novelty.",
+          "relevance_score": 0.4166666666666667
+        },
+        {
+          "related_paper_id": "1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work evidence only provides a title 'Interacting in various application domains' and does not contain any information about the novelty claim about mixing data or training on 14 datasets. The claim cannot be verified or supported with the given evidence.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "41243fd0cc7dd0534dd1af99a32c33590c750173",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the novelty is in mixing 14 common datasets for training UniSim. The paper's abstract and introduction indeed describe combining diverse datasets (e.g., LAION, Something-Something V2) in a unified framework. However, the related work evidence provided is only a title 'Applications and services' with no content, making it impossible to verify alignment or calibration. Thus, evidence is insufficient.",
+          "relevance_score": 0.16666666666666666
+        },
+        {
+          "related_paper_id": "f1f1dd734e7c4ee6a1e5ea486c4d3f24c5b2e409",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's novelty in combining datasets. The provided related work (a 2010 conference on artificial neural networks) does not contain any information about UniSim, its training data, or the datasets mentioned (LAION, Something-SomethingV2). There is no evidence to support or contradict the claim.",
+          "relevance_score": 0.08333333333333333
+        }
+      ],
+      "final_score": 0.6666666666666666,
+      "best_evidence": [
+        "301530307604741d8f9d39bb16fe0f69922a6b5d",
+        "c3d14e7a319ab764297a60112ce74af201762a73",
+        "62105b85beef58ce528daf6a324277441ec07cb3"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "c3d14e7a319ab764297a60112ce74af201762a73",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "Any algorithmic or model novelty is light (more or less straightforward video diffusion).",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's novelty is 'light' and describes it as 'more or less straightforward video diffusion.' However, the related work (Nano World Models) is a separate minimalist codebase for video prediction, not evidence about the novelty of the reviewed paper. The provided paper abstract and introduction do not contain information about the novelty claim relative to related work, and the related work does not directly address the novelty assessment. Evidence is missing to verify or contradict the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "c3d14e7a319ab764297a60112ce74af201762a73",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer claims that the algorithmic or model novelty is 'light' and 'more or less straightforward video diffusion,' suggesting minimal contribution. However, the paper's introduction and related work describe a comprehensive and novel system (UniSim) that combines diverse datasets, formulates an observation prediction model using video diffusion, and demonstrates applications in training policies and bridging the sim-to-real gap. The evidence indicates significant novelty in data orchestration and model formulation, contradicting the claim of 'light' novelty.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper's algorithmic or model novelty is light, referring to it as 'more or less straightforward video diffusion.' However, the provided related work (ARDuP) does not discuss the novelty of the paper being reviewed (UniSim). It only describes its own method, which is a different framework (ARDuP) for video-based policy learning. There is no evidence in the related work text that supports or contradicts the claim about UniSim's novelty. Therefore, the evidence is insufficient to verify the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's algorithmic novelty is light, describing it as straightforward video diffusion. The provided abstract and introduction of the paper being reviewed does not contain evidence about the novelty being 'light' or 'straightforward'. The related work evidence (Interactive World Simulator) discusses a different paper and does not provide information about the novelty of the UniSim paper. Thus, there is insufficient evidence to verify the claim.",
+          "relevance_score": 0.8333333333333334
+        },
+        {
+          "related_paper_id": "64dc637480d6952318ffcaa746d462b0e80cb388",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims algorithmic novelty is light and describes the method as straightforward video diffusion. The related work is about multi-agent driving scenario generation, which does not provide evidence about the novelty or complexity of the paper's video diffusion approach. Therefore, there is insufficient evidence to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "cb8499a636c325aea0c141eacf6bdeaca842bed0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's novelty is light and straightforward, but the related work (EnerVerse-AC) does not directly address or provide evidence about the novelty level of the paper's video diffusion approach. The related work describes a different system (EVAC) and does not offer comparative evidence to evaluate the claim's calibration.",
+          "relevance_score": 0.6666666666666666
+        },
+        {
+          "related_paper_id": "b960b6d4b6555fcf78f000de86f52b9f7605489d",
+          "score": -2,
+          "label": "UNSUPPORTED",
+          "explanation": "The review sentence claims the paper has light algorithmic novelty, describing it as 'more or less straightforward video diffusion.' However, the related work (Sky-Drive) focuses on a distributed multi-agent simulation platform with innovations like distributed architecture, human-in-the-loop framework, and digital twin—none of which directly relate to the technical novelty of video diffusion models in the reviewed paper. The evidence does not support the claim about the paper's novelty; instead, it suggests the reviewed paper introduces a novel video diffusion-based simulator (UniSim) for universal simulation, contradicting the 'light novelty' assertion.",
+          "relevance_score": 0.5833333333333334
+        },
+        {
+          "related_paper_id": "b6c8c1745a18d6e59c7a8a99f0df7aa4c18a1e73",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (UniSim), stating that its algorithmic or model novelty is 'light' and that it uses 'more or less straightforward video diffusion.' However, the provided related work (Octopus) does not discuss UniSim or its technical approach, so there is no evidence to support or contradict the claim. The claim is too vague and evidence is missing.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "5dd875f259b715d17371a93ca5bfe29a14e116b9",
+          "score": -2,
+          "label": "UNSUPPORTED",
+          "explanation": "The reviewer claims the paper's algorithmic novelty is 'light' and 'more or less straightforward video diffusion,' but the related work (GE-Sim 2.0) describes a comprehensive closed-loop simulator with novel modules (state expert, world judge, acceleration framework) that significantly extend beyond standard video diffusion. The evidence contradicts the claim of minimal novelty.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper's algorithmic or model novelty is light, describing it as 'more or less straightforward video diffusion.' However, the related work evidence is a proceedings volume title for an unrelated conference on e-learning and digital entertainment, which contains no information about the paper's novelty or video diffusion models. Therefore, there is no evidence to verify or contradict the claim, making it insufficient.",
+          "relevance_score": 0.3333333333333333
+        },
+        {
+          "related_paper_id": "17a475b82f0eead0df3cb75466a4eb77cdaef111",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims 'Any algorithmic or model novelty is light (more or less straightforward video diffusion)' about the paper. However, the related work evidence describes a different paper (Stochastic Observation Prediction for Efficient Reinforcement Learning in Robotics) that focuses on model-based RL with autoencoders, recurrent networks, and generative models for observation prediction, not video diffusion or the specific novelty assessment of the reviewed paper. There is no direct evidence in the related work to support or contradict the claim about algorithmic novelty in the reviewed paper, making the evidence insufficient for verification.",
+          "relevance_score": 0.4166666666666667
+        },
+        {
+          "related_paper_id": "1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about algorithmic novelty ('light') and compares the work to 'video diffusion'. The provided paper text describes the method as using video diffusion models and emphasizes combining diverse datasets and long-horizon simulation, but does not explicitly assess its own novelty as 'light' or 'straightforward'. The related work section only lists titles of papers on application domains without providing specific evidence to support or contradict the novelty claim. Thus, there is insufficient evidence in the provided text to verify the claim.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "41243fd0cc7dd0534dd1af99a32c33590c750173",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that algorithmic/model novelty is light, describing it as 'more or less straightforward video diffusion.' However, the provided related work text only contains a title 'Applications and services' without any substantive content to compare or verify this claim. There is no evidence in the related work to assess the novelty of the paper's approach, making it impossible to determine alignment or calibration.",
+          "relevance_score": 0.16666666666666666
+        },
+        {
+          "related_paper_id": "f1f1dd734e7c4ee6a1e5ea486c4d3f24c5b2e409",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the algorithmic/model novelty is light, describing it as straightforward video diffusion. However, the related work evidence (title of a 2010 conference proceedings) does not provide any information about the paper's novelty or methods, making it impossible to verify the claim. The evidence is too vague and unrelated.",
+          "relevance_score": 0.08333333333333333
+        }
+      ],
+      "final_score": 0.6666666666666666,
+      "best_evidence": [
+        "301530307604741d8f9d39bb16fe0f69922a6b5d",
+        "c3d14e7a319ab764297a60112ce74af201762a73",
+        "62105b85beef58ce528daf6a324277441ec07cb3"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "c3d14e7a319ab764297a60112ce74af201762a73",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 14,
+    "pairs_attempted": 28,
+    "pairs_completed": 28,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 14.0
+    }
+  },
+  "errors": []
+}

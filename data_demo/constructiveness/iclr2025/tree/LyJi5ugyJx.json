@@ -1,0 +1,162 @@
+{
+  "paper_id": "LyJi5ugyJx",
+  "metadata": {
+    "decision": "Accept (Oral)",
+    "avg_rating": 9.2,
+    "avg_confidence": 4.0,
+    "num_reviewers": 5
+  },
+  "reviewer_id": "TreeReview",
+  "status": "success",
+  "atomic_comments": [
+    {
+      "arc_id": "ARC_01",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks sufficient theoretical and practical discussion of the broader implications of its findings.",
+      "anchor_quote": "the paper lacks sufficient theoretical and practical discussion of the broader implications of its findings",
+      "D1_actionability": 0,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_02",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The methodology section is not detailed enough to ensure reproducibility, with missing information on hyperparameters, training settings, and computational resources.",
+      "anchor_quote": "methodology section is not detailed enough to ensure reproducibility, with missing information on hyperparameters, training settings, and computational resources",
+      "D1_actionability": 1,
+      "D2_specificity": 2,
+      "D3_justification": 1,
+      "D4_solution": 1,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_03",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The conclusions are partially supported by the evidence but lack explicit logical connections to the results.",
+      "anchor_quote": "conclusions are partially supported by the evidence but lack explicit logical connections to the results",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 1,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_04",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "Some claims are made without direct reference to the supporting data.",
+      "anchor_quote": "some claims are made without direct reference to the supporting data",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_05",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper does not adequately address the limitations of its approach.",
+      "anchor_quote": "does not adequately address the limitations of its approach",
+      "D1_actionability": 1,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_06",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks a comprehensive discussion of how the limitations might affect the broader field of generative modeling.",
+      "anchor_quote": "provide a comprehensive discussion of how these limitations might affect the broader field",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_07",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Request for detailed information on hyperparameters, training settings, and computational resources to enhance reproducibility.",
+      "anchor_quote": "provide more detailed information on the hyperparameters, training settings, and computational resources used in their experiments",
+      "D1_actionability": 2,
+      "D2_specificity": 2,
+      "D3_justification": 1,
+      "D4_solution": 2,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_08",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Question about how the proposed improvements in time-conditioning and training objectives specifically contribute to stability, asking for more detailed analysis of training dynamics.",
+      "anchor_quote": "how do the proposed improvements in time-conditioning and training objectives specifically contribute to the stability",
+      "D1_actionability": 1,
+      "D2_specificity": 2,
+      "D3_justification": 1,
+      "D4_solution": 1,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_09",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Request for specific metrics or visual comparisons to substantiate the claim that sCMs produce more diverse samples and are more compatible with guidance than VSD.",
+      "anchor_quote": "provide specific metrics or visual comparisons to substantiate this claim",
+      "D1_actionability": 2,
+      "D2_specificity": 2,
+      "D3_justification": 2,
+      "D4_solution": 2,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_10",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Question about the theoretical implications of the proposed TrigFlow formulation and its relation to existing theoretical frameworks.",
+      "anchor_quote": "what are the theoretical implications of the proposed TrigFlow formulation",
+      "D1_actionability": 1,
+      "D2_specificity": 2,
+      "D3_justification": 1,
+      "D4_solution": 1,
+      "D5_tone": 2
+    },
+    {
+      "arc_id": "ARC_11",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "Request for elaboration on how the FID gap being narrowed to within 10% using two-step generation compares to other distillation techniques in terms of computational efficiency and sample quality.",
+      "anchor_quote": "could the authors elaborate on how this compares to other distillation techniques",
+      "D1_actionability": 1,
+      "D2_specificity": 2,
+      "D3_justification": 1,
+      "D4_solution": 1,
+      "D5_tone": 2
+    }
+  ],
+  "metrics": {
+    "MCS": 0.5273,
+    "AR": 0.8182,
+    "SD": 0.1818,
+    "CD": 0.5455,
+    "D1_actionability_mean": 1.0,
+    "D2_specificity_mean": 1.3636,
+    "D3_justification_mean": 0.7273,
+    "D4_solution_mean": 0.7273,
+    "D5_tone_mean": 1.4545,
+    "n_arcs": 11,
+    "n_weaknesses": 6,
+    "n_strengths": 0,
+    "n_questions": 5,
+    "n_suggestions": 0,
+    "n_observations": 0
+  }
+}

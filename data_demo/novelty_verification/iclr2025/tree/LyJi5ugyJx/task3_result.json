@@ -1,0 +1,439 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The introduction of TrigFlow offers a unified and simplified formulation that bridges existing methods, which is a significant contribution to the field."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "text": "Title: Image-Free Timestep Distillation via Continuous-Time Consistency with Trajectory-Sampled Pairs\n\nAbstract: Timestep distillation is an effective approach for improving the generation efficiency of diffusion models. The Consistency Model (CM), as a trajectory-based framework, demonstrates significant potential due to its strong theoretical foundation and high-quality few-step generation. Nevertheless, current continuous-time consistency distillation methods still rely heavily on training data and computational resources, hindering their deployment in resource-constrained scenarios and limiting their scalability to diverse domains. To address this issue, we propose Trajectory-Backward Consistency Model (TBCM), which eliminates the dependence on external training data by extracting latent representations directly from the teacher model's generation trajectory. Unlike conventional methods that require VAE encoding and large-scale datasets, our self-contained distillation paradigm significantly improves both efficiency and simplicity. Moreover, the trajectory-extracted samples naturally bridge the distribution gap between training and inference, thereby enabling more effective knowledge transfer. Empirically, TBCM achieves 6.52 FID and 28.08 CLIP scores on MJHQ-30k under one-step generation, while reducing training time by approximately 40% compared to Sana-Sprint and saving a substantial amount of GPU memory, demonstrating superior efficiency without sacrificing quality. We further reveal the diffusion-generation space discrepancy in continuous-time consistency distillation and analyze how sampling strategies affect distillation performance, offering insights for future distillation research. GitHub Link: https://github.com/hustvl/TBCM.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "text": "Title: Align Your Flow: Scaling Continuous-Time Flow Map Distillation\n\nAbstract: Diffusion- and flow-based models have emerged as state-of-the-art generative modeling approaches, but they require many sampling steps. Consistency models can distill these models into efficient one-step generators; however, unlike flow- and diffusion-based methods, their performance inevitably degrades when increasing the number of steps, which we show both analytically and empirically. Flow maps generalize these approaches by connecting any two noise levels in a single step and remain effective across all step counts. In this paper, we introduce two new continuous-time objectives for training flow maps, along with additional novel training techniques, generalizing existing consistency and flow matching objectives. We further demonstrate that autoguidance can improve performance, using a low-quality model for guidance during distillation, and an additional boost can be achieved by adversarial finetuning, with minimal loss in sample diversity. We extensively validate our flow map models, called Align Your Flow, on challenging image generation benchmarks and achieve state-of-the-art few-step generation performance on both ImageNet 64x64 and 512x512, using small and efficient neural networks. Finally, we show text-to-image flow map models that outperform all existing non-adversarially trained few-step samplers in text-conditioned synthesis.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "text": "Title: BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation\n\nAbstract: Recent diffusion and flow matching models have demonstrated strong capabilities in image generation and editing by progressively removing noise through iterative sampling. While this enables flexible inversion for semantic-preserving edits, few-step sampling regimes suffer from poor forward process approximation, leading to degraded editing quality. Existing few-step inversion methods often rely on pretrained generators and auxiliary modules, limiting scalability and generalization across different architectures. To address these limitations, we propose BiFM (Bidirectional Flow Matching), a unified framework that jointly learns generation and inversion within a single model. BiFM directly estimates average velocity fields in both ``image $\\to$ noise\"and ``noise $\\to$ image\"directions, constrained by a shared instantaneous velocity field derived from either predefined schedules or pretrained multi-step diffusion models. Additionally, BiFM introduces a novel training strategy using continuous time-interval supervision, stabilized by a bidirectional consistency objective and a lightweight time-interval embedding. This bidirectional formulation also enables one-step inversion and can integrate seamlessly into popular diffusion and flow matching backbones. Across diverse image editing and generation tasks, BiFM consistently outperforms existing few-step approaches, achieving superior performance and editability.",
+      "relevance_score": 0.8461538461538461
+    },
+    {
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "text": "Title: Flow-Anchored Consistency Models\n\nAbstract: Continuous-time Consistency Models (CMs) promise efficient few-step generation but face significant challenges with training instability. We argue this instability stems from a fundamental conflict: Training the network exclusively on a shortcut objective leads to the catastrophic forgetting of the instantaneous velocity field that defines the flow. Our solution is to explicitly anchor the model in the underlying flow, ensuring high trajectory fidelity during training. We introduce the Flow-Anchored Consistency Model (FACM), where a Flow Matching (FM) task serves as a dynamic anchor for the primary CM shortcut objective. Key to this Flow-Anchoring approach is a novel expanded time interval strategy that unifies optimization for a single model while decoupling the two tasks to ensure stable, architecturally-agnostic training. By distilling a pre-trained LightningDiT model, our method achieves a state-of-the-art FID of 1.32 with two steps (NFE=2) and 1.70 with just one step (NFE=1) on ImageNet 256x256. To address the challenge of scalability, we develop a memory-efficient Chain-JVP that resolves key incompatibilities with FSDP. This method allows us to scale FACM training on a 14B parameter model (Wan 2.2), accelerating its Text-to-Image inference from 2x40 to 2-8 steps. Our code and pretrained models: https://github.com/ali-vilab/FACM.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "text": "Title: Trajectory Consistency for One-Step Generation on Euler Mean Flows\n\nAbstract: We propose \\emph{Euler Mean Flows (EMF)}, a flow-based generative framework for one-step and few-step generation that enforces long-range trajectory consistency with minimal sampling cost. The key idea of EMF is to replace the trajectory consistency constraint, which is difficult to supervise and optimize over long time scales, with a principled linear surrogate that enables direct data supervision for long-horizon flow-map compositions. We derive this approximation from the semigroup formulation of flow-based models and show that, under mild regularity assumptions, it faithfully approximates the original consistency objective while being substantially easier to optimize. This formulation leads to a unified, JVP-free training framework that supports both $u$-prediction and $x_1$-prediction variants, avoiding explicit Jacobian computations and significantly reducing memory and computational overhead. Experiments on image synthesis, particle-based geometry generation, and functional generation demonstrate improved optimization stability and sample quality under fixed sampling budgets, together with approximately $50\\%$ reductions in training time and memory consumption compared to existing one-step methods for image generation.",
+      "relevance_score": 0.7692307692307693
+    },
+    {
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "text": "Title: ROCM: RLHF on consistency models\n\nAbstract: Diffusion models have revolutionized generative modeling in continuous domains like image, audio, and video synthesis. However, their iterative sampling process leads to slow generation and inefficient training, challenges that are further exacerbated when incorporating Reinforcement Learning from Human Feedback (RLHF) due to sparse rewards and long time horizons. Consistency models address these issues by enabling single-step or efficient multi-step generation, significantly reducing computational costs. In this work, we propose a direct reward optimization framework for applying RLHF to consistency models, incorporating distributional regularization to enhance training stability and prevent reward hacking. We investigate various $f$-divergences as regularization strategies, striking a balance between reward maximization and model consistency. Unlike policy gradient methods, our approach leverages first-order gradients, making it more efficient and less sensitive to hyperparameter tuning. Empirical results show that our method achieves competitive or superior performance compared to policy gradient based RLHF methods, across various automatic metrics and human evaluation. Additionally, our analysis demonstrates the impact of different regularization techniques in improving model generalization and preventing overfitting.",
+      "relevance_score": 0.6923076923076923
+    },
+    {
+      "related_paper_id": "e24432196fd16a4fa7214ea493ad4081f09dcf0b",
+      "text": "Title: DFPO: Scaling Value Modeling via Distributional Flow towards Robust and Generalizable LLM Post-Training\n\nAbstract: Training reinforcement learning (RL) systems in real-world environments remains challenging due to noisy supervision and poor out-of-domain (OOD) generalization, especially in LLM post-training. Recent distributional RL methods improve robustness by modeling values with multiple quantile points, but they still learn each quantile independently as a scalar. This results in rough-grained value representations that lack fine-grained conditioning on state information, struggling under complex and OOD conditions. We propose DFPO (Distributional Value Flow Policy Optimization with Conditional Risk and Consistency Control), a robust distributional RL framework that models values as continuous flows across time steps. By scaling value modeling through learning of a value flow field instead of isolated quantile predictions, DFPO captures richer state information for more accurate advantage estimation. To stabilize training under noisy feedback, DFPO further integrates conditional risk control and consistency constraints along value flow trajectories. Experiments on dialogue, math reasoning, and scientific tasks show that DFPO outperforms PPO, FlowRL, and other robust baselines under noisy supervision, achieving improved training stability and generalization.",
+      "relevance_score": 0.6153846153846154
+    },
+    {
+      "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+      "text": "Title: Duality Models: An Embarrassingly Simple One-step Generation Paradigm\n\nAbstract: Consistency-based generative models like Shortcut and MeanFlow achieve impressive results via a target-aware design for solving the Probability Flow ODE (PF-ODE). Typically, such methods introduce a target time $r$ alongside the current time $t$ to modulate outputs between a local multi-step derivative ($r = t$) and a global few-step integral ($r = 0$). However, the conventional\"one input, one output\"paradigm enforces a partition of the training budget, often allocating a significant portion (e.g., 75% in MeanFlow) solely to the multi-step objective for stability. This separation forces a trade-off: allocating sufficient samples to the multi-step objective leaves the few-step generation undertrained, which harms convergence and limits scalability. To this end, we propose Duality Models (DuMo) via a\"one input, dual output\"paradigm. Using a shared backbone with dual heads, DuMo simultaneously predicts velocity $v_t$ and flow-map $u_t$ from a single input $x_t$. This applies geometric constraints from the multi-step objective to every sample, bounding the few-step estimation without separating training objectives, thereby significantly improving stability and efficiency. On ImageNet 256 $\\times$ 256, a 679M Diffusion Transformer with SD-VAE achieves a state-of-the-art (SOTA) FID of 1.79 in just 2 steps. Code is available at: https://github.com/LINs-lab/DuMo",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "text": "Title: Dual-End Consistency Model\n\nAbstract: The slow iterative sampling nature remains a major bottleneck for the practical deployment of diffusion and flow-based generative models. While consistency models (CMs) represent a state-of-the-art distillation-based approach for efficient generation, their large-scale application is still limited by two key issues: training instability and inflexible sampling. Existing methods seek to mitigate these problems through architectural adjustments or regularized objectives, yet overlook the critical reliance on trajectory selection. In this work, we first conduct an analysis on these two limitations: training instability originates from loss divergence induced by unstable self-supervised term, whereas sampling inflexibility arises from error accumulation. Based on these insights and analysis, we propose the Dual-End Consistency Model (DE-CM) that selects vital sub-trajectory clusters to achieve stable and effective training. DE-CM decomposes the PF-ODE trajectory and selects three critical sub-trajectories as optimization targets. Specifically, our approach leverages continuous-time CMs objectives to achieve few-step distillation and utilizes flow matching as a boundary regularizer to stabilize the training process. Furthermore, we propose a novel noise-to-noisy (N2N) mapping that can map noise to any point, thereby alleviating the error accumulation in the first step. Extensive experimental results show the effectiveness of our method: it achieves a state-of-the-art FID score of 1.70 in one-step generation on the ImageNet 256x256 dataset, outperforming existing CM-based one-step approaches.",
+      "relevance_score": 0.46153846153846156
+    },
+    {
+      "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "text": "Title: Improved Training Technique for Shortcut Models\n\nAbstract: Shortcut models represent a promising, non-adversarial paradigm for generative modeling, uniquely supporting one-step, few-step, and multi-step sampling from a single trained network. However, their widespread adoption has been stymied by critical performance bottlenecks. This paper tackles the five core issues that held shortcut models back: (1) the hidden flaw of compounding guidance, which we are the first to formalize, causing severe image artifacts; (2) inflexible fixed guidance that restricts inference-time control; (3) a pervasive frequency bias driven by a reliance on low-level distances in the direct domain, which biases reconstructions toward low frequencies; (4) divergent self-consistency arising from a conflict with EMA training; and (5) curvy flow trajectories that impede convergence. To address these challenges, we introduce iSM, a unified training framework that systematically resolves each limitation. Our framework is built on four key improvements: Intrinsic Guidance provides explicit, dynamic control over guidance strength, resolving both compounding guidance and inflexibility. A Multi-Level Wavelet Loss mitigates frequency bias to restore high-frequency details. Scaling Optimal Transport (sOT) reduces training variance and learns straighter, more stable generative paths. Finally, a Twin EMA strategy reconciles training stability with self-consistency. Extensive experiments on ImageNet 256 x 256 demonstrate that our approach yields substantial FID improvements over baseline shortcut models across one-step, few-step, and multi-step generation, making shortcut models a viable and competitive class of generative models.",
+      "relevance_score": 0.38461538461538464
+    },
+    {
+      "related_paper_id": "5b4f82b1f0ad6a982a14eaad4278d8b7752f0043",
+      "text": "Title: Rise of Revision Arthroplasties in Indian Subcontinent: An Inadvertent Future\n\nAbstract: Introduction\nIn the past two decades, developing countries like India have experienced a surge in joint replacement surgeries, driven by an aging population, rising lifestyle diseases, and increased awareness of arthroplasty’s benefits. However, this growth has led to a rise in revision arthroplasties due to complications such as implant failure, infection, and malalignment, placing a strain on both patients and healthcare systems [1]. A better understanding of causes, preventive strategies, and advancements in implant technology and surgical techniques is crucial to address this issue.\n\n \n\nUnderstanding the Rise of Revision Arthroplasties\nSuboptimal implant survivorship\n\nThe increasing incidence of revision arthroplasties is largely attributed to the limited longevity of implants. Contributing factors include the use of potentially less durable implants, a younger, more active patient demographic, and a high prevalence of osteoarthritis and avascular necrosis. Globally, implant survivorship typically exceeds 15–20 years, but in India, revisions are often needed within a decade due to wear, aseptic loosening, or mechanical failures [2].\n\nPeriprosthetic joint infection (PJI)\n\nPJI is among the most challenging and common complications following lower-extremity joint arthroplasty and are a leading cause of revision surgeries [1]. Reported infection rates after primary total knee arthroplasty (TKA) range from 0.51% to 1.55% [3], while for total hip arthroplasty (THA), the incidence is estimated at 0.5–0.7% within the 1st-year post-surgery. Late-onset infections present a cumulative incidence of 0.04–0.06% per prosthesis-year [4]. Alarmingly, studies from India indicate infection rates as high as 87% [1].\n\nAseptic loosening and wear\n\nAseptic loosening is the leading cause of implant failure, accounting for approximately 55% of hip revisions and 31% of knee revisions [2]. Aseptic loosening is often linked to polyethylene wear, where particulate debris triggers osteoclast-mediated bone resorption, leading to periprosthetic osteolysis and eventual loosening. This issue is particularly pronounced in younger, more active patients, suggesting a rising prevalence in this population [5].\n\nInstability and malalignment\n\nJoint instability, resulting from factors such as ligament imbalance, improper component alignment, and surgical errors, is another significant cause of revision surgeries [1]. Malalignment, particularly of the femoral component, has been strongly linked to increased revision rates [6]. Poor positioning can accelerate wear, diminish functionality, and compromise the overall outcome of the procedure. Furthermore, mechanical malalignment that fails to replicate natural joint movement can lead to long-term complications [6].\n\nPatient-related factors\n\nThe growing trend of joint replacements in younger, more active patients has been associated with increased revision rates. Elevated activity levels in this demographic often result in accelerated wear and degradation of prosthetic components [1]. Whereas, in older adults, increasing comorbidities and associated ailments are the major cause of implant failure or decreased satisfaction rate.\n\nPrevention: The Key to Curbing Revision Burden\nAdvanced technologies\n\nRecent advancements in surgical technologies aim to improve precision and accuracy in orthopedic procedures. Innovations like patient-specific instrumentation, navigation systems, smart tools, and computer or robotic-assisted surgery enable tailored interventions based on individual anatomy and ligament characteristics. These technologies enhance 3D surgical planning, optimize implant positioning, and improve alignment precision, leading to superior outcomes [7].\n\nModular operating theaters (OTs)\n\nModular OTs equipped with advanced infection control technologies significantly reduce PJI and post-operative complications. Featuring HEPA filters, laminar airflow systems, and efficient sterilization, these OTs ensure a sterile environment, enhance workflow adaptability, and contribute to better surgical outcomes [8].\n\nRobotic-assisted arthroplasty\n\nRobotic systems have revolutionized orthopedic surgeries, by providing unmatched precision and consistency. The introduction of ROBODOC in 1992 marked a pivotal moment in robotic-assisted joint surgeries, improving bone resection accuracy and component alignment while reducing reliance on conventional cutting guides and manual positioning. Since then, robotic-assisted technologies have continuously evolved, with a primary focus on minimizing human error during surgery.\n\nConventional robotic-assisted TKA platforms typically rely on haptic feedback and oscillating saws controlled by surgeons for bone preparation. In contrast, the novel MISSO active robotic system (Meril Healthcare Pvt. Ltd., Vapi, India) represents a significant leap forward with its fully automated approach. This cutting-edge system integrates artificial intelligence and machine learning to enhance both pre-operative planning and intraoperative execution. By utilizing patient-specific computed tomography data, MISSO generates precise 3D bone models and personalized surgical plans tailored to individual anatomical variations [9]. The system’s real-time guidance ensures optimal prosthetic alignment and precise bone cuts, improving surgical accuracy, preserving soft tissues, and reducing the risk of complications. In addition, MISSO’s virtual simulation capability allows surgeons to rehearse procedures on 3D bone models, ensuring sub-millimetric precision during surgery. By automating complex tasks, the system enhances soft tissue management, minimizes collateral damage, and accelerates recovery, contributing to improved long-term patient outcomes.\n\nSurgeon training and mentorship\n\nSpecialized training programs are crucial for equipping surgeons with the skills needed to adopt advanced technologies in orthopedic care. Organizations like Meril Life Sciences and Johnson and Johnson provide comprehensive educational frameworks that include live surgeries, hands-on workshops, cadaveric labs, and virtual reality (VR) simulations [10]. These programs emphasize key aspects such as patient selection, robotic system utilization, and complication management, enhancing surgical precision and decision-making. Mentorship is a cornerstone of these initiatives, with expert surgeons leading case discussions and offering real-time feedback. Virtual mentorship and remote collaborations further enhance accessibility, fostering peer connections and promoting global knowledge-sharing. VR simulations and cadaveric training allow surgeons to practice complex procedures, accelerating their learning curve and building confidence in robotic-assisted surgeries. By combining hands-on training with mentorship and cutting-edge simulations, these programs ensure that surgeons remain proficient, improving surgical outcomes and optimizing the use of innovative technologies.\n\nPatient education and engagement\n\nPatients may be hesitant to embrace robotic total joint arthroplasty (rTJA), often due to misperceptions about the technology. Common concerns include potential robotic malfunctions causing harm, incorrect procedures, inadequate surgeon training, high costs, and prolonged surgical times. Only half of surveyed patients fully understood the robot’s role in rTJA [11]. Tailored pre-operative counseling can address individual concerns, improve shared decision-making, and identify patients most likely to benefit from rTJA. In addition, factors such as education, income, and age may influence patient understanding and acceptance of such innovations, with marketing campaigns potentially increasing interest and preference for rTJA.\n\nImplant innovations: The game changers\n\nIn revision THA, tapered fluted titanium stems, both Modular and Monoblock, are essential for managing bone loss and restoring hip function. The Wagner Cone Prosthesis (Zimmer Biomet), introduced in the 1980s, was a pivotal innovation but faced limitations like subsidence and dislocation [12]. Modern modular systems, such as the S-ROM Modular Hip System (DePuy Synthes Johnson and Johnson, Warsaw, IN, USA), offer proximal fixation with a porous-coated sleeve and intraoperative adjustability to correct femoral anteversion and leg length discrepancies [13]. The RECLAIM™ (DePuy Synthes Johnson and Johnson, Warsaw, IN, USA) [14] and Restoration® Modular Systems ((Stryker, Kalamazoo, MI USA) [15] provide distal fixation and modular reconstruction for significant femoral bone loss, while the Exeter® V40 Cemented Stem (Stryker, Kalamazoo, MI, USA) [16] ensures long-term durability with its double-tapered design. Innovations like the Latitud MonoMod Stem (Meril Healthcare Pvt. Ltd, India) merge modular flexibility with Monoblock durability to optimize joint stability in complex cases [17]. In revision TKA, modern rotating hinge knee systems, such as the NexGen LCCK (Zimmer Biomet), provide rotational flexibility and joint stabilization in severe ligamentous instability [18, 19]. The TC3® System (DePuy Synthes Johnson and Johnson, Warsaw, IN, USA) [20] and Freedom PCK® System (Meril Healthcare Pvt. Ltd, India) [21] use modular augments and condylar blocks for severe bone loss while balancing flexion laxity and extension stability. The DESTIKNEE® (Meril Healthcare Pvt. Ltd, India) supports high-flexion motion with minimal bone resection, and the Opulent™ Total Knee System (Meril Healthcare Pvt. Ltd, India) features TiNbN-coated components to reduce metal ion release and infection risks [22, 23]. DePuy Synthes’ Attune® Revision Knee System employs an S-curve cam to optimize femoral rollback and patellofemoral tracking [24], while Zimmer Biomet’s LPS-Flex Mobile Bearing Knee accommodates deep flexion (up to 155°) supported by an enhanced cam/spine mechanism, catering to patients with specific physical or cultural needs [25]. Bone deficiency solutions, such as Trabecular Metal Cones (Zimme",
+      "relevance_score": 0.23076923076923078
+    },
+    {
+      "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+      "text": "Title: Continuous Manufacturing – Producing More with Less ’",
+      "relevance_score": 0.15384615384615385
+    },
+    {
+      "related_paper_id": "87e3b490387e91033fe08a00038393235ba49ff2",
+      "text": "Title: Consistent Diffusion Language Models\n\nAbstract: Diffusion language models (DLMs) are an attractive alternative to autoregressive models because they promise sublinear-time, parallel generation, yet practical gains remain elusive as high-quality samples still demand hundreds of refinement steps. In continuous domains, consistency training along the probability-flow ODE is a popular recipe to accelerate diffusion. For discrete diffusion, no analogous sample-space ODE exists, making direct adaptation ill-defined. We argue that the natural discrete substitute is not a deterministic trajectory but its stochastic counterpart: the exact posterior bridge, available in closed form for broad corruption families including masked and uniform diffusion. Building on this observation, we introduce Multi-Path Discrete Consistency (MPDC), a new principle that trains a denoiser to be path-invariant in expectation across these stochastic bridges, and instantiate it as the Consistent Diffusion Language Model (CDLM), a single-stage, teacher-free training framework. A single CDLM objective unifies masked diffusion, continuous consistency models, and progressive/discrete distillation as analytic limits or empirical approximations of one common view. Empirically, CDLM establishes a new state of the art on both conditional and unconditional text-generation, consistently outperforming strong base discrete diffusion models and often even multi-stage distilled baselines across sampling budgets, with the largest gains in the few-step regime. Together, these results position CDLM as a principled and scalable foundation for the next generation of fast, high-fidelity discrete generative modeling.",
+      "relevance_score": 0.3076923076923077
+    },
+    {
+      "related_paper_id": "294ad7ef3f1835baa52b742ef90051e0d8a09add",
+      "text": "Title: Artificial Hydrocarbon Networks: Chemical Nature Inspiration in Machine Learning",
+      "relevance_score": 0.07692307692307693
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about TrigFlow bridging existing methods, but the provided related work (TBCM) does not mention TrigFlow or discuss its bridging capabilities. The paper being reviewed does describe TrigFlow, but the related work evidence is about a different method (TBCM) and does not support or contradict the claim about TrigFlow's contribution. Therefore, evidence is missing.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims TrigFlow is a unified formulation that bridges existing methods, but the related work evidence does not discuss TrigFlow or its bridging effect; it focuses on flow maps and their objectives. There is no direct evidence to verify or contradict the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that TrigFlow offers a unified and simplified formulation that bridges existing methods. The paper's introduction and abstract support this claim, but the related work (BiFM) does not mention TrigFlow, unified formulations, or bridging existing methods. The evidence is unrelated, so the claim cannot be verified or calibrated using the provided related work.",
+      "relevance_score": 0.8461538461538461
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims TrigFlow is a significant contribution to the field. The paper's abstract and introduction describe TrigFlow as a new formulation that unifies EDM and Flow Matching, simplifying diffusion models, but the related work (FACM) does not mention TrigFlow or provide evidence about its significance, making verification impossible with the given evidence.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim about TrigFlow being a unified and simplified formulation that bridges existing methods is about the reviewed paper, not the related work. The related work (Euler Mean Flows) discusses a different flow-based framework with trajectory consistency, but does not mention TrigFlow or its bridging role. Thus, evidence from the related work is insufficient to verify the claim.",
+      "relevance_score": 0.7692307692307693
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that TrigFlow offers a unified and simplified formulation bridging existing methods, but the provided related work (ROCM) is about RLHF on consistency models and does not mention TrigFlow or its unifying role. There is no evidence in the related work to support or contradict this claim.",
+      "relevance_score": 0.6923076923076923
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e24432196fd16a4fa7214ea493ad4081f09dcf0b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that TrigFlow offers a unified and simplified formulation bridging existing methods. The related work paper (DFPO) does not discuss TrigFlow or any similar unification of diffusion model formulations; it focuses on distributional RL for LLM post-training. There is no evidence in the related work to support or contradict the claim, making it unverifiable based on the provided text.",
+      "relevance_score": 0.6153846153846154
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about TrigFlow's contribution, but the related work (DuMo paper) does not mention TrigFlow or provide evidence for or against this claim. The evidence is missing, making the claim unverifiable.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims TrigFlow offers a unified and simplified formulation bridging existing methods, but the provided related work (DE-CM) does not mention TrigFlow, unified formulations, or simplified formulations. Evidence is missing, making verification impossible.",
+      "relevance_score": 0.46153846153846156
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (TrigFlow as a unified formulation), but the related work (about shortcut models) provides no evidence about TrigFlow or the paper's contributions. The claim is too vague to verify against the related work, and no supporting or contradicting information is present.",
+      "relevance_score": 0.38461538461538464
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5b4f82b1f0ad6a982a14eaad4278d8b7752f0043",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims about the paper (TrigFlow's unifying formulation), but the related work evidence is from a completely different field (revision arthroplasties in orthopedics) and provides no information about TrigFlow, diffusion models, or the paper's contributions.",
+      "relevance_score": 0.23076923076923078
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about TrigFlow's contributions, but the related work evidence is about 'Continuous Manufacturing' which is unrelated to the paper's content on diffusion models and TrigFlow. There is no supporting or contradicting evidence in the related work text to evaluate the claim.",
+      "relevance_score": 0.15384615384615385
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "87e3b490387e91033fe08a00038393235ba49ff2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims TrigFlow offers a unified and simplified formulation that bridges existing methods, but the related work does not mention TrigFlow or discuss unification in the same context. The evidence is missing to verify this specific claim.",
+      "relevance_score": 0.3076923076923077
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "294ad7ef3f1835baa52b742ef90051e0d8a09add",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about TrigFlow's contribution in unifying and simplifying formulation, but the related work is about Artificial Hydrocarbon Networks, which is unrelated to the paper's content. No evidence from the related work supports or contradicts the claim.",
+      "relevance_score": 0.07692307692307693
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The introduction of TrigFlow offers a unified and simplified formulation that bridges existing methods, which is a significant contribution to the field.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about TrigFlow bridging existing methods, but the provided related work (TBCM) does not mention TrigFlow or discuss its bridging capabilities. The paper being reviewed does describe TrigFlow, but the related work evidence is about a different method (TBCM) and does not support or contradict the claim about TrigFlow's contribution. Therefore, evidence is missing.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims TrigFlow is a unified formulation that bridges existing methods, but the related work evidence does not discuss TrigFlow or its bridging effect; it focuses on flow maps and their objectives. There is no direct evidence to verify or contradict the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that TrigFlow offers a unified and simplified formulation that bridges existing methods. The paper's introduction and abstract support this claim, but the related work (BiFM) does not mention TrigFlow, unified formulations, or bridging existing methods. The evidence is unrelated, so the claim cannot be verified or calibrated using the provided related work.",
+          "relevance_score": 0.8461538461538461
+        },
+        {
+          "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims TrigFlow is a significant contribution to the field. The paper's abstract and introduction describe TrigFlow as a new formulation that unifies EDM and Flow Matching, simplifying diffusion models, but the related work (FACM) does not mention TrigFlow or provide evidence about its significance, making verification impossible with the given evidence.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim about TrigFlow being a unified and simplified formulation that bridges existing methods is about the reviewed paper, not the related work. The related work (Euler Mean Flows) discusses a different flow-based framework with trajectory consistency, but does not mention TrigFlow or its bridging role. Thus, evidence from the related work is insufficient to verify the claim.",
+          "relevance_score": 0.7692307692307693
+        },
+        {
+          "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that TrigFlow offers a unified and simplified formulation bridging existing methods, but the provided related work (ROCM) is about RLHF on consistency models and does not mention TrigFlow or its unifying role. There is no evidence in the related work to support or contradict this claim.",
+          "relevance_score": 0.6923076923076923
+        },
+        {
+          "related_paper_id": "e24432196fd16a4fa7214ea493ad4081f09dcf0b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that TrigFlow offers a unified and simplified formulation bridging existing methods. The related work paper (DFPO) does not discuss TrigFlow or any similar unification of diffusion model formulations; it focuses on distributional RL for LLM post-training. There is no evidence in the related work to support or contradict the claim, making it unverifiable based on the provided text.",
+          "relevance_score": 0.6153846153846154
+        },
+        {
+          "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about TrigFlow's contribution, but the related work (DuMo paper) does not mention TrigFlow or provide evidence for or against this claim. The evidence is missing, making the claim unverifiable.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims TrigFlow offers a unified and simplified formulation bridging existing methods, but the provided related work (DE-CM) does not mention TrigFlow, unified formulations, or simplified formulations. Evidence is missing, making verification impossible.",
+          "relevance_score": 0.46153846153846156
+        },
+        {
+          "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (TrigFlow as a unified formulation), but the related work (about shortcut models) provides no evidence about TrigFlow or the paper's contributions. The claim is too vague to verify against the related work, and no supporting or contradicting information is present.",
+          "relevance_score": 0.38461538461538464
+        },
+        {
+          "related_paper_id": "5b4f82b1f0ad6a982a14eaad4278d8b7752f0043",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims about the paper (TrigFlow's unifying formulation), but the related work evidence is from a completely different field (revision arthroplasties in orthopedics) and provides no information about TrigFlow, diffusion models, or the paper's contributions.",
+          "relevance_score": 0.23076923076923078
+        },
+        {
+          "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about TrigFlow's contributions, but the related work evidence is about 'Continuous Manufacturing' which is unrelated to the paper's content on diffusion models and TrigFlow. There is no supporting or contradicting evidence in the related work text to evaluate the claim.",
+          "relevance_score": 0.15384615384615385
+        },
+        {
+          "related_paper_id": "87e3b490387e91033fe08a00038393235ba49ff2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims TrigFlow offers a unified and simplified formulation that bridges existing methods, but the related work does not mention TrigFlow or discuss unification in the same context. The evidence is missing to verify this specific claim.",
+          "relevance_score": 0.3076923076923077
+        },
+        {
+          "related_paper_id": "294ad7ef3f1835baa52b742ef90051e0d8a09add",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about TrigFlow's contribution in unifying and simplifying formulation, but the related work is about Artificial Hydrocarbon Networks, which is unrelated to the paper's content. No evidence from the related work supports or contradicts the claim.",
+          "relevance_score": 0.07692307692307693
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "5808f526934396c7269bc8d3f7d91da5970b97de",
+        "1e17688873f92b61a18029a05dda3c54fadcfae5",
+        "331dfe0f72acc614c4008776870caed930366602"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0.0,
+          "weight": 0.3514
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 0.0,
+          "weight": 0.3514
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0.0,
+          "weight": 0.2973
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 14,
+    "pairs_attempted": 14,
+    "pairs_completed": 14,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 14.0
+    }
+  },
+  "errors": []
+}

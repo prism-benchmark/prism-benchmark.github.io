@@ -1,0 +1,111 @@
+{
+  "paper": {
+    "core_task": "Improving training stability and scalability of continuous-time consistency models for few-step image generation",
+    "contributions": [
+      {
+        "name": "A unified diffusion formulation combining EDM and Flow Matching",
+        "author_claim_text": "Our first contribution is TrigFlow, a new formulation that unifies EDM (Karras et al., 2022;2024) and Flow Matching (Peluchetti, 2022;Lipman et al., 2022;Liu et al., 2022;Albergo et al., 2023;Heitz et al., 2023), significantly simplifying the formulation of diffusion models, the",
+        "description": "TrigFlow is a new diffusion process formulation that simplifies EDM and Flow Matching into a unified framework with trigonometric coefficients, enabling simpler analysis and parameterization of diffusion and consistency models.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Techniques to stabilize continuous-time consistency model training",
+        "author_claim_text": "Building on this foundation, we analyze the root causes of instability in CM training and propose a complete recipe for mitigation.",
+        "description": "A set of theoretically motivated improvements including modified time conditioning, adaptive group normalization, re-formulated training objective with adaptive weighting and normalization, and progressive annealing to stabilize and scale continuous-time consistency model training.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Efficient Jacobian-vector product computation for Flash Attention",
+        "author_claim_text": "To fill this gap, we propose a similar algorithm (detailed in Appendix F) that efficiently computes both softmax selfattention and its JVP in a single forward pass in the style of Flash Attention, significantly reducing GPU memory usage for JVP",
+        "description": "An algorithm for computing both attention and its Jacobian-vector product in a single forward pass, enabling memory-efficient and stable tangent computation for large-scale continuous-time consistency model training.",
+        "source_hint": "Section 6"
+      }
+    ],
+    "key_terms": [
+      "consistency models",
+      "continuous-time CMs",
+      "diffusion distillation",
+      "TrigFlow",
+      "Flow Matching",
+      "Jacobian-vector product",
+      "Flash Attention",
+      "adaptive weighting",
+      "tangent normalization",
+      "few-step generation"
+    ],
+    "must_have_entities": [
+      "ImageNet 64×64",
+      "ImageNet 512×512",
+      "Score SDE",
+      "StyleGAN-XL",
+      "Flash Attention"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The proposed TrigFlow, as a novel unification of EDM and Flow Matching, substantially simplifies the analysis presented later and the practical techniques.",
+        "stance": "novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": true,
+        "prior_work_strings": [
+          "EDM",
+          "Flow Matching"
+        ],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "Model architecture modifications are original since existing works are mostly inherited from Diffusion Models' design and focus on the training techniques and formulations, leaving the architectural design underexplored.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C3",
+        "text": "The unified perspective on previous diffusion and flow-matching parameterizations is thorough, complete, and well-grounded, offering novel insights that could benefit the community.",
+        "stance": "novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "theory_overlap"
+      },
+      {
+        "claim_id": "C4",
+        "text": "Strategies for scaling such models to large sizes and datasets are proposed, namely JVP Rearrangement and JVP of Flash Attention.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": true,
+        "prior_work_strings": [
+          "Flash Attention"
+        ],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "Kerras et al.",
+      "Song et al 2023",
+      "EDM",
+      "Flow Matching",
+      "Tong et al. 2024",
+      "Kornilov et al 2024",
+      "Consistency Models Made Easy",
+      "Geng, Zhengyang, Ashwini Pokle, William Luo, Justin Lin, and J. Zico Kolter. \"Consistency Models Made Easy.\" arXiv preprint arXiv:2406.14548 (2024).",
+      "ECT",
+      "sCT",
+      "sCD",
+      "sCMs",
+      "VSD",
+      "DMD2",
+      "TTUR",
+      "arXiv:2406.14548",
+      "2406.14548",
+      "[1]",
+      "[2]",
+      "[1} and [2]"
+    ]
+  }
+}

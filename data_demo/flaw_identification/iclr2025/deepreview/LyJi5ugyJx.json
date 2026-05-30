@@ -1,0 +1,788 @@
+{
+  "paper_id": "LyJi5ugyJx",
+  "micro_flaws": {
+    "micro_flaws": [
+      {
+        "flaw_id": "F01",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "The paper lacks sufficient ablation studies or experimental comparisons for key design choices, such as Adaptive Double Normalization versus AdaGN and the linear warm-up technique.",
+        "raw_arguments": {
+          "Human_3": "Several design choices appear arbitrary and lack supporting evidence. For example, in Section 4.1, the authors discuss the preference for Adaptive Double Normalization over AdaGN, but there is no experimental evidence supporting this choice. It would be more insightful to add a Figure similar to Figure 5 show experimental comparison between Adaptive Double Norm and AdaGN. Similarly, in Section 4.2, the authors propose training with linear warm-up w.r.t the model's time derivative, yet no evidence is provided to demonstrate this choice\u2019s effectiveness. Again, including an ablation study or comparative analysis showing the impact of the linear warm-up on training stability or performance metrics would provide more concrete evidence for the effectiveness of this specific choice",
+          "Human_5": "There are no ablation study results on \u201cAdaptive Double Normalization\u201d except for claiming it \u201cremoves its instability in CM training\u201d."
+        }
+      },
+      {
+        "flaw_id": "F02",
+        "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines",
+        "core_summary": "The paper does not compare with recent flow-based generative models or discrete-time consistency models, limiting the evaluation of its relative performance and efficiency.",
+        "raw_arguments": {
+          "Human_4": "Comparing the proposed model with more recent flow models such as [1] and [2] and adding the results for rectified flows with 2 generation steps.",
+          "Human_5": "I wonder if the paper can provide a more detailed comparison between sCMs and the previous discrete-time consistency models - ECMs, in terms of the training convergence and memory cost.",
+          "LLM_Reviewer": "The paper focuses on continuous-time CMs, but it is not clear how the proposed methods would perform on discrete-time CMs."
+        }
+      },
+      {
+        "flaw_id": "F03",
+        "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines",
+        "core_summary": "The paper does not compare compute efficiency (e.g., FLOPs, training time) against relevant baselines for a given performance level.",
+        "raw_arguments": {
+          "Human_3": "However, including a comparison of compute efficiency with other models (e.g., ECT [1]) would be more insightful, maybe a table or figure comparing the compute efficiency (e.g., FLOPs or training time) of sCM against ECT and other relevant baselines for a given performance level."
+        }
+      },
+      {
+        "flaw_id": "F04",
+        "macro_topic": "4. Experimental Design & Evaluation - Questionable Evaluation Metrics",
+        "core_summary": "The paper includes a comparison of discrete-time CMs with a constant number of time steps, which may be an unfair evaluation against models that benefit from time step scheduling.",
+        "raw_arguments": {
+          "Human_5": "In Figure 5c, do discrete-time CMs have a constant number of time steps $N$ or a timestep schedule up to the maximum number of steps $N$? If it is the former one, it seems to be a bit unfair to discrete-time CMs because the scheduling of time steps is very important to them. Does it make more sense to compare with the best-performing discrete-time CMs?"
+        }
+      },
+      {
+        "flaw_id": "F05",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The paper lacks a clear explanation or intuition for why the continuous-time consistency model (sCT) underperforms relative to the discrete-time model (sCD) at higher resolutions (e.g., ImageNet 512x512).",
+        "raw_arguments": {
+          "Human_1": "The difference between sCT and sCD at the 512x512 resolution is intriguing... I am curious about the authors' thoughts on the extent to which the increased variance could be caused by the pretrained image encoder/decoder. In other words, could data modes become *more dispersed* in the latent space, making it harder for sCT to learn effectively?",
+          "Human_5": "There is no explanation for the phenomenon that sCT performs better than sCD on CIFAR-10 and ImageNet-64, but sCTs performs worse on ImageNet-512. Any intuition of why sCT suffers from increased variance at larger scales?"
+        }
+      },
+      {
+        "flaw_id": "F06",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The necessity and contribution of the prior weighting function ($w(t)$) for variance reduction and stabilizing learnable adaptive weighting is unclear.",
+        "raw_arguments": {
+          "Human_1": "If I understand correctly, there are three weighting functions applied... To what extent does this prior weighting contribute to variance reduction? Is it helpful to stabilize the learnable adaptive weighting layer?"
+        }
+      },
+      {
+        "flaw_id": "F07",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The paper does not explain why adaptive weighting, which improves one-step generation, appears detrimental or only marginally helpful for two-step generation in experiments.",
+        "raw_arguments": {
+          "Human_3": "Figure 5(b) suggests that incorporating adaptive weighting in a two-step setting may lead to worse performance, while in the one-step setting, it only yields marginal improvement. Have the authors considered alternative designs for the two step case?",
+          "Human_5": "In Figure 5b, it looks like \u201cw/o adaptive weighting\u201d achieves better two-step FIDs than \u201cw/ adaptive weighting\u201d and very similar one-step FIDs to \u201cw/ adaptive weighting\u201d. Why do we need adaptive weighting?"
+        }
+      },
+      {
+        "flaw_id": "F08",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations",
+        "core_summary": "The paper does not thoroughly discuss its limitations beyond the performance gap with state-of-the-art diffusion models.",
+        "raw_arguments": {
+          "Human_2": "Are there more limitations other than the 10% worse than diffusion SOTA?"
+        }
+      },
+      {
+        "flaw_id": "F09",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Scalability & Complexity Concerns",
+        "core_summary": "The paper lacks a detailed comparison of the time and memory costs of continuous-time CMs (due to JVP computation) versus discrete-time CMs.",
+        "raw_arguments": {
+          "Human_5": "Although I really like the improvements of continuous-time consistency models... it comes with more time and memory costs related to JVP computation in the loss function... I wonder if the paper can provide a more detailed comparison between sCMs and the previous discrete-time consistency models - ECMs, in terms of the training convergence and memory cost."
+        }
+      },
+      {
+        "flaw_id": "F10",
+        "macro_topic": "2. Clarity & Presentation - General writing & Clarity issues",
+        "core_summary": "The section on positional embeddings lacks sufficient detail to be fully self-contained, requiring readers to consult another paper.",
+        "raw_arguments": {
+          "Human_2": "The section on positional embeddings (line 269 and on) lacks details to be fully understandable without having to read another paper. Maybe beefing up that section would make the paper more self-contained."
+        }
+      },
+      {
+        "flaw_id": "F11",
+        "macro_topic": "2. Clarity & Presentation - Unclear Math/ Notations",
+        "core_summary": "There is a notation conflict where the same function $f_\theta(\\mathbf{x}_t, t)$ is used to denote both diffusion models and consistency models, despite them having different equations.",
+        "raw_arguments": {
+          "Human_1": "In Line 213 and in Line 227, both diffusion models and consistency models are denoted as $f_\theta(\\mathbf{x}_t, t)$ but with different equations."
+        }
+      },
+      {
+        "flaw_id": "F12",
+        "macro_topic": "2. Clarity & Presentation - Unclear Math/ Notations",
+        "core_summary": "The paper presents a potential error or unclear notation in the definition of $c_{skip}$ and $c_{out}$ in lines 201/202.",
+        "raw_arguments": {
+          "Human_4": "Shouldn't $c_{skip}$ and $c_{out}$ be $\\sigma_t$ and $ \\alpha_t \\sigma_d$, that is for $\\sigma_t=t$ and $\\alpha_t=1$: $c_{skip}=t$  and $c_{out}=\\sigma_d$ in line 201/202?"
+        }
+      },
+      {
+        "flaw_id": "F13",
+        "macro_topic": "2. Clarity & Presentation - Unclear Math/ Notations",
+        "core_summary": "The paper may contain a typo or unclear formula for $c_{noise}(t)$ in line 266.",
+        "raw_arguments": {
+          "Human_5": "A minor issue: In line 266, should it be $c_{\\text{noise}}(t) = \\frac{1}{4} \\log(\\sigma_d \\tan t) $?"
+        }
+      },
+      {
+        "flaw_id": "F14",
+        "macro_topic": "2. Clarity & Presentation - Poor Figures/Tables Quality",
+        "core_summary": "Figure 3 is considered to not add much value to the paper.",
+        "raw_arguments": {
+          "Human_2": "I found all figure very useful with the exception of Figure (3) which I felt did not add much value."
+        }
+      },
+      {
+        "flaw_id": "F15",
+        "macro_topic": "2. Clarity & Presentation - Grammar & Typos",
+        "core_summary": "The paper contains minor grammatical errors and typos.",
+        "raw_arguments": {
+          "Human_2": "I also noticed a typo (definitely not affecting my score), just leaving it there for authors to fix their manuscript: - Line 362: \"cause instability\" => \"causes instability\"",
+          "Human_4": "Typos: i) In line 126, a 2 is squared instead of the norm. ii) in line 122, $z_t$ does not depend on time."
+        }
+      },
+      {
+        "flaw_id": "F16",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The paper lacks an intuitive explanation for the loss in Equation 2, which could aid reader understanding.",
+        "raw_arguments": {
+          "Human_4": "The paper would be improved if an intuitive explanation is given for the loss in Equation 2. Also it could save readers some time if it is mentioned that the loss is derived in Song et al 2023, *Remark 10*."
+        }
+      },
+      {
+        "flaw_id": "F17",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Weak Theoretical Justification/Proofs",
+        "core_summary": "The paper lacks a theoretical analysis of the proposed methods, which could help understand their properties and limitations.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The paper does not provide a theoretical analysis of the proposed methods, which could help to better understand their properties and limitations."
+        }
+      },
+      {
+        "flaw_id": "F18",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "The paper does not include examples of generated images using only a single sampling step, which would help illustrate practical performance.",
+        "raw_arguments": {
+          "Human_4": "The paper would be enriched by adding some generated images with one step."
+        }
+      },
+      {
+        "flaw_id": "F19",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "An explanation of the implications of having $||(\\alpha_t, \\sigma_t)||=1$ with respect to geometric invariance is missing or insufficiently elaborated.",
+        "raw_arguments": {
+          "Human_4": "The paragraph from line 924 to 938 (appendix) needs additional elaboration regarding the implications of having $||(\\alpha_t, \\sigma_t)||=1$ with respect to the invariance of the geometric set connecting $x_0$ and $z$."
+        }
+      },
+      {
+        "flaw_id": "F20",
+        "macro_topic": "2. Clarity & Presentation - Unclear Math/ Notations",
+        "core_summary": "There is a potential notation error in Equation (20) of the appendix regarding the notation for $\\hat{D}$.",
+        "raw_arguments": {
+          "Human_4": "In Equation (20) Appendix, shouldn't it be $\\hat{D}$ for $D_{\\theta}(x_t)=\\hat{D}_{\\theta}(\\hat{x}_t(x_t))$?"
+        }
+      },
+      {
+        "flaw_id": "F21",
+        "macro_topic": "4. Experimental Design & Evaluation - Questionable Evaluation Metrics",
+        "core_summary": "The comparison in Figure 7 may not be fair as it is unclear if the baseline (VSD) is conditioned on guidance scale and if it uses the same Two-Timescale Update Rule (TTUR).",
+        "raw_arguments": {
+          "Human_5": "In Figure 7, does the paper apply TTUR proposed by DMD2 (Yin et al. 2024a)? From the DMD2 paper, TTUR improves the performance of VSD. Thus, a comparison with VSD + TTUR is more convincing. In Figure 7, sCDs condition the consistency network on the guidance scale $s$. I wonder if VSD also condition the generator on the guidance scale, for a consistent evaluation setting?"
+        }
+      },
+      {
+        "flaw_id": "F22",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations",
+        "core_summary": "The paper does not discuss whether continuous-time consistency models will face instability issues at even larger scales compared to diffusion/flow models.",
+        "raw_arguments": {
+          "Human_4": "Based on the experiments performed, are there any indications that the continuous consistency models will still face instability issues for even larger scales, in particular as compared to diffusion/flow models?"
+        }
+      },
+      {
+        "flaw_id": "F23",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Missing Broader Impact/Ethical Concerns",
+        "core_summary": "The paper lacks a discussion on the potential for text-to-image generation, given its training on a large-scale dataset (ImageNet 512) in a latent setting.",
+        "raw_arguments": {
+          "Human_3": "Additionally, given that the model is trained on a large-scale dataset (ImageNet 512) under latent setting, it would be beneficial to include discussions related to text-to-image generation."
+        }
+      },
+      {
+        "flaw_id": "F24",
+        "macro_topic": "2. Clarity & Presentation - General writing & Clarity issues",
+        "core_summary": "The Adaptive Double Normalization is less explained and it is unclear if it is the same as local response normalization applied to the modulation layer.",
+        "raw_arguments": {
+          "Human_1": "The Adaptive Double Normalization is less explained. Is it the same as local response normalization applied to the modulation layer?"
+        }
+      }
+    ]
+  },
+  "evaluations": {
+    "evaluations": {
+      "F01": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F02": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F03": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F04": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F05": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F06": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F07": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F08": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F09": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F10": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F11": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F12": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F13": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F14": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F15": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F16": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F17": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F18": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F19": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F20": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F21": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F22": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F23": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F24": {
+        "is_valid": true,
+        "severity": "Minor"
+      }
+    }
+  },
+  "metrics_report": {
+    "cfi": {
+      "Severity_Points": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Flaw_Weights_Summary": {
+        "F01": {
+          "weight": 0.3333333333333333,
+          "severity": "Critical",
+          "consensus_count": 2
+        },
+        "F02": {
+          "weight": 0.5,
+          "severity": "Critical",
+          "consensus_count": 3
+        },
+        "F03": {
+          "weight": 0.16666666666666666,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F04": {
+          "weight": 0.16666666666666666,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F05": {
+          "weight": 0.3333333333333333,
+          "severity": "Minor",
+          "consensus_count": 2
+        },
+        "F06": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F07": {
+          "weight": 0.3333333333333333,
+          "severity": "Critical",
+          "consensus_count": 2
+        },
+        "F08": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F09": {
+          "weight": 0.16666666666666666,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F10": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F11": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F14": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F15": {
+          "weight": 0.3333333333333333,
+          "severity": "Minor",
+          "consensus_count": 2
+        },
+        "F16": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F17": {
+          "weight": 0.16666666666666666,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F18": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F19": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F20": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F21": {
+          "weight": 0.16666666666666666,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F22": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F23": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F24": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        }
+      },
+      "Ground_Truth_Summary": {
+        "Total_Valid_Flaws": 22,
+        "Total_Critical_Flaws": 8,
+        "Total_Minor_Flaws": 14,
+        "Total_Critical_ConsensusWeight": 2.0,
+        "Total_Minor_ConsensusWeight": 2.6667
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_5",
+          "Critical_Recall": 0.75,
+          "Minor_Recall": 0.0714,
+          "Critical_Recall_ConsensusWeighted": 0.8333,
+          "Minor_Recall_ConsensusWeighted": 0.125,
+          "Detected_Critical_Flaws": 6,
+          "Detected_Minor_Flaws": 1,
+          "Detected_Critical_ConsensusWeight": 1.6667,
+          "Detected_Minor_ConsensusWeight": 0.3333,
+          "Total_Valid_Flaws_Found": 7
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Critical_Recall": 0.375,
+          "Minor_Recall": 0.0714,
+          "Critical_Recall_ConsensusWeighted": 0.4167,
+          "Minor_Recall_ConsensusWeighted": 0.0625,
+          "Detected_Critical_Flaws": 3,
+          "Detected_Minor_Flaws": 1,
+          "Detected_Critical_ConsensusWeight": 0.8333,
+          "Detected_Minor_ConsensusWeight": 0.1667,
+          "Total_Valid_Flaws_Found": 4
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Critical_Recall": 0.25,
+          "Minor_Recall": 0.0,
+          "Critical_Recall_ConsensusWeighted": 0.3333,
+          "Minor_Recall_ConsensusWeighted": 0.0,
+          "Detected_Critical_Flaws": 2,
+          "Detected_Minor_Flaws": 0,
+          "Detected_Critical_ConsensusWeight": 0.6667,
+          "Detected_Minor_ConsensusWeight": 0,
+          "Total_Valid_Flaws_Found": 2
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Critical_Recall": 0.125,
+          "Minor_Recall": 0.4286,
+          "Critical_Recall_ConsensusWeighted": 0.25,
+          "Minor_Recall_ConsensusWeighted": 0.4375,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 6,
+          "Detected_Critical_ConsensusWeight": 0.5,
+          "Detected_Minor_ConsensusWeight": 1.1667,
+          "Total_Valid_Flaws_Found": 7
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.2857,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.3125,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 4,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 0.8333,
+          "Total_Valid_Flaws_Found": 4
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.2857,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.3125,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 4,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 0.8333,
+          "Total_Valid_Flaws_Found": 4
+        }
+      ]
+    },
+    "cps": {
+      "Severity_Map": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Canonical_Issue_Bank": {
+        "issues": [
+          {
+            "issue_id": "F01",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper lacks sufficient ablation studies or experimental comparisons for key design choices, such as Adaptive Double Normalization versus AdaGN and the linear warm-up technique.",
+            "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation"
+          },
+          {
+            "issue_id": "F02",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper does not compare with recent flow-based generative models or discrete-time consistency models, limiting the evaluation of its relative performance and efficiency.",
+            "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines"
+          },
+          {
+            "issue_id": "F03",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper does not compare compute efficiency (e.g., FLOPs, training time) against relevant baselines for a given performance level.",
+            "macro_topic": "4. Experimental Design & Evaluation - Missing/Weak Baselines"
+          },
+          {
+            "issue_id": "F04",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper includes a comparison of discrete-time CMs with a constant number of time steps, which may be an unfair evaluation against models that benefit from time step scheduling.",
+            "macro_topic": "4. Experimental Design & Evaluation - Questionable Evaluation Metrics"
+          },
+          {
+            "issue_id": "F05",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper lacks a clear explanation or intuition for why the continuous-time consistency model (sCT) underperforms relative to the discrete-time model (sCD) at higher resolutions (e.g., ImageNet 512x512).",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F06",
+            "shared_severity": "Minor",
+            "canonical_summary": "The necessity and contribution of the prior weighting function ($w(t)$) for variance reduction and stabilizing learnable adaptive weighting is unclear.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F07",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper does not explain why adaptive weighting, which improves one-step generation, appears detrimental or only marginally helpful for two-step generation in experiments.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F08",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper does not thoroughly discuss its limitations beyond the performance gap with state-of-the-art diffusion models.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations"
+          },
+          {
+            "issue_id": "F09",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper lacks a detailed comparison of the time and memory costs of continuous-time CMs (due to JVP computation) versus discrete-time CMs.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Scalability & Complexity Concerns"
+          },
+          {
+            "issue_id": "F10",
+            "shared_severity": "Minor",
+            "canonical_summary": "The section on positional embeddings lacks sufficient detail to be fully self-contained, requiring readers to consult another paper.",
+            "macro_topic": "2. Clarity & Presentation - General writing & Clarity issues"
+          },
+          {
+            "issue_id": "F11",
+            "shared_severity": "Minor",
+            "canonical_summary": "There is a notation conflict where the same function $f_\theta(\\mathbf{x}_t, t)$ is used to denote both diffusion models and consistency models, despite them having different equations.",
+            "macro_topic": "2. Clarity & Presentation - Unclear Math/ Notations"
+          },
+          {
+            "issue_id": "F14",
+            "shared_severity": "Minor",
+            "canonical_summary": "Figure 3 is considered to not add much value to the paper.",
+            "macro_topic": "2. Clarity & Presentation - Poor Figures/Tables Quality"
+          },
+          {
+            "issue_id": "F15",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper contains minor grammatical errors and typos.",
+            "macro_topic": "2. Clarity & Presentation - Grammar & Typos"
+          },
+          {
+            "issue_id": "F16",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper lacks an intuitive explanation for the loss in Equation 2, which could aid reader understanding.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F17",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper lacks a theoretical analysis of the proposed methods, which could help understand their properties and limitations.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Weak Theoretical Justification/Proofs"
+          },
+          {
+            "issue_id": "F18",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper does not include examples of generated images using only a single sampling step, which would help illustrate practical performance.",
+            "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation"
+          },
+          {
+            "issue_id": "F19",
+            "shared_severity": "Minor",
+            "canonical_summary": "An explanation of the implications of having $||(\\alpha_t, \\sigma_t)||=1$ with respect to geometric invariance is missing or insufficiently elaborated.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F20",
+            "shared_severity": "Minor",
+            "canonical_summary": "There is a potential notation error in Equation (20) of the appendix regarding the notation for $\\hat{D}$.",
+            "macro_topic": "2. Clarity & Presentation - Unclear Math/ Notations"
+          },
+          {
+            "issue_id": "F21",
+            "shared_severity": "Critical",
+            "canonical_summary": "The comparison in Figure 7 may not be fair as it is unclear if the baseline (VSD) is conditioned on guidance scale and if it uses the same Two-Timescale Update Rule (TTUR).",
+            "macro_topic": "4. Experimental Design & Evaluation - Questionable Evaluation Metrics"
+          },
+          {
+            "issue_id": "F22",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper does not discuss whether continuous-time consistency models will face instability issues at even larger scales compared to diffusion/flow models.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations"
+          },
+          {
+            "issue_id": "F23",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper lacks a discussion on the potential for text-to-image generation, given its training on a large-scale dataset (ImageNet 512) in a latent setting.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Missing Broader Impact/Ethical Concerns"
+          },
+          {
+            "issue_id": "F24",
+            "shared_severity": "Minor",
+            "canonical_summary": "The Adaptive Double Normalization is less explained and it is unclear if it is the same as local response normalization applied to the modulation layer.",
+            "macro_topic": "2. Clarity & Presentation - General writing & Clarity issues"
+          }
+        ]
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_3",
+          "Raw_CPS": 6.5101,
+          "ICPS": 6.5101,
+          "nCPS": 1.0,
+          "Total_Arguments": 6,
+          "Critical_Count": 4,
+          "Minor_Count": 2,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 5,
+              "CPS_s": 5.5101,
+              "ICPS_s": 5.5101,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Questions",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 1.0
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Raw_CPS": 6.2689,
+          "ICPS": 6.2689,
+          "nCPS": 1.0,
+          "Total_Arguments": 8,
+          "Critical_Count": 2,
+          "Minor_Count": 6,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 7,
+              "CPS_s": 5.2689,
+              "ICPS_s": 5.2689,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Questions",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.9465
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Raw_CPS": 3.2619,
+          "ICPS": 3.2619,
+          "nCPS": 1.0,
+          "Total_Arguments": 4,
+          "Critical_Count": 0,
+          "Minor_Count": 4,
+          "Section_Breakdown": [
+            {
+              "section": "Questions",
+              "n_args": 2,
+              "CPS_s": 1.6309,
+              "ICPS_s": 1.6309,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Minor",
+              "n_args": 2,
+              "CPS_s": 1.6309,
+              "ICPS_s": 1.6309,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.2798
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Raw_CPS": 2.5616,
+          "ICPS": 2.5616,
+          "nCPS": 1.0,
+          "Total_Arguments": 4,
+          "Critical_Count": 0,
+          "Minor_Count": 4,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 4,
+              "CPS_s": 2.5616,
+              "ICPS_s": 2.5616,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.1245
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Raw_CPS": 2.0,
+          "ICPS": 2.0,
+          "nCPS": 1.0,
+          "Total_Arguments": 1,
+          "Critical_Count": 1,
+          "Minor_Count": 0,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 1,
+              "CPS_s": 2.0,
+              "ICPS_s": 2.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.0
+        },
+        {
+          "Reviewer_ID": "Human_5",
+          "Raw_CPS": 6.3117,
+          "ICPS": 6.5865,
+          "nCPS": 0.9583,
+          "Total_Arguments": 7,
+          "Critical_Count": 5,
+          "Minor_Count": 2,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 7,
+              "CPS_s": 6.3117,
+              "ICPS_s": 6.5865,
+              "nCPS_s": 0.9583
+            }
+          ],
+          "CPS_norm": 0.956
+        }
+      ]
+    },
+    "mode": "all"
+  }
+}

@@ -1,0 +1,699 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "To address this limitation, this paper proposes to train LLMs with multi-turn aware utility through a conversation-level reward and a forward sampling process."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "51e8b351a5daec4499285bf26898d918610a87a1",
+      "text": "Title: An Empirical Study of Interaction Smells in Multi-Turn Human-LLM Collaborative Code Generation\n\nAbstract: Large Language Models (LLMs) have revolutionized code generation, evolving from static tools into dynamic conversational interfaces that facilitate complex, multi-turn collaborative programming. While LLMs exhibit remarkable proficiency in generating standalone code snippets, they often struggle to maintain contextual consistency during extended interactions, creating significant obstacles in the collaboration process. Existing benchmarks primarily emphasize the functional correctness of the final output, overlooking latent quality issues within the interaction process itself, which we term Interaction Smells. In this paper, we conduct an empirical study on sampled real-word user-LLM interactions from WildChat and LMSYS-Chat-1M datasets to systematically investigate Interaction Smells in human-LLM code generation tasks from the perspectives of phenomena, distribution, and mitigation. First, we establish the first taxonomy of Interaction Smells by manually performing open card sorting on real-world interaction logs. This taxonomy categorizes Interaction Smells into three primary categories, i.e., User Intent Quality, Historical Instruction Compliance, and Historical Response Violation, comprising nine specific subcategories. Next, we quantitatively evaluate six mainstream LLMs (i.e., GPT-4o, DeepSeek-Chat, Gemini 2.5, Qwen2.5-32B, Qwen2.5-72B, and Qwen3-235B-a22b) to analyze the distribution of Interaction Smells across different models. Finally, we propose Invariant-aware Constraint Evolution (InCE), a multi-agent framework designed to improve multi-turn interaction quality through explicit extraction of global invariants and pre-generation quality audits. Experimental results on the extended WildBench benchmark demonstrate that this lightweight mitigation approach significantly improves the Task Success Rate and effectively suppresses the occurrence of Interaction Smells.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "37c41bbb0bdba7b014271c1a87c6084aa05c94ee",
+      "text": "Title: A Desideratum for Conversational Agents: Capabilities, Challenges, and Future Directions\n\nAbstract: Recent advances in Large Language Models (LLMs) have propelled conversational AI from traditional dialogue systems into sophisticated agents capable of autonomous actions, contextual awareness, and multi-turn interactions with users. Yet, fundamental questions about their capabilities, limitations, and paths forward remain open. This survey paper presents a desideratum for next-generation Conversational Agents - what has been achieved, what challenges persist, and what must be done for more scalable systems that approach human-level intelligence. To that end, we systematically analyze LLM-driven Conversational Agents by organizing their capabilities into three primary dimensions: (i) Reasoning - logical, systematic thinking inspired by human intelligence for decision making, (ii) Monitor - encompassing self-awareness and user interaction monitoring, and (iii) Control - focusing on tool utilization and policy following. Building upon this, we introduce a novel taxonomy by classifying recent work on Conversational Agents around our proposed desideratum. We identify critical research gaps and outline key directions, including realistic evaluations, long-term multi-turn reasoning skills, self-evolution capabilities, collaborative and multi-agent task completion, personalization, and proactivity. This work aims to provide a structured foundation, highlight existing limitations, and offer insights into potential future research directions for Conversational Agents, ultimately advancing progress toward Artificial General Intelligence (AGI). We maintain a curated repository of papers at: https://github.com/emrecanacikgoz/awesome-conversational-agents.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "30da58c425d4e2a5e3c0b774cf8302d2fcf9ce51",
+      "text": "Title: AgentGym-RL: Training LLM Agents for Long-Horizon Decision Making through Multi-Turn Reinforcement Learning\n\nAbstract: Developing autonomous LLM agents capable of making a series of intelligent decisions to solve complex, real-world tasks is a fast-evolving frontier. Like human cognitive development, agents are expected to acquire knowledge and skills through exploration and interaction with the environment. Despite advances, the community still lacks a unified, interactive reinforcement learning (RL) framework that can effectively train such agents from scratch -- without relying on supervised fine-tuning (SFT) -- across diverse and realistic environments. To bridge this gap, we introduce AgentGym-RL, a new framework to train LLM agents for multi-turn interactive decision-making through RL. The framework features a modular and decoupled architecture, ensuring high flexibility and extensibility. It encompasses a wide variety of real-world scenarios, and supports mainstream RL algorithms. Furthermore, we propose ScalingInter-RL, a training approach designed for exploration-exploitation balance and stable RL optimization. In early stages, it emphasizes exploitation by restricting the number of interactions, and gradually shifts towards exploration with larger horizons to encourage diverse problem-solving strategies. In this way, the agent develops more diverse behaviors and is less prone to collapse under long horizons. We perform extensive experiments to validate the stability and effectiveness of both the AgentGym-RL framework and the ScalingInter-RL approach. Our agents match or surpass commercial models on 27 tasks across diverse environments. We offer key insights and will open-source the complete AgentGym-RL framework -- including code and datasets -- to empower the research community in developing the next generation of intelligent agents.",
+      "relevance_score": 0.95
+    },
+    {
+      "related_paper_id": "2a59d62cd06286cb2ba6d5314290b54edf56c978",
+      "text": "Title: SWEET-RL: Training Multi-Turn LLM Agents on Collaborative Reasoning Tasks\n\nAbstract: Large language model (LLM) agents need to perform multi-turn interactions in real-world tasks. However, existing multi-turn RL algorithms for optimizing LLM agents fail to perform effective credit assignment over multiple turns while leveraging the generalization capabilities of LLMs and it remains unclear how to develop such algorithms. To study this, we first introduce a new benchmark, ColBench, where an LLM agent interacts with a human collaborator over multiple turns to solve realistic tasks in backend programming and frontend design. Building on this benchmark, we propose a novel RL algorithm, SWEET-RL (RL with Step-WisE Evaluation from Training-time information), that uses a carefully designed optimization objective to train a critic model with access to additional training-time information. The critic provides step-level rewards for improving the policy model. Our experiments demonstrate that SWEET-RL achieves a 6% absolute improvement in success and win rates on ColBench compared to other state-of-the-art multi-turn RL algorithms, enabling Llama-3.1-8B to match or exceed the performance of GPT4-o in realistic collaborative content creation.",
+      "relevance_score": 0.9
+    },
+    {
+      "related_paper_id": "dc7c687809737422a7e2ce870ad55746675d60f2",
+      "text": "Title: Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions\n\nAbstract: Recent benchmarks for Large Language Model (LLM) agents primarily focus on evaluating reasoning, planning, and execution capabilities, while another critical component-memory, encompassing how agents memorize, update, and retrieve long-term information-is under-evaluated due to the lack of benchmarks. We term agents with memory mechanisms as memory agents. In this paper, based on classic theories from memory science and cognitive science, we identify four core competencies essential for memory agents: accurate retrieval, test-time learning, long-range understanding, and selective forgetting. Existing benchmarks either rely on limited context lengths or are tailored for static, long-context settings like book-based QA, which do not reflect the interactive, multi-turn nature of memory agents that incrementally accumulate information. Moreover, no existing benchmarks cover all four competencies. We introduce MemoryAgentBench, a new benchmark specifically designed for memory agents. Our benchmark transforms existing long-context datasets and incorporates newly constructed datasets into a multi-turn format, effectively simulating the incremental information processing characteristic of memory agents. By carefully selecting and curating datasets, our benchmark provides comprehensive coverage of the four core memory competencies outlined above, thereby offering a systematic and challenging testbed for assessing memory quality. We evaluate a diverse set of memory agents, ranging from simple context-based and retrieval-augmented generation (RAG) systems to advanced agents with external memory modules and tool integration. Empirical results reveal that current methods fall short of mastering all four competencies, underscoring the need for further research into comprehensive memory mechanisms for LLM agents.",
+      "relevance_score": 0.85
+    },
+    {
+      "related_paper_id": "a2803cd240d194718808479ec624e8ba7539e8da",
+      "text": "Title: Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning\n\nAbstract: While scaling individual Large Language Models (LLMs) has delivered remarkable progress, the next frontier lies in scaling collaboration through multi-agent systems (MAS). However, purely autonomous MAS remain''closed-world''systems, constrained by the static knowledge horizon of pre-trained models. This limitation makes them brittle on tasks requiring knowledge beyond training data, often leading to collective failure under novel challenges. To address this, we propose the Human-In-the-Loop Multi-Agent Collaboration (HILA) framework, a principled paradigm for human--agent collaboration. HILA trains agents to learn a metacognitive policy that governs when to solve problems autonomously and when to defer to a human expert. To operationalize this policy, we introduce Dual-Loop Policy Optimization, which disentangles immediate decision-making from long-term capability growth. The inner loop applies Group Relative Policy Optimization (GRPO) with a cost-aware reward to optimize deferral decisions, while the outer loop implements continual learning, transforming expert feedback into high-quality supervised signals that strengthen the agent's reasoning ability. Experiments on challenging mathematical and problem-solving benchmarks show that HILA, equipped with Dual-Loop Policy Optimization, consistently outperforms advanced MAS, establishing a principled foundation for collaborative and continually improving agentic systems.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "0f0ef6641e8dc476a80e04e097f89cc2d3f64b41",
+      "text": "Title: StoryBench: A Dynamic Benchmark for Evaluating Long-Term Memory with Multi Turns\n\nAbstract: Long-term memory (LTM) is essential for large language models (LLMs) to achieve autonomous intelligence in complex, evolving environments. Despite increasing efforts in memory-augmented and retrieval-based architectures, there remains a lack of standardized benchmarks to systematically evaluate LLMs' long-term memory abilities. Existing benchmarks still face challenges in evaluating knowledge retention and dynamic sequential reasoning, and in their own flexibility, all of which limit their effectiveness in assessing models' LTM capabilities. To address these gaps, we propose a novel benchmark framework based on interactive fiction games, featuring dynamically branching storylines with complex reasoning structures. These structures simulate real-world scenarios by requiring LLMs to navigate hierarchical decision trees, where each choice triggers cascading dependencies across multi-turn interactions. Our benchmark emphasizes two distinct settings to test reasoning complexity: one with immediate feedback upon incorrect decisions, and the other requiring models to independently trace back and revise earlier choices after failure. As part of this benchmark, we also construct a new dataset designed to test LLMs' LTM within narrative-driven environments. We further validate the effectiveness of our approach through detailed experiments. Experimental results demonstrate the benchmark's ability to robustly and reliably assess LTM in LLMs.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "6366cb50a5e2043b2bca11a8f03005c42b036c3e",
+      "text": "Title: Multi-turn Reinforcement Learning from Preference Human Feedback\n\nAbstract: Reinforcement Learning from Human Feedback (RLHF) has become the standard approach for aligning Large Language Models (LLMs) with human preferences, allowing LLMs to demonstrate remarkable abilities in various tasks. Existing methods work by emulating the preferences at the single decision (turn) level, limiting their capabilities in settings that require planning or multi-turn interactions to achieve a long-term goal. In this paper, we address this issue by developing novel methods for Reinforcement Learning (RL) from preference feedback between two full multi-turn conversations. In the tabular setting, we present a novel mirror-descent-based policy optimization algorithm for the general multi-turn preference-based RL problem, and prove its convergence to Nash equilibrium. To evaluate performance, we create a new environment, Education Dialogue, where a teacher agent guides a student in learning a random topic, and show that a deep RL variant of our algorithm outperforms RLHF baselines. Finally, we show that in an environment with explicit rewards, our algorithm recovers the same performance as a reward-based RL baseline, despite relying solely on a weaker preference signal.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "b72e2d3e45abde4a7521dc46a623f67cd157f10b",
+      "text": "Title: Implicit Turn-Wise Policy Optimization for Proactive User-LLM Interaction\n\nAbstract: Multi-turn human-AI collaboration is fundamental to deploying interactive services such as adaptive tutoring, conversational recommendation, and professional consultation. However, optimizing these interactions via reinforcement learning is hindered by the sparsity of verifiable intermediate rewards and the high stochasticity of user responses. To address these challenges, we introduce Implicit Turn-wise Policy Optimization (ITPO). ITPO leverages an implicit process reward model to derive fine-grained, turn-wise process rewards from sparse outcome signals. Unlike volatile token-level rewards, these turn-level signals exhibit superior robustness and may utilize a normalization mechanism to further enhance training stability. We evaluate ITPO across three representative multi-turn collaborative tasks: math tutoring, document writing, and medical recommendation. Empirical results demonstrate that ITPO, when combined with PPO, GRPO, or RLOO, consistently achieves improved convergence than existing baselines. Elaborate trajectory analysis confirms that ITPO infers turn-wise preferences that are semantically aligned with human judgment. Code is publicly available at https://github.com/Graph-COM/ITPO.",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "0b52bd98b5e979c10cf8be89930877c59d4fe784",
+      "text": "Title: PersonaVLM: Long-Term Personalized Multimodal LLMs\n\nAbstract: Multimodal Large Language Models (MLLMs) serve as daily assistants for millions. However, their ability to generate responses aligned with individual preferences remains limited. Prior approaches enable only static, single-turn personalization through input augmentation or output alignment, and thus fail to capture users'evolving preferences and personality over time (see Fig.1). In this paper, we introduce PersonaVLM, an innovative personalized multimodal agent framework designed for long-term personalization. It transforms a general-purpose MLLM into a personalized assistant by integrating three key capabilities: (a) Remembering: It proactively extracts and summarizes chronological multimodal memories from interactions, consolidating them into a personalized database. (b) Reasoning: It conducts multi-turn reasoning by retrieving and integrating relevant memories from the database. (c) Response Alignment: It infers the user's evolving personality throughout long-term interactions to ensure outputs remain aligned with their unique characteristics. For evaluation, we establish Persona-MME, a comprehensive benchmark comprising over 2,000 curated interaction cases, designed to assess long-term MLLM personalization across seven key aspects and 14 fine-grained tasks. Extensive experiments validate our method's effectiveness, improving the baseline by 22.4% (Persona-MME) and 9.8% (PERSONAMEM) under a 128k context, while outperforming GPT-4o by 5.2% and 2.0%, respectively. Project page: https://PersonaVLM.github.io.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "9bdce8ff12b2546c52363139b24806bf543c9f25",
+      "text": "Title: Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF\n\nAbstract: Large Language Models (LLMs) have achieved remarkable success at tasks like summarization that involve a single turn of interaction. However, they can still struggle with multi-turn tasks like dialogue that require long-term planning. Previous works on multi-turn dialogue extend single-turn reinforcement learning from human feedback (RLHF) methods to the multi-turn setting by treating all prior dialogue turns as a long context. Such approaches suffer from covariate shift: the conversations in the training set have previous turns generated by some reference policy, which means that low training error may not necessarily correspond to good performance when the learner is actually in the conversation loop. In response, we introduce REgressing the RELative FUture (REFUEL), an efficient policy optimization approach designed to address multi-turn RLHF in LLMs. REFUEL employs a single model to estimate $Q$-values and trains on self-generated data, addressing the covariate shift issue. REFUEL frames the multi-turn RLHF problem as a sequence of regression tasks on iteratively collected datasets, enabling ease of implementation. Theoretically, we prove that REFUEL can match the performance of any policy covered by the training set. Empirically, we evaluate our algorithm by using Llama-3.1-70B-it to simulate a user in conversation with our model. REFUEL consistently outperforms state-of-the-art methods such as DPO and REBEL across various settings. Furthermore, despite having only 8 billion parameters, Llama-3-8B-it fine-tuned with REFUEL outperforms Llama-3.1-70B-it on long multi-turn dialogues. Implementation of REFUEL can be found at https://github.com/ZhaolinGao/REFUEL/, and models trained by REFUEL can be found at https://huggingface.co/Cornell-AGI.",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "dd8385b232be23e707bd40b5af5627f759118ab5",
+      "text": "Title: MindEval: Benchmarking Language Models on Multi-turn Mental Health Support\n\nAbstract: Demand for mental health support through AI chatbots is surging, though current systems present several limitations, like sycophancy or overvalidation, and reinforcement of maladaptive beliefs. A core obstacle to the creation of better systems is the scarcity of benchmarks that capture the complexity of real therapeutic interactions. Most existing benchmarks either only test clinical knowledge through multiple-choice questions or assess single responses in isolation. To bridge this gap, we present MindEval, a framework designed in collaboration with Ph.D-level Licensed Clinical Psychologists for automatically evaluating language models in realistic, multi-turn mental health therapy conversations. Through patient simulation and automatic evaluation with LLMs, our framework balances resistance to gaming with reproducibility via its fully automated, model-agnostic design. We begin by quantitatively validating the realism of our simulated patients against human-generated text and by demonstrating strong correlations between automatic and human expert judgments. Then, we evaluate 12 state-of-the-art LLMs and show that all models struggle, scoring below 4 out of 6, on average, with particular weaknesses in problematic AI-specific patterns of communication. Notably, reasoning capabilities and model scale do not guarantee better performance, and systems deteriorate with longer interactions or when supporting patients with severe symptoms. We release all code, prompts, and human evaluation data.",
+      "relevance_score": 0.55
+    },
+    {
+      "related_paper_id": "dec6c983bc183ee0039a12ae247ed8615105145a",
+      "text": "Title: ThoughtTrace: Understanding User Thoughts in Real-World LLM Interactions\n\nAbstract: Conversational AI has now reached billions of users, yet existing datasets capture only what people say, not what they think. We introduce ThoughtTrace, the first large-scale dataset that pairs real-world multi-turn human--AI conversations with users'self-reported thoughts: their reasons for sending prompts and reactions to assistant responses. ThoughtTrace comprises 1,058 users, 2,155 conversations, 17,058 turns, and 10,174 thought annotations collected across 20 language models. Our analysis shows that ThoughtTrace captures long-horizon, topically diverse interactions, and that thoughts are semantically distinct from messages, difficult for frontier LLMs to infer from context, diverse in content, and tied to conversation stages. We further demonstrate the utility of thoughts for downstream modeling. First, thoughts improve user-behavior prediction as inference-time context. Second, thought-guided rewrites provide fine-grained alignment signals for training personalized assistants. Together, ThoughtTrace establishes user thoughts as a new data modality for studying the cognitive dynamics behind human--AI interaction and provides a foundation for building assistants that better understand and adapt to users'latent goals, preferences, and needs.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "8f985a083227e34fdc65fdb86dfcfc54edcb3447",
+      "text": "Title: Chronos: Temporal-Aware Conversational Agents with Structured Event Retrieval for Long-Term Memory\n\nAbstract: Recent advances in Large Language Models (LLMs) have enabled conversational AI agents to engage in extended multi-turn interactions spanning weeks or months. However, existing memory systems struggle to reason over temporally grounded facts and preferences that evolve across months of interaction and lack effective retrieval strategies for multi-hop, time-sensitive queries over long dialogue histories. We introduce Chronos, a novel temporal-aware memory framework that decomposes raw dialogue into subject-verb-object event tuples with resolved datetime ranges and entity aliases, indexing them in a structured event calendar alongside a turn calendar that preserves full conversational context. At query time, Chronos applies dynamic prompting to generate tailored retrieval guidance for each question, directing the agent on what to retrieve, how to filter across time ranges, and how to approach multi-hop reasoning through an iterative tool-calling loop over both calendars. We evaluate Chronos with 8 LLMs, both open-source and closed-source, on the LongMemEvalS benchmark comprising 500 questions spanning six categories of dialogue history tasks. Chronos Low achieves 92.60% and Chronos High scores 95.60% accuracy, setting a new state of the art with an improvement of 7.67% over the best prior system. Ablation results reveal the events calendar accounts for a 58.9% gain on the baseline while all other components yield improvements between 15.5% and 22.3%. Notably, Chronos Low alone surpasses prior approaches evaluated under their strongest model configurations.",
+      "relevance_score": 0.45
+    },
+    {
+      "related_paper_id": "844dad0df248963d61fbf088457e1fa3bed77a12",
+      "text": "Title: VibeSearchBench: Benchmarking Long-horizon Proactive Search in the Wild\n\nAbstract: LLM-based agents score well on search benchmarks, yet real users consistently find results unsatisfying, revealing a persistent evaluation-experience gap. We attribute this gap to existing benchmarks'reliance on over-specified queries, single-turn interactions, and fixed-schema evaluation, none of which reflect real search behavior where users and agents collaboratively refine vague intent through multi-turn dialogue. We term this paradigm VibeSearch and introduce VibeSearchBench, a benchmark comprising 200 manually curated bilingual (Chinese and English) tasks across 20 domains, split into VibeSearch-Pro (professional) and VibeSearch-Daily (daily-life) subsets. Each task pairs a user persona with a schema-free ground-truth knowledge graph, and is evaluated through a progressive-disclosure user simulator and a graph-matching evaluation framework. We benchmark seven frontier models under both the ReAct framework and the OpenClaw agent harness. Results show that all models remain substantially inadequate for VibeSearch (best F1: 30.30), highlighting the need for fundamental advances in long-context reasoning, proactive intent elicitation, and structured knowledge construction.",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "5502fac94702c4366f864d6c5e05d37844f10f6d",
+      "text": "Title: Enhancing Character-Coherent Role-Playing Dialogue with a Verifiable Emotion Reward\n\nAbstract: This paper presents a modular framework for character-coherent, emotion-aware role-playing dialogue with large language models (LLMs), centered on a novel Verifiable Emotion Reward (VER) objective. We introduce VER as a reinforcement-style signal derived from frozen emotion classifiers to provide both turn-level and dialogue-level alignment, effectively mitigating emotional drift across long interactions. To amplify VER’s benefits, we construct Character-Coherent Dialogues (CHARCO), a large-scale multi-turn dataset of over 230,000 dialogues, richly annotated with persona profiles, semantic contexts, and ten emotion labels. Our experiments show that fine-tuning LLMs on CHARCO significantly enhances VER’s impact, driving marked improvements in emotional consistency, role fidelity, and dialogue coherence. Through the evaluation that integrates lexical diversity metrics, automatic scoring with GPT-4, and human assessments, we demonstrate that the collaboration between a purpose-built multi-turn dataset and the VER objective leads to significant advancements in the field of persona-aligned conversational agents.",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "af02099d8b1ce1f0d224fcbb4a4e4b77608db168",
+      "text": "Title: MemoryART: Enhancing LLMs via Multi-Memory Models with Adaptive Resonance Theory for Healthcare Agents\n\nAbstract: Though promising in healthcare consultation applications, large language models (LLMs) face critical limitations in retaining and utilizing long-term memory across multi-turn interactions. In particular, existing memory enhancing paradigms are constrained by limited context windows and embedding-based retrieval, often failing to maintain task relevance and still suffering from memory prototype collapse in multi-turn healthcare consultation. To address these challenges, we propose a cognitively-inspired memory framework named MemoryART, which is grounded in Adaptive Resonance Theory (ART)—a cognitive and learning theory of how humans and animals adapt to dynamic environments. MemoryART employs three memory modules—working memory, episodic memory, and semantic memory to support task-aware memory organization and dynamic retrieval. Specifically, episodic memory provides the storage of specific experiences along with contextual clues, which is crucial for managing patient-specific information and perfect for multi-turn healthcare consultation interactions. Building upon this concept, MemoryART leverages multi-channel competitive learning and resonance matching to enable efficient and interpretable episodic memory encoding, alleviating issues of prototype collapse and noisy memory associations. For evaluation, we construct a long-term medical dialogue benchmark called MediLongChat using a LLM-based generation pipeline. The resulting dataset features realistic, multi-disease chat histories, each exceeding 100K tokens across 20–30 dialogues, simulating real-world healthcare interaction patterns. Our experimental results show that MemoryART outperforms mainstream approaches in memory-intensive tasks, achieving SOTA results and significantly reducing token consumption across five popular LLMs, confirming its effectiveness and efficiency in providing scalable, reliable memory for LLMs in healthcare.",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "86aea18148fa67c6fd0eecdc0ee68137fe16a75d",
+      "text": "Title: From Isolated Conversations to Hierarchical Schemas: Dynamic Tree Memory Representation for LLMs\n\nAbstract: Recent advancements in large language models have significantly improved their context windows, yet challenges in effective long-term memory management remain. We introduce MemTree, an algorithm that leverages a dynamic, tree-structured memory representation to optimize the organization, retrieval, and integration of information, akin to human cognitive schemas. MemTree organizes memory hierarchically, with each node encapsulating aggregated textual content, corresponding semantic embeddings, and varying abstraction levels across the tree's depths. Our algorithm dynamically adapts this memory structure by computing and comparing semantic embeddings of new and existing information to enrich the model's context-awareness. This approach allows MemTree to handle complex reasoning and extended interactions more effectively than traditional memory augmentation methods, which often rely on flat lookup tables. Evaluations on benchmarks for multi-turn dialogue understanding and document question answering show that MemTree significantly enhances performance in scenarios that demand structured memory management.",
+      "relevance_score": 0.3
+    },
+    {
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "text": "Title: CollabLLM: From Passive Responders to Active Collaborators\n\nAbstract: Large Language Models are typically trained with next-turn rewards, limiting their ability to optimize for long-term interaction. As a result, they often respond passively to ambiguous or open-ended user requests, failing to help users reach their ultimate intents and leading to inefficient conversations. To address these limitations, we introduce CollabLLM, a novel and general training framework that enhances multiturn human-LLM collaboration. Its key innovation is a collaborative simulation that estimates the long-term contribution of responses using Multiturn-aware Rewards. By reinforcement fine-tuning these rewards, CollabLLM goes beyond responding to user requests, and actively uncovers user intent and offers insightful suggestions-a key step towards more human-centered AI. We also devise a multiturn interaction benchmark with three challenging tasks such as document creation. CollabLLM significantly outperforms our baselines with averages of 18.5% higher task performance and 46.3% improved interactivity by LLM judges. Finally, we conduct a large user study with 201 judges, where CollabLLM increases user satisfaction by 17.6% and reduces user spent time by 10.4%.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "ee5940171753e6a87e69c45df4c0a394f1823b2e",
+      "text": "Title: Pushing Forward Pareto Frontiers of Proactive Agents with Behavioral Agentic Optimization\n\nAbstract: Proactive large language model (LLM) agents aim to actively plan, query, and interact over multiple turns, enabling efficient task completion beyond passive instruction following and making them essential for real-world, user-centric applications. Agentic reinforcement learning (RL) has recently emerged as a promising solution for training such agents in multi-turn settings, allowing interaction strategies to be learned from feedback. However, existing pipelines face a critical challenge in balancing task performance with user engagement, as passive agents can not efficiently adapt to users'intentions while overuse of human feedback reduces their satisfaction. To address this trade-off, we propose BAO, an agentic RL framework that combines behavior enhancement to enrich proactive reasoning and information-gathering capabilities with behavior regularization to suppress inefficient or redundant interactions and align agent behavior with user expectations. We evaluate BAO on multiple tasks from the UserRL benchmark suite, and demonstrate that it substantially outperforms proactive agentic RL baselines while achieving comparable or even superior performance to commercial LLM agents, highlighting its effectiveness for training proactive, user-aligned LLM agents in complex multi-turn scenarios. Our website: https://proactive-agentic-rl.github.io/.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "179d3928ceda469af35f95d9b366989ced3d3476",
+      "text": "Title: Debate, Reflect, and Distill: Multi-Agent Feedback with Tree-Structured Preference Optimization for Efficient Language Model Enhancement\n\nAbstract: Large Language Models (LLMs) continue to set new standards in knowledge-intensive and complex reasoning tasks, yet their high computational demands limit widespread adoption. While distilling large models into smaller ones offers a sustainable solution, current techniques--such as static knowledge distillation, resource-intensive reinforcement learning from human feedback, or limited self-reflection--struggle to yield substantial and lasting performance gains. In this paper, we present a novel Debate and Reflect (D&R) framework that orchestrates multi-turn debates between smaller models and stronger teacher models, eliciting actionable feedback (e.g., error analysis, corrective strategies) to guide student models. Further, we introduce Tree-structured Direct Preference Optimization (T-DPO) to efficiently leverage these debate logs, organizing interactions into a hierarchical format for effective training. Empirical evaluations across diverse NLP benchmarks demonstrate that our approach significantly improves smaller-model accuracy, robustness, and generalization, outperforming conventional baselines by a large margin.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "dda1c99a1047f145ee4a7024fd1e9652b67570e6",
+      "text": "Title: DanceAgent: Dance Movement Refinement With LLM Agent\n\nAbstract: Recent research on motion generation and text-to-motion synthesis focus on coarse-grained motion descriptions, neglecting fine-grained motion details and motion quality refinement. Additionally, current text-to-motion models, such as MotionGPT, lack multi-turn interaction capabilities, relying on single-turn and single-modality transformations, which limit their ability to integrate information from different modalities across interaction stages. These gaps leave critical questions, such as “How well is the motion performed” and “How can it be refined?” largely unaddressed. To address these issues, first, we introduce two fine-grained dance datasets—one focusing on jazz dance and the other on folk dance, which we have independently collected. Second, considering that dance motions are inherently complex and consist of long sequential actions, we introduce both global and local optimization during the motion encoding phase and employ Hidden Markov Model (HMM) temporal modeling to capture differential features between correct and incorrect movements, thereby optimizing the training process. Finally, we propose a multi-turn historical dialogue framework that enables three stages generation—motion assess, text instructions, and motion refinement—for input videos. This framework assists dance beginners by providing feedback on their movements, offering textual instructions, and delivering motion-based refinement. Experimental results on the jazz dance and folk dance datasets demonstrate that our method surpasses existing approaches in both quantitative and qualitative metrics, establishing a new benchmark for motion-text generation in the field of dance training.",
+      "relevance_score": 0.15
+    },
+    {
+      "related_paper_id": "efab4f79a90517f9b968ff902b54367ba200cfa4",
+      "text": "Title: Post-training for Efficient Communication via Convention Formation\n\nAbstract: Humans communicate with increasing efficiency in multi-turn interactions, by adapting their language and forming ad-hoc conventions. In contrast, prior work shows that LLMs do not naturally show this behavior. We develop a post-training process to develop this ability through targeted fine-tuning on heuristically identified demonstrations of convention formation. We evaluate with two new benchmarks focused on this capability. First, we design a focused, cognitively-motivated interaction benchmark that consistently elicits strong convention formation trends in humans. Second, we create a new document-grounded reference completion task that reflects in-the-wild convention formation behavior. Our studies show significantly improved convention formation abilities in post-trained LLMs across the two evaluation methods.",
+      "relevance_score": 0.1
+    },
+    {
+      "related_paper_id": "c03341c91c6f83340f6af9aa55b5e8194a755525",
+      "text": "Title: DriVLMe: Enhancing LLM-based Autonomous Driving Agents with Embodied and Social Experiences\n\nAbstract: Recent advancements in foundation models (FMs) have unlocked new prospects in autonomous driving, yet the experimental settings of these studies are preliminary, oversimplified, and fail to capture the complexity of real-world driving scenarios in human environments. It remains under-explored whether FM agents can handle long-horizon navigation tasks with free-from dialogue and deal with unexpected situations caused by environmental dynamics or task changes. To explore the capabilities and boundaries of FMs faced with the challenges above, we introduce DriVLMe, a video-language-model-based agent to facilitate natural and effective communication between humans and autonomous vehicles that perceive the environment and navigate. We develop DriVLMe from both embodied experiences in a simulated environment and social experiences from real human dialogue. While DriVLMe demonstrates competitive performance in both open-loop benchmarks and closed-loop human studies, we reveal several limitations and challenges, including unacceptable inference time, imbalanced training data, limited visual understanding, challenges with multi-turn interactions, simplified language generation from robotic experiences, and difficulties in handling on-the-fly unexpected situations like environmental dynamics and task changes. Nevertheless, DriVLMe offers a promising new direction for autonomous driving agents that need to navigate not just complex environments but also complex social interactions.",
+      "relevance_score": 0.05
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "51e8b351a5daec4499285bf26898d918610a87a1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's proposal (training LLMs with multi-turn aware utility via conversation-level reward and forward sampling). The related work evidence is about interaction smells in code generation and a mitigation framework (InCE). It does not discuss or relate to the specific training methods (conversation-level reward, forward sampling) mentioned in the review sentence. Therefore, there is no direct evidence to support or contradict the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "37c41bbb0bdba7b014271c1a87c6084aa05c94ee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (COLLABLLM), but the provided related work is a different survey paper on conversational agents. There is no direct evidence in the related work that addresses the specific claim about training LLMs with multi-turn aware utility through a conversation-level reward and a forward sampling process, making the relation unverifiable.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "30da58c425d4e2a5e3c0b774cf8302d2fcf9ce51",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2a59d62cd06286cb2ba6d5314290b54edf56c978",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that the paper proposes training LLMs with multi-turn aware utility through a conversation-level reward and a forward sampling process. The paper being reviewed (COLLABLLM) indeed describes a multi-turn aware reward (MR) and a forward sampling process (using a user simulator) to train LLMs for long-term collaboration. The related work (SWEET-RL) is about a different method for multi-turn RL training and does not directly support or contradict the specific claim about COLLABLLM's approach. Thus, the claim is partially aligned with the paper's content but cannot be verified or contradicted by the related work evidence alone.",
+      "relevance_score": 0.9
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dc7c687809737422a7e2ce870ad55746675d60f2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a method from the paper being reviewed, but the related work evidence is about a different benchmark for memory agents, providing no direct support or contradiction for the claim about training LLMs with multi-turn aware utility. Evidence is missing or unverifiable.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a2803cd240d194718808479ec624e8ba7539e8da",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes COLLABLLM's method (conversation-level reward, forward sampling) as per the paper being reviewed, but the related work (HILA) focuses on a different framework (metacognitive policy, dual-loop optimization) and does not provide evidence about COLLABLLM's specific approaches. Therefore, the claim is about the reviewed paper, but there is no evidence from the related work to support or contradict it, making the relation insufficient.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0f0ef6641e8dc476a80e04e097f89cc2d3f64b41",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (COLLABLLM) proposing to train LLMs with multi-turn aware utility. However, the related work evidence is about StoryBench, a benchmark for evaluating long-term memory in LLMs, not about training methods or rewards. There is no evidence in the related work to support or contradict the claim about COLLABLLM's approach.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6366cb50a5e2043b2bca11a8f03005c42b036c3e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes the paper's approach, but the related work is about a different method for multi-turn RLHF and does not provide direct evidence to support or contradict the specific claim about training with a conversation-level reward and forward sampling. The evidence is missing or not relevant to verify the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b72e2d3e45abde4a7521dc46a623f67cd157f10b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0b52bd98b5e979c10cf8be89930877c59d4fe784",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, stating its proposal. The related work evidence is about a different paper (PersonaVLM) on personalized multimodal LLMs, with no direct information about COLLABLLM's training methods, making the claim unverifiable from the evidence.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9bdce8ff12b2546c52363139b24806bf543c9f25",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's method, but the provided related work evidence does not mention or support any specific aspect of that claim (e.g., multi-turn aware utility, conversation-level reward, or forward sampling).",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dd8385b232be23e707bd40b5af5627f759118ab5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a methodological approach (multi-turn aware utility, conversation-level reward, forward sampling) from the paper being reviewed (COLLABLLM). The related work (MindEval) is about benchmarking mental health support and does not provide evidence about this specific training framework or its components. Therefore, the claim is not supported or contradicted by the related work evidence.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dec6c983bc183ee0039a12ae247ed8615105145a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's proposal, but the related work evidence (ThoughtTrace dataset) does not provide direct support or contradiction for this specific claim about training methods. The evidence focuses on a dataset for user thoughts, not on the proposed training framework with conversation-level rewards and forward sampling.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8f985a083227e34fdc65fdb86dfcfc54edcb3447",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but it does not provide evidence about the related work (Chronos). The related work focuses on temporal-aware memory for long-term dialogues, not on multi-turn aware utility or forward sampling as described in the review sentence. Thus, there is no evidence to align or contradict the claim.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "844dad0df248963d61fbf088457e1fa3bed77a12",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes a specific proposal in the paper being reviewed (training LLMs with multi-turn aware utility via conversation-level reward and forward sampling). The related work evidence (VibeSearchBench) discusses a different benchmark for proactive search, which does not directly address or provide evidence about the paper's training methodology. There is no clear connection or contradiction between the two; the evidence is missing or unverifiable for this claim.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5502fac94702c4366f864d6c5e05d37844f10f6d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "af02099d8b1ce1f0d224fcbb4a4e4b77608db168",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "86aea18148fa67c6fd0eecdc0ee68137fe16a75d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's method (training with multi-turn aware utility via conversation-level reward and forward sampling), but the provided related work evidence (MemTree) is unrelated to this claim. There is no evidence in the related work text to support, contradict, or relate to the reviewer's claim, making verification impossible.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that the paper proposes to train LLMs with multi-turn aware utility via a conversation-level reward and a forward sampling process. The related work evidence (abstract and detailed sections) confirms that COLLABLLM uses a conversation-level reward function (R*) and a forward sampling process (collaborative simulation) to compute Multiturn-aware Rewards, which are then used for reinforcement fine-tuning. The claim is specific and directly supported by the evidence, with no overstatement or contradiction.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ee5940171753e6a87e69c45df4c0a394f1823b2e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes training LLMs with 'multi-turn aware utility' via a 'conversation-level reward and a forward sampling process.' While the paper's abstract and introduction describe a 'Multiturn-aware Reward' and forward sampling, the related work evidence (about BAO) does not discuss these specific mechanisms. The related work is about a different framework (BAO) for proactive agents, not COLLABLLM. Thus, the claim cannot be verified or contradicted using the related work; evidence is missing.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "179d3928ceda469af35f95d9b366989ced3d3476",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed (proposing training with multi-turn aware utility). The related work evidence is about a different paper (Debate, Reflect, and Distill) focusing on multi-agent feedback and distillation, not on training LLMs with conversation-level rewards or forward sampling. There is no direct evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dda1c99a1047f145ee4a7024fd1e9652b67570e6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "efab4f79a90517f9b968ff902b54367ba200cfa4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's approach, but the related work evidence does not address or support that claim. The evidence discusses a different post-training method for convention formation, not the specific training method mentioned in the review sentence.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c03341c91c6f83340f6af9aa55b5e8194a755525",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.05
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "To address this limitation, this paper proposes to train LLMs with multi-turn aware utility through a conversation-level reward and a forward sampling process.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "51e8b351a5daec4499285bf26898d918610a87a1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's proposal (training LLMs with multi-turn aware utility via conversation-level reward and forward sampling). The related work evidence is about interaction smells in code generation and a mitigation framework (InCE). It does not discuss or relate to the specific training methods (conversation-level reward, forward sampling) mentioned in the review sentence. Therefore, there is no direct evidence to support or contradict the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "37c41bbb0bdba7b014271c1a87c6084aa05c94ee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (COLLABLLM), but the provided related work is a different survey paper on conversational agents. There is no direct evidence in the related work that addresses the specific claim about training LLMs with multi-turn aware utility through a conversation-level reward and a forward sampling process, making the relation unverifiable.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "30da58c425d4e2a5e3c0b774cf8302d2fcf9ce51",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "2a59d62cd06286cb2ba6d5314290b54edf56c978",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that the paper proposes training LLMs with multi-turn aware utility through a conversation-level reward and a forward sampling process. The paper being reviewed (COLLABLLM) indeed describes a multi-turn aware reward (MR) and a forward sampling process (using a user simulator) to train LLMs for long-term collaboration. The related work (SWEET-RL) is about a different method for multi-turn RL training and does not directly support or contradict the specific claim about COLLABLLM's approach. Thus, the claim is partially aligned with the paper's content but cannot be verified or contradicted by the related work evidence alone.",
+          "relevance_score": 0.9
+        },
+        {
+          "related_paper_id": "dc7c687809737422a7e2ce870ad55746675d60f2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a method from the paper being reviewed, but the related work evidence is about a different benchmark for memory agents, providing no direct support or contradiction for the claim about training LLMs with multi-turn aware utility. Evidence is missing or unverifiable.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "a2803cd240d194718808479ec624e8ba7539e8da",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes COLLABLLM's method (conversation-level reward, forward sampling) as per the paper being reviewed, but the related work (HILA) focuses on a different framework (metacognitive policy, dual-loop optimization) and does not provide evidence about COLLABLLM's specific approaches. Therefore, the claim is about the reviewed paper, but there is no evidence from the related work to support or contradict it, making the relation insufficient.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "0f0ef6641e8dc476a80e04e097f89cc2d3f64b41",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (COLLABLLM) proposing to train LLMs with multi-turn aware utility. However, the related work evidence is about StoryBench, a benchmark for evaluating long-term memory in LLMs, not about training methods or rewards. There is no evidence in the related work to support or contradict the claim about COLLABLLM's approach.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "6366cb50a5e2043b2bca11a8f03005c42b036c3e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes the paper's approach, but the related work is about a different method for multi-turn RLHF and does not provide direct evidence to support or contradict the specific claim about training with a conversation-level reward and forward sampling. The evidence is missing or not relevant to verify the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "b72e2d3e45abde4a7521dc46a623f67cd157f10b",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "0b52bd98b5e979c10cf8be89930877c59d4fe784",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, stating its proposal. The related work evidence is about a different paper (PersonaVLM) on personalized multimodal LLMs, with no direct information about COLLABLLM's training methods, making the claim unverifiable from the evidence.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "9bdce8ff12b2546c52363139b24806bf543c9f25",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's method, but the provided related work evidence does not mention or support any specific aspect of that claim (e.g., multi-turn aware utility, conversation-level reward, or forward sampling).",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "dd8385b232be23e707bd40b5af5627f759118ab5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a methodological approach (multi-turn aware utility, conversation-level reward, forward sampling) from the paper being reviewed (COLLABLLM). The related work (MindEval) is about benchmarking mental health support and does not provide evidence about this specific training framework or its components. Therefore, the claim is not supported or contradicted by the related work evidence.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "dec6c983bc183ee0039a12ae247ed8615105145a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's proposal, but the related work evidence (ThoughtTrace dataset) does not provide direct support or contradiction for this specific claim about training methods. The evidence focuses on a dataset for user thoughts, not on the proposed training framework with conversation-level rewards and forward sampling.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "8f985a083227e34fdc65fdb86dfcfc54edcb3447",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but it does not provide evidence about the related work (Chronos). The related work focuses on temporal-aware memory for long-term dialogues, not on multi-turn aware utility or forward sampling as described in the review sentence. Thus, there is no evidence to align or contradict the claim.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "844dad0df248963d61fbf088457e1fa3bed77a12",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes a specific proposal in the paper being reviewed (training LLMs with multi-turn aware utility via conversation-level reward and forward sampling). The related work evidence (VibeSearchBench) discusses a different benchmark for proactive search, which does not directly address or provide evidence about the paper's training methodology. There is no clear connection or contradiction between the two; the evidence is missing or unverifiable for this claim.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "5502fac94702c4366f864d6c5e05d37844f10f6d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "af02099d8b1ce1f0d224fcbb4a4e4b77608db168",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "86aea18148fa67c6fd0eecdc0ee68137fe16a75d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's method (training with multi-turn aware utility via conversation-level reward and forward sampling), but the provided related work evidence (MemTree) is unrelated to this claim. There is no evidence in the related work text to support, contradict, or relate to the reviewer's claim, making verification impossible.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that the paper proposes to train LLMs with multi-turn aware utility via a conversation-level reward and a forward sampling process. The related work evidence (abstract and detailed sections) confirms that COLLABLLM uses a conversation-level reward function (R*) and a forward sampling process (collaborative simulation) to compute Multiturn-aware Rewards, which are then used for reinforcement fine-tuning. The claim is specific and directly supported by the evidence, with no overstatement or contradiction.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "ee5940171753e6a87e69c45df4c0a394f1823b2e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes training LLMs with 'multi-turn aware utility' via a 'conversation-level reward and a forward sampling process.' While the paper's abstract and introduction describe a 'Multiturn-aware Reward' and forward sampling, the related work evidence (about BAO) does not discuss these specific mechanisms. The related work is about a different framework (BAO) for proactive agents, not COLLABLLM. Thus, the claim cannot be verified or contradicted using the related work; evidence is missing.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "179d3928ceda469af35f95d9b366989ced3d3476",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed (proposing training with multi-turn aware utility). The related work evidence is about a different paper (Debate, Reflect, and Distill) focusing on multi-agent feedback and distillation, not on training LLMs with conversation-level rewards or forward sampling. There is no direct evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "dda1c99a1047f145ee4a7024fd1e9652b67570e6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "efab4f79a90517f9b968ff902b54367ba200cfa4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's approach, but the related work evidence does not address or support that claim. The evidence discusses a different post-training method for convention formation, not the specific training method mentioned in the review sentence.",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "c03341c91c6f83340f6af9aa55b5e8194a755525",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "51e8b351a5daec4499285bf26898d918610a87a1",
+        "37c41bbb0bdba7b014271c1a87c6084aa05c94ee",
+        "30da58c425d4e2a5e3c0b774cf8302d2fcf9ce51"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "51e8b351a5daec4499285bf26898d918610a87a1",
+          "score": 0.0,
+          "weight": 0.339
+        },
+        {
+          "related_paper_id": "37c41bbb0bdba7b014271c1a87c6084aa05c94ee",
+          "score": 0.0,
+          "weight": 0.339
+        },
+        {
+          "related_paper_id": "30da58c425d4e2a5e3c0b774cf8302d2fcf9ce51",
+          "score": 0.0,
+          "weight": 0.322
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 24,
+    "pairs_attempted": 24,
+    "pairs_completed": 24,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 24.0
+    }
+  },
+  "errors": []
+}

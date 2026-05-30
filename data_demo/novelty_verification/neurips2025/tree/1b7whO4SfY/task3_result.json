@@ -1,0 +1,1335 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper lacks a clear and upfront articulation of its novel contributions, which limits the immediate impact of the work."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper makes a valuable contribution by systematically analyzing the impact of different gating mechanisms within attention layers, which is a relatively underexplored area."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+      "text": "Title: Interaction-Driven Dynamic Fusion for Multimodal Depression Detection: A Controlled Analysis of Gating and Cross-Attention Under Class Imbalance\n\nAbstract: Highlights What are the main findings? Cross-attention fusion at the audio integration stage achieved the highest performance (AUC = 0.774; PR-AUC = 0.606) and showed significant superiority over gated and concatenation strategies under class imbalance. Visual modality dominance was condition-dependent: SigLIP pretraining yielded positive transfer (+0.018 AUC, p<0.001), whereas audio pretraining produced negative transfer (−0.014 AUC, p=0.004), and intra-visual gating exhibited both balanced weighting and dominance reversal across configurations. What are the implications of the main findings? Multimodal depression detection systems should be designed as interaction-driven architectures rather than relying on static fusion taxonomies or assumed semantic superiority. Attention-based fusion provides clinically meaningful gains in minority-class detection (PR-AUC improvement), supporting its adoption in imbalanced mental health screening settings. Abstract Background/Objectives: Multimodal depression detection research has traditionally relied on early or hybrid fusion strategies without systematically analyzing how dynamic fusion mechanisms interact with modality-specific pretraining. Although gated and attention-based architectures are increasingly adopted, their behavior is rarely examined within a structured fusion taxonomy framework. Methods: In this study, we conduct a controlled taxonomy-level evaluation of multimodal fusion strategies in a Japanese PHQ-9-annotated depression dataset. We compare four fusion paradigms (concatenation, summation, gated fusion, and cross-attention) across three integration stages, crossed with modality-specific affective pretraining configurations for visual (CMU-MOSI/MOSEI), acoustic (JTES), and textual (WRIME) encoders, yielding 512 experimental conditions. Results: The results reveal strong position-dependent effects of fusion strategy. Cross-attention fusion at the audio integration stage achieved the highest mean AUC (0.774) and PR-AUC (0.606), with statistically significant superiority over gated and concatenation-based fusion (Kruskal–Wallis H=86.28, p<0.001). In contrast, fusion effects at the text stage were non-significant in AUC but significant in PR-AUC, highlighting metric-sensitive behavior under class imbalance. Pretraining effects were modality-specific: SigLIP initialization produced significant positive transfer (Δ=+0.018, p<0.001), whereas audio pretraining on JTES resulted in negative transfer (Δ=−0.014, p=0.004), suggesting domain mismatch effects. Gate analysis further revealed condition-dependent modality dominance, including cases of semantic–geometric reversal under joint auxiliary augmentation. Conclusions: Our findings suggest that multimodal depression detection systems should not be interpreted through static fusion categories alone. Instead, modality contribution appears to be associated with structured interaction effects between fusion strategy, integration position, and affective pretraining. This work provides a controlled empirical bridge between fusion taxonomy and dynamic modality weighting in clinical multimodal modeling.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "text": "Title: Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free\n\nAbstract: Gating mechanisms have been widely utilized, from early models like LSTMs and Highway Networks to recent state space models, linear attention, and also softmax attention. Yet, existing literature rarely examines the specific effects of gating. In this work, we conduct comprehensive experiments to systematically investigate gating-augmented softmax attention variants. Specifically, we perform a comprehensive comparison over 30 variants of 15B Mixture-of-Experts (MoE) models and 1.7B dense models trained on a 3.5 trillion token dataset. Our central finding is that a simple modification-applying a head-specific sigmoid gate after the Scaled Dot-Product Attention (SDPA)-consistently improves performance. This modification also enhances training stability, tolerates larger learning rates, and improves scaling properties. By comparing various gating positions and computational variants, we attribute this effectiveness to two key factors: (1) introducing non-linearity upon the low-rank mapping in the softmax attention, and (2) applying query-dependent sparse gating scores to modulate the SDPA output. Notably, we find this sparse gating mechanism mitigates 'attention sink' and enhances long-context extrapolation performance, and we also release related $\\href{https://github.com/qiuzh20/gated_attention}{codes}$ and $\\href{https://huggingface.co/QwQZh/gated_attention}{models}$ to facilitate future research.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "ed72bff146a9fc48d487cc90ed7cb552c6ed9246",
+      "text": "Title: Aspect sentiment analysis based on gating convolutional network and attention weighting mechanism\n\nAbstract: Aspects Sentiment analysis is a fine-grained text on emotional classification. Aiming at the problem that traditional attention mechanism can't effectively combine contextual meaning an spectoward with information, and single level attention can't obtain deep emotional information features, a gated convolutional network model with attention weights is proposed. Firstly, the word layer is modeled by two-way long-term and short-term memory network, and context semantic information is captured in different directions. In the meantime, different weights are assigned to context words with different positions, and then sentences are gated by convolutional network. The layers are modeled to capture the importance of different sentences, and finally the softmax regression is used for classification. The laboratory finding on the Restaurant DS and the Laptop DS in SemEval2014 indicate that the classification accuracy is better than the classification effect of GCN.",
+      "relevance_score": 0.95
+    },
+    {
+      "related_paper_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+      "text": "Title: Deconstructing Attention: Investigating Design Principles for Effective Language Modeling\n\nAbstract: The success of Transformer language models is widely credited to their dot-product attention mechanism, which interweaves a set of key design principles: mixing information across positions (enabling multi-token interactions), sequence-dependent activations (where attention weights adapt to each input), a specific mathematical form (dot-product similarities plus softmax weighting), and coupling of queries and keys to evolving hidden states (grounding attention in the current layer). However, the necessity of each of these principles remains largely untested. In this work, we systematically deconstruct attention by designing controlled variants that selectively relax these principles, applied both uniformly across all layers and in hybrid architectures where only some layers retain standard attention. Our empirical analysis reveals that mechanisms for mixing tokens are indispensable, as their absence collapses models to near-random behavior, while the exact mathematical form and sequence dependency can be substantially relaxed, especially when preserved in just a subset of layers. Surprisingly, even variants that fail in isolation can achieve robust performance when interleaved with standard attention, highlighting a cooperative effect. These findings deepen our understanding of what truly underpins attention's effectiveness and open new avenues for simplifying language models without sacrificing performance.",
+      "relevance_score": 0.85
+    },
+    {
+      "related_paper_id": "498c670cc8b2435e91730413c9694028bca22f7e",
+      "text": "Title: AHDSN: an attention-enabled hybrid deep sequential network for cancer survivability prediction from multi-omics data",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "text": "Title: Threshold Differential Attention for Sink-Free, Ultra-Sparse, and Non-Dispersive Language Modeling\n\nAbstract: Softmax attention struggles with long contexts due to structural limitations: the strict sum-to-one constraint forces attention sinks on irrelevant tokens, and probability mass disperses as sequence lengths increase. We tackle these problems with Threshold Differential Attention (TDA), a sink-free attention mechanism that achieves ultra-sparsity and improved robustness at longer sequence lengths without the computational overhead of projection methods or the performance degradation caused by noise accumulation of standard rectified attention. TDA applies row-wise extreme-value thresholding with a length-dependent gate, retaining only exceedances. Inspired by the differential transformer, TDA also subtracts an inhibitory view to enhance expressivity. Theoretically, we prove that TDA controls the expected number of spurious survivors per row to $O(1)$ and that consensus spurious matches across independent views vanish as context grows. Empirically, TDA produces $>99\\%$ exact zeros and eliminates attention sinks while maintaining competitive performance on standard and long-context benchmarks.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "132051211c3a41186a366c36c23bf5cd685a602c",
+      "text": "Title: Research on Substation Real-Time Object Recognition Algorithm Based on Deep Learning\n\nAbstract: The use of deep learning algorithms to intelligently identify objects from video has a wide range of applications. The more advanced system based on the tensorflow framework is proposed for deep neural network recognition of objects in this paper. Our work is mainly the following: (1) Using the vgg deep convolutional network architecture as the infrastructure. (2) Real-time recognition of objects in video. (3) The system framework can be used in substations to realize real-time identification of objects with security threats. Introduction Deep learning has developed rapidly in recent years and is active in many research fields. Deep neural networks show powerful forces in the field of computer vision, and their recognition accuracy is also getting higher and higher. Substations are an important part of power transmission. Because the distributed local environment is different and unattended, its equipment will be damaged or stolen. This situation will cause great trouble to the security of the power grid. The existing video surveillance technology requires the on-duty personnel to manually monitor the display, which not only requires a lot of manpower to judge, but also has a slow processing speed. Based on this situation, there is an urgent need for an intelligent video surveillance analysis technology for real-time detection and identification of objects[1] that affect the safety of substations . Identifying objects from surveillance video Generating natural language descriptions is a process of intelligent detection processing. At present, object recognition based on computer vision is still in an immature stage. Many models have been established and proposed, but there are some common problems: low recognition of objects, large number of training samples, and inability to detect in real time. Among them, the convolutional neural network (CNN) overcomes the subjectivity and limitations of the artificial extraction feature. In recent years, a variety of convolutional neural network frameworks have been proposed. For example, some advanced deep CNN frameworks use Caffe[2], Keras[3], etc. The performance and model design have drawbacks. The Tensorflow framework has a flexible portability. It is helpful for observing complex network structures and monitoring long-time and large-scale training. It is more flexible in implementing deep CNN and can adapt to different requirements and constraints. This article uses a deep CNN framework for real-time recognition of video objects, which can be applied in many research areas. Convolutional Neural Network Theory Basis Introduce In recent years, the convolutional neural network structure applied in the field of computer vision is mostly based on the LeNet convolution model structure proposed by Lecun in 1998 for handwritten letter recognition, until 2012 [4], with the release of large ImageNet data sets. With the increase in computing power, people regained their interest in research on convolutional neural networks. The structure of the convolutional neural network was originally inspired by the biological vision mechanism, just as the working principle of the human visual cortex described by Hube in his pioneering research. Subsequently, Neocognitron, proposed by Fukushima, is the predecessor of the convolutional neural network [5]. This alternate form is designed to imitate the processing mechanism in simple cells of biology. The schematic diagram of the structure is shown in the figure below. Figure 1. Neuro-sensory architecture. In addition, after the convolution operation, it will follow a non-linear change unit. The common nonlinear function is the correct linear unit ReLu. Its mathematical expression is: ; 0 = 0 ; 0 x ifx x x φ ≥   <  ( ) (1) Neural network structure is usually composed of input layer x, y, and the output layer stack multiple hidden layer h. Each layer is also composed of multiple units. Generally, each hidden unit j h receives input from all units at the previous layer and combines them in weighted combinations. The mathematical form of its nonlinear combination is as follows: ) j j ij i i h F b X ω = +∑ ( (2) Advances in Convolution Neural Networks CNN is a set of multilayer neural networks dedicated to two-dimensional data such as images and video[6]. CNN was the first truly successful deep learning method in which many layers of the hierarchy were successfully trained in a robust manner[7]. CNN has been proposed as an in-depth learning framework. There are two factors that promote the use of convolutional neural networks in computer vision. The first is that convolutional neural networks can use the 2D structure of the image and the high degree of correlation between adjacent pixels of the image. The second is that the convolutional neural network also introduces a pooling step to ensure the translation invariance of the image to a certain extent, which makes the model unaffected by the position change [8]. For example, for the target recognition task, the shallow layer in the convolutional network will learn some edge and corner features of the image, and at the deeper level, the features of the entire target can be learned [9]. CNN two cores refer to CNN's two core operations: convolution and pooling [10]. The random combination of convolution and pooling gives CNN a lot of flexibility, and so many familiar classic networks have also been born: AlexNet, VGGNet, Google Inception Net, ResNet, and the four networks are increasing in depth and complexity. AlexNet won the 2012 ILSVRC (ImageNet Large Scale Visual Recognition Challenge) competition, Google Inception Net won the 2014 ILSVRC championship, VGGNet won the 2014 ILSVRC runner-up, and ResNet won the 2015 championship. Visual Geometry Group Deep Convolutional Network Model Introduction to the Vgg Model Visual Geometry Group is referred to as Vgg. The VGG-16 convolutional network has 21 layers, including 13 convolutional layers, 5 pooled layers, and 3 fully connected layers. The specific network structure is shown in Figure 2. Among them, VGG-16 uses multiple convolutional layers of smaller convolution kernels instead of one convolutional core with larger convolutional layers. On the one hand, the parameters can be reduced. On the other hand, more nonlinear mappings can be made to increase the network[11]. The ability to express. We wrote it in TensorFlow in the vgg16.py file. Here we include a preprocessing layer that takes an RGB image with a pixel value in the range 0-255 and subtracts the average image value. Figure 2. Network structure for Vgg-16. Model Improvement After testing several classic models, we selected the classic model based on Vggnet[12]. We modified the model and added a sigmoid layer before the softmax layer in the original model. Because we care about the marginal distribution of each prediction parameter, not the joint distribution of all variables[13]. We used the tensorflow framework to run our improved model. Vgg-16 has 13 convolutional layers, and we trained it more on classic data sets. Experimen Results We implemented the code based on the tensorflow platform. The classical Vgg network and the improved Vgg network were respectively used in the experiment. The experimental results show that the algorithm converges quickly. We selected up to 400,000 iterations, with 64 images for each training iteration. We noticed that the model converges in the 280,000th iteration, so we can test with this model. In the test phase, we can identify objects according to the front camera, and the effect is very good. Figure 3 is our recognition rate for objects that appear in substations and pose safety threats. The accuracy of the improved model to some objects is shown in the figure below. Figure 3. The accuracy of the improved model in identifying some objects. We trained with classic VGG models and improved models, each model for the 300000 biggest iterative training, and testing on 30000 images of validation set per 10000 iterations the generated model, finally identification error of the comparison results as shown. Figure 4. Comparison of Vgg and improved Vgg test phase. The Application Prospect of Deep Learning in Object Recognition Compared with image recognition, the application of deep learning in video classification is far from mature. The image features obtained from ImageNet training can be directly and effectively applied to various image-related recognition tasks and other different image test sets, with good generalization performance. For example, this paper uses deep learning to identify substation safety threats. In order to achieve the features that can be used for video analysis, deep learning must not only establish large-scale training data sets, but also need to study new depth models suitable for video analysis. Although deep learning has achieved great success in practice, the characteristics of the depth model obtained through big data training, such as the robustness, sparseness, and selectivity of occlusion and selectivity have attracted attention. For example, what is the beneficial invariability of recognition for each layer of transformation and what information has been lost? Recently, Mallat used wavelets to quantify the deep network structure, which is an important exploration in this direction. The internal structure of the depth model cannot be exposed, Various applications related to image recognition are also promoting the rapid development of deep learning in all aspects of network architecture, layer design, and training methods. Deep convolutional neural network is a major contributor behind the recent wave of AI. It can be predicted that in the coming years, deep learning will enter a period of rapid development in terms of theory, algorithms, and applications. Acknowledgement This paper was supported by National Natural Science Foundation of China (61401269,61572311), Shanghai Technology Innovation Shanghai Technology Innovation P",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+      "text": "Title: Dissecting Linear Recurrent Models: How Different Gating Strategies Drive Selectivity and Generalization\n\nAbstract: Linear recurrent neural networks have emerged as efficient alternatives to the original Transformer's softmax attention mechanism, thanks to their highly parallelizable training and constant memory and computation requirements at inference. Iterative refinements of these models have introduced an increasing number of architectural mechanisms, leading to increased complexity and computational costs. Nevertheless, systematic direct comparisons among these models remain limited. Existing benchmark tasks are either too simplistic to reveal substantial differences or excessively resource-intensive for experimentation. In this work, we propose a refined taxonomy of linear recurrent models and introduce SelectivBench, a set of lightweight and customizable synthetic benchmark tasks for systematically evaluating sequence models. SelectivBench specifically evaluates selectivity in sequence models at small to medium scale, such as the capacity to focus on relevant inputs while ignoring context-based distractors. It employs rule-based grammars to generate sequences with adjustable complexity, incorporating irregular gaps that intentionally violate transition rules. Evaluations of linear recurrent models on SelectivBench reveal performance patterns consistent with results from large-scale language tasks. Our analysis clarifies the roles of essential architectural features: gating and rapid forgetting mechanisms facilitate recall, in-state channel mixing is unnecessary for selectivity, but critical for generalization, and softmax attention remains dominant due to its memory capacity scaling with sequence length. Our benchmark enables targeted, efficient exploration of linear recurrent models and provides a controlled setting for studying behaviors observed in large-scale evaluations. Code is available at https://github.com/symseqbench/selectivbench",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "29392bb5d46e24aac98caa36aa70b53dde532297",
+      "text": "Title: An Event Recognition Method for a Φ-OTDR System Based on CNN-BiGRU Network Model with Attention\n\nAbstract: The phase-sensitive optical time domain reflectometry (Φ-OTDR) technique offers a method for distributed acoustic sensing (DAS) systems to detect external acoustic fluctuations and mechanical vibrations. By accurately identifying vibration events, DAS systems provide a non-invasive solution for security monitoring. However, limitations in temporal signal analysis and the lack of spatial features significantly impact classification accuracy in event recognition. To address these challenges, this paper proposes a network model for vibration-event recognition that integrates convolutional neural networks (CNNs), bidirectional gated recurrent units (BiGRUs), and attention mechanisms, referred to as CNN-BiGRU-Attention (CBA). First, the CBA model processes spatiotemporal matrices converted from raw signals, extracting low-level features through convolution and pooling. Subsequently, features are further extracted and separated along both the temporal and spatial dimensions. In the spatial-dimension branch, horizontal convolution and pooling generate enhanced spatial feature maps. In the temporal-dimension branch, vertical convolution and pooling are followed by BiGRU processing to capture dynamic changes in vibration events from both past and future contexts. Additionally, the attention mechanism focuses on extracted features in both dimensions. The features from the two dimensions are then fused using two cross-attention mechanisms. Finally, classification probabilities are output through a fully connected layer and a softmax activation function. In the experimental simulation section, the model is validated using real-world data. A comparison with four other typical models demonstrates that the proposed CBA model offers significant advantages in both recognition accuracy and robustness.",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "c07d50c7e8399d0e878715f181a858cc18dc186b",
+      "text": "Title: A novel attention based deep learning model for software defect prediction with bidirectional word embedding system",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+      "text": "Title: FLUID: Continuous-Time Hyperconnected Sparse Transformer for Sink-Free Learning\n\nAbstract: Continuous-time (CT) Transformers improve irregular and long-range modeling over CT-RNNs by exploiting inputs or outputs embeddings with continuous dynamics. However, the core scaled-dot-product-attention (SDPA) mechanism remains inherently discrete. We propose FLUID (Flexible Unified Information Dynamics), a CT Transformer that incorporates continuous dynamics directly into the attention computation by replacing it with Liquid Attention Network (LAN). LAN reinterprets attention logits as continuous dynamical system and reformulates them as the solution to a linear ODE modulated by input-dependent nonlinear recurrent gates. Theoretically, we establish stability guarantees for LAN dynamics and show that it serves as an interpolating middle ground between SDPA and CT-RNNs, recovering each as special case under well-defined parameterization of its gating functions. LAN also introduces an explicit attention-sink gate to eliminate disproportionate attention mass on uninformative nodes. FLUID replaces standard residual connections with input-dependent Liquid Hyper-Connections to adaptively regulate interlayer information flow. Empirically, we evaluate FLUID on a broad set of learning tasks, including (i) irregular time-series, (ii) long-range modeling, (iii) lane-keeping control of autonomous vehicles, and (iv) learning physical dynamics under a scarce data regime. Across all the tasks, FLUID consistently matches or outperforms CT baselines, achieving improvements of up to 47% in certain scenarios and enhancing generalization under distributional shifts. Additionally, FLUID demonstrates superior noise robustness and a self-correcting inductive bias in autonomous vehicle control. We also provide a detailed analysis of key hyperparameters to guide tuning and show that FLUID occupies an intermediate position among competing approaches in terms of runtime and memory efficiency.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+      "text": "Title: FROM FLUENCY TO DISFLUENCY: RANKING PROSODIC FEATURES OF POETRY BY USING NEURAL NETWORKS",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+      "text": "Title: Sparse Attention with Linear Units\n\nAbstract: Recently, it has been argued that encoder-decoder models can be made more interpretable by replacing the softmax function in the attention with its sparse variants. In this work, we introduce a novel, simple method for achieving sparsity in attention: we replace the softmax activation with a ReLU, and show that sparsity naturally emerges from such a formulation. Training stability is achieved with layer normalization with either a specialized initialization or an additional gating function. Our model, which we call Rectified Linear Attention (ReLA), is easy to implement and more efficient than previously proposed sparse attention mechanisms. We apply ReLA to the Transformer and conduct experiments on five machine translation tasks. ReLA achieves translation performance comparable to several strong baselines, with training and decoding speed similar to that of the vanilla attention. Our analysis shows that ReLA delivers high sparsity rate and head diversity, and the induced cross attention achieves better accuracy with respect to source-target word alignment than recent sparsified softmax-based models. Intriguingly, ReLA heads also learn to attend to nothing (i.e. ‘switch off’) for some queries, which is not possible with sparsified softmax alternatives.",
+      "relevance_score": 0.55
+    },
+    {
+      "related_paper_id": "a5fd9fdf860821039d43080fee1afb8b5d6b6996",
+      "text": "Title: Text Sentiment Classification Based on BERT Embedding and Sliced Multi-Head Self-Attention Bi-GRU\n\nAbstract: In the task of text sentiment analysis, the main problem that we face is that the traditional word vectors represent lack of polysemy, the Recurrent Neural Network cannot be trained in parallel, and the classification accuracy is not high. We propose a sentiment classification model based on the proposed Sliced Bidirectional Gated Recurrent Unit (Sliced Bi-GRU), Multi-head Self-Attention mechanism, and Bidirectional Encoder Representations from Transformers embedding. First, the word vector representation obtained by the BERT pre-trained language model is used as the embedding layer of the neural network. Then the input sequence is sliced into subsequences of equal length. And the Bi-sequence Gated Recurrent Unit is applied to extract the subsequent feature information. The relationship between words is learned sequentially via the Multi-head Self-attention mechanism. Finally, the emotional tendency of the text is output by the Softmax function. Experiments show that the classification accuracy of this model on the Yelp 2015 dataset and the Amazon dataset is 74.37% and 62.57%, respectively. And the training speed of the model is better than most existing models, which verifies the effectiveness of the model.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "074d400c8aab820d6e4fe55b501d8086239ce8ab",
+      "text": "Title: Human Activity Recognition in Wireless Environments using a Lightweight Temporal Attention Fusion Network\n\nAbstract: In this era, Human Activity Recognition (HAR) plays a vital role in allowing intelligent monitoring and interaction in smart Internet of Things (IoT) based environments. Even though, there are existing Wireless Fidelity (WiFi) Channel State Information (CSI)-based approaches, still these approaches struggle with limitations in real-time performance, environmental robustness and adaptability under signal interference. Therefore, to resolve these challenges, this manuscript proposes a Lightweight Temporal Attention Fusion Network (TAF-Net) for robust and efficient real-time HAR in wireless IoT settings. The proposed TAF-Net framework initializes with an adaptive median-Principal Component Analysis (PCA) which is a hybrid denoising stage that assist to mitigate noise and smoothens interference in CSI signals. Subsequently, spatial features are extracted using a One Dimensional-Convolutional Neural Networks (1D-CNN) block, while temporal dependencies are learned through a Bidirectional Gated Recurrent Unit (Bi-GRU) module. Finally, a temporal attention mechanism which signifies the most informative time steps and a fusion gate that adaptively integrates spatial-temporal representations before recognition through a fully connected SoftMax layer. Moreover, the proposed TAF-Net obtained an accuracy (99.87%), precision $\\mathbf{(9 9. 8 2 \\%), ~ r e c a l l ~ (~} 99.82 \\%$), and F1-Score (99.74%), respectively.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+      "text": "Title: LINA: Linear Autoregressive Image Generative Models with Continuous Tokens\n\nAbstract: Autoregressive models with continuous tokens form a promising paradigm for visual generation, especially for text-to-image (T2I) synthesis, but they suffer from high computational cost. We study how to design compute-efficient linear attention within this framework. Specifically, we conduct a systematic empirical analysis of scaling behavior with respect to parameter counts under different design choices, focusing on (1) normalization paradigms in linear attention (division-based vs. subtraction-based) and (2) depthwise convolution for locality augmentation. Our results show that although subtraction-based normalization is effective for image classification, division-based normalization scales better for linear generative transformers. In addition, incorporating convolution for locality modeling plays a crucial role in autoregressive generation, consistent with findings in diffusion models. We further extend gating mechanisms, commonly used in causal linear attention, to the bidirectional setting and propose a KV gate. By introducing data-independent learnable parameters to the key and value states, the KV gate assigns token-wise memory weights, enabling flexible memory management similar to forget gates in language models. Based on these findings, we present LINA, a simple and compute-efficient T2I model built entirely on linear attention, capable of generating high-fidelity 1024x1024 images from user instructions. LINA achieves competitive performance on both class-conditional and T2I benchmarks, obtaining 2.18 FID on ImageNet (about 1.4B parameters) and 0.74 on GenEval (about 1.5B parameters). A single linear attention module reduces FLOPs by about 61 percent compared to softmax attention. Code and models are available at: https://github.com/techmonsterwang/LINA.",
+      "relevance_score": 0.45
+    },
+    {
+      "related_paper_id": "6550550ef8f2cb0bec37b3e38156e3655a4885d2",
+      "text": "Title: Performance Analysis of Hybrid Deep Learning Models with Attention Mechanism Positioning and Focal Loss for Text Classification\n\nAbstract: Over the past few decades, text classification problems have been widely utilized in many real time applications. Leveraging the text classification methods by means of developing new applications in the field of text mining and Natural Language Processing (NLP) is very important. In order to accurately classify tasks in many applications, a deeper insight into deep learning methods is required as there is an exponential growth in the number of complex documents. The success of any deep learning algorithm depends on its capacity to understand the nonlinear relationships of the complex models within data. Thus, a huge challenge for researchers lies in the development of suitable techniques, architectures, and models for text classification. In this paper, hybrid deep learning models, with an emphasis on positioning of attention mechanism analysis, are considered and analyzed well for text classification. The first hybrid model proposed is called convolutional Bidirectional Long Short-Term Memory (Bi-LSTM) with attention mechanism and output (CBAO) model, and the second hybrid model is called convolutional attention mechanism with Bi-LSTM and output (CABO) model. In the first hybrid model, the attention mechanism is placed after the Bi-LSTM, and then the output Softmax layer is constructed. In the second hybrid model, the attention mechanism is placed after convolutional layer and followed by Bi-LSTM and the output Softmax layer. The proposed hybrid models are tested on three datasets, and the results show that when the proposed CBAO model is implemented for IMDB dataset, a high classification accuracy of 92.72% is obtained and when the proposed CABO model is implemented on the same dataset, a high classification accuracy of 90.51% is obtained.",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "6f6eec4964b7bb8397238ac6c204833e1962385b",
+      "text": "Title: P ROCEEDINGS OF \"C ONFERENCE ON R ECENT A DVANCES IN B IOMATERIALS D EC 17-18 '10\"",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+      "text": "Title: Automatic text summarization",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "5cc90bf9c08e418016c4b5ac93a28db47fa9ecfc",
+      "text": "Title: An Innovative Framework for Forecasting the State of Health of Lithium-Ion Batteries Based on an Improved Signal Decomposition Method\n\nAbstract: The declining trend of battery aging has strong nonlinearity and volatility, which poses great challenges to the prediction of battery’s state of health (SOH). In this research, an innovative framework is initially put forward for SOH prediction. First, partial incremental capacity analysis (PICA) is carried out to analyze the performance degradation within a specific voltage range. Subsequently, the height of the peak, the position of the peak, and the area beneath the peak of the IC curves are retrieved and used as health features (HFs). Moreover, improved ensemble empirical mode decomposition based on fractal dimension (FEEMD) is first proposed and utilized to decompose HFs to reduce the nonlinearity and fluctuations. Additionally, a bidirectional gated recurrent unit with an attention mechanism (BiGRU-AM) is constructed for the prognosis of these sub-layers. Finally, the effectiveness and robustness of the proposed prognosis framework are validated using two battery datasets. The results of three groups of comparative experiments demonstrate that the maximum root mean squared error (RMSE) and mean absolute error (MAE) values reach merely 0.55% and 0.59%, respectively. This further demonstrates that the proposed FEEMD outperforms other benchmark models and can offer a reliable foundation for the health prognosis of lithium-ion batteries.",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "2309d9a8d67b5df316c7440efecda06f35793503",
+      "text": "Title: Unraveling ionic switching dynamics in high-k dielectric double-gate transistors via low-frequency noise spectroscopy\n\nAbstract: High-k dielectric materials such as HfO2 have garnered significant attention for their potential applications in advanced electronic devices due to their superior dielectric properties. Particularly, oxygen vacancies within these materials can be strategically utilized to implement memory functionalities. However, the precise analysis of the electrical, chemical, and electrochemical characteristics related to oxygen vacancies remains challenging. In this study, we fabricated a double-gate thin-film transistor (TFT) structure employing HfO2 as the gate dielectric for both top and bottom gates, with the oxygen vacancy concentration intentionally modulated by introducing a TiO2 interlayer at the bottom gate stack. This TiO2 layer effectively increases the oxygen vacancy content within the bottom gate dielectric, facilitating oxygen vacancy migration-based memory operation primarily through the bottom gate. The resulting asymmetry between the top and bottom gates was systematically analyzed using low-frequency noise (LFN) characterization, elucidating for the first time the distinct impacts of oxygen vacancy modulation on device electrical behavior and operational mechanisms. This comprehensive LFN analysis provides critical insights into the fundamental dynamics of defect-mediated memory operation, highlighting the importance of dielectric engineering in optimizing next-generation oxide-based electronic devices. This study unravels ionic switching dynamics in double-gate HfO2–IGZO TFTs, where a TiO2 scavenging layer modulates oxygen vacancies to enable memory operation. Low-frequency noise spectroscopy reveals a ionic-dependent transition between distinct noise mechanisms, providing fundamental insights into vacancy-driven dynamics and guiding the optimization of high-k dielectric transistors for next-generation computing.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "43019e6c2ad68e5ead5fa50d9b6dea7c8c549f84",
+      "text": "Title: Predicting the adoption rate of e learning system among different user on analysis of their sentiment using Long Short-Term Memory Model based Recurrent Neural Network\n\nAbstract: Extraction of the user sentiment to the e learning system through social media networks is a gaining more research attention among researcher. It is performed to identify their user intention and preference to the e – learning system through sentimental analysis models. However, those models found to be inadequate and sparse as it performs forecasting of the user interest on basis of extracted sentiment alone. Hence it becomes mandatory to include annotation, domain knowledge, sensitiveness and subjective information along extracted social network data extraction towards forecasting and prediction analysis. In this article, deep learning architecture entitled as Recurrent Neural Network with Long Short-Term Memory model has been designed to incorporate annotation, sensitiveness, subjective information’s, sentiments and domain knowledge. Initially the pre-processing of the data is performed using stop word removal, stemming, tokenization and token weighting. Weighted tokens were employed to BERT model for contextual embedding. Those contextual embedded tokens were employed to Long Short-Term Memory based Recurrent Neural Network. Model composed of hidden layer to process the contextual token embedding to determine pattern and its relationship through activation function composed of set of rule, weight and bias values. Those extracted patterns were stored in the hidden states of the long short-term memory model using gating mechanism. Further recurrent connection is established with long short-term memory model to obtain long term dependency on processing its state information of the user sentiments. Those long-term dependencies of variable length patterns were processed effectively using SoftMax function in the dense layer to identify user interest (adoption rate to e-learning system) to the current input sequences along determining the polarity of the feature. Experimental analysis of the RNN+LTSM model is performed using twitter data in python environment and it exhibits better processing capabilities compared to conventional approaches. Further performance analysis of the model is performed to compute prediction accuracy and robustness of the model and it is evaluated that proposed model produces increased prediction accuracy on compared to conventional approaches.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "3286e4e6ed58c28f540a76a9183214fcf00692c6",
+      "text": "Title: An Air Target Tactical Intention Recognition Model based on Bidirectional GRU With Attention Mechanism\n\nAbstract: Traditional aerial target tactical intention recognition is based on a single moment of reasoning, while actual battlefield target tactical intention is realized by a series of actions, so the target state reflects dynamic and temporal variation. To solve this problem, bidirectional propagation and attention mechanisms are introduced based on a gated recurrent unit (GRU) network, and bidirectional gated recurrent units with attention mechanism (BiGRU-Attention) air target tactical intention recognition model is proposed. We use a hierarchical approach to construct the air combat intention characteristic set, encode it into temporal characteristics, encapsulate the decision-maker’s experience into labels, learn the deep-level information in the air combat intention characteristic vector through a BiGRU neural network, and use the attention mechanism to adaptively assign network weights, and then place air combat characteristic information with different weights in a softmax function layer for intention recognition. Comparison with a traditional air tactical target intention recognition model and analysis of ablation experiments show that the proposed model effectively improves the tactical intention recognition of air targets.",
+      "relevance_score": 0.3
+    },
+    {
+      "related_paper_id": "e60043aea9c5c6bad19c4321aa436ebb1cecc47a",
+      "text": "Title: ASPECT BASED SENTIMENT ANALYSIS USING ATTENTION MECHANISM AND GATED RECURRENT NETWORK",
+      "relevance_score": 0.15
+    },
+    {
+      "related_paper_id": "60a79f2b124d2ccc7117a393050d3e3d01a9545d",
+      "text": "Title: Effective Automated Transformer Model based Sarcasm Detection Using Multilingual Data",
+      "relevance_score": 0.1
+    },
+    {
+      "related_paper_id": "21478566aa7507fe80c9e98044b38f27f7a9cfa4",
+      "text": "Title: Abnormal Behavior Detection of Examinees in Surveillance Images Based on Deep Learning\n\nAbstract: This paper introduces a deep learning model framework tailored for identifying abnormal behavior among candidates in monitoring images. The model seamlessly incorporates three pivotal techniques: The Spatiotemporal Graph Convolutional Network (ST-GCN) effectively captures both the spatial and temporal characteristics of examine-takers' movements. Gated cycle units (GRUs) enhance sequence understanding to ensure sensitive capture of persistent or transient abnormal behavior; The attention mechanism optimizes information screening and focuses on key dynamics that affect the detection results. First, spatio-temporal map is constructed by skeleton extraction, and ST-GCN extracts spatio-temporal features on this basis. Then, GRU is used to capture the long-term dependencies between sequences and maintain the continuous analysis of behavioral sequences. Furthermore, the added attention mechanism is dynamically weighted, highlighting the temporal and spatial characteristics directly related to abnormal behavior. Finally, through the full connection layer and Softmax function, the model outputs the classification probability of abnormal behavior. The framework effectively integrates multi-level feature processing and information screening. Experiments show that the model performs well in a variety of abnormal behavior recognition tasks, and provides strong technical support for intelligent invigilation system, which is expected to play an important role in the automation of educational invigilation in the future.",
+      "relevance_score": 0.05
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the provided paper text explicitly states contributions and presents detailed analysis. The related work evidence (on multimodal fusion) is entirely unrelated to the reviewed paper's topic (gating in attention mechanisms), providing no basis for evaluating the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks a clear articulation of its novel contributions, limiting its impact. The related work abstract clearly states the paper's novel contribution is the systematic investigation of gating-augmented softmax attention variants, identifying a simple modification that improves performance and stability. The abstract itself is a clear articulation, contradicting the reviewer's claim. However, the claim is about the paper's presentation, not its content, and the provided evidence (abstract) directly addresses contributions, making the reviewer's claim unsupported by the evidence.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ed72bff146a9fc48d487cc90ed7cb552c6ed9246",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work is about a different topic (sentiment analysis with gating convolutional networks) and provides no evidence about the reviewed paper's contribution clarity.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper for lacking clear articulation of novel contributions. However, the provided related work (Deconstructing Attention) is a separate paper that does not discuss or evaluate the contributions of the paper being reviewed. There is no evidence in the related work text about the clarity or novelty of the reviewed paper's contributions, making the claim unverifiable from the given evidence.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "498c670cc8b2435e91730413c9694028bca22f7e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the related work (AHDSN paper) does not provide evidence about the reviewed paper's contributions or clarity. The related work is about a different topic (cancer survivability prediction) and does not discuss the reviewed paper's gating mechanisms or novelty claims.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (a different paper on Threshold Differential Attention) does not provide any information about the novel contributions or impact of the reviewed paper. There is no evidence to support or contradict the claim.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "132051211c3a41186a366c36c23bf5cd685a602c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work is about substation object recognition using VGG models and is entirely unrelated to the paper's topic of gating mechanisms in attention layers. There is no evidence in the related work to evaluate the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The provided paper text (abstract + introduction) does outline contributions: investigating gating positions in attention, identifying effective configurations (e.g., SDPA output gating), and analyzing mechanisms (non-linearity, sparsity, attention-sink elimination). However, the related work evidence (abstract of a different paper) is about linear recurrent models and does not directly address the clarity of contributions in the reviewed paper. The evidence is insufficient to verify or contradict the claim about articulation of contributions.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "29392bb5d46e24aac98caa36aa70b53dde532297",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work evidence describes a different paper (on event recognition in Φ-OTDR systems) and does not provide any information about the reviewed paper's contributions or clarity, making the claim unverifiable from the given evidence.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c07d50c7e8399d0e878715f181a858cc18dc186b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks a clear articulation of its novel contributions, but the related work (about software defect prediction) is unrelated to the paper's topic (gating in attention mechanisms). No evidence from the related work can verify or contradict this claim about the paper's presentation.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work is about a different model (FLUID) and does not provide evidence about the reviewed paper's contribution articulation, making the claim unverifiable from the given text.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work is entirely unrelated (about poetry prosody) and contains no evidence about the paper's contributions or novelty. Therefore, the claim cannot be evaluated against this evidence.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 1,
+      "label": "OVERSTATED",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work is about sparse attention with ReLU, not about the same paper's contributions, so it does not provide direct evidence for or against this claim. However, the review sentence's focus on novel contributions may be partially related to the related work's novelty claim, but evidence is not conclusive.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a5fd9fdf860821039d43080fee1afb8b5d6b6996",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work is about a sentiment classification model using BERT, Bi-GRU, and attention, which is unrelated to the reviewed paper's topic of gating mechanisms in attention layers. There is no evidence in the related work to support or contradict the claim about the reviewed paper's contribution articulation, making it unverifiable.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "074d400c8aab820d6e4fe55b501d8086239ce8ab",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence is about a different paper (TAF-Net for HAR) and does not provide any information about the paper under review's articulation of novel contributions. The evidence is missing or unverifiable for this claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The provided related work (about LINA) is entirely different and does not discuss the paper being reviewed. No evidence from the related work supports or contradicts the claim.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6550550ef8f2cb0bec37b3e38156e3655a4885d2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work (a different paper on hybrid models for text classification) provides no information about the reviewed paper's contributions or clarity, so the claim cannot be evaluated against it.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6f6eec4964b7bb8397238ac6c204833e1962385b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work evidence is a conference title on biomaterials, which is unrelated to the paper's content (gated attention mechanisms in neural networks). Thus, no evidence exists in the provided text to support or contradict the claim.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contribution articulation, but the related work evidence (automatic text summarization) does not address this claim; thus, verification is not possible.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5cc90bf9c08e418016c4b5ac93a28db47fa9ecfc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work is on a completely different topic (lithium-ion battery state of health prediction). It does not contain any evidence about the paper's clarity, novelty, or contributions, making verification impossible.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2309d9a8d67b5df316c7440efecda06f35793503",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the related work evidence is about a different field (electronics/materials science) and provides no relevant information to assess this claim about the neural network paper.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "43019e6c2ad68e5ead5fa50d9b6dea7c8c549f84",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the provided paper abstract and introduction explicitly detail contributions (e.g., investigating gating positions, identifying non-linearity and sparsity factors, practical recommendations). The related work evidence is about a different paper (on e-learning sentiment analysis) and does not support or contradict the claim about the paper being reviewed. Therefore, evidence is missing to verify the claim's relation to the related work.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3286e4e6ed58c28f540a76a9183214fcf00692c6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear upfront articulation of novel contributions. The provided paper text (abstract+introduction) does articulate contributions (e.g., investigation of gating positions, identification of factors like non-linearity and sparsity). However, the related work evidence (a different paper on BiGRU-Attention for aerial intention recognition) is entirely unrelated to the reviewed paper's content about gating mechanisms in transformers. There is no evidence from the related work to support or contradict the claim about the reviewed paper's contribution clarity. Therefore, evidence is missing/unverifiable.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e60043aea9c5c6bad19c4321aa436ebb1cecc47a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the related work evidence is from a different paper on aspect-based sentiment analysis with no direct connection to the gating mechanisms paper being reviewed. There is no evidence in the provided related work to support or contradict the claim about the paper's contribution articulation.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "60a79f2b124d2ccc7117a393050d3e3d01a9545d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's lack of clear articulation of novel contributions, but the related work evidence (about sarcasm detection in transformers) is entirely unrelated to the paper being reviewed (which discusses gating mechanisms in attention). There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "21478566aa7507fe80c9e98044b38f27f7a9cfa4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (lacking clear articulation of novel contributions), but the related work is on a completely different topic (abnormal behavior detection in surveillance images) and provides no evidence about the paper's contributions or clarity. Thus, evidence is missing to evaluate alignment or calibration.",
+      "relevance_score": 0.05
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contribution (systematically analyzing gating mechanisms in attention layers). The related work is about multimodal depression detection and compares fusion strategies like gating and cross-attention, which does not directly relate to the paper's focus on gating in transformer attention layers for language models. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper makes a valuable contribution by systematically analyzing gating mechanisms in attention layers, which is underexplored. The related work abstract and introduction confirm this: they state that existing literature rarely examines the specific effects of gating, and the paper conducts comprehensive experiments on gating-augmented softmax attention variants. The claim aligns with and is supported by the evidence, and the language strength is accurate.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ed72bff146a9fc48d487cc90ed7cb552c6ed9246",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which the paper itself supports. However, the related work (aspect sentiment analysis) is irrelevant; it discusses gating in convolutional networks for sentiment analysis, not in attention layers for sequence modeling. There is no evidence in the related work to verify the claim about the paper's contribution being underexplored.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers as an underexplored area. The related work abstract discusses deconstructing attention's design principles, not gating mechanisms specifically. There is no direct evidence in the related work to support or contradict the claim about gating being underexplored; thus, evidence is insufficient to assess alignment or calibration.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "498c670cc8b2435e91730413c9694028bca22f7e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's contribution is analyzing gating mechanisms in attention layers, which is underexplored. The related work (AHDSN) is about a hybrid network for cancer survivability prediction, with no mention of gating mechanisms in attention layers or systematic analysis of them. There is no evidence in the related work to support or contradict the claim about the paper's contribution being underexplored.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. The related work evidence discusses Threshold Differential Attention (TDA), a different method addressing attention sinks and sparsity, but does not directly evaluate or provide evidence about the prevalence or underexploration of gating mechanisms. Therefore, the claim cannot be verified or contradicted using the provided related work text.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "132051211c3a41186a366c36c23bf5cd685a602c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's contribution regarding gating mechanisms in attention layers. The related work is about object recognition in substations using deep learning (VGG, TensorFlow), with no mention of gating mechanisms, attention layers, or the specific research area of the paper. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper makes a valuable contribution by systematically analyzing gating mechanisms in attention layers, which is described as relatively underexplored. The related work abstract discusses linear recurrent models and a benchmark for evaluating sequence models, but it does not mention gating mechanisms within attention layers or provide evidence about the novelty of the paper's analysis. There is no direct or indirect support from the related work to verify the claim.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "29392bb5d46e24aac98caa36aa70b53dde532297",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contribution to analyzing gating mechanisms in attention layers. The related work is about a CNN-BiGRU-Attention model for event recognition in Φ-OTDR systems, which does not discuss gating mechanisms in attention layers as described in the reviewed paper. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c07d50c7e8399d0e878715f181a858cc18dc186b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. The provided related work paper is about software defect prediction with an attention-based model, not about gating mechanisms in attention layers. There is no evidence in the related work text to support or contradict the claim about the underexplored nature of gating in attention layers.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper's focus on analyzing gating mechanisms in attention layers is an underexplored area. The related work (FLUID) discusses a different architecture (continuous-time transformers) with its own gating mechanisms, but it does not provide evidence about the general research landscape regarding gating in standard attention layers. The claim is about the novelty of the paper's focus, and the related work does not directly address or contradict this claim, leaving it unverifiable from the given evidence.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers as an underexplored area. The related work provided is about poetry prosody and neural networks, which is entirely unrelated to the paper's topic. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a5fd9fdf860821039d43080fee1afb8b5d6b6996",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contribution being in an underexplored area (gating in attention layers). The related work (ID a5fd9fdf...) is about sentiment classification using BERT and sliced multi-head self-attention Bi-GRU. It does not discuss gating mechanisms in attention layers, so there is no evidence to support or contradict the claim. Thus, the claim is unverifiable from the given related work.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "074d400c8aab820d6e4fe55b501d8086239ce8ab",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper analyzes gating mechanisms in attention layers, which is supported by the paper's content. However, the related work (TAF-Net) is about Human Activity Recognition using a different architecture, providing no evidence for or against the claim about gating mechanisms in attention layers. Thus, there is insufficient evidence to judge alignment or calibration.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, calling it underexplored. The related work (LINA) discusses gating in linear attention for image generation, but does not provide evidence about the exploration status of gating in standard softmax attention as studied in the reviewed paper. There is insufficient evidence to support or contradict the claim's alignment with the related work.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "6550550ef8f2cb0bec37b3e38156e3655a4885d2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes the impact of different gating mechanisms within attention layers in an underexplored area. The related work evidence is about hybrid deep learning models for text classification, with a focus on attention mechanism positioning. It does not discuss gating mechanisms in attention layers, their systematic analysis, or the exploration status of that area. Thus, the evidence is missing and cannot support or contradict the claim.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "6f6eec4964b7bb8397238ac6c204833e1962385b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms within attention layers as an underexplored area. However, the provided related work is entirely unrelated (proceedings on biomaterials), offering no evidence to support or contradict the claim about the paper's contribution or the novelty of the topic. Thus, stance alignment is insufficient and calibration cannot be assessed.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms' impact in attention layers as underexplored. The provided related work is about automatic text summarization, which is unrelated to gating mechanisms in attention or the reviewed paper's topic. There is no evidence to evaluate the claim's accuracy or calibration.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5cc90bf9c08e418016c4b5ac93a28db47fa9ecfc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's contribution is systematic analysis of gating mechanisms in attention layers, which is underexplored. The related work is about battery health prediction using signal decomposition and BiGRU-AM, which is unrelated to attention mechanisms or gating in neural networks. No evidence in the related work supports or contradicts the claim.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "2309d9a8d67b5df316c7440efecda06f35793503",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. The related work is about high-k dielectric transistors and oxygen vacancies, unrelated to attention mechanisms or gating in neural networks. No evidence in the related work supports or contradicts the claim.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "43019e6c2ad68e5ead5fa50d9b6dea7c8c549f84",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's contribution in analyzing gating mechanisms within attention layers. The related work evidence is about sentiment analysis for e-learning systems using LSTM, which does not discuss attention mechanisms or gating in neural networks. There is no relevant information to verify or contradict the claim, making evidence insufficient.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "3286e4e6ed58c28f540a76a9183214fcf00692c6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. However, the related work is about a BiGRU-Attention model for air target intention recognition, which does not discuss gating mechanisms in attention layers or their systematic analysis. The evidence is missing, so the claim cannot be verified against the related work.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "e60043aea9c5c6bad19c4321aa436ebb1cecc47a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that analyzing gating mechanisms within attention layers is 'a relatively underexplored area.' However, the related work provided (on aspect-based sentiment analysis using attention and gated recurrent networks) does not contain any information about the novelty or exploration status of gating mechanisms in attention layers. Thus, there is insufficient evidence from the related work to evaluate the claim.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "60a79f2b124d2ccc7117a393050d3e3d01a9545d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "21478566aa7507fe80c9e98044b38f27f7a9cfa4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. However, the related work (ID=21478566aa7507fe80c9e98044b38f27f7a9cfa4) is about abnormal behavior detection using ST-GCN, GRUs, and attention mechanisms, not about gating mechanisms in attention layers. There is no evidence in the related work to support or contradict the claim, making it unverifiable and insufficient.",
+      "relevance_score": 0.05
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper lacks a clear and upfront articulation of its novel contributions, which limits the immediate impact of the work.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the provided paper text explicitly states contributions and presents detailed analysis. The related work evidence (on multimodal fusion) is entirely unrelated to the reviewed paper's topic (gating in attention mechanisms), providing no basis for evaluating the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks a clear articulation of its novel contributions, limiting its impact. The related work abstract clearly states the paper's novel contribution is the systematic investigation of gating-augmented softmax attention variants, identifying a simple modification that improves performance and stability. The abstract itself is a clear articulation, contradicting the reviewer's claim. However, the claim is about the paper's presentation, not its content, and the provided evidence (abstract) directly addresses contributions, making the reviewer's claim unsupported by the evidence.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "ed72bff146a9fc48d487cc90ed7cb552c6ed9246",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work is about a different topic (sentiment analysis with gating convolutional networks) and provides no evidence about the reviewed paper's contribution clarity.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper for lacking clear articulation of novel contributions. However, the provided related work (Deconstructing Attention) is a separate paper that does not discuss or evaluate the contributions of the paper being reviewed. There is no evidence in the related work text about the clarity or novelty of the reviewed paper's contributions, making the claim unverifiable from the given evidence.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "498c670cc8b2435e91730413c9694028bca22f7e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the related work (AHDSN paper) does not provide evidence about the reviewed paper's contributions or clarity. The related work is about a different topic (cancer survivability prediction) and does not discuss the reviewed paper's gating mechanisms or novelty claims.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (a different paper on Threshold Differential Attention) does not provide any information about the novel contributions or impact of the reviewed paper. There is no evidence to support or contradict the claim.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "132051211c3a41186a366c36c23bf5cd685a602c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work is about substation object recognition using VGG models and is entirely unrelated to the paper's topic of gating mechanisms in attention layers. There is no evidence in the related work to evaluate the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The provided paper text (abstract + introduction) does outline contributions: investigating gating positions in attention, identifying effective configurations (e.g., SDPA output gating), and analyzing mechanisms (non-linearity, sparsity, attention-sink elimination). However, the related work evidence (abstract of a different paper) is about linear recurrent models and does not directly address the clarity of contributions in the reviewed paper. The evidence is insufficient to verify or contradict the claim about articulation of contributions.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "29392bb5d46e24aac98caa36aa70b53dde532297",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work evidence describes a different paper (on event recognition in Φ-OTDR systems) and does not provide any information about the reviewed paper's contributions or clarity, making the claim unverifiable from the given evidence.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "c07d50c7e8399d0e878715f181a858cc18dc186b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks a clear articulation of its novel contributions, but the related work (about software defect prediction) is unrelated to the paper's topic (gating in attention mechanisms). No evidence from the related work can verify or contradict this claim about the paper's presentation.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work is about a different model (FLUID) and does not provide evidence about the reviewed paper's contribution articulation, making the claim unverifiable from the given text.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work is entirely unrelated (about poetry prosody) and contains no evidence about the paper's contributions or novelty. Therefore, the claim cannot be evaluated against this evidence.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+          "score": 1,
+          "label": "OVERSTATED",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work is about sparse attention with ReLU, not about the same paper's contributions, so it does not provide direct evidence for or against this claim. However, the review sentence's focus on novel contributions may be partially related to the related work's novelty claim, but evidence is not conclusive.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "a5fd9fdf860821039d43080fee1afb8b5d6b6996",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work is about a sentiment classification model using BERT, Bi-GRU, and attention, which is unrelated to the reviewed paper's topic of gating mechanisms in attention layers. There is no evidence in the related work to support or contradict the claim about the reviewed paper's contribution articulation, making it unverifiable.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "074d400c8aab820d6e4fe55b501d8086239ce8ab",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence is about a different paper (TAF-Net for HAR) and does not provide any information about the paper under review's articulation of novel contributions. The evidence is missing or unverifiable for this claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The provided related work (about LINA) is entirely different and does not discuss the paper being reviewed. No evidence from the related work supports or contradicts the claim.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "6550550ef8f2cb0bec37b3e38156e3655a4885d2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work (a different paper on hybrid models for text classification) provides no information about the reviewed paper's contributions or clarity, so the claim cannot be evaluated against it.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "6f6eec4964b7bb8397238ac6c204833e1962385b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions. The related work evidence is a conference title on biomaterials, which is unrelated to the paper's content (gated attention mechanisms in neural networks). Thus, no evidence exists in the provided text to support or contradict the claim.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contribution articulation, but the related work evidence (automatic text summarization) does not address this claim; thus, verification is not possible.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "5cc90bf9c08e418016c4b5ac93a28db47fa9ecfc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work is on a completely different topic (lithium-ion battery state of health prediction). It does not contain any evidence about the paper's clarity, novelty, or contributions, making verification impossible.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "2309d9a8d67b5df316c7440efecda06f35793503",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the related work evidence is about a different field (electronics/materials science) and provides no relevant information to assess this claim about the neural network paper.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "43019e6c2ad68e5ead5fa50d9b6dea7c8c549f84",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the provided paper abstract and introduction explicitly detail contributions (e.g., investigating gating positions, identifying non-linearity and sparsity factors, practical recommendations). The related work evidence is about a different paper (on e-learning sentiment analysis) and does not support or contradict the claim about the paper being reviewed. Therefore, evidence is missing to verify the claim's relation to the related work.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "3286e4e6ed58c28f540a76a9183214fcf00692c6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear upfront articulation of novel contributions. The provided paper text (abstract+introduction) does articulate contributions (e.g., investigation of gating positions, identification of factors like non-linearity and sparsity). However, the related work evidence (a different paper on BiGRU-Attention for aerial intention recognition) is entirely unrelated to the reviewed paper's content about gating mechanisms in transformers. There is no evidence from the related work to support or contradict the claim about the reviewed paper's contribution clarity. Therefore, evidence is missing/unverifiable.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "e60043aea9c5c6bad19c4321aa436ebb1cecc47a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper lacks clear articulation of novel contributions, but the related work evidence is from a different paper on aspect-based sentiment analysis with no direct connection to the gating mechanisms paper being reviewed. There is no evidence in the provided related work to support or contradict the claim about the paper's contribution articulation.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "60a79f2b124d2ccc7117a393050d3e3d01a9545d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's lack of clear articulation of novel contributions, but the related work evidence (about sarcasm detection in transformers) is entirely unrelated to the paper being reviewed (which discusses gating mechanisms in attention). There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "21478566aa7507fe80c9e98044b38f27f7a9cfa4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (lacking clear articulation of novel contributions), but the related work is on a completely different topic (abnormal behavior detection in surveillance images) and provides no evidence about the paper's contributions or clarity. Thus, evidence is missing to evaluate alignment or calibration.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+        "a295e71055248f4145257ed88f25503a75a78406",
+        "ed72bff146a9fc48d487cc90ed7cb552c6ed9246"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+          "score": 0.0,
+          "weight": 0.339
+        },
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 0.0,
+          "weight": 0.339
+        },
+        {
+          "related_paper_id": "ed72bff146a9fc48d487cc90ed7cb552c6ed9246",
+          "score": 0.0,
+          "weight": 0.322
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper makes a valuable contribution by systematically analyzing the impact of different gating mechanisms within attention layers, which is a relatively underexplored area.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contribution (systematically analyzing gating mechanisms in attention layers). The related work is about multimodal depression detection and compares fusion strategies like gating and cross-attention, which does not directly relate to the paper's focus on gating in transformer attention layers for language models. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper makes a valuable contribution by systematically analyzing gating mechanisms in attention layers, which is underexplored. The related work abstract and introduction confirm this: they state that existing literature rarely examines the specific effects of gating, and the paper conducts comprehensive experiments on gating-augmented softmax attention variants. The claim aligns with and is supported by the evidence, and the language strength is accurate.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "ed72bff146a9fc48d487cc90ed7cb552c6ed9246",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which the paper itself supports. However, the related work (aspect sentiment analysis) is irrelevant; it discusses gating in convolutional networks for sentiment analysis, not in attention layers for sequence modeling. There is no evidence in the related work to verify the claim about the paper's contribution being underexplored.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers as an underexplored area. The related work abstract discusses deconstructing attention's design principles, not gating mechanisms specifically. There is no direct evidence in the related work to support or contradict the claim about gating being underexplored; thus, evidence is insufficient to assess alignment or calibration.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "498c670cc8b2435e91730413c9694028bca22f7e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's contribution is analyzing gating mechanisms in attention layers, which is underexplored. The related work (AHDSN) is about a hybrid network for cancer survivability prediction, with no mention of gating mechanisms in attention layers or systematic analysis of them. There is no evidence in the related work to support or contradict the claim about the paper's contribution being underexplored.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. The related work evidence discusses Threshold Differential Attention (TDA), a different method addressing attention sinks and sparsity, but does not directly evaluate or provide evidence about the prevalence or underexploration of gating mechanisms. Therefore, the claim cannot be verified or contradicted using the provided related work text.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "132051211c3a41186a366c36c23bf5cd685a602c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's contribution regarding gating mechanisms in attention layers. The related work is about object recognition in substations using deep learning (VGG, TensorFlow), with no mention of gating mechanisms, attention layers, or the specific research area of the paper. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper makes a valuable contribution by systematically analyzing gating mechanisms in attention layers, which is described as relatively underexplored. The related work abstract discusses linear recurrent models and a benchmark for evaluating sequence models, but it does not mention gating mechanisms within attention layers or provide evidence about the novelty of the paper's analysis. There is no direct or indirect support from the related work to verify the claim.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "29392bb5d46e24aac98caa36aa70b53dde532297",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contribution to analyzing gating mechanisms in attention layers. The related work is about a CNN-BiGRU-Attention model for event recognition in Φ-OTDR systems, which does not discuss gating mechanisms in attention layers as described in the reviewed paper. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "c07d50c7e8399d0e878715f181a858cc18dc186b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. The provided related work paper is about software defect prediction with an attention-based model, not about gating mechanisms in attention layers. There is no evidence in the related work text to support or contradict the claim about the underexplored nature of gating in attention layers.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper's focus on analyzing gating mechanisms in attention layers is an underexplored area. The related work (FLUID) discusses a different architecture (continuous-time transformers) with its own gating mechanisms, but it does not provide evidence about the general research landscape regarding gating in standard attention layers. The claim is about the novelty of the paper's focus, and the related work does not directly address or contradict this claim, leaving it unverifiable from the given evidence.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers as an underexplored area. The related work provided is about poetry prosody and neural networks, which is entirely unrelated to the paper's topic. There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "a5fd9fdf860821039d43080fee1afb8b5d6b6996",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contribution being in an underexplored area (gating in attention layers). The related work (ID a5fd9fdf...) is about sentiment classification using BERT and sliced multi-head self-attention Bi-GRU. It does not discuss gating mechanisms in attention layers, so there is no evidence to support or contradict the claim. Thus, the claim is unverifiable from the given related work.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "074d400c8aab820d6e4fe55b501d8086239ce8ab",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper analyzes gating mechanisms in attention layers, which is supported by the paper's content. However, the related work (TAF-Net) is about Human Activity Recognition using a different architecture, providing no evidence for or against the claim about gating mechanisms in attention layers. Thus, there is insufficient evidence to judge alignment or calibration.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, calling it underexplored. The related work (LINA) discusses gating in linear attention for image generation, but does not provide evidence about the exploration status of gating in standard softmax attention as studied in the reviewed paper. There is insufficient evidence to support or contradict the claim's alignment with the related work.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "6550550ef8f2cb0bec37b3e38156e3655a4885d2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes the impact of different gating mechanisms within attention layers in an underexplored area. The related work evidence is about hybrid deep learning models for text classification, with a focus on attention mechanism positioning. It does not discuss gating mechanisms in attention layers, their systematic analysis, or the exploration status of that area. Thus, the evidence is missing and cannot support or contradict the claim.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "6f6eec4964b7bb8397238ac6c204833e1962385b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms within attention layers as an underexplored area. However, the provided related work is entirely unrelated (proceedings on biomaterials), offering no evidence to support or contradict the claim about the paper's contribution or the novelty of the topic. Thus, stance alignment is insufficient and calibration cannot be assessed.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms' impact in attention layers as underexplored. The provided related work is about automatic text summarization, which is unrelated to gating mechanisms in attention or the reviewed paper's topic. There is no evidence to evaluate the claim's accuracy or calibration.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "5cc90bf9c08e418016c4b5ac93a28db47fa9ecfc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's contribution is systematic analysis of gating mechanisms in attention layers, which is underexplored. The related work is about battery health prediction using signal decomposition and BiGRU-AM, which is unrelated to attention mechanisms or gating in neural networks. No evidence in the related work supports or contradicts the claim.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "2309d9a8d67b5df316c7440efecda06f35793503",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. The related work is about high-k dielectric transistors and oxygen vacancies, unrelated to attention mechanisms or gating in neural networks. No evidence in the related work supports or contradicts the claim.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "43019e6c2ad68e5ead5fa50d9b6dea7c8c549f84",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's contribution in analyzing gating mechanisms within attention layers. The related work evidence is about sentiment analysis for e-learning systems using LSTM, which does not discuss attention mechanisms or gating in neural networks. There is no relevant information to verify or contradict the claim, making evidence insufficient.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "3286e4e6ed58c28f540a76a9183214fcf00692c6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. However, the related work is about a BiGRU-Attention model for air target intention recognition, which does not discuss gating mechanisms in attention layers or their systematic analysis. The evidence is missing, so the claim cannot be verified against the related work.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "e60043aea9c5c6bad19c4321aa436ebb1cecc47a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that analyzing gating mechanisms within attention layers is 'a relatively underexplored area.' However, the related work provided (on aspect-based sentiment analysis using attention and gated recurrent networks) does not contain any information about the novelty or exploration status of gating mechanisms in attention layers. Thus, there is insufficient evidence from the related work to evaluate the claim.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "60a79f2b124d2ccc7117a393050d3e3d01a9545d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "21478566aa7507fe80c9e98044b38f27f7a9cfa4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper systematically analyzes gating mechanisms in attention layers, which is underexplored. However, the related work (ID=21478566aa7507fe80c9e98044b38f27f7a9cfa4) is about abnormal behavior detection using ST-GCN, GRUs, and attention mechanisms, not about gating mechanisms in attention layers. There is no evidence in the related work to support or contradict the claim, making it unverifiable and insufficient.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 0.6779661016949152,
+      "best_evidence": [
+        "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+        "a295e71055248f4145257ed88f25503a75a78406",
+        "ed72bff146a9fc48d487cc90ed7cb552c6ed9246"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "cba92b12ab8a65fadf975bb0cbaa5c9bdd1125b4",
+          "score": 0.0,
+          "weight": 0.339
+        },
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 2.0,
+          "weight": 0.339
+        },
+        {
+          "related_paper_id": "ed72bff146a9fc48d487cc90ed7cb552c6ed9246",
+          "score": 0.0,
+          "weight": 0.322
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 26,
+    "pairs_attempted": 52,
+    "pairs_completed": 52,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 26.0
+    }
+  },
+  "errors": []
+}

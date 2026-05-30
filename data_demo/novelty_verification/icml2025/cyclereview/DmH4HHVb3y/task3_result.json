@@ -1,0 +1,277 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "This paper introduces COLLABLLM, a novel training framework for Large Language Models (LLMs) that enhances their ability to collaborate with humans in multi-turn conversations."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper's contributions include a novel training framework, multiturn tasks, and a user study, advancing the field of human-LLM collaboration."
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "The paper introduces a novel training framework, COLLABLLM, which enhances the ability of LLMs to collaborate with humans in multi-turn conversations."
+    },
+    {
+      "review_sentence_id": "C4",
+      "text": "This paper proposes a novel training framework, COLLABLLM, that enhances the ability of LLMs to collaborate with humans in multi-turn conversations."
+    },
+    {
+      "review_sentence_id": "C5",
+      "text": "This paper introduces a novel training framework, COLLABLLM, that enhances the ability of LLMs to collaborate with humans in multi-turn conversations."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "text": "Title: CollabLLM: From Passive Responders to Active Collaborators\n\nAbstract: Large Language Models are typically trained with next-turn rewards, limiting their ability to optimize for long-term interaction. As a result, they often respond passively to ambiguous or open-ended user requests, failing to help users reach their ultimate intents and leading to inefficient conversations. To address these limitations, we introduce CollabLLM, a novel and general training framework that enhances multiturn human-LLM collaboration. Its key innovation is a collaborative simulation that estimates the long-term contribution of responses using Multiturn-aware Rewards. By reinforcement fine-tuning these rewards, CollabLLM goes beyond responding to user requests, and actively uncovers user intent and offers insightful suggestions-a key step towards more human-centered AI. We also devise a multiturn interaction benchmark with three challenging tasks such as document creation. CollabLLM significantly outperforms our baselines with averages of 18.5% higher task performance and 46.3% improved interactivity by LLM judges. Finally, we conduct a large user study with 201 judges, where CollabLLM increases user satisfaction by 17.6% and reduces user spent time by 10.4%.",
+      "relevance_score": 1.0
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence describes COLLABLLM as a novel training framework enhancing LLM collaboration in multi-turn conversations, which directly aligns with the related work's abstract and introduction stating it's a novel and general training framework that enhances multiturn human-LLM collaboration. The evidence fully supports the claim without overstatement.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper includes a novel training framework, multiturn tasks, and a user study, which directly aligns with the related work evidence that describes CollabLLM as a novel training framework, introduces multiturn interaction benchmark tasks, and reports a user study with 201 judges. The evidence supports each element of the claim, and the reviewer's language strength matches the evidence's strength.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The claim describes COLLABLLM as a novel training framework that enhances LLMs' ability to collaborate with humans in multi-turn conversations, which is directly and consistently supported by both the paper being reviewed and the related work evidence. The paper's abstract and introduction explicitly state this as the core contribution, and the related work evidence repeats the same information. The strength of the claim is accurately calibrated to the evidence provided.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that COLLABLLM enhances LLMs' ability to collaborate with humans in multi-turn conversations, which is directly supported by the paper's abstract and introduction stating that COLLABLLM is a training framework that enhances multiturn human-LLM collaboration.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C5",
+      "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The sentence is a claim about the paper's contribution. The related work evidence confirms the paper introduces COLLABLLM, a novel training framework for enhancing multi-turn human-LLM collaboration. The claim directly matches the evidence, and the language strength is accurate.",
+      "relevance_score": 1.0
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "This paper introduces COLLABLLM, a novel training framework for Large Language Models (LLMs) that enhances their ability to collaborate with humans in multi-turn conversations.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence describes COLLABLLM as a novel training framework enhancing LLM collaboration in multi-turn conversations, which directly aligns with the related work's abstract and introduction stating it's a novel and general training framework that enhances multiturn human-LLM collaboration. The evidence fully supports the claim without overstatement.",
+          "relevance_score": 1.0
+        }
+      ],
+      "final_score": 2.0,
+      "best_evidence": [
+        "33c8fde911526140a85cdfc654c8ee318f83906d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper's contributions include a novel training framework, multiturn tasks, and a user study, advancing the field of human-LLM collaboration.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper includes a novel training framework, multiturn tasks, and a user study, which directly aligns with the related work evidence that describes CollabLLM as a novel training framework, introduces multiturn interaction benchmark tasks, and reports a user study with 201 judges. The evidence supports each element of the claim, and the reviewer's language strength matches the evidence's strength.",
+          "relevance_score": 1.0
+        }
+      ],
+      "final_score": 2.0,
+      "best_evidence": [
+        "33c8fde911526140a85cdfc654c8ee318f83906d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "The paper introduces a novel training framework, COLLABLLM, which enhances the ability of LLMs to collaborate with humans in multi-turn conversations.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The claim describes COLLABLLM as a novel training framework that enhances LLMs' ability to collaborate with humans in multi-turn conversations, which is directly and consistently supported by both the paper being reviewed and the related work evidence. The paper's abstract and introduction explicitly state this as the core contribution, and the related work evidence repeats the same information. The strength of the claim is accurately calibrated to the evidence provided.",
+          "relevance_score": 1.0
+        }
+      ],
+      "final_score": 2.0,
+      "best_evidence": [
+        "33c8fde911526140a85cdfc654c8ee318f83906d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C4",
+      "text": "This paper proposes a novel training framework, COLLABLLM, that enhances the ability of LLMs to collaborate with humans in multi-turn conversations.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that COLLABLLM enhances LLMs' ability to collaborate with humans in multi-turn conversations, which is directly supported by the paper's abstract and introduction stating that COLLABLLM is a training framework that enhances multiturn human-LLM collaboration.",
+          "relevance_score": 1.0
+        }
+      ],
+      "final_score": 2.0,
+      "best_evidence": [
+        "33c8fde911526140a85cdfc654c8ee318f83906d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C5",
+      "text": "This paper introduces a novel training framework, COLLABLLM, that enhances the ability of LLMs to collaborate with humans in multi-turn conversations.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The sentence is a claim about the paper's contribution. The related work evidence confirms the paper introduces COLLABLLM, a novel training framework for enhancing multi-turn human-LLM collaboration. The claim directly matches the evidence, and the language strength is accurate.",
+          "relevance_score": 1.0
+        }
+      ],
+      "final_score": 2.0,
+      "best_evidence": [
+        "33c8fde911526140a85cdfc654c8ee318f83906d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+          "score": 2.0,
+          "weight": 1.0
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 5,
+    "related_works": 1,
+    "pairs_attempted": 5,
+    "pairs_completed": 5,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 5,
+      "claims_with_any_attempt": 5,
+      "claims_with_any_success": 5,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 5,
+      "claims_with_scored_evidence": 5,
+      "claims_with_decisive_evidence": 5,
+      "claims_with_supporting_evidence": 5,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 1.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 1.0
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,59 @@
+{
+  "paper": {
+    "core_task": "Enhancing multiturn human-LLM collaboration for long-term interaction optimization",
+    "contributions": [
+      {
+        "name": "A multiturn-aware reward framework for LLM collaboration",
+        "author_claim_text": "We introduce COLLABLLM, a novel and general training framework that enhances multiturn human-LLM collaboration. Its key innovation is a collaborative simulation that estimates the long-term contribution of responses using Multiturn-aware Rewards.",
+        "description": "A training framework that uses forward sampling to estimate the long-term impact of model responses on future conversation turns, enabling reinforcement fine-tuning for proactive, goal-aligned collaboration.",
+        "source_hint": "Abstract"
+      },
+      {
+        "name": "A multiturn interaction benchmark with three challenging tasks",
+        "author_claim_text": "We also devise a multiturn interaction benchmark with three challenging tasks such as document creation.",
+        "description": "A benchmark for training and evaluating multiturn collaboration across three domains: document creation, code generation, and math problem solving.",
+        "source_hint": "Abstract"
+      },
+      {
+        "name": "A user simulator for scalable forward sampling",
+        "author_claim_text": "To further reduce cost and ensure scalability, we introduce a user simulator U. User Simulator: A user simulator U: T -> U is a function that maps a given conversation history t in T to a user response u in",
+        "description": "A method to simulate user behavior using an LLM, enabling the generation of forward conversation trajectories for efficient estimation of the multiturn-aware reward without costly human interaction.",
+        "source_hint": "Section 3 (Unified Collaborative LLM Training)"
+      }
+    ],
+    "key_terms": [
+      "Multiturn-aware Reward",
+      "Collaborative simulation",
+      "Forward sampling",
+      "Reinforcement fine-tuning",
+      "Human-LLM collaboration",
+      "User simulator",
+      "Multiturn interaction",
+      "Intent discovery",
+      "Task efficiency",
+      "Interactivity"
+    ],
+    "must_have_entities": [
+      "Llama-3.1-8B",
+      "GPT-4o-mini",
+      "MediumDocEdit-Chat",
+      "BigCodeBench-Chat",
+      "MATH-Chat",
+      "Abg-CoQA"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The paper presents a clear and novel methodological contribution through the introduction of the Multiturn-aware Reward (MR) mechanism, which addresses a critical limitation of existing LLMs in handling long-term, open-ended interactions.",
+        "stance": "novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

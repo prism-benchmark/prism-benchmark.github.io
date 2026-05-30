@@ -1,0 +1,2327 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper introduces a novel formulation (TrigFlow) that simplifies diffusion models and unifies EDM and Flow Matching, providing a more elegant and efficient framework for generative modeling."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper introduces TrigFlow, a novel formulation unifying EDM and Flow Matching, and proposes a comprehensive approach to stabilize continuous-time consistency models (CMs)."
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "While experiments on discrete-time CMs are present, the novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+      "text": "Title: SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency Distillation\n\nAbstract: This paper presents SANA-Sprint, an efficient diffusion model for ultra-fast text-to-image (T2I) generation. SANA-Sprint is built on a pre-trained foundation model and augmented with hybrid distillation, dramatically reducing inference steps from 20 to 1-4. We introduce three key innovations: (1) We propose a training-free approach that transforms a pretrained flow-matching model for continuous-time consistency distillation (sCM), eliminating costly training from scratch and achieving high training efficiency. Our hybrid distillation strategy combines sCM with latent adversarial distillation (LADD): sCM ensures alignment with the teacher model, while LADD enhances single-step generation fidelity. (2) SANA-Sprint is a unified step-adaptive model that achieves high-quality generation in $1-4$ steps, eliminating step-specific training and improving efficiency. (3) We integrate ControlNet with SANA-Sprint for real-time interactive image generation, enabling instant visual feedback for user interaction. SANA-Sprint establishes a new Pareto frontier in speed-quality tradeoffs, achieving state-of-the-art performance with 7.59 FID and 0.74 GenEval in only 1 step - outperforming FLUX-schnell (7.94 FID / 0.71 GenEval) while being $10 \\times$ faster (0.1 s vs 1.1 s on H100). It also achieves 0.1s (T2I) and 0.25s (ControlNet) latency for $1024 \\times 1024$ images on H100, and 0.31s (T2I) on an RTX 4090, showcasing its exceptional efficiency and potential for AI-powered consumer applications (AIPC). Code and pre-trained models will be open-sourced.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "text": "Title: BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation\n\nAbstract: Recent diffusion and flow matching models have demonstrated strong capabilities in image generation and editing by progressively removing noise through iterative sampling. While this enables flexible inversion for semantic-preserving edits, few-step sampling regimes suffer from poor forward process approximation, leading to degraded editing quality. Existing few-step inversion methods often rely on pretrained generators and auxiliary modules, limiting scalability and generalization across different architectures. To address these limitations, we propose BiFM (Bidirectional Flow Matching), a unified framework that jointly learns generation and inversion within a single model. BiFM directly estimates average velocity fields in both ``image $\\to$ noise\"and ``noise $\\to$ image\"directions, constrained by a shared instantaneous velocity field derived from either predefined schedules or pretrained multi-step diffusion models. Additionally, BiFM introduces a novel training strategy using continuous time-interval supervision, stabilized by a bidirectional consistency objective and a lightweight time-interval embedding. This bidirectional formulation also enables one-step inversion and can integrate seamlessly into popular diffusion and flow matching backbones. Across diverse image editing and generation tasks, BiFM consistently outperforms existing few-step approaches, achieving superior performance and editability.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+      "text": "Title: Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency\n\nAbstract: Although continuous-time consistency models (e.g., sCM, MeanFlow) are theoretically principled and empirically powerful for fast academic-scale diffusion, its applicability to large-scale text-to-image and video tasks remains unclear due to infrastructure challenges in Jacobian-vector product (JVP) computation and the limitations of evaluation benchmarks like FID. This work represents the first effort to scale up continuous-time consistency to general application-level image and video diffusion models, and to make JVP-based distillation effective at large scale. We first develop a parallelism-compatible FlashAttention-2 JVP kernel, enabling sCM training on models with over 10 billion parameters and high-dimensional video tasks. Our investigation reveals fundamental quality limitations of sCM in fine-detail generation, which we attribute to error accumulation and the\"mode-covering\"nature of its forward-divergence objective. To remedy this, we propose the score-regularized continuous-time consistency model (rCM), which incorporates score distillation as a long-skip regularizer. This integration complements sCM with the\"mode-seeking\"reverse divergence, effectively improving visual quality while maintaining high generation diversity. Validated on large-scale models (Cosmos-Predict2, Wan2.1) up to 14B parameters and 5-second videos, rCM generally matches the state-of-the-art distillation method DMD2 on quality metrics while mitigating mode collapse and offering notable advantages in diversity, all without GAN tuning or extensive hyperparameter searches. The distilled models generate high-fidelity samples in only $1\\sim4$ steps, accelerating diffusion sampling by $15\\times\\sim50\\times$. These results position rCM as a practical and theoretically grounded framework for advancing large-scale diffusion distillation. Code is available at https://github.com/NVlabs/rcm.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "text": "Title: Image-Free Timestep Distillation via Continuous-Time Consistency with Trajectory-Sampled Pairs\n\nAbstract: Timestep distillation is an effective approach for improving the generation efficiency of diffusion models. The Consistency Model (CM), as a trajectory-based framework, demonstrates significant potential due to its strong theoretical foundation and high-quality few-step generation. Nevertheless, current continuous-time consistency distillation methods still rely heavily on training data and computational resources, hindering their deployment in resource-constrained scenarios and limiting their scalability to diverse domains. To address this issue, we propose Trajectory-Backward Consistency Model (TBCM), which eliminates the dependence on external training data by extracting latent representations directly from the teacher model's generation trajectory. Unlike conventional methods that require VAE encoding and large-scale datasets, our self-contained distillation paradigm significantly improves both efficiency and simplicity. Moreover, the trajectory-extracted samples naturally bridge the distribution gap between training and inference, thereby enabling more effective knowledge transfer. Empirically, TBCM achieves 6.52 FID and 28.08 CLIP scores on MJHQ-30k under one-step generation, while reducing training time by approximately 40% compared to Sana-Sprint and saving a substantial amount of GPU memory, demonstrating superior efficiency without sacrificing quality. We further reveal the diffusion-generation space discrepancy in continuous-time consistency distillation and analyze how sampling strategies affect distillation performance, offering insights for future distillation research. GitHub Link: https://github.com/hustvl/TBCM.",
+      "relevance_score": 0.95
+    },
+    {
+      "related_paper_id": "0958594a66f4f6752275cff4e14d463d9de53560",
+      "text": "Title: TLCM: Training-efficient Latent Consistency Model for Image Generation with 2-8 Steps\n\nAbstract: Distilling latent diffusion models (LDMs) into ones that are fast to sample from is attracting growing research interest. However, the majority of existing methods face two critical challenges: (1) They hinge on long training using a huge volume of real data. (2) They routinely lead to quality degradation for generation, especially in text-image alignment. This paper proposes a novel training-efficient Latent Consistency Model (TLCM) to overcome these challenges. Our method first accelerates LDMs via data-free multistep latent consistency distillation (MLCD), and then data-free latent consistency distillation is proposed to efficiently guarantee the inter-segment consistency in MLCD. Furthermore, we introduce bags of techniques, e.g., distribution matching, adversarial learning, and preference learning, to enhance TLCM's performance at few-step inference without any real data. TLCM demonstrates a high level of flexibility by enabling adjustment of sampling steps within the range of 2 to 8 while still producing competitive outputs compared to full-step approaches. Notably, TLCM enjoys the data-free merit by employing synthetic data from the teacher for distillation. With just 70 training hours on an A100 GPU, a 3-step TLCM distilled from SDXL achieves an impressive CLIP Score of 33.68 and an Aesthetic Score of 5.97 on the MSCOCO-2017 5K benchmark, surpassing various accelerated models and even outperforming the teacher model in human preference metrics. We also demonstrate the versatility of TLCMs in applications including image style transfer, controllable generation, and Chinese-to-image generation.",
+      "relevance_score": 0.85
+    },
+    {
+      "related_paper_id": "1aea48ad7de39babaa35992a53a67fe20bd6b0d7",
+      "text": "Title: Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models\n\nAbstract: Flow Matching has emerged as a powerful framework for learning continuous transformations between distributions, enabling high-fidelity generative modeling. This work introduces Symmetrical Flow Matching (SymmFlow), a new formulation that unifies semantic segmentation, classification, and image generation within a single model. Using a symmetric learning objective, SymmFlow models forward and reverse transformations jointly, ensuring bi-directional consistency, while preserving sufficient entropy for generative diversity. A new training objective is introduced to explicitly retain semantic information across flows, featuring efficient sampling while preserving semantic structure, allowing for one-step segmentation and classification without iterative refinement. Unlike previous approaches that impose strict one-to-one mapping between masks and images, SymmFlow generalizes to flexible conditioning, supporting both pixel-level and image-level class labels. Experimental results on various benchmarks demonstrate that SymmFlow achieves state-of-the-art performance on semantic image synthesis, obtaining FID scores of 11.9 on CelebAMask-HQ and 7.0 on COCO-Stuff with only 25 inference steps. Additionally, it delivers competitive results on semantic segmentation and shows promising capabilities in classification tasks.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "text": "Title: Align Your Flow: Scaling Continuous-Time Flow Map Distillation\n\nAbstract: Diffusion- and flow-based models have emerged as state-of-the-art generative modeling approaches, but they require many sampling steps. Consistency models can distill these models into efficient one-step generators; however, unlike flow- and diffusion-based methods, their performance inevitably degrades when increasing the number of steps, which we show both analytically and empirically. Flow maps generalize these approaches by connecting any two noise levels in a single step and remain effective across all step counts. In this paper, we introduce two new continuous-time objectives for training flow maps, along with additional novel training techniques, generalizing existing consistency and flow matching objectives. We further demonstrate that autoguidance can improve performance, using a low-quality model for guidance during distillation, and an additional boost can be achieved by adversarial finetuning, with minimal loss in sample diversity. We extensively validate our flow map models, called Align Your Flow, on challenging image generation benchmarks and achieve state-of-the-art few-step generation performance on both ImageNet 64x64 and 512x512, using small and efficient neural networks. Finally, we show text-to-image flow map models that outperform all existing non-adversarially trained few-step samplers in text-conditioned synthesis.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "text": "Title: Trajectory Consistency for One-Step Generation on Euler Mean Flows\n\nAbstract: We propose \\emph{Euler Mean Flows (EMF)}, a flow-based generative framework for one-step and few-step generation that enforces long-range trajectory consistency with minimal sampling cost. The key idea of EMF is to replace the trajectory consistency constraint, which is difficult to supervise and optimize over long time scales, with a principled linear surrogate that enables direct data supervision for long-horizon flow-map compositions. We derive this approximation from the semigroup formulation of flow-based models and show that, under mild regularity assumptions, it faithfully approximates the original consistency objective while being substantially easier to optimize. This formulation leads to a unified, JVP-free training framework that supports both $u$-prediction and $x_1$-prediction variants, avoiding explicit Jacobian computations and significantly reducing memory and computational overhead. Experiments on image synthesis, particle-based geometry generation, and functional generation demonstrate improved optimization stability and sample quality under fixed sampling budgets, together with approximately $50\\%$ reductions in training time and memory consumption compared to existing one-step methods for image generation.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "1f1f4547d3e0c25eedf9c09c5ae528a47cc99ebc",
+      "text": "Title: Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning\n\nAbstract: Text-to-multiview (T2MV) diffusion models have shown great promise in generating multiple views of a scene from a single text prompt. While few-step backbones enable real-time T2MV generation, they often compromise key aspects of generation quality, such as per-view fidelity and cross-view consistency. Reinforcement learning (RL) finetuning offers a potential solution, yet existing approaches designed for single-image diffusion do not readily extend to the few-step T2MV setting, as they neglect cross-view coordination and suffer from weak learning signals in few-step regimes. To address this, we propose MVC-ZigAL, a tailored RL finetuning framework for few-step T2MV diffusion models. Specifically, its core insights are: (1) a new MDP formulation that jointly models all generated views and assesses their collective quality via a joint-view reward; (2) a novel advantage learning strategy that exploits the performance gains of a self-refinement sampling scheme over standard sampling, yielding stronger learning signals for effective RL finetuning; and (3) a unified RL framework that extends advantage learning with a Lagrangian dual formulation for multiview-constrained optimization, balancing single-view and joint-view objectives through adaptive primal-dual updates under a self-paced threshold curriculum that harmonizes exploration and constraint enforcement. Collectively, these designs enable robust and balanced RL finetuning for few-step T2MV diffusion models, yielding substantial gains in both per-view fidelity and cross-view consistency. Code is available at https://github.com/ZiyiZhang27/MVC-ZigAL.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "c0ff16baf7bbf197f2ecfdf57a496f9a2ef1c5c4",
+      "text": "Title: OSV: One Step is Enough for High-Quality Image to Video Generation\n\nAbstract: Video diffusion models have shown great potential in generating high-quality videos, making them an increasingly popular focus. However, their inherent iterative nature leads to substantial computational and time costs. Although techniques such as consistency distillation and adversarial training have been employed to accelerate video diffusion by reducing inference steps, these methods often simply transfer the generation approaches from Image diffusion models to video diffusion models. As a result, these methods frequently fall short in terms of both performance and training stability. In this work, we introduce a two-stage training framework that effectively combines consistency distillation with adversarial training to address these challenges. Additionally, we propose a novel video discriminator design, which eliminates the need for decoding the video latents and improves the final performance. Our model is capable of producing high-quality videos in merely one-step, with the flexibility to perform multi-step refinement for further performance enhancement. Our quantitative evaluation on the OpenVid-1M benchmark shows that our model significantly outperforms existing methods. Notably, our 1-step performance (FVD 171.15) exceeds the 8-step performance of the consistency distillation based method, AnimateLCM (FVD 184.79), and approaches the 25-step performance of advanced Stable Video Diffusion (FVD 156.94).",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "31cf335ceee3e5ed44aaaf04bd5631645c7d954c",
+      "text": "Title: MotionLCM: Real-time Controllable Motion Generation via Latent Consistency Model\n\nAbstract: This work introduces MotionLCM, extending controllable motion generation to a real-time level. Existing methods for spatial-temporal control in text-conditioned motion generation suffer from significant runtime inefficiency. To address this issue, we first propose the motion latent consistency model (MotionLCM) for motion generation, building on the motion latent diffusion model. By adopting one-step (or few-step) inference, we further improve the runtime efficiency of the motion latent diffusion model for motion generation. To ensure effective controllability, we incorporate a motion ControlNet within the latent space of MotionLCM and enable explicit control signals (i.e., initial motions) in the vanilla motion space to further provide supervision for the training process. By employing these techniques, our approach can generate human motions with text and control signals in real-time. Experimental results demonstrate the remarkable generation and controlling capabilities of MotionLCM while maintaining real-time runtime efficiency.",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "5301b92341c8b706e3584b88465c806a834428c0",
+      "text": "Title: SplitMeanFlow: Interval Splitting Consistency in Few-Step Generative Modeling\n\nAbstract: Generative models like Flow Matching have achieved state-of-the-art performance but are often hindered by a computationally expensive iterative sampling process. To address this, recent work has focused on few-step or one-step generation by learning the average velocity field, which directly maps noise to data. MeanFlow, a leading method in this area, learns this field by enforcing a differential identity that connects the average and instantaneous velocities. In this work, we argue that this differential formulation is a limiting special case of a more fundamental principle. We return to the first principles of average velocity and leverage the additivity property of definite integrals. This leads us to derive a novel, purely algebraic identity we term Interval Splitting Consistency. This identity establishes a self-referential relationship for the average velocity field across different time intervals without resorting to any differential operators. Based on this principle, we introduce SplitMeanFlow, a new training framework that enforces this algebraic consistency directly as a learning objective. We formally prove that the differential identity at the core of MeanFlow is recovered by taking the limit of our algebraic consistency as the interval split becomes infinitesimal. This establishes SplitMeanFlow as a direct and more general foundation for learning average velocity fields. From a practical standpoint, our algebraic approach is significantly more efficient, as it eliminates the need for JVP computations, resulting in simpler implementation, more stable training, and broader hardware compatibility. One-step and two-step SplitMeanFlow models have been successfully deployed in large-scale speech synthesis products (such as Doubao), achieving speedups of 20x.",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+      "text": "Title: Continuous-Time Distribution Matching for Few-Step Diffusion Distillation\n\nAbstract: Step distillation has become a leading technique for accelerating diffusion models, among which Distribution Matching Distillation (DMD) and Consistency Distillation are two representative paradigms. While consistency methods enforce self-consistency along the full PF-ODE trajectory to steer it toward the clean data manifold, vanilla DMD relies on sparse supervision at a few predefined discrete timesteps. This restricted discrete-time formulation and mode-seeking nature of the reverse KL divergence tends to exhibit visual artifacts and over-smoothed outputs, often necessitating complex auxiliary modules -- such as GANs or reward models -- to restore visual fidelity. In this work, we introduce Continuous-Time Distribution Matching (CDM), migrating the DMD framework from discrete anchoring to continuous optimization for the first time. CDM achieves this through two continuous-time designs. First, we replace the fixed discrete schedule with a dynamic continuous schedule of random length, so that distribution matching is enforced at arbitrary points along sampling trajectories rather than only at a few fixed anchors. Second, we propose a continuous-time alignment objective that performs active off-trajectory matching on latents extrapolated via the student's velocity field, improving generalization and preserving fine visual details. Extensive experiments on different architectures, including SD3-Medium and Longcat-Image, demonstrate that CDM provides highly competitive visual fidelity for few-step image generation without relying on complex auxiliary objectives. Code is available at https://github.com/byliutao/cdm.",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "3ffa6d5754892fbdd25aa249e827ee64eedb3207",
+      "text": "Title: Zero-Shot Image Restoration Using Few-Step Guidance of Consistency Models (and Beyond)\n\nAbstract: In recent years, it has become popular to tackle image restoration tasks with a single pretrained diffusion model (DM) and data-fidelity guidance, instead of training a dedicated deep neural network per task. However, such \"zero-shot\" restoration schemes currently require many Neural Function Evaluations (NFEs) for performing well, which may be attributed to the many NFEs needed in the original generative functionality of the DMs. Recently, faster variants of DMs have been explored for image generation. These include Consistency Models (CMs), which can generate samples via a couple of NFEs. However, existing works that use guided CMs for restoration still require tens of NFEs or fine-tuning of the model per task that leads to performance drop if the assumptions during the fine-tuning are not accurate. In this paper, we propose a zero-shot restoration scheme that uses CMs and operates well with as little as 4 NFEs. It is based on a wise combination of several ingredients: better initialization, back-projection guidance, and above all a novel noise injection mechanism. We demonstrate the advantages of our approach for image super-resolution, deblurring and inpainting. Interestingly, we show that the usefulness of our noise injection technique goes beyond CMs: it can also mitigate the performance degradation of existing guided DM methods when reducing their NFE count. The source code is available at https://github.com/tirer-lab/CM4IR",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "400f28cc563b048a3345f9c5bf816331de26b643",
+      "text": "Title: FlowSteer: Guiding Few-Step Image Synthesis with Authentic Trajectories\n\nAbstract: With the success of flow matching in visual generation, sampling efficiency remains a critical bottleneck for its practical application. Among flow models'accelerating methods, ReFlow has been somehow overlooked although it has theoretical consistency with flow matching. This is primarily due to its suboptimal performance in practical scenarios compared to consistency distillation and score distillation. In this work, we investigate this issue within the ReFlow framework and propose FlowSteer, a method unlocks the potential of ReFlow-based distillation by guiding the student along teacher's authentic generation trajectories. We first identify that Piecewised ReFlow's performance is hampered by a critical distribution mismatch during the training and propose Online Trajectory Alignment(OTA) to resolve it. Then, we introduce a adversarial distillation objective applied directly on the ODE trajectory, improving the student's adherence to the teacher's generation trajectory. Furthermore, we find and fix a previously undiscovered flaw in the widely-used FlowMatchEulerDiscreteScheduler that largely degrades few-step inference quality. Our experiment result on SD3 demonstrates our method's efficacy.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "586e75e4c5b3ae284493d3a1adc61ce25062049d",
+      "text": "Title: GWSoD: A Conditional Diffusion Model for Cross-Band Galaxy Image Generation from WISE to SDSS\n\nAbstract: Multi-band astronomical observations provide critical information for investigating galaxy morphology, stellar pop-ulations, and dust properties. However, substantial discrepancies in wavelength coverage, spatial resolution, and noise characteristics across different surveys pose significant challenges for data fusion and joint analysis. This paper presents GWSoD(Galaxy Image Conversion from WISE to SDSS based on DDPM), a conditional denoising diffusion probabilis-tic model designed to generate high-quality SDSS optical galaxy images from WISE infrared observations. In the pro-posed framework, WISE images are incorporated as conditional inputs via channel-wise concatenation throughout the denoising process, enabling the model to learn complex cross-band mappings. An improved UNet(NewUNet) architecture equipped with attention gates and explicit time-step embeddings is introduced to enhance multi-scale structural feature modeling. The training objective combines a noise prediction loss with a perceptual loss to jointly optimize pixel-level accuracy and visual consistency. Experiments conducted on paired WISE-SDSS galaxy image datasets demon-strate that GWSoD consistently outperforms several state-of-the-art image translation and cross-modal generation methods, achieving 29.74 dB in PSNR and 0.8057 in SSIM. Qualitative evaluations further confirm that the proposed approach more faithfully preserves galaxy morphology, brightness distributions, and structural details. These results indicate that GWSoD provides an effective and robust solution for cross-band astronomical image generation and mul-ti-wavelength data fusion.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "018a62ad67f8650060b9cca22e7a9b09f28a1fa9",
+      "text": "Title: Enhancing Consistency-Based Image Generation via Adversarialy-Trained Classification and Energy-Based Discrimination\n\nAbstract: The recently introduced Consistency models pose an efficient alternative to diffusion algorithms, enabling rapid and good quality image synthesis. These methods overcome the slowness of diffusion models by directly mapping noise to data, while maintaining a (relatively) simpler training. Consistency models enable a fast one- or few-step generation, but they typically fall somewhat short in sample quality when compared to their diffusion origins. In this work we propose a novel and highly effective technique for post-processing Consistency-based generated images, enhancing their perceptual quality. Our approach utilizes a joint classifier-discriminator model, in which both portions are trained adversarially. While the classifier aims to grade an image based on its assignment to a designated class, the discriminator portion of the very same network leverages the softmax values to assess the proximity of the input image to the targeted data manifold, thereby serving as an Energy-based Model. By employing example-specific projected gradient iterations under the guidance of this joint machine, we refine synthesized images and achieve an improved FID scores on the ImageNet 64x64 dataset for both Consistency-Training and Consistency-Distillation techniques.",
+      "relevance_score": 0.55
+    },
+    {
+      "related_paper_id": "f4cf47e2aeebae3b2644ba986034e495b48ec0bd",
+      "text": "Title: Consistency Regularised Gradient Flows for Inverse Problems\n\nAbstract: Vision-Language Latent Diffusion Models (LDMs) (Rombach et al., 2022) provide powerful generative priors for inverse problems. However, existing LDM-based inverse solvers typically require a large number of neural function evaluations (NFEs) and backpropagation through large pretrained components, leading to substantial computational costs and, in some cases, degraded reconstruction quality. We propose a unified Euclidean-Wasserstein-2 gradient-flow framework that jointly performs posterior sampling and prompt optimization in the latent space through a single flow that aligns the prior and posterior with the observed data. Combined with few-step latent text-to-image models, this formulation enables low-NFE inference without backpropagation through autoencoders. Experiments across several canonical imaging inverse problems show that our method achieves state-of-the-art performance with significantly reduced computational cost.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "081a3ea51c9c261872754ec4ef367a36f82f8906",
+      "text": "Title: ArbitraryFlow: Towards One Step Generative Biomedical Image Segmentation\n\nAbstract: Biomedical image segmentation has witnessed significant advancements through deep learning, wherein diffusionbased generative models have emerged as compelling alternatives to traditional discriminative methodologies by reconceptualizing segmentation through an image-guided noise-to-mask generation paradigm. Yet, their clinical deployment remains constrained by intensive iterative denoising procedures necessitating hundreds to thousands of model function evaluations, compounded by inherent stochastic sampling mechanisms that invariably produce non-deterministic outputs violating the consistency imperatives of clinical decision-making requirements. To overcome these limitations, we propose ArbitraryFlow, a deterministic flowmatching framework that reformulates segmentation as a direct image-to-mask transport problem through an ordinary differential equation (ODE) modeling a continuous-time velocity field that governs the distribution transport dynamics. Crucially, our framework incorporates a two-time flow map mechanism that learns an average velocity field between arbitrary temporal endpoints, consequently enabling few(one)-step mask synthesis without recourse to ODE integration procedures. The velocity field is instantiated via a Diffusion Transformer (DiT) backbone equipped with adaptive layer normalization for effective dual time-conditioned feature modulation while preserving parametric and computational efficiency. Comprehensive experiments across three multimodal datasets (MSD-BraTS, GlaS, BUSI) demonstrate ArbitraryFlow achieves superior segmentation performance relative to established prior arts and consistently outperforms alternative sampling acceleration techniques under various inference budgets. Its single-step instantiation manifests a Dice decline of less than 1.5 % compared to its optimal 1000 step configuration, preserving parity with exhaustive diffusion baselines while delivering computational acceleration exceeding two orders of magnitude. ArbitraryFlow redefines the efficiency- accuracy trade-off in generative segmentation, enabling realtime clinical applications previously unattainable with diffusion paradigms, opening new possibilities for real-time biomedical image analysis. Our code is available at https://github.com/lyupengju/shortcut_flows.",
+      "relevance_score": 0.45
+    },
+    {
+      "related_paper_id": "0990c7ff1e977a957e6d926c0e8571db32796419",
+      "text": "Title: Reduction of Medical Verbiage: Fewer Words, More Meaning",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "2d8c62fffb181768a7fc89db09f5f8f068a1ed98",
+      "text": "Title: Accelerating Image Generation with Sub-path Linear Approximation Model\n\nAbstract: Diffusion models have significantly advanced the state of the art in image, audio, and video generation tasks. However, their applications in practical scenarios are hindered by slow inference speed. Drawing inspiration from the approximation strategies utilized in consistency models, we propose the Sub-path Linear Approximation Model (SLAM), which accelerates diffusion models while maintaining high-quality image generation. SLAM treats the PF-ODE trajectory as a series of PF-ODE sub-paths divided by sampled points, and harnesses sub-path linear (SL) ODEs to form a progressive and continuous error estimation along each individual PF-ODE sub-path. The optimization on such SL-ODEs allows SLAM to construct denoising mappings with smaller cumulative approximated errors. An efficient distillation method is also developed to facilitate the incorporation of more advanced diffusion models, such as latent diffusion models. Our extensive experimental results demonstrate that SLAM achieves an efficient training regimen, requiring only 6 A100 GPU days to produce a high-quality generative model capable of 2 to 4-step generation with high performance. Comprehensive evaluations on LAION, MS COCO 2014, and MS COCO 2017 datasets also illustrate that SLAM surpasses existing acceleration methods in few-step generation tasks, achieving state-of-the-art performance both on FID and the quality of the generated images.",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "82a82bbb75b08c3de78f7cebd52e1c3c38d515b2",
+      "text": "Title: Will Pre-Training Ever End? A First Step Toward Next-Generation Foundation MLLMs via Self-Improving Systematic Cognition\n\nAbstract: Recent progress in (multimodal) large language models ((M)LLMs) has shifted focus from pre-training to inference-time computation and post-training optimization, largely due to concerns over the availability of high-quality human data. However, these strategies alone are insufficient to drive substantial model improvements. We argue that effective model advancement requires strong synergy among pre-training, inference-time computation, and post-training optimization. In this paper, we introduce Self-Improving cognition (SIcog), a self-learning framework for constructing next-generation foundation MLLMs by imparting multimodal knowledge and enhancing systematic cognitive capabilities through multimodal pre-training with self-generated data. Specifically, we propose Chain-of-Description for step-by-step visual understanding and integrate structured Chain-of-Thought (CoT) reasoning to support in-depth multimodal reasoning. SIcog first equips a base model with systematic perception and reasoning using minimal external supervision. The enhanced models then generate candidate image captions and CoT reasoning responses for unlabeled images and image-question pairs across diverse tasks, which are filtered through a semantic-similarity-guided self-consistency mechanism. These high-quality, self-generated samples enable large-scale multimodal pre-training, creating a self-improvement loop. Experiments demonstrate SIcog's effectiveness in developing MLLMs with enhanced multimodal cognition. Using only 213K self-generated pre-training samples, SIcog achieves significant improvements, including +3.6% on MMStar and +3.5% on AI2D, outperforming previous pre-training approaches. When combined with post-training techniques for CoT reasoning, SIcog yields +9% gains on MMVet and +8.5% on ScienceQA.",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+      "text": "Title: Duality Models: An Embarrassingly Simple One-step Generation Paradigm\n\nAbstract: Consistency-based generative models like Shortcut and MeanFlow achieve impressive results via a target-aware design for solving the Probability Flow ODE (PF-ODE). Typically, such methods introduce a target time $r$ alongside the current time $t$ to modulate outputs between a local multi-step derivative ($r = t$) and a global few-step integral ($r = 0$). However, the conventional\"one input, one output\"paradigm enforces a partition of the training budget, often allocating a significant portion (e.g., 75% in MeanFlow) solely to the multi-step objective for stability. This separation forces a trade-off: allocating sufficient samples to the multi-step objective leaves the few-step generation undertrained, which harms convergence and limits scalability. To this end, we propose Duality Models (DuMo) via a\"one input, dual output\"paradigm. Using a shared backbone with dual heads, DuMo simultaneously predicts velocity $v_t$ and flow-map $u_t$ from a single input $x_t$. This applies geometric constraints from the multi-step objective to every sample, bounding the few-step estimation without separating training objectives, thereby significantly improving stability and efficiency. On ImageNet 256 $\\times$ 256, a 679M Diffusion Transformer with SD-VAE achieves a state-of-the-art (SOTA) FID of 1.79 in just 2 steps. Code is available at: https://github.com/LINs-lab/DuMo",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "c83c6523a2945732bcf21fe688fcbd7d8af2c356",
+      "text": "Title: MoGAN: Improving Motion Quality in Video Diffusion via Few-Step Motion Adversarial Post-Training\n\nAbstract: Video diffusion models achieve strong frame-level fidelity but still struggle with motion coherence, dynamics and realism, often producing jitter, ghosting, or implausible dynamics. A key limitation is that the standard denoising MSE objective provides no direct supervision on temporal consistency, allowing models to achieve low loss while still generating poor motion. We propose MoGAN, a motion-centric post-training framework that improves motion realism without reward models or human preference data. Built atop a 3-step distilled video diffusion model, we train a DiT-based optical-flow discriminator to differentiate real from generated motion, combined with a distribution-matching regularizer to preserve visual fidelity. With experiments on Wan2.1-T2V-1.3B, MoGAN substantially improves motion quality across benchmarks. On VBench, MoGAN boosts motion score by +7.3% over the 50-step teacher and +13.3% over the 3-step DMD model. On VideoJAM-Bench, MoGAN improves motion score by +7.4% over the teacher and +8.8% over DMD, while maintaining comparable or even better aesthetic and image-quality scores. A human study further confirms that MoGAN is preferred for motion quality (52% vs. 38% for the teacher; 56% vs. 29% for DMD). Overall, MoGAN delivers significantly more realistic motion without sacrificing visual fidelity or efficiency, offering a practical path toward fast, high-quality video generation. Project webpage is: https://xavihart.github.io/mogan.",
+      "relevance_score": 0.3
+    },
+    {
+      "related_paper_id": "45a0f7ab0d62488cd097cd4c8f3377fddb748aee",
+      "text": "Title: LLIA - Enabling Low-Latency Interactive Avatars: Real-Time Audio-Driven Portrait Video Generation with Diffusion Models\n\nAbstract: Diffusion-based models have gained wide adoption in the virtual human generation due to their outstanding expressiveness. However, their substantial computational requirements have constrained their deployment in real-time interactive avatar applications, where stringent speed, latency, and duration requirements are paramount. We present a novel audio-driven portrait video generation framework based on the diffusion model to address these challenges. Firstly, we propose robust variable-length video generation to reduce the minimum time required to generate the initial video clip or state transitions, which significantly enhances the user experience. Secondly, we propose a consistency model training strategy for Audio-Image-to-Video to ensure real-time performance, enabling a fast few-step generation. Model quantization and pipeline parallelism are further employed to accelerate the inference speed. To mitigate the stability loss incurred by the diffusion process and model quantization, we introduce a new inference strategy tailored for long-duration video generation. These methods ensure real-time performance and low latency while maintaining high-fidelity output. Thirdly, we incorporate class labels as a conditional input to seamlessly switch between speaking, listening, and idle states. Lastly, we design a novel mechanism for fine-grained facial expression control to exploit our model's inherent capacity. Extensive experiments demonstrate that our approach achieves low-latency, fluid, and authentic two-way communication. On an NVIDIA RTX 4090D, our model achieves a maximum of 78 FPS at a resolution of 384x384 and 45 FPS at a resolution of 512x512, with an initial video generation latency of 140 ms and 215 ms, respectively.",
+      "relevance_score": 0.3
+    },
+    {
+      "related_paper_id": "e421f82c88d918275ff231743f8af5966237ac57",
+      "text": "Title: From Wardrobe to Canvas: Wardrobe Polyptych LoRA for Part-level Controllable Human Image Generation\n\nAbstract: Recent diffusion models achieve personalization by learning specific subjects, allowing learned attributes to be integrated into generated images. However, personalized human image generation remains challenging due to the need for precise and consistent attribute preservation (e.g., identity, clothing details). Existing subject-driven image generation methods often require either (1) inference-time fine-tuning with few images for each new subject or (2) large-scale dataset training for generalization. Both approaches are computationally expensive and impractical for real-time applications. To address these limitations, we present Wardrobe Polyptych LoRA, a novel part-level controllable model for personalized human image generation. By training only LoRA layers, our method removes the computational burden at inference while ensuring high-fidelity synthesis of unseen subjects. Our key idea is to condition the generation on the subject's wardrobe and leverage spatial references to reduce information loss, thereby improving fidelity and consistency. Additionally, we introduce a selective subject region loss, which encourages the model to disregard some of reference images during training. Our loss ensures that generated images better align with text prompts while maintaining subject integrity. Notably, our Wardrobe Polyptych LoRA requires no additional parameters at the inference stage and performs generation using a single model trained on a few training samples. We construct a new dataset and benchmark tailored for personalized human image generation. Extensive experiments show that our approach significantly outperforms existing techniques in fidelity and consistency, enabling realistic and identity-preserving full-body synthesis.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "text": "Title: Flow-Anchored Consistency Models\n\nAbstract: Continuous-time Consistency Models (CMs) promise efficient few-step generation but face significant challenges with training instability. We argue this instability stems from a fundamental conflict: Training the network exclusively on a shortcut objective leads to the catastrophic forgetting of the instantaneous velocity field that defines the flow. Our solution is to explicitly anchor the model in the underlying flow, ensuring high trajectory fidelity during training. We introduce the Flow-Anchored Consistency Model (FACM), where a Flow Matching (FM) task serves as a dynamic anchor for the primary CM shortcut objective. Key to this Flow-Anchoring approach is a novel expanded time interval strategy that unifies optimization for a single model while decoupling the two tasks to ensure stable, architecturally-agnostic training. By distilling a pre-trained LightningDiT model, our method achieves a state-of-the-art FID of 1.32 with two steps (NFE=2) and 1.70 with just one step (NFE=1) on ImageNet 256x256. To address the challenge of scalability, we develop a memory-efficient Chain-JVP that resolves key incompatibilities with FSDP. This method allows us to scale FACM training on a 14B parameter model (Wan 2.2), accelerating its Text-to-Image inference from 2x40 to 2-8 steps. Our code and pretrained models: https://github.com/ali-vilab/FACM.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "47051fafe65bcea013ff5ab02bcb54d7605e1da0",
+      "text": "Title: Image Diffusion Preview with Consistency Solver\n\nAbstract: The slow inference process of image diffusion models significantly degrades interactive user experiences. To address this, we introduce Diffusion Preview, a novel paradigm employing rapid, low-step sampling to generate preliminary outputs for user evaluation, deferring full-step refinement until the preview is deemed satisfactory. Existing acceleration methods, including training-free solvers and post-training distillation, struggle to deliver high-quality previews or ensure consistency between previews and final outputs. We propose ConsistencySolver derived from general linear multistep methods, a lightweight, trainable high-order solver optimized via Reinforcement Learning, that enhances preview quality and consistency. Experimental results demonstrate that ConsistencySolver significantly improves generation quality and consistency in low-step scenarios, making it ideal for efficient preview-and-refine workflows. Notably, it achieves FID scores on-par with Multistep DPM-Solver using 47% fewer steps, while outperforming distillation baselines. Furthermore, user studies indicate our approach reduces overall user interaction time by nearly 50% while maintaining generation quality. Code is available at https://github.com/G-U-N/consolver.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "93bee214692028fb170e2289c21affd3272e0ec2",
+      "text": "Title: Stepwise Attention Control for Training-Free Image Editing\n\nAbstract: Text-conditioned image editing aims to modify visual content based on natural language prompts while preserving the spatial structure of the input image. This capability plays a vital role in applications such as creative media design, virtual scene generation, and interactive image manipulation. However, achieving both semantic fidelity and structural preservation remains a major challenge in diffusion-based approaches. Many existing methods exhibit an imbalance between preserving the input image’s structure and reflecting the semantic intent of the prompt, often resulting in suboptimal editing outcomes. To address this problem, we propose a training-free method called Stepwise Attention Control, which divides the denoising process into four stages based on the diffusion time step and applies tailored attention control strategies to each stage. This stage-wise approach enables balanced control of both the structural fidelity and semantic consistency during the editing process. Experimental results demonstrate that the proposed method achieves more faithful semantic edits while more effectively retaining the structural features of the original image compared to existing techniques.",
+      "relevance_score": 0.15
+    },
+    {
+      "related_paper_id": "41e4da02915726d4231661e3553089f1e8a46956",
+      "text": "Title: FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance\n\nAbstract: Recent advances in trajectory-controllable video generation have achieved remarkable progress. Previous methods mainly use adapter-based architectures for precise motion control along predefined trajectories. However, all these methods rely on a multi-step denoising process, leading to substantial time redundancy and computational overhead. While existing video distillation methods successfully distill multi-step generators into few-step, directly applying these approaches to trajectory-controllable video generation results in noticeable degradation in both video quality and trajectory accuracy. To bridge this gap, we introduce FlashMotion, a novel training framework designed for few-step trajectory-controllable video generation. We first train a trajectory adapter on a multi-step video generator for precise trajectory control. Then, we distill the generator into a few-step version to accelerate video generation. Finally, we finetune the adapter using a hybrid strategy that combines diffusion and adversarial objectives, aligning it with the few-step generator to produce high-quality, trajectory-accurate videos. For evaluation, we introduce FlashBench, a benchmark for long-sequence trajectory-controllable video generation that measures both video quality and trajectory accuracy across varying numbers of foreground objects. Experiments on two adapter architectures show that FlashMotion surpasses existing video distillation methods and previous multi-step models in both visual quality and trajectory consistency.",
+      "relevance_score": 0.15
+    },
+    {
+      "related_paper_id": "ac88d87be3320331a1a9614b505e3560143da352",
+      "text": "Title: CM-TTS: Enhancing Real Time Text-to-Speech Synthesis Efficiency through Weighted Samplers and Consistency Models\n\nAbstract: Neural Text-to-Speech (TTS) systems find broad applications in voice assistants, e-learning, and audiobook creation. The pursuit of modern models, like Diffusion Models (DMs), holds promise for achieving high-fidelity, real-time speech synthesis. Yet, the efficiency of multi-step sampling in Diffusion Models presents challenges. Efforts have been made to integrate GANs with DMs, speeding up inference by approximating denoising distributions, but this introduces issues with model convergence due to adversarial training. To overcome this, we introduce CM-TTS, a novel architecture grounded in consistency models (CMs). Drawing inspiration from continuous-time diffusion models, CM-TTS achieves top-quality speech synthesis in fewer steps without adversarial training or pre-trained model dependencies. We further design weighted samplers to incorporate different sampling positions into model training with dynamic probabilities, ensuring unbiased learning throughout the entire training process. We present a real-time mel-spectrogram generation consistency model, validated through comprehensive evaluations. Experimental results underscore CM-TTS's superiority over existing single-step speech synthesis systems, representing a significant advancement in the field.",
+      "relevance_score": 0.1
+    },
+    {
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "text": "Title: ROCM: RLHF on consistency models\n\nAbstract: Diffusion models have revolutionized generative modeling in continuous domains like image, audio, and video synthesis. However, their iterative sampling process leads to slow generation and inefficient training, challenges that are further exacerbated when incorporating Reinforcement Learning from Human Feedback (RLHF) due to sparse rewards and long time horizons. Consistency models address these issues by enabling single-step or efficient multi-step generation, significantly reducing computational costs. In this work, we propose a direct reward optimization framework for applying RLHF to consistency models, incorporating distributional regularization to enhance training stability and prevent reward hacking. We investigate various $f$-divergences as regularization strategies, striking a balance between reward maximization and model consistency. Unlike policy gradient methods, our approach leverages first-order gradients, making it more efficient and less sensitive to hyperparameter tuning. Empirical results show that our method achieves competitive or superior performance compared to policy gradient based RLHF methods, across various automatic metrics and human evaluation. Additionally, our analysis demonstrates the impact of different regularization techniques in improving model generalization and preventing overfitting.",
+      "relevance_score": 0.05
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper introduces TrigFlow, which simplifies diffusion models and unifies EDM and Flow Matching. The related work (SANA-Sprint) explicitly references and builds upon TrigFlow (sCM) from the reviewed paper, confirming its existence and role as a unified formulation that simplifies and improves continuous-time consistency models. The evidence supports the claim's content and strength.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow to unify EDM and Flow Matching, but the related work (BiFM) does not discuss TrigFlow, EDM, or Flow Matching unification; it focuses on bidirectional flow matching for editing and generation. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims TrigFlow unifies EDM and Flow Matching, providing a simpler framework. The paper's abstract and introduction explicitly state TrigFlow is a novel formulation that unifies EDM and Flow Matching, simplifying diffusion models. The related work (da29cf3d) is about scaling sCM, not directly about TrigFlow, so it does not provide evidence for or against this specific claim. However, the claim is supported by the paper being reviewed itself.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's formulation (TrigFlow) unifying EDM and Flow Matching. The related work evidence (TBCM paper) does not mention TrigFlow, EDM, or Flow Matching; it focuses on a different distillation method (TBCM) and trajectory-based approaches. There is no evidence in the provided text to support or contradict the claim, making it insufficient for verification.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0958594a66f4f6752275cff4e14d463d9de53560",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (TrigFlow unifying EDM and Flow Matching). However, the related work (TLCM) does not provide any evidence about TrigFlow, EDM, or Flow Matching; it is about a different method (latent consistency distillation). Thus, there is no supporting evidence from the related work to verify the claim.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1aea48ad7de39babaa35992a53a67fe20bd6b0d7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper introduces TrigFlow which simplifies diffusion models and unifies EDM and Flow Matching. The related work describes SymmFlow, a different formulation for unifying tasks within flow matching. The related work does not provide evidence about the paper's specific contribution (TrigFlow) or its claims about simplifying diffusion models and unifying EDM and Flow Matching. The claim cannot be verified from the related work text.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims TrigFlow simplifies diffusion models and unifies EDM and Flow Matching, which is directly stated in the paper's introduction. However, the related work (Align Your Flow) does not explicitly mention TrigFlow or this specific unification; it focuses on flow maps and distillation. Thus, evidence is insufficient to fully support or contradict the claim based solely on the related work.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper introduces a novel formulation (TrigFlow) that simplifies diffusion models and unifies EDM and Flow Matching. The related work paper discusses Euler Mean Flows (EMF), a different framework for one-step generation based on flow-based models and trajectory consistency. There is no direct evidence in the related work that addresses or supports the specific claim about TrigFlow unifying EDM and Flow Matching, or simplifying diffusion models. The related work does not mention TrigFlow, EDM, or Flow Matching in the context of the paper being reviewed. Therefore, the claim cannot be verified or supported by the provided related work evidence.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1f1f4547d3e0c25eedf9c09c5ae528a47cc99ebc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence does not contain any information about TrigFlow, EDM, Flow Matching, or the paper's contributions. Therefore, there is no evidence to evaluate alignment or calibration.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c0ff16baf7bbf197f2ecfdf57a496f9a2ef1c5c4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (OSV) discusses video diffusion acceleration via consistency distillation and adversarial training but does not mention TrigFlow, EDM, Flow Matching, or the specific simplification/unification claim. There is no evidence to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "31cf335ceee3e5ed44aaaf04bd5631645c7d954c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper (introducing TrigFlow to simplify diffusion models and unify EDM and Flow Matching). However, the provided related work (MotionLCM) does not discuss TrigFlow, EDM, Flow Matching, or any unification framework. It focuses on motion generation with latent consistency models and real-time controllability. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5301b92341c8b706e3584b88465c806a834428c0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (SplitMeanFlow) focuses on a different method (SplitMeanFlow) and does not provide evidence for or against the TrigFlow claim. The claim is about the paper being reviewed, not the related work, and there is no direct evidence in the related work to assess the claim's validity.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes TrigFlow as a formulation that simplifies diffusion models and unifies EDM and Flow Matching. The related work (ID 2f146e0...) is about Continuous-Time Distribution Matching (CDM) for distillation, which does not mention TrigFlow, EDM unification, or Flow Matching. There is no evidence in the related work to support or contradict the claim, making alignment insufficient and calibration not applicable.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3ffa6d5754892fbdd25aa249e827ee64eedb3207",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novel formulation (TrigFlow) simplifying diffusion models and unifying EDM and Flow Matching. The related work (ID=3ffa6d5754892fbdd25aa249e827ee64eedb3207) is about zero-shot image restoration using consistency models, not about TrigFlow or the specific formulation unifying EDM and Flow Matching. There is no evidence in the provided text that supports or relates to the claim in the review sentence.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "400f28cc563b048a3345f9c5bf816331de26b643",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim about TrigFlow simplifying diffusion models and unifying EDM and Flow Matching is supported by the paper's content, but the related work (FlowSteer) does not provide evidence for or against this specific claim. The related work discusses accelerating flow matching with ReFlow, not TrigFlow or the paper's specific formulation.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "586e75e4c5b3ae284493d3a1adc61ce25062049d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that TrigFlow simplifies diffusion models and unifies EDM and Flow Matching. However, the related work paper (GWSoD) is about a conditional diffusion model for galaxy image generation and does not mention TrigFlow, EDM, or Flow Matching. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "018a62ad67f8650060b9cca22e7a9b09f28a1fa9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow, which simplifies diffusion models and unifies EDM and Flow Matching. However, the related work provided does not discuss TrigFlow or the unification of EDM and Flow Matching; it instead proposes a different post-processing method for consistency models. The evidence is missing and unrelated to the claim.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "f4cf47e2aeebae3b2644ba986034e495b48ec0bd",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work evidence is about a different method (Consistency Regularised Gradient Flows for Inverse Problems) and does not mention TrigFlow, EDM, Flow Matching, or the unifying claims in the review sentence. The evidence is missing, so the claim cannot be verified.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "081a3ea51c9c261872754ec4ef367a36f82f8906",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims about the paper being reviewed, but the related work evidence (ArbitraryFlow paper) does not discuss TrigFlow, EDM, or Flow Matching unification; it focuses on a different application (biomedical segmentation) and method (ArbitraryFlow). No direct support or contradiction is found in the provided evidence.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0990c7ff1e977a957e6d926c0e8571db32796419",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's content (introducing TrigFlow, simplifying diffusion models, unifying EDM and Flow Matching). The related work evidence is from a different paper about medical verbiage reduction, which provides no information about TrigFlow, diffusion models, EDM, or Flow Matching. Thus, the claim cannot be verified or related to the provided evidence.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2d8c62fffb181768a7fc89db09f5f8f068a1ed98",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (TrigFlow), but the provided related work (SLAM) does not contain any information about TrigFlow, its novelty, or its unification of EDM and Flow Matching. The evidence is missing to verify the claim.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "82a82bbb75b08c3de78f7cebd52e1c3c38d515b2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes TrigFlow as a novel formulation that unifies EDM and Flow Matching, but the related work paper discusses SIcog, a self-learning framework for MLLMs. There is no direct evidence in the related work about TrigFlow, EDM, Flow Matching, or their unification. The claim is not supported or contradicted by the provided related work, making it insufficient.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's contribution (TrigFlow simplifying diffusion models and unifying EDM and Flow Matching). The related work (Duality Models) discusses a different method (DuMo) and does not provide evidence about TrigFlow's properties. Thus, the claim cannot be verified against the related work evidence.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c83c6523a2945732bcf21fe688fcbd7d8af2c356",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow that unifies EDM and Flow Matching. The related work (MoGAN) is about video diffusion and motion quality, which does not provide evidence about TrigFlow or the paper's contributions. The claim is about the paper's content, but the related work evidence is unrelated and does not support or contradict the claim.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "45a0f7ab0d62488cd097cd4c8f3377fddb748aee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, stating that it introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (LLIA) is a different paper on audio-driven portrait video generation and does not provide evidence about TrigFlow or the unification claim; thus, no support or contradiction can be determined from the provided related work.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e421f82c88d918275ff231743f8af5966237ac57",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work evidence is from a different paper on personalized human image generation using LoRA, which does not discuss TrigFlow, diffusion model formulations, or the unification of EDM and Flow Matching. Thus, there is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper introduces TrigFlow, which simplifies diffusion models and unifies EDM and Flow Matching. The provided paper text does describe TrigFlow and its role in unifying EDM and Flow Matching, supporting this as a claim about the paper. However, the related work (FACM) does not mention TrigFlow or provide evidence about its unifying role, so the claim cannot be verified against the related work evidence.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "47051fafe65bcea013ff5ab02bcb54d7605e1da0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow, simplifying diffusion models and unifying EDM and Flow Matching. However, the related work evidence (ConsistencySolver paper) focuses on accelerating diffusion inference via preview-and-refine workflows and does not mention TrigFlow, EDM, or Flow Matching unification. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "93bee214692028fb170e2289c21affd3272e0ec2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about TrigFlow unifying EDM and Flow Matching in the paper being reviewed. However, the related work evidence is about a different topic (image editing with attention control) and provides no information about TrigFlow, EDM, or Flow Matching. There is no evidence in the related work to support or contradict the claim, making it unverifiable from the given evidence.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "41e4da02915726d4231661e3553089f1e8a46956",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (C1) stating it introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (FlashMotion) is a different paper on video generation and does not provide evidence about TrigFlow or the paper being reviewed.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ac88d87be3320331a1a9614b505e3560143da352",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (CM-TTS) is about TTS using consistency models, with no mention of TrigFlow, EDM, Flow Matching, or unification claims. There is no evidence to support or contradict the claim, making it unverifiable from the provided related work text.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper introducing TrigFlow as a novel formulation that simplifies diffusion models and unifies EDM and Flow Matching. The provided abstract and introduction of the paper being reviewed do support this claim by describing TrigFlow as a new formulation that unifies EDM and Flow Matching and simplifies diffusion models. However, the related work evidence (the ROCM paper) does not contain any information about TrigFlow, EDM, Flow Matching, or the paper being reviewed. Therefore, the related work evidence does not support, contradict, or relate to the claim; it is entirely missing or unverifiable for this claim.",
+      "relevance_score": 0.05
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper introducing TrigFlow and stabilizing continuous-time consistency models. The related work (SANA-Sprint) discusses using continuous-time consistency distillation (sCM) and mentions 'sCM ensures alignment with the teacher model', but it does not provide evidence about TrigFlow or the stabilization techniques being a contribution of the reviewed paper. The claim is too vague to be verified against the related work evidence.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's contributions (TrigFlow unifying EDM and Flow Matching, and a comprehensive approach to stabilize continuous-time CMs). The related work (BiFM) discusses bidirectional flow matching for image editing and generation, but it does not directly address or provide evidence about TrigFlow, EDM, Flow Matching unification, or stabilization of continuous-time CMs. The evidence is unrelated to the claim, making it insufficient for verification.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow and proposes stabilization techniques for continuous-time CMs. The related work focuses on scaling up sCM to large models and introducing rCM with score regularization, which is a different paper's contribution. No direct evidence about TrigFlow or the specific stabilization approach is provided in the related work.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper introduces TrigFlow and proposes a comprehensive approach to stabilize continuous-time consistency models. The provided related work (TBCM) is about a different distillation method and does not mention TrigFlow or the stabilization techniques described in the review sentence. There is no evidence in the related work to support or contradict the claim about the specific contributions of the paper being reviewed.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0958594a66f4f6752275cff4e14d463d9de53560",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper introducing TrigFlow and stabilizing continuous-time consistency models. The related work (TLCM) is about training-efficient latent consistency models, which is a different method and focus. There is no evidence in the related work to support or contradict the claim about TrigFlow or continuous-time CM stabilization, making alignment insufficient for evaluation.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1aea48ad7de39babaa35992a53a67fe20bd6b0d7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about TrigFlow unifying EDM and Flow Matching, but the related work (SymmFlow) discusses a different unifying framework (Symmetrical Flow Matching) for image generation, segmentation, and classification. There is no direct evidence in the related work about TrigFlow or its unification of EDM and Flow Matching, making the claim unverifiable from the provided evidence.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims TrigFlow unifies EDM and Flow Matching. The paper's abstract and introduction confirm this is a claim about the paper being reviewed. The related work (Align Your Flow) discusses flow maps and continuous-time objectives for distillation, which is thematically related but does not directly provide evidence about TrigFlow's unification of EDM and Flow Matching. Evidence is missing for direct verification.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow and proposes a comprehensive approach to stabilize continuous-time consistency models. The related work (Euler Mean Flows) describes a different method (EMF) for trajectory consistency, not mentioning TrigFlow or the specific stabilization techniques for continuous-time CMs. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1f1f4547d3e0c25eedf9c09c5ae528a47cc99ebc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes TrigFlow and a comprehensive approach for continuous-time consistency models. The related work evidence is about MVC-ZigAL, an RL finetuning framework for text-to-multiview diffusion, which does not mention TrigFlow, EDM, Flow Matching, or consistency models. There is no direct evidence to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c0ff16baf7bbf197f2ecfdf57a496f9a2ef1c5c4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow and a stabilization approach for continuous-time CMs. The related work (OSV) is about video generation with consistency distillation and adversarial training, providing no evidence about TrigFlow or continuous-time CM stabilization. There is no direct support, contradiction, or relation to the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "31cf335ceee3e5ed44aaaf04bd5631645c7d954c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (MotionLCM) does not provide any information to verify or relate to the claim about TrigFlow unifying EDM and Flow Matching, or about stabilizing continuous-time consistency models. The claim is too vague with respect to the related work.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5301b92341c8b706e3584b88465c806a834428c0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper introduces TrigFlow, a formulation unifying EDM and Flow Matching, and proposes techniques to stabilize continuous-time consistency models. The related work describes SplitMeanFlow, a different approach for few-step generation using interval splitting consistency. There is no evidence in the related work that supports, contradicts, or relates to the specific claims about TrigFlow or stabilization of continuous-time CMs. Therefore, the stance alignment is insufficient, and calibration cannot be assessed.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes a comprehensive approach to stabilize continuous-time consistency models (CMs). The related work abstract introduces Continuous-Time Distribution Matching (CDM) for diffusion distillation, which focuses on distribution matching rather than directly stabilizing CM training. The abstract does not mention consistency models, stability issues, or the specific techniques (TrigFlow, time-conditioning, adaptive group normalization, training objective reformulation) described in the paper. There is no evidence in the related work to support or contradict the claim about stabilizing CMs.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "3ffa6d5754892fbdd25aa249e827ee64eedb3207",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper (introducing TrigFlow and stabilizing continuous-time CMs). The related work paper is about zero-shot image restoration using consistency models, not about TrigFlow or stabilizing continuous-time CMs. There is no evidence in the related work to support or contradict the claim, making verification impossible with the provided evidence.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "400f28cc563b048a3345f9c5bf816331de26b643",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed (introducing TrigFlow and proposing a stabilization approach). The related work is a different paper (FlowSteer) that does not mention TrigFlow or the stabilization of continuous-time consistency models. There is no evidence in the provided related work to support or contradict the claim.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "586e75e4c5b3ae284493d3a1adc61ce25062049d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (introducing TrigFlow and proposing a stabilization approach for continuous-time consistency models). The related work evidence (GWSoD) discusses a conditional diffusion model for galaxy image generation, which is entirely unrelated to TrigFlow, consistency models, or the stabilization techniques mentioned. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "018a62ad67f8650060b9cca22e7a9b09f28a1fa9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper introducing TrigFlow and stabilizing continuous-time CMs, but the related work (018a62ad67f8650060b9cca22e7a9b09f28a1fa9) does not mention TrigFlow or address the stabilization of continuous-time CMs. Therefore, there is no evidence to support or contradict the claim, making it insufficient for verification.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "f4cf47e2aeebae3b2644ba986034e495b48ec0bd",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's content (introduction of TrigFlow and stabilization of continuous-time CMs), but the related work evidence (about gradient flows for inverse problems) does not provide any information about TrigFlow or consistency models. Therefore, the evidence is insufficient to verify or relate to the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "081a3ea51c9c261872754ec4ef367a36f82f8906",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper introducing TrigFlow and stabilizing continuous-time consistency models. However, the related work (ArbitraryFlow) does not provide evidence about TrigFlow or the stabilization techniques for continuous-time CMs. The evidence is missing, making the claim unverifiable against the related work.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0990c7ff1e977a957e6d926c0e8571db32796419",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work is about 'Reduction of Medical Verbiage' and provides no evidence or context about TrigFlow, EDM, Flow Matching, or consistency models, making it impossible to verify the claim's alignment or calibration.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "2d8c62fffb181768a7fc89db09f5f8f068a1ed98",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes the paper's contribution (TrigFlow and stabilization of continuous-time CMs). The related work evidence is about SLAM, a different acceleration method; it does not mention TrigFlow or provide evidence to evaluate the claim, making alignment and calibration unassessable.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "82a82bbb75b08c3de78f7cebd52e1c3c38d515b2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes TrigFlow as a novel formulation unifying EDM and Flow Matching, which is supported by the paper's abstract and introduction. However, the related work (ID=82a82bbb75b08c3de78f7cebd52e1c3c38d515b2) is about SIcog, a self-learning framework for MLLMs, which is completely unrelated to TrigFlow or consistency models. There is no evidence in the related work to verify or relate to the claim, making it unverifiable based on the provided evidence.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence describes TrigFlow and stability techniques from the paper, but the related work (DuMo) does not provide direct evidence about TrigFlow, EDM, Flow Matching, or consistency model stabilization. The evidence is missing or unverifiable against the specific claim.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c83c6523a2945732bcf21fe688fcbd7d8af2c356",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper introduces TrigFlow and stabilizes continuous-time consistency models. The provided related work (MoGAN) is about motion quality in video diffusion, which is unrelated to the claims in the review sentence. There is no evidence in the related work to support or contradict the claim, making it insufficient for verification.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "45a0f7ab0d62488cd097cd4c8f3377fddb748aee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper introduces TrigFlow and proposes a stabilization approach for continuous-time consistency models. The related work (LLIA) is about a diffusion-based framework for audio-driven video generation, which does not mention TrigFlow, continuous-time consistency models, or the stabilization techniques described in the reviewed paper. There is no evidence in the related work to support or contradict the claim, making alignment and calibration unverifiable.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "e421f82c88d918275ff231743f8af5966237ac57",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (introduces TrigFlow and proposes a comprehensive approach to stabilize continuous-time consistency models). The related work evidence is from a different paper (Wardrobe Polyptych LoRA for personalized human image generation) and provides no information about TrigFlow or consistency models, so the claim cannot be verified or aligned with the evidence.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's content (introducing TrigFlow and stabilizing continuous-time consistency models), but the related work (FACM) does not provide direct evidence about TrigFlow or the stabilization techniques described in the paper. The related work focuses on a different method (Flow-Anchored Consistency Models) and does not address TrigFlow specifically.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "47051fafe65bcea013ff5ab02bcb54d7605e1da0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contributions (introducing TrigFlow and proposing a stabilization approach for continuous-time CMs). The related work discusses ConsistencySolver for diffusion preview, which does not directly support or contradict the claim about TrigFlow or CM stabilization. Evidence is missing to verify the claim.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "93bee214692028fb170e2289c21affd3272e0ec2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper introducing TrigFlow and proposing a stabilization approach for continuous-time CMs. The related work evidence describes a different paper on image editing with attention control, which does not provide any information about TrigFlow or consistency model training. There is no overlap or evidence to assess alignment or calibration.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "41e4da02915726d4231661e3553089f1e8a46956",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper (TrigFlow and stability of continuous-time CMs) but the related work evidence (FlashMotion) is entirely about video generation with trajectory control and distillation; there is no overlap or evidence to support or contradict the claim.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ac88d87be3320331a1a9614b505e3560143da352",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper introduces TrigFlow and a stabilization approach for continuous-time CMs. The related work (CM-TTS) describes a consistency model for TTS but does not mention TrigFlow or the specific stabilization techniques, so evidence is partial: it confirms the use of consistency models but not the exact contributions claimed.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's introduction of TrigFlow and stabilization of continuous-time CMs, but the related work (ROCM) does not provide evidence about TrigFlow or stabilization of continuous-time CMs; it discusses RLHF on consistency models, which is a different topic. No supporting or contradicting evidence is found.",
+      "relevance_score": 0.05
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that while discrete-time CMs exist, the novel contributions (TrigFlow, stabilization techniques) are primarily for continuous-time settings. The paper's introduction states that previous work used discrete-time CMs, and this work introduces TrigFlow and stabilization techniques for continuous-time CMs, aligning with the claim. The related work (SANA-Sprint) also focuses on continuous-time consistency distillation, supporting the emphasis on continuous-time methods.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim is about the paper being reviewed (sCM), not about the related work (BiFM). The related work evidence (BiFM) does not address the claim's content regarding discrete-time vs. continuous-time CMs, TrigFlow, or stabilization techniques in the reviewed paper. Therefore, evidence is missing to verify the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that experiments on discrete-time CMs are present but novel contributions are primarily for continuous-time setting. The related work paper confirms that sCM is a continuous-time consistency model and discusses scaling it up, aligning with the claim. The evidence supports the focus on continuous-time methods without contradicting the presence of discrete-time experiments.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting. The related work abstract discusses a different paper (TBCM) focused on image-free timestep distillation and does not mention TrigFlow or stabilization techniques. There is no evidence in the related work to support or contradict the claim about the paper being reviewed. The claim is too vague and the evidence is missing.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "0958594a66f4f6752275cff4e14d463d9de53560",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The sentence claims that the novel contributions are primarily for continuous-time CMs. The paper being reviewed supports this by focusing on continuous-time CM training and introducing TrigFlow and stabilization techniques. However, the related work (TLCM) is about latent consistency models and does not discuss continuous-time vs. discrete-time CMs, TrigFlow, or stabilization techniques. Thus, the related work evidence does not relate to the claim.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "1aea48ad7de39babaa35992a53a67fe20bd6b0d7",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for continuous-time settings. However, the related work evidence (SymmFlow paper) does not mention TrigFlow, stabilization techniques, or continuous-time vs. discrete-time consistency models; it discusses a different flow matching framework for unifying segmentation, classification, and generation. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that the paper's novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting. The paper itself explicitly states this in the introduction and preliminaries, emphasizing continuous-time CMs and introducing techniques to stabilize their training. The related work also focuses on continuous-time flow map distillation, which is conceptually related but does not directly address the specific claim about the paper's contributions being primarily for continuous-time setting. Thus, the claim is supported by the paper's own text but not directly by the related work evidence, leading to partial alignment.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting. The related work (Euler Mean Flows) does not mention TrigFlow, stabilization techniques, or continuous-time consistency models. It focuses on a different method (EMF) for one-step generation. There is no evidence in the provided related work to support or contradict the claim about the paper's contributions. Thus, the claim is too vague and evidence is missing.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "1f1f4547d3e0c25eedf9c09c5ae528a47cc99ebc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, stating that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time setting. However, the related work (Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning) does not provide any evidence about TrigFlow or consistency models in continuous-time setting. It is unrelated to the specific technical contributions of the paper being reviewed, so the claim cannot be verified against this related work.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "c0ff16baf7bbf197f2ecfdf57a496f9a2ef1c5c4",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, stating that its novel contributions are primarily designed for continuous-time settings. However, the related work (OSV) focuses on video generation and does not discuss the paper's specific contributions or continuous-time vs. discrete-time CMs. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "31cf335ceee3e5ed44aaaf04bd5631645c7d954c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's focus on continuous-time consistency models and its contributions (TrigFlow, stabilization techniques). However, the provided related work (MotionLCM) is about motion generation using latent consistency models and does not contain any evidence regarding discrete-time vs. continuous-time CMs, TrigFlow, or stabilization techniques. Therefore, the claim cannot be evaluated against this related work.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "5301b92341c8b706e3584b88465c806a834428c0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim is about the paper's focus on continuous-time CMs and its novel contributions (TrigFlow, stabilization techniques). The related work (SplitMeanFlow) discusses a different method for few-step generation using algebraic consistency and is unrelated to TrigFlow or continuous-time CM stabilization. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim states that the novel contributions (TrigFlow, stabilization techniques) are primarily designed for the continuous-time setting. The related work (CDM) discusses a different method (Continuous-Time Distribution Matching) and does not provide evidence about the paper's contributions or their primary design focus. Thus, there is insufficient evidence to verify the claim against the related work.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "3ffa6d5754892fbdd25aa249e827ee64eedb3207",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time CMs. The related work paper focuses on using CMs for zero-shot image restoration and does not discuss TrigFlow, stabilization techniques, or the continuous-time vs. discrete-time distinction in CMs. Therefore, there is insufficient evidence to verify the claim.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "400f28cc563b048a3345f9c5bf816331de26b643",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contributions focusing on continuous-time setting. The related work (FlowSteer) discusses ReFlow-based distillation and trajectory alignment for flow models, but does not provide evidence about discrete-time vs. continuous-time CMs or the paper's specific contributions (TrigFlow, stabilization techniques). The evidence is missing or too vague to verify the claim.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "586e75e4c5b3ae284493d3a1adc61ce25062049d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The sentence makes a claim about the paper being reviewed (that its novel contributions are primarily designed for continuous-time CMs). The related work (GWSoD) is about a conditional diffusion model for galaxy image generation, which is unrelated to consistency models or continuous-time vs. discrete-time settings. There is no evidence in the related work to support or contradict the claim, making the evidence insufficient.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "018a62ad67f8650060b9cca22e7a9b09f28a1fa9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's contributions being primarily for continuous-time setting, but the related work evidence does not provide information about TrigFlow or stabilization techniques to verify or contradict this claim.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "f4cf47e2aeebae3b2644ba986034e495b48ec0bd",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed, specifically about the focus of its novel contributions (TrigFlow, stabilization techniques) on the continuous-time setting. However, the provided related work evidence (ID f4cf47e2aeebae3b2644ba986034e495b48ec0bd) is from a different paper on consistency regularized gradient flows for inverse problems. It does not mention TrigFlow, stabilization techniques, or the continuous-time vs. discrete-time distinction of consistency models. Therefore, there is no evidence from the related work to support or contradict the claim, making the stance alignment 'insufficient' and calibration 'N/A'.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "081a3ea51c9c261872754ec4ef367a36f82f8906",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the focus of the paper's novel contributions (TrigFlow, stabilization techniques) on continuous-time setting. The related work (ArbitraryFlow) is about a biomedical segmentation model using flow matching, not about the paper being reviewed (sCM). There is no evidence in the provided related work text to support or contradict this claim, making it unverifiable with the given evidence.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "0990c7ff1e977a957e6d926c0e8571db32796419",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the focus of the paper's contributions (TrigFlow, stabilization techniques) on continuous-time setting. However, the related work evidence (a paper on medical verbiage reduction) is entirely irrelevant to the topic of consistency models or diffusion processes, providing no supporting or contradicting evidence for the claim. Thus, the evidence is missing.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "2d8c62fffb181768a7fc89db09f5f8f068a1ed98",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed, but the related work evidence (SLAM) does not provide any information about discrete-time vs. continuous-time CMs or the novel contributions (TrigFlow, stabilization techniques) mentioned in the claim. There is no support or contradiction from the related work.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "82a82bbb75b08c3de78f7cebd52e1c3c38d515b2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, stating that the novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time setting. However, the provided related work evidence is a paper on self-improving MLLMs (SIcog), which is entirely unrelated to consistency models, diffusion processes, or the specific techniques mentioned. There is no evidence in the related work to support, contradict, or relate to the claim about the paper's contributions.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's focus on continuous-time settings, but the related work (Duality Models) does not provide evidence about this claim; it discusses a different method and does not mention continuous-time vs. discrete-time settings or TrigFlow.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "c83c6523a2945732bcf21fe688fcbd7d8af2c356",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's focus on continuous-time CMs. However, the related work (MoGAN) does not provide evidence about the design or analysis of TrigFlow or stabilization techniques for continuous-time setting; it focuses on video motion quality improvements. Therefore, evidence is missing or unverifiable.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "45a0f7ab0d62488cd097cd4c8f3377fddb748aee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the novel contributions (TrigFlow, stabilization techniques) being primarily for continuous-time CMs, but the related work (LLIA paper) does not mention TrigFlow or stabilization techniques for continuous-time CMs. The related work focuses on audio-driven portrait video generation with a consistency model training strategy, not on the specific methods cited in the review sentence. Thus, there is insufficient evidence to verify the claim against the related work.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "e421f82c88d918275ff231743f8af5966237ac57",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence (ID=C3) makes a claim about the paper being reviewed, stating that novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting. However, the provided related work (ID=e421f82c88d918275ff231743f8af5966237ac57) is from a different paper on personalized human image generation (Wardrobe Polyptych LoRA). This related work does not contain any evidence or information about TrigFlow, stabilization techniques, or consistency models, making it impossible to verify or relate the claim to the evidence. Therefore, the evidence is missing, and the stance alignment is insufficient.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer's claim that novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting is directly supported by the paper's introduction, which states they introduce techniques to simplify, stabilize, and scale up the training of continuous-time CMs. The related work (Flow-Anchored Consistency Models) also focuses on continuous-time CMs, confirming the context.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "47051fafe65bcea013ff5ab02bcb54d7605e1da0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time setting, but the related work evidence does not discuss these contributions or the continuous-time setting; it focuses on a different method (ConsistencySolver) for preview generation.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "93bee214692028fb170e2289c21affd3272e0ec2",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's focus on continuous-time consistency models (CMs) and its novel contributions (TrigFlow, stabilization techniques). However, the related work evidence provided (about Stepwise Attention Control for image editing) does not contain any information about consistency models, TrigFlow, stabilization techniques, or the paper being reviewed. Therefore, there is no evidence to evaluate the claim.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "41e4da02915726d4231661e3553089f1e8a46956",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim states that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time setting. The provided related work (FlashMotion) is about video generation and does not mention TrigFlow or continuous-time consistency models. There is no evidence in the related work to verify or contradict the claim, making it insufficient.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "ac88d87be3320331a1a9614b505e3560143da352",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the primary design and analysis focus of TrigFlow and stabilization techniques being on the continuous-time setting. However, the provided related work (CM-TTS) does not discuss TrigFlow or these stabilization techniques; it focuses on a different application (Text-to-Speech) and weighted samplers, providing no evidence to verify the claim about the paper being reviewed.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, stating that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time settings. However, the related work (ROCM) does not contain evidence about TrigFlow or the focus on continuous-time vs. discrete-time CMs; it discusses RLHF on consistency models. The claim cannot be verified or contradicted based on the related work.",
+      "relevance_score": 0.05
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The paper introduces a novel formulation (TrigFlow) that simplifies diffusion models and unifies EDM and Flow Matching, providing a more elegant and efficient framework for generative modeling.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper introduces TrigFlow, which simplifies diffusion models and unifies EDM and Flow Matching. The related work (SANA-Sprint) explicitly references and builds upon TrigFlow (sCM) from the reviewed paper, confirming its existence and role as a unified formulation that simplifies and improves continuous-time consistency models. The evidence supports the claim's content and strength.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow to unify EDM and Flow Matching, but the related work (BiFM) does not discuss TrigFlow, EDM, or Flow Matching unification; it focuses on bidirectional flow matching for editing and generation. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims TrigFlow unifies EDM and Flow Matching, providing a simpler framework. The paper's abstract and introduction explicitly state TrigFlow is a novel formulation that unifies EDM and Flow Matching, simplifying diffusion models. The related work (da29cf3d) is about scaling sCM, not directly about TrigFlow, so it does not provide evidence for or against this specific claim. However, the claim is supported by the paper being reviewed itself.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's formulation (TrigFlow) unifying EDM and Flow Matching. The related work evidence (TBCM paper) does not mention TrigFlow, EDM, or Flow Matching; it focuses on a different distillation method (TBCM) and trajectory-based approaches. There is no evidence in the provided text to support or contradict the claim, making it insufficient for verification.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "0958594a66f4f6752275cff4e14d463d9de53560",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (TrigFlow unifying EDM and Flow Matching). However, the related work (TLCM) does not provide any evidence about TrigFlow, EDM, or Flow Matching; it is about a different method (latent consistency distillation). Thus, there is no supporting evidence from the related work to verify the claim.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "1aea48ad7de39babaa35992a53a67fe20bd6b0d7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper introduces TrigFlow which simplifies diffusion models and unifies EDM and Flow Matching. The related work describes SymmFlow, a different formulation for unifying tasks within flow matching. The related work does not provide evidence about the paper's specific contribution (TrigFlow) or its claims about simplifying diffusion models and unifying EDM and Flow Matching. The claim cannot be verified from the related work text.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims TrigFlow simplifies diffusion models and unifies EDM and Flow Matching, which is directly stated in the paper's introduction. However, the related work (Align Your Flow) does not explicitly mention TrigFlow or this specific unification; it focuses on flow maps and distillation. Thus, evidence is insufficient to fully support or contradict the claim based solely on the related work.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper introduces a novel formulation (TrigFlow) that simplifies diffusion models and unifies EDM and Flow Matching. The related work paper discusses Euler Mean Flows (EMF), a different framework for one-step generation based on flow-based models and trajectory consistency. There is no direct evidence in the related work that addresses or supports the specific claim about TrigFlow unifying EDM and Flow Matching, or simplifying diffusion models. The related work does not mention TrigFlow, EDM, or Flow Matching in the context of the paper being reviewed. Therefore, the claim cannot be verified or supported by the provided related work evidence.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "1f1f4547d3e0c25eedf9c09c5ae528a47cc99ebc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence does not contain any information about TrigFlow, EDM, Flow Matching, or the paper's contributions. Therefore, there is no evidence to evaluate alignment or calibration.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "c0ff16baf7bbf197f2ecfdf57a496f9a2ef1c5c4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (OSV) discusses video diffusion acceleration via consistency distillation and adversarial training but does not mention TrigFlow, EDM, Flow Matching, or the specific simplification/unification claim. There is no evidence to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "31cf335ceee3e5ed44aaaf04bd5631645c7d954c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper (introducing TrigFlow to simplify diffusion models and unify EDM and Flow Matching). However, the provided related work (MotionLCM) does not discuss TrigFlow, EDM, Flow Matching, or any unification framework. It focuses on motion generation with latent consistency models and real-time controllability. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "5301b92341c8b706e3584b88465c806a834428c0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (SplitMeanFlow) focuses on a different method (SplitMeanFlow) and does not provide evidence for or against the TrigFlow claim. The claim is about the paper being reviewed, not the related work, and there is no direct evidence in the related work to assess the claim's validity.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes TrigFlow as a formulation that simplifies diffusion models and unifies EDM and Flow Matching. The related work (ID 2f146e0...) is about Continuous-Time Distribution Matching (CDM) for distillation, which does not mention TrigFlow, EDM unification, or Flow Matching. There is no evidence in the related work to support or contradict the claim, making alignment insufficient and calibration not applicable.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "3ffa6d5754892fbdd25aa249e827ee64eedb3207",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novel formulation (TrigFlow) simplifying diffusion models and unifying EDM and Flow Matching. The related work (ID=3ffa6d5754892fbdd25aa249e827ee64eedb3207) is about zero-shot image restoration using consistency models, not about TrigFlow or the specific formulation unifying EDM and Flow Matching. There is no evidence in the provided text that supports or relates to the claim in the review sentence.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "400f28cc563b048a3345f9c5bf816331de26b643",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim about TrigFlow simplifying diffusion models and unifying EDM and Flow Matching is supported by the paper's content, but the related work (FlowSteer) does not provide evidence for or against this specific claim. The related work discusses accelerating flow matching with ReFlow, not TrigFlow or the paper's specific formulation.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "586e75e4c5b3ae284493d3a1adc61ce25062049d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that TrigFlow simplifies diffusion models and unifies EDM and Flow Matching. However, the related work paper (GWSoD) is about a conditional diffusion model for galaxy image generation and does not mention TrigFlow, EDM, or Flow Matching. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "018a62ad67f8650060b9cca22e7a9b09f28a1fa9",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow, which simplifies diffusion models and unifies EDM and Flow Matching. However, the related work provided does not discuss TrigFlow or the unification of EDM and Flow Matching; it instead proposes a different post-processing method for consistency models. The evidence is missing and unrelated to the claim.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "f4cf47e2aeebae3b2644ba986034e495b48ec0bd",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work evidence is about a different method (Consistency Regularised Gradient Flows for Inverse Problems) and does not mention TrigFlow, EDM, Flow Matching, or the unifying claims in the review sentence. The evidence is missing, so the claim cannot be verified.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "081a3ea51c9c261872754ec4ef367a36f82f8906",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims about the paper being reviewed, but the related work evidence (ArbitraryFlow paper) does not discuss TrigFlow, EDM, or Flow Matching unification; it focuses on a different application (biomedical segmentation) and method (ArbitraryFlow). No direct support or contradiction is found in the provided evidence.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "0990c7ff1e977a957e6d926c0e8571db32796419",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's content (introducing TrigFlow, simplifying diffusion models, unifying EDM and Flow Matching). The related work evidence is from a different paper about medical verbiage reduction, which provides no information about TrigFlow, diffusion models, EDM, or Flow Matching. Thus, the claim cannot be verified or related to the provided evidence.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "2d8c62fffb181768a7fc89db09f5f8f068a1ed98",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (TrigFlow), but the provided related work (SLAM) does not contain any information about TrigFlow, its novelty, or its unification of EDM and Flow Matching. The evidence is missing to verify the claim.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "82a82bbb75b08c3de78f7cebd52e1c3c38d515b2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes TrigFlow as a novel formulation that unifies EDM and Flow Matching, but the related work paper discusses SIcog, a self-learning framework for MLLMs. There is no direct evidence in the related work about TrigFlow, EDM, Flow Matching, or their unification. The claim is not supported or contradicted by the provided related work, making it insufficient.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's contribution (TrigFlow simplifying diffusion models and unifying EDM and Flow Matching). The related work (Duality Models) discusses a different method (DuMo) and does not provide evidence about TrigFlow's properties. Thus, the claim cannot be verified against the related work evidence.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "c83c6523a2945732bcf21fe688fcbd7d8af2c356",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow that unifies EDM and Flow Matching. The related work (MoGAN) is about video diffusion and motion quality, which does not provide evidence about TrigFlow or the paper's contributions. The claim is about the paper's content, but the related work evidence is unrelated and does not support or contradict the claim.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "45a0f7ab0d62488cd097cd4c8f3377fddb748aee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, stating that it introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (LLIA) is a different paper on audio-driven portrait video generation and does not provide evidence about TrigFlow or the unification claim; thus, no support or contradiction can be determined from the provided related work.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "e421f82c88d918275ff231743f8af5966237ac57",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the provided related work evidence is from a different paper on personalized human image generation using LoRA, which does not discuss TrigFlow, diffusion model formulations, or the unification of EDM and Flow Matching. Thus, there is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper introduces TrigFlow, which simplifies diffusion models and unifies EDM and Flow Matching. The provided paper text does describe TrigFlow and its role in unifying EDM and Flow Matching, supporting this as a claim about the paper. However, the related work (FACM) does not mention TrigFlow or provide evidence about its unifying role, so the claim cannot be verified against the related work evidence.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "47051fafe65bcea013ff5ab02bcb54d7605e1da0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow, simplifying diffusion models and unifying EDM and Flow Matching. However, the related work evidence (ConsistencySolver paper) focuses on accelerating diffusion inference via preview-and-refine workflows and does not mention TrigFlow, EDM, or Flow Matching unification. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "93bee214692028fb170e2289c21affd3272e0ec2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about TrigFlow unifying EDM and Flow Matching in the paper being reviewed. However, the related work evidence is about a different topic (image editing with attention control) and provides no information about TrigFlow, EDM, or Flow Matching. There is no evidence in the related work to support or contradict the claim, making it unverifiable from the given evidence.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "41e4da02915726d4231661e3553089f1e8a46956",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (C1) stating it introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (FlashMotion) is a different paper on video generation and does not provide evidence about TrigFlow or the paper being reviewed.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "ac88d87be3320331a1a9614b505e3560143da352",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow that simplifies diffusion models and unifies EDM and Flow Matching. The related work (CM-TTS) is about TTS using consistency models, with no mention of TrigFlow, EDM, Flow Matching, or unification claims. There is no evidence to support or contradict the claim, making it unverifiable from the provided related work text.",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper introducing TrigFlow as a novel formulation that simplifies diffusion models and unifies EDM and Flow Matching. The provided abstract and introduction of the paper being reviewed do support this claim by describing TrigFlow as a new formulation that unifies EDM and Flow Matching and simplifies diffusion models. However, the related work evidence (the ROCM paper) does not contain any information about TrigFlow, EDM, Flow Matching, or the paper being reviewed. Therefore, the related work evidence does not support, contradict, or relate to the claim; it is entirely missing or unverifiable for this claim.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 1.3333333333333333,
+      "best_evidence": [
+        "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+        "331dfe0f72acc614c4008776870caed930366602",
+        "da29cf3d0128590446c23398017a7bddd2346063"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+          "score": 2.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "The paper introduces TrigFlow, a novel formulation unifying EDM and Flow Matching, and proposes a comprehensive approach to stabilize continuous-time consistency models (CMs).",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper introducing TrigFlow and stabilizing continuous-time consistency models. The related work (SANA-Sprint) discusses using continuous-time consistency distillation (sCM) and mentions 'sCM ensures alignment with the teacher model', but it does not provide evidence about TrigFlow or the stabilization techniques being a contribution of the reviewed paper. The claim is too vague to be verified against the related work evidence.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's contributions (TrigFlow unifying EDM and Flow Matching, and a comprehensive approach to stabilize continuous-time CMs). The related work (BiFM) discusses bidirectional flow matching for image editing and generation, but it does not directly address or provide evidence about TrigFlow, EDM, Flow Matching unification, or stabilization of continuous-time CMs. The evidence is unrelated to the claim, making it insufficient for verification.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow and proposes stabilization techniques for continuous-time CMs. The related work focuses on scaling up sCM to large models and introducing rCM with score regularization, which is a different paper's contribution. No direct evidence about TrigFlow or the specific stabilization approach is provided in the related work.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper introduces TrigFlow and proposes a comprehensive approach to stabilize continuous-time consistency models. The provided related work (TBCM) is about a different distillation method and does not mention TrigFlow or the stabilization techniques described in the review sentence. There is no evidence in the related work to support or contradict the claim about the specific contributions of the paper being reviewed.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "0958594a66f4f6752275cff4e14d463d9de53560",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper introducing TrigFlow and stabilizing continuous-time consistency models. The related work (TLCM) is about training-efficient latent consistency models, which is a different method and focus. There is no evidence in the related work to support or contradict the claim about TrigFlow or continuous-time CM stabilization, making alignment insufficient for evaluation.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "1aea48ad7de39babaa35992a53a67fe20bd6b0d7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about TrigFlow unifying EDM and Flow Matching, but the related work (SymmFlow) discusses a different unifying framework (Symmetrical Flow Matching) for image generation, segmentation, and classification. There is no direct evidence in the related work about TrigFlow or its unification of EDM and Flow Matching, making the claim unverifiable from the provided evidence.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims TrigFlow unifies EDM and Flow Matching. The paper's abstract and introduction confirm this is a claim about the paper being reviewed. The related work (Align Your Flow) discusses flow maps and continuous-time objectives for distillation, which is thematically related but does not directly provide evidence about TrigFlow's unification of EDM and Flow Matching. Evidence is missing for direct verification.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow and proposes a comprehensive approach to stabilize continuous-time consistency models. The related work (Euler Mean Flows) describes a different method (EMF) for trajectory consistency, not mentioning TrigFlow or the specific stabilization techniques for continuous-time CMs. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "1f1f4547d3e0c25eedf9c09c5ae528a47cc99ebc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes TrigFlow and a comprehensive approach for continuous-time consistency models. The related work evidence is about MVC-ZigAL, an RL finetuning framework for text-to-multiview diffusion, which does not mention TrigFlow, EDM, Flow Matching, or consistency models. There is no direct evidence to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "c0ff16baf7bbf197f2ecfdf57a496f9a2ef1c5c4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow and a stabilization approach for continuous-time CMs. The related work (OSV) is about video generation with consistency distillation and adversarial training, providing no evidence about TrigFlow or continuous-time CM stabilization. There is no direct support, contradiction, or relation to the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "31cf335ceee3e5ed44aaaf04bd5631645c7d954c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence (MotionLCM) does not provide any information to verify or relate to the claim about TrigFlow unifying EDM and Flow Matching, or about stabilizing continuous-time consistency models. The claim is too vague with respect to the related work.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "5301b92341c8b706e3584b88465c806a834428c0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper introduces TrigFlow, a formulation unifying EDM and Flow Matching, and proposes techniques to stabilize continuous-time consistency models. The related work describes SplitMeanFlow, a different approach for few-step generation using interval splitting consistency. There is no evidence in the related work that supports, contradicts, or relates to the specific claims about TrigFlow or stabilization of continuous-time CMs. Therefore, the stance alignment is insufficient, and calibration cannot be assessed.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes a comprehensive approach to stabilize continuous-time consistency models (CMs). The related work abstract introduces Continuous-Time Distribution Matching (CDM) for diffusion distillation, which focuses on distribution matching rather than directly stabilizing CM training. The abstract does not mention consistency models, stability issues, or the specific techniques (TrigFlow, time-conditioning, adaptive group normalization, training objective reformulation) described in the paper. There is no evidence in the related work to support or contradict the claim about stabilizing CMs.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "3ffa6d5754892fbdd25aa249e827ee64eedb3207",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper (introducing TrigFlow and stabilizing continuous-time CMs). The related work paper is about zero-shot image restoration using consistency models, not about TrigFlow or stabilizing continuous-time CMs. There is no evidence in the related work to support or contradict the claim, making verification impossible with the provided evidence.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "400f28cc563b048a3345f9c5bf816331de26b643",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed (introducing TrigFlow and proposing a stabilization approach). The related work is a different paper (FlowSteer) that does not mention TrigFlow or the stabilization of continuous-time consistency models. There is no evidence in the provided related work to support or contradict the claim.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "586e75e4c5b3ae284493d3a1adc61ce25062049d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (introducing TrigFlow and proposing a stabilization approach for continuous-time consistency models). The related work evidence (GWSoD) discusses a conditional diffusion model for galaxy image generation, which is entirely unrelated to TrigFlow, consistency models, or the stabilization techniques mentioned. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "018a62ad67f8650060b9cca22e7a9b09f28a1fa9",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper introducing TrigFlow and stabilizing continuous-time CMs, but the related work (018a62ad67f8650060b9cca22e7a9b09f28a1fa9) does not mention TrigFlow or address the stabilization of continuous-time CMs. Therefore, there is no evidence to support or contradict the claim, making it insufficient for verification.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "f4cf47e2aeebae3b2644ba986034e495b48ec0bd",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's content (introduction of TrigFlow and stabilization of continuous-time CMs), but the related work evidence (about gradient flows for inverse problems) does not provide any information about TrigFlow or consistency models. Therefore, the evidence is insufficient to verify or relate to the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "081a3ea51c9c261872754ec4ef367a36f82f8906",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper introducing TrigFlow and stabilizing continuous-time consistency models. However, the related work (ArbitraryFlow) does not provide evidence about TrigFlow or the stabilization techniques for continuous-time CMs. The evidence is missing, making the claim unverifiable against the related work.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "0990c7ff1e977a957e6d926c0e8571db32796419",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work is about 'Reduction of Medical Verbiage' and provides no evidence or context about TrigFlow, EDM, Flow Matching, or consistency models, making it impossible to verify the claim's alignment or calibration.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "2d8c62fffb181768a7fc89db09f5f8f068a1ed98",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes the paper's contribution (TrigFlow and stabilization of continuous-time CMs). The related work evidence is about SLAM, a different acceleration method; it does not mention TrigFlow or provide evidence to evaluate the claim, making alignment and calibration unassessable.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "82a82bbb75b08c3de78f7cebd52e1c3c38d515b2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes TrigFlow as a novel formulation unifying EDM and Flow Matching, which is supported by the paper's abstract and introduction. However, the related work (ID=82a82bbb75b08c3de78f7cebd52e1c3c38d515b2) is about SIcog, a self-learning framework for MLLMs, which is completely unrelated to TrigFlow or consistency models. There is no evidence in the related work to verify or relate to the claim, making it unverifiable based on the provided evidence.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence describes TrigFlow and stability techniques from the paper, but the related work (DuMo) does not provide direct evidence about TrigFlow, EDM, Flow Matching, or consistency model stabilization. The evidence is missing or unverifiable against the specific claim.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "c83c6523a2945732bcf21fe688fcbd7d8af2c356",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper introduces TrigFlow and stabilizes continuous-time consistency models. The provided related work (MoGAN) is about motion quality in video diffusion, which is unrelated to the claims in the review sentence. There is no evidence in the related work to support or contradict the claim, making it insufficient for verification.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "45a0f7ab0d62488cd097cd4c8f3377fddb748aee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper introduces TrigFlow and proposes a stabilization approach for continuous-time consistency models. The related work (LLIA) is about a diffusion-based framework for audio-driven video generation, which does not mention TrigFlow, continuous-time consistency models, or the stabilization techniques described in the reviewed paper. There is no evidence in the related work to support or contradict the claim, making alignment and calibration unverifiable.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "e421f82c88d918275ff231743f8af5966237ac57",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (introduces TrigFlow and proposes a comprehensive approach to stabilize continuous-time consistency models). The related work evidence is from a different paper (Wardrobe Polyptych LoRA for personalized human image generation) and provides no information about TrigFlow or consistency models, so the claim cannot be verified or aligned with the evidence.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's content (introducing TrigFlow and stabilizing continuous-time consistency models), but the related work (FACM) does not provide direct evidence about TrigFlow or the stabilization techniques described in the paper. The related work focuses on a different method (Flow-Anchored Consistency Models) and does not address TrigFlow specifically.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "47051fafe65bcea013ff5ab02bcb54d7605e1da0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contributions (introducing TrigFlow and proposing a stabilization approach for continuous-time CMs). The related work discusses ConsistencySolver for diffusion preview, which does not directly support or contradict the claim about TrigFlow or CM stabilization. Evidence is missing to verify the claim.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "93bee214692028fb170e2289c21affd3272e0ec2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper introducing TrigFlow and proposing a stabilization approach for continuous-time CMs. The related work evidence describes a different paper on image editing with attention control, which does not provide any information about TrigFlow or consistency model training. There is no overlap or evidence to assess alignment or calibration.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "41e4da02915726d4231661e3553089f1e8a46956",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper (TrigFlow and stability of continuous-time CMs) but the related work evidence (FlashMotion) is entirely about video generation with trajectory control and distillation; there is no overlap or evidence to support or contradict the claim.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "ac88d87be3320331a1a9614b505e3560143da352",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper introduces TrigFlow and a stabilization approach for continuous-time CMs. The related work (CM-TTS) describes a consistency model for TTS but does not mention TrigFlow or the specific stabilization techniques, so evidence is partial: it confirms the use of consistency models but not the exact contributions claimed.",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's introduction of TrigFlow and stabilization of continuous-time CMs, but the related work (ROCM) does not provide evidence about TrigFlow or stabilization of continuous-time CMs; it discusses RLHF on consistency models, which is a different topic. No supporting or contradicting evidence is found.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+        "331dfe0f72acc614c4008776870caed930366602",
+        "da29cf3d0128590446c23398017a7bddd2346063"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+          "score": 0.0,
+          "weight": 0.3333
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "While experiments on discrete-time CMs are present, the novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that while discrete-time CMs exist, the novel contributions (TrigFlow, stabilization techniques) are primarily for continuous-time settings. The paper's introduction states that previous work used discrete-time CMs, and this work introduces TrigFlow and stabilization techniques for continuous-time CMs, aligning with the claim. The related work (SANA-Sprint) also focuses on continuous-time consistency distillation, supporting the emphasis on continuous-time methods.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim is about the paper being reviewed (sCM), not about the related work (BiFM). The related work evidence (BiFM) does not address the claim's content regarding discrete-time vs. continuous-time CMs, TrigFlow, or stabilization techniques in the reviewed paper. Therefore, evidence is missing to verify the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that experiments on discrete-time CMs are present but novel contributions are primarily for continuous-time setting. The related work paper confirms that sCM is a continuous-time consistency model and discusses scaling it up, aligning with the claim. The evidence supports the focus on continuous-time methods without contradicting the presence of discrete-time experiments.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting. The related work abstract discusses a different paper (TBCM) focused on image-free timestep distillation and does not mention TrigFlow or stabilization techniques. There is no evidence in the related work to support or contradict the claim about the paper being reviewed. The claim is too vague and the evidence is missing.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "0958594a66f4f6752275cff4e14d463d9de53560",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The sentence claims that the novel contributions are primarily for continuous-time CMs. The paper being reviewed supports this by focusing on continuous-time CM training and introducing TrigFlow and stabilization techniques. However, the related work (TLCM) is about latent consistency models and does not discuss continuous-time vs. discrete-time CMs, TrigFlow, or stabilization techniques. Thus, the related work evidence does not relate to the claim.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "1aea48ad7de39babaa35992a53a67fe20bd6b0d7",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for continuous-time settings. However, the related work evidence (SymmFlow paper) does not mention TrigFlow, stabilization techniques, or continuous-time vs. discrete-time consistency models; it discusses a different flow matching framework for unifying segmentation, classification, and generation. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that the paper's novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting. The paper itself explicitly states this in the introduction and preliminaries, emphasizing continuous-time CMs and introducing techniques to stabilize their training. The related work also focuses on continuous-time flow map distillation, which is conceptually related but does not directly address the specific claim about the paper's contributions being primarily for continuous-time setting. Thus, the claim is supported by the paper's own text but not directly by the related work evidence, leading to partial alignment.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting. The related work (Euler Mean Flows) does not mention TrigFlow, stabilization techniques, or continuous-time consistency models. It focuses on a different method (EMF) for one-step generation. There is no evidence in the provided related work to support or contradict the claim about the paper's contributions. Thus, the claim is too vague and evidence is missing.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "1f1f4547d3e0c25eedf9c09c5ae528a47cc99ebc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, stating that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time setting. However, the related work (Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning) does not provide any evidence about TrigFlow or consistency models in continuous-time setting. It is unrelated to the specific technical contributions of the paper being reviewed, so the claim cannot be verified against this related work.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "c0ff16baf7bbf197f2ecfdf57a496f9a2ef1c5c4",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, stating that its novel contributions are primarily designed for continuous-time settings. However, the related work (OSV) focuses on video generation and does not discuss the paper's specific contributions or continuous-time vs. discrete-time CMs. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "31cf335ceee3e5ed44aaaf04bd5631645c7d954c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's focus on continuous-time consistency models and its contributions (TrigFlow, stabilization techniques). However, the provided related work (MotionLCM) is about motion generation using latent consistency models and does not contain any evidence regarding discrete-time vs. continuous-time CMs, TrigFlow, or stabilization techniques. Therefore, the claim cannot be evaluated against this related work.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "5301b92341c8b706e3584b88465c806a834428c0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim is about the paper's focus on continuous-time CMs and its novel contributions (TrigFlow, stabilization techniques). The related work (SplitMeanFlow) discusses a different method for few-step generation using algebraic consistency and is unrelated to TrigFlow or continuous-time CM stabilization. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "2f146e0ebdf3ffdd115d4e900550f5a61eb1e755",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim states that the novel contributions (TrigFlow, stabilization techniques) are primarily designed for the continuous-time setting. The related work (CDM) discusses a different method (Continuous-Time Distribution Matching) and does not provide evidence about the paper's contributions or their primary design focus. Thus, there is insufficient evidence to verify the claim against the related work.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "3ffa6d5754892fbdd25aa249e827ee64eedb3207",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time CMs. The related work paper focuses on using CMs for zero-shot image restoration and does not discuss TrigFlow, stabilization techniques, or the continuous-time vs. discrete-time distinction in CMs. Therefore, there is insufficient evidence to verify the claim.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "400f28cc563b048a3345f9c5bf816331de26b643",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contributions focusing on continuous-time setting. The related work (FlowSteer) discusses ReFlow-based distillation and trajectory alignment for flow models, but does not provide evidence about discrete-time vs. continuous-time CMs or the paper's specific contributions (TrigFlow, stabilization techniques). The evidence is missing or too vague to verify the claim.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "586e75e4c5b3ae284493d3a1adc61ce25062049d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The sentence makes a claim about the paper being reviewed (that its novel contributions are primarily designed for continuous-time CMs). The related work (GWSoD) is about a conditional diffusion model for galaxy image generation, which is unrelated to consistency models or continuous-time vs. discrete-time settings. There is no evidence in the related work to support or contradict the claim, making the evidence insufficient.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "018a62ad67f8650060b9cca22e7a9b09f28a1fa9",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's contributions being primarily for continuous-time setting, but the related work evidence does not provide information about TrigFlow or stabilization techniques to verify or contradict this claim.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "f4cf47e2aeebae3b2644ba986034e495b48ec0bd",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed, specifically about the focus of its novel contributions (TrigFlow, stabilization techniques) on the continuous-time setting. However, the provided related work evidence (ID f4cf47e2aeebae3b2644ba986034e495b48ec0bd) is from a different paper on consistency regularized gradient flows for inverse problems. It does not mention TrigFlow, stabilization techniques, or the continuous-time vs. discrete-time distinction of consistency models. Therefore, there is no evidence from the related work to support or contradict the claim, making the stance alignment 'insufficient' and calibration 'N/A'.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "081a3ea51c9c261872754ec4ef367a36f82f8906",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the focus of the paper's novel contributions (TrigFlow, stabilization techniques) on continuous-time setting. The related work (ArbitraryFlow) is about a biomedical segmentation model using flow matching, not about the paper being reviewed (sCM). There is no evidence in the provided related work text to support or contradict this claim, making it unverifiable with the given evidence.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "0990c7ff1e977a957e6d926c0e8571db32796419",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the focus of the paper's contributions (TrigFlow, stabilization techniques) on continuous-time setting. However, the related work evidence (a paper on medical verbiage reduction) is entirely irrelevant to the topic of consistency models or diffusion processes, providing no supporting or contradicting evidence for the claim. Thus, the evidence is missing.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "2d8c62fffb181768a7fc89db09f5f8f068a1ed98",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed, but the related work evidence (SLAM) does not provide any information about discrete-time vs. continuous-time CMs or the novel contributions (TrigFlow, stabilization techniques) mentioned in the claim. There is no support or contradiction from the related work.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "82a82bbb75b08c3de78f7cebd52e1c3c38d515b2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, stating that the novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time setting. However, the provided related work evidence is a paper on self-improving MLLMs (SIcog), which is entirely unrelated to consistency models, diffusion processes, or the specific techniques mentioned. There is no evidence in the related work to support, contradict, or relate to the claim about the paper's contributions.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "b47e7627826a2e9b2a330dcb023bf255309c716d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's focus on continuous-time settings, but the related work (Duality Models) does not provide evidence about this claim; it discusses a different method and does not mention continuous-time vs. discrete-time settings or TrigFlow.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "c83c6523a2945732bcf21fe688fcbd7d8af2c356",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's focus on continuous-time CMs. However, the related work (MoGAN) does not provide evidence about the design or analysis of TrigFlow or stabilization techniques for continuous-time setting; it focuses on video motion quality improvements. Therefore, evidence is missing or unverifiable.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "45a0f7ab0d62488cd097cd4c8f3377fddb748aee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the novel contributions (TrigFlow, stabilization techniques) being primarily for continuous-time CMs, but the related work (LLIA paper) does not mention TrigFlow or stabilization techniques for continuous-time CMs. The related work focuses on audio-driven portrait video generation with a consistency model training strategy, not on the specific methods cited in the review sentence. Thus, there is insufficient evidence to verify the claim against the related work.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "e421f82c88d918275ff231743f8af5966237ac57",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence (ID=C3) makes a claim about the paper being reviewed, stating that novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting. However, the provided related work (ID=e421f82c88d918275ff231743f8af5966237ac57) is from a different paper on personalized human image generation (Wardrobe Polyptych LoRA). This related work does not contain any evidence or information about TrigFlow, stabilization techniques, or consistency models, making it impossible to verify or relate the claim to the evidence. Therefore, the evidence is missing, and the stance alignment is insufficient.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer's claim that novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting is directly supported by the paper's introduction, which states they introduce techniques to simplify, stabilize, and scale up the training of continuous-time CMs. The related work (Flow-Anchored Consistency Models) also focuses on continuous-time CMs, confirming the context.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "47051fafe65bcea013ff5ab02bcb54d7605e1da0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time setting, but the related work evidence does not discuss these contributions or the continuous-time setting; it focuses on a different method (ConsistencySolver) for preview generation.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "93bee214692028fb170e2289c21affd3272e0ec2",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's focus on continuous-time consistency models (CMs) and its novel contributions (TrigFlow, stabilization techniques). However, the related work evidence provided (about Stepwise Attention Control for image editing) does not contain any information about consistency models, TrigFlow, stabilization techniques, or the paper being reviewed. Therefore, there is no evidence to evaluate the claim.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "41e4da02915726d4231661e3553089f1e8a46956",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim states that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time setting. The provided related work (FlashMotion) is about video generation and does not mention TrigFlow or continuous-time consistency models. There is no evidence in the related work to verify or contradict the claim, making it insufficient.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "ac88d87be3320331a1a9614b505e3560143da352",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the primary design and analysis focus of TrigFlow and stabilization techniques being on the continuous-time setting. However, the provided related work (CM-TTS) does not discuss TrigFlow or these stabilization techniques; it focuses on a different application (Text-to-Speech) and weighted samplers, providing no evidence to verify the claim about the paper being reviewed.",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, stating that novel contributions (TrigFlow, stabilization techniques) are primarily designed for continuous-time settings. However, the related work (ROCM) does not contain evidence about TrigFlow or the focus on continuous-time vs. discrete-time CMs; it discusses RLHF on consistency models. The claim cannot be verified or contradicted based on the related work.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 1.3333333333333333,
+      "best_evidence": [
+        "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+        "331dfe0f72acc614c4008776870caed930366602",
+        "da29cf3d0128590446c23398017a7bddd2346063"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "ed3ae99e77c7daa8a8ff0655ab61649a4aa8aa56",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "da29cf3d0128590446c23398017a7bddd2346063",
+          "score": 2.0,
+          "weight": 0.3333
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 3,
+    "related_works": 32,
+    "pairs_attempted": 96,
+    "pairs_completed": 96,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 3,
+      "claims_with_any_attempt": 3,
+      "claims_with_any_success": 3,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 3,
+      "claims_with_scored_evidence": 3,
+      "claims_with_decisive_evidence": 2,
+      "claims_with_supporting_evidence": 2,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.6667,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 32.0
+    }
+  },
+  "errors": []
+}

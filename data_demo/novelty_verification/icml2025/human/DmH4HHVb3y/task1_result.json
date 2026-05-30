@@ -1,0 +1,64 @@
+{
+  "paper": {
+    "core_task": "Training LLMs for proactive, long-term collaboration in multi-turn human-LLM interactions.",
+    "contributions": [
+      {
+        "name": "A multi-turn aware reward framework for LLM collaboration",
+        "author_claim_text": "We introduce COLLABLLM, a novel and general training framework that enhances multiturn human-LLM collaboration.",
+        "description": "A training framework that uses forward sampling to estimate the long-term impact of responses via Multiturn-aware Rewards (MR), combining extrinsic and intrinsic metrics to optimize for overall collaboration quality.",
+        "source_hint": "Abstract"
+      },
+      {
+        "name": "A new multi-turn interaction benchmark",
+        "author_claim_text": "We also devise a multiturn interaction benchmark with three challenging tasks such as document creation.",
+        "description": "A benchmark comprising three challenging multi-turn tasks—document editing, code generation, and math problem solving—for training and evaluating LLMs in collaborative settings.",
+        "source_hint": "Abstract"
+      },
+      {
+        "name": "A user simulator for scalable forward sampling",
+        "author_claim_text": "To further reduce cost and ensure scalability, we introduce a user simulator U.",
+        "description": "A user simulator that role-plays realistic user behaviors in forward sampling to compute Multiturn-aware Rewards, enabling scalable training without human annotation.",
+        "source_hint": "Introduction §3.1.2"
+      }
+    ],
+    "key_terms": [
+      "multi-turn collaboration",
+      "Multiturn-aware Reward (MR)",
+      "forward sampling",
+      "reinforcement fine-tuning",
+      "user simulator",
+      "collaborative simulation",
+      "intent discovery",
+      "task efficiency",
+      "user satisfaction",
+      "proactive responses",
+      "long-term contribution",
+      "RLHF limitations"
+    ],
+    "must_have_entities": [
+      "Multiturn-aware Reward (MR)",
+      "Llama-3.1-8B",
+      "GPT-4o-mini",
+      "MediumDocEdit-Chat",
+      "BigCodeBench-Chat",
+      "MATH-Chat",
+      "Abg-CoQA"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "To address this limitation, this paper proposes to train LLMs with multi-turn aware utility through a conversation-level reward and a forward sampling process.",
+        "stance": "novel",
+        "confidence_lang": "high",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "RLHF"
+    ]
+  }
+}

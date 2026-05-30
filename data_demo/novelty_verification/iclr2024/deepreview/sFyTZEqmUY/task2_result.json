@@ -1,0 +1,63 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Building universal real-world simulator conditional video generation combining diverse datasets unified action-conditioned video generation framework real-world simulation",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "id": "C2",
+      "query": "Building universal real-world simulator conditional video generation combining diverse datasets observation prediction parametrized video diffusion",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C3",
+      "query": "Building universal real-world simulator conditional video generation combining diverse datasets universal simulator training diverse downstream intelligent agents",
+      "status": "ok",
+      "count": 0
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "title": "Interactive World Simulator for Robot Policy Training and Evaluation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Action-conditioned video prediction models (often referred to as world models) have shown strong potential for robotics applications, but existing approaches are often slow and struggle to capture physically consistent interactions over long horizons, limiting their usefulness for scalable robot policy training and evaluation. We present Interactive World Simulator, a framework for building interactive world models from a moderate-sized robot interaction dataset. Our approach leverages consistency models for both image decoding and latent-space dynamics prediction, enabling fast and stable simulation of physical interactions. In our experiments, the learned world models produce interaction-consistent pixel-level predictions and support stable long-horizon interactions for more than 10 minutes at 15 FPS on a single RTX 4090 GPU. Our framework enables scalable demonstration collection solely within the world models to train state-of-the-art imitation policies. Through extensive real-world evaluation across diverse tasks involving rigid objects, deformable objects, object piles, and their interactions, we find that policies trained on world-model-generated data perform comparably to those trained on the same amount of real-world data. Additionally, we evaluate policies both within the world models and in the real world across diverse tasks, and observe a strong correlation between simulated and real-world performance. Together, these results establish the Interactive World Simulator as a stable and physically consistent surrogate for scalable robotic data generation and faithful, reproducible policy evaluation.",
+      "url": "https://www.semanticscholar.org/paper/bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "1cada6a84e29ec5b27939e5cef977fa654779e3c",
+      "title": "2022 MATH + X Symposium on Matter under Extreme Conditions in Solar System Giant Planets and Exoplanets, Inverse Problems and Deep Learning",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/1cada6a84e29ec5b27939e5cef977fa654779e3c",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "1453764a5b879ec342f3691d4207384626d589fa",
+      "title": "DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Video generation models, as one form of world models, have emerged as one of the most exciting frontiers in AI, promising agents the ability to imagine the future by modeling the temporal evolution of complex scenes. In autonomous driving, this vision gives rise to driving world models: generative simulators that imagine ego and agent futures, enabling scalable simulation, safe testing of corner cases, and rich synthetic data generation. Yet, despite fast-growing research activity, the field lacks a rigorous benchmark to measure progress and guide priorities. Existing evaluations remain limited: generic video metrics overlook safety-critical imaging factors; trajectory plausibility is rarely quantified; temporal and agent-level consistency is neglected; and controllability with respect to ego conditioning is ignored. Moreover, current datasets fail to cover the diversity of conditions required for real-world deployment. To address these gaps, we present DrivingGen, the first comprehensive benchmark for generative driving world models. DrivingGen combines a diverse evaluation dataset curated from both driving datasets and internet-scale video sources, spanning varied weather, time of day, geographic regions, and complex maneuvers, with a suite of new metrics that jointly assess visual realism, trajectory plausibility, temporal coherence, and controllability. Benchmarking 14 state-of-the-art models reveals clear trade-offs: general models look better but break physics, while driving-specific ones capture motion realistically but lag in visual quality. DrivingGen offers a unified evaluation framework to foster reliable, controllable, and deployable driving world models, enabling scalable simulation, planning, and data-driven decision-making.",
+      "url": "https://www.semanticscholar.org/paper/1453764a5b879ec342f3691d4207384626d589fa",
+      "embedding": null,
+      "relevance_score": 0.5
+    }
+  ],
+  "stats": {
+    "total_candidates": 3,
+    "after_dedup": 3,
+    "after_nontechnical_filter": 3,
+    "after_year_filter": 3,
+    "final": 3
+  }
+}

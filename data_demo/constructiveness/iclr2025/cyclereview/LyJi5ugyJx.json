@@ -1,0 +1,126 @@
+{
+  "paper_id": "LyJi5ugyJx",
+  "metadata": {
+    "decision": "Accept (Oral)",
+    "avg_rating": 9.2,
+    "avg_confidence": 4.0,
+    "num_reviewers": 5
+  },
+  "reviewer_id": "CycleReview",
+  "status": "success",
+  "atomic_comments": [
+    {
+      "arc_id": "ARC_01",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The review provides only a factual description of the paper's content without identifying any specific weaknesses.",
+      "anchor_quote": "The paper proposes a new formulation of consistency models that unifies EDM and flow matching.",
+      "D1_actionability": 0,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_02",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The review restates the paper's description of its stabilization techniques without critique.",
+      "anchor_quote": "The authors also propose a set of techniques to stabilize the training of continuous-time CMs.",
+      "D1_actionability": 0,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_03",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The review merely lists the evaluation benchmarks without questioning their adequacy or completeness.",
+      "anchor_quote": "The proposed method is evaluated on CIFAR-10, ImageNet 64×64, and ImageNet 512×512.",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_04",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The review notes the comparisons made but does not analyze if they are sufficient or if key baselines are missing.",
+      "anchor_quote": "The method is compared to other consistency models and diffusion models.",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_05",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The question section simply repeats the weakness section verbatim, providing no actual questions for the authors.",
+      "anchor_quote": "The paper proposes a new formulation of consistency models that unifies EDM and flow matching.",
+      "D1_actionability": 0,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_06",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The question section restates the stabilization techniques description without posing a question.",
+      "anchor_quote": "The authors also propose a set of techniques to stabilize the training of continuous-time CMs.",
+      "D1_actionability": 0,
+      "D2_specificity": 0,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_07",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The question section lists the evaluation benchmarks without asking a question about them.",
+      "anchor_quote": "The proposed method is evaluated on CIFAR-10, ImageNet 64×64, and ImageNet 512×512.",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_08",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The question section notes the comparisons without asking any specific questions about them.",
+      "anchor_quote": "The method is compared to other consistency models and diffusion models.",
+      "D1_actionability": 0,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    }
+  ],
+  "metrics": {
+    "MCS": 0.15,
+    "AR": 0.0,
+    "SD": 0.0,
+    "CD": 0.0,
+    "D1_actionability_mean": 0.0,
+    "D2_specificity_mean": 0.5,
+    "D3_justification_mean": 0.0,
+    "D4_solution_mean": 0.0,
+    "D5_tone_mean": 1.0,
+    "n_arcs": 8,
+    "n_weaknesses": 4,
+    "n_strengths": 0,
+    "n_questions": 4,
+    "n_suggestions": 0,
+    "n_observations": 0
+  }
+}

@@ -1,0 +1,343 @@
+{
+  "paper_id": "LyJi5ugyJx",
+  "source": "reviewer2_iclr2025",
+  "source_format": "reviewer2_txt",
+  "reviews_analysis": {
+    "REVIEWER2_ICLR2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper introduces **sCM** (Simple, Stable, Scalable Consistency Models), a novel approach aimed at enhancing the training and performance of consistency models (CMs) in generative modeling.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The authors tackle the instability of continuous-time CMs through a series of technical innovations, including **TrigFlow**, a unified formulation of diffusion processes that integrates elements of EDM, flow matching, and velocity prediction.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Additional contributions include architectural improvements (such as **adaptive double normalization**) and training objective refinements (like **adaptive weighting**, **tangent normalization**, and **warmup**).",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The methodology is validated on large-scale datasets like ImageNet 512×512, where a 1.5B-parameter sCM model achieves competitive FID scores with far fewer sampling steps compared to traditional diffusion models.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper also compares sCMs with alternatives such as VSD, EDM, and other consistency-based methods, asserting superiority in performance and scalability.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "**Comprehensive Reformulation of Diffusion Processes:** The introduction of **TrigFlow** provides a unified mathematical formulation that seamlessly incorporates EDM, flow matching, and velocity prediction.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "This unification simplifies the parameterization of diffusion models and enables a cleaner theoretical treatment of the training objective, as seen in Equations (15)-(18).",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "**Practical Contributions for Stability and Performance:** The authors present several practical techniques to enhance training stability and performance, such as **tangent normalization**, **adaptive weighting**, and **tangent warmup**.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "These contribute to making continuous-time CMs viable for large-scale applications, as demonstrated in Figures 4 and 5.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "**Empirical Evaluation Across Multiple Scales:** The paper demonstrates the scalability of sCMs across various model sizes and datasets, including a **1.5B-parameter model** on ImageNet 512×512, which is currently among the largest CMs ever trained.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The empirical results show that sCMs match or exceed the performance of established methods like VSD and EDM with fewer sampling steps, as seen in Tables 1 and 2.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "**Clear Methodological Differentiation Between sCT and sCD:** The paper distinguishes clearly between **consistency training (sCT)** and **distillation (sCD)**, offering insights into their respective strengths and limitations.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "For instance, sCT excels at smaller scales, while sCD maintains consistent performance across all scales, as illustrated in Figure 6.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "**Systematic Comparison With Baselines:** The authors systematically compare sCMs with competing methods such as VSD, ECT, and EDM, highlighting the benefits of their approach in terms of sample quality and training efficiency.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "**Overstatement of Claims Without Statistical Support (High Severity):** Several claims are made without proper statistical backing.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "For example, the assertion that sCMs \"narrow the FID gap to within 10%\" is stated confidently in the abstract but lacks confidence intervals or statistical tests to confirm the magnitude of improvement.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Similarly, the statement that sCD \"outperforms all generative models except diffusion\" is unsupported by comprehensive comparisons involving all relevant baselines.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "**Insufficient Ablation Studies (Medium Severity):** The paper provides limited ablation studies on individual components of the proposed method.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "For example, the impact of **TrigFlow** alone versus in conjunction with other techniques (e.g., tangent normalization or adaptive weighting) is not thoroughly analyzed.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "This weakens the ability to isolate the true contributions of each innovation.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "**Ambiguity in Hyperparameter Settings (Medium Severity):** Critical hyperparameters such as `c` (used in tangent normalization), `H` (number of warmup iterations), and `P_mean`, `P_std` (proposal distribution parameters) are inconsistently documented across the paper.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "For instance, in **Table 6**, the FID of EDM2-XXL is reported as 1.73, yet in **Table 2**, the same model is cited with an FID of 1.81 — a discrepancy that undermines reproducibility unless clarified.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "**Limited Discussion on Generalization Beyond Images (Low Severity):** While the paper focuses on image generation, it acknowledges limitations in extending sCMs to video generation or fine-grained tasks.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "However, it fails to provide experimental evidence or a deeper analysis of the barriers to such extensions.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_25",
+        "argument": "In **Section 3.1**, you claim that TrigFlow unifies EDM and flow matching. How precisely is this unification realized mathematically? Please clarify the equivalence of the training objectives in Equation (16) with those in EDM and flow matching.",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_26",
+        "argument": "Does this hold for all noise schedules, or only for specific ones (e.g., cosine)?",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_27",
+        "argument": "In **Equation (6)**, the expression for the tangent function $ \\frac{df_{\\theta}^{-}(x_t, t)}{dt} $ involves $\\sigma_d$, $F_\\theta$, and time-dependent terms.",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_28",
+        "argument": "Why isn’t the derivative of $F_\\theta$ with respect to time considered in your derivation? Could this omission lead to inaccuracies in the training dynamic?",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_29",
+        "argument": "In **Appendix B.1**, you assert that the unit variance principle ensures the diffusion process is invariant to the noise schedule. However, Equation (18) appears to depend on $\\alpha_t$ and $\\sigma_t$. Can you formally prove that the unit variance design makes the training objective independent of $\\alpha_t$ and $\\sigma_t$?",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_30",
+        "argument": "In **Section 4.1**, you mention that the use of **positional embeddings** helps avoid instabilities caused by large Fourier scales. However, Equation (7) suggests that the time derivative of $F_\\theta$ depends on the time embedding. How do you quantify the trade-off between expressiveness and stability introduced by positional vs. Fourier embeddings?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_31",
+        "argument": "In **Table 1**, you report FID scores for sCT and sCD. However, the table lacks **confidence intervals** or **statistical tests** (e.g., paired t-tests) to assess whether the differences are significant. Have you performed such analyses?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_32",
+        "argument": "In **Section 5.1**, you note that sCT performs worse than sCD at larger scales. But what is the **exact threshold** for “large” in this context? Is it tied to a specific number of parameters or resolution?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_33",
+        "argument": "In **Table 2**, the entry for “EDM2-XXL” reports an FID of 1.73, but in **Table 6**, the same model’s FID is 1.81. Why is there a discrepancy? Which value corresponds to the correct model setup?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_34",
+        "argument": "In **Section 5.3**, you claim that sCD “significantly outperforms all generative models except diffusion.” However, **Table 2** lists models like **DiS-H/2** and **DRWKV-H/2** with FID scores of 2.52 and 2.50 respectively, which are higher than sCD. Yet you say sCD is comparable to the best diffusion models. Why is this the case?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_35",
+        "argument": "**Lack of Confidence Intervals and Significance Testing:** Many of the reported performance gains (e.g., narrowing the FID gap) are presented without statistical rigor, making it difficult to judge their validity.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_36",
+        "argument": "**Incomplete Documentation of Hyperparameters:** Critical hyperparameters such as `c`, `H`, `P_mean`, and `P_std` are inconsistently reported, hindering replication of the experiments.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_37",
+        "argument": "**No Analysis of Generalization to Video Generation or Fine-Grained Tasks:** The paper acknowledges potential limitations in extending sCMs to video generation but provides no experimental evidence or analysis to substantiate these claims.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_38",
+        "argument": "**Absence of Formal Proof for Unit Variance Independence:** The claim that the unit variance design renders the training objective independent of $\\alpha_t$ and $\\sigma_t$ is asserted but not formally proven.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_39",
+        "argument": "**No Exploration of Alternative Encoders/Decoders:** The paper notes that the current encoder/decoder may not be optimal for consistency models but does not investigate alternative designs or architectures.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_40",
+        "argument": "While the paper presents a compelling technical framework and robust empirical results, the lack of statistical rigor, incomplete documentation of hyperparameters, and insufficient ablation studies weaken the overall soundness of the claims.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_41",
+        "argument": "The paper contributes meaningful advancements in the training and stabilization of continuous-time CMs, particularly through TrigFlow and training objective refinements.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_42",
+        "argument": "However, the novelty of some ideas (e.g., TrigFlow) is partially overlapping with earlier work, and the broader implications are not fully explored.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_43",
+        "argument": "The paper is reasonably confident in its claims, but the absence of statistical testing, ablation studies, and hyperparameter transparency leaves room for doubt regarding the reliability of the results.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_44",
+        "argument": "Despite notable shortcomings in reproducibility and statistical rigor, the paper presents a valuable contribution to the field of generative modeling. The proposed methodologies are theoretically grounded, empirically supported, and offer promising directions for future research. Minor revisions to address the identified issues would strengthen the submission.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_45",
+        "argument": "The paper makes a solid contribution to the development of continuous-time consistency models, introducing TrigFlow and several practical training enhancements that yield impressive empirical results.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_46",
+        "argument": "However, the lack of statistical validation, inconsistent hyperparameter reporting, and limited ablation studies reduce the confidence in the claims.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_47",
+        "argument": "With appropriate revisions, the paper would merit acceptance.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 7764,
+    "completion_tokens": 7764,
+    "total_tokens": 15528
+  }
+}

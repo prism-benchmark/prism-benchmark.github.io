@@ -1,0 +1,154 @@
+{
+  "paper_id": "sFyTZEqmUY",
+  "source": "reviewer2_iclr2024",
+  "source_format": "reviewer2_txt",
+  "reviews_analysis": {
+    "REVIEWER2_ICLR2024": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper introduces *UniSim*, a universal real-world simulator constructed via a diffusion model trained on heterogeneous datasets spanning text-image pairs, robotics data, human activities, and simulations.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The core innovation is to unify these disparate data sources into a conditional video generation framework that predicts observations ($ o_t $) based on actions ($ a_t $) and historical context ($ h_{t-1} $), effectively approximating a Partially Observable Markov Decision Process (POMDP).",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The authors demonstrate UniSim's utility in training embodied planners, RL policies, and vision-language models, claiming zero-shot transfer to real-world robots and improved performance on video captioning tasks.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The paper successfully fuses internet text/image data (e.g., LAION-400M), robotics data (Bridge Data, RT-1), human activities (Ego4D, EPIC-KITCHENS), and simulations (Habitat, Language Table) into a single simulator.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "This is a significant engineering feat, particularly given the heterogeneity of modalities (text, video, low-level controls).",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Section 2.1 details how datasets are normalized (e.g., T5 embeddings for text, discretized controls for robotics), and Table 5 summarizes the data mixture weights.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The authors show that policies trained entirely in UniSim can execute long-horizon tasks on real robots (Figure 7) and improve video captioning performance (Table 4).",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "These results suggest potential for reducing real-world data dependency in AI training.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "Section 4.1 demonstrates zero-shot transfer for embodied planners, and Section 4.3 reports CIDEr improvements (+27.63 vs. 21.91 on MSR-VTT) for vision-language models trained solely on UniSim-generated data.",
+        "role": "Backing",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper provides a detailed derivation of the diffusion model architecture (Section 2.2), including the use of classifier-free guidance (Ho & Salimans 2022) and multi-frame conditioning.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The training hyperparameters (Table 6) and model architecture (Appendix C) are well-described.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Equations (1)-(2) formalize the denoising process, and Table 6 includes specifics like optimizer settings, attention resolutions, and noise schedules.",
+        "role": "Backing",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "The paper claims novelty in integrating diverse datasets and approximating POMDPs, but it lacks direct comparisons to prior work on internet-scale generative models (e.g., Godiva (Wu et al. 2021), Make-a-Video (Singer et al. 2022)) and world models (SlotFormer (Wu et al. 2022), TransDreamer (Chen et al. 2022a)).",
+        "role": "Rebuttal",
+        "aspect": "Related Work",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "Section 5 (\"Related Work\") briefly cites these works but does not analyze how UniSim differs or improves upon them.",
+        "role": "Premise",
+        "aspect": "Related Work",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Include explicit comparisons in experiments (e.g., \"Does UniSim outperform Godiva on long-horizon planning?\").",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "The paper claims UniSim is trained on ~5.6B parameters but does not evaluate how performance changes with further scaling (e.g., 10B+ parameters).",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "The paper discusses simulating rare events (e.g., car crashes) but ignores ethical concerns about generating potentially unsafe or misleading content.",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "While the paper notes poor generalization to unseen robot morphologies (Section 6), it does not quantify this limitation (e.g., performance drop on withheld robot data).",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "While the technical proposal is compelling and the experiments demonstrate feasibility, the lack of rigorous benchmarking, statistical validation, and ethical considerations prevents a stronger rating.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "The paper warrants acceptance with the understanding that substantial refinements are needed for broader impact.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 3436,
+    "completion_tokens": 3436,
+    "total_tokens": 6872
+  }
+}

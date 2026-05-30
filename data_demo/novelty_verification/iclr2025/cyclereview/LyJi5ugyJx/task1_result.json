@@ -1,0 +1,62 @@
+{
+  "paper": {
+    "core_task": "Training stable and scalable continuous-time consistency models for few-step image generation",
+    "contributions": [
+      {
+        "name": "A unified diffusion formulation combining EDM and flow matching",
+        "author_claim_text": "Our first contribution is TrigFlow, a new formulation that unifies EDM and Flow Matching, significantly simplifying the formulation of diffusion models, the associated probability flow ODE and CMs.",
+        "description": "Proposes TrigFlow, a new formulation that unifies EDM and flow matching, simplifying the diffusion process, model parameterization, probability flow ODE, and consistency model definitions using trigonometric functions.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Techniques for stabilizing continuous-time consistency model training",
+        "author_claim_text": "Building on this foundation, we analyze the root causes of instability in CM training and propose a complete recipe for mitigation.",
+        "description": "Introduces a set of stabilization techniques including positional time embeddings, adaptive double normalization, tangent normalization, adaptive weighting, and tangent warmup to address instability in continuous-time consistency model training.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Jacobian-vector product computation for Flash Attention",
+        "author_claim_text": "To fill this gap, we propose a similar algorithm that efficiently computes both softmax selfattention and its JVP in a single forward pass in the style of Flash Attention.",
+        "description": "Develops an algorithm to compute the Jacobian-vector product (JVP) of softmax self-attention in a single forward pass, enabling memory-efficient training of large-scale continuous-time consistency models with Flash Attention.",
+        "source_hint": "Introduction §1"
+      }
+    ],
+    "key_terms": [
+      "consistency models",
+      "continuous-time",
+      "discrete-time",
+      "TrigFlow",
+      "flow matching",
+      "distillation",
+      "few-step generation",
+      "tangent normalization",
+      "adaptive weighting",
+      "Flash Attention"
+    ],
+    "must_have_entities": [
+      "ImageNet 64x64",
+      "ImageNet 512x512",
+      "sCM",
+      "sCD",
+      "sCT",
+      "Flash Attention"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The paper proposes a new formulation of consistency models (CM) that unifies EDM and flow matching.",
+        "stance": "somewhat_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": true,
+        "prior_work_strings": [
+          "EDM",
+          "flow matching"
+        ],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

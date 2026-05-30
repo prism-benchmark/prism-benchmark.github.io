@@ -1,0 +1,53 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Enhancing multiturn human-LLM collaboration long-term interaction optimization multiturn-aware reward framework LLM collaboration",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C2",
+      "query": "Enhancing multiturn human-LLM collaboration long-term interaction optimization multiturn interaction benchmark three challenging tasks",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "id": "C3",
+      "query": "Enhancing multiturn human-LLM collaboration long-term interaction optimization user simulator scalable forward sampling",
+      "status": "ok",
+      "count": 1
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "title": "Technologies for E-Learning and Digital Entertainment, Second International Conference, Edutainment 2007, Hong Kong, China, June 11-13, 2007, Proceedings",
+      "year": 2007,
+      "venue": "International Conference on E-learning and Games",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "title": "CollabLLM: From Passive Responders to Active Collaborators",
+      "year": 2025,
+      "venue": "International Conference on Machine Learning",
+      "abstract": "Large Language Models are typically trained with next-turn rewards, limiting their ability to optimize for long-term interaction. As a result, they often respond passively to ambiguous or open-ended user requests, failing to help users reach their ultimate intents and leading to inefficient conversations. To address these limitations, we introduce CollabLLM, a novel and general training framework that enhances multiturn human-LLM collaboration. Its key innovation is a collaborative simulation that estimates the long-term contribution of responses using Multiturn-aware Rewards. By reinforcement fine-tuning these rewards, CollabLLM goes beyond responding to user requests, and actively uncovers user intent and offers insightful suggestions-a key step towards more human-centered AI. We also devise a multiturn interaction benchmark with three challenging tasks such as document creation. CollabLLM significantly outperforms our baselines with averages of 18.5% higher task performance and 46.3% improved interactivity by LLM judges. Finally, we conduct a large user study with 201 judges, where CollabLLM increases user satisfaction by 17.6% and reduces user spent time by 10.4%.",
+      "url": "https://www.semanticscholar.org/paper/33c8fde911526140a85cdfc654c8ee318f83906d",
+      "embedding": null,
+      "relevance_score": 1.0
+    }
+  ],
+  "stats": {
+    "total_candidates": 3,
+    "after_dedup": 2,
+    "after_nontechnical_filter": 2,
+    "after_year_filter": 2,
+    "final": 2
+  }
+}

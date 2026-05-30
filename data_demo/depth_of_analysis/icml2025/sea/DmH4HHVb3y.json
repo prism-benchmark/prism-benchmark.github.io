@@ -1,0 +1,154 @@
+{
+  "paper_id": "DmH4HHVb3y",
+  "source": "sea_icml2025",
+  "source_format": "txt",
+  "reviews_analysis": {
+    "SEA_ICML2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper introduces COLLABLLM, a novel training framework for enhancing Large Language Models (LLMs) in multiturn human-LLM collaboration.",
+        "role": "Premise",
+        "aspect": "Novelty",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "COLLABLLM introduces a collaborative simulation module that estimates the long-term impact of responses using Multiturn-aware Rewards (MR), thereby promoting responses that lead to better task completion and efficiency in later conversation stages.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The paper also presents a multiturn interaction benchmark with three challenging tasks and demonstrates COLLABLLM's superior performance compared to baselines across various metrics.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "COLLABLLM's collaborative simulation module that uses Multiturn-aware Rewards to estimate long-term impact and optimize responses for multiturn collaboration.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The multiturn interaction benchmark that includes three challenging tasks, providing a comprehensive evaluation of COLLABLLM's performance.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The significant improvements in task performance, efficiency, and interactivity over baselines across various metrics.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The complexity and computational cost associated with computing the Multiturn-aware Rewards.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The reliance on forward sampling and user simulators, which may not fully capture the nuances of real-world human behavior.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "How does COLLABLLM's approach to multiturn collaboration compare to other recent approaches in terms of effectiveness and efficiency?",
+        "role": "Rebuttal",
+        "aspect": "Related Work",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "Can COLLABLLM's Multiturn-aware Rewards accurately capture the long-term impact of responses in complex, open-ended tasks?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "What are the potential limitations and challenges of using user simulators in the training process, and how do they affect the generalizability of COLLABLLM?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Soundness result: 4 (excellent)",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "Presentation result: 4 (excellent)",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "Contribution result: 4 (excellent)",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Rating result: 8 (accept, good paper)",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Decision: Accept",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "Reasons: The paper presents a well-designed and innovative training framework, COLLABLLM, that addresses a significant challenge in enhancing the collaborative capabilities of LLMs in multiturn human-LLM interactions.",
+        "role": "Premise",
+        "aspect": "Novelty",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The contribution is substantial, with COLLABLLM demonstrating superior performance compared to baselines across multiple metrics.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "The paper is well-structured, clearly explaining the methodology, results, and implications.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "However, it could benefit from a more in-depth discussion of the limitations and potential future directions for COLLABLLM, as well as comparisons with other recent approaches in the field.",
+        "role": "Rebuttal",
+        "aspect": "Related Work",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 2840,
+    "completion_tokens": 2840,
+    "total_tokens": 5680
+  }
+}

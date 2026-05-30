@@ -1,0 +1,75 @@
+{
+  "paper": {
+    "core_task": "Image generation with few-step consistency models",
+    "contributions": [
+      {
+        "name": "A unified diffusion model formulation using trigonometric functions",
+        "author_claim_text": "We propose TrigFlow, a new formulation that unifies EDM and Flow Matching, significantly simplifying the formulation of diffusion models, the associated probability flow ODE and CMs.",
+        "description": "TrigFlow is a new framework that combines EDM and Flow Matching using trigonometric functions, simplifying the mathematical expressions for diffusion models, their probability flow ODE, and consistency models.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Techniques to stabilize continuous-time consistency model training",
+        "author_claim_text": "We analyze the root causes of instability in CM training and propose a complete recipe for mitigation. Our approach includes improved time-conditioning and adaptive group normalization within the network architecture.",
+        "description": "To address training instability in continuous-time consistency models, the authors propose a set of improvements including positional time embeddings and adaptive double normalization for the network architecture.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "A reformulated training objective for continuous-time consistency models",
+        "author_claim_text": "Additionally, we re-formulate the training objective for continuous-time CMs, incorporating adaptive weighting and normalization of key terms, and progressive annealing for stable and scalable training.",
+        "description": "The training objective for continuous-time consistency models is restructured to include tangent normalization, adaptive weighting via a learned function, and tangent warmup to improve stability and scalability.",
+        "source_hint": "Introduction"
+      }
+    ],
+    "key_terms": [
+      "consistency models",
+      "continuous-time CMs",
+      "diffusion models",
+      "flow matching",
+      "TrigFlow",
+      "few-step generation",
+      "distillation",
+      "consistency training",
+      "probability flow ODE"
+    ],
+    "must_have_entities": [
+      "ImageNet 64x64",
+      "ImageNet 512x512",
+      "sCM",
+      "sCT",
+      "sCD"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "The paper introduces a novel formulation (TrigFlow) that simplifies diffusion models and unifies EDM and Flow Matching, providing a more elegant and efficient framework for generative modeling.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "The paper introduces TrigFlow, a novel formulation unifying EDM and Flow Matching, and proposes a comprehensive approach to stabilize continuous-time consistency models (CMs).",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C3",
+        "text": "While experiments on discrete-time CMs are present, the novel contributions (TrigFlow, stabilization techniques) are primarily designed and analyzed for the continuous-time setting.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": []
+  }
+}

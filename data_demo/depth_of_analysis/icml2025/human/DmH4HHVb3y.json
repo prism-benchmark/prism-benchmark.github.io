@@ -1,0 +1,225 @@
+{
+  "paper_id": "DmH4HHVb3y",
+  "source": "human",
+  "evaluator_model": "mimo-v2.5-pro",
+  "reviews_analysis": {
+    "Human_1": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper introduces CollabLLM, a training framework designed to enhance the capability of large language models (LLMs) to collaborate with humans in multi-turn interactions.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The basic idea is to introduce forward-looking behaviors in LLMs to maximize long-term collaborative outcomes.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "This is achieved through a collaborative simulation module, which samples potential future user interactions to assess the impact of current responses using a new metric called Multiturn-aware Reward (MR).",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The MR combines both extrinsic factors, such as successful task completion, and intrinsic factors, like interaction efficiency, to comprehensively evaluate response quality.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "By applying reinforcement learning methods to optimize responses according to MR, CollabLLM improves models' abilities to proactively engage users, leading to superior collaborative task performance.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The experimental results show the fine-tuned model actively anticipates user needs, poses relevant follow-up questions, generates targeted content, and offers insightful recommendations.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      }
+    ],
+    "Human_2": [
+      {
+        "arg_id": "A_01",
+        "argument": "Existing fine-tuning techniques for LLMs, such as Reinforcement Learning from Human Feedback (RLHF), primarily maximize the reward for immediate and single-turn responses.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Real-world users often reveal their intents or preferences until later interactions.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "To streamline their interaction with users and improve user satisfaction, LLMs must be able to actively guide users to clarify and refine their intents throughout the multi-turn conversation.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "This paper proposes ColabLLM, a novel training framework that encourages LLMs to collaborate with humans in multi-turn conversations.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The collaborative simulation module of ColabLLM samples future conversations with users to estimate how the LLM response would impact future turns.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "This long-term impact, termed Multiturn-aware Reward (MR), evaluates responses based on both task-specific success and efficiency to assess the multi-turn collaboration quality.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Once this MR is computed, ColabLLM employs established RL algorithms to fine-tune the backbone LLM.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The paper releases three multiturn datasets across diverse domains - collaborative document editing, coding problem assistance, and multiturn problem solving - to fine-tune and evaluate LLMs' multiturn conversational capabilities.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      }
+    ],
+    "Human_3": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper studies how to enhance human-AI collaboration by improving multi-turn conversations.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Concretely, authors propose a learning framework CollabLLM that uses a reward function aware of multi-turn setup in reinforcement finetuning.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "This multiturn-aware reward takes account of both task performance and user satisfaction.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "This multiturn-aware reward is proved empirically effective in a few simulated environments including text editing, code generation and math reasoning.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      }
+    ],
+    "Human_4": [
+      {
+        "arg_id": "A_01",
+        "argument": "COLLABLLM is a new training framework designed to improve multi-turn human–LLM collaboration.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Its core idea is to simulate a collaborative conversation setup where a Multiturn-aware Reward (MR) function estimates the long-term impact of model’s responses, rather than focusing solely on immediate single-turn outcome (as in standard RLHF).",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Main Contributions: -Multiturn-aware Rewards (MR): A conversation-level reward function that encourages the LLM to seek and incorporate additional context or clarification from users if it improves overall task success.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "-New Multi-turn Interaction Benchmark: which covers 3 challenging tasks related to document editing, coding, and mathematics.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "-COLLABLLM outperforms base (or prompt-engineered) baselines on 3 test sets by boosting task accuracy by 18.5% and interactivity by 46.3%, as judged by LLM evaluators.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "In a large-scale user study with 201 Amazon Mechanical Turkers, COLLABLLM also increases user satisfaction by 17.6% and saves 10.4% of user time compared to baselines.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      }
+    ],
+    "Human_5": [
+      {
+        "arg_id": "A_01",
+        "argument": "While state-of-the-art Large Language Models (LLMs) trained with RLHF are good at following the instructions from users, this paper argues that they are often ``passive responders'' where they only passively respond to ambiguous or open-ended user requests.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "To address this limitation, this paper proposes to train LLMs with multi-turn aware utility through a conversation-level reward and a forward sampling process.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The conversation-level reward is composed of an extrinsic reward of task completion and intrinsic reward that prioritizes user experiences.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "Experiments have shown that in three simulated tasks, CollabLLM (trained with either PPO or DPO) is able to achieve better performances compared to prompting baselines.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "A large-scale user study is also carried out and it is shown that CollabLLM can indeed enhance the user satisfaction over multiple turns.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 5681,
+    "completion_tokens": 5681,
+    "total_tokens": 11362
+  }
+}

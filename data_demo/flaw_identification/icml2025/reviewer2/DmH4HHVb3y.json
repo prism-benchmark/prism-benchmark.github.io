@@ -1,0 +1,775 @@
+{
+  "paper_id": "DmH4HHVb3y",
+  "micro_flaws": {
+    "micro_flaws": [
+      {
+        "flaw_id": "F01",
+        "macro_topic": "5. Related work & Citations - Missing Comparisons with Prior Work",
+        "core_summary": "The paper lacks sufficient comparison with relevant prior multiturn RL training frameworks (e.g., MTPO, STaR-GATE) in terms of scalability, generalizability, or computational efficiency.",
+        "raw_arguments": {
+          "Human_5": "I find a detailed discussion of the paper's contribution with the broader literature missing from the main text... It would be valuable if the authors can provide some quantitative comparisons with the methods used in the prior literature.",
+          "LLM_Reviewer": "While the paper briefly references MTPO and STaR-GATE, it does not provide a detailed comparison in terms of scalability, generalizability, or computational efficiency."
+        }
+      },
+      {
+        "flaw_id": "F02",
+        "macro_topic": "5. Related work & Citations - Missing Relevant Citations",
+        "core_summary": "The paper fails to cite or compare with specific prior works that use user simulators or multi-turn RL for LLMs.",
+        "raw_arguments": {
+          "Human_1": "Some related work not included in the paper: 1. Abdulhai, Marwa, et al. \"Lmrl gym: Benchmarks for multi-turn reinforcement learning with language models.\" arXiv preprint arXiv:2311.18232 (2023). 2. Shani, Lior, et al. \"Multi-turn reinforcement learning from preference human feedback.\" arXiv preprint arXiv:2405.14655 (2024).",
+          "Human_5": "Would be nice to have a comparison with other works that make use of user-simulators to improve LLMs, such as Zero-Shot Goal-Directed Dialogue via RL on Imagined Conversations (https://arxiv.org/abs/2311.05584)."
+        }
+      },
+      {
+        "flaw_id": "F03",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification",
+        "core_summary": "The paper does not adequately justify the design choices for combining extrinsic and intrinsic rewards (linear combination, weighting, and penalty factors).",
+        "raw_arguments": {
+          "LLM_Reviewer": "The paper combines extrinsic and intrinsic rewards in a linear fashion (Equation 2), but it does not justify this choice nor explain how the weights were determined... the penalty factor on token count (\u03bb) is mentioned as being adjusted differently across tasks, but the rationale for this adjustment is unclear."
+        }
+      },
+      {
+        "flaw_id": "F04",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Weak Theoretical Justification/Proofs",
+        "core_summary": "The core concept of 'long-term collaboration gain' is not formally defined, leaving its operational definition ambiguous.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The core concept of long-term collaboration gain is not formally defined anywhere in the paper... This leaves the reader questioning whether the MR truly captures the intended long-term benefits or merely proxies for them."
+        }
+      },
+      {
+        "flaw_id": "F05",
+        "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation",
+        "core_summary": "Generalization tests were limited to only one external dataset (Abg-CoQA), weakening claims of broad generalizability.",
+        "raw_arguments": {
+          "Human_1": "Generalization tests were limited to a single additional dataset. Including multiple diverse external benchmarks could strengthen claims about generalizability."
+        }
+      },
+      {
+        "flaw_id": "F06",
+        "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues",
+        "core_summary": "The reported experimental improvements are small and lack context (e.g., comparison to larger models like GPT-4o with prompt engineering).",
+        "raw_arguments": {
+          "Human_4": "The improvements on simulated experiments of tab 1 (35% to 36-38% BLEU, 12.5 to 15) are small between prompt engineering and the proposed method (using PPO or DPO), raising doubts about real impact... What would be the topline obtained w/ gpt4-o and the same prompt engineering for instance ?"
+        }
+      },
+      {
+        "flaw_id": "F07",
+        "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues",
+        "core_summary": "Statistical significance testing (e.g., confidence intervals, p-values) is missing for reported improvements.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The reported improvements in task performance, interactivity, and user satisfaction are impressive, but the paper does not provide confidence intervals, p-values, or statistical tests to establish whether these differences are statistically significant."
+        }
+      },
+      {
+        "flaw_id": "F08",
+        "macro_topic": "4. Experimental Design & Evaluation - Questionable Evaluation Metrics",
+        "core_summary": "The use of BLEU as a metric for the document editing task is questionable and not well-explained.",
+        "raw_arguments": {
+          "Human_4": "MediumDocEdit-Chat: task performance is evaluated using BLEU, which measures similarity between the extracted document and the original articles. How is the document extracted?... Is BLEU the right metric for this task? Why not also use LLM judges for a more qualitative assessment?"
+        }
+      },
+      {
+        "flaw_id": "F09",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Scalability & Complexity Concerns",
+        "core_summary": "The computational overhead and scalability of the forward-sampling strategy and larger window sizes are not sufficiently detailed.",
+        "raw_arguments": {
+          "Human_1": "The authors mention briefly the computational costs associated with larger window sizes, but explicit details about these computational trade-offs are sparse.",
+          "Human_3": "Any idea on the computational expensive aspect of the forward sampling strategy? This seems nontrivial especially for long conversations."
+        }
+      },
+      {
+        "flaw_id": "F10",
+        "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues",
+        "core_summary": "The method's applicability to subjective, open-ended, or ambiguous tasks is unclear, and the reward function is hard to define for such tasks.",
+        "raw_arguments": {
+          "Human_3": "Multiturn-aware reward function is intrinsically hard to define for ambiguous tasks, which limits its applicability.",
+          "LLM_Reviewer": "The paper claims that COLLABLLM is generalizable across tasks, but the evaluation is limited to document editing, code generation, and math problem solving. It is unclear how the method handles subjective or open-ended tasks (e.g., creative writing, ethical dilemmas)."
+        }
+      },
+      {
+        "flaw_id": "F11",
+        "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations",
+        "core_summary": "The paper does not sufficiently discuss known failure modes, limitations, or biases of the approach (e.g., user simulator biases, fairness concerns).",
+        "raw_arguments": {
+          "Human_3": "A comparison of the potential divergence of simulated user and human user during training would further strengthen this work, as prompt-defined simulated LLM users could be substantially biased.",
+          "Human_5": "It would be helpful if the authors can provide some insight in terms of the limitations of applying LLMs as user simulators. In my experience, I found instruction-tuned LLM as user simulators tend to be overly agreeable... Curious if such issues are also observed in the experiments.",
+          "LLM_Reviewer": "The paper does not address bias or fairness considerations... The paper does not describe known failure modes or limitations of the approach."
+        }
+      },
+      {
+        "flaw_id": "F12",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Methodological Flaws",
+        "core_summary": "The user simulator's behavior and potential biases are not adequately analyzed or validated, raising concerns about the MR estimation's validity.",
+        "raw_arguments": {
+          "Human_2": "The cause-effect estimation with the user simulator could use some clarification.",
+          "LLM_Reviewer": "The user simulator (based on GPT-4o-mini) plays a crucial role in estimating the MR. However, the paper provides little analysis of how well this simulator mimics real user behavior. It is unclear whether the simulator introduces systematic biases... This limits the validity of the MR estimation and the generalizability of the results."
+        }
+      },
+      {
+        "flaw_id": "F13",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Strong/Unrealistic Assumptions",
+        "core_summary": "The experimental design assumes the user simulator (GPT-4o-mini) is realistic, but this assumption is not tested, and using a stronger model than the trained model (Llama-3.1-8B-Instruct) is questioned.",
+        "raw_arguments": {
+          "Human_5": "It seems strange why a different model GPT4-o is used as the user simulator compared to the original model Llama-3.1-8B-Instruct. It would nice to have some additional discussions in terms of the effect of using a stronger model as the user simulator, and I would be curious to see if it is possible for the model to improve with 'self-play' without relying on a stronger model as a user simulator.",
+          "LLM_Reviewer": "How was the user simulator (GPT-4o-mini) validated for realism? What steps were taken to ensure that it does not introduce systematic biases in the MR estimation?"
+        }
+      },
+      {
+        "flaw_id": "F14",
+        "macro_topic": "2. Clarity & Presentation - Other Presentation Issues",
+        "core_summary": "The paper's novelty is downplayed or misunderstood due to unclear presentation; the method may be seen as engineering/redesign of self-training for multi-turn settings.",
+        "raw_arguments": {
+          "Human_2": "The methodology, while described using fancy technical terms, such as 'forward-looking strategies' or 'user simulator,' may not necessarily be as novel as the authors claim them to be... the motivation and design principle behind the methodology must be better conveyed to showcase that this work goes beyond simply engineering and re-designing the self-training framework for the purpose of multiturn conversations."
+        }
+      },
+      {
+        "flaw_id": "F15",
+        "macro_topic": "2. Clarity & Presentation - Unclear Math/Notations",
+        "core_summary": "The claim about causal effect estimation and its distinction from prior post-hoc trajectory-level data methods is unclear and underexplained.",
+        "raw_arguments": {
+          "Human_2": "Could the authors elaborate more on their claim in lines 685-687 of the Appendix... Is this because the existing methods do not have a user simulator, and thus they lack the ability to probe the long-term impact of LLMs responses? Then, how do existing methods create post-hoc trajectory-level data? How are these different from the data created by ColabLLM? These distinctions would make the related works section more comprehensive..."
+        }
+      },
+      {
+        "flaw_id": "F16",
+        "macro_topic": "2. Clarity & Presentation - Grammar & Typos",
+        "core_summary": "The paper contains typographical errors.",
+        "raw_arguments": {
+          "Human_4": "Typo: -caption of fig 2: Figure 2: Real examples from COLLABLLM and non-collaborative LLM fine-tuing => fine-tuNing"
+        }
+      },
+      {
+        "flaw_id": "F17",
+        "macro_topic": "7. Reproducibility & Open Science - Insufficient Implementation Details",
+        "core_summary": "The paper lacks exact hyperparameters and training scripts required for reproducibility.",
+        "raw_arguments": {
+          "LLM_Reviewer": "Despite claiming to release code, models, and datasets, the paper does not provide exact hyperparameters or training scripts required to reproduce the results."
+        }
+      },
+      {
+        "flaw_id": "F18",
+        "macro_topic": "7. Reproducibility & Open Science - Other Reproducibility Issues",
+        "core_summary": "The newly proposed datasets are not fully released or made available (only samples provided).",
+        "raw_arguments": {
+          "Human_2": "C3. Three datasets for fine-tuning and evaluating LLMs on multiturn conversations are proposed -> lacks evidence. Please correct me if I am wrong, but I could not find supplementary materials or anonymized links to these datasets. While the authors provide samples in the Appendix, I would have preferred to see the full datasets..."
+        }
+      },
+      {
+        "flaw_id": "F19",
+        "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues",
+        "core_summary": "The user study lacks a control group to isolate the effect of COLLABLLM from the presence of any AI assistant.",
+        "raw_arguments": {
+          "LLM_Reviewer": "The real-world user study does not mention a control group receiving no assistance or a baseline condition. Without this, it is impossible to determine whether the improvements in user satisfaction and task performance are attributable to COLLABLLM or simply to the presence of any AI assistant."
+        }
+      },
+      {
+        "flaw_id": "F20",
+        "macro_topic": "6. Methodology & Theoretical Soundness - Methodological Flaws",
+        "core_summary": "The analysis of the reward mechanism does not disentangle whether improvements come from the multi-turn reward structure itself (forward sampling with w>0) or from the shift to extrinsic+intrinsic rewards.",
+        "raw_arguments": {
+          "Human_4": "It's unclear whether the improvements stem specifically from the multi-turn-aware reward (with w>0, regardless of whether the reward is based on helpfulness, intrinsic, extrinsic, or a mix) or from the reward modification itself (replacing helpfulness with extrinsic + intrinsic rewards). or alternativelly is it the interaction between both factors that drives the gains?"
+        }
+      },
+      {
+        "flaw_id": "F21",
+        "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues",
+        "core_summary": "The methodology for the Interactivity (ITR) metric, which uses an LLM judge, is not sufficiently explained.",
+        "raw_arguments": {
+          "Human_4": "Interactivity (ITR): engagement is evaluated using an LLM judge (Claude-3.5-Sonnet) with scores rescaled to [0,1]. But how exactly is this scoring performed? The methodology needs more clarity."
+        }
+      },
+      {
+        "flaw_id": "F22",
+        "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues",
+        "core_summary": "An observed experimental result (ITR performance decreasing with larger forward sampling window size) is counterintuitive and not explained.",
+        "raw_arguments": {
+          "Human_4": "Figure 4: why does ITR performance decrease when the forward sampling window size increases from w=2 to w=3? This behaviour seems counterintuitive to me. What could explain it?"
+        }
+      }
+    ]
+  },
+  "evaluations": {
+    "evaluations": {
+      "F01": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F02": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F03": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F04": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F05": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F06": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F07": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F08": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F09": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F10": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F11": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F12": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F13": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F14": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F15": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F16": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F17": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F18": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F19": {
+        "is_valid": false,
+        "severity": "None"
+      },
+      "F20": {
+        "is_valid": true,
+        "severity": "Critical"
+      },
+      "F21": {
+        "is_valid": true,
+        "severity": "Minor"
+      },
+      "F22": {
+        "is_valid": true,
+        "severity": "Minor"
+      }
+    }
+  },
+  "metrics_report": {
+    "cfi": {
+      "Severity_Points": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Flaw_Weights_Summary": {
+        "F01": {
+          "weight": 0.3333333333333333,
+          "severity": "Critical",
+          "consensus_count": 2
+        },
+        "F02": {
+          "weight": 0.3333333333333333,
+          "severity": "Minor",
+          "consensus_count": 2
+        },
+        "F03": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F05": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F07": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F08": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F09": {
+          "weight": 0.3333333333333333,
+          "severity": "Minor",
+          "consensus_count": 2
+        },
+        "F10": {
+          "weight": 0.3333333333333333,
+          "severity": "Minor",
+          "consensus_count": 2
+        },
+        "F11": {
+          "weight": 0.5,
+          "severity": "Minor",
+          "consensus_count": 3
+        },
+        "F12": {
+          "weight": 0.3333333333333333,
+          "severity": "Critical",
+          "consensus_count": 2
+        },
+        "F13": {
+          "weight": 0.3333333333333333,
+          "severity": "Critical",
+          "consensus_count": 2
+        },
+        "F14": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F15": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F16": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F17": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F18": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F20": {
+          "weight": 0.16666666666666666,
+          "severity": "Critical",
+          "consensus_count": 1
+        },
+        "F21": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        },
+        "F22": {
+          "weight": 0.16666666666666666,
+          "severity": "Minor",
+          "consensus_count": 1
+        }
+      },
+      "Ground_Truth_Summary": {
+        "Total_Valid_Flaws": 19,
+        "Total_Critical_Flaws": 4,
+        "Total_Minor_Flaws": 15,
+        "Total_Critical_ConsensusWeight": 1.1667,
+        "Total_Minor_ConsensusWeight": 3.3333
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Critical_Recall": 0.75,
+          "Minor_Recall": 0.3333,
+          "Critical_Recall_ConsensusWeighted": 0.8571,
+          "Minor_Recall_ConsensusWeighted": 0.4,
+          "Detected_Critical_Flaws": 3,
+          "Detected_Minor_Flaws": 5,
+          "Detected_Critical_ConsensusWeight": 1.0,
+          "Detected_Minor_ConsensusWeight": 1.3333,
+          "Total_Valid_Flaws_Found": 8
+        },
+        {
+          "Reviewer_ID": "Human_5",
+          "Critical_Recall": 0.5,
+          "Minor_Recall": 0.1333,
+          "Critical_Recall_ConsensusWeighted": 0.5714,
+          "Minor_Recall_ConsensusWeighted": 0.25,
+          "Detected_Critical_Flaws": 2,
+          "Detected_Minor_Flaws": 2,
+          "Detected_Critical_ConsensusWeight": 0.6667,
+          "Detected_Minor_ConsensusWeight": 0.8333,
+          "Total_Valid_Flaws_Found": 4
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Critical_Recall": 0.25,
+          "Minor_Recall": 0.2,
+          "Critical_Recall_ConsensusWeighted": 0.2857,
+          "Minor_Recall_ConsensusWeighted": 0.15,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 3,
+          "Detected_Critical_ConsensusWeight": 0.3333,
+          "Detected_Minor_ConsensusWeight": 0.5,
+          "Total_Valid_Flaws_Found": 4
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Critical_Recall": 0.25,
+          "Minor_Recall": 0.2667,
+          "Critical_Recall_ConsensusWeighted": 0.1429,
+          "Minor_Recall_ConsensusWeighted": 0.2,
+          "Detected_Critical_Flaws": 1,
+          "Detected_Minor_Flaws": 4,
+          "Detected_Critical_ConsensusWeight": 0.1667,
+          "Detected_Minor_ConsensusWeight": 0.6667,
+          "Total_Valid_Flaws_Found": 5
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.2,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.35,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 3,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 1.1667,
+          "Total_Valid_Flaws_Found": 3
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Critical_Recall": 0.0,
+          "Minor_Recall": 0.2,
+          "Critical_Recall_ConsensusWeighted": 0.0,
+          "Minor_Recall_ConsensusWeighted": 0.25,
+          "Detected_Critical_Flaws": 0,
+          "Detected_Minor_Flaws": 3,
+          "Detected_Critical_ConsensusWeight": 0,
+          "Detected_Minor_ConsensusWeight": 0.8333,
+          "Total_Valid_Flaws_Found": 3
+        }
+      ]
+    },
+    "cps": {
+      "Severity_Map": {
+        "Critical": 2.0,
+        "Minor": 1.0,
+        "None": 0.0
+      },
+      "Canonical_Issue_Bank": {
+        "issues": [
+          {
+            "issue_id": "F01",
+            "shared_severity": "Critical",
+            "canonical_summary": "The paper lacks sufficient comparison with relevant prior multiturn RL training frameworks (e.g., MTPO, STaR-GATE) in terms of scalability, generalizability, or computational efficiency.",
+            "macro_topic": "5. Related work & Citations - Missing Comparisons with Prior Work"
+          },
+          {
+            "issue_id": "F02",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper fails to cite or compare with specific prior works that use user simulators or multi-turn RL for LLMs.",
+            "macro_topic": "5. Related work & Citations - Missing Relevant Citations"
+          },
+          {
+            "issue_id": "F03",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper does not adequately justify the design choices for combining extrinsic and intrinsic rewards (linear combination, weighting, and penalty factors).",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Lack of Intuition/Justification"
+          },
+          {
+            "issue_id": "F05",
+            "shared_severity": "Minor",
+            "canonical_summary": "Generalization tests were limited to only one external dataset (Abg-CoQA), weakening claims of broad generalizability.",
+            "macro_topic": "4. Experimental Design & Evaluation - Insufficient Experimental Validation"
+          },
+          {
+            "issue_id": "F07",
+            "shared_severity": "Minor",
+            "canonical_summary": "Statistical significance testing (e.g., confidence intervals, p-values) is missing for reported improvements.",
+            "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues"
+          },
+          {
+            "issue_id": "F08",
+            "shared_severity": "Minor",
+            "canonical_summary": "The use of BLEU as a metric for the document editing task is questionable and not well-explained.",
+            "macro_topic": "4. Experimental Design & Evaluation - Questionable Evaluation Metrics"
+          },
+          {
+            "issue_id": "F09",
+            "shared_severity": "Minor",
+            "canonical_summary": "The computational overhead and scalability of the forward-sampling strategy and larger window sizes are not sufficiently detailed.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Scalability & Complexity Concerns"
+          },
+          {
+            "issue_id": "F10",
+            "shared_severity": "Minor",
+            "canonical_summary": "The method's applicability to subjective, open-ended, or ambiguous tasks is unclear, and the reward function is hard to define for such tasks.",
+            "macro_topic": "3. Applicability, Scalability & Limitations - General Applicability Issues"
+          },
+          {
+            "issue_id": "F11",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper does not sufficiently discuss known failure modes, limitations, or biases of the approach (e.g., user simulator biases, fairness concerns).",
+            "macro_topic": "3. Applicability, Scalability & Limitations - Lack of Discussion on Limitations"
+          },
+          {
+            "issue_id": "F12",
+            "shared_severity": "Critical",
+            "canonical_summary": "The user simulator's behavior and potential biases are not adequately analyzed or validated, raising concerns about the MR estimation's validity.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Methodological Flaws"
+          },
+          {
+            "issue_id": "F13",
+            "shared_severity": "Critical",
+            "canonical_summary": "The experimental design assumes the user simulator (GPT-4o-mini) is realistic, but this assumption is not tested, and using a stronger model than the trained model (Llama-3.1-8B-Instruct) is questioned.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Strong/Unrealistic Assumptions"
+          },
+          {
+            "issue_id": "F14",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper's novelty is downplayed or misunderstood due to unclear presentation; the method may be seen as engineering/redesign of self-training for multi-turn settings.",
+            "macro_topic": "2. Clarity & Presentation - Other Presentation Issues"
+          },
+          {
+            "issue_id": "F15",
+            "shared_severity": "Minor",
+            "canonical_summary": "The claim about causal effect estimation and its distinction from prior post-hoc trajectory-level data methods is unclear and underexplained.",
+            "macro_topic": "2. Clarity & Presentation - Unclear Math/Notations"
+          },
+          {
+            "issue_id": "F16",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper contains typographical errors.",
+            "macro_topic": "2. Clarity & Presentation - Grammar & Typos"
+          },
+          {
+            "issue_id": "F17",
+            "shared_severity": "Minor",
+            "canonical_summary": "The paper lacks exact hyperparameters and training scripts required for reproducibility.",
+            "macro_topic": "7. Reproducibility & Open Science - Insufficient Implementation Details"
+          },
+          {
+            "issue_id": "F18",
+            "shared_severity": "Minor",
+            "canonical_summary": "The newly proposed datasets are not fully released or made available (only samples provided).",
+            "macro_topic": "7. Reproducibility & Open Science - Other Reproducibility Issues"
+          },
+          {
+            "issue_id": "F20",
+            "shared_severity": "Critical",
+            "canonical_summary": "The analysis of the reward mechanism does not disentangle whether improvements come from the multi-turn reward structure itself (forward sampling with w>0) or from the shift to extrinsic+intrinsic rewards.",
+            "macro_topic": "6. Methodology & Theoretical Soundness - Methodological Flaws"
+          },
+          {
+            "issue_id": "F21",
+            "shared_severity": "Minor",
+            "canonical_summary": "The methodology for the Interactivity (ITR) metric, which uses an LLM judge, is not sufficiently explained.",
+            "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues"
+          },
+          {
+            "issue_id": "F22",
+            "shared_severity": "Minor",
+            "canonical_summary": "An observed experimental result (ITR performance decreasing with larger forward sampling window size) is counterintuitive and not explained.",
+            "macro_topic": "4. Experimental Design & Evaluation - Other Evaluation Issues"
+          }
+        ]
+      },
+      "Reviewer_Rankings": [
+        {
+          "Reviewer_ID": "Human_5",
+          "Raw_CPS": 6.6309,
+          "ICPS": 6.6309,
+          "nCPS": 1.0,
+          "Total_Arguments": 5,
+          "Critical_Count": 2,
+          "Minor_Count": 3,
+          "Section_Breakdown": [
+            {
+              "section": "Relation to Broader Literature",
+              "n_args": 2,
+              "CPS_s": 2.6309,
+              "ICPS_s": 2.6309,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Experimental Designs or Analyses",
+              "n_args": 1,
+              "CPS_s": 2.0,
+              "ICPS_s": 2.0,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Essential Missing References",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Questions for Authors",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 1.0
+        },
+        {
+          "Reviewer_ID": "Human_3",
+          "Raw_CPS": 3.6309,
+          "ICPS": 3.6309,
+          "nCPS": 1.0,
+          "Total_Arguments": 3,
+          "Critical_Count": 1,
+          "Minor_Count": 2,
+          "Section_Breakdown": [
+            {
+              "section": "Other Strengths and Weaknesses",
+              "n_args": 2,
+              "CPS_s": 2.6309,
+              "ICPS_s": 2.6309,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Questions for Authors",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.25
+        },
+        {
+          "Reviewer_ID": "Human_1",
+          "Raw_CPS": 2.6309,
+          "ICPS": 2.6309,
+          "nCPS": 1.0,
+          "Total_Arguments": 3,
+          "Critical_Count": 0,
+          "Minor_Count": 3,
+          "Section_Breakdown": [
+            {
+              "section": "Experimental Designs or Analyses",
+              "n_args": 2,
+              "CPS_s": 1.6309,
+              "ICPS_s": 1.6309,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Essential Missing References",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.0
+        },
+        {
+          "Reviewer_ID": "Human_2",
+          "Raw_CPS": 2.6309,
+          "ICPS": 2.6309,
+          "nCPS": 1.0,
+          "Total_Arguments": 3,
+          "Critical_Count": 0,
+          "Minor_Count": 3,
+          "Section_Breakdown": [
+            {
+              "section": "Claims and Evidence",
+              "n_args": 2,
+              "CPS_s": 1.6309,
+              "ICPS_s": 1.6309,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Other Comments or Suggestions",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.0
+        },
+        {
+          "Reviewer_ID": "Human_4",
+          "Raw_CPS": 5.3928,
+          "ICPS": 5.7619,
+          "nCPS": 0.9359,
+          "Total_Arguments": 6,
+          "Critical_Count": 1,
+          "Minor_Count": 5,
+          "Section_Breakdown": [
+            {
+              "section": "Questions for Authors",
+              "n_args": 3,
+              "CPS_s": 2.1309,
+              "ICPS_s": 2.1309,
+              "nCPS_s": 1.0
+            },
+            {
+              "section": "Other Strengths and Weaknesses",
+              "n_args": 2,
+              "CPS_s": 2.2619,
+              "ICPS_s": 2.6309,
+              "nCPS_s": 0.8597
+            },
+            {
+              "section": "Other Comments or Suggestions",
+              "n_args": 1,
+              "CPS_s": 1.0,
+              "ICPS_s": 1.0,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.6905
+        },
+        {
+          "Reviewer_ID": "LLM_Reviewer",
+          "Raw_CPS": 5.641,
+          "ICPS": 6.2103,
+          "nCPS": 0.9083,
+          "Total_Arguments": 7,
+          "Critical_Count": 2,
+          "Minor_Count": 5,
+          "Section_Breakdown": [
+            {
+              "section": "Weaknesses",
+              "n_args": 5,
+              "CPS_s": 4.0101,
+              "ICPS_s": 4.5794,
+              "nCPS_s": 0.8757
+            },
+            {
+              "section": "Limitations Not Addressed By The Authors",
+              "n_args": 2,
+              "CPS_s": 1.6309,
+              "ICPS_s": 1.6309,
+              "nCPS_s": 1.0
+            }
+          ],
+          "CPS_norm": 0.7525
+        }
+      ]
+    },
+    "mode": "all"
+  }
+}

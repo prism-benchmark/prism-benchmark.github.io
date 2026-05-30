@@ -1,0 +1,293 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "Investigating gating mechanisms softmax attention transformers Systematic investigation gating positions variants softmax attention",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "C2",
+      "query": "Investigating gating mechanisms softmax attention transformers Analysis non-linearity sparsity gating attention",
+      "status": "ok",
+      "count": 20
+    },
+    {
+      "id": "C3",
+      "query": "Investigating gating mechanisms softmax attention transformers Demonstration attention-sink elimination sparse gating",
+      "status": "ok",
+      "count": 5
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Gating mechanisms have been widely utilized, from early models like LSTMs and Highway Networks to recent state space models, linear attention, and also softmax attention. Yet, existing literature rarely examines the specific effects of gating. In this work, we conduct comprehensive experiments to systematically investigate gating-augmented softmax attention variants. Specifically, we perform a comprehensive comparison over 30 variants of 15B Mixture-of-Experts (MoE) models and 1.7B dense models trained on a 3.5 trillion token dataset. Our central finding is that a simple modification-applying a head-specific sigmoid gate after the Scaled Dot-Product Attention (SDPA)-consistently improves performance. This modification also enhances training stability, tolerates larger learning rates, and improves scaling properties. By comparing various gating positions and computational variants, we attribute this effectiveness to two key factors: (1) introducing non-linearity upon the low-rank mapping in the softmax attention, and (2) applying query-dependent sparse gating scores to modulate the SDPA output. Notably, we find this sparse gating mechanism mitigates 'attention sink' and enhances long-context extrapolation performance, and we also release related $\\href{https://github.com/qiuzh20/gated_attention}{codes}$ and $\\href{https://huggingface.co/QwQZh/gated_attention}{models}$ to facilitate future research.",
+      "url": "https://www.semanticscholar.org/paper/a295e71055248f4145257ed88f25503a75a78406",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+      "title": "Deconstructing Attention: Investigating Design Principles for Effective Language Modeling",
+      "year": 2025,
+      "venue": "IJCNLP-AACL",
+      "abstract": "The success of Transformer language models is widely credited to their dot-product attention mechanism, which interweaves a set of key design principles: mixing information across positions (enabling multi-token interactions), sequence-dependent activations (where attention weights adapt to each input), a specific mathematical form (dot-product similarities plus softmax weighting), and coupling of queries and keys to evolving hidden states (grounding attention in the current layer). However, the necessity of each of these principles remains largely untested. In this work, we systematically deconstruct attention by designing controlled variants that selectively relax these principles, applied both uniformly across all layers and in hybrid architectures where only some layers retain standard attention. Our empirical analysis reveals that mechanisms for mixing tokens are indispensable, as their absence collapses models to near-random behavior, while the exact mathematical form and sequence dependency can be substantially relaxed, especially when preserved in just a subset of layers. Surprisingly, even variants that fail in isolation can achieve robust performance when interleaved with standard attention, highlighting a cooperative effect. These findings deepen our understanding of what truly underpins attention's effectiveness and open new avenues for simplifying language models without sacrificing performance.",
+      "url": "https://www.semanticscholar.org/paper/cdfbaf0d8ea75eaef4f7c17a3e82032f80db0c2d",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+      "title": "Achieving Constant Memory Complexity in Long Context Transformers Through Linear Attention",
+      "year": 2026,
+      "venue": "Academic Journal of Applied Sciences",
+      "abstract": "The transformer architecture has emerged as the dominant paradigm for sequence modeling, yet its standard self-attention mechanism imposes quadratic time and memory cost with respect to sequence length, presenting a fundamental scalability barrier for long-context applications. This paper investigates linear attention as a principled mechanism for achieving constant memory complexity (KM) during autoregressive inference in transformer models. By replacing the softmax normalization in scaled dot-product attention with a kernel decomposition, the computation is restructured so that keys and values are combined before interacting with queries, yielding an equivalent recurrent form that maintains a fixed-size hidden state regardless of sequence length. We present a unified theoretical derivation of this parallel-to-recurrent equivalence, introduce a learnable positive feature map paired with data-dependent gating and structured state normalization, and evaluate the resulting architecture on long-context language modeling and downstream comprehension benchmarks. Empirical results confirm that peak GPU memory consumption remains constant at 2.1 gigabytes across context lengths from 1,024 to 131,072 tokens, achieving a 13.6× throughput advantage over standard softmax attention at length 65,536, with only a 4.8% relative perplexity increase on the Pile dataset. These findings establish constant-complexity linear attention as a viable deployment mechanism for memory-constrained long-context transformer inference.",
+      "url": "https://www.semanticscholar.org/paper/e98871f127d5ea9cb7a6c891bb0988b807ca22a3",
+      "embedding": null,
+      "relevance_score": 0.95
+    },
+    {
+      "cand_id": "8847bd8617f072fc9d00381b65c6e25b230677b2",
+      "title": "Soft Error Reliability Analysis of Vision Transformers",
+      "year": 2023,
+      "venue": "IEEE Transactions on Very Large Scale Integration (VLSI) Systems",
+      "abstract": "Vision transformers (ViTs) that leverage self-attention mechanism have shown superior performance on many classical vision tasks compared to convolutional neural networks (CNNs) and gain increasing popularity recently. Existing ViTs’ works mainly optimize performance and accuracy, but ViTs’ reliability issues induced by soft errors in large-scale VLSI designs have generally been overlooked. In this work, we mainly study the reliability of ViTs and investigate the vulnerability from different architecture granularities ranging from models, layers, modules, and patches for the first time. The investigation reveals that ViTs with the self-attention mechanism are generally more resilient on linear computing including general matrix–matrix multiplication (GEMM) and full connection (FC) and show a relatively even vulnerability distribution across the patches. ViTs involve more fragile non-linear computing such as softmax and GELU compared to typical CNNs. With the above observations, we propose a lightweight block-wise algorithm-based fault-tolerance (LB-ABFT) approach to protect the linear computing implemented with distinct sizes of GEMM and apply a range-based protection scheme to mitigate soft errors in non-linear computing. According to our experiments, the proposed fault-tolerant approaches enhance ViTs’ accuracy significantly with minor computing overhead in the presence of various soft errors.",
+      "url": "https://www.semanticscholar.org/paper/8847bd8617f072fc9d00381b65c6e25b230677b2",
+      "embedding": null,
+      "relevance_score": 0.9
+    },
+    {
+      "cand_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "title": "Threshold Differential Attention for Sink-Free, Ultra-Sparse, and Non-Dispersive Language Modeling",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Softmax attention struggles with long contexts due to structural limitations: the strict sum-to-one constraint forces attention sinks on irrelevant tokens, and probability mass disperses as sequence lengths increase. We tackle these problems with Threshold Differential Attention (TDA), a sink-free attention mechanism that achieves ultra-sparsity and improved robustness at longer sequence lengths without the computational overhead of projection methods or the performance degradation caused by noise accumulation of standard rectified attention. TDA applies row-wise extreme-value thresholding with a length-dependent gate, retaining only exceedances. Inspired by the differential transformer, TDA also subtracts an inhibitory view to enhance expressivity. Theoretically, we prove that TDA controls the expected number of spurious survivors per row to $O(1)$ and that consensus spurious matches across independent views vanish as context grows. Empirically, TDA produces $>99\\%$ exact zeros and eliminates attention sinks while maintaining competitive performance on standard and long-context benchmarks.",
+      "url": "https://www.semanticscholar.org/paper/cb158d3665b591264ef65f0910d7c412fb242857",
+      "embedding": null,
+      "relevance_score": 0.85
+    },
+    {
+      "cand_id": "d28df8d04967fe06a6e2763c5f2e3ec4b005bfe0",
+      "title": "Bitcoin Price Prediction Using a Deep Learning-based Hybrid Model with Sentiment Analysis and Attention Mechanism",
+      "year": 2025,
+      "venue": "Applied and Computational Engineering",
+      "abstract": "Cryptocurrency, particularly Bitcoin, holds significant importance for investors and researchers due to its volatile price dynamics, which are influenced by various internal and external factors. The non-linear nature of cryptocurrency price fluctuations presents a considerable challenge in accurately predicting Bitcoin price changes. In addition to internal price fluctuations in the Bitcoin market, external public sentiment can also have a significant impact on Bitcoin prices. Based on the current situation, aimed to achieve more accurate prediction result of Bitcoin price, a hybrid forecasting model combining multiple high-precision technologies is proposed in this study. Bidirectional Long Short-Term Memory (Bi-LSTM) and Gated Recurring Unit (GRU) hybrid deep learning architectures are integrated in this model to analyse historical data, followed by the application of the FbProphet model to account for seasonal and temporal effects. To enhance prediction reliability, sentiment analysis of Bitcoin-related news is conducted using a combined Bidirectional Encoder Representations from Transformers (BERT) and Valence Aware Dictionary and sEntiment Reasoner (VADER) model, capturing the influence of public sentiment on price trends. Furthermore, an attention mechanism is incorporated to enable dynamic adjustment of the fusion weights, improving the model's adaptability to changing market conditions. Experimental results demonstrate the effectiveness of this hybrid model in producing more accurate Bitcoin price predictions. Future research will extend this model to other cryptocurrencies, further validating its robustness and exploring additional external factors affecting market prices.",
+      "url": "https://www.semanticscholar.org/paper/d28df8d04967fe06a6e2763c5f2e3ec4b005bfe0",
+      "embedding": null,
+      "relevance_score": 0.8
+    },
+    {
+      "cand_id": "fb00a9d4c3ebde47848408f388b0947f6738ecce",
+      "title": "LLM-driven hybrid architecture for multi-variate and multi-horizon forecasting of consumption patterns using graphs, recurrent units, and transformers",
+      "year": 2026,
+      "venue": "Discover Computing",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/fb00a9d4c3ebde47848408f388b0947f6738ecce",
+      "embedding": null,
+      "relevance_score": 0.65
+    },
+    {
+      "cand_id": "dc7c1a5ef6f81a8ba15eb0aaaaca8153c2886fd8",
+      "title": "GFormer: Accelerating Large Language Models with Optimized Transformers on Gaudi Processors",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "abstract": "Heterogeneous hardware like Gaudi processor has been developed to enhance computations, especially matrix operations for Transformer-based large language models (LLMs) for generative AI tasks. However, our analysis indicates that Transformers are not fully optimized on such emerging hardware, primarily due to inadequate optimizations in non-matrix computational kernels like Softmax and in heterogeneous resource utilization, particularly when processing long sequences. To address these issues, we propose an integrated approach (called GFormer) that merges sparse and linear attention mechanisms. GFormer aims to maximize the computational capabilities of the Gaudi processor's Matrix Multiplication Engine (MME) and Tensor Processing Cores (TPC) without compromising model quality. GFormer includes a windowed self-attention kernel and an efficient outer product kernel for causal linear attention, aiming to optimize LLM inference on Gaudi processors. Evaluation shows that GFormer significantly improves efficiency and model performance across various tasks on the Gaudi processor and outperforms state-of-the-art GPUs.",
+      "url": "https://www.semanticscholar.org/paper/dc7c1a5ef6f81a8ba15eb0aaaaca8153c2886fd8",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+      "title": "Dissecting Linear Recurrent Models: How Different Gating Strategies Drive Selectivity and Generalization",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Linear recurrent neural networks have emerged as efficient alternatives to the original Transformer's softmax attention mechanism, thanks to their highly parallelizable training and constant memory and computation requirements at inference. Iterative refinements of these models have introduced an increasing number of architectural mechanisms, leading to increased complexity and computational costs. Nevertheless, systematic direct comparisons among these models remain limited. Existing benchmark tasks are either too simplistic to reveal substantial differences or excessively resource-intensive for experimentation. In this work, we propose a refined taxonomy of linear recurrent models and introduce SelectivBench, a set of lightweight and customizable synthetic benchmark tasks for systematically evaluating sequence models. SelectivBench specifically evaluates selectivity in sequence models at small to medium scale, such as the capacity to focus on relevant inputs while ignoring context-based distractors. It employs rule-based grammars to generate sequences with adjustable complexity, incorporating irregular gaps that intentionally violate transition rules. Evaluations of linear recurrent models on SelectivBench reveal performance patterns consistent with results from large-scale language tasks. Our analysis clarifies the roles of essential architectural features: gating and rapid forgetting mechanisms facilitate recall, in-state channel mixing is unnecessary for selectivity, but critical for generalization, and softmax attention remains dominant due to its memory capacity scaling with sequence length. Our benchmark enables targeted, efficient exploration of linear recurrent models and provides a controlled setting for studying behaviors observed in large-scale evaluations. Code is available at https://github.com/symseqbench/selectivbench",
+      "url": "https://www.semanticscholar.org/paper/fc42ab54234ba8036e842c9ee2de9867bb59c3aa",
+      "embedding": null,
+      "relevance_score": 0.7
+    },
+    {
+      "cand_id": "bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+      "title": "FLUID: Continuous-Time Hyperconnected Sparse Transformer for Sink-Free Learning",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Continuous-time (CT) Transformers improve irregular and long-range modeling over CT-RNNs by exploiting inputs or outputs embeddings with continuous dynamics. However, the core scaled-dot-product-attention (SDPA) mechanism remains inherently discrete. We propose FLUID (Flexible Unified Information Dynamics), a CT Transformer that incorporates continuous dynamics directly into the attention computation by replacing it with Liquid Attention Network (LAN). LAN reinterprets attention logits as continuous dynamical system and reformulates them as the solution to a linear ODE modulated by input-dependent nonlinear recurrent gates. Theoretically, we establish stability guarantees for LAN dynamics and show that it serves as an interpolating middle ground between SDPA and CT-RNNs, recovering each as special case under well-defined parameterization of its gating functions. LAN also introduces an explicit attention-sink gate to eliminate disproportionate attention mass on uninformative nodes. FLUID replaces standard residual connections with input-dependent Liquid Hyper-Connections to adaptively regulate interlayer information flow. Empirically, we evaluate FLUID on a broad set of learning tasks, including (i) irregular time-series, (ii) long-range modeling, (iii) lane-keeping control of autonomous vehicles, and (iv) learning physical dynamics under a scarce data regime. Across all the tasks, FLUID consistently matches or outperforms CT baselines, achieving improvements of up to 47% in certain scenarios and enhancing generalization under distributional shifts. Additionally, FLUID demonstrates superior noise robustness and a self-correcting inductive bias in autonomous vehicle control. We also provide a detailed analysis of key hyperparameters to guide tuning and show that FLUID occupies an intermediate position among competing approaches in terms of runtime and memory efficiency.",
+      "url": "https://www.semanticscholar.org/paper/bdb6eefe2144969ecbba9fd96d7baed7e2b95e6d",
+      "embedding": null,
+      "relevance_score": 0.6
+    },
+    {
+      "cand_id": "fd5605155ea5f997611c76ed9ecb740821396372",
+      "title": "Enabling Robust In-Context Memory and Rapid Task Adaptation in Transformers with Hebbian and Gradient-Based Plasticity",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Large language models display in-context learning as an emergent effect of scale, but they rely on static weights during inference. In contrast, biological systems continually adapt via synaptic plasticity. We investigate whether explicit, biologically inspired plasticity can endow Transformers with faster in-sequence adaptation. To this end, we augment decoder-only Transformers with fast-weight modules updated either by (i) a neuromodulated Hebbian rule or (ii) the gradient-based plasticity mechanism of Duan et al. (2023). Across copying, regression, and few-shot classification tasks (CIFAR-FS, Omniglot), Hebbian plasticity consistently achieves lower loss and stronger few-shot generalization, while gradient-based updates perform best on long-horizon credit assignment. When associations are short and linearly separable, static weights suffice, defining a clear boundary condition for when plasticity helps. Analysis of learned modulatory signals reveals that gradient-based rules maintain large, persistent updates, whereas Hebbian plasticity is sharply gated around salient events. Together, these results show that explicit plasticity complements attention by enabling rapid, task-specific adaptation, and clarify when different plasticity mechanisms are most effective.",
+      "url": "https://www.semanticscholar.org/paper/fd5605155ea5f997611c76ed9ecb740821396372",
+      "embedding": null,
+      "relevance_score": 0.6
+    },
+    {
+      "cand_id": "0083441df759656c14cc5c2ead894bd55973a00b",
+      "title": "Exploring Diffusion Transformer Designs via Grafting",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Designing model architectures requires decisions such as selecting operators (e.g., attention, convolution) and configurations (e.g., depth, width). However, evaluating the impact of these decisions on model quality requires costly pretraining, limiting architectural investigation. Inspired by how new software is built on existing code, we ask: can new architecture designs be studied using pretrained models? To this end, we present grafting, a simple approach for editing pretrained diffusion transformers (DiTs) to materialize new architectures under small compute budgets. Informed by our analysis of activation behavior and attention locality, we construct a testbed based on the DiT-XL/2 design to study the impact of grafting on model quality. Using this testbed, we develop a family of hybrid designs via grafting: replacing softmax attention with gated convolution, local attention, and linear attention, and replacing MLPs with variable expansion ratio and convolutional variants. Notably, many hybrid designs achieve good quality (FID: 2.38-2.64 vs. 2.27 for DiT-XL/2) using<2% pretraining compute. We then graft a text-to-image model (PixArt-Sigma), achieving a 1.43x speedup with less than a 2% drop in GenEval score. Finally, we present a case study that restructures DiT-XL/2 by converting every pair of sequential transformer blocks into parallel blocks via grafting. This reduces model depth by 2x and yields better quality (FID: 2.77) than other models of comparable depth. Together, we show that new diffusion model designs can be explored by grafting pretrained DiTs, with edits ranging from operator replacement to architecture restructuring. Code and grafted models: https://grafting.stanford.edu",
+      "url": "https://www.semanticscholar.org/paper/0083441df759656c14cc5c2ead894bd55973a00b",
+      "embedding": null,
+      "relevance_score": 0.5714285714285714
+    },
+    {
+      "cand_id": "0433028461c5fc2481355afb54542f6c2f505844",
+      "title": "Interpreting the Synchronization Gap: The Hidden Mechanism Inside Diffusion Transformers",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Recent theoretical models of diffusion processes, conceptualized as coupled Ornstein-Uhlenbeck systems, predict a hierarchy of interaction timescales, and consequently, the existence of a synchronization gap between modes that commit at different stages of the reverse process. However, because these predictions rely on continuous time and analytically tractable score functions, it remains unclear how this phenomenology manifests in the deep, discrete architectures deployed in practice. In this work, we investigate how the synchronization gap is mechanistically realized within pretrained Diffusion Transformers (DiTs). We construct an explicit architectural realization of replica coupling by embedding two generative trajectories into a joint token sequence, modulated by a symmetric cross attention gate with variable coupling strength g. Through a linearized analysis of the attention difference, we show that the replica interaction decomposes mechanistically. We empirically validate our theoretical framework on a pretrained DiT-XL/2 model by tracking commitment and per layer internal mode energies. Our results reveal that: (1) the synchronization gap is an intrinsic architectural property of DiTs that persists even when external coupling is turned off; (2) as predicted by our spatial routing bounds, the gap completely collapses under strong coupling; (3) the gap is strictly depth localized, emerging sharply only within the final layers of the Transformer; and (4) global, low frequency structures consistently commit before local, high frequency details. Ultimately, our findings provide a mechanistic interpretation of how Diffusion Transformers resolve generative ambiguity, isolating speciation transitions to the terminal layers of the network.",
+      "url": "https://www.semanticscholar.org/paper/0433028461c5fc2481355afb54542f6c2f505844",
+      "embedding": null,
+      "relevance_score": 0.55
+    },
+    {
+      "cand_id": "56c04d687916c12313abcd50564263acfdd45a3c",
+      "title": "Sequential Neural Operator Transformer for High-Fidelity Surrogates of Time-Dependent Non-linear Partial Differential Equations",
+      "year": 2025,
+      "venue": "",
+      "abstract": "Partial differential equations (PDEs) are fundamental to modeling complex and nonlinear physical phenomena, but their numerical solution often requires significant computational resources, particularly when a large number of forward full solution evaluations are necessary, such as in design, optimization, sensitivity analysis, and uncertainty quantification. Recent progress in operator learning has enabled surrogate models that efficiently predict full PDE solution fields; however, these models often struggle with accuracy and robustness when faced with highly nonlinear responses driven by sequential input functions. To address these challenges, we propose the Sequential Neural Operator Transformer (S-NOT), a architecture that combines gated recurrent units (GRUs) with the self-attention mechanism of transformers to address time-dependent,nonlinear PDEs. Unlike S-DeepONet (S-DON), which uses a dot product to merge encoded outputs from the branch and trunk sub-networks, S-NOT leverages attention to better capture intricate dependencies between sequential inputs and spatial query points. We benchmark S-NOT on three challenging datasets from real-world applications with plastic and thermo-viscoplastic highly nonlinear material responses: multiphysics steel solidification, a 3D lug specimen, and a dogbone specimen under temporal and path-dependent loadings. The results show that S-NOT consistently achieves a higher prediction accuracy than S-DON even for data outliers, demonstrating its accuracy and robustness for drastically accelerating computational frameworks in scientific and engineering applications.",
+      "url": "https://www.semanticscholar.org/paper/56c04d687916c12313abcd50564263acfdd45a3c",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "35d136a0940a4bce9b5d697bd5699871e9936043",
+      "title": "Enhancing Attention-Based Visual Processing With Noise-Boosted Activation Functions",
+      "year": 2026,
+      "venue": "IEEE Access",
+      "abstract": "Motivated by the principle of stochastic resonance, we investigate the noise-boosted activations within both channel attention mechanisms of convolutional networks and gated linear unit (GLU)-based feedforward networks (FFNs) of Vision Transformers (ViTs) under attention-based visual processing frameworks. Specifically, we replace conventional ReLU or ReLU-based GLU (ReGLU) activations with noise-boosted variants, which incorporate learnable noise scale parameters during training. Experiments on the CIFAR-10 and STL-10 image classifications, Kvasir-SEG medical image segmentation, and Cityscapes semantic segmentation show significant improvements over conventional baselines across diverse attention architectures. The learnable noise scale parameters in activations converge to non-zero values after training, demonstrating the existence of stochastic resonance in deep attention mechanisms. These results indicate that controlled noise injection can enhance information transfer efficiency of neural networks, and establish a coherent framework that connects the theoretical principle of stochastic resonance with its practical applicability in attention-based visual processing.",
+      "url": "https://www.semanticscholar.org/paper/35d136a0940a4bce9b5d697bd5699871e9936043",
+      "embedding": null,
+      "relevance_score": 0.45
+    },
+    {
+      "cand_id": "aa632c74fa2973b03b8645669c9a3cca22678698",
+      "title": "Activator: GLU Activation Function as the Core Component of a Vision Transformer",
+      "year": 2024,
+      "venue": "",
+      "abstract": "The transformer architecture has driven many successes in a variety of tasks within the field of deep learning, in particular the recent advances in natural language processing (NLP) culminating with large language models (LLM). Adding to that success, transformer architecture has found widespread interest from computer vision (CV) researchers and practitioners, allowing for many advancements in vision-related tasks and opening the door for multitask and multi-modal deep learning architectures that share the same principle of operation. One drawback to these architectures is their reliance on the scaled dot product attention mechanism with the softmax activation function, which is computationally expensive and requires large compute capabilities for both training and inference. This paper investigates substituting the MLP and attention mechanism usually adopted for transformer architecture with an architecture based on incorporating a gated linear unit (GLU) activation function structure with the aim of reducing the computational cost. The equalized experimental assessments conducted in this work show that the proposed modification with the targeted reductions in computational complexity offers competitive performance compared to the selected baseline architectures. The results are significantly in support of the aims of this work, in which the focus was to extensively utilize GLU-based MLPs, establishing a more efficient but capable alternative to the traditional MLP and the attention mechanism as the core component in the design of transformer architectures.",
+      "url": "https://www.semanticscholar.org/paper/aa632c74fa2973b03b8645669c9a3cca22678698",
+      "embedding": null,
+      "relevance_score": 0.42857142857142855
+    },
+    {
+      "cand_id": "fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+      "title": "A Unified View of Attention and Residual Sinks: Outlier-Driven Rescaling is Essential for Transformer Training",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "We investigate the functional role of emergent outliers in large language models, specifically attention sinks (a few tokens that consistently receive large attention logits) and residual sinks (a few fixed dimensions with persistently large activations across most tokens). We hypothesize that these outliers, in conjunction with the corresponding normalizations (\\textit{e.g.}, softmax attention and RMSNorm), effectively rescale other non-outlier components. We term this phenomenon \\textit{outlier-driven rescaling} and validate this hypothesis across different model architectures and training token counts. This view unifies the origin and mitigation of both sink types. Our main conclusions and observations include: (1) Outliers function jointly with normalization: removing normalization eliminates the corresponding outliers but degrades training stability and performance; directly clipping outliers while retaining normalization leads to degradation, indicating that outlier-driven rescaling contributes to training stability. (2) Outliers serve more as rescale factors rather than contributors, as the final contributions of attention and residual sinks are significantly smaller than those of non-outliers. (3) Outliers can be absorbed into learnable parameters or mitigated via explicit gated rescaling, leading to improved training performance (average gain of 2 points) and enhanced quantization robustness (1.2 points degradation under W4A4 quantization).",
+      "url": "https://www.semanticscholar.org/paper/fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+      "embedding": null,
+      "relevance_score": 0.4
+    },
+    {
+      "cand_id": "de3e70154546a2cbaeaf39e893d0a6c96f111e43",
+      "title": "Word-wise Sparse Attention for Multimodal Sentiment Analysis",
+      "year": 2022,
+      "venue": "Interspeech",
+      "abstract": "For multimodal sentiment analysis (MSA), the text-centric approach has been shown to be superior in performance, which adopts powerful text models (e.g., BERT) as backbone and studies how to effectively incorporate non-verbal modalities (i.e., audio and visual) to obtain more reﬁned and expressive word representations. In previous methods, the non-verbal information injected into a word representation only comes from a non-verbal segment corresponding to the time span of the word, ignoring the long-range dependencies across modalities. Meanwhile, these methods utilize the Softmax normalization function-based attention mechanism, which makes it difﬁcult to highlight the important information in non-verbal sequences. To this end, this paper proposes a non-verbal information injection method called Word-wise Sparse Attention (WSA) to capture the cross-modal long-range dependencies. When injecting the non-verbal information into a word, the word is used as the semantic anchor to search for the most relevant non-verbal information from holistic non-verbal sequences. Furthermore, an advanced Multimodal Adaptive Gating (MAG) mechanism is introduced to determine the amount of information injected from non-verbal modalities. We evaluate our method on the two publicly available multimodal sentiment datasets. Experimental results show that the proposed approach improves the baseline model consistently on all metrics.",
+      "url": "https://www.semanticscholar.org/paper/de3e70154546a2cbaeaf39e893d0a6c96f111e43",
+      "embedding": null,
+      "relevance_score": 0.4
+    },
+    {
+      "cand_id": "484418e1cbc75897b7d668fbe46d1f6b20a20803",
+      "title": "Activator: GLU Activations as The Core Functions of a Vision Transformer",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/484418e1cbc75897b7d668fbe46d1f6b20a20803",
+      "embedding": null,
+      "relevance_score": 0.2857142857142857
+    },
+    {
+      "cand_id": "e588df297874773ee6a3f240e30969130e576dde",
+      "title": "An integrated multimodal feature fusion with adaptive and attention residual deep learning network for personalized learning recommendation",
+      "year": 2026,
+      "venue": "Multiagent and Grid Systems",
+      "abstract": "In this research work, a novel multimodal data-based recommendation system is introduced to ultimately enhance student's talents and broaden knowledge without any interference. Initially, the required multimodal data, such as video, images, and text data are gathered from standard sources and it is given to the feature extraction phase. Here, the Bidirectional Encoder Representations from Transformers (BERT), Visual Geometry Group 16-based Autoencoder (VGG16-AE) and 3D VGG16-AE mechanisms are utilized for accurately recognizing and differentiating the significant feature sets such as, first set of features (f1), second set of features (f2) and third set of features (f3) from the input data. Then, the extracted three set of features are fed into the learning recommendation phase here, the Multi-scale Feature Fusion-based Residual Bidirectional Gated recurrent unit with Sparse Attention (MFF-RBG-SA) mechanism is designed to efficiently analyze and generate better solution in an earlier stage. Moreover, the overall performance of the designed approach is estimated with various performance measures and compared with conventional methods to guarantee its reliable effectiveness in the educational sector. In the validation phase, the designed approach has attained higher accuracy value of 95.35%, 95.28%, 95.38% and 95.33% in terms of Linear, Tanh, softmax and sigmoid activation functions, which demonstrate its superior learning recommendation performance than other conventional methods.",
+      "url": "https://www.semanticscholar.org/paper/e588df297874773ee6a3f240e30969130e576dde",
+      "embedding": null,
+      "relevance_score": 0.35
+    },
+    {
+      "cand_id": "9ed25f101f19ea735ca300848948ed64064b97ca",
+      "title": "Random Feature Attention",
+      "year": 2021,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "Transformers are state-of-the-art models for a variety of sequence modeling tasks. At their core is an attention function which models pairwise interactions between the inputs at every timestep. While attention is powerful, it does not scale efficiently to long sequences due to its quadratic time and space complexity in the sequence length. We propose RFA, a linear time and space attention that uses random feature methods to approximate the softmax function, and explore its application in transformers. RFA can be used as a drop-in replacement for conventional softmax attention and offers a straightforward way of learning with recency bias through an optional gating mechanism. Experiments on language modeling and machine translation demonstrate that RFA achieves similar or better performance compared to strong transformer baselines. In the machine translation experiment, RFA decodes twice as fast as a vanilla transformer. Compared to existing efficient transformer variants, RFA is competitive in terms of both accuracy and efficiency on three long text classification datasets. Our analysis shows that RFA's efficiency gains are especially notable on long sequences, suggesting that RFA will be particularly useful in tasks that require working with large inputs, fast decoding speed, or low memory footprints.",
+      "url": "https://www.semanticscholar.org/paper/9ed25f101f19ea735ca300848948ed64064b97ca",
+      "embedding": null,
+      "relevance_score": 0.3
+    },
+    {
+      "cand_id": "6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+      "title": "Predicting Yelp Star Ratings: An Analysis of Different Models and Fine-Tuned RoBERTa Model",
+      "year": null,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+      "embedding": null,
+      "relevance_score": 0.14285714285714285
+    },
+    {
+      "cand_id": "a7721b6523971394a8bd4bfda139122ef59b22cd",
+      "title": "Sparse Attention with Linear Units",
+      "year": 2021,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "abstract": "Recently, it has been argued that encoder-decoder models can be made more interpretable by replacing the softmax function in the attention with its sparse variants. In this work, we introduce a novel, simple method for achieving sparsity in attention: we replace the softmax activation with a ReLU, and show that sparsity naturally emerges from such a formulation. Training stability is achieved with layer normalization with either a specialized initialization or an additional gating function. Our model, which we call Rectified Linear Attention (ReLA), is easy to implement and more efficient than previously proposed sparse attention mechanisms. We apply ReLA to the Transformer and conduct experiments on five machine translation tasks. ReLA achieves translation performance comparable to several strong baselines, with training and decoding speed similar to that of the vanilla attention. Our analysis shows that ReLA delivers high sparsity rate and head diversity, and the induced cross attention achieves better accuracy with respect to source-target word alignment than recent sparsified softmax-based models. Intriguingly, ReLA heads also learn to attend to nothing (i.e. ‘switch off’) for some queries, which is not possible with sparsified softmax alternatives.",
+      "url": "https://www.semanticscholar.org/paper/a7721b6523971394a8bd4bfda139122ef59b22cd",
+      "embedding": null,
+      "relevance_score": 0.25
+    },
+    {
+      "cand_id": "d0f800acb7bfa6e2dca21676fcaa12c9c27a53ff",
+      "title": "Research on Personalized Recommendation Algorithm Integrating Cross-Grained Sentiment and Rating Interaction Features",
+      "year": 2025,
+      "venue": "IEEE Access",
+      "abstract": "To investigate the impact of cross-grained sentiments on user feature representation and address the issue of data sparsity, this paper proposes a Personalized Recommendation Algorithm Integrating Cross-Grained Sentiment and Rating Interaction Features (ICSR). The algorithm begins by employing a pre-trained BERT (Bidirectional Encoder Representations from Transformers) model and a Bi-GRU (Bidirectional Gated Recurrent Units) network to derive feature vectors from user and item reviews. Sentiment dictionaries and attention mechanisms are then applied to assign appropriate weights to the review features of users and items, respectively. To capture a richer set of sentiment features, a cross-grained sentiment feature fusion module is introduced. This module leverages an LDA (Latent Dirichlet Allocation) model and dependency syntactic analysis techniques to extract fine-grained sentiment features, while a word2vec pre-trained model and sentiment dictionaries are used to capture coarse-grained sentiment features. These features are then fused to form comprehensive cross-grained sentiment representations. Finally, rating interaction features are extracted using matrix factorization techniques, and all features are integrated and fed into a DeepFM model for rating prediction. Experimental results on Amazon datasets demonstrate that the proposed ICSR algorithm significantly outperforms baseline algorithms in terms of recommendation performance.",
+      "url": "https://www.semanticscholar.org/paper/d0f800acb7bfa6e2dca21676fcaa12c9c27a53ff",
+      "embedding": null,
+      "relevance_score": 0.2
+    },
+    {
+      "cand_id": "107f38e80273758c36529d9434633d0a7fd3efd7",
+      "title": "LINA: Linear Autoregressive Image Generative Models with Continuous Tokens",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Autoregressive models with continuous tokens form a promising paradigm for visual generation, especially for text-to-image (T2I) synthesis, but they suffer from high computational cost. We study how to design compute-efficient linear attention within this framework. Specifically, we conduct a systematic empirical analysis of scaling behavior with respect to parameter counts under different design choices, focusing on (1) normalization paradigms in linear attention (division-based vs. subtraction-based) and (2) depthwise convolution for locality augmentation. Our results show that although subtraction-based normalization is effective for image classification, division-based normalization scales better for linear generative transformers. In addition, incorporating convolution for locality modeling plays a crucial role in autoregressive generation, consistent with findings in diffusion models. We further extend gating mechanisms, commonly used in causal linear attention, to the bidirectional setting and propose a KV gate. By introducing data-independent learnable parameters to the key and value states, the KV gate assigns token-wise memory weights, enabling flexible memory management similar to forget gates in language models. Based on these findings, we present LINA, a simple and compute-efficient T2I model built entirely on linear attention, capable of generating high-fidelity 1024x1024 images from user instructions. LINA achieves competitive performance on both class-conditional and T2I benchmarks, obtaining 2.18 FID on ImageNet (about 1.4B parameters) and 0.74 on GenEval (about 1.5B parameters). A single linear attention module reduces FLOPs by about 61 percent compared to softmax attention. Code and models are available at: https://github.com/techmonsterwang/LINA.",
+      "url": "https://www.semanticscholar.org/paper/107f38e80273758c36529d9434633d0a7fd3efd7",
+      "embedding": null,
+      "relevance_score": 0.1
+    },
+    {
+      "cand_id": "f32502fa8147320b48be351360de43dd22b0006f",
+      "title": "Mixture of Experts Meets Prompt-Based Continual Learning",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "abstract": "Exploiting the power of pre-trained models, prompt-based approaches stand out compared to other continual learning solutions in effectively preventing catastrophic forgetting, even with very few learnable parameters and without the need for a memory buffer. While existing prompt-based continual learning methods excel in leveraging prompts for state-of-the-art performance, they often lack a theoretical explanation for the effectiveness of prompting. This paper conducts a theoretical analysis to unravel how prompts bestow such advantages in continual learning, thus offering a new perspective on prompt design. We first show that the attention block of pre-trained models like Vision Transformers inherently encodes a special mixture of experts architecture, characterized by linear experts and quadratic gating score functions. This realization drives us to provide a novel view on prefix tuning, reframing it as the addition of new task-specific experts, thereby inspiring the design of a novel gating mechanism termed Non-linear Residual Gates (NoRGa). Through the incorporation of non-linear activation and residual connection, NoRGa enhances continual learning performance while preserving parameter efficiency. The effectiveness of NoRGa is substantiated both theoretically and empirically across diverse benchmarks and pretraining paradigms. Our code is publicly available at https://github.com/Minhchuyentoancbn/MoE_PromptCL",
+      "url": "https://www.semanticscholar.org/paper/f32502fa8147320b48be351360de43dd22b0006f",
+      "embedding": null,
+      "relevance_score": 0.05
+    }
+  ],
+  "stats": {
+    "total_candidates": 32,
+    "after_dedup": 26,
+    "after_nontechnical_filter": 26,
+    "after_year_filter": 26,
+    "final": 26
+  }
+}

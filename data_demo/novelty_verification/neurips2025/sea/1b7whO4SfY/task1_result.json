@@ -1,0 +1,54 @@
+{
+  "paper": {
+    "core_task": "Analyzing gating mechanisms in softmax attention for performance, stability, and attention dynamics",
+    "contributions": [
+      {
+        "name": "Systematic investigation of gating positions in softmax attention",
+        "author_claim_text": "we introduce gating at distinct positions (Fig. 1): after the query (G 4 ), key (G 3 ), and value projections (G 2 ); following the Scaled Dot Product Attention (SDPA) outputs (G 1 ); and after the final dense",
+        "description": "A systematic exploration of applying gating at five different positions within the multi-head attention layer to evaluate their effects on model performance.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Analysis of non-linearity and sparsity in gating effectiveness",
+        "author_claim_text": "We identify two factors contributing to the efficacy of gating: (i) Non-Linearity... (ii) Sparsity... the pronounced sparsity of the gating scores is another crucial factor, introducing input-dependent sparsity to SDPA outputs",
+        "description": "An analysis demonstrating that gating improves performance by introducing non-linearity between linear layers and creating input-dependent sparsity, which mitigates attention sinks.",
+        "source_hint": "Introduction §1"
+      },
+      {
+        "name": "Dense and MoE model evaluation with gating",
+        "author_claim_text": "We conduct experiments on both MoE models (15B total parameters with 2.54B activated, 15A2B) and dense models (1.7B total parameters).",
+        "description": "Empirical validation of gating mechanisms across both dense and Mixture-of-Experts (MoE) model architectures, demonstrating consistent benefits.",
+        "source_hint": "Experimental Setups"
+      }
+    ],
+    "key_terms": [
+      "gating mechanism",
+      "softmax attention",
+      "scaled dot-product attention (SDPA)",
+      "multi-head attention",
+      "input-dependent sparsity",
+      "attention sink",
+      "massive activation",
+      "non-linearity",
+      "training stability",
+      "context length extension",
+      "MoE models",
+      "dense models"
+    ],
+    "must_have_entities": [
+      "15A2B MoE model",
+      "1.7B dense model",
+      "RULER benchmark",
+      "Hellaswag",
+      "GSM8k",
+      "HumanEval",
+      "C-eval",
+      "YaRN",
+      "RoPE"
+    ]
+  },
+  "review": {
+    "novelty_claims": [],
+    "all_citations_raw": []
+  }
+}

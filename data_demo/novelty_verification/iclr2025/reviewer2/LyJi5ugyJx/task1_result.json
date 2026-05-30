@@ -1,0 +1,123 @@
+{
+  "paper": {
+    "core_task": "Accelerating few-step image generation via simplified and stabilized continuous-time consistency models",
+    "contributions": [
+      {
+        "name": "A unified diffusion formulation combining EDM and flow matching",
+        "author_claim_text": "Our first contribution is TrigFlow, a new formulation that unifies EDM (Karras et al., 2022;2024) and Flow Matching (Peluchetti, 2022;Lipman et al., 2022;Liu et al., 2022;Albergo et al., 2023;Heitz et al., 2023), significantly simplifying the formulation of diffusion models, the",
+        "description": "TrigFlow is a novel mathematical framework that unifies EDM and flow matching parameterizations. It simplifies the diffusion process, probability flow ODE, and consistency model formulations, making theoretical analysis and training more tractable.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "A training stabilization recipe for continuous-time consistency models",
+        "author_claim_text": "Building on this foundation, we analyze the root causes of instability in CM training and propose a complete recipe for mitigation.",
+        "description": "A comprehensive set of techniques—including positional time embeddings, adaptive double normalization, tangent normalization, adaptive weighting, and tangent warmup—is introduced to stabilize the training of continuous-time consistency models, which were previously highly unstable.",
+        "source_hint": "Introduction"
+      },
+      {
+        "name": "Scalable continuous-time consistency models achieving state-of-the-art few-step generation",
+        "author_claim_text": "With these improvements, we elevate the performance of consistency models in both consistency training and distillation, achieving comparable or better results compared to previous discrete-time formulations.",
+        "description": "The stabilized training enables the scaling of continuous-time consistency models to 1.5 billion parameters on ImageNet 512x512. The resulting sCMs narrow the FID gap with teacher diffusion models to within 10% using only two sampling steps.",
+        "source_hint": "Introduction"
+      }
+    ],
+    "key_terms": [
+      "consistency models",
+      "continuous-time",
+      "TrigFlow",
+      "diffusion distillation",
+      "few-step generation",
+      "FID score",
+      "ImageNet",
+      "tangent normalization",
+      "adaptive weighting",
+      "training stability"
+    ],
+    "must_have_entities": [
+      "Flow Matching",
+      "ImageNet 64x64",
+      "ImageNet 512x512",
+      "sCM",
+      "sCT",
+      "sCD"
+    ]
+  },
+  "review": {
+    "novelty_claims": [
+      {
+        "claim_id": "C1",
+        "text": "Previous work (Song & Dhariwal, 2023;Geng et al.",
+        "stance": "not_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": true,
+        "prior_work_strings": [
+          "Song & Dhariwal, 2023"
+        ],
+        "evidence_expected": "method_similarity"
+      },
+      {
+        "claim_id": "C2",
+        "text": "REVIEW\n--------------------------------------------------------------------------------\n# Summary Of The Paper  \nThe paper introduces **sCM** (Simple, Stable, Scalable Consistency Models), a novel approach aimed at enhancing the training and performance of consistency models (CMs) in generative modeling.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "results_similarity"
+      },
+      {
+        "claim_id": "C3",
+        "text": "These contribute to making continuous-time CMs viable for large-scale applications, as demonstrated in Figures 4 and 5.",
+        "stance": "not_novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "task_similarity"
+      },
+      {
+        "claim_id": "C4",
+        "text": "However, the novelty of some ideas (e.",
+        "stance": "novel",
+        "confidence_lang": "medium",
+        "mentions_prior_work": false,
+        "prior_work_strings": [],
+        "evidence_expected": "method_similarity"
+      }
+    ],
+    "all_citations_raw": [
+      "Sohl-Dickstein et al., 2015",
+      "Song & Ermon, 2019",
+      "Ho et al., 2020",
+      "Song et al., 2021b",
+      "Rombach et al., 2022",
+      "Ramesh et al., 2022",
+      "Ho et al., 2022",
+      "Poole et al., 2022",
+      "Wang et al., 2024",
+      "Liu et al., 2023b",
+      "Liu et al., 2023a",
+      "Evans et al., 2024",
+      "Blattmann et al., 2023",
+      "Brooks et al., 2024",
+      "Luhman & Luhman, 2021",
+      "Zheng et al., 2023b",
+      "Wang et al., 2022",
+      "Sauer et al., 2023",
+      "Salimans & Ho, 2022",
+      "Yin et al., 2024b",
+      "Luo et al., 2024",
+      "Xie et al., 2024b",
+      "Salimans et al., 2024",
+      "Song et al., 2023",
+      "Song & Dhariwal, 2023",
+      "Geng et al., 2024",
+      "Luo et al., 2023",
+      "Xie et al., 2024a",
+      "Karras et al., 2022",
+      "Peluchetti, 2022",
+      "Lipman et al., 2022",
+      "Liu et al., 2022",
+      "Albergo et al., 2023",
+      "Heitz et al., 2023"
+    ]
+  }
+}

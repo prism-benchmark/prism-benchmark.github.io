@@ -1,0 +1,1613 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The proposed TrigFlow, as a novel unification of EDM and Flow Matching, substantially simplifies the analysis presented later and the practical techniques."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "Model architecture modifications are original since existing works are mostly inherited from Diffusion Models' design and focus on the training techniques and formulations, leaving the architectural design underexplored."
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "The unified perspective on previous diffusion and flow-matching parameterizations is thorough, complete, and well-grounded, offering novel insights that could benefit the community."
+    },
+    {
+      "review_sentence_id": "C4",
+      "text": "Strategies for scaling such models to large sizes and datasets are proposed, namely JVP Rearrangement and JVP of Flash Attention."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "text": "Title: Image-Free Timestep Distillation via Continuous-Time Consistency with Trajectory-Sampled Pairs\n\nAbstract: Timestep distillation is an effective approach for improving the generation efficiency of diffusion models. The Consistency Model (CM), as a trajectory-based framework, demonstrates significant potential due to its strong theoretical foundation and high-quality few-step generation. Nevertheless, current continuous-time consistency distillation methods still rely heavily on training data and computational resources, hindering their deployment in resource-constrained scenarios and limiting their scalability to diverse domains. To address this issue, we propose Trajectory-Backward Consistency Model (TBCM), which eliminates the dependence on external training data by extracting latent representations directly from the teacher model's generation trajectory. Unlike conventional methods that require VAE encoding and large-scale datasets, our self-contained distillation paradigm significantly improves both efficiency and simplicity. Moreover, the trajectory-extracted samples naturally bridge the distribution gap between training and inference, thereby enabling more effective knowledge transfer. Empirically, TBCM achieves 6.52 FID and 28.08 CLIP scores on MJHQ-30k under one-step generation, while reducing training time by approximately 40% compared to Sana-Sprint and saving a substantial amount of GPU memory, demonstrating superior efficiency without sacrificing quality. We further reveal the diffusion-generation space discrepancy in continuous-time consistency distillation and analyze how sampling strategies affect distillation performance, offering insights for future distillation research. GitHub Link: https://github.com/hustvl/TBCM.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "text": "Title: BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation\n\nAbstract: Recent diffusion and flow matching models have demonstrated strong capabilities in image generation and editing by progressively removing noise through iterative sampling. While this enables flexible inversion for semantic-preserving edits, few-step sampling regimes suffer from poor forward process approximation, leading to degraded editing quality. Existing few-step inversion methods often rely on pretrained generators and auxiliary modules, limiting scalability and generalization across different architectures. To address these limitations, we propose BiFM (Bidirectional Flow Matching), a unified framework that jointly learns generation and inversion within a single model. BiFM directly estimates average velocity fields in both ``image $\\to$ noise\"and ``noise $\\to$ image\"directions, constrained by a shared instantaneous velocity field derived from either predefined schedules or pretrained multi-step diffusion models. Additionally, BiFM introduces a novel training strategy using continuous time-interval supervision, stabilized by a bidirectional consistency objective and a lightweight time-interval embedding. This bidirectional formulation also enables one-step inversion and can integrate seamlessly into popular diffusion and flow matching backbones. Across diverse image editing and generation tasks, BiFM consistently outperforms existing few-step approaches, achieving superior performance and editability.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "text": "Title: Align Your Flow: Scaling Continuous-Time Flow Map Distillation\n\nAbstract: Diffusion- and flow-based models have emerged as state-of-the-art generative modeling approaches, but they require many sampling steps. Consistency models can distill these models into efficient one-step generators; however, unlike flow- and diffusion-based methods, their performance inevitably degrades when increasing the number of steps, which we show both analytically and empirically. Flow maps generalize these approaches by connecting any two noise levels in a single step and remain effective across all step counts. In this paper, we introduce two new continuous-time objectives for training flow maps, along with additional novel training techniques, generalizing existing consistency and flow matching objectives. We further demonstrate that autoguidance can improve performance, using a low-quality model for guidance during distillation, and an additional boost can be achieved by adversarial finetuning, with minimal loss in sample diversity. We extensively validate our flow map models, called Align Your Flow, on challenging image generation benchmarks and achieve state-of-the-art few-step generation performance on both ImageNet 64x64 and 512x512, using small and efficient neural networks. Finally, we show text-to-image flow map models that outperform all existing non-adversarially trained few-step samplers in text-conditioned synthesis.",
+      "relevance_score": 0.875
+    },
+    {
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "text": "Title: Trajectory Consistency for One-Step Generation on Euler Mean Flows\n\nAbstract: We propose \\emph{Euler Mean Flows (EMF)}, a flow-based generative framework for one-step and few-step generation that enforces long-range trajectory consistency with minimal sampling cost. The key idea of EMF is to replace the trajectory consistency constraint, which is difficult to supervise and optimize over long time scales, with a principled linear surrogate that enables direct data supervision for long-horizon flow-map compositions. We derive this approximation from the semigroup formulation of flow-based models and show that, under mild regularity assumptions, it faithfully approximates the original consistency objective while being substantially easier to optimize. This formulation leads to a unified, JVP-free training framework that supports both $u$-prediction and $x_1$-prediction variants, avoiding explicit Jacobian computations and significantly reducing memory and computational overhead. Experiments on image synthesis, particle-based geometry generation, and functional generation demonstrate improved optimization stability and sample quality under fixed sampling budgets, together with approximately $50\\%$ reductions in training time and memory consumption compared to existing one-step methods for image generation.",
+      "relevance_score": 0.8125
+    },
+    {
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "text": "Title: ROCM: RLHF on consistency models\n\nAbstract: Diffusion models have revolutionized generative modeling in continuous domains like image, audio, and video synthesis. However, their iterative sampling process leads to slow generation and inefficient training, challenges that are further exacerbated when incorporating Reinforcement Learning from Human Feedback (RLHF) due to sparse rewards and long time horizons. Consistency models address these issues by enabling single-step or efficient multi-step generation, significantly reducing computational costs. In this work, we propose a direct reward optimization framework for applying RLHF to consistency models, incorporating distributional regularization to enhance training stability and prevent reward hacking. We investigate various $f$-divergences as regularization strategies, striking a balance between reward maximization and model consistency. Unlike policy gradient methods, our approach leverages first-order gradients, making it more efficient and less sensitive to hyperparameter tuning. Empirical results show that our method achieves competitive or superior performance compared to policy gradient based RLHF methods, across various automatic metrics and human evaluation. Additionally, our analysis demonstrates the impact of different regularization techniques in improving model generalization and preventing overfitting.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "text": "Title: Flow-Anchored Consistency Models\n\nAbstract: Continuous-time Consistency Models (CMs) promise efficient few-step generation but face significant challenges with training instability. We argue this instability stems from a fundamental conflict: Training the network exclusively on a shortcut objective leads to the catastrophic forgetting of the instantaneous velocity field that defines the flow. Our solution is to explicitly anchor the model in the underlying flow, ensuring high trajectory fidelity during training. We introduce the Flow-Anchored Consistency Model (FACM), where a Flow Matching (FM) task serves as a dynamic anchor for the primary CM shortcut objective. Key to this Flow-Anchoring approach is a novel expanded time interval strategy that unifies optimization for a single model while decoupling the two tasks to ensure stable, architecturally-agnostic training. By distilling a pre-trained LightningDiT model, our method achieves a state-of-the-art FID of 1.32 with two steps (NFE=2) and 1.70 with just one step (NFE=1) on ImageNet 256x256. To address the challenge of scalability, we develop a memory-efficient Chain-JVP that resolves key incompatibilities with FSDP. This method allows us to scale FACM training on a 14B parameter model (Wan 2.2), accelerating its Text-to-Image inference from 2x40 to 2-8 steps. Our code and pretrained models: https://github.com/ali-vilab/FACM.",
+      "relevance_score": 0.6875
+    },
+    {
+      "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+      "text": "Title: Continuous Manufacturing – Producing More with Less ’",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "text": "Title: Improved Training Technique for Shortcut Models\n\nAbstract: Shortcut models represent a promising, non-adversarial paradigm for generative modeling, uniquely supporting one-step, few-step, and multi-step sampling from a single trained network. However, their widespread adoption has been stymied by critical performance bottlenecks. This paper tackles the five core issues that held shortcut models back: (1) the hidden flaw of compounding guidance, which we are the first to formalize, causing severe image artifacts; (2) inflexible fixed guidance that restricts inference-time control; (3) a pervasive frequency bias driven by a reliance on low-level distances in the direct domain, which biases reconstructions toward low frequencies; (4) divergent self-consistency arising from a conflict with EMA training; and (5) curvy flow trajectories that impede convergence. To address these challenges, we introduce iSM, a unified training framework that systematically resolves each limitation. Our framework is built on four key improvements: Intrinsic Guidance provides explicit, dynamic control over guidance strength, resolving both compounding guidance and inflexibility. A Multi-Level Wavelet Loss mitigates frequency bias to restore high-frequency details. Scaling Optimal Transport (sOT) reduces training variance and learns straighter, more stable generative paths. Finally, a Twin EMA strategy reconciles training stability with self-consistency. Extensive experiments on ImageNet 256 x 256 demonstrate that our approach yields substantial FID improvements over baseline shortcut models across one-step, few-step, and multi-step generation, making shortcut models a viable and competitive class of generative models.",
+      "relevance_score": 0.625
+    },
+    {
+      "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "text": "Title: A NON INVASIVE COMPUTER AIDED DIAGNOSIS SYSTEM FOR EARLY DETECTION OF LUNG CARCINOMA IN CT MEDICAL IMAGES",
+      "relevance_score": 0.4375
+    },
+    {
+      "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "text": "Title: Dual-End Consistency Model\n\nAbstract: The slow iterative sampling nature remains a major bottleneck for the practical deployment of diffusion and flow-based generative models. While consistency models (CMs) represent a state-of-the-art distillation-based approach for efficient generation, their large-scale application is still limited by two key issues: training instability and inflexible sampling. Existing methods seek to mitigate these problems through architectural adjustments or regularized objectives, yet overlook the critical reliance on trajectory selection. In this work, we first conduct an analysis on these two limitations: training instability originates from loss divergence induced by unstable self-supervised term, whereas sampling inflexibility arises from error accumulation. Based on these insights and analysis, we propose the Dual-End Consistency Model (DE-CM) that selects vital sub-trajectory clusters to achieve stable and effective training. DE-CM decomposes the PF-ODE trajectory and selects three critical sub-trajectories as optimization targets. Specifically, our approach leverages continuous-time CMs objectives to achieve few-step distillation and utilizes flow matching as a boundary regularizer to stabilize the training process. Furthermore, we propose a novel noise-to-noisy (N2N) mapping that can map noise to any point, thereby alleviating the error accumulation in the first step. Extensive experimental results show the effectiveness of our method: it achieves a state-of-the-art FID score of 1.70 in one-step generation on the ImageNet 256x256 dataset, outperforming existing CM-based one-step approaches.",
+      "relevance_score": 0.5625
+    },
+    {
+      "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+      "text": "Title: A FUTURE PRODUCT ON HRVIS WINDS-HRW-FROM THE METEOSAT SECOND GENERATION-MSG-FOR THE NOWCASTING AND OTHER APPLICATIONS",
+      "relevance_score": 0.375
+    },
+    {
+      "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+      "text": "Title: Discontinuity Mapping Using Ground-Based LiDAR: Case Study from an Open Pit Mine",
+      "relevance_score": 0.3125
+    },
+    {
+      "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "text": "Title: Advances in Knowledge Discovery and Data Mining: 9th Pacific-Asia Conference, PAKDD 2005, Hanoi, Vietnam, May 18-20, 2005, Proceedings",
+      "relevance_score": 0.1875
+    },
+    {
+      "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "text": "Title: Full-chip application of machine learning SRAFs on DRAM case using auto pattern selection\n\nAbstract: As technology continues to scale aggressively, Sub-Resolution Assist Features (SRAF) are becoming an increasingly key resolution enhancement technique (RET) to maximize the process window enhancement. For the past few technology generations, lithographers have chosen to use a rules-based (RB-SRAF) or a model-based (MB-SRAF) approach to place assist features on the design. The inverse lithography solution, which provides the maximum process window entitlement, has always been out of reach for full-chip applications due to its very high computational cost. ASML has developed and demonstrated a deep learning SRAF placement methodology, Newron™ SRAF, which can provide the performance benefit of an inverse lithography solution while meeting the cycle time requirements for full-chip applications [1]. One of the biggest challenges for a deep learning approach is pattern selection for neural network training. To ensure pattern coverage for maximum accuracy while maintaining turn-around time (TAT,) a deep-learning-based Auto Pattern Selection (APS) tool is evaluated. APS works in conjunction with Newron SRAF to provide the optimal lithography solution. In this paper, Newron SRAF is used on a DRAM layer. A Deep Convolutional Neural Network (DCNN) is trained using the target images and Continuous Transmission Mask (CTM) images. CTM images are gray tone images that are fully optimized by the Tachyon inverse mask optimization engine. Representative patterns selected by APS are used to train the neural network. The trained neural network generates SRAFs on the full-chip and then Tachyon OPC+ is performed to correct main and SRAF simultaneously. The neural network trained by APS patterns is compared with those trained by patterns from manual selection and multiple random selections to demonstrate its robustness on pattern coverage. Tachyon Hierarchical OPC+ (HScan+) is used to apply Newron SRAF at full-chip level in order to keep consistency and increase speed. Full-chip simulation results from Newron SRAF are compared with the baseline OPC flow using RBSRAF and MB-SRAF. The Newron SRAF flow shows significant improvements in NILS and PV band over the baseline flows. This whole flow including APS, Newron SRAF and full-chip HScan+ OPC enables the inverse mask optimization on full-chip level to achieve superior mask performance with production-affordable TAT.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "text": "Title: for Prediction City Region Re-Weighting",
+      "relevance_score": 0.125
+    },
+    {
+      "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+      "text": "Title: MICAI 2007: Advances in Artificial Intelligence, 6th Mexican International Conference on Artificial Intelligence, Aguascalientes, Mexico, November 4-10, 2007, Proceedings",
+      "relevance_score": 0.0625
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about TrigFlow unifying EDM and Flow Matching in the paper being reviewed. However, the related work evidence discusses Trajectory-Backward Consistency Model (TBCM) and does not mention TrigFlow, EDM, or Flow Matching. There is no evidence to support or contradict the claim, making it unverifiable from the provided related work.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about TrigFlow being a novel unification of EDM and Flow Matching that simplifies analysis and practical techniques. The related work (BiFM) is about bidirectional flow matching for image editing and generation, which does not provide evidence about TrigFlow, its novelty, or its simplification effects. There is no direct or indirect support for the claim in the provided related work.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim is about TrigFlow simplifying analysis and practical techniques in the paper being reviewed, but the related work evidence is a different paper (Align Your Flow) that does not mention TrigFlow or the specific simplification claims. There is no direct evidence in the provided related work to support or contradict the claim.",
+      "relevance_score": 0.875
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims TrigFlow is a novel unification of EDM and Flow Matching that simplifies analysis and techniques. The provided paper text describes TrigFlow as unifying EDM and Flow Matching and simplifying formulations. However, the related work evidence (about Euler Mean Flows) does not mention TrigFlow, EDM, Flow Matching, or any simplification claims; it focuses on a different method (EMF) for trajectory consistency. Thus, there is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.8125
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims TrigFlow simplifies analysis and practical techniques, but the related work (ROCM) focuses on RLHF for consistency models and does not discuss TrigFlow or its simplifying effects. There is no evidence in the provided related work to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about TrigFlow as a unification that simplifies analysis and practical techniques. The provided related work (FACM) discusses a different approach (Flow-Anchored Consistency Models) and does not directly mention or provide evidence about TrigFlow's claims. The claim is not verifiable with the given evidence.",
+      "relevance_score": 0.6875
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about TrigFlow simplifying analysis and techniques in the paper, but the related work evidence is completely unrelated (about Continuous Manufacturing), providing no information to verify or align with the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that TrigFlow simplifies analysis and practical techniques, but the related work paper discusses 'Improved Training Technique for Shortcut Models' and does not mention TrigFlow, EDM, Flow Matching, or any related concepts. There is no evidence in the provided text to verify or relate to the claim.",
+      "relevance_score": 0.625
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims TrigFlow simplifies analysis and practical techniques. The provided paper abstract/introduction discusses TrigFlow as unifying EDM and Flow Matching, simplifying formulations, but does not explicitly mention 'substantially simplifies the analysis presented later and the practical techniques.' The related work is about lung carcinoma diagnosis, which is entirely unrelated. There is no evidence from the related work to verify or support the claim.",
+      "relevance_score": 0.4375
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims TrigFlow substantially simplifies analysis and practical techniques, but the related work (Dual-End Consistency Model) does not mention TrigFlow or provide evidence about its simplification effects. The related work focuses on a different method (DE-CM) and its own contributions, leaving no basis to verify the claim.",
+      "relevance_score": 0.5625
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that TrigFlow is a novel unification of EDM and Flow Matching that simplifies analysis and practical techniques. The related work evidence is from a completely different domain (HRVis winds from Meteosat) and provides no information about TrigFlow, EDM, or Flow Matching. Therefore, there is no evidence to evaluate the claim's alignment or calibration.",
+      "relevance_score": 0.375
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about TrigFlow simplifying analysis and techniques, but the related work is about LiDAR discontinuity mapping in mining, which is completely unrelated. No evidence exists in the provided text to support or contradict the claim.",
+      "relevance_score": 0.3125
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about TrigFlow simplifying analysis and practical techniques, but the provided related work is from a 2005 data mining conference, which is unrelated to the paper's content on diffusion models and consistency models. No evidence is available to support or contradict the claim.",
+      "relevance_score": 0.1875
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim states that TrigFlow unifies EDM and Flow Matching and simplifies analysis and techniques, which is a claim about the paper being reviewed. However, the related work evidence provided is about a different paper on lithography (SRAF placement) and contains no information about TrigFlow, EDM, Flow Matching, or any simplification in diffusion models. Therefore, the evidence is missing and unverifiable for this claim.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim about TrigFlow simplifying analysis and practical techniques is made in the paper being reviewed, but the provided related work is irrelevant (about city region re-weighting) and does not contain any evidence about TrigFlow, EDM, Flow Matching, or the simplification claim. Thus, evidence is missing.",
+      "relevance_score": 0.125
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's proposed TrigFlow method. However, the provided related work evidence is a title and description of a 2007 conference proceedings, which contains no information about TrigFlow, EDM, Flow Matching, or the specific claims in the sentence. Therefore, there is no evidence to support or contradict the claim.",
+      "relevance_score": 0.0625
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that model architecture modifications in the paper are original because existing works mostly inherit from Diffusion Models and focus on training techniques, leaving architecture underexplored. The related work abstract discusses a different method (TBCM) for timestep distillation and does not provide evidence about the novelty of architectural modifications or the state of architecture exploration in prior consistency model research. The evidence is missing to verify or contradict the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that model architecture modifications in the paper are original because existing works focus on training techniques and formulations, leaving architectural design underexplored. However, the provided related work (BiFM) is about a different framework (Bidirectional Flow Matching) and does not provide evidence about the originality of architectural modifications in the reviewed paper or about the state of architectural exploration in the field. The evidence is missing and unrelated to the specific claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that existing works mostly inherit from Diffusion Models' design and focus on training techniques, leaving architectural design underexplored. The related work (Align Your Flow) does not discuss the originality of model architecture modifications or the focus of existing works on training techniques vs. architectural design. Therefore, there is insufficient evidence to verify the claim.",
+      "relevance_score": 0.875
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that model architecture modifications are original because existing works mostly inherit from Diffusion Models' design and focus on training techniques, leaving architecture underexplored. The related work (Euler Mean Flows) proposes a different flow-based framework with trajectory consistency, but it does not explicitly discuss architectural modifications or compare them to diffusion model designs. The evidence is insufficient to verify the claim about originality or the state of architectural exploration.",
+      "relevance_score": 0.8125
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that model architecture modifications in the paper being reviewed are original because existing works focus on training techniques and formulations, leaving architectural design underexplored. The related work (ROCM) is about applying RLHF to consistency models and does not discuss model architecture modifications or architectural design exploration in prior consistency model works. Therefore, there is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "N/A",
+      "score": 1,
+      "label": "OVERSTATED",
+      "explanation": "The review sentence claims that architectural modifications in the paper are original because existing works mostly inherited designs from Diffusion Models and focused on training techniques. The related work (FACM) discusses training instability and a flow-anchoring method, but does not directly address the originality of architectural designs or explicitly state that prior works neglected architecture. The evidence is tangential and does not strongly support or contradict the claim about architectural originality.",
+      "relevance_score": 0.6875
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work is about 'Continuous Manufacturing' and has no connection to diffusion models or consistency models, providing no evidence to evaluate the claim about architectural originality in the paper.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that architectural modifications in the paper are original because existing works focus on training techniques and formulations. The related work evidence describes a paper on improved training techniques for shortcut models, which focuses on training challenges and solutions (e.g., guidance, loss, transport) rather than architectural design. There is no direct evidence in the related work about architectural innovations in the paper being reviewed, making the claim unverifiable based solely on the provided evidence.",
+      "relevance_score": 0.625
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the originality of model architecture modifications in the paper, but the related work evidence is about a lung carcinoma diagnosis system, which is completely unrelated to the paper's content on diffusion and consistency models. No evidence is provided to support or contradict the claim.",
+      "relevance_score": 0.4375
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim asserts that model architecture modifications are original because existing works are mostly inherited from Diffusion Models' design and focus on training techniques/formulations, leaving architectural design underexplored. The related work (DE-CM) discusses trajectory selection, training stability, and sampling flexibility, but does not directly address the novelty of architectural modifications relative to diffusion model designs. The paper being reviewed introduces TrigFlow and architectural improvements (e.g., improved time-conditioning, adaptive group normalization), but the claim about originality is not directly supported or contradicted by the related work evidence provided. Evidence is missing or too vague to verify the claim.",
+      "relevance_score": 0.5625
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the originality of model architecture modifications in the paper. However, the provided related work (ID=4677a41af305578a94cebaa6d976bd07d3fff305) is about HRVis winds from MSG for nowcasting, which is unrelated to diffusion models, consistency models, or the architectural claims in the paper. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.375
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the originality of model architecture modifications relative to existing works on diffusion models. The related work evidence is a case study on discontinuity mapping using LiDAR in mining, which is entirely unrelated to diffusion models, consistency models, or generative AI. Therefore, there is no evidence to support, contradict, or assess the claim's calibration.",
+      "relevance_score": 0.3125
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the originality of model architecture modifications in the paper. The provided related work is a proceedings volume from a 2005 data mining conference, which does not contain relevant evidence about diffusion models or consistency models to verify or contradict the claim. Thus, evidence is missing.",
+      "relevance_score": 0.1875
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the originality of model architecture modifications in the paper (sCMs). The related work is about machine learning SRAFs for lithography, which is a completely different domain and does not provide evidence about diffusion model architectures or consistency models. There is no overlap or reference to architecture modifications in the related work, making verification impossible.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's model architecture modifications are original because existing works focus on training techniques and formulations, leaving architectural design underexplored. The related work provided (title only: 'for Prediction City Region Re-Weighting') is completely unrelated to diffusion models or consistency models, offering no evidence to support or contradict the claim. Thus, evidence is missing, making verification impossible.",
+      "relevance_score": 0.125
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about originality in model architecture modifications, but the provided related work evidence is a conference proceedings title from 2007, which is unrelated to the paper's content (consistency models, diffusion models, TrigFlow). There is no evidence to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.0625
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's unified perspective on diffusion and flow-matching parameterizations. The related work (TBCM) discusses continuous-time consistency models but does not provide evidence about the paper's specific contribution (TrigFlow as a unification) or its thoroughness, completeness, or novelty. The claim cannot be verified or assessed for alignment with the related work evidence.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's unified perspective is thorough, complete, and well-grounded with novel insights. The related work (BiFM) discusses a different method (bidirectional flow matching) and does not directly address or evaluate the paper's unification of diffusion and flow-matching parameterizations. The evidence is missing or unrelated to verify the claim.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper's unified perspective (TrigFlow) is thorough, complete, and well-grounded, offering novel insights. The related work evidence describes a different paper (Align Your Flow) that introduces flow maps and training objectives, but does not directly address or evaluate TrigFlow or the paper's claims about unifying diffusion and flow-matching. There is no evidence to support or contradict the specific claim about the paper's perspective being thorough or well-grounded.",
+      "relevance_score": 0.875
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's perspective on previous diffusion and flow-matching parameterizations, but the related work (Euler Mean Flows) does not discuss or provide evidence for this claim. It focuses on a different flow-based framework for one-step generation, not on unifying or analyzing prior parameterizations.",
+      "relevance_score": 0.8125
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's content (unified perspective on diffusion/flow-matching parameterizations), but the provided related work (ROCM) does not discuss this topic; it focuses on RLHF for consistency models. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper provides a 'unified perspective on previous diffusion and flow-matching parameterizations.' The related work describes a different method (Flow-Anchored Consistency Models) and does not discuss or validate the paper's unification of diffusion and flow-matching parameterizations. There is no evidence in the related work to support or contradict the claim about the paper's contribution.",
+      "relevance_score": 0.6875
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's contribution (unified perspective on previous diffusion and flow-matching parameterizations). However, the provided related work is titled 'Continuous Manufacturing – Producing More with Less', which is entirely unrelated to diffusion models, flow matching, or the paper's content. There is no evidence in the related work to verify the claim, making it unverifiable.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's contribution (thorough, complete, well-grounded unified perspective) but the related work evidence (about shortcut models) does not address the paper's specific claims about unifying diffusion and flow-matching parameterizations. No evidence is provided to verify or contradict the claim.",
+      "relevance_score": 0.625
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper's unified perspective is thorough, complete, well-grounded, and offers novel insights. However, the related work is about lung cancer diagnosis in CT images, which is completely unrelated to the paper's content on diffusion models and consistency models. There is no evidence in the provided text to verify or contradict the reviewer's claim.",
+      "relevance_score": 0.4375
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence praises the paper's unified perspective on diffusion and flow-matching parameterizations, but the provided related work (Dual-End Consistency Model) does not discuss or provide evidence about the paper's unifying perspective, making the claim unverifiable from the given evidence.",
+      "relevance_score": 0.5625
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's unified perspective on diffusion and flow-matching parameterizations. However, the related work evidence is about a completely different topic (HRVis winds from Meteosat Second Generation) and provides no information about the reviewed paper's content or claims. There is no evidence to support or contradict the review claim.",
+      "relevance_score": 0.375
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work is about LiDAR and mining, which is completely unrelated to the paper's content on diffusion models and consistency models. There is no evidence to support or contradict the reviewer's claim about the paper's unified perspective.",
+      "relevance_score": 0.3125
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's unified perspective on diffusion and flow-matching parameterizations, but the related work evidence (a 2005 data mining conference) does not discuss diffusion models, flow-matching, or any content from the reviewed paper. There is no evidence to support or contradict the claim.",
+      "relevance_score": 0.1875
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (introduction/abstract), but the provided related work evidence is from a different domain (lithography/machine learning for SRAF placement) and does not discuss diffusion models, flow matching, or consistency models. There is no evidence to support or contradict the claim about the paper's unified perspective.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper provides a thorough and complete unified perspective on diffusion and flow-matching parameterizations, offering novel insights. However, the related work evidence (titled 'for Prediction City Region Re-Weighting') is completely unrelated to the paper's content (which is about consistency models and diffusion/flow-matching unification). Therefore, there is no evidence to support or contradict the claim, making it insufficient for verification.",
+      "relevance_score": 0.125
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper offers a unified perspective and novel insights, but the related work (MICAI 2007 proceedings) provides no evidence about diffusion models, flow matching, or the paper's contributions. The evidence is missing or unverifiable.",
+      "relevance_score": 0.0625
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about scaling strategies (JVP Rearrangement and JVP of Flash Attention) for the models in the paper being reviewed. The related work (TBCM) does not mention these specific strategies; it focuses on a different distillation approach (image-free timestep distillation via trajectory-sampled pairs). There is no evidence in the provided related work to support or contradict the claim about JVP-based scaling methods, making it unverifiable.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The sentence claims specific strategies (JVP Rearrangement, JVP of Flash Attention) for scaling models to large sizes and datasets. The related work (BiFM) focuses on bidirectional flow matching for editing and generation, with no mention of JVP strategies or scaling methods. The paper being reviewed (sCM) discusses scaling but not these specific techniques. Thus, the claim cannot be verified or aligned with the provided evidence.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence states that strategies for scaling models to large sizes and datasets are proposed, namely JVP Rearrangement and JVP of Flash Attention. The related work abstract discusses scaling continuous-time flow map distillation and achieving state-of-the-art performance on ImageNet 512x512, which implies scaling to larger sizes and datasets. The mention of novel training techniques and scaling performance aligns with the claim of proposed scaling strategies, supporting the reviewer's assertion.",
+      "relevance_score": 0.875
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence proposes strategies for scaling models, specifically mentioning 'JVP Rearrangement and JVP of Flash Attention.' The related work paper discusses a 'JVP-free training framework' that avoids explicit Jacobian computations, directly aligning with the claim's focus on JVP-related techniques. The evidence supports the claim's relevance to JVP optimizations, though the exact strategies named are not detailed in the related work.",
+      "relevance_score": 0.8125
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims strategies for scaling models to large sizes and datasets are proposed (JVP Rearrangement and JVP of Flash Attention). The provided paper being reviewed abstract and introduction discusses scaling consistency models (sCMs) to 1.5 billion parameters and training on datasets like ImageNet 512×512, but it does not mention 'JVP Rearrangement' or 'JVP of Flash Attention' specifically. The related work (ROCM) is about applying RLHF to consistency models and does not mention these strategies either. Therefore, there is insufficient evidence in the provided texts to support or contradict the claim about these specific strategies.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes strategies (JVP Rearrangement and JVP of Flash Attention) for scaling models. However, the related work abstract only mentions developing a memory-efficient Chain-JVP for scaling training on a 14B parameter model, but does not explicitly name 'JVP Rearrangement' or 'JVP of Flash Attention' as proposed strategies. The evidence is insufficient to directly support or contradict the specific claim.",
+      "relevance_score": 0.6875
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes 'JVP Rearrangement and JVP of Flash Attention' for scaling models, but the provided paper abstract and introduction do not mention these specific strategies. The related work is about continuous manufacturing, which is unrelated to the paper's content. There is no evidence to verify the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's proposed scaling strategies (JVP Rearrangement and JVP of Flash Attention), but the provided related work evidence (shortcut models paper) does not mention these specific strategies or any connection to JVP-based techniques. The evidence is missing or unrelated, making it impossible to verify the claim against the related work.",
+      "relevance_score": 0.625
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about scaling strategies (JVP Rearrangement and JVP of Flash Attention) for the models in the paper being reviewed. The related work evidence is from a completely different paper on lung carcinoma detection, providing no relevant information about these scaling strategies or the paper under review. Therefore, the claim is unverifiable with the given evidence, and calibration cannot be assessed.",
+      "relevance_score": 0.4375
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims strategies for scaling models are proposed, specifically 'JVP Rearrangement and JVP of Flash Attention.' The provided paper abstract and introduction discuss scaling techniques (e.g., TrigFlow, architectural improvements) but do not mention 'JVP Rearrangement' or 'JVP of Flash Attention.' The related work (DE-CM) also does not reference these specific strategies. Without evidence linking these terms to the paper, the claim cannot be verified.",
+      "relevance_score": 0.5625
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence discusses strategies (JVP Rearrangement and JVP of Flash Attention) for scaling models, but the provided related work is about HRVis winds from Meteosat, which is unrelated to diffusion models or consistency models. No evidence exists in the related work to support or contradict the claim.",
+      "relevance_score": 0.375
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that strategies for scaling models are proposed (JVP Rearrangement and JVP of Flash Attention). However, the provided related work (about discontinuity mapping using LiDAR in mining) is entirely unrelated to the paper's content on diffusion models and consistency models. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.3125
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper proposes 'JVP Rearrangement and JVP of Flash Attention' for scaling models. The provided related work is an unrelated conference proceedings on knowledge discovery and data mining, containing no information about the paper's content or these specific strategies. Thus, there is no evidence to verify or contradict the claim.",
+      "relevance_score": 0.1875
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence discusses strategies for scaling consistency models (JVP Rearrangement and JVP of Flash Attention), but the related work paper is about lithography and machine learning SRAFs. There is no connection or evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that 'Strategies for scaling such models to large sizes and datasets are proposed, namely JVP Rearrangement and JVP of Flash Attention.' The provided paper text (abstract + introduction) discusses scaling consistency models and techniques like TrigFlow, but does not mention 'JVP Rearrangement' or 'JVP of Flash Attention'. The related work (ID=d4838211d7f65628f56b9f6faab30a95ff7b51f8) is about 'Prediction City Region Re-Weighting', which is unrelated to scaling models or the mentioned strategies. Therefore, there is insufficient evidence in either text to verify the claim, and the related work does not provide relevant support.",
+      "relevance_score": 0.125
+    },
+    {
+      "review_sentence_id": "C4",
+      "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence mentions specific strategies (JVP Rearrangement and JVP of Flash Attention) that are not discussed in the provided paper abstract/introduction or the related work. The related work is an unrelated conference proceedings, providing no evidence about these strategies. Thus, the claim cannot be verified.",
+      "relevance_score": 0.0625
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The proposed TrigFlow, as a novel unification of EDM and Flow Matching, substantially simplifies the analysis presented later and the practical techniques.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about TrigFlow unifying EDM and Flow Matching in the paper being reviewed. However, the related work evidence discusses Trajectory-Backward Consistency Model (TBCM) and does not mention TrigFlow, EDM, or Flow Matching. There is no evidence to support or contradict the claim, making it unverifiable from the provided related work.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about TrigFlow being a novel unification of EDM and Flow Matching that simplifies analysis and practical techniques. The related work (BiFM) is about bidirectional flow matching for image editing and generation, which does not provide evidence about TrigFlow, its novelty, or its simplification effects. There is no direct or indirect support for the claim in the provided related work.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim is about TrigFlow simplifying analysis and practical techniques in the paper being reviewed, but the related work evidence is a different paper (Align Your Flow) that does not mention TrigFlow or the specific simplification claims. There is no direct evidence in the provided related work to support or contradict the claim.",
+          "relevance_score": 0.875
+        },
+        {
+          "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims TrigFlow is a novel unification of EDM and Flow Matching that simplifies analysis and techniques. The provided paper text describes TrigFlow as unifying EDM and Flow Matching and simplifying formulations. However, the related work evidence (about Euler Mean Flows) does not mention TrigFlow, EDM, Flow Matching, or any simplification claims; it focuses on a different method (EMF) for trajectory consistency. Thus, there is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.8125
+        },
+        {
+          "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims TrigFlow simplifies analysis and practical techniques, but the related work (ROCM) focuses on RLHF for consistency models and does not discuss TrigFlow or its simplifying effects. There is no evidence in the provided related work to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about TrigFlow as a unification that simplifies analysis and practical techniques. The provided related work (FACM) discusses a different approach (Flow-Anchored Consistency Models) and does not directly mention or provide evidence about TrigFlow's claims. The claim is not verifiable with the given evidence.",
+          "relevance_score": 0.6875
+        },
+        {
+          "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about TrigFlow simplifying analysis and techniques in the paper, but the related work evidence is completely unrelated (about Continuous Manufacturing), providing no information to verify or align with the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that TrigFlow simplifies analysis and practical techniques, but the related work paper discusses 'Improved Training Technique for Shortcut Models' and does not mention TrigFlow, EDM, Flow Matching, or any related concepts. There is no evidence in the provided text to verify or relate to the claim.",
+          "relevance_score": 0.625
+        },
+        {
+          "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims TrigFlow simplifies analysis and practical techniques. The provided paper abstract/introduction discusses TrigFlow as unifying EDM and Flow Matching, simplifying formulations, but does not explicitly mention 'substantially simplifies the analysis presented later and the practical techniques.' The related work is about lung carcinoma diagnosis, which is entirely unrelated. There is no evidence from the related work to verify or support the claim.",
+          "relevance_score": 0.4375
+        },
+        {
+          "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims TrigFlow substantially simplifies analysis and practical techniques, but the related work (Dual-End Consistency Model) does not mention TrigFlow or provide evidence about its simplification effects. The related work focuses on a different method (DE-CM) and its own contributions, leaving no basis to verify the claim.",
+          "relevance_score": 0.5625
+        },
+        {
+          "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that TrigFlow is a novel unification of EDM and Flow Matching that simplifies analysis and practical techniques. The related work evidence is from a completely different domain (HRVis winds from Meteosat) and provides no information about TrigFlow, EDM, or Flow Matching. Therefore, there is no evidence to evaluate the claim's alignment or calibration.",
+          "relevance_score": 0.375
+        },
+        {
+          "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about TrigFlow simplifying analysis and techniques, but the related work is about LiDAR discontinuity mapping in mining, which is completely unrelated. No evidence exists in the provided text to support or contradict the claim.",
+          "relevance_score": 0.3125
+        },
+        {
+          "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about TrigFlow simplifying analysis and practical techniques, but the provided related work is from a 2005 data mining conference, which is unrelated to the paper's content on diffusion models and consistency models. No evidence is available to support or contradict the claim.",
+          "relevance_score": 0.1875
+        },
+        {
+          "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim states that TrigFlow unifies EDM and Flow Matching and simplifies analysis and techniques, which is a claim about the paper being reviewed. However, the related work evidence provided is about a different paper on lithography (SRAF placement) and contains no information about TrigFlow, EDM, Flow Matching, or any simplification in diffusion models. Therefore, the evidence is missing and unverifiable for this claim.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim about TrigFlow simplifying analysis and practical techniques is made in the paper being reviewed, but the provided related work is irrelevant (about city region re-weighting) and does not contain any evidence about TrigFlow, EDM, Flow Matching, or the simplification claim. Thus, evidence is missing.",
+          "relevance_score": 0.125
+        },
+        {
+          "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's proposed TrigFlow method. However, the provided related work evidence is a title and description of a 2007 conference proceedings, which contains no information about TrigFlow, EDM, Flow Matching, or the specific claims in the sentence. Therefore, there is no evidence to support or contradict the claim.",
+          "relevance_score": 0.0625
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "5808f526934396c7269bc8d3f7d91da5970b97de",
+        "331dfe0f72acc614c4008776870caed930366602",
+        "1e17688873f92b61a18029a05dda3c54fadcfae5"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0.0,
+          "weight": 0.3478
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0.0,
+          "weight": 0.3478
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 0.0,
+          "weight": 0.3043
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "Model architecture modifications are original since existing works are mostly inherited from Diffusion Models' design and focus on the training techniques and formulations, leaving the architectural design underexplored.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that model architecture modifications in the paper are original because existing works mostly inherit from Diffusion Models and focus on training techniques, leaving architecture underexplored. The related work abstract discusses a different method (TBCM) for timestep distillation and does not provide evidence about the novelty of architectural modifications or the state of architecture exploration in prior consistency model research. The evidence is missing to verify or contradict the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that model architecture modifications in the paper are original because existing works focus on training techniques and formulations, leaving architectural design underexplored. However, the provided related work (BiFM) is about a different framework (Bidirectional Flow Matching) and does not provide evidence about the originality of architectural modifications in the reviewed paper or about the state of architectural exploration in the field. The evidence is missing and unrelated to the specific claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that existing works mostly inherit from Diffusion Models' design and focus on training techniques, leaving architectural design underexplored. The related work (Align Your Flow) does not discuss the originality of model architecture modifications or the focus of existing works on training techniques vs. architectural design. Therefore, there is insufficient evidence to verify the claim.",
+          "relevance_score": 0.875
+        },
+        {
+          "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that model architecture modifications are original because existing works mostly inherit from Diffusion Models' design and focus on training techniques, leaving architecture underexplored. The related work (Euler Mean Flows) proposes a different flow-based framework with trajectory consistency, but it does not explicitly discuss architectural modifications or compare them to diffusion model designs. The evidence is insufficient to verify the claim about originality or the state of architectural exploration.",
+          "relevance_score": 0.8125
+        },
+        {
+          "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that model architecture modifications in the paper being reviewed are original because existing works focus on training techniques and formulations, leaving architectural design underexplored. The related work (ROCM) is about applying RLHF to consistency models and does not discuss model architecture modifications or architectural design exploration in prior consistency model works. Therefore, there is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+          "score": 1,
+          "label": "OVERSTATED",
+          "explanation": "The review sentence claims that architectural modifications in the paper are original because existing works mostly inherited designs from Diffusion Models and focused on training techniques. The related work (FACM) discusses training instability and a flow-anchoring method, but does not directly address the originality of architectural designs or explicitly state that prior works neglected architecture. The evidence is tangential and does not strongly support or contradict the claim about architectural originality.",
+          "relevance_score": 0.6875
+        },
+        {
+          "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work is about 'Continuous Manufacturing' and has no connection to diffusion models or consistency models, providing no evidence to evaluate the claim about architectural originality in the paper.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that architectural modifications in the paper are original because existing works focus on training techniques and formulations. The related work evidence describes a paper on improved training techniques for shortcut models, which focuses on training challenges and solutions (e.g., guidance, loss, transport) rather than architectural design. There is no direct evidence in the related work about architectural innovations in the paper being reviewed, making the claim unverifiable based solely on the provided evidence.",
+          "relevance_score": 0.625
+        },
+        {
+          "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the originality of model architecture modifications in the paper, but the related work evidence is about a lung carcinoma diagnosis system, which is completely unrelated to the paper's content on diffusion and consistency models. No evidence is provided to support or contradict the claim.",
+          "relevance_score": 0.4375
+        },
+        {
+          "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim asserts that model architecture modifications are original because existing works are mostly inherited from Diffusion Models' design and focus on training techniques/formulations, leaving architectural design underexplored. The related work (DE-CM) discusses trajectory selection, training stability, and sampling flexibility, but does not directly address the novelty of architectural modifications relative to diffusion model designs. The paper being reviewed introduces TrigFlow and architectural improvements (e.g., improved time-conditioning, adaptive group normalization), but the claim about originality is not directly supported or contradicted by the related work evidence provided. Evidence is missing or too vague to verify the claim.",
+          "relevance_score": 0.5625
+        },
+        {
+          "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the originality of model architecture modifications in the paper. However, the provided related work (ID=4677a41af305578a94cebaa6d976bd07d3fff305) is about HRVis winds from MSG for nowcasting, which is unrelated to diffusion models, consistency models, or the architectural claims in the paper. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.375
+        },
+        {
+          "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the originality of model architecture modifications relative to existing works on diffusion models. The related work evidence is a case study on discontinuity mapping using LiDAR in mining, which is entirely unrelated to diffusion models, consistency models, or generative AI. Therefore, there is no evidence to support, contradict, or assess the claim's calibration.",
+          "relevance_score": 0.3125
+        },
+        {
+          "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the originality of model architecture modifications in the paper. The provided related work is a proceedings volume from a 2005 data mining conference, which does not contain relevant evidence about diffusion models or consistency models to verify or contradict the claim. Thus, evidence is missing.",
+          "relevance_score": 0.1875
+        },
+        {
+          "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the originality of model architecture modifications in the paper (sCMs). The related work is about machine learning SRAFs for lithography, which is a completely different domain and does not provide evidence about diffusion model architectures or consistency models. There is no overlap or reference to architecture modifications in the related work, making verification impossible.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's model architecture modifications are original because existing works focus on training techniques and formulations, leaving architectural design underexplored. The related work provided (title only: 'for Prediction City Region Re-Weighting') is completely unrelated to diffusion models or consistency models, offering no evidence to support or contradict the claim. Thus, evidence is missing, making verification impossible.",
+          "relevance_score": 0.125
+        },
+        {
+          "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about originality in model architecture modifications, but the provided related work evidence is a conference proceedings title from 2007, which is unrelated to the paper's content (consistency models, diffusion models, TrigFlow). There is no evidence to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.0625
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "5808f526934396c7269bc8d3f7d91da5970b97de",
+        "331dfe0f72acc614c4008776870caed930366602",
+        "1e17688873f92b61a18029a05dda3c54fadcfae5"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0.0,
+          "weight": 0.3478
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0.0,
+          "weight": 0.3478
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 0.0,
+          "weight": 0.3043
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "The unified perspective on previous diffusion and flow-matching parameterizations is thorough, complete, and well-grounded, offering novel insights that could benefit the community.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's unified perspective on diffusion and flow-matching parameterizations. The related work (TBCM) discusses continuous-time consistency models but does not provide evidence about the paper's specific contribution (TrigFlow as a unification) or its thoroughness, completeness, or novelty. The claim cannot be verified or assessed for alignment with the related work evidence.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's unified perspective is thorough, complete, and well-grounded with novel insights. The related work (BiFM) discusses a different method (bidirectional flow matching) and does not directly address or evaluate the paper's unification of diffusion and flow-matching parameterizations. The evidence is missing or unrelated to verify the claim.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper's unified perspective (TrigFlow) is thorough, complete, and well-grounded, offering novel insights. The related work evidence describes a different paper (Align Your Flow) that introduces flow maps and training objectives, but does not directly address or evaluate TrigFlow or the paper's claims about unifying diffusion and flow-matching. There is no evidence to support or contradict the specific claim about the paper's perspective being thorough or well-grounded.",
+          "relevance_score": 0.875
+        },
+        {
+          "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's perspective on previous diffusion and flow-matching parameterizations, but the related work (Euler Mean Flows) does not discuss or provide evidence for this claim. It focuses on a different flow-based framework for one-step generation, not on unifying or analyzing prior parameterizations.",
+          "relevance_score": 0.8125
+        },
+        {
+          "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's content (unified perspective on diffusion/flow-matching parameterizations), but the provided related work (ROCM) does not discuss this topic; it focuses on RLHF for consistency models. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper provides a 'unified perspective on previous diffusion and flow-matching parameterizations.' The related work describes a different method (Flow-Anchored Consistency Models) and does not discuss or validate the paper's unification of diffusion and flow-matching parameterizations. There is no evidence in the related work to support or contradict the claim about the paper's contribution.",
+          "relevance_score": 0.6875
+        },
+        {
+          "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's contribution (unified perspective on previous diffusion and flow-matching parameterizations). However, the provided related work is titled 'Continuous Manufacturing – Producing More with Less', which is entirely unrelated to diffusion models, flow matching, or the paper's content. There is no evidence in the related work to verify the claim, making it unverifiable.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's contribution (thorough, complete, well-grounded unified perspective) but the related work evidence (about shortcut models) does not address the paper's specific claims about unifying diffusion and flow-matching parameterizations. No evidence is provided to verify or contradict the claim.",
+          "relevance_score": 0.625
+        },
+        {
+          "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper's unified perspective is thorough, complete, well-grounded, and offers novel insights. However, the related work is about lung cancer diagnosis in CT images, which is completely unrelated to the paper's content on diffusion models and consistency models. There is no evidence in the provided text to verify or contradict the reviewer's claim.",
+          "relevance_score": 0.4375
+        },
+        {
+          "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence praises the paper's unified perspective on diffusion and flow-matching parameterizations, but the provided related work (Dual-End Consistency Model) does not discuss or provide evidence about the paper's unifying perspective, making the claim unverifiable from the given evidence.",
+          "relevance_score": 0.5625
+        },
+        {
+          "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's unified perspective on diffusion and flow-matching parameterizations. However, the related work evidence is about a completely different topic (HRVis winds from Meteosat Second Generation) and provides no information about the reviewed paper's content or claims. There is no evidence to support or contradict the review claim.",
+          "relevance_score": 0.375
+        },
+        {
+          "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work is about LiDAR and mining, which is completely unrelated to the paper's content on diffusion models and consistency models. There is no evidence to support or contradict the reviewer's claim about the paper's unified perspective.",
+          "relevance_score": 0.3125
+        },
+        {
+          "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's unified perspective on diffusion and flow-matching parameterizations, but the related work evidence (a 2005 data mining conference) does not discuss diffusion models, flow-matching, or any content from the reviewed paper. There is no evidence to support or contradict the claim.",
+          "relevance_score": 0.1875
+        },
+        {
+          "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (introduction/abstract), but the provided related work evidence is from a different domain (lithography/machine learning for SRAF placement) and does not discuss diffusion models, flow matching, or consistency models. There is no evidence to support or contradict the claim about the paper's unified perspective.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper provides a thorough and complete unified perspective on diffusion and flow-matching parameterizations, offering novel insights. However, the related work evidence (titled 'for Prediction City Region Re-Weighting') is completely unrelated to the paper's content (which is about consistency models and diffusion/flow-matching unification). Therefore, there is no evidence to support or contradict the claim, making it insufficient for verification.",
+          "relevance_score": 0.125
+        },
+        {
+          "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper offers a unified perspective and novel insights, but the related work (MICAI 2007 proceedings) provides no evidence about diffusion models, flow matching, or the paper's contributions. The evidence is missing or unverifiable.",
+          "relevance_score": 0.0625
+        }
+      ],
+      "final_score": 0.0,
+      "best_evidence": [
+        "5808f526934396c7269bc8d3f7d91da5970b97de",
+        "331dfe0f72acc614c4008776870caed930366602",
+        "1e17688873f92b61a18029a05dda3c54fadcfae5"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0.0,
+          "weight": 0.3478
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0.0,
+          "weight": 0.3478
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 0.0,
+          "weight": 0.3043
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C4",
+      "text": "Strategies for scaling such models to large sizes and datasets are proposed, namely JVP Rearrangement and JVP of Flash Attention.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about scaling strategies (JVP Rearrangement and JVP of Flash Attention) for the models in the paper being reviewed. The related work (TBCM) does not mention these specific strategies; it focuses on a different distillation approach (image-free timestep distillation via trajectory-sampled pairs). There is no evidence in the provided related work to support or contradict the claim about JVP-based scaling methods, making it unverifiable.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The sentence claims specific strategies (JVP Rearrangement, JVP of Flash Attention) for scaling models to large sizes and datasets. The related work (BiFM) focuses on bidirectional flow matching for editing and generation, with no mention of JVP strategies or scaling methods. The paper being reviewed (sCM) discusses scaling but not these specific techniques. Thus, the claim cannot be verified or aligned with the provided evidence.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence states that strategies for scaling models to large sizes and datasets are proposed, namely JVP Rearrangement and JVP of Flash Attention. The related work abstract discusses scaling continuous-time flow map distillation and achieving state-of-the-art performance on ImageNet 512x512, which implies scaling to larger sizes and datasets. The mention of novel training techniques and scaling performance aligns with the claim of proposed scaling strategies, supporting the reviewer's assertion.",
+          "relevance_score": 0.875
+        },
+        {
+          "related_paper_id": "af73142fd329ab57393ccdb7fad9d440808266ce",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence proposes strategies for scaling models, specifically mentioning 'JVP Rearrangement and JVP of Flash Attention.' The related work paper discusses a 'JVP-free training framework' that avoids explicit Jacobian computations, directly aligning with the claim's focus on JVP-related techniques. The evidence supports the claim's relevance to JVP optimizations, though the exact strategies named are not detailed in the related work.",
+          "relevance_score": 0.8125
+        },
+        {
+          "related_paper_id": "7fc455dda2bb2891a6909a432de871fe3c54cdb8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims strategies for scaling models to large sizes and datasets are proposed (JVP Rearrangement and JVP of Flash Attention). The provided paper being reviewed abstract and introduction discusses scaling consistency models (sCMs) to 1.5 billion parameters and training on datasets like ImageNet 512×512, but it does not mention 'JVP Rearrangement' or 'JVP of Flash Attention' specifically. The related work (ROCM) is about applying RLHF to consistency models and does not mention these strategies either. Therefore, there is insufficient evidence in the provided texts to support or contradict the claim about these specific strategies.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "c1cb753f4676fd70f50ae7853b48dda9eedd6eb5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes strategies (JVP Rearrangement and JVP of Flash Attention) for scaling models. However, the related work abstract only mentions developing a memory-efficient Chain-JVP for scaling training on a 14B parameter model, but does not explicitly name 'JVP Rearrangement' or 'JVP of Flash Attention' as proposed strategies. The evidence is insufficient to directly support or contradict the specific claim.",
+          "relevance_score": 0.6875
+        },
+        {
+          "related_paper_id": "302d5350f12b81e478b8a21869a696a82ef2780a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes 'JVP Rearrangement and JVP of Flash Attention' for scaling models, but the provided paper abstract and introduction do not mention these specific strategies. The related work is about continuous manufacturing, which is unrelated to the paper's content. There is no evidence to verify the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "b15d92ff28b2cf1fd13bf6187844df1e073054a3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's proposed scaling strategies (JVP Rearrangement and JVP of Flash Attention), but the provided related work evidence (shortcut models paper) does not mention these specific strategies or any connection to JVP-based techniques. The evidence is missing or unrelated, making it impossible to verify the claim against the related work.",
+          "relevance_score": 0.625
+        },
+        {
+          "related_paper_id": "b9a04b85db4b6d38d5512270d7e4f0a666309dce",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about scaling strategies (JVP Rearrangement and JVP of Flash Attention) for the models in the paper being reviewed. The related work evidence is from a completely different paper on lung carcinoma detection, providing no relevant information about these scaling strategies or the paper under review. Therefore, the claim is unverifiable with the given evidence, and calibration cannot be assessed.",
+          "relevance_score": 0.4375
+        },
+        {
+          "related_paper_id": "66b931770d24e5ed90ca01c684e8bf06f4534fcf",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims strategies for scaling models are proposed, specifically 'JVP Rearrangement and JVP of Flash Attention.' The provided paper abstract and introduction discuss scaling techniques (e.g., TrigFlow, architectural improvements) but do not mention 'JVP Rearrangement' or 'JVP of Flash Attention.' The related work (DE-CM) also does not reference these specific strategies. Without evidence linking these terms to the paper, the claim cannot be verified.",
+          "relevance_score": 0.5625
+        },
+        {
+          "related_paper_id": "4677a41af305578a94cebaa6d976bd07d3fff305",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence discusses strategies (JVP Rearrangement and JVP of Flash Attention) for scaling models, but the provided related work is about HRVis winds from Meteosat, which is unrelated to diffusion models or consistency models. No evidence exists in the related work to support or contradict the claim.",
+          "relevance_score": 0.375
+        },
+        {
+          "related_paper_id": "6803d37fce90a915d55d3b5a60c957ef07dae957",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that strategies for scaling models are proposed (JVP Rearrangement and JVP of Flash Attention). However, the provided related work (about discontinuity mapping using LiDAR in mining) is entirely unrelated to the paper's content on diffusion models and consistency models. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.3125
+        },
+        {
+          "related_paper_id": "7aa2db2bea374d19e7397d2933fe72cbfcdf3988",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper proposes 'JVP Rearrangement and JVP of Flash Attention' for scaling models. The provided related work is an unrelated conference proceedings on knowledge discovery and data mining, containing no information about the paper's content or these specific strategies. Thus, there is no evidence to verify or contradict the claim.",
+          "relevance_score": 0.1875
+        },
+        {
+          "related_paper_id": "bcb69ad8e582eea819e4241be92a819fbc6741ee",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence discusses strategies for scaling consistency models (JVP Rearrangement and JVP of Flash Attention), but the related work paper is about lithography and machine learning SRAFs. There is no connection or evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "d4838211d7f65628f56b9f6faab30a95ff7b51f8",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that 'Strategies for scaling such models to large sizes and datasets are proposed, namely JVP Rearrangement and JVP of Flash Attention.' The provided paper text (abstract + introduction) discusses scaling consistency models and techniques like TrigFlow, but does not mention 'JVP Rearrangement' or 'JVP of Flash Attention'. The related work (ID=d4838211d7f65628f56b9f6faab30a95ff7b51f8) is about 'Prediction City Region Re-Weighting', which is unrelated to scaling models or the mentioned strategies. Therefore, there is insufficient evidence in either text to verify the claim, and the related work does not provide relevant support.",
+          "relevance_score": 0.125
+        },
+        {
+          "related_paper_id": "076e523bc6a05dc0a9fef6edb78b46c6c1aa08dc",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence mentions specific strategies (JVP Rearrangement and JVP of Flash Attention) that are not discussed in the provided paper abstract/introduction or the related work. The related work is an unrelated conference proceedings, providing no evidence about these strategies. Thus, the claim cannot be verified.",
+          "relevance_score": 0.0625
+        }
+      ],
+      "final_score": 0.6086956521739131,
+      "best_evidence": [
+        "5808f526934396c7269bc8d3f7d91da5970b97de",
+        "331dfe0f72acc614c4008776870caed930366602",
+        "1e17688873f92b61a18029a05dda3c54fadcfae5"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "5808f526934396c7269bc8d3f7d91da5970b97de",
+          "score": 0.0,
+          "weight": 0.3478
+        },
+        {
+          "related_paper_id": "331dfe0f72acc614c4008776870caed930366602",
+          "score": 0.0,
+          "weight": 0.3478
+        },
+        {
+          "related_paper_id": "1e17688873f92b61a18029a05dda3c54fadcfae5",
+          "score": 2.0,
+          "weight": 0.3043
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 4,
+    "related_works": 16,
+    "pairs_attempted": 64,
+    "pairs_completed": 64,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 4,
+      "claims_with_any_attempt": 4,
+      "claims_with_any_success": 4,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 4,
+      "claims_with_scored_evidence": 4,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 16.0
+    }
+  },
+  "errors": []
+}

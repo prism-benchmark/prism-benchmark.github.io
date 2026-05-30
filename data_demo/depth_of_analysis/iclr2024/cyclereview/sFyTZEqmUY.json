@@ -1,0 +1,119 @@
+{
+  "paper_id": "sFyTZEqmUY",
+  "source": "cyclereview_iclr2024",
+  "source_format": "cyclereview_json",
+  "reviews_analysis": {
+    "CYCLEREVIEW_ICLR2024": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper proposes a method to learn a simulator of the real world through generative modeling.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The simulator is trained on a variety of datasets, including internet text-image pairs, motion and action rich data from navigation, manipulation, human activities, robotics, and data from simulations and renderings.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The simulator is used to train embodied planners, low-level control policies, and video captioning models, which can generalize to the real world.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The simulator is also used to simulate long-horizon interactions and to generate training data for other machine intelligence tasks.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper proposes a novel method for learning a simulator of the real world through generative modeling.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The method is trained on a variety of datasets, including internet text-image pairs, motion and action rich data from navigation, manipulation, human activities, robotics, and data from simulations and renderings.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The simulator is used to train embodied planners, low-level control policies, and video captioning models, which can generalize to the real world.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The simulator is also used to simulate long-horizon interactions and to generate training data for other machine intelligence tasks.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper does not provide a detailed analysis of the performance of the simulator on various tasks.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The paper does not provide a detailed analysis of the limitations of the simulator.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "The paper does not provide a detailed analysis of the potential applications of the simulator.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "How does the performance of the simulator compare to other simulators?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "What are the limitations of the simulator?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "What are the potential applications of the simulator?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "5: marginally below the acceptance threshold",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 2263,
+    "completion_tokens": 2263,
+    "total_tokens": 4526
+  }
+}

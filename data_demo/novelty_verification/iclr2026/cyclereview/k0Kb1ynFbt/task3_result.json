@@ -1,0 +1,647 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The proposed method is novel and interesting."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "text": "Title: Exploratory Diffusion Model for Unsupervised Reinforcement Learning\n\nAbstract: Unsupervised reinforcement learning (URL) aims to pre-train agents by exploring diverse states or skills in reward-free environments, facilitating efficient adaptation to downstream tasks. As the agent cannot access extrinsic rewards during unsupervised exploration, existing methods design intrinsic rewards to model the explored data and encourage further exploration. However, the explored data are always heterogeneous, posing the requirements of powerful representation abilities for both intrinsic reward models and pre-trained policies. In this work, we propose the Exploratory Diffusion Model (ExDM), which leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks. Specifically, ExDM can accurately estimate the distribution of collected data in the replay buffer with the diffusion model and introduces the score-based intrinsic reward, encouraging the agent to explore less-visited states. After obtaining the pre-trained policies, ExDM enables rapid adaptation to downstream tasks. In detail, we provide theoretical analyses and practical algorithms for fine-tuning diffusion policies, addressing key challenges such as training instability and computational complexity caused by multi-step sampling. Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks, especially in structurally complicated environments.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+      "text": "Title: Deep Reinforcement Learning with Hybrid Intrinsic Reward Model\n\nAbstract: Intrinsic reward shaping has emerged as a prevalent approach to solving hard-exploration and sparse-rewards environments in reinforcement learning (RL). While single intrinsic rewards, such as curiosity-driven or novelty-based methods, have shown effectiveness, they often limit the diversity and efficiency of exploration. Moreover, the potential and principle of combining multiple intrinsic rewards remains insufficiently explored. To address this gap, we introduce HIRE (Hybrid Intrinsic REward), a flexible and elegant framework for creating hybrid intrinsic rewards through deliberate fusion strategies. With HIRE, we conduct a systematic analysis of the application of hybrid intrinsic rewards in both general and unsupervised RL across multiple benchmarks. Extensive experiments demonstrate that HIRE can significantly enhance exploration efficiency and diversity, as well as skill acquisition in complex and dynamic settings.",
+      "relevance_score": 0.95
+    },
+    {
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "text": "Title: Contrastive Intrinsic Control for Unsupervised Reinforcement Learning\n\nAbstract: We introduce Contrastive Intrinsic Control (CIC), an unsupervised reinforcement learning (RL) algorithm that maximizes the mutual information between state-transitions and latent skill vectors. CIC utilizes contrastive learning between state-transitions and skills vectors to learn behaviour embeddings and maximizes the entropy of these embeddings as an intrinsic reward to encourage behavioural diversity. We evaluate our algorithm on the Unsupervised RL Benchmark (URLB) in the asymptotic state-based setting, which consists of a long reward-free pre-training phase followed by a short adaptation phase to downstream tasks with extrinsic rewards. We find that CIC improves over prior exploration algorithms in terms of adaptation efficiency to downstream tasks on state-based URLB. 1 Deep RL is a powerful approach toward solving complex control tasks in the presence of extrinsic rewards. Successful applications include playing video games from pixels [1], mastering the game of Go [2, 3], robotic locomotion [4, 5, 6] and dexterous manipulation [7, 8, 9] policies. While effective, the above advances produced agents that are unable to generalize to new downstream tasks beyond the one they were trained to solve. Humans and animals on the other hand are able to acquire skills with minimal supervision and apply them to solve a variety of downstream tasks. In this work, we seek to train agents that acquire skills without supervision with generalization capabilities by efficiently adapting these skills to downstream tasks.",
+      "relevance_score": 0.9
+    },
+    {
+      "related_paper_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "text": "Title: See, Act, Adapt: Active Perception for Unsupervised Cross-Domain Visual Adaptation via Personalized VLM-Guided Agent\n\nAbstract: Pre-trained perception models excel in generic image domains but degrade significantly in novel environments like indoor scenes. The conventional remedy is fine-tuning on downstream data which incurs catastrophic forgetting of prior knowledge and demands costly, scene-specific annotations. We propose a paradigm shift through Sea$^2$ (See, Act, Adapt): rather than adapting the perception modules themselves, we adapt how they are deployed through an intelligent pose-control agent. Sea$^2$ keeps all perception modules frozen, requiring no downstream labels during training, and uses only scalar perceptual feedback to navigate the agent toward informative viewpoints. Specially, we transform a vision-language model (VLM) into a low-level pose controller through a two-stage training pipeline: first fine-tuning it on rule-based exploration trajectories that systematically probe indoor scenes, and then refining the policy via unsupervised reinforcement learning that constructs rewards from the perception module's outputs and confidence. Unlike prior active perception methods that couple exploration with specific models or collect data for retraining them, Sea$^2$ directly leverages off-the-shelf perception models for various tasks without the need for retraining. We conducted experiments on three visual perception tasks, including visual grounding, segmentation and 3D box estimation, with performance improvements of 13.54%, 15.92% and 27.68% respectively on dataset ReplicaCAD.",
+      "relevance_score": 0.8571428571428571
+    },
+    {
+      "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+      "text": "Title: Robotic Locomotion Skill Learning Using Unsupervised Reinforcement Learning With Controllable Latent Space Partition\n\nAbstract: Effective skill learning in an unsupervised manner is one of the capabilities an intelligent agent or robot should have. The discovered task-agnostic skills can be fine-tuned to downstream long-horizon tasks to improve execution efficiency. Unfortunately, the self-learning of locomotion skills, which occurs naturally in infancy, has been slow to develop in robotics. The instability exhibited by existing skill-learning methods makes it difficult to directly apply to complex control tasks, such as humanoid robots. To acquire reliable robotic locomotion skills, this article proposes a controllable latent space partition framework to assist reinforcement learning in accomplishing practicability-oriented unsupervised skill discovery (PoSD). Specifically, we use the distance similarity measure of the trajectory feature space to introduce the indicative information of the expert demonstrations into the partitioning and mapping process of the latent space. In addition, the intrinsic subrewards based on contrastive learning and particle entropy are designed to promote skill diversity and encourage exploration. Finally, reinforcement learning completes the generation of skill-conditioned policy driven by composite intrinsic rewards. The performance investigation of our method is conducted on five robots with more than 15 skills. The results indicate that PoSD achieves noticeable improvements in adaptation efficiency and practicability compared with other SOTA unsupervised skill discovery methods.",
+      "relevance_score": 0.85
+    },
+    {
+      "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+      "text": "Title: Unsupervised Model-based Pre-training for Data-efficient Reinforcement Learning from Pixels",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "text": "Title: Balancing State Exploration and Skill Diversity in Unsupervised Skill Discovery\n\nAbstract: Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised reinforcement learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this article, we propose contrastive dynamic skill discovery (ComSD) which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multijoint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2-D maze.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "475c83ef687067b108e2a23a1af0e95262d048ab",
+      "text": "Title: A Mixture of Surprises for Unsupervised Reinforcement Learning\n\nAbstract: Unsupervised reinforcement learning aims at learning a generalist policy in a reward-free manner for fast adaptation to downstream tasks. Most of the existing methods propose to provide an intrinsic reward based on surprise. Maximizing or minimizing surprise drives the agent to either explore or gain control over its environment. However, both strategies rely on a strong assumption: the entropy of the environment's dynamics is either high or low. This assumption may not always hold in real-world scenarios, where the entropy of the environment's dynamics may be unknown. Hence, choosing between the two objectives is a dilemma. We propose a novel yet simple mixture of policies to address this concern, allowing us to optimize an objective that simultaneously maximizes and minimizes the surprise. Concretely, we train one mixture component whose objective is to maximize the surprise and another whose objective is to minimize the surprise. Hence, our method does not make assumptions about the entropy of the environment's dynamics. We call our method a $\\textbf{M}\\text{ixture }\\textbf{O}\\text{f }\\textbf{S}\\text{urprise}\\textbf{S}$ (MOSS) for unsupervised reinforcement learning. Experimental results show that our simple method achieves state-of-the-art performance on the URLB benchmark, outperforming previous pure surprise maximization-based objectives. Our code is available at: https://github.com/LeapLabTHU/MOSS.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+      "text": "Title: Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals\n\nAbstract: Unsupervised pre-training can equip reinforcement learning agents with prior knowledge and accelerate learning in downstream tasks. A promising direction, grounded in human development, investigates agents that learn by setting and pursuing their own goals. The core challenge lies in how to effectively generate, select, and learn from such goals. Our focus is on broad distributions of downstream tasks where solving every task zero-shot is infeasible. Such settings naturally arise when the target tasks lie outside of the pre-training distribution or when their identities are unknown to the agent. In this work, we (i) optimize for efficient multi-episode exploration and adaptation within a meta-learning framework, and (ii) guide the training curriculum with evolving estimates of the agent's post-adaptation performance. We present ULEE, an unsupervised meta-learning method that combines an in-context learner with an adversarial goal-generation strategy that maintains training at the frontier of the agent's capabilities. On XLand-MiniGrid benchmarks, ULEE pre-training yields improved exploration and adaptation abilities that generalize to novel objectives, environment dynamics, and map structures. The resulting policy attains improved zero-shot and few-shot performance, and provides a strong initialization for longer fine-tuning processes. It outperforms learning from scratch, DIAYN pre-training, and alternative curricula.",
+      "relevance_score": 0.7142857142857143
+    },
+    {
+      "related_paper_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+      "text": "Title: EUCLID: Towards Efficient Unsupervised Reinforcement Learning with Multi-choice Dynamics Model\n\nAbstract: Unsupervised reinforcement learning (URL) poses a promising paradigm to learn useful behaviors in a task-agnostic environment without the guidance of extrinsic rewards to facilitate the fast adaptation of various downstream tasks. Previous works focused on the pre-training in a model-free manner while lacking the study of transition dynamics modeling that leaves a large space for the improvement of sample efficiency in downstream tasks. To this end, we propose an Efficient Unsupervised Reinforcement Learning Framework with Multi-choice Dynamics model (EUCLID), which introduces a novel model-fused paradigm to jointly pre-train the dynamics model and unsupervised exploration policy in the pre-training phase, thus better leveraging the environmental samples and improving the downstream task sampling efficiency. However, constructing a generalizable model which captures the local dynamics under different behaviors remains a challenging problem. We introduce the multi-choice dynamics model that covers different local dynamics under different behaviors concurrently, which uses different heads to learn the state transition under different behaviors during unsupervised pre-training and selects the most appropriate head for prediction in the downstream task. Experimental results in the manipulation and locomotion domains demonstrate that EUCLID achieves state-of-the-art performance with high sample efficiency, basically solving the state-based URLB benchmark and reaching a mean normalized score of 104.0$\\pm$1.2$\\%$ in downstream tasks with 100k fine-tuning steps, which is equivalent to DDPG's performance at 2M interactive steps with 20x more data.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+      "text": "Title: Unifying Unsupervised and Offline RL for Fast Adaptation Using World Models\n\nAbstract: Deep reinforcement learning has proven an effective method to solve many intricate tasks, yet it still struggles with data efficiency and generalization to novel scenarios, as required in settings such as robotics. Recent approaches to deal with this include (1) unsupervised pretraining of the agent in an environment without reward signals, and (2) training the agent using offline data coming from various possible sources. In this letter we propose to consider both of these approaches together, resulting in a setting where different types of data streams are available and fast online adaptation to new tasks is required. Towards this goal we consider the Unsupervised Reinforcement Learning Benchmark and show that unsupervised training’s primary value lies in its use as a source of exploration trajectories, beyond its role in pretraining a policy. Following this observation we develop a method based on a world-model as a generative model of offline exploration data and model predictive control (MPC) planning. We show that this approach outperforms previous methods and demonstrates task adaptation which is 10 times faster than previously shown. We then propose a setup that includes access to both unsupervised exploratory data and offline expert demonstrations when testing the agents’ online performance on adaptation to novel tasks in the environment.",
+      "relevance_score": 0.55
+    },
+    {
+      "related_paper_id": "8e63e0ccd18fdfc1f7a73fc9e0d4bc6c36316016",
+      "text": "Title: Unsupervised Reinforcement Learning in Multiple Environments\n\nAbstract: Several recent works have been dedicated to unsupervised reinforcement learning in a single environment, in which a policy is first pre-trained with unsupervised interactions, and then fine-tuned towards the optimal policy for several downstream supervised tasks defined over the same environment. Along this line, we address the problem of unsupervised reinforcement learning in a class of multiple environments, in which the policy is pre-trained with interactions from the whole class, and then fine-tuned for several tasks in any environment of the class. Notably, the problem is inherently multi-objective as we can trade off the pre-training objective between environments in many ways. In this work, we foster an exploration strategy that is sensitive to the most adverse cases within the class. Hence, we cast the exploration problem as the maximization of the mean of a critical percentile of the state visitation entropy induced by the exploration strategy over the class of environments. Then, we present a policy gradient algorithm, alphaMEPOL, to optimize the introduced objective through mediated interactions with the class. Finally, we empirically demonstrate the ability of the algorithm in learning to explore challenging classes of continuous environments and we show that reinforcement learning greatly benefits from the pre-trained exploration strategy w.r.t. learning from scratch.",
+      "relevance_score": 0.42857142857142855
+    },
+    {
+      "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "text": "Title: PEAC: Unsupervised Pre-training for Cross-Embodiment Reinforcement Learning\n\nAbstract: Designing generalizable agents capable of adapting to diverse embodiments has achieved significant attention in Reinforcement Learning (RL), which is critical for deploying RL agents in various real-world applications. Previous Cross-Embodiment RL approaches have focused on transferring knowledge across embodiments within specific tasks. These methods often result in knowledge tightly coupled with those tasks and fail to adequately capture the distinct characteristics of different embodiments. To address this limitation, we introduce the notion of Cross-Embodiment Unsupervised RL (CEURL), which leverages unsupervised learning to enable agents to acquire embodiment-aware and task-agnostic knowledge through online interactions within reward-free environments. We formulate CEURL as a novel Controlled Embodiment Markov Decision Process (CE-MDP) and systematically analyze CEURL's pre-training objectives under CE-MDP. Based on these analyses, we develop a novel algorithm Pre-trained Embodiment-Aware Control (PEAC) for handling CEURL, incorporating an intrinsic reward function specifically designed for cross-embodiment pre-training. PEAC not only provides an intuitive optimization strategy for cross-embodiment pre-training but also can integrate flexibly with existing unsupervised RL methods, facilitating cross-embodiment exploration and skill discovery. Extensive experiments in both simulated (e.g., DMC and Robosuite) and real-world environments (e.g., legged locomotion) demonstrate that PEAC significantly improves adaptation performance and cross-embodiment generalization, demonstrating its effectiveness in overcoming the unique challenges of CEURL. The project page and code are in https://yingchengyang.github.io/ceurl.",
+      "relevance_score": 0.45
+    },
+    {
+      "related_paper_id": "9bf925ecb1e6c6bfeecfc15aec1d0c6d7c28e135",
+      "text": "Title: CIC: Contrastive Intrinsic Control for Unsupervised Skill Discovery\n\nAbstract: We introduce Contrastive Intrinsic Control (CIC), an algorithm for unsupervised skill discovery that maximizes the mutual information between state-transitions and latent skill vectors. CIC utilizes contrastive learning between state-transitions and skills to learn behavior embeddings and maximizes the entropy of these embeddings as an intrinsic reward to encourage behavioral diversity. We evaluate our algorithm on the Unsupervised Reinforcement Learning Benchmark, which consists of a long reward-free pre-training phase followed by a short adaptation phase to downstream tasks with extrinsic rewards. CIC substantially improves over prior methods in terms of adaptation efficiency, outperforming prior unsupervised skill discovery methods by 1.79x and the next leading overall exploration algorithm by 1.18x.",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "3877158d5c7774ac37f29d18bd603656bba41849",
+      "text": "Title: APD: Learning Diverse Behaviors for Reinforcement Learning Through Unsupervised Active Pre-Training\n\nAbstract: Unsupervised pre-training in reinforcement learning enables the agent to gain prior environmental knowledge, which is then fine-tuned in the supervised stage to quickly adapt to various downstream tasks. In the absence of task-related rewards, pre-training aims to acquire policies (i.e., behaviors) that generate different trajectories to explore and master the environment. Previous research categorizes states into their associated behaviors by learning a supervised discriminator. However, an underlying problem persists: such discriminator is trained in lack of relevant data, leading to an underestimation of reward for new states and inadequate exploration. To this end, we introduce an unsupervised active pre-training algorithm for diverse behavior induction (APD). We explicitly characterize the behavior variables with a state-dependent sampling method, and the agent can decompose the entire state space into parts for fine-grained and diverse behavior learning. Specifically, a particle-based entropy estimator is applied to optimize a combination of behavioral entropy and mutual information objective. Moreover, we develop behavior-based representation learning to compress states into the latent space. Experiments show that our method can improve exploration efficiency and outperforms most state-of-the-art unsupervised algorithms on a number of continuous control tasks in the DeepMind Control Suite.",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "text": "Title: Constrained Ensemble Exploration for Unsupervised Skill Discovery\n\nAbstract: Unsupervised Reinforcement Learning (RL) provides a promising paradigm for learning useful behaviors via reward-free per-training. Existing methods for unsupervised RL mainly conduct empowerment-driven skill discovery or entropy-based exploration. However, empowerment often leads to static skills, and pure exploration only maximizes the state coverage rather than learning useful behaviors. In this paper, we propose a novel unsupervised RL framework via an ensemble of skills, where each skill performs partition exploration based on the state prototypes. Thus, each skill can explore the clustered area locally, and the ensemble skills maximize the overall state coverage. We adopt state-distribution constraints for the skill occupancy and the desired cluster for learning distinguishable skills. Theoretical analysis is provided for the state entropy and the resulting skill distributions. Based on extensive experiments on several challenging tasks, we find our method learns well-explored ensemble skills and achieves superior performance in various downstream tasks compared to previous methods.",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "ded711d2593522e0134d3404e5232bbb6af02e61",
+      "text": "Title: Pre-Training and Fine-Tuning Generative Flow Networks\n\nAbstract: Generative Flow Networks (GFlowNets) are amortized samplers that learn stochastic policies to sequentially generate compositional objects from a given unnormalized reward distribution. They can generate diverse sets of high-reward objects, which is an important consideration in scientific discovery tasks. However, as they are typically trained from a given extrinsic reward function, it remains an important open challenge about how to leverage the power of pre-training and train GFlowNets in an unsupervised fashion for efficient adaptation to downstream tasks. Inspired by recent successes of unsupervised pre-training in various domains, we introduce a novel approach for reward-free pre-training of GFlowNets. By framing the training as a self-supervised problem, we propose an outcome-conditioned GFlowNet (OC-GFN) that learns to explore the candidate space. Specifically, OC-GFN learns to reach any targeted outcomes, akin to goal-conditioned policies in reinforcement learning. We show that the pre-trained OC-GFN model can allow for a direct extraction of a policy capable of sampling from any new reward functions in downstream tasks. Nonetheless, adapting OC-GFN on a downstream task-specific reward involves an intractable marginalization over possible outcomes. We propose a novel way to approximate this marginalization by learning an amortized predictor enabling efficient fine-tuning. Extensive experimental results validate the efficacy of our approach, demonstrating the effectiveness of pre-training the OC-GFN, and its ability to swiftly adapt to downstream tasks and discover modes more efficiently. This work may serve as a foundation for further exploration of pre-training strategies in the context of GFlowNets.",
+      "relevance_score": 0.2857142857142857
+    },
+    {
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "text": "Title: Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning",
+      "relevance_score": 0.3
+    },
+    {
+      "related_paper_id": "1c35807e1a4c24e2013fa0a090cee9cc4716a5f5",
+      "text": "Title: Reinforcement Learning with Action-Free Pre-Training from Videos\n\nAbstract: Recent unsupervised pre-training methods have shown to be effective on language and vision domains by learning useful representations for multiple downstream tasks. In this paper, we investigate if such unsupervised pre-training methods can also be effective for vision-based reinforcement learning (RL). To this end, we introduce a framework that learns representations useful for understanding the dynamics via generative pre-training on videos. Our framework consists of two phases: we pre-train an action-free latent video prediction model, and then utilize the pre-trained representations for efficiently learning action-conditional world models on unseen environments. To incorporate additional action inputs during fine-tuning, we introduce a new architecture that stacks an action-conditional latent prediction model on top of the pre-trained action-free prediction model. Moreover, for better exploration, we propose a video-based intrinsic bonus that leverages pre-trained representations. We demonstrate that our framework significantly improves both final performances and sample-efficiency of vision-based RL in a variety of manipulation and locomotion tasks. Code is available at https://github.com/younggyoseo/apv.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "1d3b2de1f829264f6b33e8ee351d051f6e0fda2e",
+      "text": "Title: InDRiVE: Reward-Free World-Model Pretraining for Autonomous Driving via Latent Disagreement\n\nAbstract: Model-based reinforcement learning (MBRL) can reduce interaction cost for autonomous driving by learning a predictive world model, but it typically still depends on task-specific rewards that are difficult to design and often brittle under distribution shift. This paper presents InDRiVE, a DreamerV3-style MBRL agent that performs reward-free pretraining in CARLA using only intrinsic motivation derived from latent ensemble disagreement. Disagreement acts as a proxy for epistemic uncertainty and drives the agent toward under-explored driving situations, while an imagination-based actor-critic learns a planner-free exploration policy directly from the learned world model. After intrinsic pretraining, we evaluate zero-shot transfer by freezing all parameters and deploying the pretrained exploration policy in unseen towns and routes. We then study few-shot adaptation by training a task policy with limited extrinsic feedback for downstream objectives (lane following and collision avoidance). Experiments in CARLA across towns, routes, and traffic densities show that disagreement-based pretraining yields stronger zero-shot robustness and robust few-shot collision avoidance under town shift and matched interaction budgets, supporting the use of intrinsic disagreement as a practical reward-free pretraining signal for reusable driving world models.",
+      "relevance_score": 0.1
+    },
+    {
+      "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "text": "Title: Unsupervised Skill Discovery Through Skill Regions Differentiation\n\nAbstract: Unsupervised reinforcement learning (RL) aims to discover diverse behaviors that can accelerate the learning of downstream tasks. Previous methods typically focus on entropy-based exploration or empowerment-driven skill learning. However, entropy-based exploration struggles in large-scale state spaces (e.g., images), and empowerment-based methods with mutual information (MI) estimations have limitations in state exploration. To address these challenges, we propose a novel skill discovery objective that maximizes the deviation of the state density of one skill from the explored regions of other skills, encouraging inter-skill state diversity similar to the initial MI objective. For state-density estimation, we construct a novel conditional autoencoder with soft modularization for different skill policies in high-dimensional space. Meanwhile, to incentivize intra-skill exploration, we formulate an intrinsic reward based on the learned autoencoder that resembles count-based exploration in a compact latent space. Through extensive experiments in challenging state and image-based tasks, we find our method learns meaningful skills and achieves superior performance in various downstream tasks.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+      "text": "Title: SURF: Semantic-level Unsupervised Reward Function for Machine Translation\n\nAbstract: The performance of Reinforcement Learning (RL) for natural language tasks including Machine Translation (MT) is crucially dependent on the reward formulation. This is due to the intrinsic difficulty of the task in the high-dimensional discrete action space as well as the sparseness of the standard reward functions defined for limited set of ground-truth sequences biased towards singular lexical choices. To address this issue, we formulate SURF, a maximally dense semantic-level unsupervised reward function which mimics human evaluation by considering both sentence fluency and semantic similarity. We demonstrate the strong potential of SURF to leverage a family of Actor-Critic Transformer-based Architectures with synchronous and asynchronous multi-agent variants. To tackle the problem of large action-state spaces, each agent is equipped with unique exploration strategies, promoting diversity during its exploration of the hypothesis space. When BLEU scores are compared, our dense unsupervised reward outperforms the standard sparse reward by 2% on average for in- and out-of-domain settings.",
+      "relevance_score": 0.05
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The claim that the proposed method (ExDM) is novel and interesting is supported by the paper's introduction and abstract, which describe ExDM as the first to introduce diffusion models into unsupervised RL for modeling heterogeneous state distributions and defining a score-based intrinsic reward, presenting it as a novel contribution.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a claim about the paper, but the related work evidence (a different paper on hybrid intrinsic rewards) does not provide any information about the novelty or interest of the proposed method in the reviewed paper. Thus, the claim is unverifiable from the given related work.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague, subjective claim about the paper's novelty. The related work (CIC) does not provide evidence to evaluate this claim, as it describes a different method and does not directly compare to or discuss the proposed ExDM method's novelty or interestingness.",
+      "relevance_score": 0.9
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims novelty and interest for the proposed method (ExDM). The related work (Sea²) is a different paper on active perception adaptation, which does not mention ExDM or diffusion models for unsupervised RL. There is no evidence in the provided related work to support or align with the claim about ExDM's novelty or interest.",
+      "relevance_score": 0.8571428571428571
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about novelty and interest regarding the proposed method (ExDM), but the provided related work evidence is about a different method (PoSD) for robotic locomotion skill learning. There is no evidence in the related work to evaluate or compare the novelty or interest of ExDM.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the proposed method is novel and interesting, but the provided related work is a different paper on unsupervised model-based pre-training from pixels. This related work does not discuss the paper being reviewed (ExDM) or diffusion models in RL, so it provides no evidence to support or contradict the novelty claim.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting.' is a vague claim about the paper. The related work provides context on skill discovery methods but does not provide specific evidence to support or contradict the novelty or interestingness of the proposed method in the paper being reviewed.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "475c83ef687067b108e2a23a1af0e95262d048ab",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novelty and interest, but the related work abstract does not provide evidence about the paper's novelty or interest, only describing a different method. The claim cannot be verified using the provided evidence.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about novelty and interest without specific evidence. The related work describes a different method (ULEE) focused on goal-based exploration via meta-learning, which does not provide direct evidence to support or contradict the novelty claim about ExDM. The claim is too vague and the evidence is missing, so verification is not possible.",
+      "relevance_score": 0.7142857142857143
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the proposed method is novel and interesting, but the related work evidence (EUCLID) does not directly address or support this claim about the paper being reviewed (ExDM). No evidence is provided to verify novelty or interest.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence does not mention the proposed method's novelty or interestingness, providing no support or contradiction.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8e63e0ccd18fdfc1f7a73fc9e0d4bc6c36316016",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a vague claim about the paper being novel and interesting, but the related work evidence does not directly address novelty or interestingness; it focuses on unsupervised RL in multiple environments, not on diffusion models or the specific method proposed in the paper. There is no evidence to support or contradict the claim.",
+      "relevance_score": 0.42857142857142855
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting.' is a claim about the paper (ExDM), but the related work (PEAC) does not provide any evidence to verify or contradict this claim. PEAC discusses a different method for cross-embodiment unsupervised RL and does not mention ExDM or its novelty.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9bf925ecb1e6c6bfeecfc15aec1d0c6d7c28e135",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the proposed method is novel, but the related work evidence (CIC paper) shows prior work in unsupervised skill discovery using contrastive learning, contradicting the claim of novelty. The reviewer's strength of language is overstated given evidence of existing approaches.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3877158d5c7774ac37f29d18bd603656bba41849",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed (novelty/interest), but the related work evidence (APD) does not provide direct evidence about the novelty of ExDM. The related work is about a different method (APD) and does not address ExDM's novelty claims.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about the paper being novel and interesting, but the provided related work text does not contain any specific evidence about the novelty or interestingness of the paper being reviewed. The related work describes a different method (Constrained Ensemble Exploration) and does not address the specific claims of the paper being reviewed (ExDM). Therefore, the evidence is insufficient to verify or contradict the claim.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ded711d2593522e0134d3404e5232bbb6af02e61",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a vague claim about novelty and interest without specific evidence. The related work (OC-GFN) is about GFlowNets, not diffusion models or the specific proposed method (ExDM) in the paper under review. There is no direct evidence to support or contradict the claim.",
+      "relevance_score": 0.2857142857142857
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about the paper's novelty and interest, but the provided related work does not contain any direct evidence to verify or contradict this claim. The related work discusses a different topic (representations for exploration and goal-conditioned RL) and does not mention the methods or novelty of the reviewed paper.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1c35807e1a4c24e2013fa0a090cee9cc4716a5f5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague claim about the paper being reviewed. The provided related work evidence is about a different paper (action-free pre-training from videos), which does not directly address or support claims of novelty for the reviewed paper's method (ExDM). Without specific evidence from the related work that relates to ExDM's novelty, the claim cannot be verified or aligned.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1d3b2de1f829264f6b33e8ee351d051f6e0fda2e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a general claim about the paper being reviewed, but the provided related work evidence (InDRiVE) does not discuss the novelty or interest of the proposed method in the reviewed paper. Without specific information from the reviewed paper's content to compare against, the claim cannot be verified or evaluated for support.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'The proposed method is novel and interesting' is a claim about the paper being reviewed, but the provided related work evidence (abstract of a different paper) does not discuss the novelty or interestingness of the paper being reviewed. There is no direct information in the related work to support or contradict this claim, making it unverifiable.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novelty and interest, but the related work evidence is about SURF for machine translation, which is unrelated to the reviewed paper's topic (unsupervised RL with diffusion models). There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+      "relevance_score": 0.05
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The proposed method is novel and interesting.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The claim that the proposed method (ExDM) is novel and interesting is supported by the paper's introduction and abstract, which describe ExDM as the first to introduce diffusion models into unsupervised RL for modeling heterogeneous state distributions and defining a score-based intrinsic reward, presenting it as a novel contribution.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a claim about the paper, but the related work evidence (a different paper on hybrid intrinsic rewards) does not provide any information about the novelty or interest of the proposed method in the reviewed paper. Thus, the claim is unverifiable from the given related work.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague, subjective claim about the paper's novelty. The related work (CIC) does not provide evidence to evaluate this claim, as it describes a different method and does not directly compare to or discuss the proposed ExDM method's novelty or interestingness.",
+          "relevance_score": 0.9
+        },
+        {
+          "related_paper_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims novelty and interest for the proposed method (ExDM). The related work (Sea²) is a different paper on active perception adaptation, which does not mention ExDM or diffusion models for unsupervised RL. There is no evidence in the provided related work to support or align with the claim about ExDM's novelty or interest.",
+          "relevance_score": 0.8571428571428571
+        },
+        {
+          "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about novelty and interest regarding the proposed method (ExDM), but the provided related work evidence is about a different method (PoSD) for robotic locomotion skill learning. There is no evidence in the related work to evaluate or compare the novelty or interest of ExDM.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the proposed method is novel and interesting, but the provided related work is a different paper on unsupervised model-based pre-training from pixels. This related work does not discuss the paper being reviewed (ExDM) or diffusion models in RL, so it provides no evidence to support or contradict the novelty claim.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting.' is a vague claim about the paper. The related work provides context on skill discovery methods but does not provide specific evidence to support or contradict the novelty or interestingness of the proposed method in the paper being reviewed.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "475c83ef687067b108e2a23a1af0e95262d048ab",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novelty and interest, but the related work abstract does not provide evidence about the paper's novelty or interest, only describing a different method. The claim cannot be verified using the provided evidence.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about novelty and interest without specific evidence. The related work describes a different method (ULEE) focused on goal-based exploration via meta-learning, which does not provide direct evidence to support or contradict the novelty claim about ExDM. The claim is too vague and the evidence is missing, so verification is not possible.",
+          "relevance_score": 0.7142857142857143
+        },
+        {
+          "related_paper_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the proposed method is novel and interesting, but the related work evidence (EUCLID) does not directly address or support this claim about the paper being reviewed (ExDM). No evidence is provided to verify novelty or interest.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, but the related work evidence does not mention the proposed method's novelty or interestingness, providing no support or contradiction.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "8e63e0ccd18fdfc1f7a73fc9e0d4bc6c36316016",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a vague claim about the paper being novel and interesting, but the related work evidence does not directly address novelty or interestingness; it focuses on unsupervised RL in multiple environments, not on diffusion models or the specific method proposed in the paper. There is no evidence to support or contradict the claim.",
+          "relevance_score": 0.42857142857142855
+        },
+        {
+          "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting.' is a claim about the paper (ExDM), but the related work (PEAC) does not provide any evidence to verify or contradict this claim. PEAC discusses a different method for cross-embodiment unsupervised RL and does not mention ExDM or its novelty.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "9bf925ecb1e6c6bfeecfc15aec1d0c6d7c28e135",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the proposed method is novel, but the related work evidence (CIC paper) shows prior work in unsupervised skill discovery using contrastive learning, contradicting the claim of novelty. The reviewer's strength of language is overstated given evidence of existing approaches.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "3877158d5c7774ac37f29d18bd603656bba41849",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed (novelty/interest), but the related work evidence (APD) does not provide direct evidence about the novelty of ExDM. The related work is about a different method (APD) and does not address ExDM's novelty claims.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about the paper being novel and interesting, but the provided related work text does not contain any specific evidence about the novelty or interestingness of the paper being reviewed. The related work describes a different method (Constrained Ensemble Exploration) and does not address the specific claims of the paper being reviewed (ExDM). Therefore, the evidence is insufficient to verify or contradict the claim.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "ded711d2593522e0134d3404e5232bbb6af02e61",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a vague claim about novelty and interest without specific evidence. The related work (OC-GFN) is about GFlowNets, not diffusion models or the specific proposed method (ExDM) in the paper under review. There is no direct evidence to support or contradict the claim.",
+          "relevance_score": 0.2857142857142857
+        },
+        {
+          "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about the paper's novelty and interest, but the provided related work does not contain any direct evidence to verify or contradict this claim. The related work discusses a different topic (representations for exploration and goal-conditioned RL) and does not mention the methods or novelty of the reviewed paper.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "1c35807e1a4c24e2013fa0a090cee9cc4716a5f5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a vague claim about the paper being reviewed. The provided related work evidence is about a different paper (action-free pre-training from videos), which does not directly address or support claims of novelty for the reviewed paper's method (ExDM). Without specific evidence from the related work that relates to ExDM's novelty, the claim cannot be verified or aligned.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "1d3b2de1f829264f6b33e8ee351d051f6e0fda2e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a general claim about the paper being reviewed, but the provided related work evidence (InDRiVE) does not discuss the novelty or interest of the proposed method in the reviewed paper. Without specific information from the reviewed paper's content to compare against, the claim cannot be verified or evaluated for support.",
+          "relevance_score": 0.1
+        },
+        {
+          "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'The proposed method is novel and interesting' is a claim about the paper being reviewed, but the provided related work evidence (abstract of a different paper) does not discuss the novelty or interestingness of the paper being reviewed. There is no direct information in the related work to support or contradict this claim, making it unverifiable.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "0c863681a8aaca2089aaac55e68535b0cda7482f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novelty and interest, but the related work evidence is about SURF for machine translation, which is unrelated to the reviewed paper's topic (unsupervised RL with diffusion models). There is no evidence in the related work to support or contradict the claim, making verification impossible.",
+          "relevance_score": 0.05
+        }
+      ],
+      "final_score": 0.7017543859649122,
+      "best_evidence": [
+        "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+        "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+        "0292a7e356152a842aa47ff4336703cac540a86d"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2.0,
+          "weight": 0.3509
+        },
+        {
+          "related_paper_id": "bae3be5baadfc50fbbc466470de4e1b87f25f079",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0.0,
+          "weight": 0.3158
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 1,
+    "related_works": 22,
+    "pairs_attempted": 22,
+    "pairs_completed": 22,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 1,
+      "claims_with_any_attempt": 1,
+      "claims_with_any_success": 1,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 1,
+      "claims_with_scored_evidence": 1,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 22.0
+    }
+  },
+  "errors": []
+}

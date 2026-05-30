@@ -1,0 +1,453 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "universal real-world simulator interactive video generation universal simulator combining diverse datasets",
+      "status": "ok",
+      "count": 17
+    },
+    {
+      "id": "C2",
+      "query": "universal real-world simulator interactive video generation observation prediction video diffusion",
+      "status": "ok",
+      "count": 20
+    },
+    {
+      "id": "C3",
+      "query": "universal real-world simulator interactive video generation Training embodied agents simulated experience",
+      "status": "ok",
+      "count": 12
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "9e3fd420cd59b6a30e90e6dc6b4ceaf41ea1c227",
+      "title": "Vid2World: Crafting Video Diffusion Models to Interactive World Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "World models, which predict future transitions from past observation and action sequences, have shown great promise for improving data efficiency in sequential decision-making. However, existing world models often require extensive domain-specific training and still produce low-fidelity, coarse predictions, limiting their usefulness in complex environments. In contrast, video diffusion models trained on large-scale internet data have demonstrated impressive capabilities in generating high-quality videos that capture diverse real-world dynamics. In this work, we present Vid2World, a general approach for leveraging and transferring pre-trained video diffusion models into interactive world models. To bridge the gap, Vid2World systematically explores video diffusion causalization, reshaping both the architecture and training objective of pre-trained models to enable autoregressive generation. Additionally, it incorporates a causal action guidance mechanism to enhance action controllability in the resulting interactive world models. Extensive experiments across multiple domains, including robot manipulation, 3D game simulation, and open-world navigation, demonstrate that our method offers a scalable and effective pathway for repurposing highly capable video diffusion models into interactive world models.",
+      "url": "https://www.semanticscholar.org/paper/9e3fd420cd59b6a30e90e6dc6b4ceaf41ea1c227",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "c3d14e7a319ab764297a60112ce74af201762a73",
+      "title": "Learning Interactive Real-World Simulators",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "abstract": "Generative models trained on internet data have revolutionized how text, image, and video content can be created. Perhaps the next milestone for generative models is to simulate realistic experience in response to actions taken by humans, robots, and other interactive agents. Applications of a real-world simulator range from controllable content creation in games and movies, to training embodied agents purely in simulation that can be directly deployed in the real world. We explore the possibility of learning a universal simulator (UniSim) of real-world interaction through generative modeling. We first make the important observation that natural datasets available for learning a real-world simulator are often rich along different dimensions (e.g., abundant objects in image data, densely sampled actions in robotics data, and diverse movements in navigation data). With careful orchestration of diverse datasets, each providing a different aspect of the overall experience, we can simulate the visual outcome of both high-level instructions such as\"open the drawer\"and low-level controls from otherwise static scenes and objects. We use the simulator to train both high-level vision-language policies and low-level reinforcement learning policies, each of which can be deployed in the real world in zero shot after training purely in simulation. We also show that other types of intelligence such as video captioning models can benefit from training with simulated experience, opening up even wider applications. Video demos can be found at https://universal-simulator.github.io.",
+      "url": "https://www.semanticscholar.org/paper/c3d14e7a319ab764297a60112ce74af201762a73",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "eaff73131cbef9d3d95098d940dce9c6661114aa",
+      "title": "Voyager: Long-Range and World-Consistent Video Diffusion for Explorable 3D Scene Generation",
+      "year": 2025,
+      "venue": "ACM Transactions on Graphics",
+      "abstract": "Real-world applications like video gaming and virtual reality often demand the ability to model 3D scenes that users can explore along custom camera trajectories. While significant progress has been made in generating 3D objects from text or images, creating long-range, 3D-consistent, explorable 3D scenes remains a complex and challenging problem. In this work, we present Voyager, a novel video diffusion framework that generates world-consistent 3D point-cloud sequences from a single image with user-defined camera path. Unlike existing approaches, Voyager achieves end-to-end scene generation and reconstruction with inherent consistency across frames, eliminating the need for 3D reconstruction pipelines (e.g., structure-from-motion or multi-view stereo). Our method integrates three key components: 1) World-Consistent Video Diffusion: A unified architecture that jointly generates aligned RGB and depth video sequences, conditioned on existing world observation to ensure global coherence 2) Long-Range World Exploration: An efficient world cache with point culling and an auto-regressive inference with smooth video sampling for iterative scene extension with context-aware consistency, and 3) Scalable Data Engine: A video reconstruction pipeline that automates camera pose estimation and metric depth prediction for arbitrary videos, enabling large-scale, diverse training data curation without manual 3D annotations. Collectively, these designs result in a clear improvement over existing methods in visual quality and geometric accuracy, with versatile applications. Code for this paper are at https://github.com/Tencent-Hunyuan/HunyuanWorld-Voyager.",
+      "url": "https://www.semanticscholar.org/paper/eaff73131cbef9d3d95098d940dce9c6661114aa",
+      "embedding": null,
+      "relevance_score": 0.95
+    },
+    {
+      "cand_id": "c03341c91c6f83340f6af9aa55b5e8194a755525",
+      "title": "DriVLMe: Enhancing LLM-based Autonomous Driving Agents with Embodied and Social Experiences",
+      "year": 2024,
+      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+      "abstract": "Recent advancements in foundation models (FMs) have unlocked new prospects in autonomous driving, yet the experimental settings of these studies are preliminary, oversimplified, and fail to capture the complexity of real-world driving scenarios in human environments. It remains under-explored whether FM agents can handle long-horizon navigation tasks with free-from dialogue and deal with unexpected situations caused by environmental dynamics or task changes. To explore the capabilities and boundaries of FMs faced with the challenges above, we introduce DriVLMe, a video-language-model-based agent to facilitate natural and effective communication between humans and autonomous vehicles that perceive the environment and navigate. We develop DriVLMe from both embodied experiences in a simulated environment and social experiences from real human dialogue. While DriVLMe demonstrates competitive performance in both open-loop benchmarks and closed-loop human studies, we reveal several limitations and challenges, including unacceptable inference time, imbalanced training data, limited visual understanding, challenges with multi-turn interactions, simplified language generation from robotic experiences, and difficulties in handling on-the-fly unexpected situations like environmental dynamics and task changes. Nevertheless, DriVLMe offers a promising new direction for autonomous driving agents that need to navigate not just complex environments but also complex social interactions.",
+      "url": "https://www.semanticscholar.org/paper/c03341c91c6f83340f6af9aa55b5e8194a755525",
+      "embedding": null,
+      "relevance_score": 0.9166666666666666
+    },
+    {
+      "cand_id": "62105b85beef58ce528daf6a324277441ec07cb3",
+      "title": "ARDuP: Active Region Video Diffusion for Universal Policies",
+      "year": 2024,
+      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+      "abstract": "Sequential decision-making can be formulated as a text-conditioned video generation problem, where a video planner, guided by a text-defined goal, generates future frames visualizing planned actions, from which control actions are subsequently derived. In this work, we introduce Active Region Video Diffusion for Universal Policies (ARDuP), a novel framework for video-based policy learning that emphasizes the generation of active regions, i.e. potential interaction areas, enhancing the conditional policy’s focus on interactive areas critical for task execution. This innovative framework integrates active region conditioning with latent diffusion models for video planning and employs latent representations for direct action decoding during inverse dynamic modeling. By utilizing motion cues in videos for automatic active region discovery, our method eliminates the need for manual annotations of active regions. We validate ARDuP’s efficacy via extensive experiments on simulator CLIPort and the real-world dataset BridgeData v2, achieving notable improvements in success rates and generating convincingly realistic video plans.",
+      "url": "https://www.semanticscholar.org/paper/62105b85beef58ce528daf6a324277441ec07cb3",
+      "embedding": null,
+      "relevance_score": 0.9
+    },
+    {
+      "cand_id": "cffd7238aba668e399a82581b17efa3c21f20de8",
+      "title": "Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Recent advances in video generation models have sparked interest in world models capable of simulating realistic environments. While navigation has been well-explored, physically meaningful interactions that mimic real-world forces remain largely understudied. In this work, we investigate using physical forces as a control signal for video generation and propose force prompts which enable users to interact with images through both localized point forces, such as poking a plant, and global wind force fields, such as wind blowing on fabric. We demonstrate that these force prompts can enable videos to respond realistically to physical control signals by leveraging the visual and motion prior in the original pretrained model, without using any 3D asset or physics simulator at inference. The primary challenge of force prompting is the difficulty in obtaining high quality paired force-video training data, both in the real world due to the difficulty of obtaining force signals, and in synthetic data due to limitations in the visual quality and domain diversity of physics simulators. Our key finding is that video generation models can generalize remarkably well when adapted to follow physical force conditioning from videos synthesized by Blender, even with limited demonstrations of few objects. Our method can generate videos which simulate forces across diverse geometries, settings, and materials. We also try to understand the source of this generalization and perform ablations that reveal two key elements: visual diversity and the use of specific text keywords during training. Our approach is trained on only around 15k training examples for a single day on four A100 GPUs, and outperforms existing methods on force adherence and physics realism, bringing world models closer to real-world physics interactions. We release all datasets, code, weights, and interactive video demos at our project page.",
+      "url": "https://www.semanticscholar.org/paper/cffd7238aba668e399a82581b17efa3c21f20de8",
+      "embedding": null,
+      "relevance_score": 0.8823529411764706
+    },
+    {
+      "cand_id": "7e4eeb1788fdfffbdbcf13416ac24b0d9007dd37",
+      "title": "Mixed Reality and the interactive imagination : Adding the art to the science and technology of Mixed Reality for training , education and entertainment",
+      "year": 2002,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/7e4eeb1788fdfffbdbcf13416ac24b0d9007dd37",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "5739c387d74bf904fb7559f26c684a0e7e835e83",
+      "title": "ComSim: Building Scalable Real-World Robot Data Generation via Compositional Simulation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Recent advancements in foundational models, such as large language models and world models, have greatly enhanced the capabilities of robotics, enabling robots to autonomously perform complex tasks. However, acquiring large-scale, high-quality training data for robotics remains a challenge, as it often requires substantial manual effort and is limited in its coverage of diverse real-world environments. To address this, we propose a novel hybrid approach called Compositional Simulation, which combines classical simulation and neural simulation to generate accurate action-video pairs while maintaining real-world consistency. Our approach utilizes a closed-loop real-sim-real data augmentation pipeline, leveraging a small amount of real-world data to generate diverse, large-scale training datasets that cover a broader spectrum of real-world scenarios. We train a neural simulator to transform classical simulation videos into real-world representations, improving the accuracy of policy models trained in real-world environments. Through extensive experiments, we demonstrate that our method significantly reduces the sim2real domain gap, resulting in higher success rates in real-world policy model training. Our approach offers a scalable solution for generating robust training data and bridging the gap between simulated and real-world robotics.",
+      "url": "https://www.semanticscholar.org/paper/5739c387d74bf904fb7559f26c684a0e7e835e83",
+      "embedding": null,
+      "relevance_score": 0.9411764705882353
+    },
+    {
+      "cand_id": "eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+      "title": "Learning Real-World Action-Video Dynamics with Heterogeneous Masked Autoregression",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "We propose Heterogeneous Masked Autoregression (HMA) for modeling action-video dynamics to generate high-quality data and evaluation in scaling robot learning. Building interactive video world models and policies for robotics is difficult due to the challenge of handling diverse settings while maintaining computational efficiency to run in real time. HMA uses heterogeneous pre-training from observations and action sequences across different robotic embodiments, domains, and tasks. HMA uses masked autoregression to generate quantized or soft tokens for video predictions. \\ourshort achieves better visual fidelity and controllability than the previous robotic video generation models with 15 times faster speed in the real world. After post-training, this model can be used as a video simulator from low-level action inputs for evaluating policies and generating synthetic data. See this link https://liruiw.github.io/hma for more information.",
+      "url": "https://www.semanticscholar.org/paper/eb9e49e6e4c3ce04c511baae4d7475c3c56f2e11",
+      "embedding": null,
+      "relevance_score": 0.85
+    },
+    {
+      "cand_id": "73df6a33d9177cf18fa4661f45a35b606e09a643",
+      "title": "Seed3D 1.0: From Images to High-Fidelity Simulation-Ready 3D Assets",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Developing embodied AI agents requires scalable training environments that balance content diversity with physics accuracy. World simulators provide such environments but face distinct limitations: video-based methods generate diverse content but lack real-time physics feedback for interactive learning, while physics-based engines provide accurate dynamics but face scalability limitations from costly manual asset creation. We present Seed3D 1.0, a foundation model that generates simulation-ready 3D assets from single images, addressing the scalability challenge while maintaining physics rigor. Unlike existing 3D generation models, our system produces assets with accurate geometry, well-aligned textures, and realistic physically-based materials. These assets can be directly integrated into physics engines with minimal configuration, enabling deployment in robotic manipulation and simulation training. Beyond individual objects, the system scales to complete scene generation through assembling objects into coherent environments. By enabling scalable simulation-ready content creation, Seed3D 1.0 provides a foundation for advancing physics-based world simulators. Seed3D 1.0 is now available on https://console.volcengine.com/ark/region:ark+cn-beijing/experience/vision?modelId=doubao-seed3d-1-0-250928&tab=Gen3D",
+      "url": "https://www.semanticscholar.org/paper/73df6a33d9177cf18fa4661f45a35b606e09a643",
+      "embedding": null,
+      "relevance_score": 0.8333333333333334
+    },
+    {
+      "cand_id": "bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "title": "Interactive World Simulator for Robot Policy Training and Evaluation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Action-conditioned video prediction models (often referred to as world models) have shown strong potential for robotics applications, but existing approaches are often slow and struggle to capture physically consistent interactions over long horizons, limiting their usefulness for scalable robot policy training and evaluation. We present Interactive World Simulator, a framework for building interactive world models from a moderate-sized robot interaction dataset. Our approach leverages consistency models for both image decoding and latent-space dynamics prediction, enabling fast and stable simulation of physical interactions. In our experiments, the learned world models produce interaction-consistent pixel-level predictions and support stable long-horizon interactions for more than 10 minutes at 15 FPS on a single RTX 4090 GPU. Our framework enables scalable demonstration collection solely within the world models to train state-of-the-art imitation policies. Through extensive real-world evaluation across diverse tasks involving rigid objects, deformable objects, object piles, and their interactions, we find that policies trained on world-model-generated data perform comparably to those trained on the same amount of real-world data. Additionally, we evaluate policies both within the world models and in the real world across diverse tasks, and observe a strong correlation between simulated and real-world performance. Together, these results establish the Interactive World Simulator as a stable and physically consistent surrogate for scalable robotic data generation and faithful, reproducible policy evaluation.",
+      "url": "https://www.semanticscholar.org/paper/bd6e2ea7e39d44736ed7000de8033d08e243f8ee",
+      "embedding": null,
+      "relevance_score": 0.8235294117647058
+    },
+    {
+      "cand_id": "160e7f5eb68104feee2c3fb696af8c43718e4ac5",
+      "title": "19th on Robots and Vision",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/160e7f5eb68104feee2c3fb696af8c43718e4ac5",
+      "embedding": null,
+      "relevance_score": 0.6666666666666666
+    },
+    {
+      "cand_id": "e5f1fed395a9518bd77e22a187c95fdbda109262",
+      "title": "InterDyn: Controllable Interactive Dynamics with Video Diffusion Models",
+      "year": 2024,
+      "venue": "Computer Vision and Pattern Recognition",
+      "abstract": "Predicting the dynamics of interacting objects is essential for both humans and intelligent systems. However, existing approaches are limited to simplified, toy settings and lack generalizability to complex, real-world environments. Recent advances in generative models have enabled the prediction of state transitions based on interventions, but focus on generating a single future state which neglects the continuous dynamics resulting from the interaction. To address this gap, we propose InterDyn, a novel framework that generates videos of interactive dynamics given an initial frame and a control signal encoding the motion of a driving object or actor. Our key insight is that large video generation models can act as both neural renderers and implicit physics \"simulators\", having learned interactive dynamics from large-scale video data. To effectively harness this capability, we introduce an interactive control mechanism that conditions the video generation process on the motion of the driving entity. Qualitative results demonstrate that InterDyn generates plausible, temporally consistent videos of complex object interactions while generalizing to unseen objects. Quantitative evaluations show that InterDyn outperforms baselines that focus on static state transitions. This work highlights the potential of leveraging video generative models as implicit physics engines. Code and trained models will be released at: https://interdyn.is.tue.mpg.de/.",
+      "url": "https://www.semanticscholar.org/paper/e5f1fed395a9518bd77e22a187c95fdbda109262",
+      "embedding": null,
+      "relevance_score": 0.8
+    },
+    {
+      "cand_id": "b7e5b76b1e05f4d5bb243b7cb2a07c88ab909b3e",
+      "title": "Intelligent virtual agents : 7th international conference, IVA 2007, Paris, France, September 17-19, 2007 : proceedings",
+      "year": 2007,
+      "venue": "International Conference on Intelligent Virtual Agents",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/b7e5b76b1e05f4d5bb243b7cb2a07c88ab909b3e",
+      "embedding": null,
+      "relevance_score": 0.5833333333333334
+    },
+    {
+      "cand_id": "301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "title": "Nano World Models: A Minimalist Implementation of Future Video Prediction",
+      "year": 2026,
+      "venue": "",
+      "abstract": "World models have become a central paradigm for learning predictive simulators that support generation, planning, and decision-making. Yet, despite rapid progress in industry-scale interactive video generation, the broader research community still lacks compact, reproducible, and easily extensible implementations for studying the design choices underlying modern world models. We introduce Nano World Models, a minimalist codebase for future video prediction centered around diffusion forcing. Nano World Models provides a unified interface for generative objectives, model scales, action-conditioning mechanisms, latent observation spaces, datasets, evaluation protocols, and long-horizon rollout procedures. This design enables controlled studies of world-modeling components that are often entangled across separate implementations. Through experiments across simple control environments, game simulation, and real-robot data, we examine how prediction parameterization, architecture scale, action injection, sampling budget, and domain complexity affect video prediction quality and autoregressive rollout behavior. By releasing code, configurations, evaluation scripts, and pretrained checkpoints, Nano World Models aims to provide a compact yet extensible experimental substrate for open, reproducible, and scientific world-model research.",
+      "url": "https://www.semanticscholar.org/paper/301530307604741d8f9d39bb16fe0f69922a6b5d",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "e1682f0ae5ff0d6d4128fdd57553fb986837b1d4",
+      "title": "Dreamland: Controllable World Creation with Simulator and Generative Models",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Large-scale video generative models can synthesize diverse and realistic visual content for dynamic world creation, but they often lack element-wise controllability, hindering their use in editing scenes and training embodied AI agents. We propose Dreamland, a hybrid world generation framework combining the granular control of a physics-based simulator and the photorealistic content output of large-scale pretrained generative models. In particular, we design a layered world abstraction that encodes both pixel-level and object-level semantics and geometry as an intermediate representation to bridge the simulator and the generative model. This approach enhances controllability, minimizes adaptation cost through early alignment with real-world distributions, and supports off-the-shelf use of existing and future pretrained generative models. We further construct a D3Sim dataset to facilitate the training and evaluation of hybrid generation pipelines. Experiments demonstrate that Dreamland outperforms existing baselines with 50.8% improved image quality, 17.9% stronger controllability, and has great potential to enhance embodied agent training. Code and data will be made available.",
+      "url": "https://www.semanticscholar.org/paper/e1682f0ae5ff0d6d4128fdd57553fb986837b1d4",
+      "embedding": null,
+      "relevance_score": 0.7058823529411765
+    },
+    {
+      "cand_id": "e77ac78ca6c27dc5a4e34dc0d3afe63513e898df",
+      "title": "Show Me: Unifying Instructional Image and Video Generation with Diffusion Models",
+      "year": 2025,
+      "venue": "IEEE Workshop/Winter Conference on Applications of Computer Vision",
+      "abstract": "Generating visual instructions in a given context is essential for developing interactive world simulators. While prior works address this problem through either text-guided image manipulation or video prediction, these tasks are typically treated in isolation. This separation reveals a fundamental issue: image manipulation methods overlook how actions unfold over time, while video prediction models often ignore the intended outcomes. To this end, we propose ShowMe, a unified framework that enables both tasks by selectively activating the spatial and temporal components of video diffusion models. In addition, we introduce structure and motion consistency rewards to improve structural fidelity and temporal coherence. Notably, this unification brings dual benefits: the spatial knowledge gained through video pretraining enhances contextual consistency and realism in non-rigid image edits, while the instruction-guided manipulation stage equips the model with stronger goal-oriented reasoning for video prediction. Experiments on diverse benchmarks demonstrate that our method outperforms expert models in both instructional image and video generation, highlighting the strength of video diffusion models as a unified action-object state transformer. Our code will be available at https://yujiangpu20.github.io/showme/.",
+      "url": "https://www.semanticscholar.org/paper/e77ac78ca6c27dc5a4e34dc0d3afe63513e898df",
+      "embedding": null,
+      "relevance_score": 0.7
+    },
+    {
+      "cand_id": "2075100ec90d6655e5b36b1765260be06792deba",
+      "title": "LifeSim: Long-Horizon User Life Simulator for Personalized Assistant Evaluation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "The rapid advancement of large language models (LLMs) has accelerated progress toward universal AI assistants. However, existing benchmarks for personalized assistants remain misaligned with real-world user-assistant interactions, failing to capture the complexity of external contexts and users'cognitive states. To bridge this gap, we propose LifeSim, a user simulator that models user cognition through the Belief-Desire-Intention (BDI) model within physical environments for coherent life trajectories generation, and simulates intention-driven user interactive behaviors. Based on LifeSim, we introduce LifeSim-Eval, a comprehensive benchmark for multi-scenario, long-horizon personalized assistance. LifeSim-Eval covers 8 life domains and 1,200 diverse scenarios, and adopts a multi-turn interactive method to assess models'abilities to complete explicit and implicit intentions, recover user profiles, and produce high-quality responses. Under both single-scenario and long-horizon settings, our experiments reveal that current LLMs face significant limitations in handling implicit intention and long-term user preference modeling.",
+      "url": "https://www.semanticscholar.org/paper/2075100ec90d6655e5b36b1765260be06792deba",
+      "embedding": null,
+      "relevance_score": 0.6470588235294118
+    },
+    {
+      "cand_id": "1453764a5b879ec342f3691d4207384626d589fa",
+      "title": "DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Video generation models, as one form of world models, have emerged as one of the most exciting frontiers in AI, promising agents the ability to imagine the future by modeling the temporal evolution of complex scenes. In autonomous driving, this vision gives rise to driving world models: generative simulators that imagine ego and agent futures, enabling scalable simulation, safe testing of corner cases, and rich synthetic data generation. Yet, despite fast-growing research activity, the field lacks a rigorous benchmark to measure progress and guide priorities. Existing evaluations remain limited: generic video metrics overlook safety-critical imaging factors; trajectory plausibility is rarely quantified; temporal and agent-level consistency is neglected; and controllability with respect to ego conditioning is ignored. Moreover, current datasets fail to cover the diversity of conditions required for real-world deployment. To address these gaps, we present DrivingGen, the first comprehensive benchmark for generative driving world models. DrivingGen combines a diverse evaluation dataset curated from both driving datasets and internet-scale video sources, spanning varied weather, time of day, geographic regions, and complex maneuvers, with a suite of new metrics that jointly assess visual realism, trajectory plausibility, temporal coherence, and controllability. Benchmarking 14 state-of-the-art models reveals clear trade-offs: general models look better but break physics, while driving-specific ones capture motion realistically but lag in visual quality. DrivingGen offers a unified evaluation framework to foster reliable, controllable, and deployable driving world models, enabling scalable simulation, planning, and data-driven decision-making.",
+      "url": "https://www.semanticscholar.org/paper/1453764a5b879ec342f3691d4207384626d589fa",
+      "embedding": null,
+      "relevance_score": 0.5882352941176471
+    },
+    {
+      "cand_id": "a08bd355d0fe751096217c48a3864c3a0e2ff5e1",
+      "title": "RECOSIM: A Universal, Accurate, and Scalable Simulation Framework for Online Community Recommendations",
+      "year": 2025,
+      "venue": "ACM Trans. Inf. Syst.",
+      "abstract": "As recommender systems become increasingly important components in online communities, studying their impact on these communities becomes ever more crucial. Facing the high costs and ethical risks of real-world social experiments, researchers construct recommendation simulators to study the interactions between recommender systems and users. However, existing simulators face challenges in providing universal, accurate, and scalable interaction modeling for various types of online communities involving millions of contents and users with diverse action types. To address these challenges, we propose RECOSIM, a simulation framework capable of offering efficient recommendation interaction simulations across a wide range of scenarios. RECOSIM decomposes the user agent into five fundamental modules: Encode Model, Decode Model, Activity Model, Scoring Model, and Generation Model, allowing for accurate and extensible modeling of user behavior and interaction dynamics. The recommender system agent adheres to established industry architectures, implementing three stages and four fundamental strategies, thereby improving generalizability across various platforms and the computational efficiency of simulation. Utilizing two real-world datasets (Weibo and Zhihu), we validate the accuracy and stability of each component and the overall framework of RECOSIM, demonstrating the reliability of RECOSIM as a simulation environment. Subsequently, we delve into analyzing the impact of the four fundamental recommendation strategies on online communities, providing design inspirations for enhancing user engagement and community growth.",
+      "url": "https://www.semanticscholar.org/paper/a08bd355d0fe751096217c48a3864c3a0e2ff5e1",
+      "embedding": null,
+      "relevance_score": 0.5294117647058824
+    },
+    {
+      "cand_id": "1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+      "title": "Interacting in various application domains",
+      "year": 2009,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/1bd64a7541e8d34f0d7782f0e786b2ffd78e55b7",
+      "embedding": null,
+      "relevance_score": 0.4166666666666667
+    },
+    {
+      "cand_id": "d698ce50a1bd28694942c23c37d2a7265cc47873",
+      "title": "A Conditional Diffusion Inverse Kinematics Framework for Video-Driven Multi-Joint Robotic Continuous Motion Generation",
+      "year": 2026,
+      "venue": "2026 7th International Conference on Mechatronics Technology and Intelligent Manufacturing (ICMTIM)",
+      "abstract": "Traditional inverse kinematics (IK) methods for industrial robot manipulation typically rely on manually specified target end-effector poses and accurate system calibration, which limits their adaptability in dynamic environments and makes end-to-end action generation from visual observations difficult. To address this issue, this paper proposes a video-driven Diffusion Inverse Kinematics (DIKM) framework that directly maps continuous eye-in-hand image sequences to robot action trajectories without requiring explicit robot body information or predefined target poses. The proposed method integrates imageonly observation encoding, gripper-aware cross-modal fusion, temporal feature aggregation, and a conditional diffusion-based action generator to produce short-horizon 7-dimensional control commands, including 6-DoF end-effector pose and gripper state. Experiments on a 7-DoF Piper robotic arm demonstrate that the generated trajectories closely follow real teleoperation data. In real-world evaluation, the proposed method achieves low prediction errors across all output dimensions, with position RMSEs of 0.0422, 0.0260, and 0.0196 for x, y, and z, respectively, orientation RMSEs of 0.1626, 0.0611, and 0.1282 for roll, pitch, and yaw, and a gripper-state RMSE of 0.0028. In 10 real-robot trials, DIKM achieves a task success rate of 80%. These results verify the effectiveness of DIKM as a lightweight end-to-end video-to-action solution for industrial robotic manipulation.",
+      "url": "https://www.semanticscholar.org/paper/d698ce50a1bd28694942c23c37d2a7265cc47873",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "1694aa9399cb95268eb39b2af1eb9706e7dafa0d",
+      "title": "Matrix-Game 3.0: Real-Time and Streaming Interactive World Model with Long-Horizon Memory",
+      "year": 2026,
+      "venue": "",
+      "abstract": "With the advancement of interactive video generation, diffusion models have increasingly demonstrated their potential as world models. However, existing approaches still struggle to simultaneously achieve memory-enabled long-term temporal consistency and high-resolution real-time generation, limiting their applicability in real-world scenarios. To address this, we present Matrix-Game 3.0, a memory-augmented interactive world model designed for 720p real-time longform video generation. Building upon Matrix-Game 2.0, we introduce systematic improvements across data, model, and inference. First, we develop an upgraded industrial-scale infinite data engine that integrates Unreal Engine-based synthetic data, large-scale automated collection from AAA games, and real-world video augmentation to produce high-quality Video-Pose-Action-Prompt quadruplet data at scale. Second, we propose a training framework for long-horizon consistency: by modeling prediction residuals and re-injecting imperfect generated frames during training, the base model learns self-correction; meanwhile, camera-aware memory retrieval and injection enable the base model to achieve long horizon spatiotemporal consistency. Third, we design a multi-segment autoregressive distillation strategy based on Distribution Matching Distillation (DMD), combined with model quantization and VAE decoder pruning, to achieve efficient real-time inference. Experimental results show that Matrix-Game 3.0 achieves up to 40 FPS real-time generation at 720p resolution with a 5B model, while maintaining stable memory consistency over minute-long sequences. Scaling up to a 2x14B model further improves generation quality, dynamics, and generalization. Our approach provides a practical pathway toward industrial-scale deployable world models.",
+      "url": "https://www.semanticscholar.org/paper/1694aa9399cb95268eb39b2af1eb9706e7dafa0d",
+      "embedding": null,
+      "relevance_score": 0.55
+    },
+    {
+      "cand_id": "71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "title": "Technologies for E-Learning and Digital Entertainment, Second International Conference, Edutainment 2007, Hong Kong, China, June 11-13, 2007, Proceedings",
+      "year": 2007,
+      "venue": "International Conference on E-learning and Games",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/71d2b6a463f3ed6a67ca81522db8a03d9e0b623c",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "97f44b3e6333afffadaade175b4132d92fe6b297",
+      "title": "Inferix: A Block-Diffusion based Next-Generation Inference Engine for World Simulation",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "World models serve as core simulators for fields such as agentic AI, embodied AI, and gaming, capable of generating long, physically realistic, and interactive high-quality videos. Moreover, scaling these models could unlock emergent capabilities in visual perception, understanding, and reasoning, paving the way for a new paradigm that moves beyond current LLM-centric vision foundation models. A key breakthrough empowering them is the semi-autoregressive (block-diffusion) decoding paradigm, which merges the strengths of diffusion and autoregressive methods by generating video tokens in block-applying diffusion within each block while conditioning on previous ones, resulting in more coherent and stable video sequences. Crucially, it overcomes limitations of standard video diffusion by reintroducing LLM-style KV Cache management, enabling efficient, variable-length, and high-quality generation. Therefore, Inferix is specifically designed as a next-generation inference engine to enable immersive world synthesis through optimized semi-autoregressive decoding processes. This dedicated focus on world simulation distinctly sets it apart from systems engineered for high-concurrency scenarios (like vLLM or SGLang) and from classic video diffusion models (such as xDiTs). Inferix further enhances its offering with interactive video streaming and profiling, enabling real-time interaction and realistic simulation to accurately model world dynamics. Additionally, it supports efficient benchmarking through seamless integration of LV-Bench, a new fine-grained evaluation benchmark tailored for minute-long video generation scenarios. We hope the community will work together to advance Inferix and foster world model exploration.",
+      "url": "https://www.semanticscholar.org/paper/97f44b3e6333afffadaade175b4132d92fe6b297",
+      "embedding": null,
+      "relevance_score": 0.45
+    },
+    {
+      "cand_id": "dc5c842a1480a943b71fd5c392778dbea79f27fb",
+      "title": "Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Predicting physical dynamics from raw visual data remains a major challenge in AI. While recent video generation models have achieved impressive visual quality, they still cannot consistently generate physically plausible videos due to a lack of modeling of physical laws. Recent approaches combining 3D Gaussian splatting and physics engines can produce physically plausible videos, but are hindered by high computational costs in both reconstruction and simulation, and often lack robustness in complex real-world scenarios. To address these issues, we introduce Neural Gaussian Force Field (NGFF), an end-to-end neural framework that integrates 3D Gaussian perception with physics-based dynamic modeling to generate interactive, physically realistic 4D videos from multi-view RGB inputs, achieving two orders of magnitude faster than prior Gaussian simulators. To support training, we also present GSCollision, a 4D Gaussian dataset featuring diverse materials, multi-object interactions, and complex scenes, totaling over 640k rendered physical videos (~4 TB). Evaluations on synthetic and real 3D scenarios show NGFF's strong generalization and robustness in physical reasoning, advancing video prediction towards physics-grounded world models.",
+      "url": "https://www.semanticscholar.org/paper/dc5c842a1480a943b71fd5c392778dbea79f27fb",
+      "embedding": null,
+      "relevance_score": 0.47058823529411764
+    },
+    {
+      "cand_id": "1f0a6ca900bb497be4a5c1c8ea15df16dd35b9c1",
+      "title": "Venus: Generating Large-scale mmWave Radar Data via Few 2D Videos for Gesture Recognition While Lying Down",
+      "year": 2025,
+      "venue": "ACM Multimedia",
+      "abstract": "Millimeter-wave (mmWave) radar enables privacy-preserving gesture recognition but suffers from limited training data, particularly for lying postures. Existing mmWave radar data generation methods are ineffective due to insufficient 2D video data. To this end, we design a novel system named Venus to generate realistic radar data for lying postures using few 2D videos, which addresses two key challenges including i) the simulation of diverse reflected signals and ii) few real-world data leading to low data fidelity. Venus consists of two key components: (i) a gesture sequence generation and signal simulation network, which combines several key modules, movement information extractor, spatio-temporal latent diffusion model, and mmWave signal simulator, to generate diverse gesture vertex sequences under certain conditions and simulate signal propagation characteristics to obtain coarse radar data; (ii) a meta-learning domain adaption network generates realistic radar data with few real-world data via ''meta-learning'' strategy. Extensive experiments on both generated and self-collected datasets demonstrate that Venus significantly outperforms state-of-the-art methods in recognizing gestures performed in lying postures.",
+      "url": "https://www.semanticscholar.org/paper/1f0a6ca900bb497be4a5c1c8ea15df16dd35b9c1",
+      "embedding": null,
+      "relevance_score": 0.4117647058823529
+    },
+    {
+      "cand_id": "b3ad6e15a53015028e88171e6baf21bca5eb5682",
+      "title": "Seeing the Sound: Multilingual Lip Sync for Real-Time Face-to-Face Translation",
+      "year": 2024,
+      "venue": "De Computis",
+      "abstract": "Imagine a future where language is no longer a barrier to real-time conversations, enabling instant and lifelike communication across the globe. As cultural boundaries blur, the demand for seamless multilingual communication has become a critical technological challenge. This paper addresses the lack of robust solutions for real-time face-to-face translation, particularly for low-resource languages, by introducing a comprehensive framework that not only translates language but also replicates voice nuances and synchronized facial expressions. Our research tackles the primary challenge of achieving accurate lip synchronization across culturally diverse languages, filling a significant gap in the literature by evaluating the generalizability of lip sync models beyond English. Specifically, we develop a novel evaluation framework combining quantitative lip sync error metrics and qualitative assessments by human observers. This framework is applied to assess two state-of-the-art lip sync models with different architectures for Turkish, Persian, and Arabic languages, using a newly collected dataset. Based on these findings, we propose and implement a modular system that integrates language-agnostic lip sync models with neural networks to deliver a fully functional face-to-face translation experience. Inference Time Analysis shows this system achieves highly realistic, face-translated talking heads in real time, with a throughput as low as 0.381 s. This transformative framework is primed for deployment in immersive environments such as VR/AR, Metaverse ecosystems, and advanced video conferencing platforms. It offers substantial benefits to developers and businesses aiming to build next-generation multilingual communication systems for diverse applications. While this work focuses on three languages, its modular design allows scalability to additional languages. However, further testing in broader linguistic and cultural contexts is required to confirm its universal applicability, paving the way for a more interconnected and inclusive world where language ceases to hinder human connection.",
+      "url": "https://www.semanticscholar.org/paper/b3ad6e15a53015028e88171e6baf21bca5eb5682",
+      "embedding": null,
+      "relevance_score": 0.35294117647058826
+    },
+    {
+      "cand_id": "5e4c81df0247143e78cb6d1d7bde8a1c4f576615",
+      "title": "LLMBind: A Unified Modality-Task Integration Framework",
+      "year": null,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/5e4c81df0247143e78cb6d1d7bde8a1c4f576615",
+      "embedding": null,
+      "relevance_score": 0.23529411764705882
+    },
+    {
+      "cand_id": "0609831cd27e84661f880eadfe85165670519187",
+      "title": "Astra: General Interactive World Model with Autoregressive Denoising",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Recent advances in diffusion transformers have empowered video generation models to generate high-quality video clips from texts or images. However, world models with the ability to predict long-horizon futures from past observations and actions remain underexplored, especially for general-purpose scenarios and various forms of actions. To bridge this gap, we introduce Astra, an interactive general world model that generates real-world futures for diverse scenarios (e.g., autonomous driving, robot grasping) with precise action interactions (e.g., camera motion, robot action). We propose an autoregressive denoising architecture and use temporal causal attention to aggregate past observations and support streaming outputs. We use a noise-augmented history memory to avoid over-reliance on past frames to balance responsiveness with temporal coherence. For precise action control, we introduce an action-aware adapter that directly injects action signals into the denoising process. We further develop a mixture of action experts that dynamically route heterogeneous action modalities, enhancing versatility across diverse real-world tasks such as exploration, manipulation, and camera control. Astra achieves interactive, consistent, and general long-term video prediction and supports various forms of interactions. Experiments across multiple datasets demonstrate the improvements of Astra in fidelity, long-range prediction, and action alignment over existing state-of-the-art world models.",
+      "url": "https://www.semanticscholar.org/paper/0609831cd27e84661f880eadfe85165670519187",
+      "embedding": null,
+      "relevance_score": 0.4
+    },
+    {
+      "cand_id": "17a475b82f0eead0df3cb75466a4eb77cdaef111",
+      "title": "Stochastic Observation Prediction for Efficient Reinforcement Learning in Robotics",
+      "year": 2021,
+      "venue": "Conference on Multimedia Information Processing and Retrieval",
+      "abstract": "Although the recent progress of deep learning has enabled reinforcement learning (RL) algorithms to achieve human-level performance in retro video games within a short training time, the application of real-world robotics remains limited. The conventional RL procedure requires agents to interact with the environment. Meanwhile, the interactions with the physical world can not be easily parallelized or accelerated as in other tasks. Moreover, the gap between the real world and simulation makes it harder to transfer the policy trained in simulators to physical robots. Thus, we propose a model-based method to mitigate the interaction overheads for real-world robotic tasks. In particular, our model incorporates an autoencoder, a recurrent network, and a generative network to make stochastic predictions of observations. We conduct the experiments on a collision avoidance task for disc-like robots and show that the generative model can serve as a virtual RL environment. Our method has the benefit of lower interaction overheads as inference of deep neural networks on GPUs is faster than observing the transitions in the real environment, and it can replace the real RL environment with limited rollout length.",
+      "url": "https://www.semanticscholar.org/paper/17a475b82f0eead0df3cb75466a4eb77cdaef111",
+      "embedding": null,
+      "relevance_score": 0.35
+    },
+    {
+      "cand_id": "7e4982af7ecdf6e123d795700fa3fc13256772b1",
+      "title": "MultiGen: Level-Design for Editable Multiplayer Worlds in Diffusion Game Engines",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Video world models have shown immense promise for interactive simulation and entertainment, but current systems still struggle with two important aspects of interactivity: user control over the environment for reproducible, editable experiences, and shared inference where players hold influence over a common world. To address these limitations, we introduce an explicit external memory into the system, a persistent state operating independent of the model's context window, that is continually updated by user actions and queried throughout the generation roll-out. Unlike conventional diffusion game engines that operate as next-frame predictors, our approach decomposes generation into Memory, Observation, and Dynamics modules. This design gives users direct, editable control over environment structure via an editable memory representation, and it naturally extends to real-time multiplayer rollouts with coherent viewpoints and consistent cross-player interactions.",
+      "url": "https://www.semanticscholar.org/paper/7e4982af7ecdf6e123d795700fa3fc13256772b1",
+      "embedding": null,
+      "relevance_score": 0.3
+    },
+    {
+      "cand_id": "4bbcdf467e15c8eed31c9eb27f3b5a499e54ec6a",
+      "title": "Online communities and social computing : Third International Conference, OCSC 2009, held as part of HCI International 2009, San Diego, CA, USA, July 19-24, 2009 : proceedings",
+      "year": 2009,
+      "venue": "IFIP TC13 International Conference on Human-Computer Interaction",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/4bbcdf467e15c8eed31c9eb27f3b5a499e54ec6a",
+      "embedding": null,
+      "relevance_score": 0.25
+    },
+    {
+      "cand_id": "e5b7a5f1ddb1a0062c3aa55e82f30c40a3107500",
+      "title": "Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Simulating robot-world interactions is a cornerstone of Embodied AI. Recently, a few works have shown promise in leveraging video generations to transcend the rigid visual/physical constraints of traditional simulators. However, they primarily operate in 2D space or are guided by static environmental cues, ignoring the fundamental reality that robot-world interactions are inherently 4D spatiotemporal events that require precise interactive modeling. To restore this 4D essence while ensuring the precise robot control, we introduce Kinema4D, a new action-conditioned 4D generative robotic simulator that disentangles the robot-world interaction into: i) Precise 4D representation of robot controls: we drive a URDF-based 3D robot via kinematics, producing a precise 4D robot control trajectory. ii) Generative 4D modeling of environmental reactions: we project the 4D robot trajectory into a pointmap as a spatiotemporal visual signal, controlling the generative model to synthesize complex environments'reactive dynamics into synchronized RGB/pointmap sequences. To facilitate training, we curated a large-scale dataset called Robo4D-200k, comprising 201,426 robot interaction episodes with high-quality 4D annotations. Extensive experiments demonstrate that our method effectively simulates physically-plausible, geometry-consistent, and embodiment-agnostic interactions that faithfully mirror diverse real-world dynamics. For the first time, it shows potential zero-shot transfer capability, providing a high-fidelity foundation for advancing next-generation embodied simulation.",
+      "url": "https://www.semanticscholar.org/paper/e5b7a5f1ddb1a0062c3aa55e82f30c40a3107500",
+      "embedding": null,
+      "relevance_score": 0.29411764705882354
+    },
+    {
+      "cand_id": "321b7f43cc52f01bdb89446c9c4c46d5405d5f93",
+      "title": "Entertainment Computing - ICEC 2005, 4th International Conference, Sanda, Japan, September 19-21, 2005, Proceedings",
+      "year": 2005,
+      "venue": "International Conference on Evolutionary Computation",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/321b7f43cc52f01bdb89446c9c4c46d5405d5f93",
+      "embedding": null,
+      "relevance_score": 0.3333333333333333
+    },
+    {
+      "cand_id": "39fc6702bf267abfd08eed129b988c9e4fa16ae9",
+      "title": "Wow, wo, val! A Comprehensive Embodied World Model Evaluation Turing Test",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "As world models gain momentum in Embodied AI, an increasing number of works explore using video foundation models as predictive world models for downstream embodied tasks like 3D prediction or interactive generation. However, before exploring these downstream tasks, video foundation models still have two critical questions unanswered: (1) whether their generative generalization is sufficient to maintain perceptual fidelity in the eyes of human observers, and (2) whether they are robust enough to serve as a universal prior for real-world embodied agents. To provide a standardized framework for answering these questions, we introduce the Embodied Turing Test benchmark: WoW-World-Eval (Wow,wo,val). Building upon 609 robot manipulation data, Wow-wo-val examines five core abilities, including perception, planning, prediction, generalization, and execution. We propose a comprehensive evaluation protocol with 22 metrics to assess the models'generation ability, which achieves a high Pearson Correlation between the overall score and human preference (>0.93) and establishes a reliable foundation for the Human Turing Test. On Wow-wo-val, models achieve only 17.27 on long-horizon planning and at best 68.02 on physical consistency, indicating limited spatiotemporal consistency and physical reasoning. For the Inverse Dynamic Model Turing Test, we first use an IDM to evaluate the video foundation models'execution accuracy in the real world. However, most models collapse to $\\approx$ 0% success, while WoW maintains a 40.74% success rate. These findings point to a noticeable gap between the generated videos and the real world, highlighting the urgency and necessity of benchmarking World Model in Embodied AI.",
+      "url": "https://www.semanticscholar.org/paper/39fc6702bf267abfd08eed129b988c9e4fa16ae9",
+      "embedding": null,
+      "relevance_score": 0.25
+    },
+    {
+      "cand_id": "c6b15c98eeda4f90c95ce337bcc8a3f919f556c2",
+      "title": "GaussianHeadTalk: Wobble-Free 3D Talking Heads with Audio Driven Gaussian Splatting",
+      "year": 2025,
+      "venue": "IEEE Workshop/Winter Conference on Applications of Computer Vision",
+      "abstract": "Speech-driven talking heads have recently emerged and enable interactive avatars. However, real-world applications are limited, as current methods achieve high visual fidelity but slow or fast yet temporally unstable. Diffusion methods provide realistic image generation, yet struggle with one-shot settings. Gaussian Splatting approaches are real-time, yet inaccuracies in facial tracking, or inconsistent Gaussian mappings, lead to unstable outputs and video artifacts that are detrimental to realistic use cases. We address this problem by mapping Gaussian Splatting using 3D Morphable Models to generate person-specific avatars. We introduce transformer-based prediction of model parameters, directly from audio, to drive temporal consistency. From monocular video and independent audio speech inputs, our method enables generation of real-time talking head videos where we report competitive quantitative and qualitative performance.",
+      "url": "https://www.semanticscholar.org/paper/c6b15c98eeda4f90c95ce337bcc8a3f919f556c2",
+      "embedding": null,
+      "relevance_score": 0.2
+    },
+    {
+      "cand_id": "41243fd0cc7dd0534dd1af99a32c33590c750173",
+      "title": "Applications and services",
+      "year": 2007,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/41243fd0cc7dd0534dd1af99a32c33590c750173",
+      "embedding": null,
+      "relevance_score": 0.16666666666666666
+    },
+    {
+      "cand_id": "167d60587d9edcc483c6bde11a9138f0d9bcd3f0",
+      "title": "Teaching Automobile, Flight And System Dynamics Using Innovative Motion Simulation Experiments",
+      "year": 2010,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/167d60587d9edcc483c6bde11a9138f0d9bcd3f0",
+      "embedding": null,
+      "relevance_score": 0.08333333333333333
+    },
+    {
+      "cand_id": "2d9eb95156e22ba18f24216def1550a5af278a2c",
+      "title": "Notes on experience design",
+      "year": 1994,
+      "venue": "COMG",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/2d9eb95156e22ba18f24216def1550a5af278a2c",
+      "embedding": null,
+      "relevance_score": 0.11764705882352941
+    },
+    {
+      "cand_id": "18959862e0b859da594e36139895abd59aa58d32",
+      "title": "NoiseGate: Learning Per-Latent Timestep Schedules as Information Gating in World Action Models",
+      "year": 2026,
+      "venue": "",
+      "abstract": "World Action Models (WAMs) are an emerging family of policies that tie robot action generation to future-observation modeling. In this work, we focus on the joint video--action modeling paradigm, where actions and imagined future observations are co-generated along a shared denoising or flow trajectory, so that perception, prediction, and control are coupled within one generative process. Existing WAMs typically realize this paradigm with a Mixture-of-Transformers (MoT), where video and action tokens interact through shared self-attention. This architecture can in principle assign a separate timestep $t_f$ to each predicted latent frame, yet current systems collapse this degree of freedom onto a single shared scalar $t$. Under the noise-as-masking view of Diffusion Forcing, this shared schedule imposes the unjustified prior that every predicted latent is equally reliable for action generation. We instead view the per-latent schedule as a \\emph{learnable information-gating policy}: by changing a latent frame's noise level, the policy modulates the reliability of its Key/Value contribution to the action tokens. We propose \\textbf{NoiseGate}, which combines independent per-latent timestep sampling during backbone training, a lightweight Gating Policy Network that emits per-latent time increments during denoising, and task-reward optimization that trains the schedule policy without hand-crafted shape priors. Built on a joint video--action MoT backbone, NoiseGate delivers consistent gains on diverse RoboTwin random-scene manipulation tasks.",
+      "url": "https://www.semanticscholar.org/paper/18959862e0b859da594e36139895abd59aa58d32",
+      "embedding": null,
+      "relevance_score": 0.15
+    },
+    {
+      "cand_id": "4efb9fc7d998e4965cc280c844e085801fa05522",
+      "title": "SWEET: Sparse World Modeling with Image Editing for Embodied Task Execution",
+      "year": 2026,
+      "venue": "",
+      "abstract": "Visual prediction has emerged as a promising paradigm for embodied control, where future observations are generated and then translated into actions. However, dense video generation is computationally expensive and often unnecessary for many manipulation tasks, whose progress can be summarized by a small number of task-relevant visual states. In this work, we study whether image editing models can serve as sparse visual world models for robot manipulation by predicting task-level future states without dense video rollout. We first conduct a controlled comparison between the video generation model Wan2.2 and the image editing model FLUX-Kontext under the same robotic data setting, and find that image editing produces more reliable task-level keyframes with better visual fidelity and substantially lower inference cost. Motivated by this observation, we propose SWEET, a one-shot sparse visual planning framework that progressively generates a sequence of task-relevant manipulation keyframes through successive image editing, conditioned on language instructions and optional arrow-based spatial guidance. A goal-conditioned diffusion action predictor then converts adjacent imagined keyframes into executable action chunks. To reduce the mismatch between real and edited visual subgoals, we further introduce a mixed-training strategy with filtered edited targets. Experiments on DROID and RoboMimic show that SWEET improves keyframe prediction across seen and unseen scenes and enables a full pipeline from sequential keyframe planning to executable robot actions, suggesting that image editing is a promising and underexplored direction for embodied visual prediction.",
+      "url": "https://www.semanticscholar.org/paper/4efb9fc7d998e4965cc280c844e085801fa05522",
+      "embedding": null,
+      "relevance_score": 0.1
+    }
+  ],
+  "stats": {
+    "total_candidates": 49,
+    "after_dedup": 42,
+    "after_nontechnical_filter": 42,
+    "after_year_filter": 42,
+    "final": 42
+  }
+}

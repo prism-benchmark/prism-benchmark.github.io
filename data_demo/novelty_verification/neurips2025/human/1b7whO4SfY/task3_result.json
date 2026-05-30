@@ -1,0 +1,1307 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The specific study has the potential to separate itself from previous works in the area."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "This claim is too broad, the impact of gating has been explored in linear attention [1] and standard attention [2,3] networks."
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "Proposed analysis is novel and makes a lot of sense."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "text": "Title: Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free\n\nAbstract: Gating mechanisms have been widely utilized, from early models like LSTMs and Highway Networks to recent state space models, linear attention, and also softmax attention. Yet, existing literature rarely examines the specific effects of gating. In this work, we conduct comprehensive experiments to systematically investigate gating-augmented softmax attention variants. Specifically, we perform a comprehensive comparison over 30 variants of 15B Mixture-of-Experts (MoE) models and 1.7B dense models trained on a 3.5 trillion token dataset. Our central finding is that a simple modification-applying a head-specific sigmoid gate after the Scaled Dot-Product Attention (SDPA)-consistently improves performance. This modification also enhances training stability, tolerates larger learning rates, and improves scaling properties. By comparing various gating positions and computational variants, we attribute this effectiveness to two key factors: (1) introducing non-linearity upon the low-rank mapping in the softmax attention, and (2) applying query-dependent sparse gating scores to modulate the SDPA output. Notably, we find this sparse gating mechanism mitigates 'attention sink' and enhances long-context extrapolation performance, and we also release related $\\href{https://github.com/qiuzh20/gated_attention}{codes}$ and $\\href{https://huggingface.co/QwQZh/gated_attention}{models}$ to facilitate future research.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+      "text": "Title: Attention Sink Forges Native MoE in Attention Layers: Sink-Aware Training to Address Head Collapse\n\nAbstract: Large Language Models (LLMs) often assign disproportionate attention to the first token, a phenomenon known as the attention sink. Several recent approaches aim to address this issue, including Sink Attention in GPT-OSS and Gated Attention in Qwen3-Next. However, a comprehensive analysis of the relationship among these attention mechanisms is lacking. In this work, we provide both theoretical and empirical evidence demonstrating that the sink in Vanilla Attention and Sink Attention naturally construct a Mixture-of-Experts (MoE) mechanism within attention layers. This insight explains the head collapse phenomenon observed in prior work, where only a fixed subset of attention heads contributes to generation. To mitigate head collapse, we propose a sink-aware training algorithm with an auxiliary load balancing loss designed for attention layers. Extensive experiments show that our method achieves effective head load balancing and improves model performance across Vanilla Attention, Sink Attention, and Gated Attention. We hope this study offers a new perspective on attention mechanisms and encourages further exploration of the inherent MoE structure within attention layers.",
+      "relevance_score": 0.9285714285714286
+    },
+    {
+      "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+      "text": "Title: Gated Sparse Attention: Combining Computational Efficiency with Training Stability for Long-Context Language Models\n\nAbstract: The computational burden of attention in long-context language models has motivated two largely independent lines of work: sparse attention mechanisms that reduce complexity by attending to selected tokens, and gated attention variants that improve training sta-bility while mitigating the attention sink phenomenon. We observe that these approaches address complementary weaknesses and propose Gated Sparse Attention (GSA), an architecture that realizes the benefits of both. GSA incorporates a gated lightning indexer with sigmoid activations that produce bounded, interpretable selection scores, an adaptive sparsity controller that modulates the number of attended tokens based on local uncertainty, and dual gating at the value and output stages. We establish theoretical foundations for the approach, including complexity analysis, expressiveness results, and convergence guarantees. In experiments with 1.7B parameter models trained on 400B tokens, GSA matches the efficiency of sparse-only baselines (12-16x speedup at 128K context) while achieving the quality gains associated with gated attention: perplexity improves from 6.03 to 5.70, RULER scores at 128K context nearly double, and attention to the first token, a proxy for attention sinks, drops from 47% to under 4%. Training stability improves markedly, with loss spikes reduced by 98%.",
+      "relevance_score": 0.8571428571428571
+    },
+    {
+      "related_paper_id": "367dbb2a0d321bdd64d0c04c7c4f5b5ab30abc72",
+      "text": "Title: The Influence of the Constitution of Ukraine and the Legal Positions of the Constitutional Court of Ukraine on the Formation of a Constitutionally Oriented Doctrine of Criminal Proce-dural Evidence and Law-Enforcement Practice\n\nAbstract: The article is devoted to a systematic study of the influence of the Constitution of Ukraine and the legal positions of the Constitutional Court of Ukraine on the formation of a constitution-ally oriented doctrine of criminal procedural evidence and the transformation of domestic law-en-forcement practice. The author substantiates that the modern paradigm of evidence in Ukraine is undergoing a profound transformation, driven by the shift from a procedural-technical model characteristic of codified systems of the twentieth century to a model that prioritizes constitutional principles: the rule of law, respect for human dignity, freedom, privacy, personal autonomy, access to justice, effective judicial control, and genuine adversarial proceedings. It is demonstrated that the legal positions of the Constitutional Court of Ukraine serve not only as interpretative guidelines for courts and pre-trial investigation bodies, but also as normative catalysts for rethinking the fun-damental categories of evidence law–evidence, admissibility, inadmissibility, reliability, relevance, the judge’s inner conviction. These positions form the author’s concept of a «rigid constitutional core» of criminal procedural evidence, comprising at least seventeen articles of the Constitution of Ukraine and defining the value-based, institutional, and procedural boundaries of permissible evidentiary activity by the state. \nThe article analyzes key decisions of the Constitutional Court of Ukraine concerning the right to liberty, privacy, legal assistance, access to case materials, the presumption of innocence, legal cer-tainty, the prohibition of assumptions, guarantees against arbitrary detention, as well as decisions de-claring unconstitutional the imperative or automatic models of restricting liberty, including during mar-tial law. Based on these decisions, the author reconstructs a comprehensive «constitutional matrix of evidence,» within which: the right to liberty and privacy sets the limits of permissible interference during evidence collection; the right to judicial protection and effective control establishes the obli-gation to exercise judicial oversight over any form of procedural coercion and to ensure immediate access to justice; the right to legal assistance and the privilege against self-incrimination determine the standards of voluntariness and authenticity of personal sources of evidence; the presumption of innocence defines the substance of evidentiary standards and precludes any «procedural automa-tism» in assessing evidence or applying restrictions on rights; the principle of the rule of law requires proportionality, legal certainty, and non-arbitrariness in criminal proceedings; and the principle of direct effect of the Constitution obliges courts to assess evidence through the prism of constitutional rights even in the absence of specific regulation in the CPC. The article emphasizes that these de-cisions set normative boundaries for the use of state coercion, define the institutional duty of courts to act as a constitutional guarantee mechanism, and provide grounds for the doctrinal consolidation of the concepts of substantive justice, proportionality, foreseeability, good faith, and the prohibition of \n«constitutional toxicity» of evidence and «constitutional defectiveness» of evidentiary arrays formed under unconstitutional restrictions of human rights. \nThe article pays particular attention to the interplay between the case law of the Constitutional Court of Ukraine and the jurisprudence of the European Court of Human Rights, which jointly struc-ture national standards of interference with privacy, liberty, access to justice, and the boundaries of permissible investigative and covert measures. It is shown that the integration of these standards produces a systemic reconfiguration of law enforcement practice, particularly in the areas of apply-ing preventive measures, judicial control over interferences with privacy, the implementation of the right to defence, the assessment of evidence, and the determination of the proper scope of judicial oversight. In this context, the article examines how the constitutional doctrine of proportionality, the requirement of real rather than formal judicial control, and the prohibition on the use of evidence ob-tained through torture or arbitrary deprivation of liberty bring the Ukrainian model of evidence closer to the European one, while at the same time preserving national specificity in the organization of pre-trial investigation, operational-search activities, and covert investigative (search) actions. \nThe article concludes that the legal positions of the Constitutional Court of Ukraine constitute the intellectual and methodological core of the modern Ukrainian doctrine of evidence. They ensure the transition to a model in which evidentiary activity is understood as constitutionally justified state action aimed at safeguarding fairness and good faith in the criminal process, and the Criminal Procedure Code of Ukraine is conceived as a subsystem of constitutional legal order that must be interpreted and applied through the prism of the direct effect of the Constitution. As a result, a qualitatively new concept of evidence law is formed–one that complies with European standards, integrates the Con-vention-based approaches of the European Court of Human Rights, and simultaneously shapes a unique national tradition built upon the priorities of human dignity, the rule of law, and the supremacy of human rights over considerations of procedural or law-enforcement expediency.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "text": "Title: Threshold Differential Attention for Sink-Free, Ultra-Sparse, and Non-Dispersive Language Modeling\n\nAbstract: Softmax attention struggles with long contexts due to structural limitations: the strict sum-to-one constraint forces attention sinks on irrelevant tokens, and probability mass disperses as sequence lengths increase. We tackle these problems with Threshold Differential Attention (TDA), a sink-free attention mechanism that achieves ultra-sparsity and improved robustness at longer sequence lengths without the computational overhead of projection methods or the performance degradation caused by noise accumulation of standard rectified attention. TDA applies row-wise extreme-value thresholding with a length-dependent gate, retaining only exceedances. Inspired by the differential transformer, TDA also subtracts an inhibitory view to enhance expressivity. Theoretically, we prove that TDA controls the expected number of spurious survivors per row to $O(1)$ and that consensus spurious matches across independent views vanish as context grows. Empirically, TDA produces $>99\\%$ exact zeros and eliminates attention sinks while maintaining competitive performance on standard and long-context benchmarks.",
+      "relevance_score": 0.7857142857142857
+    },
+    {
+      "related_paper_id": "fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+      "text": "Title: A Unified View of Attention and Residual Sinks: Outlier-Driven Rescaling is Essential for Transformer Training\n\nAbstract: We investigate the functional role of emergent outliers in large language models, specifically attention sinks (a few tokens that consistently receive large attention logits) and residual sinks (a few fixed dimensions with persistently large activations across most tokens). We hypothesize that these outliers, in conjunction with the corresponding normalizations (\\textit{e.g.}, softmax attention and RMSNorm), effectively rescale other non-outlier components. We term this phenomenon \\textit{outlier-driven rescaling} and validate this hypothesis across different model architectures and training token counts. This view unifies the origin and mitigation of both sink types. Our main conclusions and observations include: (1) Outliers function jointly with normalization: removing normalization eliminates the corresponding outliers but degrades training stability and performance; directly clipping outliers while retaining normalization leads to degradation, indicating that outlier-driven rescaling contributes to training stability. (2) Outliers serve more as rescale factors rather than contributors, as the final contributions of attention and residual sinks are significantly smaller than those of non-outliers. (3) Outliers can be absorbed into learnable parameters or mitigated via explicit gated rescaling, leading to improved training performance (average gain of 2 points) and enhanced quantization robustness (1.2 points degradation under W4A4 quantization).",
+      "relevance_score": 0.7142857142857143
+    },
+    {
+      "related_paper_id": "6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+      "text": "Title: Predicting Yelp Star Ratings: An Analysis of Different Models and Fine-Tuned RoBERTa Model",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+      "text": "Title: Affine-Scaled Attention: Towards Flexible and Stable Transformer Attention\n\nAbstract: Transformer attention is typically implemented using softmax normalization, which enforces attention weights with unit sum normalization. While effective in many settings, this constraint can limit flexibility in controlling attention magnitudes and may contribute to overly concentrated or unstable attention patterns during training. Prior work has explored modifications such as attention sinks or gating mechanisms, but these approaches provide only limited or indirect control over attention reweighting. We propose Affine-Scaled Attention, a simple extension to standard attention that introduces input-dependent scaling and a corresponding bias term applied to softmax-normalized attention weights. This design relaxes the strict normalization constraint while maintaining aggregation of value representations, allowing the model to adjust both the relative distribution and the scale of attention in a controlled manner. We empirically evaluate Affine-Scaled Attention in large-scale language model pretraining across multiple model sizes. Experimental results show consistent improvements in training stability, optimization behavior, and downstream task performance compared to standard softmax attention and attention sink baselines. These findings suggest that modest reweighting of attention outputs provides a practical and effective way to improve attention behavior in Transformer models.",
+      "relevance_score": 0.5714285714285714
+    },
+    {
+      "related_paper_id": "d22fc3af9beac2e3d9842be290ca77806bb81595",
+      "text": "Title: ReGLA: Refining Gated Linear Attention\n\nAbstract: Recent advancements in Large Language Models (LLMs) have set themselves apart with their exceptional performance in complex language modelling tasks. However, these models are also known for their significant computational and storage requirements, primarily due to the quadratic computation complexity of softmax attention. To mitigate this issue, linear attention has been designed to reduce the quadratic space-time complexity that is inherent in standard transformers. In this work, we embarked on a comprehensive exploration of three key components that substantially impact the performance of the Gated Linear Attention module: feature maps, normalization, and the gating mechanism. We developed a feature mapping function to address some crucial issues that previous suggestions overlooked. Then we offered further rationale for the integration of normalization layers to stabilize the training process. Moreover, we explored the saturation phenomenon of the gating mechanism and augmented it with a refining module. We conducted extensive experiments and showed our architecture outperforms previous Gated Linear Attention mechanisms in extensive tasks including training from scratch and post-linearization with continual pre-training.",
+      "relevance_score": 0.6428571428571429
+    },
+    {
+      "related_paper_id": "484418e1cbc75897b7d668fbe46d1f6b20a20803",
+      "text": "Title: Activator: GLU Activations as The Core Functions of a Vision Transformer",
+      "relevance_score": 0.42857142857142855
+    },
+    {
+      "related_paper_id": "618795552db11785d39976732d9ae5629d3932ff",
+      "text": "Title: SigGate-GT: Taming Over-Smoothing in Graph Transformers via Sigmoid-Gated Attention\n\nAbstract: Graph transformers achieve strong results on molecular and long-range reasoning tasks, yet remain hampered by over-smoothing (the progressive collapse of node representations with depth) and attention entropy degeneration. We observe that these pathologies share a root cause with attention sinks in large language models: softmax attention's sum-to-one constraint forces every node to attend somewhere, even when no informative signal exists. Motivated by recent findings that element-wise sigmoid gating eliminates attention sinks in large language models, we propose SigGate-GT, a graph transformer that applies learned, per-head sigmoid gates to the attention output within the GraphGPS framework. Each gate can suppress activations toward zero, enabling heads to selectively silence uninformative connections. On five standard benchmarks, SigGate-GT matches the prior best on ZINC (0.059 MAE) and sets new state-of-the-art on ogbg-molhiv (82.47% ROC-AUC), with statistically significant gains over GraphGPS across all five datasets ($p<0.05$). Ablations show that gating reduces over-smoothing by 30% (mean relative MAD gain across 4-16 layers), increases attention entropy, and stabilizes training across a $10\\times$ learning rate range, with about 1% parameter overhead on OGB.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "a4aded95a4d30ccc8f267591e33c498f3379cf0e",
+      "text": "Title: Neural machine translation for Sanskrit to Malayalam using morphology and evolutionary word sense disambiguation\n\nAbstract: Neural machine translation (NMT) is a fast-evolving MT paradigm and showed good results, particularly in large training data circumstances, for several language pairs. In this paper, we have utilized Sanskrit to Malayalam language pair neural machines translation. The attention-based mechanism for the development of the machine translation system was particularly exploited. Word sense disambiguation (WSD) is a phenomenon for disambiguating the text to let the machine infer the proper definition of the particular word. Sequential deep learning approaches such as a recurrent neural network (RNN), a gated recurrent unit (GRU), a long short term memory (LSTM), and a bi-directional LSTM (BLSTM) were used to analyze the tagged data. By adding morphological elements and evolutionary word sense disambiguation, the suggested common character-word embedding-based NMT model gives a BLEU score of 38.58 which was higher than the others.",
+      "relevance_score": 0.35714285714285715
+    },
+    {
+      "related_paper_id": "b7516a4918e52132f63f5f643f95d040c0aba364",
+      "text": "Title: From Misrepresentation to Quantities: Labeling Misinformation Types in South Indian Language Summaries",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "5087514af0ec5ec1d47dcfbde50be966fe77f809",
+      "text": "Title: Indonesian Journal of Electrical Engineering and Computer Science",
+      "relevance_score": 0.2857142857142857
+    },
+    {
+      "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+      "text": "Title: Automatic text summarization",
+      "relevance_score": 0.14285714285714285
+    },
+    {
+      "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+      "text": "Title: FROM FLUENCY TO DISFLUENCY: RANKING PROSODIC FEATURES OF POETRY BY USING NEURAL NETWORKS",
+      "relevance_score": 0.21428571428571427
+    },
+    {
+      "related_paper_id": "3643f16c23a874478974454bdc239146e79b7847",
+      "text": "Title: Multi-modal Symbolic Representations of Number: Everything You Ever Wanted to Know About Mental Abacus, but Were Afraid to Ask",
+      "relevance_score": 0.07142857142857142
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer's claim that the study has potential to separate itself from previous works aligns with the paper's emphasis on disentangling gating's effects from other components, a gap identified in the related work.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about the paper's potential to differentiate from previous work, but the related work evidence does not provide specific information to verify or support this claim. The related work abstract discusses attention sinks and MoE mechanisms, not the paper's novelty or contributions.",
+      "relevance_score": 0.9285714285714286
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper can separate itself from previous works. The related work (Gated Sparse Attention) focuses on combining sparse and gated mechanisms for efficiency and stability, while the reviewed paper specifically investigates gating mechanisms in standard attention and disentangles their effects, showing unique contributions in analysis and application. This aligns with the claim of differentiation.",
+      "relevance_score": 0.8571428571428571
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "367dbb2a0d321bdd64d0c04c7c4f5b5ab30abc72",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's potential novelty. The related work is about constitutional law in Ukraine and is completely unrelated to the paper's content on gating mechanisms in neural networks. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the study can separate itself from previous works, but the provided related work text (on TDA) does not directly address or compare with the gating mechanisms studied in the reviewed paper. There is insufficient evidence to verify or support the claim.",
+      "relevance_score": 0.7857142857142857
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's potential contribution, but the related work does not provide direct evidence to support or contradict this specific claim about separating from previous works. The related work discusses outlier-driven rescaling in transformers, which is a different topic from the gating mechanisms investigated in the paper. Thus, the evidence is insufficient to judge alignment or calibration.",
+      "relevance_score": 0.7142857142857143
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's potential novelty. The related work evidence (on Yelp star rating prediction with RoBERTa) is completely unrelated to the paper's topic of gating mechanisms in neural networks, providing no basis to evaluate the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's potential to separate itself from previous works, but the provided related work does not mention this specific study or provide evidence to evaluate that claim. The related work discusses a different approach (Affine-Scaled Attention) and does not directly relate to the specific study being reviewed.",
+      "relevance_score": 0.5714285714285714
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d22fc3af9beac2e3d9842be290ca77806bb81595",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the study can separate itself from previous works, but the related work (ReGLA) does not provide evidence about the paper's ability to differentiate. The related work is a different study on linear attention gating, not directly addressing the paper's novelty claims. Evidence is missing to verify the claim.",
+      "relevance_score": 0.6428571428571429
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "484418e1cbc75897b7d668fbe46d1f6b20a20803",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim is vague and not directly verifiable from the provided paper abstract and introduction. The related work evidence does not address the claim's specific content about separating from previous works.",
+      "relevance_score": 0.42857142857142855
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "618795552db11785d39976732d9ae5629d3932ff",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a vague claim about the paper's novelty. The related work evidence discusses a different application (graph transformers) and does not address whether the paper's study separates itself from previous works in its specific area, so it provides no relevant support or contradiction.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "a4aded95a4d30ccc8f267591e33c498f3379cf0e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's potential to separate itself from previous works. The related work evidence is about a completely different topic (Sanskrit to Malayalam machine translation with WSD and morphology) and provides no information to support or contradict this claim. The evidence is unrelated and insufficient for verification.",
+      "relevance_score": 0.35714285714285715
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b7516a4918e52132f63f5f643f95d040c0aba364",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's potential to separate itself from previous works, but the provided related work is about misinformation labeling in South Indian languages, which is completely unrelated to the paper's content on gating mechanisms in neural networks. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "5087514af0ec5ec1d47dcfbde50be966fe77f809",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's potential to differentiate itself from prior work. The provided related work evidence is only a journal title ('Indonesian Journal of Electrical Engineering and Computer Science') with no substantive content about gating mechanisms, attention, or the specific research area. There is no information to evaluate alignment, support, or calibration.",
+      "relevance_score": 0.2857142857142857
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novelty, but the related work evidence is from a different field (automatic text summarization) and does not provide any information about the paper's contribution to gating mechanisms or its novelty relative to previous works in that area.",
+      "relevance_score": 0.14285714285714285
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the study has potential to separate itself from previous works, but the provided related work is about prosodic features in poetry, which is entirely unrelated to the paper's topic of gating mechanisms in neural networks. There is no evidence in the related work to evaluate the claim's alignment or calibration.",
+      "relevance_score": 0.21428571428571427
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3643f16c23a874478974454bdc239146e79b7847",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a vague claim about the paper's potential to separate itself from previous works. The provided related work (ID=3643f16c23a874478974454bdc239146e79b7847) is about multi-modal symbolic representations of number and mental abacus, which is completely unrelated to the paper's focus on gating mechanisms in neural networks. There is no evidence in the related work to evaluate the claim, making it unverifiable.",
+      "relevance_score": 0.07142857142857142
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": -2,
+      "label": "UNSUPPORTED",
+      "explanation": "The reviewer claims the paper's statement is 'too broad' because gating has been explored in linear attention and standard attention, citing references [1],[2],[3]. However, the paper's introduction explicitly acknowledges that gating is widely used (including in linear attention and softmax attention) and states that 'most recent works do not look into the gating mechanisms like the gating scores and their effect on the model's hidden states.' The paper's contribution is a systematic investigation of gating in softmax attention, not a claim of novelty for all gating. The related work abstract also states 'existing literature rarely examines the specific effects of gating.' Thus, the reviewer's claim that the paper's scope is 'too broad' is contradicted; the paper is precisely focused on a gap in the literature.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "",
+      "relevance_score": 0.9285714285714286
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim that 'the impact of gating has been explored in linear attention [1] and standard attention [2,3] networks' is not directly addressed in the provided related work (GSA). The related work focuses on combining sparse and gated attention for efficiency and stability, but does not explicitly state that gating's impact was already explored in linear or standard attention. The evidence is insufficient to verify the claim.",
+      "relevance_score": 0.8571428571428571
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "367dbb2a0d321bdd64d0c04c7c4f5b5ab30abc72",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer's claim is about gating in linear and standard attention networks, but the provided related work is about Ukrainian constitutional law and criminal procedure evidence, which is entirely unrelated. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.7857142857142857
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a broad claim about gating's impact being explored in linear and standard attention, citing references [1-3]. However, the provided related work does not discuss gating mechanisms in linear or standard attention; it focuses on outlier-driven rescaling (attention/residual sinks) and does not provide evidence to verify the claim. Thus, the evidence is missing.",
+      "relevance_score": 0.7142857142857143
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that gating's impact has been explored in linear attention and standard attention networks, referencing [1,2,3]. However, the related work paper is about predicting Yelp ratings with RoBERTa, which is unrelated to attention mechanisms or gating in neural networks. There is no evidence in the related work to support or contradict the claim, and the claim is too specific to verify against the unrelated context.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer claims the paper's claim about gating's broad impact is too broad, citing prior exploration in linear and standard attention. However, the paper explicitly argues that prior work (like NSA) does not disentangle gating's contributions, and the related work (Affine-Scaled Attention) does not directly explore gating mechanisms in the same way, instead focusing on affine scaling of attention weights. Thus, the reviewer's claim is contradicted by the paper's own positioning and the related work's focus, and the language is overstated given the evidence.",
+      "relevance_score": 0.5714285714285714
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "d22fc3af9beac2e3d9842be290ca77806bb81595",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.6428571428571429
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "484418e1cbc75897b7d668fbe46d1f6b20a20803",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about gating's impact being explored in linear and standard attention, citing references [1], [2], and [3]. However, the provided related work (Activator) focuses on GLU activations in vision transformers, not gating mechanisms in linear or standard attention. The paper's text discusses gating in state-space models and attention but does not explicitly support the claim that gating's impact has been specifically explored in linear attention and standard attention networks as stated. The evidence from the related work is missing or not directly relevant, making verification impossible.",
+      "relevance_score": 0.42857142857142855
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "618795552db11785d39976732d9ae5629d3932ff",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "a4aded95a4d30ccc8f267591e33c498f3379cf0e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the paper's claim about gating is too broad and references prior work on gating in linear and standard attention. However, the related work (Sanskrit to Malayalam NMT) does not mention gating mechanisms, linear attention, or standard attention, providing no relevant evidence to support or contradict the reviewer's claim. Thus, the claim is unverifiable with the given evidence.",
+      "relevance_score": 0.35714285714285715
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b7516a4918e52132f63f5f643f95d040c0aba364",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the impact of gating has been explored in linear attention [1] and standard attention [2,3] networks. However, the provided related work text is about misinformation labeling in South Indian language summaries, which is completely unrelated to the topic of gating mechanisms in neural networks. There is no evidence in the related work to support or contradict the reviewer's claim, making the claim unverifiable with the given evidence.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "5087514af0ec5ec1d47dcfbde50be966fe77f809",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work provided (Indonesian Journal of Electrical Engineering and Computer Science) contains only a title and no substantive content about gating mechanisms in linear attention or standard attention. There is no evidence to support or contradict the reviewer's claim that gating's impact has been explored in those domains. The claim remains unverifiable due to missing evidence.",
+      "relevance_score": 0.2857142857142857
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work evidence is about automatic text summarization, which is unrelated to the review sentence's claim about gating mechanisms in linear and standard attention networks. There is no evidence to assess the claim.",
+      "relevance_score": 0.14285714285714285
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that the impact of gating has been explored in linear attention and standard attention networks, citing references [1], [2,3]. However, the provided related work is a completely unrelated paper about ranking prosodic features of poetry using neural networks. There is no evidence in the related work to support or contradict the reviewer's claim about gating in attention networks.",
+      "relevance_score": 0.21428571428571427
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "3643f16c23a874478974454bdc239146e79b7847",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The related work is about mental abacus and symbolic representations, which is unrelated to the paper's focus on gating in attention mechanisms. There is no evidence in the related work to assess the claim about gating's exploration in linear attention or standard attention.",
+      "relevance_score": 0.07142857142857142
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's analysis being 'novel' and making 'a lot of sense'. However, the provided related work evidence only describes the paper's content and findings, not the novelty or sensibility of its analysis. There is no direct evidence to evaluate whether the claim is supported, contradicted, or overstated, making the evidence insufficient for verification.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence states 'Proposed analysis is novel and makes a lot of sense,' which is a claim about the paper being reviewed. However, the related work does not provide any evidence or discussion about the novelty or sense of the analysis in the paper under review. The related work focuses on its own contributions regarding attention sinks and MoE mechanisms, not on evaluating the novelty of the paper's analysis. Thus, there is insufficient evidence from the related work to assess the claim's alignment or calibration.",
+      "relevance_score": 0.9285714285714286
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the proposed analysis is novel and makes sense. The related work (GSA) also involves gating mechanisms and sparsity, suggesting the general concept is not entirely novel. However, the related work does not directly address the specific analysis of gating positions in softmax attention as in the reviewed paper, so alignment is partial. The reviewer's statement is not strongly contradicted but lacks direct evidence.",
+      "relevance_score": 0.8571428571428571
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "367dbb2a0d321bdd64d0c04c7c4f5b5ab30abc72",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novelty and sense-making, but the provided related work evidence is about constitutional law in Ukraine and is completely unrelated to the technical paper on gating mechanisms in neural networks. There is no evidence to support or contradict the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims the paper's proposed analysis is novel and makes sense. The related work (TDA) focuses on addressing attention sinks and sparsity via thresholding and differential views, which aligns with the paper's focus on gating mechanisms to eliminate attention sinks and improve sparsity. The evidence supports the novelty and logical sense of the paper's analysis in the context of prior work.",
+      "relevance_score": 0.7857142857142857
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence 'Proposed analysis is novel and makes a lot of sense' is a vague evaluative claim about the paper's novelty and logical consistency. The related work discusses outlier-driven rescaling and its relation to attention/residual sinks, but does not directly address the specific analysis proposed in the paper being reviewed (which focuses on gating mechanisms). There is no evidence in the related work to support or contradict the claim about the paper's novelty or sense-making, making it insufficient for verification.",
+      "relevance_score": 0.7142857142857143
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's novelty and sense, but the related work (about Yelp ratings) is entirely unrelated to the paper's content on gating mechanisms in neural networks. There is no evidence in the provided text to support or contradict the claim, so the relation is insufficient.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about novelty and sense, but the provided related work does not discuss the specific gating analysis from the paper being reviewed; thus, there is insufficient evidence to assess alignment or calibration.",
+      "relevance_score": 0.5714285714285714
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "d22fc3af9beac2e3d9842be290ca77806bb81595",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the proposed analysis is novel and makes sense, but it is a vague assertion without specific evidence. The related work (ReGLA) discusses gating in linear attention, not gating in softmax attention as in the paper being reviewed, so there is no direct evidence to support or contradict the novelty claim.",
+      "relevance_score": 0.6428571428571429
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "484418e1cbc75897b7d668fbe46d1f6b20a20803",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a general claim about novelty and sensibility of the proposed analysis, but the related work provided (Activator: GLU Activations as The Core Functions of a Vision Transformer) is not discussed in the provided paper text, and no specific evidence from the related work is presented to verify or contradict the claim. The claim is too vague and evidence is missing.",
+      "relevance_score": 0.42857142857142855
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "618795552db11785d39976732d9ae5629d3932ff",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the proposed analysis in the paper being reviewed. The related work evidence (SigGate-GT) discusses sigmoid gating in graph transformers, but it does not directly support or contradict the claim that the paper's analysis is novel and makes sense. The evidence is about a different domain and does not provide sufficient information to verify the claim's novelty or sense-making in the context of the paper's work.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "a4aded95a4d30ccc8f267591e33c498f3379cf0e",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a vague claim about the proposed analysis being novel and sensible. The related work (about Sanskrit to Malayalam NMT) does not provide any evidence or context about the gating mechanisms in attention models discussed in the paper being reviewed. There is no overlap or relation between the topics, making the claim unverifiable against the given evidence.",
+      "relevance_score": 0.35714285714285715
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "b7516a4918e52132f63f5f643f95d040c0aba364",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the novelty and sense of the proposed analysis in the main paper. The provided related work text is about misinformation labeling in South Indian language summaries, which is entirely unrelated to the gating mechanisms in neural networks discussed in the main paper. There is no evidence in the related work to support or contradict the reviewer's claim, making verification impossible.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "5087514af0ec5ec1d47dcfbde50be966fe77f809",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The sentence expresses an opinion about the paper's novelty and sense, but the related work text (a journal title) provides no evidence to support or contradict this claim. The claim is too vague and lacks verifiable connection to the evidence.",
+      "relevance_score": 0.2857142857142857
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The claim is about the novelty and sense of the proposed analysis in the paper, but the related work evidence is about automatic text summarization, which is entirely unrelated to the paper's focus on gating mechanisms in attention. There is no evidence to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.14285714285714285
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novelty and sense, but the related work (about prosodic features of poetry using neural networks) provides no evidence to support or contradict this claim, as it is on an entirely different topic.",
+      "relevance_score": 0.21428571428571427
+    },
+    {
+      "review_sentence_id": "C3",
+      "related_paper_id": "3643f16c23a874478974454bdc239146e79b7847",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, stating the analysis is novel and makes sense. The related work evidence is about mental abacus and symbolic number representations, which is completely unrelated to the paper's focus on gating mechanisms in neural networks. There is no evidence to support or contradict the claim, making it unverifiable.",
+      "relevance_score": 0.07142857142857142
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The specific study has the potential to separate itself from previous works in the area.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer's claim that the study has potential to separate itself from previous works aligns with the paper's emphasis on disentangling gating's effects from other components, a gap identified in the related work.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about the paper's potential to differentiate from previous work, but the related work evidence does not provide specific information to verify or support this claim. The related work abstract discusses attention sinks and MoE mechanisms, not the paper's novelty or contributions.",
+          "relevance_score": 0.9285714285714286
+        },
+        {
+          "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper can separate itself from previous works. The related work (Gated Sparse Attention) focuses on combining sparse and gated mechanisms for efficiency and stability, while the reviewed paper specifically investigates gating mechanisms in standard attention and disentangles their effects, showing unique contributions in analysis and application. This aligns with the claim of differentiation.",
+          "relevance_score": 0.8571428571428571
+        },
+        {
+          "related_paper_id": "367dbb2a0d321bdd64d0c04c7c4f5b5ab30abc72",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's potential novelty. The related work is about constitutional law in Ukraine and is completely unrelated to the paper's content on gating mechanisms in neural networks. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the study can separate itself from previous works, but the provided related work text (on TDA) does not directly address or compare with the gating mechanisms studied in the reviewed paper. There is insufficient evidence to verify or support the claim.",
+          "relevance_score": 0.7857142857142857
+        },
+        {
+          "related_paper_id": "fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's potential contribution, but the related work does not provide direct evidence to support or contradict this specific claim about separating from previous works. The related work discusses outlier-driven rescaling in transformers, which is a different topic from the gating mechanisms investigated in the paper. Thus, the evidence is insufficient to judge alignment or calibration.",
+          "relevance_score": 0.7142857142857143
+        },
+        {
+          "related_paper_id": "6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's potential novelty. The related work evidence (on Yelp star rating prediction with RoBERTa) is completely unrelated to the paper's topic of gating mechanisms in neural networks, providing no basis to evaluate the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's potential to separate itself from previous works, but the provided related work does not mention this specific study or provide evidence to evaluate that claim. The related work discusses a different approach (Affine-Scaled Attention) and does not directly relate to the specific study being reviewed.",
+          "relevance_score": 0.5714285714285714
+        },
+        {
+          "related_paper_id": "d22fc3af9beac2e3d9842be290ca77806bb81595",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the study can separate itself from previous works, but the related work (ReGLA) does not provide evidence about the paper's ability to differentiate. The related work is a different study on linear attention gating, not directly addressing the paper's novelty claims. Evidence is missing to verify the claim.",
+          "relevance_score": 0.6428571428571429
+        },
+        {
+          "related_paper_id": "484418e1cbc75897b7d668fbe46d1f6b20a20803",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim is vague and not directly verifiable from the provided paper abstract and introduction. The related work evidence does not address the claim's specific content about separating from previous works.",
+          "relevance_score": 0.42857142857142855
+        },
+        {
+          "related_paper_id": "618795552db11785d39976732d9ae5629d3932ff",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a vague claim about the paper's novelty. The related work evidence discusses a different application (graph transformers) and does not address whether the paper's study separates itself from previous works in its specific area, so it provides no relevant support or contradiction.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "a4aded95a4d30ccc8f267591e33c498f3379cf0e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's potential to separate itself from previous works. The related work evidence is about a completely different topic (Sanskrit to Malayalam machine translation with WSD and morphology) and provides no information to support or contradict this claim. The evidence is unrelated and insufficient for verification.",
+          "relevance_score": 0.35714285714285715
+        },
+        {
+          "related_paper_id": "b7516a4918e52132f63f5f643f95d040c0aba364",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's potential to separate itself from previous works, but the provided related work is about misinformation labeling in South Indian languages, which is completely unrelated to the paper's content on gating mechanisms in neural networks. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "5087514af0ec5ec1d47dcfbde50be966fe77f809",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's potential to differentiate itself from prior work. The provided related work evidence is only a journal title ('Indonesian Journal of Electrical Engineering and Computer Science') with no substantive content about gating mechanisms, attention, or the specific research area. There is no information to evaluate alignment, support, or calibration.",
+          "relevance_score": 0.2857142857142857
+        },
+        {
+          "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novelty, but the related work evidence is from a different field (automatic text summarization) and does not provide any information about the paper's contribution to gating mechanisms or its novelty relative to previous works in that area.",
+          "relevance_score": 0.14285714285714285
+        },
+        {
+          "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the study has potential to separate itself from previous works, but the provided related work is about prosodic features in poetry, which is entirely unrelated to the paper's topic of gating mechanisms in neural networks. There is no evidence in the related work to evaluate the claim's alignment or calibration.",
+          "relevance_score": 0.21428571428571427
+        },
+        {
+          "related_paper_id": "3643f16c23a874478974454bdc239146e79b7847",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a vague claim about the paper's potential to separate itself from previous works. The provided related work (ID=3643f16c23a874478974454bdc239146e79b7847) is about multi-modal symbolic representations of number and mental abacus, which is completely unrelated to the paper's focus on gating mechanisms in neural networks. There is no evidence in the related work to evaluate the claim, making it unverifiable.",
+          "relevance_score": 0.07142857142857142
+        }
+      ],
+      "final_score": 1.3333333333333335,
+      "best_evidence": [
+        "a295e71055248f4145257ed88f25503a75a78406",
+        "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+        "b6a114d9a5f63d04222b9f95598a510cd2ee5fed"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 2.0,
+          "weight": 0.359
+        },
+        {
+          "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+          "score": 2.0,
+          "weight": 0.3077
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "This claim is too broad, the impact of gating has been explored in linear attention [1] and standard attention [2,3] networks.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": -2,
+          "label": "UNSUPPORTED",
+          "explanation": "The reviewer claims the paper's statement is 'too broad' because gating has been explored in linear attention and standard attention, citing references [1],[2],[3]. However, the paper's introduction explicitly acknowledges that gating is widely used (including in linear attention and softmax attention) and states that 'most recent works do not look into the gating mechanisms like the gating scores and their effect on the model's hidden states.' The paper's contribution is a systematic investigation of gating in softmax attention, not a claim of novelty for all gating. The related work abstract also states 'existing literature rarely examines the specific effects of gating.' Thus, the reviewer's claim that the paper's scope is 'too broad' is contradicted; the paper is precisely focused on a gap in the literature.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "",
+          "relevance_score": 0.9285714285714286
+        },
+        {
+          "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim that 'the impact of gating has been explored in linear attention [1] and standard attention [2,3] networks' is not directly addressed in the provided related work (GSA). The related work focuses on combining sparse and gated attention for efficiency and stability, but does not explicitly state that gating's impact was already explored in linear or standard attention. The evidence is insufficient to verify the claim.",
+          "relevance_score": 0.8571428571428571
+        },
+        {
+          "related_paper_id": "367dbb2a0d321bdd64d0c04c7c4f5b5ab30abc72",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer's claim is about gating in linear and standard attention networks, but the provided related work is about Ukrainian constitutional law and criminal procedure evidence, which is entirely unrelated. There is no evidence in the related work to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.7857142857142857
+        },
+        {
+          "related_paper_id": "fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a broad claim about gating's impact being explored in linear and standard attention, citing references [1-3]. However, the provided related work does not discuss gating mechanisms in linear or standard attention; it focuses on outlier-driven rescaling (attention/residual sinks) and does not provide evidence to verify the claim. Thus, the evidence is missing.",
+          "relevance_score": 0.7142857142857143
+        },
+        {
+          "related_paper_id": "6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that gating's impact has been explored in linear attention and standard attention networks, referencing [1,2,3]. However, the related work paper is about predicting Yelp ratings with RoBERTa, which is unrelated to attention mechanisms or gating in neural networks. There is no evidence in the related work to support or contradict the claim, and the claim is too specific to verify against the unrelated context.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer claims the paper's claim about gating's broad impact is too broad, citing prior exploration in linear and standard attention. However, the paper explicitly argues that prior work (like NSA) does not disentangle gating's contributions, and the related work (Affine-Scaled Attention) does not directly explore gating mechanisms in the same way, instead focusing on affine scaling of attention weights. Thus, the reviewer's claim is contradicted by the paper's own positioning and the related work's focus, and the language is overstated given the evidence.",
+          "relevance_score": 0.5714285714285714
+        },
+        {
+          "related_paper_id": "d22fc3af9beac2e3d9842be290ca77806bb81595",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.6428571428571429
+        },
+        {
+          "related_paper_id": "484418e1cbc75897b7d668fbe46d1f6b20a20803",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about gating's impact being explored in linear and standard attention, citing references [1], [2], and [3]. However, the provided related work (Activator) focuses on GLU activations in vision transformers, not gating mechanisms in linear or standard attention. The paper's text discusses gating in state-space models and attention but does not explicitly support the claim that gating's impact has been specifically explored in linear attention and standard attention networks as stated. The evidence from the related work is missing or not directly relevant, making verification impossible.",
+          "relevance_score": 0.42857142857142855
+        },
+        {
+          "related_paper_id": "618795552db11785d39976732d9ae5629d3932ff",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "a4aded95a4d30ccc8f267591e33c498f3379cf0e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the paper's claim about gating is too broad and references prior work on gating in linear and standard attention. However, the related work (Sanskrit to Malayalam NMT) does not mention gating mechanisms, linear attention, or standard attention, providing no relevant evidence to support or contradict the reviewer's claim. Thus, the claim is unverifiable with the given evidence.",
+          "relevance_score": 0.35714285714285715
+        },
+        {
+          "related_paper_id": "b7516a4918e52132f63f5f643f95d040c0aba364",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the impact of gating has been explored in linear attention [1] and standard attention [2,3] networks. However, the provided related work text is about misinformation labeling in South Indian language summaries, which is completely unrelated to the topic of gating mechanisms in neural networks. There is no evidence in the related work to support or contradict the reviewer's claim, making the claim unverifiable with the given evidence.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "5087514af0ec5ec1d47dcfbde50be966fe77f809",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work provided (Indonesian Journal of Electrical Engineering and Computer Science) contains only a title and no substantive content about gating mechanisms in linear attention or standard attention. There is no evidence to support or contradict the reviewer's claim that gating's impact has been explored in those domains. The claim remains unverifiable due to missing evidence.",
+          "relevance_score": 0.2857142857142857
+        },
+        {
+          "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work evidence is about automatic text summarization, which is unrelated to the review sentence's claim about gating mechanisms in linear and standard attention networks. There is no evidence to assess the claim.",
+          "relevance_score": 0.14285714285714285
+        },
+        {
+          "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that the impact of gating has been explored in linear attention and standard attention networks, citing references [1], [2,3]. However, the provided related work is a completely unrelated paper about ranking prosodic features of poetry using neural networks. There is no evidence in the related work to support or contradict the reviewer's claim about gating in attention networks.",
+          "relevance_score": 0.21428571428571427
+        },
+        {
+          "related_paper_id": "3643f16c23a874478974454bdc239146e79b7847",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The related work is about mental abacus and symbolic representations, which is unrelated to the paper's focus on gating in attention mechanisms. There is no evidence in the related work to assess the claim about gating's exploration in linear attention or standard attention.",
+          "relevance_score": 0.07142857142857142
+        }
+      ],
+      "final_score": -0.05128205128205126,
+      "best_evidence": [
+        "a295e71055248f4145257ed88f25503a75a78406",
+        "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+        "b6a114d9a5f63d04222b9f95598a510cd2ee5fed"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": -2.0,
+          "weight": 0.359
+        },
+        {
+          "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+          "score": 2.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+          "score": 0.0,
+          "weight": 0.3077
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C3",
+      "text": "Proposed analysis is novel and makes a lot of sense.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's analysis being 'novel' and making 'a lot of sense'. However, the provided related work evidence only describes the paper's content and findings, not the novelty or sensibility of its analysis. There is no direct evidence to evaluate whether the claim is supported, contradicted, or overstated, making the evidence insufficient for verification.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence states 'Proposed analysis is novel and makes a lot of sense,' which is a claim about the paper being reviewed. However, the related work does not provide any evidence or discussion about the novelty or sense of the analysis in the paper under review. The related work focuses on its own contributions regarding attention sinks and MoE mechanisms, not on evaluating the novelty of the paper's analysis. Thus, there is insufficient evidence from the related work to assess the claim's alignment or calibration.",
+          "relevance_score": 0.9285714285714286
+        },
+        {
+          "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the proposed analysis is novel and makes sense. The related work (GSA) also involves gating mechanisms and sparsity, suggesting the general concept is not entirely novel. However, the related work does not directly address the specific analysis of gating positions in softmax attention as in the reviewed paper, so alignment is partial. The reviewer's statement is not strongly contradicted but lacks direct evidence.",
+          "relevance_score": 0.8571428571428571
+        },
+        {
+          "related_paper_id": "367dbb2a0d321bdd64d0c04c7c4f5b5ab30abc72",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novelty and sense-making, but the provided related work evidence is about constitutional law in Ukraine and is completely unrelated to the technical paper on gating mechanisms in neural networks. There is no evidence to support or contradict the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "cb158d3665b591264ef65f0910d7c412fb242857",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims the paper's proposed analysis is novel and makes sense. The related work (TDA) focuses on addressing attention sinks and sparsity via thresholding and differential views, which aligns with the paper's focus on gating mechanisms to eliminate attention sinks and improve sparsity. The evidence supports the novelty and logical sense of the paper's analysis in the context of prior work.",
+          "relevance_score": 0.7857142857142857
+        },
+        {
+          "related_paper_id": "fa35ca3519cfdf5ce0085f4aa8b379e06ef23148",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence 'Proposed analysis is novel and makes a lot of sense' is a vague evaluative claim about the paper's novelty and logical consistency. The related work discusses outlier-driven rescaling and its relation to attention/residual sinks, but does not directly address the specific analysis proposed in the paper being reviewed (which focuses on gating mechanisms). There is no evidence in the related work to support or contradict the claim about the paper's novelty or sense-making, making it insufficient for verification.",
+          "relevance_score": 0.7142857142857143
+        },
+        {
+          "related_paper_id": "6dfe8878ab9fc8a682fe8ace1796acac0e79760b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's novelty and sense, but the related work (about Yelp ratings) is entirely unrelated to the paper's content on gating mechanisms in neural networks. There is no evidence in the provided text to support or contradict the claim, so the relation is insufficient.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "2851aa29664d46aff4fb3a575ac58ae036dee78e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about novelty and sense, but the provided related work does not discuss the specific gating analysis from the paper being reviewed; thus, there is insufficient evidence to assess alignment or calibration.",
+          "relevance_score": 0.5714285714285714
+        },
+        {
+          "related_paper_id": "d22fc3af9beac2e3d9842be290ca77806bb81595",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the proposed analysis is novel and makes sense, but it is a vague assertion without specific evidence. The related work (ReGLA) discusses gating in linear attention, not gating in softmax attention as in the paper being reviewed, so there is no direct evidence to support or contradict the novelty claim.",
+          "relevance_score": 0.6428571428571429
+        },
+        {
+          "related_paper_id": "484418e1cbc75897b7d668fbe46d1f6b20a20803",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a general claim about novelty and sensibility of the proposed analysis, but the related work provided (Activator: GLU Activations as The Core Functions of a Vision Transformer) is not discussed in the provided paper text, and no specific evidence from the related work is presented to verify or contradict the claim. The claim is too vague and evidence is missing.",
+          "relevance_score": 0.42857142857142855
+        },
+        {
+          "related_paper_id": "618795552db11785d39976732d9ae5629d3932ff",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the proposed analysis in the paper being reviewed. The related work evidence (SigGate-GT) discusses sigmoid gating in graph transformers, but it does not directly support or contradict the claim that the paper's analysis is novel and makes sense. The evidence is about a different domain and does not provide sufficient information to verify the claim's novelty or sense-making in the context of the paper's work.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "a4aded95a4d30ccc8f267591e33c498f3379cf0e",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a vague claim about the proposed analysis being novel and sensible. The related work (about Sanskrit to Malayalam NMT) does not provide any evidence or context about the gating mechanisms in attention models discussed in the paper being reviewed. There is no overlap or relation between the topics, making the claim unverifiable against the given evidence.",
+          "relevance_score": 0.35714285714285715
+        },
+        {
+          "related_paper_id": "b7516a4918e52132f63f5f643f95d040c0aba364",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the novelty and sense of the proposed analysis in the main paper. The provided related work text is about misinformation labeling in South Indian language summaries, which is entirely unrelated to the gating mechanisms in neural networks discussed in the main paper. There is no evidence in the related work to support or contradict the reviewer's claim, making verification impossible.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "5087514af0ec5ec1d47dcfbde50be966fe77f809",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The sentence expresses an opinion about the paper's novelty and sense, but the related work text (a journal title) provides no evidence to support or contradict this claim. The claim is too vague and lacks verifiable connection to the evidence.",
+          "relevance_score": 0.2857142857142857
+        },
+        {
+          "related_paper_id": "b0f7aae457557f4545ce88bddc91bdbe807c5f28",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The claim is about the novelty and sense of the proposed analysis in the paper, but the related work evidence is about automatic text summarization, which is entirely unrelated to the paper's focus on gating mechanisms in attention. There is no evidence to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.14285714285714285
+        },
+        {
+          "related_paper_id": "fe5a44b7874636cfc2997a2ec59335d62e304b94",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novelty and sense, but the related work (about prosodic features of poetry using neural networks) provides no evidence to support or contradict this claim, as it is on an entirely different topic.",
+          "relevance_score": 0.21428571428571427
+        },
+        {
+          "related_paper_id": "3643f16c23a874478974454bdc239146e79b7847",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, stating the analysis is novel and makes sense. The related work evidence is about mental abacus and symbolic number representations, which is completely unrelated to the paper's focus on gating mechanisms in neural networks. There is no evidence to support or contradict the claim, making it unverifiable.",
+          "relevance_score": 0.07142857142857142
+        }
+      ],
+      "final_score": 0.6153846153846154,
+      "best_evidence": [
+        "a295e71055248f4145257ed88f25503a75a78406",
+        "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+        "b6a114d9a5f63d04222b9f95598a510cd2ee5fed"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "a295e71055248f4145257ed88f25503a75a78406",
+          "score": 0.0,
+          "weight": 0.359
+        },
+        {
+          "related_paper_id": "889032d50a13d3e639bc9dc9aa283a1531d7b15e",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "b6a114d9a5f63d04222b9f95598a510cd2ee5fed",
+          "score": 2.0,
+          "weight": 0.3077
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 3,
+    "related_works": 17,
+    "pairs_attempted": 51,
+    "pairs_completed": 51,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 3,
+      "claims_with_any_attempt": 3,
+      "claims_with_any_success": 3,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 3,
+      "claims_with_scored_evidence": 3,
+      "claims_with_decisive_evidence": 1,
+      "claims_with_supporting_evidence": 1,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.3333,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 17.0
+    }
+  },
+  "errors": []
+}

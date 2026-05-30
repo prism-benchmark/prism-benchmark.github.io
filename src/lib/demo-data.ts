@@ -22,6 +22,13 @@ const DIMENSIONS = [
 export type DemoSource = (typeof SOURCES)[number];
 export type DemoDimension = (typeof DIMENSIONS)[number];
 
+const DIMENSION_DIRS: Record<DemoDimension, string> = {
+  depth: "depth_of_analysis",
+  novelty: "novelty_verification",
+  flaws: "flaw_identification",
+  constructiveness: "constructiveness",
+};
+
 type JsonValue = Record<string, any>;
 
 export type DemoDataset = {
@@ -36,17 +43,6 @@ export type DemoDataset = {
 function readJson(filePath: string): JsonValue | null {
   if (!fs.existsSync(filePath)) return null;
   return JSON.parse(fs.readFileSync(filePath, "utf8")) as JsonValue;
-}
-
-function readJsonlFirst(filePath: string, paperId: string): JsonValue | null {
-  if (!fs.existsSync(filePath)) return null;
-  const rows = fs
-    .readFileSync(filePath, "utf8")
-    .trim()
-    .split("\n")
-    .filter(Boolean)
-    .map((line) => JSON.parse(line) as JsonValue);
-  return rows.find((row) => row.paper_id === paperId) ?? rows[0] ?? null;
 }
 
 function trimText(value: unknown, max = 420): string {
@@ -159,10 +155,8 @@ function normalizeNovelty(root: string, conference: string, source: DemoSource, 
 }
 
 function normalizeFlaws(root: string, conference: string, source: DemoSource, paperId: string) {
-  const raw = readJsonlFirst(
-    path.join(root, "flaw_identification", conference, source, "all_papers_results.jsonl"),
-    paperId,
-  );
+  const filePath = path.join(root, "flaw_identification", conference, source, `${paperId}.json`);
+  const raw = readJson(filePath);
   if (!raw) return null;
   const issues = raw.metrics_report?.cps?.Canonical_Issue_Bank?.issues ?? [];
   const evaluations = raw.evaluations?.evaluations ?? {};
@@ -195,42 +189,100 @@ function normalizeConstructiveness(
   source: DemoSource,
   paperId: string,
 ) {
-  const raw = readJsonlFirst(
-    path.join(root, "constructiveness", conference, source, "all_results_lite.jsonl"),
-    paperId,
-  );
+  const filePath = path.join(root, "constructiveness", conference, source, `${paperId}.json`);
+  const raw = readJson(filePath);
   if (!raw) return null;
+
+  function mapComments(comments: JsonValue[]) {
+    return comments.slice(0, 14).map((comment: JsonValue) => ({
+      id: String(comment.arc_id ?? ""),
+      section: String(comment.section ?? ""),
+      type: String(comment.comment_type ?? ""),
+      content: trimText(comment.content, 420),
+      scores: [
+        round(comment.D1_actionability, 0),
+        round(comment.D2_specificity, 0),
+        round(comment.D3_justification, 0),
+        round(comment.D4_solution, 0),
+        round(comment.D5_tone, 0),
+      ],
+    }));
+  }
+
+  let reviewers: { reviewerId: string; metrics: JsonValue; comments: ReturnType<typeof mapComments> }[];
+
+  if (Array.isArray(raw.reviewers) && raw.reviewers.length > 0) {
+    // Old format: multiple reviewers per file
+    reviewers = raw.reviewers.map((r: JsonValue) => ({
+      reviewerId: String(r.reviewer_id ?? ""),
+      metrics: r.metrics ?? {},
+      comments: mapComments(r.atomic_comments ?? []),
+    }));
+  } else {
+    // New format: single reviewer per file with top-level fields
+    const reviewerId = String(raw.reviewer_id ?? "");
+    if (!reviewerId) return { metadata: raw.metadata ?? null, reviewers: [] };
+    reviewers = [{
+      reviewerId,
+      metrics: raw.metrics ?? {},
+      comments: mapComments(raw.atomic_comments ?? []),
+    }];
+  }
+
   return {
     metadata: raw.metadata ?? null,
-    reviewers: (raw.reviewers ?? []).map((reviewer: JsonValue) => ({
-      reviewerId: String(reviewer.reviewer_id ?? ""),
-      metrics: reviewer.metrics ?? {},
-      comments: (reviewer.atomic_comments ?? []).slice(0, 14).map((comment: JsonValue) => ({
-        id: String(comment.arc_id ?? ""),
-        section: String(comment.section ?? ""),
-        type: String(comment.comment_type ?? ""),
-        content: trimText(comment.content, 420),
-        scores: [
-          round(comment.D1_actionability, 0),
-          round(comment.D2_specificity, 0),
-          round(comment.D3_justification, 0),
-          round(comment.D4_solution, 0),
-          round(comment.D5_tone, 0),
-        ],
-      })),
-    })),
+    reviewers,
   };
 }
 
+function listDirs(dirPath: string): string[] {
+  if (!fs.existsSync(dirPath)) return [];
+  return fs
+    .readdirSync(dirPath, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+}
+
+function discoverConferences(): string[] {
+  const seen = new Set<string>();
+  for (const dim of Object.values(DIMENSION_DIRS)) {
+    for (const conf of listDirs(path.join(DATA_ROOT, dim))) {
+      seen.add(conf);
+    }
+  }
+  return Array.from(seen).sort();
+}
+
+function discoverPaperId(conference: string): string | null {
+  // Prefer depth_of_analysis: file name = `${paperId}.json`
+  const depthRoot = path.join(DATA_ROOT, "depth_of_analysis", conference);
+  for (const source of listDirs(depthRoot)) {
+    const files = fs.existsSync(path.join(depthRoot, source))
+      ? fs.readdirSync(path.join(depthRoot, source))
+      : [];
+    const match = files.find((f) => f.endsWith(".json"));
+    if (match) return match.replace(/\.json$/, "");
+  }
+  // Fallback to novelty_verification: subdirectory name = paperId
+  const noveltyRoot = path.join(DATA_ROOT, "novelty_verification", conference);
+  for (const source of listDirs(noveltyRoot)) {
+    const sub = listDirs(path.join(noveltyRoot, source));
+    if (sub[0]) return sub[0];
+  }
+  return null;
+}
+
 export function loadDemoDataset(): DemoDataset {
-  const manifest = readJson(path.join(DATA_ROOT, "MANIFEST.json"));
-  const conferences = manifest?.conferences ?? [];
-  const paperIds = manifest?.paper_ids ?? {};
+  const conferences = discoverConferences();
+  const paperIds: Record<string, string> = {};
   const records: DemoDataset["records"] = {};
   const availability: DemoDataset["availability"] = {};
 
   for (const conference of conferences) {
-    const paperId = paperIds[conference];
+    const paperId = discoverPaperId(conference);
+    if (!paperId) continue;
+    paperIds[conference] = paperId;
     records[conference] = {};
     availability[conference] = {} as Record<DemoSource, DemoDimension[]>;
 
@@ -241,12 +293,22 @@ export function loadDemoDataset(): DemoDataset {
       entry.flaws = normalizeFlaws(DATA_ROOT, conference, source, paperId);
       entry.constructiveness = normalizeConstructiveness(DATA_ROOT, conference, source, paperId);
       records[conference][source] = entry;
-      availability[conference][source] = DIMENSIONS.filter((dimension) => Boolean(entry[dimension]));
+      availability[conference][source] = DIMENSIONS.filter((dimension) => {
+        const value = entry[dimension];
+        if (!value) return false;
+        // For constructiveness, require actual reviewer data (not just metadata)
+        if (dimension === "constructiveness") {
+          return Array.isArray(value.reviewers) && value.reviewers.length > 0;
+        }
+        return true;
+      });
     }
   }
 
+  const presentConferences = conferences.filter((c) => paperIds[c]);
+
   return {
-    conferences,
+    conferences: presentConferences,
     sources: [...SOURCES],
     dimensions: [...DIMENSIONS],
     paperIds,

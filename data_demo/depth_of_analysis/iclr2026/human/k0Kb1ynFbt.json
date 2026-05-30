@@ -1,0 +1,545 @@
+{
+  "paper_id": "k0Kb1ynFbt",
+  "source": "human",
+  "evaluator_model": "mimo-v2.5-pro",
+  "reviews_analysis": {
+    "Human_1": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper introduces the Exploratory Diffusion Model (ExDM) to address the exploration bottleneck in Unsupervised Reinforcement Learning (URL).",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "Unlike prior methods that use simple policies, ExDM leverages the superior expressive power of diffusion models to accurately model the complex and heterogeneous state distributions collected during exploration.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "A diffusion model is trained on the replay buffer's state distribution.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "A novel score-based intrinsic reward is calculated from this model's loss (its inability to fit a state), which guides the agent to under-visited regions.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "To ensure efficiency, a simple Gaussian behavior policy is trained to maximize this intrinsic reward and is used for fast data collection, avoiding slow diffusion sampling.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The pre-trained Gaussian policy can be fine-tuned on downstream tasks using standard RL algorithms (like DDPG).",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The author addressed that this is the first work to successfully integrate diffusion models into the unsupervised exploration phase of RL.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "The concept of using the diffusion model's density estimation loss as the intrinsic reward is a significant contribution over prior reward mechanisms (like RND or ICM).",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "It was impressed that the decoupled training scheme (fast Gaussian actor, slow diffusion reward-calculator) is a clever and practical solution to the primary obstacle of using generative models in online RL: slow sampling speed.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "I think that the paper provided a novel, non-trivial algorithm for fine-tuning the diffusion policy itself, complete with a formal proof of optimality (Theorem 4.2).",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "This goes beyond just using the model as a static prior.",
+        "role": "Backing",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Overall, the method's superior performance is not marginal.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "Its experiments dramatically outperform all baselines in complex exploration tasks (e.g., Fig. 2, where baselines get stuck and ExDM covers the entire maze) and shows consistent SOTA results across all aggregate metrics in URLB (Fig. 3).",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "There is a limitation in terms of performance gap: The paper's own experiments (Fig. 3) show that fine-tuning the simple Gaussian policy actually achieves better final performance than the proposed new, complex diffusion policy fine-tuning algorithm (Algorithm 2).",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The reason should be explained and analyzed intensively.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "Compared with Fig. 3(a) and (b), the expert normalized scores of the proposed algorithm in Fig. 3(c) were small.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "The authors stated that the performance degradation may be due to limited interaction timesteps during fine-tuning.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The advanced works to overcome this problem should be discussed further.",
+        "role": "Claim",
+        "aspect": "Related Work",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "While their new fine-tuning method (Algorithm 2) is a novel contribution, it is not yet fully optimized and is outperformed by a simpler, standard approach such as DDPG.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "Therefore, it is expected that the paper's primary strength lies in its pre-training exploration (which produces a superior Gaussian policy) rather than its diffusion policy fine-tuning performance.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "This mechanism could be considered in this discussion of this paper.",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      }
+    ],
+    "Human_2": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper introduce the Exploratory Diffusion Model, which leverages the expressive power of diffusion models to fit diverse replay-buffer distributions, thus providing accurate density estimates and a score-based intrinsic reward that drives exploration into under-visited regions.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "This mechanism substantially broadens state coverage and yields robust pre-trained policies.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Beyond exploration, ExDM develops an efficient decoupled training scheme and a fine-tuning algorithm for adapting pre-trained diffusion components to downstream tasks under limited interaction, with theoretical guarantees of convergence and optimality.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "Empirical gains across multiple settings: The figure indicates consistent improvements over strong unsupervised exploration baselines in URL, in cross-embodiment transfer, and when initializing diffusion policies.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "Potentially general mechanism: A diffusion-based exploratory prior could be a broadly applicable way to induce diverse skills or state coverage that helps downstream RL fine-tuning and transfer.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Sufficient theoretical proof.",
+        "role": "Premise",
+        "aspect": "Theory",
+        "grounding_score": 0
+      }
+    ],
+    "Human_3": [
+      {
+        "arg_id": "A_01",
+        "argument": "The authors proposed an unsupervised RL algorithm called ExDM with diffusion action head.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "The performance seems to be very strong compared to baselines",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The presentation is clear and easy to follow",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 0
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The motivation is somewhat weak.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "I'll put my questions in the following section.",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      }
+    ],
+    "Human_4": [
+      {
+        "arg_id": "A_01",
+        "argument": "This work proposes a novel approach called ExDM for unsupervised RL using a diffusion model.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "During pre-training, ExDM trains a diffusion model to model the state and action distributions of interactions with the environment and derives an intrinsic reward to encourage exploration that is inversely proportional with approximate probability of state visitations of the diffusion model.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "Using these intrinsic rewards, the approach trains a Gaussian policy that explores the environment.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "During fine-tuning, the Gaussian policy can be trained with task-specific rewards, or the diffusion policy trained during pre-training can be fine-tuned.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "To enable fine-tuning of the diffusion policy, a novel regularized training objective is being derived, similar to soft RL and using implicit Q-learning from the offline RL literature to avoid out-of-distribution actions being sampled.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The new approach is shown to lead to more exhaustive exploration, as measured by state coverage, during pre-training, and the work shows that fine-tuning of the pre-trained Gaussian and diffusion policies lead to higher performance compared to alternative pre-training approaches.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The approach proposed in this work appears original and novel.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "While diffusion policies are not new, and diffusion models have been used to express various data distributions, their application to URL is novel to the best of my knowledge.",
+        "role": "Backing",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "Furthermore, the theoretical contributions in Theorem 4.1 justifying the need for more expressive policies for unsupervised pre-training, and in deriving a novel algorithm for online fine-tuning of the diffusion policy are valuable to the community.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "As stated, I consider the theoretical contributions of this work significant and valuable to the community.",
+        "role": "Claim",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "Similarly, the empirical results indicate a small but consistent improvement of ExDM compared to the strongest URL baselines.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "Assuming these results were generated under fair hyperparameter tuning (see question 3), they demonstrate that ExDM is a significant contribution to the field.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "One aspect that dampens my otherwise very positive impression of the significance of this work is the unclear benefits of the diffusion policy part of the ExDM algorithm.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The diffusion policy is arguably the biggest and most complex novel contribution of this work, but it appears to not contribute meaningfully to the performance of the approach (see Weakness 1.).",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Without the diffusion policy, the ExDM algorithm could have also \"just\" been a diffusion model of the state distribution to derive a slightly novel intrinsic reward with a Gaussian policy.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "I would expect further discussion with reviewers and the authors to clarify that part of this work.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "I find the writing and presentation of this work of a high quality.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The empirical evaluation also appears to follow good practice, and provides further ablations and analyzes to shed more light on the learned components.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "There are few unclear or not well supported statements in this work that are listed below, but none of them are major issues or central to the work.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "The introduction of this work significantly leans into the motivation that typical URL approaches use policies that are not sufficiently expressive (often discrete or Gaussian policies) to properly explore the environment during pre-training.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "Theorem 4.1 as theoretical contribution of this work further supports this narrative and the pre-training and fine-tuning of the diffusion policy component of ExDM takes over large parts of Section 4.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "However, despite this motivation and more expressive diffusion policy, the environment interactions during pre-training are still done only using the Gaussian policy (as per line 8 in Algorithm 1).",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "Furthermore, fine-tuning of the Gaussian policy of ExDM still leads to higher performance than fine-tuning the diffusion policy (see Figure 3 (a) vs (c)), a fact that is acknowledged by the authors in Section 5.4.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_24",
+        "argument": "All this makes me question what the diffusion policy of ExDM truly adds to the method.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_25",
+        "argument": "It appears the benefits of ExDM are not from training a more expressive policy in the diffusion policy, but from the diffusion model of state distributions that appears to provide a more informative intrinsic reward to exhaustively explore the environment.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_26",
+        "argument": "Theorem 4.1 still motivates the use of more expressive policies but it appears that the challenges of training diffusion policies remain to outweigh the benefits of a more expressive policy.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_27",
+        "argument": "My questions here are: 1. Does the diffusion policy of ExDM provide some benefits, or does it contribute to any component of the approach in a way that I have not seen?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_28",
+        "argument": "2. Or am I correct in my assessment that it appears to provide no benefits over the Gaussian policy so far?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_29",
+        "argument": "3. Given Theorem 4.1, one might expect the more expressive diffusion policy of ExDM to provide clear benefits. In Section 5.4, it is stated that the diffusion policy might perform worse than the Gaussian policy \"[...] due to limited interaction timesteps during fine-tuning\". Did you fine-tune the diffusion policies with the same 2M steps as used for Gaussian policy fine-tuning? If not, how many steps were used to fine-tune diffusion policies and why was a different number of fine-tuning steps used for these policies?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_30",
+        "argument": "Appendix C.3 states that \"hyperparameters of baselines are taken from their implementations\".",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_31",
+        "argument": "Were these hyperparameters explicitly tuned for the Maze2D tasks evaluated in this work?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_32",
+        "argument": "How about ExDM hyperparameters listed in Table 2? Were these tuned in any form for the Maze2D tasks?",
+        "role": "Rebuttal",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_33",
+        "argument": "I would expect comparable effort to be spent on tuning hyperparameters across all approaches to have confidence in the empirical results presented in this work, and this should be clarified.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_34",
+        "argument": "The work makes the following two statements that are unclear, imprecise, or incorrect and should likely be expressed more precisely: 1. \"[...] the optimal policy of standard RL is a simple deterministic policy\" (Section 4.1). It is unclear to me what \"standard RL\" means; to the best of my knowledge, the statement is only generally true in fully observable (single-agent) RL; partially observable or multi-agent environments might have stochastic optimal policies.",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_35",
+        "argument": "2. \"[...] the explored replay buffer is always diverse and heterogeneous, as the policy continuously changes to visit new states during pre-training. Consequently, URL requires capturing the heterogeneous distribution of collected data and obtaining policies with high diversity\" -- I would argue that URL does not necessarily require to capture distribution of multiple policies to achieve its objective of learning a policy that maximizes state entropy (as stated in Section 4.1). It is merely the practical approach of using off-policy algorithms and a replay buffer of experiences that requires to capture such distributions.",
+        "role": "Rebuttal",
+        "aspect": "Theory",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_36",
+        "argument": "3. \"The Gaussian behavior policy \\pi_g can then be trained using any RL algorithm\" -- I would argue that this is not true since off-policy RL algorithms would be needed. The experience samples that \\pi_g is trained on, as per Algorithm 1, are from a replay buffer and, thus, off-policy with respect to the trained policy \\pi_g.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_37",
+        "argument": "The baselines visualized in Figure 2 appear to be mostly poor performing or middle of the pack when looking at Table 1.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_38",
+        "argument": "None of the strongest baselines (MEPOL, RE3, CIC) are included in Figure 2, supposedly to make the result of ExDM appear more impressive.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_39",
+        "argument": "I would appreciate Figure 2 would show the strongest 1-2 baselines in each family which appear to be R3 and MEPOL for exploration and CiC for skill discovery baselines.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_40",
+        "argument": "(Visualizations of all baselines are shown in Appendix C.4 but I would prefer for the most relevant ones to be shown in the main corpus of the paper)",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_41",
+        "argument": "The fine-tune box of Figure 1 appears confusing to me and I believe the policy titles should be flipped.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_42",
+        "argument": "The left half appears to show the fine-tuning of the Gaussian policy and the right half the fine-tuning of the diffusion policy (as per plot and legend) but the red titles above them are reversed.",
+        "role": "Premise",
+        "aspect": "Presentation",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_43",
+        "argument": "(Minor) I noticed that baseline algorithms do not have identical colors in Figure 3 (a) and (b) which makes it slightly harder to cross-reference these results at a glance.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 13025,
+    "completion_tokens": 13025,
+    "total_tokens": 26050
+  }
+}

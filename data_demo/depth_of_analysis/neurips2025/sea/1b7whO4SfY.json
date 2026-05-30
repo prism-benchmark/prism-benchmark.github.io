@@ -1,0 +1,175 @@
+{
+  "paper_id": "1b7whO4SfY",
+  "source": "sea_neurlps2025",
+  "source_format": "txt",
+  "reviews_analysis": {
+    "SEA_NEURLPS2025": [
+      {
+        "arg_id": "A_01",
+        "argument": "This paper investigates the impact of gating mechanisms in the softmax attention mechanism, focusing on their contribution to model performance, training stability, and attention dynamics.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "It comprehensively explores various configurations of gating, including positions, granularity, head-specificity, and non-linearities, across both dense and MoE models.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The study finds that SDPA output gating, especially in its multiplicative form, significantly improves performance and training stability, enabling more stable training with higher learning rates and facilitating better scaling.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "It also identifies the mechanisms behind the effectiveness of gating, such as enhanced non-linearity and input-dependent sparsity, which mitigate attention sinks and massive activations, improving context length extension.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "Comprehensive exploration of different gating configurations across dense and MoE models.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "Identification of SDPA output gating as a particularly effective mechanism.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "Insightful analysis of the mechanisms behind the effectiveness of gating, including enhanced non-linearity and sparsity.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "Empirical demonstration of the impact of gating on performance, training stability, and attention dynamics.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper focuses primarily on the softmax attention mechanism, potentially limiting the generalizability of the findings to other types of attention mechanisms or architectures.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "The discussion of broader impacts and potential societal implications is limited, focusing mainly on the potential misuse of the findings.",
+        "role": "Claim",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "How do the findings on the effectiveness of SDPA output gating apply to different model architectures beyond MoE and dense models?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "What are the implications of the identified mechanisms for the design of future attention-based models?",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "How can the insights from this study be extended to address the broader societal implications of attention mechanisms in large language models?",
+        "role": "Rebuttal",
+        "aspect": "Other",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The paper presents a well-structured and comprehensive exploration of the topic, with clear methodology, thorough analysis, and empirical evidence.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "The study's limitations, however, prevent it from being considered perfectly sound.",
+        "role": "Rebuttal",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "The paper is well-written and organized, with clear sections and figures that enhance understanding.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "However, the extensive technical detail and the inclusion of supplementary material could be streamlined for better readability.",
+        "role": "Rebuttal",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "The paper contributes significantly to the understanding of gating mechanisms in softmax attention, offering new insights into their effectiveness and the underlying mechanisms.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_19",
+        "argument": "It provides a solid foundation for future research in this area, though the scope might be limited by its focus on the softmax mechanism.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_20",
+        "argument": "The paper demonstrates strong research quality with a comprehensive exploration and insightful analysis of the impact of gating mechanisms.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_21",
+        "argument": "However, the limitations in scope and the potential for broader societal impacts are reasons for a moderate rating.",
+        "role": "Rebuttal",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_22",
+        "argument": "The paper presents a significant contribution to the field of attention mechanisms in neural networks, offering valuable insights into the role of gating and its implications for model performance, training stability, and attention dynamics.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_23",
+        "argument": "While it could benefit from further exploration of its findings' generalizability and broader implications, the overall quality and originality of the research justify an accept decision with a recommendation for minor revisions to enhance clarity and streamline the presentation.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 3005,
+    "completion_tokens": 3005,
+    "total_tokens": 6010
+  }
+}

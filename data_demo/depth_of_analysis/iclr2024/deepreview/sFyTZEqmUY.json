@@ -1,0 +1,140 @@
+{
+  "paper_id": "sFyTZEqmUY",
+  "source": "deepreview_iclr2024",
+  "source_format": "deepreview_json",
+  "reviews_analysis": {
+    "DEEPREVIEW_ICLR2024": [
+      {
+        "arg_id": "A_01",
+        "argument": "The paper proposes UniSim, a video diffusion model that is able to condition on past frames and actions to forecast future frames.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_02",
+        "argument": "It combines multiple datasets from various domains, including robot manipulation, robot navigation, human activities, and panorama scans.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_03",
+        "argument": "The proposed method is applied to training an image-goal conditioned VLM policy, a VLM policy with low-level control actions, and training a video captioning model.",
+        "role": "Premise",
+        "aspect": "Methodology",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_04",
+        "argument": "The results show that UniSim is able to generate high-quality videos and improve the performance of downstream tasks.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_05",
+        "argument": "The paper is well-written and easy to follow.",
+        "role": "Claim",
+        "aspect": "Presentation",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_06",
+        "argument": "The paper proposes to combine multiple datasets, which is an interesting idea.",
+        "role": "Claim",
+        "aspect": "Novelty",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_07",
+        "argument": "The proposed method is applied to a wide range of downstream tasks.",
+        "role": "Claim",
+        "aspect": "Methodology",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_08",
+        "argument": "My primary concern is the lack of experimental details, which makes it hard to evaluate the contribution.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_09",
+        "argument": "The paper states that UniSim is trained on a large amount of data from various domains, but it is unclear how much data is used from each domain.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_10",
+        "argument": "Moreover, the paper does not provide any details on the training procedure, such as the training time, the number of GPUs used, and the optimization algorithm.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_11",
+        "argument": "This lack of information makes it difficult to reproduce the results and to assess the significance of the proposed method.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_12",
+        "argument": "The paper also lacks a thorough comparison with existing methods.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_13",
+        "argument": "For example, in the context of training VLM policies, there are several methods that use diffusion models to generate data for training [1, 2, 3, 4].",
+        "role": "Premise",
+        "aspect": "Related Work",
+        "grounding_score": 2
+      },
+      {
+        "arg_id": "A_14",
+        "argument": "The paper does not compare UniSim with these methods, which makes it difficult to assess the advantages and disadvantages of the proposed approach.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_15",
+        "argument": "Furthermore, the paper does not provide a detailed analysis of the performance of UniSim on different tasks.",
+        "role": "Claim",
+        "aspect": "Experiments",
+        "grounding_score": null
+      },
+      {
+        "arg_id": "A_16",
+        "argument": "For example, in the context of video captioning, the paper only reports the CIDEr score on the ActivityNet Captions dataset.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 3
+      },
+      {
+        "arg_id": "A_17",
+        "argument": "However, there are other metrics that could be used to evaluate the quality of the generated captions, such as BLEU, METEOR, and ROUGE.",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 1
+      },
+      {
+        "arg_id": "A_18",
+        "argument": "Moreover, the paper does not provide any qualitative examples of the generated captions, which makes it difficult to assess the strengths and weaknesses of the proposed method [5].",
+        "role": "Premise",
+        "aspect": "Experiments",
+        "grounding_score": 2
+      }
+    ]
+  },
+  "usage_stats": {
+    "prompt_tokens": 3066,
+    "completion_tokens": 3066,
+    "total_tokens": 6132
+  }
+}

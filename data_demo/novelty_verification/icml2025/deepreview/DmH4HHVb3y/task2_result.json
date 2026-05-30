@@ -1,0 +1,283 @@
+{
+  "mode": "per_contribution",
+  "paper_year": null,
+  "queries": [
+    {
+      "id": "C1",
+      "query": "training LLMs effective multiturn human-LLM collaboration training framework multiturn LLM collaboration",
+      "status": "ok",
+      "count": 20
+    },
+    {
+      "id": "C2",
+      "query": "training LLMs effective multiturn human-LLM collaboration multiturn reward estimation",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "id": "C3",
+      "query": "training LLMs effective multiturn human-LLM collaboration multiturn interaction benchmark",
+      "status": "ok",
+      "count": 5
+    }
+  ],
+  "candidate_pool_top30": [
+    {
+      "cand_id": "99548498d9dad1adc8c98f44ed7ddab0e0bff92f",
+      "title": "Systematically Identifying, Defining and Organizing Knowledge Components for Data Science Problem Solving through Human-LLM Collaboration",
+      "year": 2025,
+      "venue": "",
+      "abstract": "",
+      "url": "https://www.semanticscholar.org/paper/99548498d9dad1adc8c98f44ed7ddab0e0bff92f",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "2accbc556790432e73542c574fcd101ebe8ef815",
+      "title": "Quantifying and Optimizing Human-AI Synergy: Evidence-Based Strategies for Adaptive Collaboration",
+      "year": 2026,
+      "venue": "Human Capital Leadership Review",
+      "abstract": "The emergence of large language models (LLMs) has transformed human-machine interaction, yet evaluation frameworks remain predominantly model-centric, focusing on standalone AI performance rather than emergent collaborative outcomes. This article introduces a novel Bayesian Item Response Theory framework that quantifies human–AI synergy by separately estimating individual ability, collaborative ability, and AI model capability while controlling for task difficulty. Analysis of benchmark data (n=667) reveals substantial synergy effects, with GPT-4o improving human performance by 29 percentage points and Llama-3.1-8B by 23 percentage points. Critically, collaborative ability proves distinct from individual problem-solving ability, with Theory of Mind—the capacity to infer and adapt to others' mental states—emerging as a key predictor of synergy. Both stable individual differences and moment-to-moment fluctuations in perspective-taking influence AI response quality, highlighting the dynamic nature of effective human-AI interaction. Organizations can leverage these insights to design training programs, selection criteria, and AI systems that prioritize emergent team performance over standalone capabilities, marking a fundamental shift toward optimizing collective intelligence in human-AI teams.",
+      "url": "https://www.semanticscholar.org/paper/2accbc556790432e73542c574fcd101ebe8ef815",
+      "embedding": null,
+      "relevance_score": 1.0
+    },
+    {
+      "cand_id": "8132f76f1090659317e6a3067f13222439571ff3",
+      "title": "Collab-RAG: Boosting Retrieval-Augmented Generation for Complex Question Answering via White-Box and Black-Box LLM Collaboration",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Retrieval-Augmented Generation (RAG) systems often struggle to handle multi-hop question-answering tasks accurately due to irrelevant context retrieval and limited complex reasoning capabilities. We introduce Collab-RAG, a collaborative training framework that leverages mutual enhancement between a white-box small language model (SLM) and a blackbox large language model (LLM) for RAG. Specifically, the SLM decomposes complex queries into simpler sub-questions, thus enhancing the accuracy of the retrieval and facilitating more effective reasoning by the black-box LLM. Concurrently, the black-box LLM provides feedback signals to improve the SLM's decomposition capability. We observe that Collab-RAG relies solely on supervision from an affordable black-box LLM without additional distillation from frontier LLMs, yet demonstrates strong generalization across multiple black-box LLMs. Experimental evaluations across five multi-hop QA datasets demonstrate that Collab-RAG substantially outperforms existing black-box-only and SLM fine-tuning baselines by 1.8%-14.2% on average. In particular, our fine-tuned 3B SLM surpasses a frozen 32B LLM in question decomposition, highlighting the efficiency of Collab-RAG in improving reasoning and retrieval for complex questions. The code of Collab-RAG is available on https://github.com/ritaranx/Collab-RAG/.",
+      "url": "https://www.semanticscholar.org/paper/8132f76f1090659317e6a3067f13222439571ff3",
+      "embedding": null,
+      "relevance_score": 0.95
+    },
+    {
+      "cand_id": "a9d414cfe5c4fd053b4c7d157911345df67c6c29",
+      "title": "LLM and VLM-Assisted Human-Robot Collaboration Framework for Smart Assembly Cells",
+      "year": 2025,
+      "venue": "International Conference on Computer Modeling and Simulation",
+      "abstract": "While Industry 4.0 drives demand for adaptive human-robot collaboration, challenges persist in robotic intelligence, computational efficiency, and unstructured-environment adaptability. This study proposes integrating Large Language Models (LLMs) and Vision-Language Models (VLMs) to enhance collaborative assembly systems. LLMs translate natural language into machine-executable commands, simplifying human-robot interaction. VLMs process camera-captured color/depth data to construct perceptual spaces, improving environmental awareness with minimal training data. By combining LLM-generated instructions and VLM-derived spatial insights, the system enables autonomous trajectory planning and optimized motion control. This dual-model framework reduces operational complexity, enhances adaptability to unstructured scenarios, and improves generalization for modern manufacturing's evolving demands.",
+      "url": "https://www.semanticscholar.org/paper/a9d414cfe5c4fd053b4c7d157911345df67c6c29",
+      "embedding": null,
+      "relevance_score": 0.9
+    },
+    {
+      "cand_id": "e0866ceb256e5e173fe13ac883084ac9dc2d3128",
+      "title": "SYNC: SYnergistic aNnotation Collaboration between Humans and LLMs for Enhanced Model Training",
+      "year": 2025,
+      "venue": "International Conference on Software Engineering Research and Applications",
+      "abstract": "Large language models (LLMs) have demonstrated impressive performance across a wide range of natural language processing tasks, highlighting their potential as effective data annotators. While LLM-generated annotations tend to be costeffective, they are often error-prone and may inadvertently introduce bias. It is advantageous to harness the strengths of both LLMs and humans to ensure higher accuracy and reliability in the annotation process. In this paper, we present a multi-step, human-LLM collaborative approach to optimize data annotation for Stack Overflow datasets. We begin by applying TF-IDF to rank and prioritize relevant elements. Next, we utilize NLP Transformer and UniXcoder to leverage their deep contextual understanding for handling the code-related queries and discussions typical of Stack Overflow, resulting in more consistent automated labels. Finally, human annotators re-annotate to correct potential errors and mitigate bias introduced during earlier stages. To support human-LLM collaboration, we developed SYNC a research prototype that implements SYnergistic aNnotation Collaboration through an intuitive graphical user interface, enabling real-time interaction between human annotators and the LLM, allowing for iterative refinements. Overall, our approach is designed to integrate automated efficiency with human oversight to improve annotation outcomes, particularly for complex or domain-specific tasks such as those found in Stack Overflow datasets.",
+      "url": "https://www.semanticscholar.org/paper/e0866ceb256e5e173fe13ac883084ac9dc2d3128",
+      "embedding": null,
+      "relevance_score": 0.85
+    },
+    {
+      "cand_id": "5d62b2c52955fb6367dc0d5bde26ef6ebcbaa2b6",
+      "title": "Fostering collective intelligence in CPSS: an LLM-driven multi-agent cooperative tuning framework",
+      "year": 2025,
+      "venue": "Frontiers of Physics",
+      "abstract": "Cyber-Physical-Social Systems (CPSS) have emerged as a transformative paradigm in recent years, embracing computational processes, physical systems, and human social interactions within an integrated architectural framework. Advances in artificial intelligence technologies are targeted at addressing the complexity of CPSS design, especially in modeling human reactions in cyber-physical environment. Notably, LLM-based agents have shown significant potential, and numerous studies have leveraged multi-agent collaboration frameworks to solve reasoning tasks. Some approaches achieve multi-agent collaboration through a debate or communication setting. However, these approaches only use the existing capabilities of LLMs, fail to enhance their problem-solving performance. Other works incorporate the responses of other LLMs into their training trajectories to train individual LLMs in a reinforcement learning setting. We argue that effective collaboration should align not only in input information but also in consistent optimization objectives. Furthermore, in current cooperative frameworks, some LLMs tend to redundantly repeat others’ viewpoints, contributing minimally to solve problems. In this paper, inspired by multi-agent reinforcement learning research, we propose MACT, a Multi-Agent Cooperative Tuning framework to joint train multiple LLMs, ensuring that the optimization of each agent aligns directly with the objective of the global task. We equip each agent with a critic network to facilitate individual optimization. Furthermore, to encourage different agents to complement each other and contribute to the overall task, we employ a mixing network that ensures the value of each agent is monotonically consistent with the total value. Experimental results reveal that our method significantly enhances cooperative problem-solving capabilities in the LLM multi-agent framework, which set strong evidence for the modeling of human reaction within CPSS.",
+      "url": "https://www.semanticscholar.org/paper/5d62b2c52955fb6367dc0d5bde26ef6ebcbaa2b6",
+      "embedding": null,
+      "relevance_score": 0.8
+    },
+    {
+      "cand_id": "33c8fde911526140a85cdfc654c8ee318f83906d",
+      "title": "CollabLLM: From Passive Responders to Active Collaborators",
+      "year": 2025,
+      "venue": "International Conference on Machine Learning",
+      "abstract": "Large Language Models are typically trained with next-turn rewards, limiting their ability to optimize for long-term interaction. As a result, they often respond passively to ambiguous or open-ended user requests, failing to help users reach their ultimate intents and leading to inefficient conversations. To address these limitations, we introduce CollabLLM, a novel and general training framework that enhances multiturn human-LLM collaboration. Its key innovation is a collaborative simulation that estimates the long-term contribution of responses using Multiturn-aware Rewards. By reinforcement fine-tuning these rewards, CollabLLM goes beyond responding to user requests, and actively uncovers user intent and offers insightful suggestions-a key step towards more human-centered AI. We also devise a multiturn interaction benchmark with three challenging tasks such as document creation. CollabLLM significantly outperforms our baselines with averages of 18.5% higher task performance and 46.3% improved interactivity by LLM judges. Finally, we conduct a large user study with 201 judges, where CollabLLM increases user satisfaction by 17.6% and reduces user spent time by 10.4%.",
+      "url": "https://www.semanticscholar.org/paper/33c8fde911526140a85cdfc654c8ee318f83906d",
+      "embedding": null,
+      "relevance_score": 0.8
+    },
+    {
+      "cand_id": "60c870a5e5bd53b5d06780153e1f48d662faebc8",
+      "title": "Token-Level LLM Collaboration via FusionRoute",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "abstract": "Large language models (LLMs) exhibit strengths across diverse domains. However, achieving strong performance across these domains with a single general-purpose model typically requires scaling to sizes that are prohibitively expensive to train and deploy. On the other hand, while smaller domain-specialized models are much more efficient, they struggle to generalize beyond their training distributions. To address this dilemma, we propose FusionRoute, a robust and effective token-level multi-LLM collaboration framework in which a lightweight router simultaneously (i) selects the most suitable expert at each decoding step and (ii) contributes a complementary logit that refines or corrects the selected expert's next-token distribution via logit addition. Unlike existing token-level collaboration methods that rely solely on fixed expert outputs, we provide a theoretical analysis showing that pure expert-only routing is fundamentally limited: unless strong global coverage assumptions hold, it cannot in general realize the optimal decoding policy. By augmenting expert selection with a trainable complementary generator, FusionRoute expands the effective policy class and enables recovery of optimal value functions under mild conditions. Empirically, across both Llama-3 and Gemma-2 families and diverse benchmarks spanning mathematical reasoning, code generation, and instruction following, FusionRoute outperforms both sequence- and token-level collaboration, model merging, and direct fine-tuning, while remaining competitive with domain experts on their respective tasks.",
+      "url": "https://www.semanticscholar.org/paper/60c870a5e5bd53b5d06780153e1f48d662faebc8",
+      "embedding": null,
+      "relevance_score": 0.75
+    },
+    {
+      "cand_id": "ba96ec48311340c996c1d49905549737ceec0a07",
+      "title": "PerspAct: Enhancing LLM Situated Collaboration Skills through Perspective Taking and Active Vision",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Recent advances in Large Language Models (LLMs) and multimodal foundation models have significantly broadened their application in robotics and collaborative systems. However, effective multi-agent interaction necessitates robust perspective-taking capabilities, enabling models to interpret both physical and epistemic viewpoints. Current training paradigms often neglect these interactive contexts, resulting in challenges when models must reason about the subjectivity of individual perspectives or navigate environments with multiple observers. This study evaluates whether explicitly incorporating diverse points of view using the ReAct framework, an approach that integrates reasoning and acting, can enhance an LLM's ability to understand and ground the demands of other agents. We extend the classic Director task by introducing active visual exploration across a suite of seven scenarios of increasing perspective-taking complexity. These scenarios are designed to challenge the agent's capacity to resolve referential ambiguity based on visual access and interaction, under varying state representations and prompting strategies, including ReAct-style reasoning. Our results demonstrate that explicit perspective cues, combined with active exploration strategies, significantly improve the model's interpretative accuracy and collaborative effectiveness. These findings highlight the potential of integrating active perception with perspective-taking mechanisms in advancing LLMs'application in robotics and multi-agent systems, setting a foundation for future research into adaptive and context-aware AI systems.",
+      "url": "https://www.semanticscholar.org/paper/ba96ec48311340c996c1d49905549737ceec0a07",
+      "embedding": null,
+      "relevance_score": 0.7
+    },
+    {
+      "cand_id": "84a9ca07c0e083316a63178671c683584efc041e",
+      "title": "Dynamic Synthetic Data Generation through Human-Guided Multi-Agent Collaboration",
+      "year": 2025,
+      "venue": "2025 5th International Conference on Electrical, Computer and Energy Technologies (ICECET)",
+      "abstract": "In an era where data privacy concerns and regulatory restrictions limit the accessibility and usability of real-world data for ML applications, synthetic data serves as a useful tool for training and refining machine learning models. This research paper introduces a multi-agent framework designed to automate the generation of high-quality synthetic data, addressing the critical business challenge of dataset scarcity in privacy-conscious business domains. By integrating human expertise with the capabilities of Large Language Models (LLMs) and multi-agent collaboration, our framework offers a novel approach to generating synthetic datasets that closely mirror real-world complexities. Our approach utilizes a collaborative network of specialized LLM agents that work together to ensure the generation of high-quality synthetic data meeting specific business requirements and incorporating domain knowledge. At the outset, human inputs guide the multi-agent collaboration to align with business needs. We create real-world inputs that serve as the backbone for synthetic data samples. Additionally, we craft complex variations that analyze business information to iteratively introduce real-world complexities into the data. By integrating advanced techniques like LLMs for topic modeling and strategically injecting variability, our framework enhances the realism and applicability of synthetic data. We also present two case studies: one in the insurance domain, focusing on claim request processing, and another in the Accounts Payable domain, addressing the invoice processing challenge. These case studies demonstrate the framework's effectiveness in creating large volumes of data using only limited sample data and business information provided by a subject matter expert. This data was used to produce high-quality ML models, which significantly reduce model hallucination and improve accuracy.",
+      "url": "https://www.semanticscholar.org/paper/84a9ca07c0e083316a63178671c683584efc041e",
+      "embedding": null,
+      "relevance_score": 0.65
+    },
+    {
+      "cand_id": "641e2ddf77a80f468b52dedf17d059a627ac2377",
+      "title": "Prism: Towards Lowering User Cognitive Load in LLMs via Complex Intent Understanding",
+      "year": 2026,
+      "venue": "Proceedings of the ACM Web Conference 2026",
+      "abstract": "Large Language Models are rapidly emerging as web-native interfaces to social platforms. On the social web, users frequently have ambiguous and dynamic goals, making complex intent understanding—rather than single-turn execution—the cornerstone of effective human-LLM collaboration. Existing approaches attempt to clarify user intents through sequential or parallel questioning, yet they fall short of addressing the core challenge: modeling the logical dependencies among clarification questions. Inspired by the Cognitive Load Theory, we propose Prism, a novel framework for complex intent understanding that enables logically coherent and efficient intent clarification. Prism comprises four tailored modules: a complex intent decomposition module, which decomposes user intents into smaller, well-structured elements and identifies logical dependencies among them; a logical clarification generation module, which organizes clarification questions based on these dependencies to ensure coherent, low-friction interactions; an intent-aware reward module, which evaluates the quality of clarification trajectories via an intent-aware reward function and leverages Monte Carlo Sample to simulate user-LLM interactions for large-scale, high-quality training data generation; and a self-evolved intent tuning module, which iteratively refines the LLM's logical clarification capability through data-driven feedback and optimization. Prism consistently outperforms existing approaches across clarification interactions, intent execution, and cognitive load benchmarks. It achieves state-of-the-art logical consistency, reduces logical conflicts to 11.5%, increases user satisfaction by 14.4%, and decreases task completion time by 34.8%. All data and code are released.",
+      "url": "https://www.semanticscholar.org/paper/641e2ddf77a80f468b52dedf17d059a627ac2377",
+      "embedding": null,
+      "relevance_score": 0.6
+    },
+    {
+      "cand_id": "bab60348d6147c3fb62abb4e160ef7f3f9710195",
+      "title": "TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration",
+      "year": 2024,
+      "venue": "",
+      "abstract": "Trajectory modeling, which includes research on trajectory data pattern mining and future prediction, has widespread applications in areas such as life services, urban transportation, and public administration. Numerous methods have been proposed to address specific problems within trajectory modeling. However, the heterogeneity of data and the diversity of trajectory tasks make effective and reliable trajectory modeling an important yet highly challenging endeavor, even for domain experts. In this paper, we propose TrajAgent, an agent framework powered by large language models, designed to facilitate robust and efficient trajectory modeling through automation modeling. This framework leverages and optimizes diverse specialized models to address various trajectory modeling tasks across different datasets effectively. In TrajAgent, we first develop UniEnv, an execution environment with a unified data and model interface, to support the execution and training of various models. Building on UniEnv, we introduce an agentic workflow designed for automatic trajectory modeling across various trajectory tasks and data. Furthermore, we introduce collaborative learning schema between LLM-based agents and small speciallized models, to enhance the performance of the whole framework effectively. Extensive experiments on five tasks using four real-world datasets demonstrate the effectiveness of TrajAgent in automated trajectory modeling, achieving a performance improvement of 2.38%-69.91% over baseline methods. The codes and data can be accessed via https://github.com/tsinghua-fib-lab/TrajAgent.",
+      "url": "https://www.semanticscholar.org/paper/bab60348d6147c3fb62abb4e160ef7f3f9710195",
+      "embedding": null,
+      "relevance_score": 0.6
+    },
+    {
+      "cand_id": "85a381088fc61f02671ebf1db91c836aed132fa6",
+      "title": "Social-R1: Towards Human-like Social Reasoning in LLMs",
+      "year": 2026,
+      "venue": "",
+      "abstract": "While large language models demonstrate remarkable capabilities across numerous domains, social intelligence - the capacity to perceive social cues, infer mental states, and generate appropriate responses - remains a critical challenge, particularly for enabling effective human-AI collaboration and developing AI that truly serves human needs. Current models often rely on superficial patterns rather than genuine social reasoning. We argue that cultivating human-like social intelligence requires training with challenging cases that resist shortcut solutions. To this end, we introduce ToMBench-Hard, an adversarial benchmark designed to provide hard training examples for social reasoning. Building on this, we propose Social-R1, a reinforcement learning framework that aligns model reasoning with human cognition through multi-dimensional rewards. Unlike outcome-based RL, Social-R1 supervises the entire reasoning process, enforcing structural alignment, logical integrity, and information density. Results show that our approach enables a 4B parameter model to surpass much larger counterparts and generalize robustly across eight diverse benchmarks. These findings demonstrate that challenging training cases with trajectory-level alignment offer a path toward efficient and reliable social intelligence.",
+      "url": "https://www.semanticscholar.org/paper/85a381088fc61f02671ebf1db91c836aed132fa6",
+      "embedding": null,
+      "relevance_score": 0.55
+    },
+    {
+      "cand_id": "a5901faf43af3d430e136c1e8b2157db0609f0da",
+      "title": "Interactive Robot Action Replanning using Multimodal LLM Trained from Human Demonstration Videos",
+      "year": 2025,
+      "venue": "IEEE International Conference on Acoustics, Speech, and Signal Processing",
+      "abstract": "Understanding human actions could allow robots to perform a large spectrum of complex manipulation tasks and make collaboration with humans easier. Recently, multimodal scene understanding using audio-visual Transformers has been used to generate robot action sequences from videos of human demonstrations. However, automatic action sequence generation is not always perfect due to the distribution gap between the training and test environments. To bridge this gap, human intervention could be very effective, such as telling the robot agent what should be done. Motivated by this, we propose an error-correction-based action replanning approach that regenerates better action sequences using (1) automatically generated actions from a pretrained action generator and (2) human error-correction in natural language. We collected singlearm robot action sequences aligned to human action instruction for the cooking video dataset YouCook2. We trained the proposed errorcorrection-based action replanning model using a pre-trained multimodal LLM model (AVBLIP-2), generating a pair of (a) single-arm robot micro-step action sequences and (b) action descriptions in natural language simultaneously. To assess the performance of error correction, we collected human feedback on correcting errors in the automatically generated robot actions. Experiments show that our proposed interactive replanning model trained in a multitask manner using action sequence and description outperformed the baseline model in all types of scores.",
+      "url": "https://www.semanticscholar.org/paper/a5901faf43af3d430e136c1e8b2157db0609f0da",
+      "embedding": null,
+      "relevance_score": 0.5
+    },
+    {
+      "cand_id": "ca2ba208222acce3c5607d425e6d920381a91c8b",
+      "title": "MeCo: Enhancing LLM-Empowered Multi-Robot Collaboration via Similar Task Memoization",
+      "year": 2026,
+      "venue": "Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems",
+      "abstract": "Multi-robot systems have been widely deployed in real-world applications, providing significant improvements in efficiency and reductions in labor costs. However, most existing multi-robot collaboration methods rely on extensive task-specific training, which limits their adaptability to new or diverse scenarios. Recent research leverages the language understanding and reasoning capabilities of large language models (LLMs) to enable more flexible collaboration without specialized training. Yet, current LLM-empowered approaches remain inefficient: when confronted with identical or similar tasks, they must replan from scratch because they omit task-level similarities. To address this limitation, we propose MeCo, a similarity-aware multi-robot collaboration framework that applies the principle of ``cache and reuse''(a.k.a., memoization) to reduce redundant computation. Unlike simple task repetition, identifying and reusing solutions for similar but not identical tasks is far more challenging, particularly in multi-robot settings. To this end, MeCo introduces a new similarity testing method that retrieves previously solved tasks with high relevance, enabling effective plan reuse without re-invoking LLMs. Furthermore, we present MeCoBench, the first benchmark designed to evaluate performance on similar-task collaboration scenarios. Experimental results show that MeCo substantially reduces planning costs and improves success rates compared with state-of-the-art approaches.",
+      "url": "https://www.semanticscholar.org/paper/ca2ba208222acce3c5607d425e6d920381a91c8b",
+      "embedding": null,
+      "relevance_score": 0.45
+    },
+    {
+      "cand_id": "f569c8756d2f9272c03ca717933bf80f23743768",
+      "title": "A large language model for advanced power dispatch",
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "abstract": "Power dispatch is essential for providing society with stable, cost-effective, and eco-friendly electricity. However, traditional methods falter as power systems grow in scale and complexity, struggling with multitasking, swift problem-solving, and human-machine collaboration. This paper introduces Grid Artificial Intelligent Assistant (GAIA), a pioneering Large Language Model (LLM) designed to assist with a variety of power system operational tasks, including operation adjustment, operation monitoring, and black start scenarios. We have developed a novel dataset construction technique that harnesses various data sources to fine-tune GAIA for optimal performance in this domain. This approach streamlines LLM training, allowing for the seamless integration of multidimensional data in power system management. Additionally, we have crafted specialized prompt strategies to boost GAIA’s input-output efficiency in dispatch scenarios. When evaluated on the ElecBench benchmark, GAIA surpasses the baseline model Large Language Model Meta AI-2 (LLaMA2) on multiple metrics. In practical applications, GAIA has demonstrated its ability to enhance decision-making processes, improve operational efficiency, and facilitate better human-machine interactions in power dispatch operations. This paper expands the application of LLMs to power dispatch and validates their practical utility, paving the way for future innovations in this field.",
+      "url": "https://www.semanticscholar.org/paper/f569c8756d2f9272c03ca717933bf80f23743768",
+      "embedding": null,
+      "relevance_score": 0.4
+    },
+    {
+      "cand_id": "a2803cd240d194718808479ec624e8ba7539e8da",
+      "title": "Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning",
+      "year": 2026,
+      "venue": "",
+      "abstract": "While scaling individual Large Language Models (LLMs) has delivered remarkable progress, the next frontier lies in scaling collaboration through multi-agent systems (MAS). However, purely autonomous MAS remain''closed-world''systems, constrained by the static knowledge horizon of pre-trained models. This limitation makes them brittle on tasks requiring knowledge beyond training data, often leading to collective failure under novel challenges. To address this, we propose the Human-In-the-Loop Multi-Agent Collaboration (HILA) framework, a principled paradigm for human--agent collaboration. HILA trains agents to learn a metacognitive policy that governs when to solve problems autonomously and when to defer to a human expert. To operationalize this policy, we introduce Dual-Loop Policy Optimization, which disentangles immediate decision-making from long-term capability growth. The inner loop applies Group Relative Policy Optimization (GRPO) with a cost-aware reward to optimize deferral decisions, while the outer loop implements continual learning, transforming expert feedback into high-quality supervised signals that strengthen the agent's reasoning ability. Experiments on challenging mathematical and problem-solving benchmarks show that HILA, equipped with Dual-Loop Policy Optimization, consistently outperforms advanced MAS, establishing a principled foundation for collaborative and continually improving agentic systems.",
+      "url": "https://www.semanticscholar.org/paper/a2803cd240d194718808479ec624e8ba7539e8da",
+      "embedding": null,
+      "relevance_score": 0.4
+    },
+    {
+      "cand_id": "4c00244f5ab8ccc29fd6412cadcb8e3f0eb67158",
+      "title": "Focus on the Optimization of the RLHF Algorithm to Enhance the Training Effect After LLM",
+      "year": 2026,
+      "venue": "ITM Web of Conferences",
+      "abstract": "Post-training alignment of large language models is crucial for ensuring their safety, usefulness, and alignment with human preferences. Although reinforcement learning from human feedback (RLHF) is the mainstream approach, its training process is susceptible to issues such as reward model noise, unstable policy optimization, and catastrophic forgetting, leading to deviations between model outputs and true human preferences. This paper systematically reviews the optimization algorithms for enhancing the stability of RLHF in the past three years and categorizing them into three types: “Modifying signals”, aiming to improve the reliability of the reward signal; “Optimizing algorithms”, focusing on enhancing the performance of the reinforcement learning model to increase its noise resistance; “Developing Models”, reconstructing the training framework and multi-module collaboration from a system perspective to achieve fundamental optimization. This paper elaborates on the principles, representative algorithms, and advantages and disadvantages of each category, and conducts a horizontal comparison and analysis. This review aims to provide researchers with a clear algorithm classification framework and selection reference, while also pointing out the common challenges in current research, such as reward model bias, system implementation complexity, and generalization ability, in the hope of promoting subsequent research progress.",
+      "url": "https://www.semanticscholar.org/paper/4c00244f5ab8ccc29fd6412cadcb8e3f0eb67158",
+      "embedding": null,
+      "relevance_score": 0.35
+    },
+    {
+      "cand_id": "1f24e18ba7106b464a7c9081300d4c2f3b661c11",
+      "title": "Optimal-Agent-Selection: State-Aware Routing Framework for Efficient Multi-Agent Collaboration",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "The emergence of multi-agent systems powered by large language models (LLMs) has unlocked new frontiers in complex task-solving, enabling diverse agents to integrate unique expertise, collaborate flexibly, and address challenges unattainable for individual models. However, the full potential of such systems is hindered by rigid agent scheduling and inefficient coordination strategies that fail to adapt to evolving task requirements. In this paper, we propose STRMAC, a state-aware routing framework designed for efficient collaboration in multi-agent systems. Our method separately encodes interaction history and agent knowledge to power the router, which adaptively selects the most suitable single agent at each step for efficient and effective collaboration. Furthermore, we introduce a self-evolving data generation approach that accelerates the collection of high-quality execution paths for efficient system training. Experiments on challenging collaborative reasoning benchmarks demonstrate that our method achieves state-of-the-art performance, achieving up to 23.8% improvement over baselines and reducing data collection overhead by up to 90.1% compared to exhaustive search.",
+      "url": "https://www.semanticscholar.org/paper/1f24e18ba7106b464a7c9081300d4c2f3b661c11",
+      "embedding": null,
+      "relevance_score": 0.3
+    },
+    {
+      "cand_id": "0ea4a2c7ed6a8903d0afa04bfb14e14d481235ab",
+      "title": "Enhancing human-centered dynamic scene understanding via multiple LLMs collaborated reasoning",
+      "year": 2024,
+      "venue": "Visual Intelligence",
+      "abstract": "Human-centered dynamic scene understanding plays a pivotal role in enhancing the capability of robotic and autonomous systems, where video-based human-object interaction (V-HOI) detection is a crucial task in semantic scene understanding, which aims to comprehensively understand HOI relationships within a video to benefit the behavioral decisions of mobile robots and autonomous driving systems. Although previous V-HOI detection models have made significant advances in accurate detection on specific datasets, they still lack the general reasoning ability of humans to effectively induce HOI relationships. In this study, we propose V-HOI multi-LLMs collaborated reasoning (V-HOI MLCR), a novel framework consisting of a series of plug-and-play modules that could facilitate the performance of current V-HOI detection models by leveraging the strong reasoning ability of different off-the-shelf pre-trained large language models (LLMs). We design a two-stage collaboration system of different LLMs for the V-HOI task. Specifically, in the first stage, we design a cross-agents reasoning scheme to leverage the LLM to perform reasoning from different aspects. In the second stage, we perform multi-LLMs debate to get the final reasoning answer based on the different knowledge in different LLMs. Additionally, we develop an auxiliary training strategy using CLIP, a large vision-language model to enhance the base V-HOI models’ discriminative ability to better cooperate with LLMs. We validate the superiority of our design by demonstrating its effectiveness in improving the predictive accuracy of the base V-HOI model through reasoning from multiple perspectives.",
+      "url": "https://www.semanticscholar.org/paper/0ea4a2c7ed6a8903d0afa04bfb14e14d481235ab",
+      "embedding": null,
+      "relevance_score": 0.25
+    },
+    {
+      "cand_id": "c346c9c8b8206727b2705753c7180cae4153a4a0",
+      "title": "Training for the Future: Preparing Humans for Effective Human-AI Programming",
+      "year": 2026,
+      "venue": "Proceedings of the Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems",
+      "abstract": "Large language models are reshaping what it means to program, yet people benefit from them unevenly and often struggle to collaborate with AI effectively. My dissertation investigates how to prepare humans — especially non-experts — for productive human–AI programming by identifying key human skills, designing systems that teach those skills, and developing methods to evaluate learning and collaboration outcomes. Drawing on HCI and the Learning Sciences literature, I study human behavior in AI-assisted workflows, design LLM-based learning tools that scaffold communication and evaluation, and propose frameworks for assessing human–AI interaction beyond model accuracy. Through classroom studies, controlled experiments, and system deployments, my work aims to ensure that increasingly capable AI systems strengthen, rather than erode, human reasoning and agency. This dissertation contributes empirical insights, pedagogical designs, and evaluation approaches to support effective and equitable human–AI collaboration, particularly within the programming domain.",
+      "url": "https://www.semanticscholar.org/paper/c346c9c8b8206727b2705753c7180cae4153a4a0",
+      "embedding": null,
+      "relevance_score": 0.2
+    },
+    {
+      "cand_id": "56db5885d13a55fa3c335c33762676b51442b89e",
+      "title": "Bilateral Collaboration with Large Vision-Language Models for Open Vocabulary Human-Object Interaction Detection",
+      "year": 2025,
+      "venue": "IEEE International Conference on Computer Vision",
+      "abstract": "Open vocabulary Human-Object Interaction (HOI) detection is a challenging task that detects all triplets of interest in an image, even those that are not pre-defined in the training set. Existing approaches typically rely on output features generated by large VisionLanguage Models (VLMs) to enhance the generalization ability of interaction representations. However, the visual features produced by VLMs are holistic and coarse-grained, which contradicts the nature of detection tasks. To address this issue, we propose a novel Bilateral Collaboration framework for open vocabulary HOI detection (BC-HOI). This framework includes an Attention Bias Guidance (ABG) component, which guides the VLM to produce fine-grained instance-level interaction features according to the attention bias provided by the HOI detector. It also includes a Large Language Model (LLM)-based Supervision Guidance (LSG) component, which provides fine-grained tokenlevel supervision for the HOI detector by the LLM component of the VLM. LSG enhances the ability of ABG to generate high-quality attention bias. We conduct extensive experiments on two popular benchmarks: HICO-DET and VCOCO, consistently achieving superior performance in the open vocabulary and closed settings. Code is available at https://github.com/MPI-Lab/BC-HOI.",
+      "url": "https://www.semanticscholar.org/paper/56db5885d13a55fa3c335c33762676b51442b89e",
+      "embedding": null,
+      "relevance_score": 0.15
+    },
+    {
+      "cand_id": "392418d78692327ac86e7ef9ce96d97795634a4d",
+      "title": "STRATEGIC MANAGEMENT OF LLM-BASED CHATBOTS: TRANSFORMING INTERNAL COLLABORATION AND DECISION-MAKING IN ORGANIZATIONS",
+      "year": 2025,
+      "venue": "Business Excellence and Management",
+      "abstract": "The article develops a strategic management framework for LLM based chatbots that explains how these systems reshape internal collaboration and managerial decision making and the conditions that enable reliable use. The background is the shift from scripted chatbots to assistants that retrieve and synthesize organizational knowledge, sustain context aware dialogue, and support knowledge work. The methodology is an analysis of peer reviewed scientific literature retrieved from major academic platforms, using targeted keyword searches and selective inclusion of studies with organizational relevance. The data collecting process relied on database searches and screening of titles, abstracts, and full texts. Expected results indicate five practical roles for LLM based chatbots, namely Librarian, Analyst, Coordinator, Scribe, and Coach, which accelerate access to knowledge, bridge silos, improve coordination, and strengthen onboarding and meetings. Mapped to decision processes, these assistants support the intelligence, design, choice, and learning stages. The conclusions underline that value depends on human in the loop oversight, sound data management, simple usage protocols and training, and transparency through basic audit trails, while a small set of metrics can guide pilots and scaling.",
+      "url": "https://www.semanticscholar.org/paper/392418d78692327ac86e7ef9ce96d97795634a4d",
+      "embedding": null,
+      "relevance_score": 0.05
+    },
+    {
+      "cand_id": "3bc58da5b0188d3306a2c6721163e6543295b787",
+      "title": "Interactive Learning for LLM Reasoning",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "abstract": "Existing multi-agent learning approaches have developed interactive training environments to explicitly promote collaboration among multiple Large Language Models (LLMs), thereby constructing stronger multi-agent systems (MAS). However, during inference, they require re-executing the MAS to obtain final solutions, which diverges from human cognition that individuals can enhance their reasoning capabilities through interactions with others and resolve questions independently in the future. To investigate whether multi-agent interaction can enhance LLMs'independent problem-solving ability, we introduce ILR, a novel co-learning framework for MAS that integrates two key components: Dynamic Interaction and Perception Calibration. Specifically, Dynamic Interaction first adaptively selects either cooperative or competitive strategies depending on question difficulty and model ability. LLMs then exchange information through Idea3, an innovative interaction paradigm designed to mimic human discussion, before deriving their respective final answers. In Perception Calibration, ILR employs Group Relative Policy Optimization (GRPO) to train LLMs while integrating one LLM's reward distribution characteristics into another's reward function, thereby enhancing the cohesion of multi-agent interactions. We evaluate the effectiveness of ILR across three LLMs from two model families of varying scales on five mathematical, one coding, one general question answering, and one scientific reasoning benchmarks. Experimental results show that ILR consistently outperforms single-agent learning, yielding an improvement of up to 5% over the strongest baseline. We further discover that Idea3 can enhance the robustness of stronger LLMs during multi-agent inference, and dynamic interaction types can boost multi-agent learning compared to pure cooperative or competitive strategies.",
+      "url": "https://www.semanticscholar.org/paper/3bc58da5b0188d3306a2c6721163e6543295b787",
+      "embedding": null,
+      "relevance_score": 0.1
+    },
+    {
+      "cand_id": "530b00ff9f235b3530b10c86b60c4edee75c9163",
+      "title": "GAIA - A Large Language Model for Advanced Power Dispatch",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "abstract": "Power dispatch is essential for providing stable, cost-effective, and eco-friendly electricity to society. However, traditional methods falter as power systems grow in scale and complexity, struggling with multitasking, swift problem-solving, and human-machine collaboration. This paper introduces GAIA, the pioneering Large Language Model (LLM) tailored for power dispatch tasks. We have developed a novel dataset construction technique that harnesses a range of data sources to fine-tune GAIA for optimal performance in this domain. This approach streamlines LLM training, allowing for the seamless integration of multidimensional data in power system management. Additionally, we have crafted specialized prompt strategies to boost GAIA's input-output efficiency in dispatch scenarios. When evaluated on the ElecBench benchmark, GAIA surpasses the baseline model LLaMA2 on multiple metrics. In practical applications, GAIA has demonstrated its ability to enhance decision-making processes, improve operational efficiency, and facilitate better human-machine interactions in power dispatch operations. This paper expands the application of LLMs to power dispatch and validates their practical utility, paving the way for future innovations in this field.",
+      "url": "https://www.semanticscholar.org/paper/530b00ff9f235b3530b10c86b60c4edee75c9163",
+      "embedding": null,
+      "relevance_score": 0.2
+    }
+  ],
+  "stats": {
+    "total_candidates": 25,
+    "after_dedup": 25,
+    "after_nontechnical_filter": 25,
+    "after_year_filter": 25,
+    "final": 25
+  }
+}

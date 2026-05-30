@@ -1,0 +1,1147 @@
+{
+  "review_sentences": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The integration of diffusion models into URL is innovative, leveraging their strong density estimation capabilities to model complex, non-stationary state distributions—a critical challenge in URL."
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "Introducing diffusion models to URL is impactful, but novelty is diluted by omissions in related work and incomplete comparisons."
+    }
+  ],
+  "related_works": [
+    {
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "text": "Title: Exploratory Diffusion Model for Unsupervised Reinforcement Learning\n\nAbstract: Unsupervised reinforcement learning (URL) aims to pre-train agents by exploring diverse states or skills in reward-free environments, facilitating efficient adaptation to downstream tasks. As the agent cannot access extrinsic rewards during unsupervised exploration, existing methods design intrinsic rewards to model the explored data and encourage further exploration. However, the explored data are always heterogeneous, posing the requirements of powerful representation abilities for both intrinsic reward models and pre-trained policies. In this work, we propose the Exploratory Diffusion Model (ExDM), which leverages the strong expressive ability of diffusion models to fit the explored data, simultaneously boosting exploration and providing an efficient initialization for downstream tasks. Specifically, ExDM can accurately estimate the distribution of collected data in the replay buffer with the diffusion model and introduces the score-based intrinsic reward, encouraging the agent to explore less-visited states. After obtaining the pre-trained policies, ExDM enables rapid adaptation to downstream tasks. In detail, we provide theoretical analyses and practical algorithms for fine-tuning diffusion policies, addressing key challenges such as training instability and computational complexity caused by multi-step sampling. Extensive experiments demonstrate that ExDM outperforms existing SOTA baselines in efficient unsupervised exploration and fast fine-tuning downstream tasks, especially in structurally complicated environments.",
+      "relevance_score": 1.0
+    },
+    {
+      "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+      "text": "Title: Unsupervised Model-based Pre-training for Data-efficient Reinforcement Learning from Pixels",
+      "relevance_score": 0.9
+    },
+    {
+      "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+      "text": "Title: Robotic Locomotion Skill Learning Using Unsupervised Reinforcement Learning With Controllable Latent Space Partition\n\nAbstract: Effective skill learning in an unsupervised manner is one of the capabilities an intelligent agent or robot should have. The discovered task-agnostic skills can be fine-tuned to downstream long-horizon tasks to improve execution efficiency. Unfortunately, the self-learning of locomotion skills, which occurs naturally in infancy, has been slow to develop in robotics. The instability exhibited by existing skill-learning methods makes it difficult to directly apply to complex control tasks, such as humanoid robots. To acquire reliable robotic locomotion skills, this article proposes a controllable latent space partition framework to assist reinforcement learning in accomplishing practicability-oriented unsupervised skill discovery (PoSD). Specifically, we use the distance similarity measure of the trajectory feature space to introduce the indicative information of the expert demonstrations into the partitioning and mapping process of the latent space. In addition, the intrinsic subrewards based on contrastive learning and particle entropy are designed to promote skill diversity and encourage exploration. Finally, reinforcement learning completes the generation of skill-conditioned policy driven by composite intrinsic rewards. The performance investigation of our method is conducted on five robots with more than 15 skills. The results indicate that PoSD achieves noticeable improvements in adaptation efficiency and practicability compared with other SOTA unsupervised skill discovery methods.",
+      "relevance_score": 0.95
+    },
+    {
+      "related_paper_id": "3096bf7886a94d6dd9cb92cdc164b56330593b2b",
+      "text": "Title: Ocean Diviner: A Diffusion-Augmented Reinforcement Learning for AUV Robust Control in the Underwater Tasks",
+      "relevance_score": 0.85
+    },
+    {
+      "related_paper_id": "79b151befc13141bf04175a9938f2d9b370b5c86",
+      "text": "Title: Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning\n\nAbstract: Diffusion-based generative methods have shown promising potential for modeling trajectories from offline reinforcement learning (RL) datasets, and hierarchical diffusion has been introduced to mitigate variance accumulation and computational challenges in long-horizon planning tasks. However, existing approaches typically assume a fixed two-layer diffusion hierarchy with a single predefined temporal scale, which limits adaptability to diverse downstream tasks and reduces flexibility in decision making. In this work, we propose SIHD, a novel Structural Information-based Hierarchical Diffusion framework for effective and stable offline policy learning in long-horizon environments with sparse rewards. Specifically, we analyze structural information embedded in offline trajectories to construct the diffusion hierarchy adaptively, enabling flexible trajectory modeling across multiple temporal scales. Rather than relying on reward predictions from localized sub-trajectories, we quantify the structural information gain of each state community and use it as a conditioning signal within the corresponding diffusion layer. To reduce overreliance on offline datasets, we introduce a structural entropy regularizer that encourages exploration of underrepresented states while avoiding extrapolation errors from distributional shifts. Extensive evaluations on challenging offline RL tasks show that SIHD significantly outperforms state-of-the-art baselines in decision-making performance and demonstrates superior generalization across diverse scenarios.",
+      "relevance_score": 0.8
+    },
+    {
+      "related_paper_id": "9b5dafe432446d9b627699aff65f4e81ac3fc914",
+      "text": "Title: METRA: Scalable Unsupervised RL with Metric-Aware Abstraction\n\nAbstract: Unsupervised pre-training strategies have proven to be highly effective in natural language processing and computer vision. Likewise, unsupervised reinforcement learning (RL) holds the promise of discovering a variety of potentially useful behaviors that can accelerate the learning of a wide array of downstream tasks. Previous unsupervised RL approaches have mainly focused on pure exploration and mutual information skill learning. However, despite the previous attempts, making unsupervised RL truly scalable still remains a major open challenge: pure exploration approaches might struggle in complex environments with large state spaces, where covering every possible transition is infeasible, and mutual information skill learning approaches might completely fail to explore the environment due to the lack of incentives. To make unsupervised RL scalable to complex, high-dimensional environments, we propose a novel unsupervised RL objective, which we call Metric-Aware Abstraction (METRA). Our main idea is, instead of directly covering the entire state space, to only cover a compact latent space $Z$ that is metrically connected to the state space $S$ by temporal distances. By learning to move in every direction in the latent space, METRA obtains a tractable set of diverse behaviors that approximately cover the state space, being scalable to high-dimensional environments. Through our experiments in five locomotion and manipulation environments, we demonstrate that METRA can discover a variety of useful behaviors even in complex, pixel-based environments, being the first unsupervised RL method that discovers diverse locomotion behaviors in pixel-based Quadruped and Humanoid. Our code and videos are available at https://seohong.me/projects/metra/",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+      "text": "Title: Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals\n\nAbstract: Unsupervised pre-training can equip reinforcement learning agents with prior knowledge and accelerate learning in downstream tasks. A promising direction, grounded in human development, investigates agents that learn by setting and pursuing their own goals. The core challenge lies in how to effectively generate, select, and learn from such goals. Our focus is on broad distributions of downstream tasks where solving every task zero-shot is infeasible. Such settings naturally arise when the target tasks lie outside of the pre-training distribution or when their identities are unknown to the agent. In this work, we (i) optimize for efficient multi-episode exploration and adaptation within a meta-learning framework, and (ii) guide the training curriculum with evolving estimates of the agent's post-adaptation performance. We present ULEE, an unsupervised meta-learning method that combines an in-context learner with an adversarial goal-generation strategy that maintains training at the frontier of the agent's capabilities. On XLand-MiniGrid benchmarks, ULEE pre-training yields improved exploration and adaptation abilities that generalize to novel objectives, environment dynamics, and map structures. The resulting policy attains improved zero-shot and few-shot performance, and provides a strong initialization for longer fine-tuning processes. It outperforms learning from scratch, DIAYN pre-training, and alternative curricula.",
+      "relevance_score": 0.75
+    },
+    {
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "text": "Title: Contrastive Intrinsic Control for Unsupervised Reinforcement Learning\n\nAbstract: We introduce Contrastive Intrinsic Control (CIC), an unsupervised reinforcement learning (RL) algorithm that maximizes the mutual information between state-transitions and latent skill vectors. CIC utilizes contrastive learning between state-transitions and skills vectors to learn behaviour embeddings and maximizes the entropy of these embeddings as an intrinsic reward to encourage behavioural diversity. We evaluate our algorithm on the Unsupervised RL Benchmark (URLB) in the asymptotic state-based setting, which consists of a long reward-free pre-training phase followed by a short adaptation phase to downstream tasks with extrinsic rewards. We find that CIC improves over prior exploration algorithms in terms of adaptation efficiency to downstream tasks on state-based URLB. 1 Deep RL is a powerful approach toward solving complex control tasks in the presence of extrinsic rewards. Successful applications include playing video games from pixels [1], mastering the game of Go [2, 3], robotic locomotion [4, 5, 6] and dexterous manipulation [7, 8, 9] policies. While effective, the above advances produced agents that are unable to generalize to new downstream tasks beyond the one they were trained to solve. Humans and animals on the other hand are able to acquire skills with minimal supervision and apply them to solve a variety of downstream tasks. In this work, we seek to train agents that acquire skills without supervision with generalization capabilities by efficiently adapting these skills to downstream tasks.",
+      "relevance_score": 0.7
+    },
+    {
+      "related_paper_id": "d6c314c406ed5b517f774a895f0852876ae95ed9",
+      "text": "Title: Latent State-Predictive Exploration for Deep Reinforcement Learning\n\nAbstract: Reinforcement learning (RL) has achieved promising results in continuous control tasks, where efficient exploration of the state space is crucial for success. However, many recent RL approaches still struggle with sample inefficiency and insufficient exploration for long-horizon tasks, particularly in environments characterized by high-dimensional and complex state spaces.\nTo address these challenges, we propose a novel exploration framework, Latent State Predictive Exploration (LSPE). The core idea behind LSPE is to endow the agent with a form of ``foresight\" to enhance exploration in long-horizon settings. Specifically, LSPE employs a state encoder to learn compact latent representations from high-dimensional visual observations, effectively filtering out irrelevant or noisy information. To further enrich and stabilize these representations, we incorporate a diffusion-based self-predictive module that enforces temporal consistency by predicting future states, thereby improving both exploration and downstream predictive control.\nAdditionally, we introduce an Exploration Reward Function (ERF) that explicitly encourages the agent to visit novel latent states. This reward signal promotes more efficient and scalable exploration in complex environments.\nWe evaluate LSPE across a diverse set of challenging long-horizon navigation and manipulation tasks, spanning simulation environments such as Habitat and Robosuite, as well as deployment on a real robot in a **physical indoor environment**. Experimental results show that LSPE substantially enhances exploration efficiency and scales effectively to complex, high-dimensional tasks.",
+      "relevance_score": 0.65
+    },
+    {
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "text": "Title: Balancing State Exploration and Skill Diversity in Unsupervised Skill Discovery\n\nAbstract: Unsupervised skill discovery seeks to acquire different useful skills without extrinsic reward via unsupervised reinforcement learning (RL), with the discovered skills efficiently adapting to multiple downstream tasks in various ways. However, recent advanced skill discovery methods struggle to well balance state exploration and skill diversity, particularly when the potential skills are rich and hard to discern. In this article, we propose contrastive dynamic skill discovery (ComSD) which generates diverse and exploratory unsupervised skills through a novel intrinsic incentive, named contrastive dynamic reward. It contains a particle-based exploration reward to make agents access far-reaching states for exploratory skill acquisition, and a novel contrastive diversity reward to promote the discriminability between different skills. Moreover, a novel dynamic weighting mechanism between the above two rewards is proposed to balance state exploration and skill diversity, which further enhances the quality of the discovered skills. Extensive experiments and analysis demonstrate that ComSD can generate diverse behaviors at different exploratory levels for multijoint robots, enabling state-of-the-art adaptation performance on challenging downstream tasks. It can also discover distinguishable and far-reaching exploration skills in the challenging tree-like 2-D maze.",
+      "relevance_score": 0.6
+    },
+    {
+      "related_paper_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+      "text": "Title: EUCLID: Towards Efficient Unsupervised Reinforcement Learning with Multi-choice Dynamics Model\n\nAbstract: Unsupervised reinforcement learning (URL) poses a promising paradigm to learn useful behaviors in a task-agnostic environment without the guidance of extrinsic rewards to facilitate the fast adaptation of various downstream tasks. Previous works focused on the pre-training in a model-free manner while lacking the study of transition dynamics modeling that leaves a large space for the improvement of sample efficiency in downstream tasks. To this end, we propose an Efficient Unsupervised Reinforcement Learning Framework with Multi-choice Dynamics model (EUCLID), which introduces a novel model-fused paradigm to jointly pre-train the dynamics model and unsupervised exploration policy in the pre-training phase, thus better leveraging the environmental samples and improving the downstream task sampling efficiency. However, constructing a generalizable model which captures the local dynamics under different behaviors remains a challenging problem. We introduce the multi-choice dynamics model that covers different local dynamics under different behaviors concurrently, which uses different heads to learn the state transition under different behaviors during unsupervised pre-training and selects the most appropriate head for prediction in the downstream task. Experimental results in the manipulation and locomotion domains demonstrate that EUCLID achieves state-of-the-art performance with high sample efficiency, basically solving the state-based URLB benchmark and reaching a mean normalized score of 104.0$\\pm$1.2$\\%$ in downstream tasks with 100k fine-tuning steps, which is equivalent to DDPG's performance at 2M interactive steps with 20x more data.",
+      "relevance_score": 0.55
+    },
+    {
+      "related_paper_id": "72ada444fc09a941459a4060907eee5f02b1ff0c",
+      "text": "Title: RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation\n\nAbstract: Imitation learning has emerged as an effective approach for bootstrapping sequential decision-making in robotics, achieving strong performance even in high-dimensional dexterous manipulation tasks. Recent behavior cloning methods further leverage expressive generative models, such as diffusion models and flow matching, to represent multimodal action distributions. However, policies pretrained in this manner often exhibit limited generalization and require additional fine-tuning to achieve robust performance at deployment time. Such adaptation must preserve the global exploration benefits of pretraining while enabling rapid correction of local execution errors. We propose Residual Flow Steering(RFS), a data-efficient reinforcement learning framework for adapting pretrained generative policies. RFS steers a pretrained flow-matching policy by jointly optimizing a residual action and a latent noise distribution, enabling complementary forms of exploration: local refinement through residual corrections and global exploration through latent-space modulation. This design allows efficient adaptation while retaining the expressive structure of the pretrained policy. We demonstrate the effectiveness of RFS on dexterous manipulation tasks, showing efficient fine-tuning in both simulation and real-world settings when adapting pretrained base policies. Project website:https://weirdlabuw.github.io/rfs.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+      "text": "Title: Unifying Unsupervised and Offline RL for Fast Adaptation Using World Models\n\nAbstract: Deep reinforcement learning has proven an effective method to solve many intricate tasks, yet it still struggles with data efficiency and generalization to novel scenarios, as required in settings such as robotics. Recent approaches to deal with this include (1) unsupervised pretraining of the agent in an environment without reward signals, and (2) training the agent using offline data coming from various possible sources. In this letter we propose to consider both of these approaches together, resulting in a setting where different types of data streams are available and fast online adaptation to new tasks is required. Towards this goal we consider the Unsupervised Reinforcement Learning Benchmark and show that unsupervised training’s primary value lies in its use as a source of exploration trajectories, beyond its role in pretraining a policy. Following this observation we develop a method based on a world-model as a generative model of offline exploration data and model predictive control (MPC) planning. We show that this approach outperforms previous methods and demonstrates task adaptation which is 10 times faster than previously shown. We then propose a setup that includes access to both unsupervised exploratory data and offline expert demonstrations when testing the agents’ online performance on adaptation to novel tasks in the environment.",
+      "relevance_score": 0.5
+    },
+    {
+      "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "text": "Title: PEAC: Unsupervised Pre-training for Cross-Embodiment Reinforcement Learning\n\nAbstract: Designing generalizable agents capable of adapting to diverse embodiments has achieved significant attention in Reinforcement Learning (RL), which is critical for deploying RL agents in various real-world applications. Previous Cross-Embodiment RL approaches have focused on transferring knowledge across embodiments within specific tasks. These methods often result in knowledge tightly coupled with those tasks and fail to adequately capture the distinct characteristics of different embodiments. To address this limitation, we introduce the notion of Cross-Embodiment Unsupervised RL (CEURL), which leverages unsupervised learning to enable agents to acquire embodiment-aware and task-agnostic knowledge through online interactions within reward-free environments. We formulate CEURL as a novel Controlled Embodiment Markov Decision Process (CE-MDP) and systematically analyze CEURL's pre-training objectives under CE-MDP. Based on these analyses, we develop a novel algorithm Pre-trained Embodiment-Aware Control (PEAC) for handling CEURL, incorporating an intrinsic reward function specifically designed for cross-embodiment pre-training. PEAC not only provides an intuitive optimization strategy for cross-embodiment pre-training but also can integrate flexibly with existing unsupervised RL methods, facilitating cross-embodiment exploration and skill discovery. Extensive experiments in both simulated (e.g., DMC and Robosuite) and real-world environments (e.g., legged locomotion) demonstrate that PEAC significantly improves adaptation performance and cross-embodiment generalization, demonstrating its effectiveness in overcoming the unique challenges of CEURL. The project page and code are in https://yingchengyang.github.io/ceurl.",
+      "relevance_score": 0.45
+    },
+    {
+      "related_paper_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "text": "Title: See, Act, Adapt: Active Perception for Unsupervised Cross-Domain Visual Adaptation via Personalized VLM-Guided Agent\n\nAbstract: Pre-trained perception models excel in generic image domains but degrade significantly in novel environments like indoor scenes. The conventional remedy is fine-tuning on downstream data which incurs catastrophic forgetting of prior knowledge and demands costly, scene-specific annotations. We propose a paradigm shift through Sea$^2$ (See, Act, Adapt): rather than adapting the perception modules themselves, we adapt how they are deployed through an intelligent pose-control agent. Sea$^2$ keeps all perception modules frozen, requiring no downstream labels during training, and uses only scalar perceptual feedback to navigate the agent toward informative viewpoints. Specially, we transform a vision-language model (VLM) into a low-level pose controller through a two-stage training pipeline: first fine-tuning it on rule-based exploration trajectories that systematically probe indoor scenes, and then refining the policy via unsupervised reinforcement learning that constructs rewards from the perception module's outputs and confidence. Unlike prior active perception methods that couple exploration with specific models or collect data for retraining them, Sea$^2$ directly leverages off-the-shelf perception models for various tasks without the need for retraining. We conducted experiments on three visual perception tasks, including visual grounding, segmentation and 3D box estimation, with performance improvements of 13.54%, 15.92% and 27.68% respectively on dataset ReplicaCAD.",
+      "relevance_score": 0.35
+    },
+    {
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "text": "Title: Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning",
+      "relevance_score": 0.4
+    },
+    {
+      "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "text": "Title: Constrained Ensemble Exploration for Unsupervised Skill Discovery\n\nAbstract: Unsupervised Reinforcement Learning (RL) provides a promising paradigm for learning useful behaviors via reward-free per-training. Existing methods for unsupervised RL mainly conduct empowerment-driven skill discovery or entropy-based exploration. However, empowerment often leads to static skills, and pure exploration only maximizes the state coverage rather than learning useful behaviors. In this paper, we propose a novel unsupervised RL framework via an ensemble of skills, where each skill performs partition exploration based on the state prototypes. Thus, each skill can explore the clustered area locally, and the ensemble skills maximize the overall state coverage. We adopt state-distribution constraints for the skill occupancy and the desired cluster for learning distinguishable skills. Theoretical analysis is provided for the state entropy and the resulting skill distributions. Based on extensive experiments on several challenging tasks, we find our method learns well-explored ensemble skills and achieves superior performance in various downstream tasks compared to previous methods.",
+      "relevance_score": 0.3
+    },
+    {
+      "related_paper_id": "9c40e5a3c617ace5a6fc0f2a46bd9d146c1b8dd6",
+      "text": "Title: TMRL: Diffusion Timestep-Modulated Pretraining Enables Exploration for Efficient Policy Finetuning\n\nAbstract: Fine-tuning pre-trained robot policies with reinforcement learning (RL) often inherits the bottlenecks introduced by pre-training with behavioral cloning (BC), which produces narrow action distributions that lack the coverage necessary for downstream exploration. We present a unified framework that enables the exploration necessary to enable efficient robot policy finetuning by bridging BC pre-training and RL fine-tuning. Our pre-training method, Context-Smoothed Pre-training (CSP), injects forward-diffusion noise into policy inputs, creating a continuum between precise imitation and broad action coverage. We then fine-tune pre-trained policies via Timestep-Modulated Reinforcement Learning (TMRL), which trains the agent to dynamically adjust this conditioning during fine-tuning by modulating the diffusion timestep, granting explicit control over exploration. Integrating seamlessly with arbitrary policy inputs, e.g., states, 3D point clouds, or image-based VLA policies, we show that TMRL improves RL fine-tuning sample efficiency. Notably, TMRL enables successful real-world fine-tuning on complex manipulation tasks in under one hour. Videos and code available at https://weirdlabuw.github.io/tmrl/.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "ac0f41b97e642bd99ed862574d57a74c8c042695",
+      "text": "Title: Aligning Diffusion Behaviors with Q-functions for Efficient Continuous Control\n\nAbstract: Drawing upon recent advances in language model alignment, we formulate offline Reinforcement Learning as a two-stage optimization problem: First pretraining expressive generative policies on reward-free behavior datasets, then fine-tuning these policies to align with task-specific annotations like Q-values. This strategy allows us to leverage abundant and diverse behavior data to enhance generalization and enable rapid adaptation to downstream tasks using minimal annotations. In particular, we introduce Efficient Diffusion Alignment (EDA) for solving continuous control problems. EDA utilizes diffusion models for behavior modeling. However, unlike previous approaches, we represent diffusion policies as the derivative of a scalar neural network with respect to action inputs. This representation is critical because it enables direct density calculation for diffusion models, making them compatible with existing LLM alignment theories. During policy fine-tuning, we extend preference-based alignment methods like Direct Preference Optimization (DPO) to align diffusion behaviors with continuous Q-functions. Our evaluation on the D4RL benchmark shows that EDA exceeds all baseline methods in overall performance. Notably, EDA maintains about 95\\% of performance and still outperforms several baselines given only 1\\% of Q-labelled data during fine-tuning.",
+      "relevance_score": 0.25
+    },
+    {
+      "related_paper_id": "867729413be83d0bbd6f236b2bf0e04f4d50fb2d",
+      "text": "Title: Dynamic Correction of Erroneous State Estimates via Diffusion Bayesian Exploration\n\nAbstract: In emergency response and other high-stakes societal applications, early-stage state estimates critically shape downstream outcomes. Yet, these initial state estimates-often based on limited or biased information-can be severely misaligned with reality, constraining subsequent actions and potentially causing catastrophic delays, resource misallocation, and human harm. Under the stationary bootstrap baseline (zero transition and no rejuvenation), bootstrap particle filters exhibit Stationarity-Induced Posterior Support Invariance (S-PSI), wherein regions excluded by the initial prior remain permanently unexplorable, making corrections impossible even when new evidence contradicts current beliefs. While classical perturbations can in principle break this lock-in, they operate in an always-on fashion and may be inefficient. To overcome this, we propose a diffusion-driven Bayesian exploration framework that enables principled, real-time correction of early state estimation errors. Our method expands posterior support via entropy-regularized sampling and covariance-scaled diffusion. A Metropolis-Hastings check validates proposals and keeps inference adaptive to unexpected evidence. Empirical evaluations on realistic hazardous-gas localization tasks show that our approach matches reinforcement learning and planning baselines when priors are correct. It substantially outperforms classical SMC perturbations and RL-based methods under misalignment, and we provide theoretical guarantees that DEPF resolves S-PSI while maintaining statistical rigor.",
+      "relevance_score": 0.15
+    },
+    {
+      "related_paper_id": "1c35807e1a4c24e2013fa0a090cee9cc4716a5f5",
+      "text": "Title: Reinforcement Learning with Action-Free Pre-Training from Videos\n\nAbstract: Recent unsupervised pre-training methods have shown to be effective on language and vision domains by learning useful representations for multiple downstream tasks. In this paper, we investigate if such unsupervised pre-training methods can also be effective for vision-based reinforcement learning (RL). To this end, we introduce a framework that learns representations useful for understanding the dynamics via generative pre-training on videos. Our framework consists of two phases: we pre-train an action-free latent video prediction model, and then utilize the pre-trained representations for efficiently learning action-conditional world models on unseen environments. To incorporate additional action inputs during fine-tuning, we introduce a new architecture that stacks an action-conditional latent prediction model on top of the pre-trained action-free prediction model. Moreover, for better exploration, we propose a video-based intrinsic bonus that leverages pre-trained representations. We demonstrate that our framework significantly improves both final performances and sample-efficiency of vision-based RL in a variety of manipulation and locomotion tasks. Code is available at https://github.com/younggyoseo/apv.",
+      "relevance_score": 0.2
+    },
+    {
+      "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "text": "Title: Unsupervised Skill Discovery Through Skill Regions Differentiation\n\nAbstract: Unsupervised reinforcement learning (RL) aims to discover diverse behaviors that can accelerate the learning of downstream tasks. Previous methods typically focus on entropy-based exploration or empowerment-driven skill learning. However, entropy-based exploration struggles in large-scale state spaces (e.g., images), and empowerment-based methods with mutual information (MI) estimations have limitations in state exploration. To address these challenges, we propose a novel skill discovery objective that maximizes the deviation of the state density of one skill from the explored regions of other skills, encouraging inter-skill state diversity similar to the initial MI objective. For state-density estimation, we construct a novel conditional autoencoder with soft modularization for different skill policies in high-dimensional space. Meanwhile, to incentivize intra-skill exploration, we formulate an intrinsic reward based on the learned autoencoder that resembles count-based exploration in a compact latent space. Through extensive experiments in challenging state and image-based tasks, we find our method learns meaningful skills and achieves superior performance in various downstream tasks.",
+      "relevance_score": 0.1
+    }
+  ],
+  "pair_results": [
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer claims that integrating diffusion models into URL is innovative due to their strong density estimation for modeling complex state distributions. The paper's abstract and introduction explicitly state that ExDM uses diffusion models to model heterogeneous and non-stationary state distributions in the replay buffer, directly supporting the claim. The language strength matches the evidence.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims diffusion models are integrated into URL (Unsupervised RL) for the first time, but the provided related work evidence is a different paper title about unsupervised model-based pre-training from pixels, which does not directly discuss diffusion models or provide evidence for or against the claim. Therefore, the evidence is insufficient to verify the claim.",
+      "relevance_score": 0.9
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the innovation of integrating diffusion models into URL for modeling complex state distributions. The provided related work (PoSD) discusses unsupervised skill learning with a controllable latent space partition and does not mention diffusion models, score functions, or density estimation. There is no direct evidence in the related work to support, contradict, or relate to the specific claim about diffusion model integration in URL. Thus, evidence is insufficient to assess alignment or calibration.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "3096bf7886a94d6dd9cb92cdc164b56330593b2b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the innovation and utility of integrating diffusion models into unsupervised reinforcement learning (URL) for modeling complex state distributions. The related work paper ('Ocean Diviner') is about using diffusion-augmented RL for AUV control in underwater tasks, which does not directly address URL or the specific integration described. The related work evidence does not provide information to support, contradict, or calibrate the claim about the paper being reviewed, as it covers a different application domain and context. Therefore, evidence is missing for verification.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "79b151befc13141bf04175a9938f2d9b370b5c86",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence states that integrating diffusion models into URL is innovative for modeling non-stationary state distributions. The related work (SIHD) demonstrates that diffusion models are used for trajectory modeling in RL, but it focuses on offline hierarchical diffusion, not unsupervised RL exploration. The paper being reviewed explicitly claims to be the first to introduce diffusion models into unsupervised RL for state distribution modeling, which aligns with the absence of such evidence in the related work, making the claim innovative. The language is accurate and not overstated.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9b5dafe432446d9b627699aff65f4e81ac3fc914",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims diffusion models are innovative for modeling complex, non-stationary state distributions in URL. The paper being reviewed (ExDM) does introduce diffusion models for this purpose. The related work (METRA) addresses unsupervised RL scalability but does not mention diffusion models. Thus, the claim about innovation is supported by the reviewed paper but not by the provided related work evidence, leading to a partial alignment.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed (ExDM), but the provided related work is about ULEE, a different method. The related work does not discuss diffusion models, URL, or the specific claims in the sentence, so there is no evidence to assess alignment or calibration.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims about the innovation of integrating diffusion models into URL, but the related work (CIC) does not discuss diffusion models; it focuses on contrastive learning for skill discovery. There is no evidence in the related work to support or contradict this claim.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d6c314c406ed5b517f774a895f0852876ae95ed9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims integration of diffusion models into URL is innovative and leverages density estimation for complex distributions. The related work paper (LSPE) uses a diffusion-based self-predictive module for latent state prediction, not for modeling state distributions in unsupervised RL exploration. There is no direct evidence about URL or density estimation of non-stationary state distributions, making the claim unverifiable from this evidence.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the integration of diffusion models into URL is innovative. The provided paper's abstract and introduction describe ExDM, which uses diffusion models for unsupervised RL, but the related work evidence (ComSD) does not discuss diffusion models or provide direct evidence to support or contradict the innovation claim. Thus, evidence is missing.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that integrating diffusion models into URL is innovative and leverages their strong density estimation capabilities. However, the related work (EUCLID) does not discuss diffusion models; it focuses on a multi-choice dynamics model for unsupervised RL. The sentence is a claim about the paper being reviewed (ExDM), but there is no evidence in the provided related work to support or contradict it. The claim is too vague and unverifiable from the given related work text.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "72ada444fc09a941459a4060907eee5f02b1ff0c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper being reviewed (ExDM) but the provided related work (RFS) does not contain any evidence about integrating diffusion models into URL or about density estimation for state distributions. The evidence is completely missing for verifying the claim.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims innovation in integrating diffusion models into URL for modeling complex state distributions. The related work paper does not discuss diffusion models at all; it focuses on world models and unsupervised/offline RL unification. There is no evidence in the related work to support or contradict the specific claim about diffusion models in URL, making it unverifiable.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper being reviewed (integrating diffusion models into URL is innovative). The related work evidence (PEAC) is about cross-embodiment unsupervised RL, not diffusion models. It does not mention diffusion models or provide evidence about the paper's claims, so verification is impossible.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the paper's integration of diffusion models into URL. The related work (Sea$^2$) is about active perception for unsupervised cross-domain visual adaptation using a VLM-guided agent, which is unrelated to URL or diffusion models for RL exploration. There is no evidence in the provided text to support or contradict the claim, so it is unverifiable and insufficient.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the innovation of integrating diffusion models into URL for modeling complex, non-stationary state distributions. The related work paper provided is titled 'Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning' but no content from this paper is given; only its title is available. There is insufficient evidence in the provided text to verify the claim, assess alignment, or judge calibration.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the innovation of integrating diffusion models into URL, but the provided related work (about Constrained Ensemble Exploration) does not mention diffusion models or their integration. There is no evidence in the related work to support or contradict the claim.",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "9c40e5a3c617ace5a6fc0f2a46bd9d146c1b8dd6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims the paper integrates diffusion models into URL for modeling state distributions. The related work (TMRL) focuses on diffusion-based pre-training and fine-tuning for robot policies, not on modeling state distributions in unsupervised RL exploration. There is no direct evidence in the related work to support or contradict this specific claim.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "ac0f41b97e642bd99ed862574d57a74c8c042695",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper being reviewed, not about the related work. The related work evidence (abstract of a different paper) does not provide any direct information about the claims made in the reviewed paper regarding diffusion models in URL, state distributions, or innovation. There is no basis to compare the claim with the related work.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "867729413be83d0bbd6f236b2bf0e04f4d50fb2d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "contradicted",
+      "calibration": "overstated",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that integrating diffusion models into URL is innovative and leverages their density estimation capabilities for modeling state distributions. However, the related work paper focuses on Bayesian exploration for state estimation correction in emergency response, not unsupervised RL (URL). It does not mention URL, diffusion models for URL exploration, or intrinsic rewards for state coverage. The evidence is from a different domain and application, contradicting the claim's context and specificity.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "1c35807e1a4c24e2013fa0a090cee9cc4716a5f5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a specific claim about the paper's innovation regarding diffusion models in URL. The related work evidence describes a different paper on action-free pre-training from videos, with no mention of diffusion models, URL, or the specific claims in the review sentence. Thus, there is no evidence to support or contradict the claim, making it insufficient for verification.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C1",
+      "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that integrating diffusion models into URL is innovative, but the provided related work does not mention diffusion models at all; it focuses on skill discovery via conditional autoencoders and intrinsic rewards. There is no evidence in the related work to support or contradict the claim about diffusion models in URL.",
+      "relevance_score": 0.1
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that novelty is diluted by omissions in related work and incomplete comparisons. The related work section explicitly states that applying generative models for unsupervised exploration is 'still less studied' and that the paper is 'the first attempt' to use diffusion models for unsupervised exploration, supporting the claim of novelty. However, the related work does not provide evidence about 'omissions' or 'incomplete comparisons' in the paper itself; these aspects are not discussed in the provided text, making the claim only partially supported.",
+      "relevance_score": 1.0
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty is diluted by omissions in related work and incomplete comparisons, but the provided related work text (title only) does not contain specific content to verify these claims. The related work text is insufficient to assess whether the paper's introduction of diffusion models to URL is impactful or if novelty is diluted.",
+      "relevance_score": 0.9
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty is diluted by omissions in related work and incomplete comparisons. The provided related work evidence is a different paper about robotic locomotion skill learning, which does not directly address the paper being reviewed's novelty or its omissions/comparisons. There is insufficient evidence to verify or contradict the claim.",
+      "relevance_score": 0.95
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "3096bf7886a94d6dd9cb92cdc164b56330593b2b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes claims about omissions in related work and incomplete comparisons, but the provided related work text only describes Ocean Diviner's title and does not contain specific content about the paper being reviewed (ExDM) or its related work coverage. There is insufficient evidence to verify the claim about omissions or incomplete comparisons.",
+      "relevance_score": 0.85
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "79b151befc13141bf04175a9938f2d9b370b5c86",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about novelty being diluted by omissions in related work and incomplete comparisons. The provided related work (ID=79b151befc13141bf04175a9938f2d9b370b5c86) is a different paper on hierarchical diffusion for offline RL, which does not contain any information about the paper being reviewed (ExDM) or its omissions/comparisons. There is no evidence to verify the claim.",
+      "relevance_score": 0.8
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "9b5dafe432446d9b627699aff65f4e81ac3fc914",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty is diluted by omissions in related work, but the provided related work (METRA) does not directly address diffusion models or omissions; evidence is missing to verify the claim.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper's novelty due to omissions in related work and incomplete comparisons. The provided related work (ULEE) focuses on unsupervised meta-learning for exploration via self-imposed goals, which is not directly comparable to diffusion models or the specific omissions claimed in the sentence. The evidence does not address the claims about 'diffusion models to URL' or 'omissions in related work' in the paper under review, making the connection insufficient for verification.",
+      "relevance_score": 0.75
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that introducing diffusion models to URL is impactful, but novelty is diluted by omissions in related work and incomplete comparisons. However, the provided related work (CIC paper) does not mention diffusion models, URL novelty, or comparisons with the reviewed paper's work. It only describes CIC's approach for unsupervised RL. There is insufficient evidence from this specific related work to verify or contradict the reviewer's claim about omissions or incomplete comparisons.",
+      "relevance_score": 0.7
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "d6c314c406ed5b517f774a895f0852876ae95ed9",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer's claim that novelty is diluted by omissions in related work and incomplete comparisons is a claim about the paper. The related work evidence shows LSPE also uses a diffusion-based module for exploration, indicating some overlap in ideas. However, the evidence does not directly address whether the paper's related work section omitted this specific work or made incomplete comparisons, so support is partial. The calibration is accurate as the claim is moderate and the evidence is not fully conclusive.",
+      "relevance_score": 0.65
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper's novelty being diluted by omissions in related work and incomplete comparisons. However, the provided related work (ComSD) does not discuss diffusion models or directly address the specific omissions or comparisons mentioned in the claim. The evidence is insufficient to verify or refute the claim.",
+      "relevance_score": 0.6
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence is a claim about the paper (novelty diluted by omissions in related work), but the provided related work text is an abstract of EUCLID, which is a different paper. The evidence does not address the paper's own related work coverage or comparisons, so the claim cannot be verified or calibrated based on this evidence.",
+      "relevance_score": 0.55
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "72ada444fc09a941459a4060907eee5f02b1ff0c",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes claims about novelty being diluted by omissions in related work and incomplete comparisons, but the provided related work (RFS) is about a different topic (dexterous manipulation and flow steering) and does not discuss diffusion models in URL or the specific paper's contributions. There is no evidence in the related work to verify the claim about omissions or comparisons.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer claims novelty is diluted by omissions in related work. The related work paper discusses unifying unsupervised and offline RL with world models, which is a different approach (world models vs. diffusion models) and not directly comparable. The paper being reviewed claims to be the first to use diffusion models for unsupervised RL, so the omission of this specific prior work is not evident from the provided related work. However, the related work shows that other generative models (world models) have been explored for unsupervised RL, suggesting some novelty dilution, but the evidence is not conclusive.",
+      "relevance_score": 0.5
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "aligned",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The review sentence claims that the novelty of introducing diffusion models to URL is diluted by omissions in related work and incomplete comparisons. The related work paper (PEAC) is about cross-embodiment unsupervised RL and does not mention diffusion models, supporting the claim that the reviewed paper's related work section may omit relevant prior work (e.g., cross-embodiment methods) or not fully compare with all relevant approaches. This aligns with the reviewer's concern about diluted novelty due to omissions and incomplete comparisons.",
+      "relevance_score": 0.45
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence criticizes the paper's novelty by citing omissions in related work and incomplete comparisons. However, the provided related work (ID=284e7dc8...) is about a different topic (active perception for cross-domain visual adaptation using VLMs) and does not address diffusion models in URL or the specific claims of omission. Thus, there is no evidence to verify the reviewer's claim about omissions or comparisons.",
+      "relevance_score": 0.35
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The reviewer sentence is a claim about the paper, but the provided related work evidence (ID 6437d992c30d7902a517c22f2eef511ba6b65f1a) is only a title and does not contain content about diffusion models, omissions, or comparisons. Thus, there is insufficient evidence to verify the claim.",
+      "relevance_score": 0.4
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "",
+      "relevance_score": 0.3
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "9c40e5a3c617ace5a6fc0f2a46bd9d146c1b8dd6",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about the novelty of the paper being diluted by omissions in related work and incomplete comparisons. The related work evidence provided is a different paper (TMRL) that also uses diffusion models for pretraining/finetuning, but it is not clearly referenced or compared in the reviewed paper's text. The evidence does not directly address whether the reviewed paper's related work section is incomplete or if comparisons are missing. Without specific evidence from the reviewed paper's related work section or a clear indication of omission, the claim cannot be verified.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "ac0f41b97e642bd99ed862574d57a74c8c042695",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims that novelty is diluted by omissions in related work and incomplete comparisons, but the provided related work evidence (an abstract for a paper on diffusion policy alignment) does not contain any information about the paper being reviewed's related work section or its completeness. The evidence is unrelated to the claim's subject matter.",
+      "relevance_score": 0.25
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "867729413be83d0bbd6f236b2bf0e04f4d50fb2d",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence claims novelty is diluted by omissions in related work and incomplete comparisons, but the provided related work evidence (a paper on diffusion Bayesian exploration for state estimates) is entirely unrelated to the paper's topic (unsupervised RL). No evidence is present to verify or contradict the claim about omitted related work or incomplete comparisons.",
+      "relevance_score": 0.15
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "1c35807e1a4c24e2013fa0a090cee9cc4716a5f5",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "insufficient",
+      "calibration": "N/A",
+      "score": 0,
+      "label": "AMBIGUOUS",
+      "explanation": "The review sentence makes a claim about novelty being diluted by omissions in related work and incomplete comparisons. The related work paper (APV) is about action-free video pre-training for RL, not about diffusion models in URL. The provided evidence does not address the specific claim about omissions or comparisons related to diffusion models in URL. Therefore, the evidence is insufficient to verify or contradict the claim.",
+      "relevance_score": 0.2
+    },
+    {
+      "review_sentence_id": "C2",
+      "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "stance_alignment": "partial",
+      "calibration": "accurate",
+      "score": 2,
+      "label": "SUPPORTED",
+      "explanation": "The reviewer claims that novelty is diluted by omissions in related work and incomplete comparisons. The related work evidence (a paper on unsupervised skill discovery) shows that existing methods (like entropy-based exploration) have limitations, which could be seen as gaps. However, the evidence does not explicitly mention omissions or incomplete comparisons in the paper being reviewed, so the claim is only partially supported.",
+      "relevance_score": 0.1
+    }
+  ],
+  "aggregated": [
+    {
+      "review_sentence_id": "C1",
+      "text": "The integration of diffusion models into URL is innovative, leveraging their strong density estimation capabilities to model complex, non-stationary state distributions—a critical challenge in URL.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer claims that integrating diffusion models into URL is innovative due to their strong density estimation for modeling complex state distributions. The paper's abstract and introduction explicitly state that ExDM uses diffusion models to model heterogeneous and non-stationary state distributions in the replay buffer, directly supporting the claim. The language strength matches the evidence.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims diffusion models are integrated into URL (Unsupervised RL) for the first time, but the provided related work evidence is a different paper title about unsupervised model-based pre-training from pixels, which does not directly discuss diffusion models or provide evidence for or against the claim. Therefore, the evidence is insufficient to verify the claim.",
+          "relevance_score": 0.9
+        },
+        {
+          "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the innovation of integrating diffusion models into URL for modeling complex state distributions. The provided related work (PoSD) discusses unsupervised skill learning with a controllable latent space partition and does not mention diffusion models, score functions, or density estimation. There is no direct evidence in the related work to support, contradict, or relate to the specific claim about diffusion model integration in URL. Thus, evidence is insufficient to assess alignment or calibration.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "3096bf7886a94d6dd9cb92cdc164b56330593b2b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the innovation and utility of integrating diffusion models into unsupervised reinforcement learning (URL) for modeling complex state distributions. The related work paper ('Ocean Diviner') is about using diffusion-augmented RL for AUV control in underwater tasks, which does not directly address URL or the specific integration described. The related work evidence does not provide information to support, contradict, or calibrate the claim about the paper being reviewed, as it covers a different application domain and context. Therefore, evidence is missing for verification.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "79b151befc13141bf04175a9938f2d9b370b5c86",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence states that integrating diffusion models into URL is innovative for modeling non-stationary state distributions. The related work (SIHD) demonstrates that diffusion models are used for trajectory modeling in RL, but it focuses on offline hierarchical diffusion, not unsupervised RL exploration. The paper being reviewed explicitly claims to be the first to introduce diffusion models into unsupervised RL for state distribution modeling, which aligns with the absence of such evidence in the related work, making the claim innovative. The language is accurate and not overstated.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "9b5dafe432446d9b627699aff65f4e81ac3fc914",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims diffusion models are innovative for modeling complex, non-stationary state distributions in URL. The paper being reviewed (ExDM) does introduce diffusion models for this purpose. The related work (METRA) addresses unsupervised RL scalability but does not mention diffusion models. Thus, the claim about innovation is supported by the reviewed paper but not by the provided related work evidence, leading to a partial alignment.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed (ExDM), but the provided related work is about ULEE, a different method. The related work does not discuss diffusion models, URL, or the specific claims in the sentence, so there is no evidence to assess alignment or calibration.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims about the innovation of integrating diffusion models into URL, but the related work (CIC) does not discuss diffusion models; it focuses on contrastive learning for skill discovery. There is no evidence in the related work to support or contradict this claim.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "d6c314c406ed5b517f774a895f0852876ae95ed9",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims integration of diffusion models into URL is innovative and leverages density estimation for complex distributions. The related work paper (LSPE) uses a diffusion-based self-predictive module for latent state prediction, not for modeling state distributions in unsupervised RL exploration. There is no direct evidence about URL or density estimation of non-stationary state distributions, making the claim unverifiable from this evidence.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the integration of diffusion models into URL is innovative. The provided paper's abstract and introduction describe ExDM, which uses diffusion models for unsupervised RL, but the related work evidence (ComSD) does not discuss diffusion models or provide direct evidence to support or contradict the innovation claim. Thus, evidence is missing.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that integrating diffusion models into URL is innovative and leverages their strong density estimation capabilities. However, the related work (EUCLID) does not discuss diffusion models; it focuses on a multi-choice dynamics model for unsupervised RL. The sentence is a claim about the paper being reviewed (ExDM), but there is no evidence in the provided related work to support or contradict it. The claim is too vague and unverifiable from the given related work text.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "72ada444fc09a941459a4060907eee5f02b1ff0c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper being reviewed (ExDM) but the provided related work (RFS) does not contain any evidence about integrating diffusion models into URL or about density estimation for state distributions. The evidence is completely missing for verifying the claim.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims innovation in integrating diffusion models into URL for modeling complex state distributions. The related work paper does not discuss diffusion models at all; it focuses on world models and unsupervised/offline RL unification. There is no evidence in the related work to support or contradict the specific claim about diffusion models in URL, making it unverifiable.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper being reviewed (integrating diffusion models into URL is innovative). The related work evidence (PEAC) is about cross-embodiment unsupervised RL, not diffusion models. It does not mention diffusion models or provide evidence about the paper's claims, so verification is impossible.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the paper's integration of diffusion models into URL. The related work (Sea$^2$) is about active perception for unsupervised cross-domain visual adaptation using a VLM-guided agent, which is unrelated to URL or diffusion models for RL exploration. There is no evidence in the provided text to support or contradict the claim, so it is unverifiable and insufficient.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the innovation of integrating diffusion models into URL for modeling complex, non-stationary state distributions. The related work paper provided is titled 'Learning Representations for Efficient Exploration and Goal-Conditioned Reinforcement Learning' but no content from this paper is given; only its title is available. There is insufficient evidence in the provided text to verify the claim, assess alignment, or judge calibration.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the innovation of integrating diffusion models into URL, but the provided related work (about Constrained Ensemble Exploration) does not mention diffusion models or their integration. There is no evidence in the related work to support or contradict the claim.",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "9c40e5a3c617ace5a6fc0f2a46bd9d146c1b8dd6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims the paper integrates diffusion models into URL for modeling state distributions. The related work (TMRL) focuses on diffusion-based pre-training and fine-tuning for robot policies, not on modeling state distributions in unsupervised RL exploration. There is no direct evidence in the related work to support or contradict this specific claim.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "ac0f41b97e642bd99ed862574d57a74c8c042695",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper being reviewed, not about the related work. The related work evidence (abstract of a different paper) does not provide any direct information about the claims made in the reviewed paper regarding diffusion models in URL, state distributions, or innovation. There is no basis to compare the claim with the related work.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "867729413be83d0bbd6f236b2bf0e04f4d50fb2d",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that integrating diffusion models into URL is innovative and leverages their density estimation capabilities for modeling state distributions. However, the related work paper focuses on Bayesian exploration for state estimation correction in emergency response, not unsupervised RL (URL). It does not mention URL, diffusion models for URL exploration, or intrinsic rewards for state coverage. The evidence is from a different domain and application, contradicting the claim's context and specificity.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "1c35807e1a4c24e2013fa0a090cee9cc4716a5f5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a specific claim about the paper's innovation regarding diffusion models in URL. The related work evidence describes a different paper on action-free pre-training from videos, with no mention of diffusion models, URL, or the specific claims in the review sentence. Thus, there is no evidence to support or contradict the claim, making it insufficient for verification.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that integrating diffusion models into URL is innovative, but the provided related work does not mention diffusion models at all; it focuses on skill discovery via conditional autoencoders and intrinsic rewards. There is no evidence in the related work to support or contradict the claim about diffusion models in URL.",
+          "relevance_score": 0.1
+        }
+      ],
+      "final_score": 0.7017543859649122,
+      "best_evidence": [
+        "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+        "8afe69a050d999c642170295c478ebdfa686eff1",
+        "e40c241f1a6484a9c9713d3ee7840153e87912c3"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2.0,
+          "weight": 0.3509
+        },
+        {
+          "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+          "score": 0.0,
+          "weight": 0.3158
+        }
+      ]
+    },
+    {
+      "review_sentence_id": "C2",
+      "text": "Introducing diffusion models to URL is impactful, but novelty is diluted by omissions in related work and incomplete comparisons.",
+      "classification": {
+        "claim": 1,
+        "proof": 0
+      },
+      "evidence_results": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that novelty is diluted by omissions in related work and incomplete comparisons. The related work section explicitly states that applying generative models for unsupervised exploration is 'still less studied' and that the paper is 'the first attempt' to use diffusion models for unsupervised exploration, supporting the claim of novelty. However, the related work does not provide evidence about 'omissions' or 'incomplete comparisons' in the paper itself; these aspects are not discussed in the provided text, making the claim only partially supported.",
+          "relevance_score": 1.0
+        },
+        {
+          "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty is diluted by omissions in related work and incomplete comparisons, but the provided related work text (title only) does not contain specific content to verify these claims. The related work text is insufficient to assess whether the paper's introduction of diffusion models to URL is impactful or if novelty is diluted.",
+          "relevance_score": 0.9
+        },
+        {
+          "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty is diluted by omissions in related work and incomplete comparisons. The provided related work evidence is a different paper about robotic locomotion skill learning, which does not directly address the paper being reviewed's novelty or its omissions/comparisons. There is insufficient evidence to verify or contradict the claim.",
+          "relevance_score": 0.95
+        },
+        {
+          "related_paper_id": "3096bf7886a94d6dd9cb92cdc164b56330593b2b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes claims about omissions in related work and incomplete comparisons, but the provided related work text only describes Ocean Diviner's title and does not contain specific content about the paper being reviewed (ExDM) or its related work coverage. There is insufficient evidence to verify the claim about omissions or incomplete comparisons.",
+          "relevance_score": 0.85
+        },
+        {
+          "related_paper_id": "79b151befc13141bf04175a9938f2d9b370b5c86",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about novelty being diluted by omissions in related work and incomplete comparisons. The provided related work (ID=79b151befc13141bf04175a9938f2d9b370b5c86) is a different paper on hierarchical diffusion for offline RL, which does not contain any information about the paper being reviewed (ExDM) or its omissions/comparisons. There is no evidence to verify the claim.",
+          "relevance_score": 0.8
+        },
+        {
+          "related_paper_id": "9b5dafe432446d9b627699aff65f4e81ac3fc914",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty is diluted by omissions in related work, but the provided related work (METRA) does not directly address diffusion models or omissions; evidence is missing to verify the claim.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "0191d340d3e70103bc7c0a3207be505034fc1729",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper's novelty due to omissions in related work and incomplete comparisons. The provided related work (ULEE) focuses on unsupervised meta-learning for exploration via self-imposed goals, which is not directly comparable to diffusion models or the specific omissions claimed in the sentence. The evidence does not address the claims about 'diffusion models to URL' or 'omissions in related work' in the paper under review, making the connection insufficient for verification.",
+          "relevance_score": 0.75
+        },
+        {
+          "related_paper_id": "0292a7e356152a842aa47ff4336703cac540a86d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that introducing diffusion models to URL is impactful, but novelty is diluted by omissions in related work and incomplete comparisons. However, the provided related work (CIC paper) does not mention diffusion models, URL novelty, or comparisons with the reviewed paper's work. It only describes CIC's approach for unsupervised RL. There is insufficient evidence from this specific related work to verify or contradict the reviewer's claim about omissions or incomplete comparisons.",
+          "relevance_score": 0.7
+        },
+        {
+          "related_paper_id": "d6c314c406ed5b517f774a895f0852876ae95ed9",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer's claim that novelty is diluted by omissions in related work and incomplete comparisons is a claim about the paper. The related work evidence shows LSPE also uses a diffusion-based module for exploration, indicating some overlap in ideas. However, the evidence does not directly address whether the paper's related work section omitted this specific work or made incomplete comparisons, so support is partial. The calibration is accurate as the claim is moderate and the evidence is not fully conclusive.",
+          "relevance_score": 0.65
+        },
+        {
+          "related_paper_id": "81a5ef40de4cb64267a3a408675d078efe4d4b63",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper's novelty being diluted by omissions in related work and incomplete comparisons. However, the provided related work (ComSD) does not discuss diffusion models or directly address the specific omissions or comparisons mentioned in the claim. The evidence is insufficient to verify or refute the claim.",
+          "relevance_score": 0.6
+        },
+        {
+          "related_paper_id": "8cb359a03b499319c05eb7d36726341579dbe56f",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence is a claim about the paper (novelty diluted by omissions in related work), but the provided related work text is an abstract of EUCLID, which is a different paper. The evidence does not address the paper's own related work coverage or comparisons, so the claim cannot be verified or calibrated based on this evidence.",
+          "relevance_score": 0.55
+        },
+        {
+          "related_paper_id": "72ada444fc09a941459a4060907eee5f02b1ff0c",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes claims about novelty being diluted by omissions in related work and incomplete comparisons, but the provided related work (RFS) is about a different topic (dexterous manipulation and flow steering) and does not discuss diffusion models in URL or the specific paper's contributions. There is no evidence in the related work to verify the claim about omissions or comparisons.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "e630cf0faa87090bfea2c4b8b0d63ab34cce8db3",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer claims novelty is diluted by omissions in related work. The related work paper discusses unifying unsupervised and offline RL with world models, which is a different approach (world models vs. diffusion models) and not directly comparable. The paper being reviewed claims to be the first to use diffusion models for unsupervised RL, so the omission of this specific prior work is not evident from the provided related work. However, the related work shows that other generative models (world models) have been explored for unsupervised RL, suggesting some novelty dilution, but the evidence is not conclusive.",
+          "relevance_score": 0.5
+        },
+        {
+          "related_paper_id": "dcb2376cff053a6ef30c21d960c335e8d4acb396",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The review sentence claims that the novelty of introducing diffusion models to URL is diluted by omissions in related work and incomplete comparisons. The related work paper (PEAC) is about cross-embodiment unsupervised RL and does not mention diffusion models, supporting the claim that the reviewed paper's related work section may omit relevant prior work (e.g., cross-embodiment methods) or not fully compare with all relevant approaches. This aligns with the reviewer's concern about diluted novelty due to omissions and incomplete comparisons.",
+          "relevance_score": 0.45
+        },
+        {
+          "related_paper_id": "284e7dc8f472dc17660c4d89cff1bf65b1ba8a3b",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence criticizes the paper's novelty by citing omissions in related work and incomplete comparisons. However, the provided related work (ID=284e7dc8...) is about a different topic (active perception for cross-domain visual adaptation using VLMs) and does not address diffusion models in URL or the specific claims of omission. Thus, there is no evidence to verify the reviewer's claim about omissions or comparisons.",
+          "relevance_score": 0.35
+        },
+        {
+          "related_paper_id": "6437d992c30d7902a517c22f2eef511ba6b65f1a",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The reviewer sentence is a claim about the paper, but the provided related work evidence (ID 6437d992c30d7902a517c22f2eef511ba6b65f1a) is only a title and does not contain content about diffusion models, omissions, or comparisons. Thus, there is insufficient evidence to verify the claim.",
+          "relevance_score": 0.4
+        },
+        {
+          "related_paper_id": "d39b12a480a7c01e1515b6358eb5cab882338a35",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "",
+          "relevance_score": 0.3
+        },
+        {
+          "related_paper_id": "9c40e5a3c617ace5a6fc0f2a46bd9d146c1b8dd6",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about the novelty of the paper being diluted by omissions in related work and incomplete comparisons. The related work evidence provided is a different paper (TMRL) that also uses diffusion models for pretraining/finetuning, but it is not clearly referenced or compared in the reviewed paper's text. The evidence does not directly address whether the reviewed paper's related work section is incomplete or if comparisons are missing. Without specific evidence from the reviewed paper's related work section or a clear indication of omission, the claim cannot be verified.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "ac0f41b97e642bd99ed862574d57a74c8c042695",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims that novelty is diluted by omissions in related work and incomplete comparisons, but the provided related work evidence (an abstract for a paper on diffusion policy alignment) does not contain any information about the paper being reviewed's related work section or its completeness. The evidence is unrelated to the claim's subject matter.",
+          "relevance_score": 0.25
+        },
+        {
+          "related_paper_id": "867729413be83d0bbd6f236b2bf0e04f4d50fb2d",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence claims novelty is diluted by omissions in related work and incomplete comparisons, but the provided related work evidence (a paper on diffusion Bayesian exploration for state estimates) is entirely unrelated to the paper's topic (unsupervised RL). No evidence is present to verify or contradict the claim about omitted related work or incomplete comparisons.",
+          "relevance_score": 0.15
+        },
+        {
+          "related_paper_id": "1c35807e1a4c24e2013fa0a090cee9cc4716a5f5",
+          "score": 0,
+          "label": "AMBIGUOUS",
+          "explanation": "The review sentence makes a claim about novelty being diluted by omissions in related work and incomplete comparisons. The related work paper (APV) is about action-free video pre-training for RL, not about diffusion models in URL. The provided evidence does not address the specific claim about omissions or comparisons related to diffusion models in URL. Therefore, the evidence is insufficient to verify or contradict the claim.",
+          "relevance_score": 0.2
+        },
+        {
+          "related_paper_id": "bce4196361580230ccf21fe6eb0ea77d1ffce4d0",
+          "score": 2,
+          "label": "SUPPORTED",
+          "explanation": "The reviewer claims that novelty is diluted by omissions in related work and incomplete comparisons. The related work evidence (a paper on unsupervised skill discovery) shows that existing methods (like entropy-based exploration) have limitations, which could be seen as gaps. However, the evidence does not explicitly mention omissions or incomplete comparisons in the paper being reviewed, so the claim is only partially supported.",
+          "relevance_score": 0.1
+        }
+      ],
+      "final_score": 0.7017543859649122,
+      "best_evidence": [
+        "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+        "8afe69a050d999c642170295c478ebdfa686eff1",
+        "e40c241f1a6484a9c9713d3ee7840153e87912c3"
+      ],
+      "best_evidence_policy": "top3_relevance",
+      "best_evidence_details": [
+        {
+          "related_paper_id": "9474f53a802d9d2c9b7fcab4a7619a0261e4d315",
+          "score": 2.0,
+          "weight": 0.3509
+        },
+        {
+          "related_paper_id": "8afe69a050d999c642170295c478ebdfa686eff1",
+          "score": 0.0,
+          "weight": 0.3333
+        },
+        {
+          "related_paper_id": "e40c241f1a6484a9c9713d3ee7840153e87912c3",
+          "score": 0.0,
+          "weight": 0.3158
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "review_sentences": 2,
+    "related_works": 22,
+    "pairs_attempted": 44,
+    "pairs_completed": 44,
+    "pairs_failed": 0,
+    "coverage": {
+      "claims_total": 2,
+      "claims_with_any_attempt": 2,
+      "claims_with_any_success": 2,
+      "claims_without_pair_attempt": 0,
+      "claims_with_all_pairs_failed": 0,
+      "claims_with_any_evidence": 2,
+      "claims_with_scored_evidence": 2,
+      "claims_with_decisive_evidence": 0,
+      "claims_with_supporting_evidence": 0,
+      "claims_with_contradicting_evidence": 0,
+      "claim_attempt_coverage_rate": 1.0,
+      "claim_success_coverage_rate": 1.0,
+      "evidence_coverage_rate": 1.0,
+      "decisive_coverage_rate": 0.0,
+      "pair_completion_rate": 1.0,
+      "pair_failure_rate": 0.0,
+      "avg_evidence_per_claim": 22.0
+    }
+  },
+  "errors": []
+}

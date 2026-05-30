@@ -1,0 +1,102 @@
+{
+  "paper_id": "sFyTZEqmUY",
+  "metadata": {
+    "decision": "Accept (oral)",
+    "avg_rating": 7.5,
+    "avg_confidence": 4.0,
+    "num_reviewers": 4
+  },
+  "reviewer_id": "CycleReview",
+  "status": "success",
+  "atomic_comments": [
+    {
+      "arc_id": "ARC_01",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks detailed analysis of the simulator's performance across various tasks.",
+      "anchor_quote": "does not provide a detailed analysis of the performance of the simulator on various tasks",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_02",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks detailed analysis of the simulator's limitations.",
+      "anchor_quote": "does not provide a detailed analysis of the limitations of the simulator",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_03",
+      "section": "Weaknesses",
+      "comment_type": "weakness",
+      "content": "The paper lacks detailed analysis of the simulator's potential applications.",
+      "anchor_quote": "does not provide a detailed analysis of the potential applications of the simulator",
+      "D1_actionability": 1,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 0,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_04",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The reviewer asks for a comparison of the simulator's performance to other simulators.",
+      "anchor_quote": "How does the performance of the simulator compare to other simulators",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_05",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The reviewer asks for a discussion of the simulator's limitations.",
+      "anchor_quote": "What are the limitations of the simulator",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 1
+    },
+    {
+      "arc_id": "ARC_06",
+      "section": "Questions",
+      "comment_type": "question",
+      "content": "The reviewer asks for a discussion of the simulator's potential applications.",
+      "anchor_quote": "What are the potential applications of the simulator",
+      "D1_actionability": 2,
+      "D2_specificity": 1,
+      "D3_justification": 0,
+      "D4_solution": 2,
+      "D5_tone": 1
+    }
+  ],
+  "metrics": {
+    "MCS": 0.45,
+    "AR": 1.0,
+    "SD": 0.5,
+    "CD": 0.5,
+    "D1_actionability_mean": 1.5,
+    "D2_specificity_mean": 1.0,
+    "D3_justification_mean": 0.0,
+    "D4_solution_mean": 1.0,
+    "D5_tone_mean": 1.0,
+    "n_arcs": 6,
+    "n_weaknesses": 3,
+    "n_strengths": 0,
+    "n_questions": 3,
+    "n_suggestions": 0,
+    "n_observations": 0
+  }
+}
