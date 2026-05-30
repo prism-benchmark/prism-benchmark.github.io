@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 810">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 700">
   <defs>
     <marker id="arr"      markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#757575"/></marker>
     <marker id="arrP"     markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#9370DB"/></marker>
@@ -34,11 +34,11 @@
     </style>
   </defs>
 
-  <rect width="1080" height="760" fill="#FAFAFA"/>
+  <rect width="1080" height="700" fill="#FAFAFA"/>
 
   <!-- ==================== PIPELINE 1 (top-left) ==================== -->
   <g class="c-purple" transform="translate(40,60)">
-    <rect width="320" height="260" rx="8"/>
+    <rect width="320" height="226" rx="8"/>
     <rect width="320" height="34" rx="8" fill="#D8D0F0"/>
     <text x="160" y="22" text-anchor="middle" class="th" letter-spacing="0.04em">1 · DEPTH OF ANALYSIS</text>
     <g transform="translate(14,42)">
@@ -69,15 +69,12 @@
       <text x="146" y="16" text-anchor="middle" class="th">Harmonic Mean Score</text>
       <text x="146" y="32" text-anchor="middle" class="ts">DoA = 2·(R_prem · S_depth) / (R_prem + S_depth)</text>
     </g>
-    <g transform="translate(14,218)">
-      <rect width="292" height="22" rx="6" fill="#E8E0F8" stroke="#B8A8E0"/>
-      <text x="146" y="15" text-anchor="middle" fill="#5B3FA0" font-family="system-ui, sans-serif" font-size="12" font-weight="600">DoA → 0.49</text>
-    </g>
+
   </g>
 
   <!-- ==================== PIPELINE 2 (top-right) ==================== -->
   <g class="c-amber" transform="translate(710,60)">
-    <rect width="320" height="260" rx="8"/>
+    <rect width="320" height="238" rx="8"/>
     <rect width="320" height="34" rx="8" fill="#F0E0C0"/>
     <text x="160" y="22" text-anchor="middle" class="th" letter-spacing="0.04em">2 · NOVELTY ASSESSMENT</text>
     <g transform="translate(14,42)">
@@ -110,10 +107,7 @@
       <text x="201" y="13" text-anchor="middle" fill="#888" font-family="system-ui, sans-serif" font-size="9">+1</text>
       <text x="257" y="13" text-anchor="middle" fill="#888" font-family="system-ui, sans-serif" font-size="9">+2</text>
     </g>
-    <g transform="translate(14,222)">
-      <rect width="292" height="22" rx="6" fill="#FFF3DC" stroke="#E8C878"/>
-      <text x="146" y="15" text-anchor="middle" fill="#A07010" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Novelty → 0.79</text>
-    </g>
+
   </g>
 
   <!-- ==================== DATA SOURCE CARD (center, above hub) ==================== -->
@@ -211,7 +205,7 @@
 
   <!-- ==================== PIPELINE 3 (bottom-left) ==================== -->
   <g class="c-teal" transform="translate(40,430)">
-    <rect width="320" height="272" rx="8"/>
+    <rect width="320" height="250" rx="8"/>
     <rect width="320" height="34" rx="8" fill="#B8E0D8"/>
     <text x="160" y="22" text-anchor="middle" class="th" letter-spacing="0.04em">3 · FLAW IDENTIFICATION &amp; PRIORITY</text>
     <g transform="translate(14,42)">
@@ -262,15 +256,12 @@
         <text x="190" y="7" fill="#888" font-family="system-ui, sans-serif" font-size="10">#3 Minor</text>
       </g>
     </g>
-    <g transform="translate(14,250)">
-      <rect width="292" height="22" rx="6" fill="#D8F0EC" stroke="#88C8B8"/>
-      <text x="146" y="15" text-anchor="middle" fill="#2A7060" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Critical Recall → 0.34</text>
-    </g>
+
   </g>
 
   <!-- ==================== PIPELINE 4 (bottom-right) ==================== -->
   <g class="c-blue" transform="translate(710,430)">
-    <rect width="320" height="260" rx="8"/>
+    <rect width="320" height="238" rx="8"/>
     <rect width="320" height="34" rx="8" fill="#C0D8F0"/>
     <text x="160" y="22" text-anchor="middle" class="th" letter-spacing="0.04em">4 · MULTI-DIM CONSTRUCTIVENESS</text>
     <g transform="translate(14,42)">
@@ -323,69 +314,8 @@
       <rect width="292" height="18" rx="6" fill="#ECF2FA" stroke="#C0D8F0"/>
       <text x="146" y="13" text-anchor="middle" class="ts">MCS = (1/n) Σ CLC(cⱼ) ∈ [0,1]</text>
     </g>
-    <g transform="translate(14,234)">
-      <rect width="292" height="22" rx="6" fill="#E0ECF8" stroke="#A0C0E8"/>
-      <text x="146" y="15" text-anchor="middle" fill="#2A5F90" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Constructiveness → 0.57</text>
-    </g>
+
   </g>
 
-  <!-- ==================== CONNECTORS: Pipelines → Output ==================== -->
-  <!-- P1 center-left → output center-left (elbow) -->
-  <path d="M40,190 L14,190 L14,754 L40,754" stroke="#9370DB" stroke-width="1.3" fill="none" marker-end="url(#arrP)">
-    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
-  </path>
-  <circle r="3" fill="#9370DB">
-    <animateMotion path="M40,190 L14,190 L14,754 L40,754" dur="2s" repeatCount="indefinite"/>
-  </circle>
-
-  <!-- P2 center-right → output center-right (elbow) -->
-  <path d="M1030,190 L1066,190 L1066,754 L990,754" stroke="#E8A838" stroke-width="1.3" fill="none" marker-end="url(#arrA)">
-    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3s" begin="0.5s" repeatCount="indefinite"/>
-  </path>
-  <circle r="3" fill="#E8A838">
-    <animateMotion path="M1030,190 L1066,190 L1066,754 L990,754" dur="2s" begin="0.5s" repeatCount="indefinite"/>
-  </circle>
-
-  <!-- P3 bottom → output bottom-left -->
-  <line x1="200" y1="702" x2="200" y2="720" stroke="#5BA49A" stroke-width="1.3" marker-end="url(#arrT)">
-    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3s" begin="1s" repeatCount="indefinite"/>
-  </line>
-  <circle r="3" fill="#5BA49A">
-    <animateMotion path="M200,702 L200,720" dur="0.4s" begin="1s" repeatCount="indefinite"/>
-  </circle>
-
-  <!-- P4 bottom → output bottom-right -->
-  <line x1="870" y1="690" x2="870" y2="720" stroke="#6B9BD2" stroke-width="1.3" marker-end="url(#arrB)">
-    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3s" begin="1.5s" repeatCount="indefinite"/>
-  </line>
-  <circle r="3" fill="#6B9BD2">
-    <animateMotion path="M870,690 L870,720" dur="0.4s" begin="1.5s" repeatCount="indefinite"/>
-  </circle>
-
-  <!-- ==================== OUTPUT ==================== -->
-  <g transform="translate(40,720)">
-    <rect width="950" height="68" rx="10" fill="#fff" stroke="#D0D0D0" stroke-width="1.2"/>
-    <text x="475" y="18" text-anchor="middle" fill="#222" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="0.04em">REVIEW QUALITY PROFILE</text>
-    <g class="c-purple" transform="translate(18,26)">
-      <rect width="214" height="32" rx="6"/>
-      <text x="107" y="14" text-anchor="middle" class="th" font-size="10">DEPTH OF ANALYSIS</text>
-      <text x="107" y="27" text-anchor="middle" fill="#222" font-family="system-ui, sans-serif" font-size="13" font-weight="700">0.49</text>
-    </g>
-    <g class="c-amber" transform="translate(250,26)">
-      <rect width="214" height="32" rx="6"/>
-      <text x="107" y="14" text-anchor="middle" class="th" font-size="10">NOVELTY SCORE</text>
-      <text x="107" y="27" text-anchor="middle" fill="#222" font-family="system-ui, sans-serif" font-size="13" font-weight="700">0.79</text>
-    </g>
-    <g class="c-teal" transform="translate(482,26)">
-      <rect width="214" height="32" rx="6"/>
-      <text x="107" y="14" text-anchor="middle" class="th" font-size="10">CRITICAL RECALL</text>
-      <text x="107" y="27" text-anchor="middle" fill="#222" font-family="system-ui, sans-serif" font-size="13" font-weight="700">0.34</text>
-    </g>
-    <g class="c-blue" transform="translate(714,26)">
-      <rect width="214" height="32" rx="6"/>
-      <text x="107" y="14" text-anchor="middle" class="th" font-size="10">CONSTRUCTIVENESS</text>
-      <text x="107" y="27" text-anchor="middle" fill="#222" font-family="system-ui, sans-serif" font-size="13" font-weight="700">0.57</text>
-    </g>
-  </g>
 
 </svg>
