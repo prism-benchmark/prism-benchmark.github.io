@@ -292,6 +292,20 @@ body {
   font-weight: 600;
 }
 
+.demo-paper-link {
+  overflow-wrap: anywhere;
+  color: var(--color-blue-700);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.demo-paper-link:hover {
+  color: var(--color-blue-600);
+}
+
 .demo-row {
   display: grid;
   grid-template-columns: minmax(5rem, 0.8fr) minmax(5rem, 1fr) auto;

@@ -298,7 +298,15 @@ const metadataJson = JSON.stringify(metadataByConference);
   <section class="demo-paper-strip" aria-label="Selected paper metadata">
     <div class="demo-metric">
       <span>Paper ID</span>
-      <strong data-meta="paperId">{dataset.paperIds[initialConference]}</strong>
+      <a
+        class="demo-paper-link"
+        data-meta="paperId"
+        href={`https://openreview.net/forum?id=${encodeURIComponent(dataset.paperIds[initialConference] ?? "")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {dataset.paperIds[initialConference]}
+      </a>
     </div>
     <div class="demo-metric">
       <span>Decision</span>
@@ -674,7 +682,7 @@ const metadataJson = JSON.stringify(metadataByConference);
       root.querySelectorAll<HTMLElement>('[data-role="panels"] > div'),
     );
     const metaTargets = {
-      paperId: root.querySelector<HTMLElement>('[data-meta="paperId"]'),
+      paperId: root.querySelector<HTMLAnchorElement>('[data-meta="paperId"]'),
       decision: root.querySelector<HTMLElement>('[data-meta="decision"]'),
       avgRating: root.querySelector<HTMLElement>('[data-meta="avgRating"]'),
       avgConfidence: root.querySelector<HTMLElement>(
@@ -725,8 +733,15 @@ const metadataJson = JSON.stringify(metadataByConference);
       }
 
       const meta = metadata[conference];
-      if (metaTargets.paperId)
-        metaTargets.paperId.textContent = paperIds[conference] || "n/a";
+      if (metaTargets.paperId) {
+        const paperId = paperIds[conference] || "";
+        metaTargets.paperId.textContent = paperId || "n/a";
+        if (paperId) {
+          metaTargets.paperId.href = `https://openreview.net/forum?id=${encodeURIComponent(paperId)}`;
+        } else {
+          metaTargets.paperId.removeAttribute("href");
+        }
+      }
       if (metaTargets.decision)
         metaTargets.decision.textContent = meta?.decision ?? "n/a";
       if (metaTargets.avgRating)
