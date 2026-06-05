@@ -1,0 +1,386 @@
+---
+import spiderRaw from "../../spider.txt?raw";
+
+const metrics = [
+  "Depth of Analysis",
+  "Novelty Assessment",
+  "Critical Flaw Recall",
+  "Minor Flaw Recall",
+  "Prioritization",
+  "Constructiveness",
+];
+
+const metricLabelLines = metrics.map((m) => {
+  if (m === "Depth of Analysis") return ["Depth of", "Analysis"];
+  if (m === "Novelty Assessment") return ["Novelty", "Assessment"];
+  if (m === "Critical Flaw Recall") return ["Critical Flaw", "Recall"];
+  if (m === "Minor Flaw Recall") return ["Minor Flaw", "Recall"];
+  return [m];
+});
+
+const colors = {
+  Human: "#2563eb",
+  CycleReviewer: "#7c3aed",
+  DeepReview: "#059669",
+  Reviewer2: "#dc2626",
+  SEA: "#d97706",
+  TreeReview: "#0f766e",
+};
+
+type Series = {
+  name: keyof typeof colors;
+  values: number[];
+};
+
+const series = spiderRaw
+  .split("\n")
+  .map((line) => line.trim())
+  .map((line) => {
+    const match = line.match(
+      /^([A-Za-z0-9]+)\s+([0-9.]+)\s+±\s+[0-9.]+\s+([0-9.]+)\s+±\s+[0-9.]+\s+([0-9.]+)\s+±\s+[0-9.]+\s+([0-9.]+)\s+±\s+[0-9.]+\s+([0-9.]+)\s+±\s+[0-9.]+\s+([0-9.]+)\s+±\s+[0-9.]+$/,
+    );
+
+    if (!match) return null;
+
+    return {
+      name: match[1] as keyof typeof colors,
+      values: match.slice(2).map(Number),
+    };
+  })
+  .filter((item): item is Series => item !== null);
+
+const size = 580;
+const center = size / 2;
+const radius = 185;
+const levels = [0.2, 0.4, 0.6, 0.8, 1];
+
+const pointFor = (axisIndex: number, value: number) => {
+  const angle = -Math.PI / 2 + (axisIndex * 2 * Math.PI) / metrics.length;
+  const scaledRadius = radius * value;
+
+  return {
+    x: center + Math.cos(angle) * scaledRadius,
+    y: center + Math.sin(angle) * scaledRadius,
+  };
+};
+
+const polygonPoints = (values: number[]) =>
+  values
+    .map((value, index) => {
+      const point = pointFor(index, value);
+      return `${point.x.toFixed(1)},${point.y.toFixed(1)}`;
+    })
+    .join(" ");
+
+const legendNotes: Partial<Record<keyof typeof colors, string>> = {
+  Human: "Most balanced baseline",
+  CycleReviewer: "Best depth (0.484)",
+  DeepReview: "Most constructive (0.634)",
+  Reviewer2: "Best flaw recall (0.591)",
+  SEA: "Best novelty (0.833)",
+  TreeReview: "Best novelty recall (0.811)",
+};
+
+const labelPositionFor = (axisIndex: number) => {
+  const point = pointFor(axisIndex, 1.2);
+  const isLeft = point.x < center - 24;
+  const isRight = point.x > center + 24;
+
+  return {
+    ...point,
+    anchor: isLeft ? "end" : isRight ? "start" : "middle",
+  };
+};
+---
+
+<div class="spider-chart" role="img" aria-label="Spider chart comparing PRISM evaluation scores across human and automated reviewers">
+  <svg class="spider-svg" viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
+    <g class="spider-grid">
+      {
+        levels.map((level) => (
+          <polygon points={polygonPoints(metrics.map(() => level))} />
+        ))
+      }
+      {
+        metrics.map((_, index) => {
+          const point = pointFor(index, 1);
+          return <line x1={center} y1={center} x2={point.x} y2={point.y} />;
+        })
+      }
+    </g>
+
+    <g class="spider-scale">
+      {
+        levels.map((level) => {
+          const point = pointFor(0, level);
+          return (
+            <text x={center + 8} y={point.y + 4}>
+              {level.toFixed(1)}
+            </text>
+          );
+        })
+      }
+    </g>
+
+    <g class="spider-labels">
+      {
+        metricLabelLines.map((lines, index) => {
+          const label = labelPositionFor(index);
+          const lineH = lines.length > 1 ? "1.15em" : 0;
+          return (
+            <text x={label.x} y={label.y} text-anchor={label.anchor}>
+              {
+                lines.length === 1
+                  ? lines[0]
+                  : lines.map((line, i) => (
+                      <tspan x={label.x} dy={i === 0 ? "-0.55em" : lineH}>
+                        {line}
+                      </tspan>
+                    ))
+              }
+            </text>
+          );
+        })
+      }
+    </g>
+
+    <g class="spider-series">
+      {
+        series.map((item) => (
+          <g>
+            <polygon
+              points={polygonPoints(item.values)}
+              fill={colors[item.name]}
+              stroke={colors[item.name]}
+            />
+            {
+              item.values.map((value, index) => {
+                const point = pointFor(index, value);
+                return (
+                  <circle
+                    class="spider-dot"
+                    cx={point.x}
+                    cy={point.y}
+                    r="5"
+                    fill={colors[item.name]}
+                    data-system={item.name}
+                    data-metric={metrics[index]}
+                    data-value={value.toFixed(3)}
+                  />
+                );
+              })
+            }
+          </g>
+        ))
+      }
+    </g>
+  </svg>
+
+  <div id="spider-tooltip" class="spider-tooltip" aria-hidden="true"></div>
+
+  <div class="spider-legend" aria-hidden="true">
+    {
+      [series.slice(0, 3), series.slice(3)].map((row) => (
+        <div class="legend-row">
+          {
+            row.map((item) => (
+              <span class="legend-item">
+                <i style={`--series-color: ${colors[item.name]}`}></i>
+                <span class="legend-label">
+                  <strong>{item.name}</strong>
+                  {legendNotes[item.name] && <small>{legendNotes[item.name]}</small>}
+                </span>
+              </span>
+            ))
+          }
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .spider-chart {
+    width: min(100%, 42rem);
+    margin: 1rem auto 0;
+  }
+
+  .spider-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .spider-grid polygon {
+    fill: none;
+    stroke: #d4d4d8;
+    stroke-width: 1;
+  }
+
+  .spider-grid line {
+    stroke: #d4d4d8;
+    stroke-width: 1;
+  }
+
+  .spider-scale text {
+    fill: #71717a;
+    font-size: 12px;
+  }
+
+  .spider-labels text {
+    fill: #18181b;
+    font-size: 15px;
+    font-weight: 650;
+  }
+
+  .spider-series polygon {
+    fill-opacity: 0.11;
+    stroke-width: 2.6;
+    stroke-linejoin: round;
+  }
+
+  .spider-series circle {
+    stroke: #fff;
+    stroke-width: 1.6;
+  }
+
+  .spider-legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    margin-top: 0.5rem;
+    color: #3f3f46;
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .spider-legend .legend-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .spider-legend .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .spider-legend .legend-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .spider-legend .legend-label strong {
+    font-weight: 600;
+  }
+
+  .spider-legend .legend-label small {
+    font-size: 0.68rem;
+    color: #71717a;
+    white-space: nowrap;
+  }
+
+  .spider-legend i {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 999px;
+    background: var(--series-color);
+    flex-shrink: 0;
+  }
+
+  .spider-tooltip {
+    position: fixed;
+    z-index: 50;
+    pointer-events: none;
+    background: #18181b;
+    color: #fafafa;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    padding: 0.4rem 0.65rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    opacity: 0;
+    transition: opacity 0.12s;
+    max-width: 18rem;
+  }
+
+  .spider-tooltip.visible {
+    opacity: 1;
+  }
+
+  .spider-tooltip .tt-system {
+    font-weight: 650;
+    margin-bottom: 0.1rem;
+  }
+
+  .spider-tooltip .tt-metric {
+    color: #a1a1aa;
+  }
+
+  .spider-dot {
+    cursor: pointer;
+  }
+
+  @media (max-width: 48rem) {
+    .spider-labels text {
+      font-size: 13px;
+    }
+
+    .spider-scale text {
+      font-size: 11px;
+    }
+
+    .spider-legend {
+      gap: 0.05rem;
+      font-size: 0.73rem;
+    }
+
+    .spider-legend .legend-row {
+      gap: 0.8rem;
+    }
+
+    .spider-legend .legend-label small {
+      font-size: 0.62rem;
+    }
+  }
+</style>
+
+<script>
+  const tooltip = document.getElementById("spider-tooltip")!;
+  const dots = document.querySelectorAll<HTMLElement>(".spider-dot");
+
+  function show(el: HTMLElement, e: MouseEvent) {
+    const sys = el.getAttribute("data-system");
+    const met = el.getAttribute("data-metric");
+    const val = el.getAttribute("data-value");
+    tooltip.innerHTML =
+      `<div class="tt-system">${sys}</div>` +
+      `<div class="tt-metric">${met}: ${val}</div>`;
+    tooltip.classList.add("visible");
+    move(e);
+  }
+
+  function move(e: MouseEvent) {
+    const x = e.clientX + 14;
+    const y = e.clientY + 10;
+    const { innerWidth, innerHeight } = window;
+    const w = tooltip.offsetWidth;
+    const h = tooltip.offsetHeight;
+    tooltip.style.left = (x + w > innerWidth ? e.clientX - w - 14 : x) + "px";
+    tooltip.style.top = (y + h > innerHeight ? e.clientY - h - 10 : y) + "px";
+  }
+
+  function hide() {
+    tooltip.classList.remove("visible");
+  }
+
+  for (const dot of dots) {
+    dot.addEventListener("mouseenter", (e) => show(dot, e));
+    dot.addEventListener("mousemove", move);
+    dot.addEventListener("mouseleave", hide);
+  }
+</script>

@@ -90,6 +90,7 @@ import Carousel from "./components/Carousel.astro";
 import CarouselSlide from "./components/CarouselSlide.astro";
 import Figure from "./components/Figure.astro";
 import Picture from "./components/Picture.astro";
+import SpiderChart from "./components/SpiderChart.astro";
 import TwoColumns from "./components/TwoColumns.astro";
 
 
@@ -228,6 +229,11 @@ Across **1,000 papers** from ICLR, ICML, and NeurIPS, PRISM shows that LLM revie
 | **Minor Flaw Recall** | Reviewer2: **0.459** | **0.281** |
 | **Prioritization** | SEA: **0.977** | **0.973** |
 | **Constructiveness** | DeepReview: **0.634** | **0.566** |
+
+<Figure>
+  <SpiderChart slot="figure" />
+  <Fragment slot="caption"><strong>PRISM score profile.</strong> Spider chart of macro-averaged headline metrics from <code>spider.txt</code>, showing that automated reviewers have distinct strengths while humans remain the most balanced baseline.</Fragment>
+</Figure>
 
 ### Key Findings
 
