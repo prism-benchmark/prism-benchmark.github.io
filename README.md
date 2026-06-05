@@ -39,28 +39,22 @@ To edit the content, you _could_ simply edit [`./src/paper.mdx`](./src/paper.mdx
 
 3. Clone the repository.
 
-4. [Install Node.js](https://nodejs.org/en/download/) if you haven't already. Make sure you're using version 24 or later, which you can check by running
+4. [Install Bun](https://bun.sh/docs/installation) if you haven't already. Make sure you're using a recent version, which you can check by running
 
 ```bash
-node --version
-```
-
-If your Node version is less than 24, you can use [Node Version Manager](https://github.com/nvm-sh/nvm) to install version 24 and switch to it:
-
-```bash
-nvm install 24 && nvm use 24
+bun --version
 ```
 
 6. In the root directory of your cloned repository, install the dependencies:
 
 ```bash
-npm install
+bun install
 ```
 
 7. Start the development server:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 While the development server is running, you can open `http://localhost:4321` in your browser to see a live preview of your page.
@@ -72,7 +66,7 @@ While the development server is running, you can open `http://localhost:4321` in
 Alternatively, you can build the site locally, and copy the output to wherever you'd like to host the site. Running the following command will create a static website stored in `./dist/`.
 
 ```bash
-npm run build
+bun run build
 ```
 
 For more information, consult [`./documentation.md`](./documentation.md).
