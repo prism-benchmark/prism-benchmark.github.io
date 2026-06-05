@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "prism-eval",
+      "type": "skill-md",
+      "description": "Evaluate an LLM-generated or human peer review of a machine learning paper using the PRISM benchmark's four-dimensional framework (constructiveness, flaws, depth, novelty). Use when scoring or comparing peer reviews, decomposing reviews into Atomic Review Comments, extracting and prioritizing flaws, or assessing argument grounding and novelty claims against the manuscript.",
+      "url": "/.well-known/agent-skills/prism-eval/SKILL.md",
+      "digest": "sha256:33aea3596c191af190695a9406bbd334ea4745b5dfffceece496ff942e6756e4"
+    }
+  ]
+}

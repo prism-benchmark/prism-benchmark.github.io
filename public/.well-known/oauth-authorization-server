@@ -1,0 +1,23 @@
+{
+  "issuer": "https://prism-benchmark.github.io/prism-page/",
+  "authorization_endpoint": "https://prism-benchmark.github.io/prism-page/",
+  "scopes_supported": [],
+  "response_types_supported": [],
+  "grant_types_supported": [],
+  "code_challenge_methods_supported": [],
+  "token_endpoint_auth_methods_supported": [],
+  "agent_auth": {
+    "skill": "https://prism-benchmark.github.io/prism-page/auth.md",
+    "register_uri": null,
+    "identity_endpoint": null,
+    "claim_endpoint": null,
+    "events_endpoint": null,
+    "revocation_endpoint": null,
+    "identity_types_supported": [],
+    "credential_types_supported": [],
+    "identity_assertion": {
+      "assertion_types_supported": []
+    },
+    "events_supported": []
+  }
+}

@@ -1,0 +1,124 @@
+; ============================================================================
+; DNS for AI Discovery (DNS-AID) zone file for PRISM Benchmark
+; ============================================================================
+; Reference: draft-mozleywilliams-dnsop-dnsaid-02
+;   https://datatracker.ietf.org/doc/draft-mozleywilliams-dnsop-dnsaid/
+; RFC 9460: Service Binding and Parameter Specification via the DNS (SVCB)
+;   https://www.rfc-editor.org/rfc/rfc9460
+;
+; STATUS: DOCUMENTATION ONLY -- not authoritative
+; ----------------------------------------------------------------------------
+; The current site is served from prism-benchmark.github.io, a subdomain of
+; github.io that is owned and operated by GitHub. The PRISM maintainers do
+; NOT control the github.io zone, so these SVCB records cannot be published
+; from this repository and the live DNS-AID check at isitagentready.com will
+; continue to report "DNS-AID records not found" until the project migrates
+; to a custom domain.
+;
+; To activate, replace `prism-benchmark.github.io` with the new apex (e.g.
+; prism-benchmark.org) and publish the records at the registrar. Sign the
+; zone with DNSSEC per the security considerations in section 6 of the
+; draft; if you later add TLSA records, DNSSEC signing is REQUIRED.
+;
+; Capability descriptor and integrity digest
+; ----------------------------------------------------------------------------
+; The agent's capability descriptor is published at
+; /.well-known/agent-card.json (relative to the apex). The base64url-encoded
+; SHA-256 digest of its canonical form is embedded below in the `cap-sha256`
+; SvcParamKey so consumers can verify the descriptor on every fetch.
+;
+; Canonical-form definition (matches the format produced by Python's
+; json.dumps with sort_keys=True, separators=(",", ":") and ensure_ascii=False;
+; equivalent to RFC 8785 JCS for this document):
+;   - Object keys sorted lexicographically at every level
+;   - No insignificant whitespace
+;   - UTF-8, NFC-normalized, no trailing newline
+;
+; Recompute with:
+;   python3 -c "import json,hashlib,base64; \
+;     d=hashlib.sha256(json.dumps(json.load(open('public/.well-known/agent-card.json')), \
+;     sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')).digest(); \
+;     print(d.hex()); print(base64.urlsafe_b64encode(d).rstrip(b'=').decode())"
+;
+; Current canonical-form digest (hex):
+;   cbed001dedad08098c06cc527ebddcc434de2a3876af1b3cf0460fddfc3ba8a1
+; Current canonical-form digest (base64url):
+;   y-0AHe2tCAmMBsxSfr3cxDTeKjh2rxs88EYP3fw7qKE
+
+$ORIGIN prism-benchmark.github.io.
+$TTL    3600
+
+; ----------------------------------------------------------------------------
+; Apex HTTPS binding (RFC 9460, Section 9)
+; Advertises the apex origin as an HTTPS endpoint so clients can skip the
+; A/AAAA round trip and learn supported ALPN protocols up front. Used here
+; as the ServiceMode form (SvcPriority 1) with TargetName "." meaning the
+; owner name of the record is the effective TargetName.
+; ----------------------------------------------------------------------------
+prism-benchmark.github.io.  3600  IN  HTTPS  1 . (
+    alpn="h2,h3"
+    port=443
+    ipv4hint=185.199.108.153
+    ipv4hint=185.199.109.153
+    ipv4hint=185.199.110.153
+    ipv4hint=185.199.111.153
+    ipv6hint=2620:112:3000:1a81::1
+    ipv6hint=2620:112:3000:1a82::1
+    ipv6hint=2620:112:3000:1a83::1
+    ipv6hint=2620:112:3000:1a84::1
+)
+
+; ----------------------------------------------------------------------------
+; A2A agent endpoint  (DNS-SD service label _a2a._agents.<apex>)
+; Per draft-mozleywilliams-dnsop-dnsaid Section 3.1, this is the primary
+; record an AI agent client queries when it knows both the organization
+; and the agent. The `well-known` and `cap` parameters let the client
+; resolve the capability descriptor published at the same origin and
+; `cap-sha256` lets it verify the descriptor on every fetch.
+;
+; `mandatory` lists the keys a consumer MUST understand and apply, so that
+; an attacker on the path cannot downgrade by stripping them.
+; ----------------------------------------------------------------------------
+_a2a._agents.prism-benchmark.github.io.  3600  IN  SVCB  1 . (
+    alpn="a2a,h2"
+    port=443
+    ipv4hint=185.199.108.153
+    ipv6hint=2620:112:3000:1a81::1
+    well-known="agent-card.json"
+    cap="https://prism-benchmark.github.io/prism-page/.well-known/agent-card.json"
+    cap-sha256="y-0AHe2tCAmMBsxSfr3cxDTeKjh2rxs88EYP3fw7qKE"
+    mandatory="alpn,port,cap-sha256"
+)
+
+; ----------------------------------------------------------------------------
+; Organization agent index  (DNS-SD service label _index._agents.<apex>)
+; Per draft-mozleywilliams-dnsop-dnsaid Section 3.2, an AI client that
+; knows the organization but not the specific agent starts here. The
+; TargetName points at the same index document published via the .well-known
+; path; downstream consumers perform semantic search over the listed agents.
+; ----------------------------------------------------------------------------
+_index._agents.prism-benchmark.github.io.  3600  IN  SVCB  1 . (
+    alpn="h2"
+    port=443
+    ipv4hint=185.199.108.153
+    ipv6hint=2620:112:3000:1a81::1
+    well-known="agent-card.json"
+    cap="https://prism-benchmark.github.io/prism-page/.well-known/agent-card.json"
+    cap-sha256="y-0AHe2tCAmMBsxSfr3cxDTeKjh2rxs88EYP3fw7qKE"
+    mandatory="alpn,port,cap-sha256"
+)
+
+; ----------------------------------------------------------------------------
+; DNSSEC
+; ----------------------------------------------------------------------------
+; The draft recommends that public DNS-AID zones be DNSSEC-signed so that
+; validating resolvers can return authenticated data and consumers can
+; detect tampering of the SVCB RRset (or any TLSA records that follow).
+; Use a registered DS algorithm with broad resolver support and follow the
+; operational guidance in RFC 6781. If TLSA records are published at
+; _443._tcp.<apex> to support DANE TLS authentication (RFC 6698 / RFC 7671),
+; DNSSEC signing of this zone is REQUIRED by the draft.
+;
+; Optional: TLSA records at _443._tcp.prism-benchmark.github.io for
+; permissive DANE posture (3 1 1 <sha256 of SPKI>). Not included here
+; because the certificate material is controlled by the apex operator.

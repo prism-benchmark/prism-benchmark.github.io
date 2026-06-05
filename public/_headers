@@ -1,5 +1,34 @@
 /
+  Vary: Accept
   Link: </prism-page/.well-known/api-catalog>; rel="api-catalog"; type="application/json"; title="PRISM resource catalog"
+  Link: </prism-page/.well-known/agent-card.json>; rel="agent-card"; type="application/json"; title="PRISM DNS-AID capability descriptor"
+  Link: </prism-page/.well-known/dns-aid.zone>; rel="dns-aid"; type="text/dns"; title="PRISM DNS-AID zone file (documentation, not yet live on github.io)"
+  Link: </prism-page/.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json"; title="RFC 9728 Protected Resource Metadata (no protected resources)"
+  Link: </prism-page/.well-known/oauth-authorization-server>; rel="oauth-authorization-server"; type="application/json"; title="RFC 8414 Authorization Server Metadata with agent_auth block (no registration surface)"
+  Link: </prism-page/.well-known/agent-skills/index.json>; rel="agent-skills"; type="application/json"; title="Agent Skills discovery index (RFC v0.2.0) — PRISM evaluation skill"
+  Link: </prism-page/auth.md>; rel="auth.md"; type="text/markdown"; title="auth.md skill manifest (agentic registration not supported)"
+  Link: </prism-page/index.md>; rel="alternate"; type="text/markdown"; title="PRISM paper — markdown version for agents (negotiated via Accept: text/markdown)"
+  Link: </prism-page/demo.md>; rel="alternate"; type="text/markdown"; title="PRISM demo — markdown version for agents (negotiated via Accept: text/markdown)"
   Link: </prism-page/demo>; rel="service-doc"; type="text/html"; title="PRISM interactive demo"
   Link: <https://arxiv.org/abs/2605.26730>; rel="describedby"; type="text/html"; title="PRISM paper on arXiv"
   Link: </prism-page/sitemap-index.xml>; rel="sitemap"; type="application/xml"
+
+/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Vary: Accept
+  x-markdown-tokens: 1263
+  Content-Signal: ai-train=no, search=yes, ai-input=no
+
+/demo.md
+  Content-Type: text/markdown; charset=utf-8
+  Vary: Accept
+  x-markdown-tokens: 276
+  Content-Signal: ai-train=no, search=yes, ai-input=no
+
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+  Vary: Accept
+
+/sw.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate

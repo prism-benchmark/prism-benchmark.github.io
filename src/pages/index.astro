@@ -58,6 +58,7 @@ const heroTitle = heroTitleParts.join(":").trim();
     <link rel="describedby" type="text/html" href="https://arxiv.org/abs/2605.26730" title="PRISM paper on arXiv" />
     <link rel="service-doc" type="text/html" href={prefix + "demo"} title="PRISM interactive demo" />
     <link rel="api-catalog" type="application/json" href={prefix + ".well-known/api-catalog"} title="PRISM resource catalog for agents" />
+    <link rel="alternate" type="text/markdown" href={prefix + "index.md"} title="PRISM paper — markdown version for agents" />
 
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
@@ -78,6 +79,15 @@ const heroTitle = heroTitleParts.join(":").trim();
       async
       src="/count.js"
     ></script>
+
+    <!-- Markdown for Agents: register SW that negotiates Accept: text/markdown
+         to the pre-built /index.md companion with Content-Type text/markdown
+         and x-markdown-tokens. Browsers without SW support still see HTML. -->
+    <script is:inline>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").catch(() => {});
+      }
+    </script>
 
     <style is:global>
       /* ---- Floating left-side Table of Contents (ported from index.html) ---- */

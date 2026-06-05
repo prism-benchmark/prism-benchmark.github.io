@@ -1,0 +1,71 @@
+{
+  "capabilities": [
+    {
+      "description": "Decompose a peer review into Atomic Review Comments (ARCs) and score each comment on actionability, specificity, justification, solution, and tone.",
+      "id": "constructiveness",
+      "inputs": ["review"],
+      "metric": "arc-multi-dimensional-score",
+      "title": "Multi-dimensional constructiveness"
+    },
+    {
+      "description": "Extract verbatim flaw arguments from a review, verify them against the manuscript, merge semantically equivalent flaws into a consensus reference set, and label them as Critical or Minor. Reports severity-stratified recall and the normalized Critique Prioritization Score (nCPS).",
+      "id": "flaws",
+      "inputs": ["review", "manuscript"],
+      "metric": "critical-recall",
+      "title": "Flaw identification and prioritization"
+    },
+    {
+      "description": "Score the depth of a peer review by extracting argumentative discourse units (ADUs), labeling each as claim or premise, and checking whether the premises are grounded in the manuscript or the surrounding literature.",
+      "id": "depth",
+      "inputs": ["review", "manuscript"],
+      "metric": "argument-grounding-rate",
+      "title": "Depth of analysis"
+    },
+    {
+      "description": "Extract verbatim novelty claims from a review, retrieve related papers from Semantic Scholar, and verify whether the retrieved literature supports or contradicts each claim. Reports a normalized novelty-support score and support rate.",
+      "id": "novelty",
+      "inputs": ["review", "manuscript"],
+      "metric": "novelty-support",
+      "title": "Novelty assessment"
+    }
+  ],
+  "demo": "https://prism-benchmark.github.io/prism-page/demo",
+  "description": "PRISM (Peer Review Intelligence via Structured Multi-dimensional assessment) is a benchmark that evaluates LLM-generated and human peer reviews of machine learning papers across four orthogonal dimensions: depth of analysis, novelty assessment, flaw identification and prioritization, and multi-dimensional constructiveness.",
+  "endpoints": {
+    "agent-card": "/.well-known/agent-card.json",
+    "api-catalog": "/.well-known/api-catalog",
+    "demo": "/prism-page/demo",
+    "dns-aid-zone": "/.well-known/dns-aid.zone",
+    "paper": "https://arxiv.org/abs/2605.26730",
+    "sitemap": "/prism-page/sitemap-index.xml"
+  },
+  "name": "PRISM Benchmark",
+  "papers": [
+    {
+      "authors": [
+        "Phan Phuoc Loc Ngoc",
+        "Toan Huynh La Viet",
+        "Thanh Tran Khanh",
+        "Duy A Nguyen",
+        "Tuan Anh Nguyen Pham",
+        "Thanh Nguyen",
+        "Nitesh V. Chawla",
+        "Wray Buntine",
+        "Kok-Seng Wong",
+        "Khoa D. Doan",
+        "Binh T. Nguyen"
+      ],
+      "title": "PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers",
+      "url": "https://arxiv.org/abs/2605.26730",
+      "venue": "arXiv preprint"
+    }
+  ],
+  "provider": {
+    "name": "PRISM Benchmark",
+    "url": "https://prism-benchmark.github.io/prism-page/"
+  },
+  "protocols": ["a2a"],
+  "spec": "draft-mozleywilliams-dnsop-dnsaid-02",
+  "url": "https://prism-benchmark.github.io/prism-page/",
+  "version": "1.0.0"
+}

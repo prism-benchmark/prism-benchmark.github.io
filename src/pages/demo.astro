@@ -23,6 +23,7 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={prefix + "favicon.svg"} />
+    <link rel="alternate" type="text/markdown" href={prefix + "demo.md"} title="PRISM demo — markdown version for agents" />
     <Font
       cssVariable="--font-noto-sans"
       preload={[{ subset: "latin", style: "normal" }]}
@@ -30,6 +31,11 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
     <title>PRISM Interactive Demo</title>
   </head>
   <body class="demo-page font-(family-name:--font-noto-sans)">
+    <script is:inline>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").catch(() => {});
+      }
+    </script>
     <header class="demo-header">
       <a class="demo-brand" href={prefix} aria-label="PRISM home">
         <Image src={prismLogo} alt="" class="demo-logo" loading="eager" decoding="sync" />

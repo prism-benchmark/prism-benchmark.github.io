@@ -1,0 +1,8 @@
+{
+  "resource": "https://prism-benchmark.github.io/prism-page/",
+  "resource_name": "PRISM Benchmark",
+  "resource_documentation": "https://prism-benchmark.github.io/prism-page/",
+  "authorization_servers": [],
+  "scopes_supported": [],
+  "bearer_methods_supported": []
+}
