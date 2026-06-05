@@ -1,0 +1,5 @@
+/
+  Link: </prism-page/.well-known/api-catalog>; rel="api-catalog"; type="application/json"; title="PRISM resource catalog"
+  Link: </prism-page/demo>; rel="service-doc"; type="text/html"; title="PRISM interactive demo"
+  Link: <https://arxiv.org/abs/2605.26730>; rel="describedby"; type="text/html"; title="PRISM paper on arXiv"
+  Link: </prism-page/sitemap-index.xml>; rel="sitemap"; type="application/xml"

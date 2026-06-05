@@ -55,6 +55,10 @@ const heroTitle = heroTitleParts.join(":").trim();
 
     <link rel="icon" type="image/svg+xml" href={prefix + favicon} />
 
+    <link rel="describedby" type="text/html" href="https://arxiv.org/abs/2605.26730" title="PRISM paper on arXiv" />
+    <link rel="service-doc" type="text/html" href={prefix + "demo"} title="PRISM interactive demo" />
+    <link rel="api-catalog" type="application/json" href={prefix + ".well-known/api-catalog"} title="PRISM resource catalog for agents" />
+
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     <meta property="og:type" content="website" />

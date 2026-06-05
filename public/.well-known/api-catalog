@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/json-ld.json",
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "hreflang": "https://schema.org/inLanguage"
+  },
+  "@type": "DataCatalog",
+  "name": "PRISM Resource Catalog",
+  "description": "Machine-readable catalog of resources published by the PRISM benchmark project (A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers).",
+  "url": "https://prism-benchmark.github.io/prism-page/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "PRISM Benchmark",
+    "url": "https://prism-benchmark.github.io/prism-page/"
+  },
+  "resources": [
+    {
+      "rel": "describedby",
+      "href": "https://arxiv.org/abs/2605.26730",
+      "type": "text/html",
+      "title": "PRISM paper on arXiv",
+      "hreflang": "en"
+    },
+    {
+      "rel": "service-doc",
+      "href": "/prism-page/demo",
+      "type": "text/html",
+      "title": "Interactive demo explorer",
+      "hreflang": "en"
+    },
+    {
+      "rel": "sitemap",
+      "href": "/prism-page/sitemap-index.xml",
+      "type": "application/xml",
+      "title": "XML sitemap"
+    }
+  ]
+}

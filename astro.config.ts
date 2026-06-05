@@ -2,6 +2,7 @@ import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -13,6 +14,7 @@ import astroExpressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://prism-benchmark.github.io",
   vite: {
     plugins: [tailwindcss()],
   },
@@ -46,6 +48,7 @@ export default defineConfig({
     }),
     mdx(),
     react(),
+    sitemap(),
   ],
   fonts: [
     {
