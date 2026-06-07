@@ -1,3 +1,17 @@
+# PRISM: Peer Review Intelligence via Structured Multi-dimensional Assessment
+
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://prism-benchmark.github.io) [![Demo](https://img.shields.io/badge/Demo-Live-green)](https://prism-benchmark.github.io/demo/) [![ArXiv](https://img.shields.io/badge/ArXiv-2605.26730-b31b1b)](https://arxiv.org/abs/2605.26730) [![Hugging Face](https://img.shields.io/badge/Hugging_Face-Paper-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/papers/2605.26730) [![Code](https://img.shields.io/badge/Code-Coming_Soon-lightgrey)]()
+
+## Links
+
+- **Project page:** [https://prism-benchmark.github.io](https://prism-benchmark.github.io)
+- **Demo:** [https://prism-benchmark.github.io/demo/](https://prism-benchmark.github.io/demo/)
+- **ArXiv:** [https://arxiv.org/abs/2605.26730](https://arxiv.org/abs/2605.26730)
+- **Hugging Face:** [https://huggingface.co/papers/2605.26730](https://huggingface.co/papers/2605.26730)
+- **Full Code:** Coming soon
+
+---
+
 # Academic project page template
 
 This is a template to help you build a professional project page for your research paper, based on the design from the original [Nerfies page](https://nerfies.github.io/). Instead of manually editing an HTML file, you can author the page's content in Markdown and make use of a polished set of components, then deploy it with GitHub Pages. [See a live demo of the template](https://research-template.roman.technology).
