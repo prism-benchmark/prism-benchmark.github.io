@@ -1,4 +1,4 @@
-# PRISM: Peer Review Intelligence via Structured Multi-dimensional Assessment
+# PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers
 
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://prism-benchmark.github.io) [![Demo](https://img.shields.io/badge/Demo-Live-green)](https://prism-benchmark.github.io/demo/) [![ArXiv](https://img.shields.io/badge/ArXiv-2605.26730-b31b1b)](https://arxiv.org/abs/2605.26730) [![Hugging Face](https://img.shields.io/badge/Hugging_Face-Paper-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/papers/2605.26730) [![Code](https://img.shields.io/badge/Code-Coming_Soon-lightgrey)]()
 
