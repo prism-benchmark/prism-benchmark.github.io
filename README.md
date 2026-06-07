@@ -8,7 +8,7 @@
 - **Demo:** [https://prism-benchmark.github.io/demo/](https://prism-benchmark.github.io/demo/)
 - **ArXiv:** [https://arxiv.org/abs/2605.26730](https://arxiv.org/abs/2605.26730)
 - **Hugging Face:** [https://huggingface.co/papers/2605.26730](https://huggingface.co/papers/2605.26730)
-- **Full Code:** [https://github.com/prism-benchmark/prism-page](https://github.com/prism-benchmark/prism-page)
+- **Full Code:** [https://github.com/prism-benchmark/prism](https://github.com/prism-benchmark/prism)
 
 ---
 
