@@ -72,15 +72,17 @@ const heroTitle = heroTitleParts.join(":").trim();
       preload={[{ subset: "latin", style: "normal" }]}
     />
 
-    <title>PRISM: Evaluating LLM Peer Reviewers Benchmark</title>
+    <title>PRISM Benchmark: Evaluating LLM Peer Reviewers</title>
 
     <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
-        "@type": "CreativeWork",
+        "@type": "ScholarlyArticle",
         "name": "PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers",
+        "headline": "PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers",
         "url": "https://prism-benchmark.github.io/",
-        "description": "PRISM - A multi-dimensional benchmark for evaluating LLM peer reviewers across depth, novelty, flaw detection, and constructiveness.",
+        "description": "PRISM is a multi-dimensional benchmark for evaluating LLM-generated and human reviews across depth, novelty, flaw identification, and constructiveness.",
+        "sameAs": "https://arxiv.org/abs/2605.26730",
         "author": [
           { "@type": "Person", "name": "Ngoc Phan Phuoc Loc" },
           { "@type": "Person", "name": "Toan Huynh La Viet" },
@@ -96,8 +98,10 @@ const heroTitle = heroTitleParts.join(":").trim();
         ],
         "publisher": {
           "@type": "Organization",
-          "name": "VinUniversity"
-        }
+          "name": "VinUniversity",
+          "url": "https://vinuni.edu.vn"
+        },
+        "datePublished": "2026-05-26"
       }
     </script>
 
@@ -277,14 +281,14 @@ const heroTitle = heroTitleParts.join(":").trim();
           <Image
             class="prism-hero-logo"
             src={prismLogo}
-            alt="PRISM logo"
+            alt="PRISM LLM Reviewer Benchmark Logo"
             loading="eager"
             decoding="sync"
           />
           <span class="prism-hero-brand">{heroBrand}</span>
         </div>
 
-        {heroTitle && <h1 class="prism-hero-title">{heroTitle}</h1>}
+        {heroTitle && <h1 class="prism-hero-title"><span class="sr-only">{heroBrand}: </span>{heroTitle}</h1>}
 
         <div class="flex flex-col items-center gap-6">
           <Authors

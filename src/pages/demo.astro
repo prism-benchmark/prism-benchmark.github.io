@@ -30,7 +30,18 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
       cssVariable="--font-noto-sans"
       preload={[{ subset: "latin", style: "normal" }]}
     />
-    <title>PRISM Interactive Demo</title>
+    <title>PRISM Benchmark: Interactive LLM Reviewer Explorer</title>
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": ["WebPage", "SoftwareApplication"],
+        "name": "PRISM Interactive Demo Explorer",
+        "description": "Interactive benchmark explorer to inspect PRISM peer-review judgments at the paper, reviewer source, and dimension level.",
+        "url": "https://prism-benchmark.github.io/demo",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All"
+      }
+    </script>
   </head>
   <body class="demo-page font-(family-name:--font-noto-sans)">
     <script is:inline>
@@ -40,7 +51,7 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
     </script>
     <header class="demo-header">
       <a class="demo-brand" href={prefix} aria-label="PRISM home">
-        <Image src={prismLogo} alt="" class="demo-logo" loading="eager" decoding="sync" />
+        <Image src={prismLogo} alt="PRISM LLM Reviewer Benchmark Logo" class="demo-logo" loading="eager" decoding="sync" />
         <span>PRISM</span>
       </a>
       <a class="demo-back" href={prefix}>Paper page</a>
@@ -49,7 +60,7 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
     <main class="demo-main">
       <section class="demo-intro">
         <p class="demo-kicker">Interactive benchmark explorer</p>
-        <h1>Inspect PRISM judgments at paper level.</h1>
+        <h1>PRISM Benchmark: Interactive LLM Reviewer Explorer</h1>
         <p>
           Select one representative paper, reviewer source, and dimension to
           inspect normalized outputs from the depth, novelty, flaw, and
