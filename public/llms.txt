@@ -1,0 +1,10 @@
+# PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers
+
+> PRISM (Peer Review Intelligence via Structured Multi-dimensional assessment) is a benchmark for evaluating both LLM-generated and human reviews across four core duties: depth of analysis, novelty assessment, flaw identification and prioritization, and multi-dimensional constructiveness.
+
+## Core Pages
+- [PRISM Benchmark Homepage](https://prism-benchmark.github.io/): Main paper description, methodology, and aggregate scores.
+- [PRISM Interactive Demo](https://prism-benchmark.github.io/demo): Paper-level interactive benchmark visualizer.
+
+## Key Resources
+- [arXiv Paper](https://arxiv.org/abs/2605.26730): Main publication.

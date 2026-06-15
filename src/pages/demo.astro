@@ -16,12 +16,14 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
 <html class="bg-white" lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content" />
     <meta
       name="description"
       content="Interactive PRISM demo for exploring peer-review benchmark outputs across depth, novelty, flaw detection, and constructiveness."
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href={prefix + "favicon.svg"} />
     <link rel="alternate" type="text/markdown" href={prefix + "demo.md"} title="PRISM demo — markdown version for agents" />
     <Font

@@ -49,9 +49,11 @@ const heroTitle = heroTitleParts.join(":").trim();
 <html class="bg-white dark:bg-zinc-900" lang="en" data-theme={theme}>
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content" />
     {description && <meta name="description" content={description} />}
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={Astro.url.href} />
 
     <link rel="icon" type="image/svg+xml" href={prefix + favicon} />
 
@@ -70,7 +72,34 @@ const heroTitle = heroTitleParts.join(":").trim();
       preload={[{ subset: "latin", style: "normal" }]}
     />
 
-    <title>{title}</title>
+    <title>PRISM: Evaluating LLM Peer Reviewers Benchmark</title>
+
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers",
+        "url": "https://prism-benchmark.github.io/",
+        "description": "PRISM - A multi-dimensional benchmark for evaluating LLM peer reviewers across depth, novelty, flaw detection, and constructiveness.",
+        "author": [
+          { "@type": "Person", "name": "Ngoc Phan Phuoc Loc" },
+          { "@type": "Person", "name": "Toan Huynh La Viet" },
+          { "@type": "Person", "name": "Thanh Tran Khanh" },
+          { "@type": "Person", "name": "Duy A Nguyen" },
+          { "@type": "Person", "name": "Tuan Anh Nguyen Pham" },
+          { "@type": "Person", "name": "Thanh Nguyen" },
+          { "@type": "Person", "name": "Nitesh V. Chawla" },
+          { "@type": "Person", "name": "Wray Buntine" },
+          { "@type": "Person", "name": "Kok-Seng Wong" },
+          { "@type": "Person", "name": "Khoa D. Doan" },
+          { "@type": "Person", "name": "Binh T. Nguyen" }
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "VinUniversity"
+        }
+      }
+    </script>
 
     <!-- GoatCounter Analytics (self-hosted to avoid ad blockers) -->
     <script
