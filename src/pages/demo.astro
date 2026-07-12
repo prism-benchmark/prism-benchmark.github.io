@@ -19,25 +19,33 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content" />
     <meta
       name="description"
-      content="Interactive PRISM demo for exploring peer-review benchmark outputs across depth, novelty, flaw detection, and constructiveness."
+      content="Explore reviewer outputs with the interactive PRISM Benchmark explorer for LLM peer review evaluation across depth, novelty, flaw detection, and constructiveness."
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href={prefix + "favicon.svg"} />
     <link rel="alternate" type="text/markdown" href={prefix + "demo.md"} title="PRISM demo — markdown version for agents" />
+    <meta property="og:title" content="PRISM Benchmark Demo: Explore LLM Peer Review Evaluation" />
+    <meta
+      property="og:description"
+      content="Explore reviewer outputs with the interactive PRISM Benchmark explorer for LLM peer review evaluation across depth, novelty, flaw detection, and constructiveness."
+    />
+    <meta property="og:url" content="https://prism-benchmark.github.io/demo/" />
+    <meta property="og:site_name" content="PRISM Benchmark" />
     <Font
       cssVariable="--font-noto-sans"
       preload={[{ subset: "latin", style: "normal" }]}
     />
-    <title>PRISM Benchmark: Interactive LLM Reviewer Explorer</title>
+    <title>PRISM Benchmark Demo: Explore LLM Peer Review Evaluation</title>
     <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": ["WebPage", "SoftwareApplication"],
-        "name": "PRISM Interactive Demo Explorer",
-        "description": "Interactive benchmark explorer to inspect PRISM peer-review judgments at the paper, reviewer source, and dimension level.",
-        "url": "https://prism-benchmark.github.io/demo",
+        "name": "PRISM Benchmark Interactive Demo Explorer",
+        "description": "Interactive PRISM Benchmark explorer for LLM peer review evaluation at the paper, reviewer source, and dimension level.",
+        "url": "https://prism-benchmark.github.io/demo/",
+        "isPartOf": { "@id": "https://prism-benchmark.github.io/#website" },
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "All"
       }
